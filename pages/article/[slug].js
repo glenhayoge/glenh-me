@@ -4,6 +4,7 @@ import { SingleArticle } from '../../components/SingleArticle';
 import SampleComponent from '../../components/SampleComponent';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
+
 const usedcomponents = {
     SampleComponent,
   };

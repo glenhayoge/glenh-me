@@ -33,6 +33,7 @@ const mdxOptions = {
     ],
   ] as Pluggable[],
   compilers: [],
+  format:'mdx'
 };
 
 export default mdxOptions;
