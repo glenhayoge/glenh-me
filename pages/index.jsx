@@ -1,174 +1,21 @@
-import React from "react";
+import Head from 'next/head'
+import ArticleCard from '../components/ArticleCard'
+import { allArticles } from 'contentlayer/generated';
+import { select } from '../utils/select';
+import Header from '../components/header';
 import Image from "next/image";
 import propic from "../assets/glens_1.png";
 import Newsletter from "../components/newsletter";
 
-export default function ArticleCard({
-  title,
-  description,
-  slug,
-  image,
-  category,
-  dateTime,
-  readingTime,
-}) {
+export default function Home({articles}) {
   return (
     <div>
-      {/* <section className='text-gray-600 body-font'>
-        <div className='container px-5 py-24 mx-auto'>
-          <div className='flex flex-wrap -m-4'>
-            <div className='p-4 md:w-1/3'>
-              <div className='h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden'>
-               
-              <Image
-                  className='lg:h-48 md:h-36 w-full object-cover object-center'
-                  src={image}
-                  width={720}
-                  height={400}
-                  alt='blog'
-                />
-                <div className='p-6'>
-                  <h2 className='tracking-widest text-xs title-font font-medium text-gray-400 mb-1'>
-                    {category}
-                  </h2>
-                  <h1 className='title-font text-lg font-medium text-gray-900 mb-3'>
-                    {title}
-                  </h1>
-                  <p className='leading-relaxed mb-3'>{description}</p>
-                  <div className='flex items-center flex-wrap '>
-                    <a
-                      href={`/article/${slug}`}
-                      className='text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0'
-                    >
-                      Read More
-                      <svg
-                        className='w-4 h-4 ml-2'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                        strokeWidth='2'
-                        fill='none'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                      >
-                        <path d='M5 12h14'></path>
-                        <path d='M12 5l7 7-7 7'></path>
-                      </svg>
-                    </a>
-                    <span className='text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200'>
-                      {readingTime}
-                    </span>
-                    <span className='text-gray-400 inline-flex items-center leading-none text-sm'>
-                      <svg
-                        className='w-4 h-4 mr-1'
-                        stroke='currentColor'
-                        strokeWidth='2'
-                        fill='none'
-                        strokeLinecap='round'
-                        strokeinejoin='round'
-                        viewBox='0 0 24 24'
-                      >
-                        <path d='M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z'></path>
-                      </svg>
-                      {dateTime}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* old index Layout below */}
-
-        {/* {posts.posts.map((p) => ( */}
-        <div className="p-6 border-b  border-gray-400 dark:border-gray-600 border-dashed">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="inline-block py-1 px-4 bg-gray-600 dark:bg-gray-900 text-xs text-gray-200 dark:text-yellow-400 rounded-full">
-                        {category}
-                      </span>
-                      <a
-                        className="flex mr-4 items-center text-xs text-gray-800 inline-block py-1 px-4 bg-gray-100 dark:text-yellow-400  dark:bg-gray-900 rounded-full dark:text-yellow-400"
-                        href="#"
-                      >
-                        <span className="">{dateTime}</span>
-                      </a>
-                    </div>
-                    <div className="mb-4">
-                      <a href={`/article/${slug}`}>
-                        <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400">
-                          {title}
-                        </h3>
-                      </a>
-                      <p className="text-l dark:text-gray-400 text-gray-600  ">
-                        {description}
-                      </p>
-                    </div>
-                    <div className="flex justify-between">
-                      <div className="flex items-center">
-                        <div className="inline-flex items-center justify-center text-xs font-medium text-gray-500 dark:text-yellow-400">
-                        {/* {dateTime} */} <a
-                      href={`/article/${slug}`}
-                      className='text-indigo-600 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
-                    >
-                      Read More
-                      <svg
-                        className='w-4 h-4 ml-2'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                        strokeWidth='2'
-                        fill='none'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                      >
-                        <path d='M5 12h14'></path>
-                        <path d='M12 5l7 7-7 7'></path>
-                      </svg>
-                    </a>
-
-                        </div>
-                      </div>
-                      <div class="flex">
-                        <a
-                          className="flex items-center text-xs text-gray-500 dark:text-yellow-400"
-                          href="#"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-book mr-2"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-                          </svg>
-                          <span className="mr-2">{readingTime}</span>
-                        </a>
-                        <a
-                          className="flex items-center text-xs text-gray-500 dark:text-yellow-400"
-                          href="#"
-                        >
-                          <svg
-                            className="mr-2"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            class="bi bi-eye"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                          </svg>
-                          <span className="ml-2">2 views</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  {/* ))} */}
-
-      {/* <section className="py-8 ">
+      <Head>
+        <title>Glenh.me | Blog</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header/>
+        <section className="py-8 ">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
             <div className="w-full lg:w-2/3 p-4">
@@ -181,8 +28,34 @@ export default function ArticleCard({
                       </p>
                     </div>
                   </div>
-                
                 </div>
+                {/* Place Main Below */}
+                <main>
+     {articles.map(
+            ({
+              title,
+              description,
+              slug,
+              image,
+              category,
+              publishedAt,
+              readingTime,
+            }) => (
+              <ArticleCard
+                key={slug}
+                title={title}
+                description={description}
+                slug={slug}
+                image={image}
+                category={category}
+                dateTime={publishedAt}
+                date={publishedAt}
+                readingTime={readingTime.text}
+              />
+            )
+          )}
+
+      </main>
 
                 <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-800">
                   <a
@@ -465,7 +338,30 @@ export default function ArticleCard({
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
+   
     </div>
-  );
+  )
+}
+
+export function getStaticProps() {
+  const articles = allArticles
+    .map((article) =>
+      select(article, [
+        'slug',
+        'title',
+        'description',
+        'publishedAt',
+        'readingTime',
+        'author',
+        'category',
+        'image',
+      ])
+    )
+    .sort(
+      (a, b) =>
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    );
+
+  return { props: { articles } };
 }

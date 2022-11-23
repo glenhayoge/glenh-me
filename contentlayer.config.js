@@ -1,14 +1,6 @@
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
 import readingTime from 'reading-time';
-// import mdxOptions from './config/md';
-
-import remarkGfm from 'remark-gfm'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeCodeTitles from 'rehype-code-titles'
-import rehypePrism from 'rehype-prism-plus'
-import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
-
+import mdxOptions from './config/md';
 
 const Author = defineNestedType(() => ({
   name: 'Author',
@@ -52,18 +44,7 @@ const computedFields = {
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',
     documentTypes: [Article],
-    //  mdx: mdxOptions,
-     mdx: {
-       
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [
-        rehypeSlug,
-        rehypeCodeTitles,
-        rehypePrism,
-        rehypeAutolinkHeadings,
-        rehypeAccessibleEmojis,
-            ],
-          },
+    mdx: mdxOptions,
   });
 
 

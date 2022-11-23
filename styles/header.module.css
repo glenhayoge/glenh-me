@@ -1,0 +1,20 @@
+.heroWrapper {
+    position: relative;
+    width: 100vw;
+    /* height: 25vh; */
+   
+    
+  }
+
+  .imageWrapper {
+    z-index: -1;
+  }
+
+  .heroContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-spacing: normal;
+    
+  }

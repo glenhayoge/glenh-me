@@ -8,7 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['images.unsplash.com', 'media-exp1.licdn.com'],
+    domains: ['images.unsplash.com', 'i.pravatar.cc','previews.123rf.com',],
     dangerouslyAllowSVG: true,
   }
 }
