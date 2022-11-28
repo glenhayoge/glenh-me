@@ -11,7 +11,7 @@ export default function IndexPage() {
     <>
       <div className="navgationCard">
         <Link href="/">
-          <a> Home </a>
+          Home
         </Link>
       </div>
    

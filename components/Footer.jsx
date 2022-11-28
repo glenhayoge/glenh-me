@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <section class="dark:bg-dark ">
       <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
-        You've Reached the Bottom of the Page!
+        You've Reached the Bottom of the Page 👋
       </p>
       
       <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 border-t dark:border-gray-600 border-gray-200 ">
@@ -43,7 +43,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="flex flex-wrap text-center dark:text-gray-600 text-gray-400 justify-center text-xs mb-4 mt-10">
-          Crafted by GlenH with 🔥 using React, NextJS, Nextra, MDX & Tailwind
+          Crafted by GlenH with 🔥 using React, NextJS, MDX, ContentLayer & Tailwind
           CSS. Hosted on Vercel
         </p>
 

@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">  
     <Navbar/>
-    <Component {...pageProps} />
+    <Component className="dark-main" {...pageProps} />
     <Footer/>
   </ThemeProvider>
   

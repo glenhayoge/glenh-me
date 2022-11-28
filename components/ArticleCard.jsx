@@ -82,7 +82,7 @@ export default function ArticleCard({
       {/* old index Layout below */}
 
         {/* {posts.posts.map((p) => ( */}
-        <div className="p-6 border-b  border-gray-400 dark:border-gray-600 border-dashed">
+        <div className="p-10 border-b  border-gray-400 dark:border-gray-600 border-dashed">
                     <div className="flex justify-between items-center mb-4">
                       <span className="inline-block py-1 px-4 bg-gray-600 dark:bg-gray-900 text-xs text-gray-200 dark:text-yellow-400 rounded-full">
                         {category}

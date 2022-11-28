@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import Logo from './logo';
-import { useTheme } from 'next-themes';
-import { SunIcon, MoonIcon } from '@heroicons/react/solid';
+import { useEffect, useState } from "react";
+import Logo from "./logo";
+import { useTheme } from "next-themes";
+import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
 function NavLink({ to, children }) {
   return (
@@ -15,11 +15,11 @@ function MobileNav({ open, setOpen }) {
   return (
     <div
       className={`absolute top-0 left-0 h-screen w-screen bg-white dark:bg-gray-800 transform ${
-        open ? '-translate-x-0' : '-translate-x-full'
+        open ? "-translate-x-0" : "-translate-x-full"
       } transition-transform duration-300 ease-in-out filter  `}
     >
       <div className="flex pl-3 items-left  justify-left filter shadow-lg shadow-yellow-400/50 bg-gray-200  dark:bg-gray-800 h-20">
-        {' '}
+        {" "}
         <Logo />
       </div>
       <div className="flex flex-col ml-4">
@@ -121,19 +121,18 @@ function MobileNav({ open, setOpen }) {
 }
 // main navbar
 export default function Navbar() {
-
-    // dark light mode feature
+  // dark light mode feature
   const { systemTheme, theme, setTheme } = useTheme();
 
   const renderThemeChanger = () => {
-    const currentTheme = theme === 'system' ? systemTheme : theme;
+    const currentTheme = theme === "system" ? systemTheme : theme;
 
-    if (currentTheme === 'dark') {
+    if (currentTheme === "dark") {
       return (
         <SunIcon
           className="w-7 h-7 text-yellow-500 "
           role="button"
-          onClick={() => setTheme('light')}
+          onClick={() => setTheme("light")}
         />
       );
     } else {
@@ -141,14 +140,14 @@ export default function Navbar() {
         <MoonIcon
           className="w-7 h-7 text-gray-500 "
           role="button"
-          onClick={() => setTheme('dark')}
+          onClick={() => setTheme("dark")}
         />
       );
     }
   };
 
-//   sticky transparent navbar
-const [clientWindowHeight, setClientWindowHeight] = useState("");
+  //   sticky transparent navbar
+  const [clientWindowHeight, setClientWindowHeight] = useState("");
 
   const [backgroundTransparacy, setBackgroundTransparacy] = useState(0);
   const [padding, setPadding] = useState(30);
@@ -175,20 +174,175 @@ const [clientWindowHeight, setClientWindowHeight] = useState("");
     }
   }, [clientWindowHeight]);
 
-
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex filter px-16 py-4 h-20 items-center bg-gray-200 dark:bg-gray-800 navbar"
-    style={{
+    //     <nav class="bg-white dark:bg-dark-second h-max md:h-14 w-full shadow flex flex-col md:flex-row items-center justify-center md:justify-between fixed top-0 z-50 border-b dark:border-dark-third">
+
+    //     <!-- LEFT NAV -->
+    //     <div class="flex items-center justify-between w-full md:w-max px-4 py-2">
+    //         <a href="#" class="mr-2 hidden md:inline-block">
+    //             <img src="./images/fb-logo.png" alt="Facebook logo" class="w-24 sm:w-20 lg:w-10 h-auto">
+    //         </a>
+    //         <a href="#" class="inline-block md:hidden">
+    //             <img src="./images/fb-logo-mb.png" alt="" class="w-32 h-auto">
+    //         </a>
+    //         <div class="flex items-center justify-between space-x-1">
+    //             <div class="relative bg-gray-100 dark:bg-dark-third px-2 py-2 w-10 h-10 sm:w-11 sm:h-11 lg:h-10 lg:w-10 xl:w-max xl:pl-3 xl:pr-8 rounded-full flex items-center justify-center cursor-pointer">
+    //                 <i class='bx bx-search-alt-2 text-xl xl:mr-2 dark:text-dark-txt'></i>
+    //                 <input type="text" placeholder="Search Facebook" class="outline-none bg-transparent hidden xl:inline-block">
+    //             </div>
+    //             <div class="text-2xl grid place-items-center md:hidden bg-gray-200 dark:bg-dark-third rounded-full w-10 h-10 cursor-pointer hover:bg-gray-300 dark:text-dark-txt">
+    //                 <i class='bx bxl-messenger'></i>
+    //             </div>
+    //             <div class="text-2xl grid place-items-center md:hidden bg-gray-200 dark:bg-dark-third rounded-full w-10 h-10 cursor-pointer hover:bg-gray-300 dark:text-dark-txt" id="dark-mode-toggle-mb">
+    //                 <i class='bx bxs-moon'></i>
+    //             </div>
+    //         </div>
+    //     </div>
+    //     <!-- END LEFT NAV -->
+
+        // <!-- MAIN NAV -->
+        // <ul class="flex w-full lg:w-max items-center justify-center relative z-20 prose prose-slate">
+        //     <li class="w-1/5 md:w-max text-center">
+        //         <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block text-blue-500 border-b-4 border-blue-500">
+        //             <i class='bx bxs-home'></i>
+        //         </a>
+        //     </li>
+        //     <li class="w-1/5 md:w-max text-center">
+        //         <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+        //             <i class='bx bx-movie-play'></i>
+        //             <span class="text-xs absolute top-0 right-1/4 bg-red-500 text-white font-semibold rounded-full px-1 text-center">9+</span>
+        //         </a>
+        //     </li>
+        //     <li class="w-1/5 md:w-max text-center">
+        //         <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+        //             <i class='bx bx-store'></i>
+        //         </a>
+        //     </li>
+        //     <li class="w-1/5 md:w-max text-center">
+        //         <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+        //             <i class='bx bx-group'></i>
+        //         </a>
+        //     </li>
+        //     <li class="w-1/5 md:w-max text-center hidden md:inline-block">
+        //         <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+        //             <i class='bx bx-layout'></i>
+        //             <span class="text-xs absolute top-0 right-1/4 bg-red-500 text-white font-semibold rounded-full px-1 text-center">9+</span>
+        //         </a>
+        //     </li>
+        //     <li class="w-1/5 md:w-max text-center inline-block md:hidden">
+        //         <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+        //             <i class='bx bx-menu'></i>
+        //         </a>
+        //     </li>
+        // </ul>
+    //     <!-- END MAIN NAV -->
+
+        // <!-- RIGHT NAV -->
+        // <ul class="hidden md:flex mx-4 items-center justify-center">
+        //     <li class="h-full hidden xl:flex">
+        //         <a href="#" class="inline-flex items-center justify-center p-1 rounded-full hover:bg-gray-200 dark:hover:bg-dark-third mx-1">
+        //             <img src="./images/tuat.jpg" alt="Profile picture" class="rounded-full h-7 w-7">
+        //             <span class="mx-2 font-semibold dark:text-dark-txt">Tuat</span>
+        //         </a>
+        //     </li>
+        //     <li>
+        //         <div class="text-xl hidden xl:grid place-items-center bg-gray-200 dark:bg-dark-third dark:text-dark-txt rounded-full mx-1 p-3 cursor-pointer hover:bg-gray-300 relative">
+        //             <i class='bx bx-plus'></i>
+        //         </div>
+        //     </li>
+        //     <li>
+        //         <div class="text-xl hidden xl:grid place-items-center bg-gray-200 dark:bg-dark-third dark:text-dark-txt rounded-full mx-1 p-3 cursor-pointer hover:bg-gray-300 relative">
+        //             <i class='bx bxl-messenger'></i>
+        //         </div>
+        //     </li>
+        //     <li>
+        //         <div class="text-xl grid place-items-center bg-gray-200 dark:bg-dark-third dark:text-dark-txt rounded-full mx-1 p-3 cursor-pointer hover:bg-gray-300 relative">
+        //             <i class='bx bxs-bell'></i>
+        //             <span class="text-xs absolute top-0 right-0 bg-red-500 text-white font-semibold rounded-full px-1 text-center">9</span>
+        //         </div>
+        //     </li>
+        //     <li>
+        //         <div class="text-xl grid place-items-center bg-gray-200 dark:bg-dark-third dark:text-dark-txt rounded-full mx-1 p-3 cursor-pointer hover:bg-gray-300 relative" id="dark-mode-toggle">
+        //             <i class='bx bxs-moon'></i>
+        //         </div>
+        //     </li>
+        // </ul>
+        // <!-- END RIGHT NAV -->
+    // </nav>
+    <nav
+      className="dark:bg-gray-900 h-max md:h-14 w-full py-4 px-16 shadow bg-gray-200 dark:bg-gray-800 navbar flex flex-col md:flex-row items-center justify-center md:justify-between fixed top-0 z-50"
+      style={{
         background: `${backgroundTransparacy}`,
         boxShadow: `${boxShadow} 0px 0px 20px 6px`,
       }}
+      // className="flex filter px-16 py-4 h-20 items-center bg-gray-200 dark:bg-gray-800 navbar"
     >
-      <MobileNav open={open} setOpen={setOpen} />
-      <div className="w-3/12 flex items-left ">
-        <Logo />
+      {/* left nav */}
+      <div class="flex items-center justify-between w-full md:w-max px-4 py-2">
+        {/* //         <a href="#" class="mr-2 hidden md:inline-block">
+//             <img src="./images/fb-logo.png" alt="Facebook logo" class="w-24 sm:w-20 lg:w-10 h-auto"/>
+//         </a> */}
+        <div className="mr-2 hidden md:inline-block">
+          <MobileNav open={open} setOpen={setOpen} />
+          <Logo />
+        </div>
+        <a href="#" class="inline-block md:hidden">
+          <img src="./images/fb-logo-mb.png" alt="" class="w-32 h-auto" />
+        </a>
+        <div class="flex items-center justify-between space-x-1">
+          {/* //             <div class="relative bg-gray-100 dark:bg-dark-third px-2 py-2 w-10 h-10 sm:w-11 sm:h-11 lg:h-10 lg:w-10 xl:w-max xl:pl-3 xl:pr-8 rounded-full flex items-center justify-center cursor-pointer">
+//                 <i class='bx bx-search-alt-2 text-xl xl:mr-2 dark:text-dark-txt'></i>
+//                 <input type="text" placeholder="Search Facebook" class="outline-none bg-transparent hidden xl:inline-block"/>
+//             </div> */}{" "}
+          <div class="text-2xl grid place-items-center md:hidden bg-gray-200 dark:bg-dark-third rounded-full w-10 h-10 cursor-pointer hover:bg-gray-300 dark:text-dark-txt">
+            <i class="bx bxl-messenger"></i>
+          </div>
+          {/* //             <div class="text-2xl grid place-items-center md:hidden bg-gray-200 dark:bg-dark-third rounded-full w-10 h-10 cursor-pointer hover:bg-gray-300 dark:text-dark-txt" id="dark-mode-toggle-mb">
+//                 <i class='bx bxs-moon'></i>
+//             </div> */}
+          <span className="mr-4 md:hidden"> {renderThemeChanger()}</span>
+        </div>
       </div>
-      <div className="w-9/12 flex justify-end items-center ">
+
+      {/* main nav */}
+    
+        {/* <ul class="flex w-full lg:w-max items-center justify-center relative z-20 prose prose-slate">
+            <li class="w-1/5 md:w-max text-center">
+                <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block text-blue-500 border-b-4 border-blue-500">
+                    <i class='bx bxs-home'></i>
+                </a>
+            </li>
+            <li class="w-1/5 md:w-max text-center">
+                <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+                    <i class='bx bx-movie-play'></i>
+                    <span class="text-xs absolute top-0 right-1/4 bg-red-500 text-white font-semibold rounded-full px-1 text-center">9+</span>
+                </a>
+            </li>
+            <li class="w-1/5 md:w-max text-center">
+                <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+                    <i class='bx bx-store'></i>
+                </a>
+            </li>
+            <li class="w-1/5 md:w-max text-center">
+                <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+                    <i class='bx bx-group'></i>
+                </a>
+            </li>
+            <li class="w-1/5 md:w-max text-center hidden md:inline-block">
+                <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+                    <i class='bx bx-layout'></i>
+                    <span class="text-xs absolute top-0 right-1/4 bg-red-500 text-white font-semibold rounded-full px-1 text-center">9+</span>
+                </a>
+            </li>
+            <li class="w-1/5 md:w-max text-center inline-block md:hidden">
+                <a href="#" class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block rounded text-gray-600 hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt relative">
+                    <i class='bx bx-menu'></i>
+                </a>
+            </li>
+        </ul> */}
+
+
         <span className="mr-4 md:hidden"> {renderThemeChanger()}</span>
 
         <div
@@ -200,30 +354,70 @@ const [clientWindowHeight, setClientWindowHeight] = useState("");
           {/* hamburger button */}
           <span
             className={`h-1 w-full bg-gray-800 dark:bg-gray-500 rounded transform transition duration-300 ease-in-out ${
-              open ? 'rotate-45 translate-y-2' : ''
+              open ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
             className={`h-1 w-full bg-gray-800 dark:bg-gray-500  rounded  transition-all duration-300 ease-in-out ${
-              open ? 'w-0' : 'w-full'
+              open ? "w-0" : "w-full"
             }`}
           />
           <span
             className={`h-1 w-full bg-gray-800 dark:bg-gray-500  rounded  transform transition duration-300 ease-in-out ${
-              open ? '-rotate-45 -translate-y-2' : ''
+              open ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
         </div>
 
         <div className="hidden md:flex text-gray-600 dark:text-gray-400">
-          <NavLink to="/articles"
-        
-          >Articles</NavLink>
+          <NavLink to="/articles">Blog</NavLink>
           <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/snippets">Snippets</NavLink>
+          <NavLink to="/notes">Notes</NavLink>
           <NavLink to="/about">About</NavLink>
-          <span className="ml-3">{renderThemeChanger()} </span>
+         
         </div>
-      </div>
+     
+
+        
+
+        {/* right nav */}
+
+      
+        <ul class="hidden md:flex mx-4 items-center justify-center">
+           
+            <li>
+                {/* <div class="text-xl hidden xl:grid place-items-center bg-gray-200 dark:bg-dark-third dark:text-dark-txt rounded-full mx-1 p-3 cursor-pointer hover:bg-gray-300 relative">
+                    <i class='bx bx-plus'></i>
+                </div> */}
+                 <div href="#" className="text-xl hidden xl:grid place-items-center bg-gray-200 dark:bg-dark-third dark:text-dark-txt rounded-full mx-1 p-2 cursor-pointer hover:bg-gray-300 relative">
+                
+                        <span className="sr-only">RSS</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="bi bi-twitter w-4 h-4"
+                          fill="currentColor"
+                          class="bi bi-rss-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                        </svg>
+                      </div>
+            </li>
+
+            <li class="h-full hidden xl:flex">
+            <span className="ml-3">{renderThemeChanger()} </span>
+            </li>
+           
+          
+        </ul>
+      
+      
+
+      {/* <div className="w-3/12 flex items-left ">
+        <Logo />
+      </div> */}
+     
     </nav>
   );
 }

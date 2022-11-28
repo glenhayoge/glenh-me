@@ -20,9 +20,9 @@ export default function Home({articles}) {
           <div className="flex flex-wrap items-stretch -m-4">
             <div className="w-full lg:w-2/3 p-4">
               <div className="dark:bg-gray-800 rounded-lg overflow-hidden shadow ">
-                <div className="pt-6 pb-3 px-6  bg-gray-200  dark:bg-gray-800">
+                <div className="pt-1 pb-1 px-6  bg-gray-200  dark:bg-gray-700">
                   <div className="flex mb-8 justify-between items-center">
-                    <div class="py-3 px-6 border-b dark:border-gray-600 border-gray-300 text-gray-600">
+                    <div class="py-3 px-3 border-b dark:border-gray-600 border-gray-300 text-gray-600">
                       <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
                         Recent Articles
                       </p>
@@ -57,7 +57,7 @@ export default function Home({articles}) {
 
       </main>
 
-                <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-800">
+                <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-700">
                   <a
                     class=" py-2 px-3 bg-yellow-400 dark:bg-yellow-400 hover:bg-yellow-600 rounded text-xs text-black"
                     href="#"
@@ -171,7 +171,7 @@ export default function Home({articles}) {
             <div class="w-full lg:w-1/3 p-4 ">
               <div class="p-0 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded-lg dark:bg-gray-800">
                 <div class="relative pt-10 pb-20 dark:bg-gray-800 shadow rounded overflow-hidden">
-                  <button class="absolute top-0 right-0 mr-6 mt-7 z-20 focus:outline-none rounded-full bg-gray-800 p-4">
+                  {/* <button class="absolute top-0 right-0 mr-6 mt-7 z-20 focus:outline-none rounded-full bg-gray-800 p-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -183,19 +183,19 @@ export default function Home({articles}) {
                       <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
                       <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
                     </svg>
-                  </button>
+                  </button> */}
 
                   <img
-                    class="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
+                    className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                   />
                   <Image
                     src={propic}
                     placeholder="blur"
                     alt="Picture of the Glen"
-                    className="bg-white relative w-16 h-16 mb-4 mx-auto rounded-full object-cover object-right"
-                    width={120}
-                    height={120}
+                    className="bg-white relative w-24 h-24 mb-2 mx-auto rounded-full object-cover object-right"
+                    width={140}
+                    height={140}
                   />
                   <div class="px-6 text-center py-6">
                     <h5

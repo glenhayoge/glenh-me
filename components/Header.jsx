@@ -5,9 +5,6 @@ import tribalPattern from '../assets/tribal-pattern.jpg';
 
 const { heroContent, heroWrapper, imageWrapper } = styles;
 
-// const IMAGE_URL =
-// "https://previews.123rf.com/images/balabolka/balabolka1508/balabolka150800130/44043266-abstract-vector-background-ethnique-tribal-pattern.jpg";
-
 export default function Header(props) {
   return (
     <div className={heroWrapper}>

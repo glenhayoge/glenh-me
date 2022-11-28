@@ -43,7 +43,11 @@
   .bg-hero { background-image: url('https://www.kindacode.com/wp-content/uploads/2022/06/hero-image-example.jpeg') }
 
 
-/* PrismJs VSCode Dark+ theme by (by tabuckner) */
+/* PrismJs VSCode Dark+ theme by (by tabuckner) 
+https://github.com/PrismJS/prism-themes/blob/master/themes/prism-vsc-dark-plus.css
+
+https://github.com/PrismJS/prism-themes
+*/
 
 pre[class*="language-"],
 code[class*="language-"] {
@@ -85,14 +89,14 @@ pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-	background: #1e1e1e;
+	background: #111827;
 }
 
 :not(pre) > code[class*="language-"] {
 	padding: .1em .3em;
 	border-radius: .3em;
 	color: #db4c69;
-	background: #1e1e1e;
+	background: #111827;
 }
 /*********************************************************
 * Tokens
