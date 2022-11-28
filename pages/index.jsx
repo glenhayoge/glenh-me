@@ -13,6 +13,10 @@ export default function Home({articles}) {
       <Head>
         <title>Glenh.me | Blog</title>
         <link rel="icon" href="/favicon.ico" />
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nanum+Pen+Script&display=swap');
+        </style> .  
       </Head>
       <Header/>
         <section className="py-8 ">
@@ -21,8 +25,14 @@ export default function Home({articles}) {
             <div className="w-full lg:w-2/3 p-4">
               <div className="dark:bg-gray-800 rounded-lg overflow-hidden shadow ">
                 <div className="pt-1 pb-1 px-6  bg-gray-200  dark:bg-gray-700">
+                  
                   <div className="flex mb-8 justify-between items-center">
+                 
                     <div class="py-3 px-3 border-b dark:border-gray-600 border-gray-300 text-gray-600">
+                    {/* <img
+                    className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
+                    src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
+                  /> */}
                       <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
                         Recent Articles
                       </p>
@@ -199,8 +209,8 @@ export default function Home({articles}) {
                   />
                   <div class="px-6 text-center py-6">
                     <h5
-                      id="signature"
-                      class="text-gray-600 dark:text-yellow-400 text-xl mb-4"
+                    
+                      className="signature text-gray-600 dark:text-yellow-400 text-xl mb-4"
                     >
                       GlenGHayoge
                     </h5>

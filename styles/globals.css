@@ -24,12 +24,12 @@
 }
 /* Signature font and style */
 
-#signature{
+.signature{
     font-family: 'Mrs Saint Delafield', cursive;
     font-size: 40px;
     text-align: center;
   }
-  #subtitle{
+  .subtitle{
     font-family: 'Nanum Pen Script', cursive;
     font-size: 30px;
     text-align: center;
@@ -40,7 +40,7 @@
     top: 0;
     backdrop-filter: saturate(180%) blur(20px);
   }
-  .bg-hero { background-image: url('https://www.kindacode.com/wp-content/uploads/2022/06/hero-image-example.jpeg') }
+  /* .bg-hero { background-image: url('https://www.kindacode.com/wp-content/uploads/2022/06/hero-image-example.jpeg') } */
 
 
 /* PrismJs VSCode Dark+ theme by (by tabuckner) 

@@ -64,7 +64,7 @@ export default function Header(props) {
         ">
           A Digest of a Perpetual Work in Progress
         </h2>
-        <p id="subtitle"className="text-xl sm:text-md text-center text-gray-500 dark:text-yellow-400 px-8 py-8">
+        <p className="subtitle text-xl sm:text-md text-center text-gray-500 dark:text-yellow-400 px-8 py-8">
         by a developer, designer & creator.
         </p>
       </div>
