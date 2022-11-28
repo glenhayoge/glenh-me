@@ -6,8 +6,14 @@ import Header from '../components/header';
 import Image from "next/image";
 import propic from "../assets/glens_1.png";
 import Newsletter from "../components/newsletter";
+import { useTimeAgo } from 'next-time-ago';
+
+
 
 export default function Home({articles}) {
+
+  const { TimeAgo } = useTimeAgo();
+
   return (
     <div>
       <Head>
@@ -323,7 +329,7 @@ export default function Home({articles}) {
                       </a>
                     </div>
                     <div class="py-1 px-6 text-xs italic text-gray-600">
-                      Updated:2 days ago
+                     Updated: <TimeAgo date='November 29, 2022 7:00 am' locale='pg' />
                     </div>
                   </div>
                   <div class="  mb-4 dark:text-gray-500  shadow text-center overflow-hidden dark:bg-gray-800">
