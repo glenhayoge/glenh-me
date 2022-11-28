@@ -228,8 +228,8 @@ const [clientWindowHeight, setClientWindowHeight] = useState("");
           <NavLink to="/notes">Notes</NavLink>
           <NavLink to="/about">About</NavLink>
           <span className="mr-2 ml-2">{renderThemeChanger()} </span>
-          <span className="text-xl place-item-center xl:grid place-items-center w-8 h-8 text-gray-500 bg-gray-200 dark:bg-dark-third  rounded-full mx-1  cursor-pointer hover:bg-gray-300 relative">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 dark:text" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <span className="text-xl place-item-center xl:grid place-items-center w-8 h-8 text-gray-500 bg-gray-200 dark:bg-dark-third rounded-full  cursor-pointer hover:bg-gray-300 relative">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 dark:text p-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" />
 </svg>
           </span>
