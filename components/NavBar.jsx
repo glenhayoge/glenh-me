@@ -14,15 +14,15 @@ function NavLink({ to, children }) {
 function MobileNav({ open, setOpen }) {
   return (
     <div
-      className={`absolute top-0 left-0 h-screen w-screen bg-white dark:bg-gray-800 transform ${
+      className={`absolute top-0 left-0 h-screen w-screen bg-white dark:bg-black transform ${
         open ? '-translate-x-0' : '-translate-x-full'
       } transition-transform duration-300 ease-in-out filter  `}
     >
-      {/* <div className="flex pl-3 items-left  justify-left filter shadow-lg shadow-yellow-400/50 bg-gray-200  dark:bg-gray-800 h-20">
+      {/* <div className="flex pl-3 items-left  justify-left filter shadow-lg shadow-yellow-400/50 bg-gray-200  dark:bg-gray-800/25 h-20">
        
         <Logo />
       </div> */}
-       <div className="w-3/12 flex items-left flex -mt-12 mb-16 pl-12  justify-left  bg-gray-200  dark:bg-gray-800 h-20">
+       <div className="w-3/12 flex items-left flex -mt-12 mb-16 pl-12  justify-left bg-white dark:bg-black h-20">
         <Logo />
       </div>
       <div className="flex flex-col ml-4 pl-8">
@@ -181,7 +181,7 @@ const [clientWindowHeight, setClientWindowHeight] = useState("");
 
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex filter px-16 py-4 h-20 items-center bg-gray-200 dark:bg-gray-800 navbar"
+    <nav className="flex filter lg:px-32 px-9 py-4 h-20 items-center bg-gray-200 dark:bg-gray-800/25 navbar"
     style={{
         background: `${backgroundTransparacy}`,
         boxShadow: `${boxShadow} 0px 0px 20px 6px`,
@@ -219,20 +219,17 @@ const [clientWindowHeight, setClientWindowHeight] = useState("");
         </div>
 
         <div className="hidden md:flex text-gray-600 items-center dark:text-gray-400">
-          <NavLink to="/articles"
-        
-          >Articles</NavLink>
-          <NavLink to="/articles">Blog</NavLink>
+          <NavLink to="/articles">Articles</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/snippets">Snippets</NavLink>
           <NavLink to="/notes">Notes</NavLink>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/about">About Me</NavLink>
           <span className="mr-2 ml-2">{renderThemeChanger()} </span>
-          <span className="text-xl place-item-center xl:grid place-items-center w-8 h-8 text-gray-500 bg-gray-200 dark:bg-dark-third rounded-full  cursor-pointer hover:bg-gray-300 relative">
+          {/* <span className="text-xl place-item-center xl:grid place-items-center w-8 h-8 text-gray-500 bg-gray-200 dark:bg-dark-third rounded-full  cursor-pointer hover:bg-gray-300 relative">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 dark:text p-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" />
 </svg>
-          </span>
+          </span> */}
         </div>
       </div>
     </nav>

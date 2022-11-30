@@ -172,8 +172,8 @@ export default function ArticleCard({
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
             <div className="w-full lg:w-2/3 p-4">
-              <div className="dark:bg-gray-800 rounded-lg overflow-hidden shadow ">
-                <div className="pt-6 pb-3 px-6  bg-gray-200  dark:bg-gray-800">
+              <div className="dark:bg-gray-800/25 rounded-lg overflow-hidden shadow ">
+                <div className="pt-6 pb-3 px-6  bg-gray-200  dark:bg-gray-800/25">
                   <div className="flex mb-8 justify-between items-center">
                     <div class="py-3 px-6 border-b dark:border-gray-600 border-gray-300 text-gray-600">
                       <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
@@ -184,7 +184,7 @@ export default function ArticleCard({
                 
                 </div>
 
-                <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-800">
+                <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-800/25">
                   <a
                     class=" py-2 px-3 bg-yellow-400 dark:bg-yellow-400 hover:bg-yellow-600 rounded text-xs text-black"
                     href="#"
@@ -194,7 +194,7 @@ export default function ArticleCard({
                 </div>
               </div>
 
-              <div class="container px-4 mx-auto bg-gray-200 dark:bg-gray-800 mt-8 rounded-lg">
+              <div class="container px-4 mx-auto bg-gray-200 dark:bg-gray-800/25 mt-8 rounded-lg">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
                   <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
                     Learning Resources
@@ -296,8 +296,8 @@ export default function ArticleCard({
               </div>
             </div>
             <div class="w-full lg:w-1/3 p-4 ">
-              <div class="p-0 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded-lg dark:bg-gray-800">
-                <div class="relative pt-10 pb-20 dark:bg-gray-800 shadow rounded overflow-hidden">
+              <div class="p-0 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded-lg dark:bg-gray-800/25">
+                <div class="relative pt-10 pb-20 dark:bg-gray-800/25 shadow rounded overflow-hidden">
                   <button class="absolute top-0 right-0 mr-6 mt-7 z-20 focus:outline-none rounded-full bg-gray-800 p-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -443,7 +443,7 @@ export default function ArticleCard({
                       Updated:2 days ago
                     </div>
                   </div>
-                  <div class="  mb-4 dark:text-gray-500  shadow text-center overflow-hidden dark:bg-gray-800">
+                  <div class="  mb-4 dark:text-gray-500  shadow text-center overflow-hidden dark:bg-gray-800/25">
                     <Newsletter />
                   </div>
                   <img
@@ -452,7 +452,7 @@ export default function ArticleCard({
                   />
                 </div>
               </div>
-              <div class="p-6 mt-8 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800">
+              <div class="p-6 mt-8 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800/25">
                 <h3 class="mb-2 text-xl font-bold ">Invite Member</h3>
                 <p class="mb-6 text-gray-500">Event for your team members</p>
                 <a
