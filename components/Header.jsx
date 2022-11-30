@@ -66,7 +66,7 @@ export default function Header(props) {
         </div>
        <div className="pb-8">
         <h2 className=" text-gray-800 text-center pt-8 px-4 tracking-wide sm:text-xl font-bold dark:text-gray-400 
-        font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-yellow-400
+        font-extrabold  bg-clip-text 
         ">
           A Digest of a Perpetual Work in Progress
         </h2>

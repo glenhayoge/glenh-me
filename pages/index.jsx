@@ -24,19 +24,19 @@ export default function Home({ articles }) {
         </style>{" "}
       </Head>
       <Header />
-      <section className="py-8 ">
+      <section className="py-24 ">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
             <div className="w-full lg:w-8/12 p-4">
-              <div className="dark:bg-gray-800/25 rounded-lg overflow-hidden shadow ">
-                <div className="pt-1 pb-1 px-6  bg-gray-200  dark:bg-gray-700/25">
-                  <div className="flex mb-8 justify-between items-center">
-                    <div class="py-3 px-3 border-b dark:border-gray-600 border-gray-300 text-gray-600">
+              <div className=" overflow-hidden">
+                <div className="pt-1 pb-1 px-6 ">
+                  <div className="flex mb-4 justify-between items-center">
+                    <div class="pt-2 px-3  text-gray-600">
                       {/* <img
                     className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                   /> */}
-                      <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
+                      <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500 dark:text-gray-400">
                         Recent Posts
                       </p>
                     </div>
@@ -69,20 +69,20 @@ export default function Home({ articles }) {
                   )}
                 </main>
 
-                <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-700/25">
+                <div class="ml-4 p-6 flex items-center justify-between ">
                   <a
-                    class=" py-2 px-3 bg-yellow-400 dark:bg-yellow-400 hover:bg-yellow-600 rounded text-xs text-black"
+                    class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
                     href="#"
                   >
-                    View All Articles...
+                    View All Articles
                   </a>
                 </div>
               </div>
 
              
-              <div class="container px-4 mx-auto bg-gray-200 dark:bg-gray-800/25 mt-8 rounded-lg">
+              <div class="container px-4 mx-auto mt-4">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
-                  <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
+                  <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
                     Side Projects
                   </p>
                   <p className="text-sm  text-gray-400 mt-3">
@@ -182,7 +182,7 @@ export default function Home({ articles }) {
               </div>
               <div class="container px-4 mx-auto bg-gray-200 dark:bg-gray-800/25 mt-8 rounded-lg">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
-                  <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
+                  <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500 dark:text-gray-400">
                     Learning Resources
                   </p>
                   <p className="text-sm  text-gray-400 mt-3">
@@ -283,7 +283,7 @@ export default function Home({ articles }) {
             </div>
             <div class="w-full lg:w-4/12 p-4 ">
               <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
-                <div class="relative pt-10 pb-20 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
+                <div class="relative pt-10 pb-20 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
                   {/* <button class="absolute top-0 right-0 mr-6 mt-7 z-20 focus:outline-none rounded-full bg-gray-800 p-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -328,7 +328,7 @@ export default function Home({ articles }) {
                     <a href="/about">
                     <button
                       type="button"
-                      class=" inline-block px-6 py-2.5 bg-yellow-400 dark:bg-yellow-400 text-gray-800 font-medium text-xs leading-tight uppercase rounded-lg hover:bg-yellow-500 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                      class=" inline-block px-6 py-2.5 outline outline-1  font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0   transition duration-150 ease-in-out"
                     >
                       Read More About Me...
                     </button>
@@ -436,29 +436,25 @@ export default function Home({ articles }) {
                   {/* <div class="  mb-4 dark:text-gray-500  shadow text-center overflow-hidden dark:bg-gray-800/25">
                     <Newsletter />
                   </div> */}
-                  <div href="/about" class="mb-10">
-                    <button
-                      type="button"
-                      class=" inline-block px-6 py-2.5 bg-teal-500  text-gray-800 font-medium text-xs leading-tight uppercase rounded-lg hover:bg-teal-600 hover:shadow-lg focus:bg-teal-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                    >
-                      Subscribe to Newsletter
-                    </button>
-                    </div>
+                  
                   <img
                     class="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-24 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                   />
                 </div>
               </div>
-              <div class="p-6 mt-8 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800/25">
-                <h3 class="mb-2 text-xl font-bold ">Invite Member</h3>
-                <p class="mb-6 text-gray-500">Event for your team members</p>
-                <a
-                  class="py-2 px-3 bg-indigo-500 hover:bg-indigo-600 rounded text-xs text-white"
-                  href="#"
-                >
-                  Send invitation
-                </a>
+              <div class="p-6 mt-8 dark:text-gray-500 bg-gray-200/25 shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800/25">
+                <h3 class="mb-2 text-xl font-bold ">Newsletter</h3>
+                <p class="mb-6 text-gray-500">Sign up & be notified when new articles & stuff are posted here. I won't spam or publish your email addresses. Unsubscribe anytime.
+      </p>
+                <div href="/about" class="mb-10">
+                    <button
+                      type="button"
+                      class=" inline-block px-6 py-2.5 outline outline-1  font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0   transition duration-150 ease-in-out"
+                    >
+                      Subscribe to Newsletter
+                    </button>
+                    </div>
               </div>
             </div>
           </div>

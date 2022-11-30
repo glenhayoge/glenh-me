@@ -84,11 +84,11 @@ export default function ArticleCard({
         {/* {posts.posts.map((p) => ( */}
         <div className="p-10 border-b  border-gray-400 dark:border-gray-600 border-dashed">
                     <div className="flex justify-between items-center mb-4">
-                      <span className="inline-block py-1 px-4 bg-gray-600 dark:bg-gray-900 text-xs text-gray-200 dark:text-yellow-400 rounded-full">
+                      <span className="inline-block uppercase py-1 px-2  text-xs text-gray-500 dark:text-gray-400 rounded-full">
                         {category}
                       </span>
                       <a
-                        className="flex mr-4 items-center text-xs text-gray-800 inline-block py-1 px-4 bg-gray-100 dark:text-yellow-400  dark:bg-gray-900 rounded-full dark:text-yellow-400"
+                        className="flex  items-center text-xs text-gray-800 inline-block py-1 px-2 bg-gray-100 dark:text-gray-500  dark:bg-gray-900 rounded-full dark:text-yellow-400"
                         href="#"
                       >
                         <span className="">{dateTime}</span>
@@ -109,7 +109,7 @@ export default function ArticleCard({
                         <div className="inline-flex items-center justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
                         {/* {dateTime} */} <a
                       href={`/article/${slug}`}
-                      className=' rounded-full p-1 text-teal-400 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
+                      className=' rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
                     >
                       Read More
                       <svg
@@ -130,7 +130,7 @@ export default function ArticleCard({
                       </div>
                       <div class="flex">
                         <a
-                          className="flex items-center text-xs text-gray-500 dark:text-yellow-400"
+                          className="flex items-center text-xs text-gray-500"
                           href="#"
                         >
                           <svg
@@ -146,7 +146,7 @@ export default function ArticleCard({
                           <span className="mr-2">{readingTime}</span>
                         </a>
                         <a
-                          className="flex items-center text-xs text-gray-500 dark:text-yellow-400"
+                          className="flex items-center text-xs text-gray-500"
                           href="#"
                         >
                           <svg

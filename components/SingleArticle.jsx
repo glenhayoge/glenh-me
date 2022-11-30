@@ -27,7 +27,7 @@ export const SingleArticle = ({
         <div className="w-full h-full overflow-y-auto">
           {/* <div className="flex items-center justify-center "> */}
           <div className="mx-auto prose prose-xl py-8 max-w-3xl  xl:max-w-5xl rounded-t">
-            <div className="inline-flex items-center px-4 justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
+            {/* <div className="inline-flex items-center px-4 justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
               <span className="text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,16 +52,41 @@ export const SingleArticle = ({
               >{" "}
                 BACK
               </Link>
-            </div>
-
-            <p className="block text-center text-base uppercase text-sm tracking-wide text-gray-600 dark:text-gray-200">
+            </div> */}
+            <div class="flex justify-between items-center px-16">
+        {/* <span class="inline-block py-1 px-2 bg-blue-50 text-xs text-blue-500 rounded-full">Development</span> */}
+        <p className="inline-block  text-center text-base uppercase text-sm tracking-wide text-gray-500 dark:text-gray-400">
               <span>{category}</span>
             </p>
-
-            <h1 className="mt-2 block text-center text-4xl px-2 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-900 sm:text-5xl ">
+        <button className="focus:outline-none flex justify-center text-sm ">
+        <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-gray-500 dark:text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
+                </svg> 
+                <Link
+                href="/"
+                className="text-gray-500 dark:text-gray-400"
+                style={{ textDecoration: "none" }}
+            
+              >{" "}
+                BACK
+              </Link>
+        </button>
+      </div>
+            <h1 className="mt-2 block text-center px-2 leading-10 text-4xl font-black tracking-tight sm:text-4xl  dark:text-yellow-400 text-gray-900 ">
               {title}
             </h1>
-            <p className="px-4  text-center leading-tight italic text-gray-500 dark:text-gray-200">
+            <p className="px-4 text-center lg:-mt-4 md:-mt-6 leading-tight italic text-gray-500 dark:text-gray-400">
               This is a dummy text for inserting a short description of the
               article
             </p>

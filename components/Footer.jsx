@@ -12,30 +12,36 @@ export default function Footer() {
             {/* <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
                 </svg> */}
-            <svg
-              class="w-16 h-16 fill-current text-gray-100"
+       <svg
+              className="w-16 h-16  border-2 bg-gray-400 dark:bg-yellow-400 border-gray-500 rounded-full dark:border-yellow-400 hover:bg-gray-900"
+              fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 233.08 233.08"
             >
-              <circle cx="116.54" cy="116.54" r="116.54" fill="#facd18" />
+              <circle cx="116.54" cy="116.54" r="116.54" fill="currentColor"className="text-gray-200 dark:text-black bg-gray-400 dark:bg-yellow-400" />
+            
               <polygon
                 points="122.1 27.11 200.36 66.64 186.08 72.49 121.24 38.08 54.66 61.05 104.12 93.08 135.66 81.07 114.2 67.8 128.14 63.09 159.93 82.29 101.63 106.97 29.54 58.97 122.1 27.11"
-                fill="#363636"
-                stroke="#363636"
+                fill="currentColor"
+                stroke="currentColor"
+                className="text-black dark:text-yellow-400"
+           
                 stroke-miterlimit="10"
                 stroke-width="3"
               />
               <polygon
                 points="90.04 122.38 93.71 210 82.13 200.93 79.62 127.81 32.4 94.96 35.3 150.93 54.16 164.88 52.54 141.06 61.02 146.75 63.3 187.37 27.32 159.2 23.42 78 90.04 122.38"
-                fill="#363636"
-                stroke="#363636"
+                fill="currentColor"
+                stroke="currentColor"
+                className="text-black dark:text-yellow-400"
                 stroke-miterlimit="10"
                 stroke-width="3"
               />
               <polygon
                 points="111.3 121.58 127.32 115.29 129.09 150.6 192.87 126.54 191.66 90.03 205.84 84.46 207.34 172.15 195.43 178.38 194.21 141.87 129.87 167.13 131.69 203.09 115.85 210 111.3 121.58"
-                fill="#363636"
-                stroke="#363636"
+                fill="currentColor"
+                stroke="currentColor"
+                className="text-black dark:text-yellow-400"
                 stroke-miterlimit="10"
                 stroke-width="3"
               />
