@@ -106,10 +106,10 @@ export default function ArticleCard({
                     </div>
                     <div className="flex justify-between">
                       <div className="flex items-center">
-                        <div className="inline-flex items-center justify-center text-xs font-medium text-gray-500 dark:text-yellow-400">
+                        <div className="inline-flex items-center justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
                         {/* {dateTime} */} <a
                       href={`/article/${slug}`}
-                      className='text-indigo-600 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
+                      className=' rounded-full p-1 text-teal-400 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
                     >
                       Read More
                       <svg

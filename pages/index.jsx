@@ -22,15 +22,14 @@ export default function Home({ articles }) {
           @import
           url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nanum+Pen+Script&display=swap');
         </style>{" "}
-        .
       </Head>
       <Header />
       <section className="py-8 ">
-        <div className="container px-4 mx-auto">
+        <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
-            <div className="w-full lg:w-3/4 p-4">
+            <div className="w-full lg:w-8/12 p-4">
               <div className="dark:bg-gray-800/25 rounded-lg overflow-hidden shadow ">
-                <div className="pt-1 pb-1 px-6  bg-gray-200  dark:bg-gray-700">
+                <div className="pt-1 pb-1 px-6  bg-gray-200  dark:bg-gray-700/25">
                   <div className="flex mb-8 justify-between items-center">
                     <div class="py-3 px-3 border-b dark:border-gray-600 border-gray-300 text-gray-600">
                       {/* <img
@@ -70,7 +69,7 @@ export default function Home({ articles }) {
                   )}
                 </main>
 
-                <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-700">
+                <div class="p-6 flex items-center justify-between bg-gray-500 dark:bg-gray-700/25">
                   <a
                     class=" py-2 px-3 bg-yellow-400 dark:bg-yellow-400 hover:bg-yellow-600 rounded text-xs text-black"
                     href="#"
@@ -282,7 +281,7 @@ export default function Home({ articles }) {
                 </div>
               </div>
             </div>
-            <div class="w-full lg:w-1/4 p-4 ">
+            <div class="w-full lg:w-4/12 p-4 ">
               <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
                 <div class="relative pt-10 pb-20 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
                   {/* <button class="absolute top-0 right-0 mr-6 mt-7 z-20 focus:outline-none rounded-full bg-gray-800 p-4">
@@ -393,14 +392,19 @@ export default function Home({ articles }) {
                       <a href="#" className="text-gray-400 hover:text-gray-500">
                         <span className="sr-only">RSS</span>
                         <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="bi bi-twitter w-5 h-5"
-                          fill="currentColor"
-                          class="bi bi-rss-fill"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                        </svg>
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"
+                            />
+                          </svg>
                       </a>
                     </div>
 
@@ -435,7 +439,7 @@ export default function Home({ articles }) {
                   <div href="/about" class="mb-10">
                     <button
                       type="button"
-                      class=" inline-block px-6 py-2.5 bg-indigo-500 dark:bg-indigo-500 text-gray-800 font-medium text-xs leading-tight uppercase rounded-lg hover:bg-yellow-500 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                      class=" inline-block px-6 py-2.5 bg-teal-500  text-gray-800 font-medium text-xs leading-tight uppercase rounded-lg hover:bg-teal-600 hover:shadow-lg focus:bg-teal-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                     >
                       Subscribe to Newsletter
                     </button>

@@ -48,7 +48,8 @@ export const SingleArticle = ({
                 href="/"
                 className="text-gray-500 dark:text-yellow-400"
                 style={{ textDecoration: "none" }}
-              >
+            
+              >{" "}
                 BACK
               </Link>
             </div>

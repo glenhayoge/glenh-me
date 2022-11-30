@@ -24,13 +24,12 @@ export default function IndexPage() {
   useEffect(() => {}, []);
   return (
     <>
-      <div>
+      
         <section className="py-8 ">
-          <div className="container px-4 mx-auto">
+          <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
             <div className="flex flex-wrap items-stretch -m-4">
-              <div className="w-full lg:w-3/4 p-4">
+              <div className="w-full lg:w-8/12 p-4">
                 <div className=" rounded-lg overflow-hidden ">
-                 
                     <div className="flex mt-4 justify-left text-left items-center">
                       <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-900 sm:text-5xl ">
                         About Me
@@ -192,15 +191,12 @@ export default function IndexPage() {
                         Check out the projects page to see a highlight of my
                         open-source work, and the blog for my tutorials and
                         more. 
-                        
-                       
                       </p>
                       <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-200">
                       My site has no ads, no affiliate links, no
                         tracking or analytics, no sponsored posts, and no
                         paywall. My only motivation for this site is to share
                         what I've learned with the world. 
-                        
                       </p>
                       <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-200">
                       Although the tide is
@@ -215,9 +211,6 @@ export default function IndexPage() {
                         taniarascia.com to say hi! I always appreciate meeting
                         new people.
                       </p>
-                     
-                       
-                    
                     </div>
 
                   <div class="w-full pt-10 lg:flex">
@@ -344,7 +337,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="w-full lg:w-1/4 p-4 ">
+              <div class="w-full lg:w-4/12 p-4 ">
                 <div class="p-0 dark:text-gray-500  shadow rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
                   <div class="relative pt-10 pb-20 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                     <div class="flex justify-center  px-4">
@@ -499,7 +492,7 @@ export default function IndexPage() {
             </div>
           </div>
         </section>
-      </div>
+      
     </>
   );
 }
