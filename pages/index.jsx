@@ -22,7 +22,7 @@ export default function Home({ articles }) {
           url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
           @import
           url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nanum+Pen+Script&display=swap');
-        </style>{" "}        
+        </style>       
       </Head>
       <Header />
       <section className="py-24 ">
@@ -207,7 +207,7 @@ export default function Home({ articles }) {
                    
                   </div>
                   <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                    <div class="flex justify-center">
+                   
                       <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                         <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
                           <div class="flex mb-2 justify-between text-left items-left">
@@ -262,7 +262,7 @@ export default function Home({ articles }) {
                           </span>
                         </div>
                       </div>
-                    </div>
+                 
                   </div>
                 </div>
                 <div class=" p-6 flex items-center justify-between ">
@@ -380,20 +380,6 @@ export default function Home({ articles }) {
             <div class="w-full lg:w-4/12 p-4 ">
               <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
                 <div class="relative pt-10 pb-20 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
-                  {/* <button class="absolute top-0 right-0 mr-6 mt-7 z-20 focus:outline-none rounded-full bg-gray-800 p-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      className="bi bi-bookmark-star h-4 w-4 text-yellow-400"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
-                      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
-                    </svg>
-                  </button> */}
-
                   <img
                     className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
@@ -529,17 +515,12 @@ export default function Home({ articles }) {
                       <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
                     </div>
                   </div>
-                  {/* <div class="  mb-4 dark:text-gray-500  shadow text-center overflow-hidden dark:bg-gray-800/25">
-                    <Newsletter />
-                  </div> */}
-                  
                   <img
                     class="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-24 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                   />
                 </div>
               </div>
-              {/* subscribe belowhere */}
               <Subscribe />
             </div>
           </div>

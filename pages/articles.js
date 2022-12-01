@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-
-
+import ArticleList from "../components/ArticleList";
+import { allArticles } from "contentlayer/generated";
+import { select } from "../utils/select";
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
 import Subscribe from "../components/Subscribe";
 
-export default function IndexPage() {
+export default function IndexPage({ articles }) {
 
   useEffect(() => {}, []);
   return (
@@ -18,185 +19,31 @@ export default function IndexPage() {
                 <div className=" rounded-lg overflow-hidden ">
                     <div className="flex mt-4 justify-left text-left items-center">
                       <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
-                        Blog Posts
+                        All Posts
                       </h1>
                     </div>
                     <div className="w-full h-full overflow-y-auto">
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        I am Glen, a software developer from Papua New Guinea. I
-                        use this space on the internet to create and share
-                        contents on software projects, articles, tutorials,
-                        guides, issues, musings, and lots more... I love
-                        building things and have a long list of abandoned side
-                        projects and some stale piles of code that I hope to
-                        keep adding to.
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        Check out the projects page to see a highlight of my
-                        open-source work, and the blog for my tutorials and
-                        more. 
-                        
-                       
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      My site has no ads, no affiliate links, no
-                        tracking or analytics, no sponsored posts, and no
-                        paywall. My only motivation for this site is to share
-                        what I've learned with the world. 
-                        
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      Although the tide is
-                        against me, I want to make the internet a better place.
-                        Even if it's just right here. I hope I will inspire
-                        others to make their own creative corner on the web as
-                        well. 
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                            
-                      You can contact me by email at hello at
-                        taniarascia.com to say hi! I always appreciate meeting
-                        new people.
-                      </p>
-                     
-                       
-                    
-                    </div>
-                    {/* what im doing */}
-                    <div className="flex mt-4 justify-left text-left items-center   ">
-                      <h2 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl ">
-                      What I'm doing now
-                      </h2>
-                    </div>
-                    <div className="w-full h-full overflow-y-auto">
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        I am Glen, a software developer from Papua New Guinea. I
-                        use this space on the internet to create and share
-                        contents on software projects, articles, tutorials,
-                        guides, issues, musings, and lots more... I love
-                        building things and have a long list of abandoned side
-                        projects and some stale piles of code that I hope to
-                        keep adding to.
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        Check out the projects page to see a highlight of my
-                        open-source work, and the blog for my tutorials and
-                        more. 
-                        
-                       
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      My site has no ads, no affiliate links, no
-                        tracking or analytics, no sponsored posts, and no
-                        paywall. My only motivation for this site is to share
-                        what I've learned with the world. 
-                        
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      Although the tide is
-                        against me, I want to make the internet a better place.
-                        Even if it's just right here. I hope I will inspire
-                        others to make their own creative corner on the web as
-                        well. 
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                            
-                      You can contact me by email at hello at
-                        taniarascia.com to say hi! I always appreciate meeting
-                        new people.
-                      </p>
-                     
-                       
-                    
-                    </div>
-               {/* what im reading */}
-               <div className="flex mt-4 justify-left text-left items-center">
-                      <h2 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
-                      What I'm Watching
-                      </h2>
-                    </div>
-                    <div className="w-full h-full overflow-y-auto">
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        I am Glen, a software developer from Papua New Guinea. I
-                        use this space on the internet to create and share
-                        contents on software projects, articles, tutorials,
-                        guides, issues, musings, and lots more... I love
-                        building things and have a long list of abandoned side
-                        projects and some stale piles of code that I hope to
-                        keep adding to.
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        Check out the projects page to see a highlight of my
-                        open-source work, and the blog for my tutorials and
-                        more. 
-                        
-                       
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      My site has no ads, no affiliate links, no
-                        tracking or analytics, no sponsored posts, and no
-                        paywall. My only motivation for this site is to share
-                        what I've learned with the world. 
-                        
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      Although the tide is
-                        against me, I want to make the internet a better place.
-                        Even if it's just right here. I hope I will inspire
-                        others to make their own creative corner on the web as
-                        well. 
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                            
-                      You can contact me by email at hello at
-                        taniarascia.com to say hi! I always appreciate meeting
-                        new people.
-                      </p>
-                     
-                       
-                    
-                    </div>
+                    <main>
+                  {articles.map(
+                    ({
+                      title,
+                      description,
+                      slug,
+                      image,
+                      category,
+                      publishedAt,
+                      readingTime,
+                    }) => (
+                      <ArticleList
+                      key={slug}
+                      title={title}
+                      slug={slug}
+                      dateTime={publishedAt}
 
-                       {/* my dev tools */}
-               <div className="flex mt-4 justify-left text-left items-center  ">
-                      <h5 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
-                      What I'm Reading
-                      </h5>
-                    </div>
-                    <div className="w-full h-full overflow-y-auto">
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        I am Glen, a software developer from Papua New Guinea. I
-                        use this space on the internet to create and share
-                        contents on software projects, articles, tutorials,
-                        guides, issues, musings, and lots more... I love
-                        building things and have a long list of abandoned side
-                        projects and some stale piles of code that I hope to
-                        keep adding to.
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        Check out the projects page to see a highlight of my
-                        open-source work, and the blog for my tutorials and
-                        more. 
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      My site has no ads, no affiliate links, no
-                        tracking or analytics, no sponsored posts, and no
-                        paywall. My only motivation for this site is to share
-                        what I've learned with the world. 
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                      Although the tide is
-                        against me, I want to make the internet a better place.
-                        Even if it's just right here. I hope I will inspire
-                        others to make their own creative corner on the web as
-                        well. 
-                      </p>
-                      <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                            
-                      You can contact me by email at hello at
-                        taniarascia.com to say hi! I always appreciate meeting
-                        new people.
-                      </p>
+                      />
+                    )
+                  )}
+                </main>
                     </div>
                 </div>
               </div>
@@ -233,4 +80,29 @@ export default function IndexPage() {
       
     </>
   );
+
+  
 }
+
+export function getStaticProps() {
+  const articles = allArticles
+    .map((article) =>
+      select(article, [
+        "slug",
+        "title",
+        "description",
+        "publishedAt",
+        "readingTime",
+        "author",
+        "category",
+        "image",
+      ])
+    )
+    .sort(
+      (a, b) =>
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    );
+
+  return { props: { articles } };
+}
+
