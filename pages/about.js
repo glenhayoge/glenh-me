@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTimeAgo } from "next-time-ago";
-
+import Subscribe from "../components/Subscribe";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -343,28 +343,13 @@ export default function IndexPage() {
                         <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
                       </div>
                     </div>
-                    {/* <div class="  mb-4 dark:text-gray-500  shadow text-center overflow-hidden dark:bg-gray-800/25">
-                    <Newsletter />
-                  </div> */}
                     <img
                       class="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-24 object-cover"
                       src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                     />
                   </div>
                 </div>
-                <div class="p-6 mt-8 bg-gray-200/25 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800/25">
-                <h3 class="mb-2 text-xl font-bold dark:text-yellow-400 text-gray-500 sm:text-3xl">Newsletter</h3>
-                <p class="mb-6 text-gray-500">Sign up & be notified when new articles & stuff are posted here. I won't spam or publish your email addresses. Unsubscribe anytime.
-      </p>
-                <div href="/about" class="mb-10">
-                    <button
-                      type="button"
-                      class=" inline-block px-6 py-2.5 outline outline-1  font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0   transition duration-150 ease-in-out"
-                    >
-                      Subscribe to Newsletter
-                    </button>
-                    </div>
-              </div>
+                <Subscribe/>
               </div>
             </div>
           </div>
