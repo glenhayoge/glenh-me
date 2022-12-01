@@ -146,8 +146,11 @@ export const SingleArticle = ({
                   </div>
                   <div>
                     <span class="text-sm text-gray-500">
-                      {publishedAt} <b>&#8226;</b> 2 min read
+                      {publishedAt}
                     </span>
+        
+                    <span class="w-2 h-2 inline-block bg-gray-500 rounded-full ml-2 mr-2"></span>
+  <span class="text-sm text-gray-500">2 min read</span>
                   </div>
                 </div>
               </div>

@@ -32,17 +32,18 @@ export default function Home({ articles }) {
                 <div className="pt-1 pb-1 px-6 ">
                   <div className="flex mb-4 justify-between items-center">
                     <div class="pt-2 px-3  text-gray-600">
-                      {/* <img
-                    className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
-                    src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
-                  /> */}
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
                         Recent Posts
                       </p>
+                      <p className="text-sm  text-gray-400 mt-3">
+                    {" "}
+                    Checkout selected books, blogs, videos and other learning
+                    resources for software and personal development.
+                  </p>
                     </div>
                   </div>
                 </div>
-                {/* Place Main Below */}
+          
                 <main>
                   {articles.map(
                     ({
@@ -72,9 +73,9 @@ export default function Home({ articles }) {
                 <div class="ml-4 p-6 flex items-center justify-between ">
                   <a
                     class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
-                    href="#"
+                    href="/articles"
                   >
-                    View All Articles
+                    View All Posts
                   </a>
                 </div>
               </div>
@@ -82,104 +83,198 @@ export default function Home({ articles }) {
              
               <div class="container px-4 mx-auto mt-4">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
+               
                   <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
                     Side Projects
                   </p>
                   <p className="text-sm  text-gray-400 mt-3">
                     {" "}
-                    Checkout selected books, blogs, videos and other learning
-                    resources for software and personal development.
+                    Selected projects I've worked on
                   </p>
                 </div>
+                
                 <div class="flex flex-wrap -m-4 text-center p-4">
-                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-                      <span class="text-xs ">
-                        <span class="inline-block mr-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-book w-6 h-6"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-                          </svg>
-                        </span>
-                      </span>
-                      <h2 class="mb-2 text-m uppercase tracking-widest ">
-                        Books
-                      </h2>
-                    </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                    {/* <div class="flex justify-center"> */}
+                      <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+                        <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                          <div class="flex mb-2 justify-between text-left items-left">
+                            <p class=" text-gray-500 text-xs">2022</p>
+
+                            <div>
+                              <p class="block text-right text-xs ">1231 ⭐</p>
+                            </div>
+                          </div>
+                          Glenh.me
+                        </div>
+                        <div class="p-4 items-left flex-left">
+                          <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
+                            The source code of this website. Glenh.me
+                          </p>
+                          <button class="bg-gray-300/25 outline ouline-1 hover:oultine-2 outline-gray-400 text-gray-400 text-sm py-1 px-2 rounded-lg inline-flex items-center">
+                            <span>Source</span>
+
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-4 h-4 ml-1 dark:text-gray-400"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                          <span>
+                            {" "}
+                            <i class="devicon-react-original p-1"></i>
+                          </span>
+                          <span>
+                            {" "}
+                            <i class="devicon-nextjs-original p-1"></i>
+                          </span>
+                          <span>
+                          <i class="devicon-tailwindcss-plain p-1"></i>
+                          </span>
+                         
+                        </div>
+                      </div>
+                    {/* </div> */}
                   </div>
-                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-                      <span class="text-xs ">
-                        <span class="inline-block mr-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-card-heading w-6 h-6"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-                            <path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z" />
-                          </svg>
-                        </span>
-                      </span>
-                      <h2 class="mb-2 text-m uppercase tracking-widest">
-                        Blogs
-                      </h2>
-                    </div>
+                  <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                   
+                      <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+                        <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                          <div class="flex mb-2 justify-between text-left items-left">
+                            <p class=" text-gray-500 text-xs">2022</p>
+
+                            <div>
+                              <p class="block text-right text-xs ">1231 ⭐</p>
+                            </div>
+                          </div>
+                          Dzagoo Website
+                        </div>
+                        <div class="p-4 items-left flex-left">
+                          <p class="text-gray-500 text-center mb-4 text-sm tracking-tight leading-tight ">
+                            A digital solutions business website. Dzagoo.com
+                          
+                          </p>
+                          <button class="bg-gray-300/25 outline ouline-1 hover:bg-grey outline-gray-400 text-gray-400 text-sm py-1 px-2 rounded-lg inline-flex items-center">
+                            <span>Live site</span>
+
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-4 h-4 ml-1 dark:text-gray-400"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                          <span>
+                            {" "}
+                            <i class="devicon-javascript-plain p-1"></i>
+                          </span>
+                          <span>
+                            {" "}
+                            <i class="devicon-php-plain p-1"></i>
+                          </span>
+                          <span>
+                          <i class="devicon-css3-plain p-1"></i>
+                          </span>
+                          <span>
+                            {" "}
+                            <i class="devicon-tailwindcss-plain p-1"></i>
+                          </span>
+                        
+                        </div>
+                      </div>
+                   
                   </div>
-                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-                      <span class="text-xs ">
-                        <span class="inline-block mr-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-briefcase w-6 h-6"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
-                          </svg>
-                        </span>
-                      </span>
-                      <h2 class="mb-2 text-m uppercase tracking-widest">
-                        Courses
-                      </h2>
-                    </div>
-                  </div>
-                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-                      <span class="text-xs">
-                        <span class="inline-block mr-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-collection-play w-6 h-6"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z" />
-                            <path d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5h13z" />
-                          </svg>
-                        </span>
-                      </span>
-                      <h2 class="mb-2 text-m uppercase tracking-widest">
-                        Videos
-                      </h2>
+                  <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                    <div class="flex justify-center">
+                      <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+                        <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                          <div class="flex mb-2 justify-between text-left items-left">
+                            <p class=" text-gray-500 text-xs">2022</p>
+
+                            <div>
+                              <p class="block text-right text-xs ">1231 ⭐</p>
+                            </div>
+                          </div>
+                          FPDA Webapp
+                        </div>
+                        <div class="p-4 items-left flex-left">
+                          <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
+                            FPDA's official website. Fpda.com.pg
+                          </p>
+                          <button class="bg-gray-300/25 outline ouline-1 hover:bg-grey outline-gray-400 text-gray-400 text-sm py-1 px-2 rounded-lg inline-flex items-center">
+                            <span>Live site</span>
+
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="w-4 h-4 ml-1 dark:text-gray-400"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                          <span>
+                            {" "}
+                            <i class="devicon-bulma-plain p-1"></i>
+                          </span>
+                          <span>
+                            {" "}
+                            <i className="devicon-django-plain p-1"></i>
+                          </span>
+                          <span>
+                            <i className="devicon-docker-plain p-1"></i>
+                          </span>
+                          <span>
+                          <i class="devicon-python-plain p-1"></i>
+                          </span>
+                          <span>
+                          <i class="devicon-javascript-plain p-1"></i>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class=" p-6 flex items-center justify-between ">
+                  <a
+                    class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
+                    href="/projects"
+                  >
+                    View Projects
+                  </a>
+                </div>
               </div>
+
+            
               <div class="container px-4 mx-auto bg-gray-200 dark:bg-gray-800/25 mt-8 rounded-lg">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
                   <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500 dark:text-gray-400">
@@ -443,8 +538,8 @@ export default function Home({ articles }) {
                   />
                 </div>
               </div>
-              <div class="p-6 mt-8 dark:text-gray-500 bg-gray-200/25 shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800/25">
-                <h3 class="mb-2 text-xl font-bold ">Newsletter</h3>
+              <div class="p-6 mt-8 bg-gray-200/25 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800/25">
+                <h3 class="mb-2 text-xl font-bold dark:text-yellow-400 text-gray-500 sm:text-3xl">Newsletter</h3>
                 <p class="mb-6 text-gray-500">Sign up & be notified when new articles & stuff are posted here. I won't spam or publish your email addresses. Unsubscribe anytime.
       </p>
                 <div href="/about" class="mb-10">

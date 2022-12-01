@@ -18,7 +18,6 @@ export default function IndexPage() {
                   Projects
                 </h1>
               </div>
-
               <div class="container mx-auto w-full mt-8 rounded-lg">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
                   <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
@@ -66,7 +65,7 @@ export default function IndexPage() {
                             </svg>
                           </button>
                         </div>
-                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-600">
+                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                           <span>
                             {" "}
                             <i class="devicon-react-original p-1"></i>
@@ -120,7 +119,7 @@ export default function IndexPage() {
                             </svg>
                           </button>
                         </div>
-                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-600">
+                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                           <span>
                             {" "}
                             <i class="devicon-javascript-plain p-1"></i>
@@ -177,7 +176,7 @@ export default function IndexPage() {
                             </svg>
                           </button>
                         </div>
-                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-600">
+                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                           <span>
                             {" "}
                             <i class="devicon-bulma-plain p-1"></i>
@@ -190,7 +189,7 @@ export default function IndexPage() {
                             <i className="devicon-docker-plain p-1"></i>
                           </span>
                           <span>
-                          <i class="devicon-css3-plain p-1"></i>
+                          <i class="devicon-python-plain p-1"></i>
                           </span>
                           <span>
                           <i class="devicon-javascript-plain p-1"></i>
@@ -235,7 +234,7 @@ export default function IndexPage() {
                             </svg>
                           </button>
                         </div>
-                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-600">
+                        <div class="py-3 text-2xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                           <span>
                             {" "}
                             <i className="devicon-angularjs-plain p-1"></i>
@@ -244,16 +243,17 @@ export default function IndexPage() {
                             {" "}
                             <i className="devicon-django-plain p-1"></i>
                           </span>
-                          <span>
-                            <i className="devicon-docker-plain p-1"></i>
-                          </span>
+                         
                           <span>
                             {" "}
                             <i className="devicon-ionic-original p-1"></i>
                           </span>
                           <span>
                             {" "}
-                            <i className="devicon-nginx-original p-1"></i>
+                            <i class="devicon-python-plain p-1"></i>
+                          </span>
+                          <span>
+                            <i className="devicon-docker-plain p-1"></i>
                           </span>
                         
                         </div>
@@ -448,27 +448,6 @@ export default function IndexPage() {
           </div>
         </div>
       </section>
-      {/* <div className="navgationCard">
-        <Link href="/">
-          Back
-        </Link>
-      </div>
-      <div class="flex justify-center">
-  <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
-    <div class="py-3 px-6 border-b border-gray-300">
-      Featured
-    </div>
-    <div class="p-6">
-      <h5 class="text-gray-900 text-xl font-medium mb-2">Special title treatment</h5>
-      <p class="text-gray-700 text-base mb-4">
-        With supporting text below as a natural lead-in to additional content.
-      </p>
-      <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-    </div>
-    <div class="py-3 px-6 border-t border-gray-300 text-gray-600">
-      2 days ago
-    </div>
-  </div> */}
     </>
   );
 }

@@ -13,9 +13,6 @@ import {
   LinkedinIcon,
 } from "next-share";
 
-// import pink from "../imges/pink.jpg";
-
-// import CDNcard from "../component/CDNcard";
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
 

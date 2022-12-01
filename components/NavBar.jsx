@@ -35,10 +35,10 @@ function MobileNav({ open, setOpen }) {
             }, 100)
           }
         >
-          Articles
+          Blog
         </a>
         <a
-          className="text-xl font-normal my-4"
+          className="text-xl font-medium my-4"
           href="/projects"
           onClick={() =>
             setTimeout(() => {
@@ -49,8 +49,19 @@ function MobileNav({ open, setOpen }) {
           Projects
         </a>
         <a
-          className="text-xl font-normal my-4"
-          href="/about"
+          className="text-xl font-medium my-4"
+          href="/projects"
+          onClick={() =>
+            setTimeout(() => {
+              setOpen(!open);
+            }, 100)
+          }
+        >
+          Snippets
+        </a>
+        <a
+          className="text-xl font-medium my-4"
+          href="/snippets"
           onClick={() =>
             setTimeout(() => {
               setOpen(!open);
