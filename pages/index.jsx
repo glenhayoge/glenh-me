@@ -21,7 +21,7 @@ export default function Home({ articles }) {
           url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
           @import
           url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nanum+Pen+Script&display=swap');
-        </style>{" "}
+        </style>{" "}        
       </Head>
       <Header />
       <section className="py-24 ">
@@ -36,7 +36,7 @@ export default function Home({ articles }) {
                     className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                   /> */}
-                      <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500 dark:text-gray-400">
+                      <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
                         Recent Posts
                       </p>
                     </div>
@@ -328,7 +328,7 @@ export default function Home({ articles }) {
                     <a href="/about">
                     <button
                       type="button"
-                      class=" inline-block px-6 py-2.5 outline outline-1  font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0   transition duration-150 ease-in-out"
+                      class=" inline-block px-6 py-2.5 outline outline-1 font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     >
                       Read More About Me...
                     </button>

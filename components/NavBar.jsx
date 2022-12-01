@@ -219,10 +219,9 @@ const [clientWindowHeight, setClientWindowHeight] = useState("");
         </div>
 
         <div className="hidden md:flex text-gray-600 items-center dark:text-gray-400">
-          <NavLink to="/articles">Posts</NavLink>
+          <NavLink to="/articles">Blog</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/snippets">Snippets</NavLink>
-          <NavLink to="/arts">Arts</NavLink>
           <NavLink to="/about">About</NavLink>
           <span className="ml-4">{renderThemeChanger()} </span>
           {/* <span className="text-xl place-item-center xl:grid place-items-center w-8 h-8 text-gray-500 bg-gray-200 dark:bg-dark-third rounded-full  cursor-pointer hover:bg-gray-300 relative">
