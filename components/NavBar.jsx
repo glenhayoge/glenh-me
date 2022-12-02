@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Logo from "../components/logo";
-import MobileNav from "../components/MobileNav";
+import Mobilenav from "../components/MobileNav";
 import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
@@ -12,7 +12,7 @@ function NavLink({ to, children }) {
   );
 }
 //MobileNav
-<MobileNav />;
+<Mobilenav />;
 // main navbar
 export default function Navbar() {
   // dark light mode feature
@@ -78,7 +78,7 @@ export default function Navbar() {
       }}
     >
       {" "}
-      <MobileNav open={open} setOpen={setOpen} />
+      <Mobilenav open={open} setOpen={setOpen} />
       <div className="w-3/12 flex items-left ">
         <Logo />
       </div>

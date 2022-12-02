@@ -39,7 +39,7 @@ export default function MobileNav({ open, setOpen }) {
           </a>
           <a
             className="text-xl font-medium my-4"
-            href="/projects"
+            href="/snippets"
             onClick={() =>
               setTimeout(() => {
                 setOpen(!open);
@@ -50,7 +50,7 @@ export default function MobileNav({ open, setOpen }) {
           </a>
           <a
             className="text-xl font-medium my-4"
-            href="/snippets"
+            href="/about"
             onClick={() =>
               setTimeout(() => {
                 setOpen(!open);

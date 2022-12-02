@@ -37,15 +37,13 @@ export default function IndexPage() {
                         I am Glen, a software developer from Papua New Guinea. I
                         use this space on the internet to create and share
                         contents on software projects, articles, tutorials,
-                        guides, issues, musings, and lots more... I love
+                        guides, issues, musings, and lots more. I love
                         building things and have a long list of abandoned side
                         projects and some stale piles of code that I hope to
                         keep adding to.
                       </p>
                       <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                        Check out the projects page to see a highlight of my
-                        open-source work, and the blog for my tutorials and
-                        more. 
+                        The projects page has highlights of my work. Read tutorials and other stuffs on the blog page. 
                         
                        
                       </p>
@@ -65,8 +63,8 @@ export default function IndexPage() {
                       </p>
                       <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                             
-                      You can contact me by email at hello at
-                        taniarascia.com to say hi! I always appreciate meeting
+                      Say hi to me by sending an email to gghayoge at
+                        gmail.com if you like what I am doing. I appreciate meeting
                         new people.
                       </p>
                      
