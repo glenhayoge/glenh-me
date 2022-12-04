@@ -41,7 +41,7 @@ export default function Home({ articles }) {
                       </p>
                       <p className="text-sm  text-gray-400 mt-3">
                     {" "}
-                    Read articles, guides & tutorials and lots more.
+                    Read articles, guides,tutorials and lots more.
                   </p>
                     </div>
                   </div>

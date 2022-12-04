@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 
-// import pink from "../imges/pink.jpg";
+import projects from "../assets/pattern.png";
 
 // import CDNcard from "../component/CDNcard";
 import { useEffect } from "react";
@@ -13,11 +14,35 @@ export default function IndexPage() {
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
           <div className=" w-full items-stretch">
             <div className=" rounded-lg overflow-hidden ">
-              <div className="flex mt-4 justify-left text-left items-center">
+              {/* <div className="flex mt-4 justify-left text-left items-center">
                 <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
                   Projects
                 </h1>
-              </div>
+              </div> */}
+              {/* <div class="mb-8 p-8 rounded"> */}
+                <div class="flex flex-wrap items-center ">
+                  <div class="w-full lg:w-2/3 px-4">
+                    <h2 class="mb-4 block text-left text-4xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
+                      Projects
+                    </h2>
+                    {/* <p class="text-dark-500">
+                      We have prepared the most frequently asked questions for
+                      you
+                    </p> */}
+                  </div>
+                  <div class="w-full lg:w-1/3 px-4 flex items-center">
+                    {/* <img src="artemis-assets/images/office.png" alt=""/> */}
+                    <Image
+                      src={projects}
+                      alt="Projects Image"
+                      width="350px"
+                      height="300px"
+                      layout="responsive"
+                      className="opacity-30"
+                    />
+                  </div>
+                </div>
+              {/* </div> */}
               <div class="container mx-auto w-full mt-8 rounded-lg">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
                   <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
@@ -30,7 +55,7 @@ export default function IndexPage() {
                 </div>
                 <div class="flex flex-wrap -m-4 text-center p-4">
                   <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="flex justify-center">
+                  
                       <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                         <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
                           <div class="flex mb-2 justify-between text-left items-left">
@@ -75,15 +100,14 @@ export default function IndexPage() {
                             <i class="devicon-nextjs-original p-1"></i>
                           </span>
                           <span>
-                          <i class="devicon-tailwindcss-plain p-1"></i>
+                            <i class="devicon-tailwindcss-plain p-1"></i>
                           </span>
-                         
                         </div>
                       </div>
-                    </div>
+                  
                   </div>
                   <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="flex justify-center">
+                   
                       <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                         <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
                           <div class="flex mb-2 justify-between text-left items-left">
@@ -129,19 +153,18 @@ export default function IndexPage() {
                             <i class="devicon-php-plain p-1"></i>
                           </span>
                           <span>
-                          <i class="devicon-css3-plain p-1"></i>
+                            <i class="devicon-css3-plain p-1"></i>
                           </span>
                           <span>
                             {" "}
                             <i class="devicon-tailwindcss-plain p-1"></i>
                           </span>
-                        
                         </div>
                       </div>
-                    </div>
+                   
                   </div>
                   <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="flex justify-center">
+                   
                       <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                         <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
                           <div class="flex mb-2 justify-between text-left items-left">
@@ -151,11 +174,11 @@ export default function IndexPage() {
                               <p class="block text-right text-xs ">1231 ⭐</p>
                             </div>
                           </div>
-                          Fpda.com.pg
+                          FPDA Website
                         </div>
                         <div class="p-6 items-left flex-left">
                           <p class="text-gray-500 text-center text-base mb-4">
-                            FPDA's official website. https://fpda.com.pg
+                            FPDA's official company website.
                           </p>
                           <button class="bg-gray-300/25 outline ouline-1 hover:bg-grey outline-gray-400 text-gray-400 text-sm py-1 px-2 rounded-lg inline-flex items-center">
                             <span>Live site</span>
@@ -189,17 +212,17 @@ export default function IndexPage() {
                             <i className="devicon-docker-plain p-1"></i>
                           </span>
                           <span>
-                          <i class="devicon-python-plain p-1"></i>
+                            <i class="devicon-python-plain p-1"></i>
                           </span>
                           <span>
-                          <i class="devicon-javascript-plain p-1"></i>
+                            <i class="devicon-javascript-plain p-1"></i>
                           </span>
                         </div>
                       </div>
-                    </div>
+                   
                   </div>
                   <div class="w-full md:w-1/2 lg:w-1/4 p-4">
-                    <div class="flex justify-center">
+                   
                       <div class="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                         <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
                           <div class="flex mb-2 justify-between text-left items-left">
@@ -243,7 +266,7 @@ export default function IndexPage() {
                             {" "}
                             <i className="devicon-django-plain p-1"></i>
                           </span>
-                         
+
                           <span>
                             {" "}
                             <i className="devicon-ionic-original p-1"></i>
@@ -255,10 +278,9 @@ export default function IndexPage() {
                           <span>
                             <i className="devicon-docker-plain p-1"></i>
                           </span>
-                        
                         </div>
                       </div>
-                    </div>
+                   
                   </div>
                 </div>
               </div>
