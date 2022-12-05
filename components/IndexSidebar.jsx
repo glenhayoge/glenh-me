@@ -4,12 +4,11 @@ import propic from "../assets/glens_1.png";
 import { useTimeAgo } from "next-time-ago";
 
 export default function ISideBar() {
-
-    const { TimeAgo } = useTimeAgo();
-    return (
-        <>
-        <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
-        <div class="relative pt-10 pb-20 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
+  const { TimeAgo } = useTimeAgo();
+  return (
+    <>
+      <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
+        <div class="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <img
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
             src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
@@ -18,9 +17,9 @@ export default function ISideBar() {
             src={propic}
             placeholder="blur"
             alt="Picture of the Glen"
-            className="bg-white relative w-24 h-24 mb-2 mx-auto rounded-full object-cover object-right"
-            width={140}
-            height={140}
+            className="bg-gray-200  relative w-18 h-18 mb-2 mx-auto rounded-full object-cover object-right"
+            width={100}
+            height={100}
           />
           <div class="px-6 text-center py-6">
             <h5 className="signature text-gray-600 dark:text-yellow-400 text-xl mb-4">
@@ -31,19 +30,19 @@ export default function ISideBar() {
             </p>
             <div class="flex items-center justify-center mb-6">
               <p className="text-m text-gray-600 dark:text-gray-400">
-                Hi, my name is Glen. I'm a software developer, designer
-                & creator in Papua New Guinea. I use this space on
-                internet to document & share snippets of my perpertual
-                learning & self improvement oddeseys.
+                Hi, my name is Glen. I'm a software developer, designer &
+                creator in Papua New Guinea. I use this space on internet to
+                document & share snippets of my perpertual learning & self
+                improvement oddeseys.
               </p>
             </div>
             <a href="/about">
-            <button
-              type="button"
-              class=" inline-block px-6 py-2.5 outline outline-1 font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-            >
-              More About Me...
-            </button>
+              <button
+                type="button"
+                class=" inline-block px-6 py-2.5 outline outline-1 font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+              >
+                More About Me...
+              </button>
             </a>
             <div className="flex justify-center space-x-6 my-6">
               <a
@@ -104,57 +103,63 @@ export default function ISideBar() {
               <a href="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">RSS</span>
                 <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"
-                    />
-                  </svg>
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"
+                  />
+                </svg>
               </a>
             </div>
 
-            <div class="mb-2 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
+            <div className="mb-2 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
               <a
-                class="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
                 href="#"
               >
                 Front-End
               </a>
               <a
-                class="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
                 href="#"
               >
                 Design
               </a>
               <a
-                class="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
                 href="#"
               >
                 Software Dev
               </a>
+              <div className="mt-8">
+                <p className="mb-6 text-sm text-gray-400">
+                  <strong className="italic">
+                    “Really good software is never finished; it continues to
+                    grow. If it doesn’t grow, it decays.”
+                  </strong>{" "}
+                  <br/>
+                  <span className="text-xs text-gray-500">— Melinda Varian, Software Engineer</span>
+                </p>
+              </div>
             </div>
-            <div class="py-1 px-6 text-xs italic text-gray-500">
-              Updated:{" "}
-              <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
+            <div className="py-1 px-6 text-xs italic text-gray-500">
+              Updated: <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
             </div>
           </div>
           <img
-            class="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-24 object-cover"
+            className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
             src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
           />
         </div>
       </div>
       <Subscribe />
-    
-</>
-    
-     
-    )
+    </>
+  );
 }

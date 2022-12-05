@@ -31,7 +31,7 @@ export default function IProjects() {
                   <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     The source code of this website. Glenh.me
                   </p>
-                  <button class="bg-gray-300/25 outline ouline-1 hover:oultine-2 outline-gray-400 text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+                  <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Source</span>
 
                     <svg
@@ -85,7 +85,7 @@ export default function IProjects() {
                     A digital solutions business website. Dzagoo.com
                   
                   </p>
-                  <button class="bg-gray-300/25 outline ouline-1 hover:bg-grey outline-gray-400 text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+                  <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Live site</span>
 
                     <svg
@@ -142,7 +142,7 @@ export default function IProjects() {
                   <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     FPDA's official website. Fpda.com.pg
                   </p>
-                  <button class="bg-gray-300/25 outline ouline-1 hover:bg-grey outline-gray-400 text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+                  <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Live site</span>
 
                     <svg

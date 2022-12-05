@@ -25,11 +25,11 @@ export default function Header(props) {
 
       <div className={heroContent}>
       <div class="flex justify-center md:mt-15 space-y-6 my-8 items-center">
-          <a href="#" class="text-gray-400 hover:text-gray-500">
+          <a href="#" class="text-gray-400 hover:text-gray-500 ">
             <span class="sr-only">GlenGH Logo</span>
 
             <svg
-              className="w-20 h-20  border-2 bg-gray-400 dark:bg-yellow-400 border-gray-500 rounded-full dark:border-yellow-400 hover:bg-gray-900"
+              className="w-20 h-20  shadow shadow-2xl shadow-gray-800 dark:shadow-yellow-400 border-2 bg-gray-400 dark:bg-yellow-400 border-gray-500 rounded-full dark:border-yellow-400 hover:bg-gray-900"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 233.08 233.08"
