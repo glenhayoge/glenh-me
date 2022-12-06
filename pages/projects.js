@@ -64,10 +64,16 @@ export default function IndexPage() {
                             <p class="block text-right text-xs ">1231 ⭐</p>
                           </div>
                         </div>
-                        Glenh.me
+                        <div className="text-center">
+                    
+                      
+                        Glenh.me Website
+                      
+                        </div>
+                        
                       </div>
                       <div class="p-6 items-left flex-left">
-                        <p class="text-gray-500 text-center text-base mb-4">
+                        <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                           The source code of this website. https://glenh.me
                         </p>
                         <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -114,10 +120,15 @@ export default function IndexPage() {
                             <p class="block text-right text-xs ">1231 ⭐</p>
                           </div>
                         </div>
-                        Dzagoo.com
+                        <div className="text-center">
+                    
+                      
+                        Dzagoo.com Website
+                      
+                        </div>
                       </div>
                       <div class="p-6 items-left flex-left">
-                        <p class="text-gray-500 text-center text-base mb-4">
+                        <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                           A digital solutions business website.
                           https://dzagoo.com
                         </p>
@@ -169,11 +180,16 @@ export default function IndexPage() {
                             <p class="block text-right text-xs ">1231 ⭐</p>
                           </div>
                         </div>
-                        FPDA Website
+                        <div className="text-center">
+                    
+                      
+                    FPDA Website
+                  
+                    </div>
                       </div>
                       <div class="p-6 items-left flex-left">
-                        <p class="text-gray-500 text-center text-base mb-4">
-                          FPDA's official company website.
+                        <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
+                          FPDA's official company website. https://fpda.com.pg
                         </p>
                         <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                           <span>Live site</span>
@@ -225,10 +241,12 @@ export default function IndexPage() {
                             <p class="block text-right text-xs ">1231 ⭐</p>
                           </div>
                         </div>
-                        FARMIS-App
+                        <div className="text-center">
+                        FARMIS
+                        </div>
                       </div>
                       <div class="p-6 items-left flex-left">
-                        <p class="text-gray-500 text-center text-base mb-4">
+                        <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                           FARMIS agri-advisory mobile application
                         </p>
                         <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">

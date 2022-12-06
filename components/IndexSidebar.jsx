@@ -10,14 +10,14 @@ export default function ISideBar() {
       <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
         <div class="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <img
-            className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-24 object-cover"
+            className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
             src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
           />
           <Image
             src={propic}
             placeholder="blur"
             alt="Picture of the Glen"
-            className="bg-gray-200  relative w-18 h-18 mb-2 mx-auto rounded-full object-cover object-right"
+            className="bg-gray-200  relative w-18 h-18 mb-2 mx-auto rounded-lg object-cover object-right"
             width={100}
             height={100}
           />

@@ -25,7 +25,9 @@ export default function IProjects() {
                       <p class="block text-right text-xs ">1231 ⭐</p>
                     </div>
                   </div>
-                  Glenh.me
+                  <div className="text-center">
+                        Glenh.me Website
+                        </div>
                 </div>
                 <div class="p-4 items-left flex-left">
                   <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
@@ -78,7 +80,9 @@ export default function IProjects() {
                       <p class="block text-right text-xs ">1231 ⭐</p>
                     </div>
                   </div>
-                  Dzagoo Website
+                  <div className="text-center">
+                        Dzagoo Website
+                        </div>
                 </div>
                 <div class="p-4 items-left flex-left">
                   <p class="text-gray-500 text-center mb-4 text-sm tracking-tight leading-tight ">
@@ -136,7 +140,9 @@ export default function IProjects() {
                       <p class="block text-right text-xs ">1231 ⭐</p>
                     </div>
                   </div>
-                  FPDA Webapp
+                  <div className="text-center">
+                        FPDA Website
+                        </div>
                 </div>
                 <div class="p-4 items-left flex-left">
                   <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">

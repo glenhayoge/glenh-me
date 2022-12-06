@@ -1,4 +1,5 @@
 import React from "react";
+import ViewCounter from "../components/ViewCounter";
 
 
 export default function ArticleList({
@@ -32,7 +33,9 @@ export default function ArticleList({
                           className="flex items-center text-xs text-gray-500"
                           href="#"
                         >
-                          <span className="ml-2">2 views</span>
+                          <span className="ml-2">
+                          <ViewCounter slug={slug} blogPage={true}/>
+                          </span>
                         </div>
                       </div>
                     </div>
