@@ -17,7 +17,7 @@ export default function ISideBar() {
             src={propic}
             placeholder="blur"
             alt="Picture of the Glen"
-            className="bg-gray-200  relative w-18 h-18 mb-2 mx-auto rounded-lg object-cover object-right"
+            className="bg-gray-200 border-2 border-white dark:border-gray-800 relative w-18 h-18 mb-2 -mt-8 mx-auto rounded-full object-cover object-right"
             width={100}
             height={100}
           />
@@ -143,7 +143,7 @@ export default function ISideBar() {
                   <strong className="italic">
                     “Really good software is never finished; it continues to
                     grow. If it doesn’t grow, it decays.”
-                  </strong>{" "}
+                  </strong>
                   <br/>
                   <span className="text-xs text-gray-500">— Melinda Varian, Software Engineer</span>
                 </p>

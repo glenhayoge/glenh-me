@@ -172,7 +172,7 @@ export const SingleArticle = ({
                 </span>
 
                 <span class=" text-center text-sm  tracking-normal "> 
-                <ViewCounter  blogPage={true}/></span>
+                <ViewCounter slug article={true}/></span>
               </div>
             </div>
             <Image

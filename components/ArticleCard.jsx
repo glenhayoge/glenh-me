@@ -95,7 +95,7 @@ export default function ArticleCard({
                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                           </svg>
                           <span className="ml-2">
-                          <ViewCounter slug={slug} blogPage={true}/>
+                          <ViewCounter  articlePage={true}/>
                           </span>
                         </a>
                       </div>

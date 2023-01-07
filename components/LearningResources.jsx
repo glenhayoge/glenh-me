@@ -12,7 +12,9 @@ export default function ILearningResources() {
           </p>
         </div>
         <div class="flex flex-wrap -m-4 text-center p-4">
+        
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <a href="/books">
             <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs ">
                 <span class="inline-block mr-2">
@@ -32,8 +34,11 @@ export default function ILearningResources() {
                 Books
               </h2>
             </div>
+            </a>
           </div>
+         
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <a href="/blogs">
             <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs ">
                 <span class="inline-block mr-2">
@@ -54,8 +59,11 @@ export default function ILearningResources() {
                 Blogs
               </h2>
             </div>
+            </a>
           </div>
+
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <a href="/courses">
             <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs ">
                 <span class="inline-block mr-2">
@@ -75,8 +83,10 @@ export default function ILearningResources() {
                 Courses
               </h2>
             </div>
+            </a>
           </div>
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <a href="/videos">
             <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs">
                 <span class="inline-block mr-2">
@@ -97,6 +107,7 @@ export default function ILearningResources() {
                 Videos
               </h2>
             </div>
+            </a>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ async function fetcher(...args) {
 }
 
 
-export default function ViewCounter({ slug, blogPage = false }) {
+export default function ViewCounter({ slug, articlePage = false }) {
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = new Number(data?.total)
 
@@ -20,7 +20,7 @@ export default function ViewCounter({ slug, blogPage = false }) {
       })
 
 
-    if (blogPage) {
+    if (articlePage) {
       registerView()
     }
   }, [slug])
