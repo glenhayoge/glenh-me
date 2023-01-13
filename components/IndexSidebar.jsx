@@ -1,7 +1,9 @@
 import Subscribe from "./Subscribe";
+import React from "react";
 import Image from "next/image";
 import propic from "../assets/glens_1.png";
 import { useTimeAgo } from "next-time-ago";
+import GitHubCalendar from 'react-github-calendar';
 
 export default function ISideBar() {
   const { TimeAgo } = useTimeAgo();
@@ -28,7 +30,7 @@ export default function ISideBar() {
             <p class="mb-6 text-sm text-gray-500">
               Software Developer, Designer &amp; Creator
             </p>
-            <div class="flex items-center justify-center mb-6">
+            <div class="flex items-center justify-left mb-6">
               <p className="text-m text-gray-600 dark:text-gray-400">
                 Hi, my name is Glen. I'm a software developer, designer &
                 creator in Papua New Guinea. I use this space on internet to
@@ -44,6 +46,38 @@ export default function ISideBar() {
                 More About Me...
               </button>
             </a>
+            <div className="mb-2 mt-4 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
+              <p className="pb-3">My Github Contributions</p>
+            <GitHubCalendar username="glenhayoge" />
+              {/* <a
+                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                href="#"
+              >
+                Front-End
+              </a>
+              <a
+                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                href="#"
+              >
+                Design
+              </a>
+              <a
+                className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                href="#"
+              >
+                Software Dev
+              </a> */}
+              <div className="mt-8">
+                <p className="mb-6 text-sm text-gray-400">
+                  <strong className="italic">
+                    “Really good software is never finished; it continues to
+                    grow. If it doesn’t grow, it decays.”
+                  </strong>
+                  <br/>
+                  <span className="text-xs text-gray-500">— Melinda Varian, Software Engineer</span>
+                </p>
+              </div>
+            </div>
             <div className="flex justify-center space-x-6 my-6">
               <a
                 href="https://github.com/glenhayoge"
@@ -119,36 +153,7 @@ export default function ISideBar() {
               </a>
             </div>
 
-            <div className="mb-2 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
-              <a
-                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
-                href="#"
-              >
-                Front-End
-              </a>
-              <a
-                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
-                href="#"
-              >
-                Design
-              </a>
-              <a
-                className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
-                href="#"
-              >
-                Software Dev
-              </a>
-              <div className="mt-8">
-                <p className="mb-6 text-sm text-gray-400">
-                  <strong className="italic">
-                    “Really good software is never finished; it continues to
-                    grow. If it doesn’t grow, it decays.”
-                  </strong>
-                  <br/>
-                  <span className="text-xs text-gray-500">— Melinda Varian, Software Engineer</span>
-                </p>
-              </div>
-            </div>
+           
             <div className="py-1 px-6 text-xs italic text-gray-500">
               Updated: <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
             </div>
@@ -159,6 +164,7 @@ export default function ISideBar() {
           />
         </div>
       </div>
+     
       <Subscribe />
     </>
   );
