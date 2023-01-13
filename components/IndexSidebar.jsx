@@ -68,7 +68,7 @@ export default function ISideBar() {
                 Software Dev
               </a> */}
               <div className="mt-8">
-                <p className="mb-6 text-sm text-gray-400">
+                <p className="mb-6 text-sm text-cyan-700">
                   <strong className="italic">
                     “Really good software is never finished; it continues to
                     grow. If it doesn’t grow, it decays.”
