@@ -75,7 +75,7 @@ export const SingleArticle = ({
                   />
                 </svg> 
                 <Link
-                href="/"
+                href="/articles"
                 className="text-gray-500 dark:text-gray-400"
                 style={{ textDecoration: "none" }}
             

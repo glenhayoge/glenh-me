@@ -47,7 +47,7 @@ export default function ISideBar() {
               </button>
             </a>
             <div className="mb-2 mt-4 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
-              <p className="pb-3">My Github Contributions</p>
+              <p className="pb-3 text-sm ">My Github Contributions</p>
             <GitHubCalendar username="glenhayoge" />
               {/* <a
                 className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"

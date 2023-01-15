@@ -44,7 +44,7 @@ export default function ArticleCard({
                       href={`/article/${slug}`}
                       className=' rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
                     >
-                      Read More
+                      More
                       <svg
                         className='w-4 h-4 ml-2'
                         viewBox='0 0 24 24'

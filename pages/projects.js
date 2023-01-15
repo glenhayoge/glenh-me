@@ -296,6 +296,91 @@ export default function IndexPage() {
               <div class="container mx-auto w-full mt-2 rounded-lg">
                 <div class="pt-8 mb-8 px-4 text-gray-600">
                   <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
+                    Data Visualisation & Analytics
+                  </p>
+                  <p className="text-sm  text-gray-400 mt-3">
+                    {" "}
+                    Here are selected web and mobile applications I crafted
+                  </p>
+                </div>
+                <div class="flex flex-wrap -m-4 text-center p-4">
+                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                    <div class="flex justify-center">
+                      <div class="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
+                        <a href="#!">
+                          <img
+                            class="rounded-t-lg"
+                            src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                            alt=""
+                          />
+                        </a>
+                        <div class="p-2 ">
+                          <h5 class="text-gray-500 text-lg font-medium ">
+                            Card title
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                  <div class="flex justify-center">
+                      <div class="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
+                        <a href="#!">
+                          <img
+                            class="rounded-t-lg"
+                            src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                            alt=""
+                          />
+                        </a>
+                        <div class="p-2 ">
+                          <h5 class="text-gray-500 text-lg font-medium ">
+                            Card title
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                  <div class="flex justify-center">
+                      <div class="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
+                        <a href="#!">
+                          <img
+                            class="rounded-t-lg"
+                            src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                            alt=""
+                          />
+                        </a>
+                        <div class="p-2 ">
+                          <h5 class="text-gray-500 text-lg font-medium ">
+                            Card title
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+                  <div class="flex justify-center">
+                      <div class="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
+                        <a href="#!">
+                          <img
+                            class="rounded-t-lg"
+                            src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                            alt=""
+                          />
+                        </a>
+                        <div class="p-2 ">
+                          <h5 class="text-gray-500 text-lg font-medium ">
+                            Card title
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container mx-auto w-full mt-2 rounded-lg">
+                <div class="pt-8 mb-8 px-4 text-gray-600">
+                  <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
                     Designs, Illustrations & Photography
                   </p>
                   <p className="text-sm  text-gray-400 mt-3">
