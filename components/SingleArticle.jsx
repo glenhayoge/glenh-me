@@ -20,6 +20,7 @@ export const SingleArticle = ({
   publishedAt,
   readingTime,
   children,
+  description,
 }) => {
   return (
     <>
@@ -88,8 +89,9 @@ export const SingleArticle = ({
               {title}
             </h1>
             <p className="px-4 text-center lg:-mt-4 md:-mt-6 leading-tight italic text-gray-500 dark:text-gray-400">
-              This is a dummy text for inserting a short description of the
-              article
+              {/* This is a dummy text for inserting a short description of the
+              article */}
+               {description}
             </p>
             <div class="justify-center text-center items-center  text-gray-500 dark:text-gray-400">
               <span className="p-1">

@@ -23,6 +23,7 @@ const SinglePost = ({ article }) => {
       <SingleArticle
         image={article.image}
         title={article.title}
+        description={article.description}
         category={article.category}
         author={article.author}
         publishedAt={article.publishedAt}
