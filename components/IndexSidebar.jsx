@@ -32,10 +32,10 @@ export default function ISideBar() {
             </p>
             <div class="flex items-center justify-left mb-6">
               <p className="text-m text-gray-600 dark:text-gray-400">
-                Hi, my name is Glen. I'm a software developer, designer &
-                creator in Papua New Guinea. I use this space on internet to
-                document & share snippets of my perpertual learning & self
-                improvement oddeseys.
+                Hi, my name is Glen. I'm a software developer, designer &amp; 
+                creator from Papua New Guinea. I use this space on internet to
+                document &amp; share snippets of my perpertual learning &amp; self
+                improvement journeys.
               </p>
             </div>
             <a href="/about">

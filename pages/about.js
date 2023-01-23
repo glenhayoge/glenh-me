@@ -43,8 +43,8 @@ export default function IndexPage() {
                     code that I hope to keep adding to.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    The projects page has highlights of my work. Read tutorials
-                    and other stuffs on the blog page.
+                    The <Link href="/projects"><strong className="text-cyan-600">projects page</strong></Link> has highlights of my work. Read tutorials
+                    and other stuffs on the <Link href="/articles"><strong className="text-cyan-600">blog page</strong></Link> .
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     My site has no ads, no affiliate links, no tracking or
@@ -53,14 +53,14 @@ export default function IndexPage() {
                     the world.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Although the tide is against me, I want to make the internet
-                    a better place. Even if it's just right here. I hope I will
-                    inspire others to make their own creative corner on the web
+                    This is a pint of my contribution to making the internet
+                    a better place for everyone and I hope others will be
+                    inspired to be creative out there
                     as well.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Say hi to me by sending an email to gghayoge at gmail.com if
-                    you like what I am doing. I appreciate meeting new people.
+                    Say hi to me by sending an email to <strong className="text-cyan-600">gghayoge at gmail.com </strong> if
+                    you like what I am doing.
                   </p>
                 </div>
                 {/* what im doing */}
@@ -76,24 +76,27 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                     
                       Wantoea: Small biz management FOSS
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                   
-                      ChicknUp: Poultry marketplace app
+                      ChicknUp: Poultry advisory &amp; marketplace app
                     </li>
                     <li class="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                   
-                      Marketini: Farmers & Artisans-marketplace app
+                      Marketini: Farmers &amp; Artisans marketplace app
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                   
                       Lidabase: Leaders performance leatherboard
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                  
+                      RaitStart: PNGSME Digital Resources Toolkit
                     </li>
                   </ul>
 
@@ -125,94 +128,100 @@ export default function IndexPage() {
                   <ul class="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Wantoea: Small biz management FOSS
-                    </li>
-                    <li class="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      ChicknUp: Poultry marketplace app
-                    </li>
-                    <li class="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Marketini: Farmers & Artisans-marketplace app
-                    </li>
-                    <li class="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Lidabase: Leaders performance leatherboard
+                      Not seriously watching at the moment
                     </li>
                   </ul>
                 </div>
+                 {/* my dev tools */}
+                 <div className="flex my-12 justify-left text-left items-center  ">
+                  <h5 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
+                    My Dev Tools
+                  </h5>
+                </div>
+                <p className="px-4 py-2 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                  Software
+                </p>
+                <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
+                    <li className="flex items-center">
+                    <i className='bx bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-05'></i>
+                      This site - React/NextJS - is hosted on <Link href="https://vercel.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Vercel</strong></Link>.
+                    </li>
+                    
+                    <li className="flex items-center">
+                      <i className='bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                     Coding: <Link href="https://code.visualstudio.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Visual Studio Code</strong></Link>
+                    </li>
+                    <li className="flex items-center">
+                    <i className='bx bx bx-cog  mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                      Terminal: <Link href="https://iterm2.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">iTerm2</strong></Link>
+                    </li>
+                    <li className="flex items-center">
+                    <i className='bx bx bx-cog  mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                      Notes: <Link href="https://keep.google.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Google Keep</strong></Link>&nbsp;&amp;<Link href="https://obsidian.md/" target='_blank'> &nbsp;<strong className="text-cyan-600">Obsidian</strong></Link>
+                    </li>
+                
+                  </ul>
+                  <p className="px-4 py-2 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                 Hardware
+                </p>
+                <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
+                    <li className="flex items-center">
+                    <i className='bx bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
+                      Coding Computer: Apple Macbook Pro 13" 2016
+                    </li>
+                    <li className="flex items-center">
+                      <i className='bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
+                      Headphone: Logitec
+                    </li>
+                    <li className="flex items-center">
+                    <i className='bx bx bx-cog  mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                    Desktop: Apple iMac / Dell AIO
+                    </li>
+                
+                  </ul>
                 {/* what im reading */}
                 <div className="flex my-12 justify-left text-left items-center">
                   <h2 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
                     Reach out to me 
                   </h2>
+                  
+         
                 </div>
+                <p className="px-4 pb-4 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                  Use channels below to reach out to me
+                </p>
                 <div className="w-full h-full overflow-y-auto">
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className=" flex items-center">
-                    <i className='bx bxl-github text-gray-500 text-xl mr-1.5' ></i>
-                      Github
+                    <i className='bx bxl-github text-cyan-600 text-xl mr-1.5' ></i>
+                    <Link href="https://github.com/glenhayoge" target='_blank'> &nbsp;<strong className="text-cyan-600">Github</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bxl-twitter text-gray-500 text-xl mr-1.5' ></i>
-                      Twitter
+                    <i className='bx bxl-twitter text-cyan-600 text-xl mr-1.5' ></i>
+                    <Link href="https://twitter.com/ghayoge" target='_blank'> &nbsp;<strong className="text-cyan-600">Twitter</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i class='text-gray-500 text-xl mr-1.5 bx bxl-linkedin-square' ></i>
-                      LinkedIn
+                    <i class='text-cyan-600 text-xl mr-1.5 bx bxl-linkedin-square' ></i>
+                    <Link href="https://www.linkedin.com/in/glen-g-hayoge-089935104/" target='_blank'> &nbsp;<strong className="text-cyan-600">LinkedIn</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='text-gray-500 text-xl mr-1.5 bx bxl-stack-overflow' ></i>
-                     StackOverFlow
+                    <i className='text-cyan-600 text-xl mr-1.5 bx bxl-stack-overflow' ></i>
+                    <Link href="https://stackoverflow.com/users/12071488/glenh" target='_blank'> &nbsp;<strong className="text-cyan-600">StackOverFlow</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-globe text-gray-500 text-xl mr-1.5' ></i>
-                     Website: You looking at it!
+                    <i className='bx bx-globe text-cyan-600 text-xl mr-1.5' ></i>
+                     Website: <Link href="https://glenh.me" > &nbsp;<strong className="text-cyan-600">You are looking at it!</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-envelope text-gray-500 text-xl mr-1.5' ></i>
-                     Email: gghayoge at gmail.com
+                    <i className='bx bx-envelope text-cyan-600 text-xl mr-1.5' ></i>
+                     Email: &nbsp;<strong className="text-cyan-600">gghayoge at gmail.com</strong>
                     </li>
       
                   </ul>
                 </div>
 
-                {/* my dev tools */}
-                <div className="flex my-12 justify-left text-left items-center  ">
-                  <h5 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
-                    What I'm Reading
-                  </h5>
-                </div>
-                <div className="w-full h-full overflow-y-auto">
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    I am Glen, a software developer from Papua New Guinea.I have passion to use technolgy to solve problems & create innovative soultions. I use
-                    this space on the internet to create and share contents on
-                    software projects, articles, tutorials, guides, issues,
-                    musings, and lots more... I love building things and have a
-                    long list of abandoned side projects and some stale piles of
-                    code that I hope to keep adding to.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Check out the projects page to see a highlight of my
-                    open-source work, and the blog for my tutorials and more.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    My site has no ads, no affiliate links, no tracking or
-                    analytics, no sponsored posts, and no paywall. My only
-                    motivation for this site is to share what I've learned with
-                    the world.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Although the tide is against me, I want to make the internet
-                    a better place. Even if it's just right here. I hope I will
-                    inspire others to make their own creative corner on the web
-                    as well.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    You can contact me by email at hello at taniarascia.com to
-                    say hi! I always appreciate meeting new people.
-                  </p>
-                </div>
+               
+               
               </div>
             </div>
             <div class="w-full lg:w-4/12 p-4 ">
