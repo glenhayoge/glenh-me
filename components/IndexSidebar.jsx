@@ -46,10 +46,11 @@ export default function ISideBar() {
                 More About Me...
               </button>
             </a>
-            <div className="mb-2 mt-4 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
+            <div className="mb-2 mt-6 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
               <p className="pb-3 text-sm ">My Github Contributions</p>
             <GitHubCalendar username="glenhayoge" />
-              {/* <a
+            <div className="pt-4">
+              <a
                 className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
                 href="#"
               >
@@ -66,7 +67,8 @@ export default function ISideBar() {
                 href="#"
               >
                 Software Dev
-              </a> */}
+              </a>
+              </div>
               <div className="mt-8">
                 <p className="mb-6 text-sm text-cyan-700">
                   <strong className="italic">
@@ -155,7 +157,7 @@ export default function ISideBar() {
 
            
             <div className="py-1 px-6 text-xs italic text-gray-500">
-              Updated: <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
+              Updated: <TimeAgo date="January 25, 2023 9:00 am" locale="pg" />
             </div>
           </div>
           <img

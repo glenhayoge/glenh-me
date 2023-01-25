@@ -69,7 +69,7 @@ export default function IndexPage() {
                     What I'm doing now
                   </h2>
                 </div>
-                <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                <p className="px-4 py-6 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Projects I am currently working on.
                 </p>
                 <div className="w-full h-full overflow-y-auto">
@@ -100,7 +100,7 @@ export default function IndexPage() {
                     </li>
                   </ul>
 
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  <p className="px-4 py-6 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     What I am Reading:
                   </p>
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
@@ -122,7 +122,7 @@ export default function IndexPage() {
                     </li>
                 
                   </ul>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  <p className="px-4 py-6 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     What I am watching:
                   </p>
                   <ul class="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
@@ -138,7 +138,7 @@ export default function IndexPage() {
                     My Dev Tools
                   </h5>
                 </div>
-                <p className="px-4 py-2 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                <p className="px-4 py-6 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
                   Software
                 </p>
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
@@ -161,7 +161,7 @@ export default function IndexPage() {
                     </li>
                 
                   </ul>
-                  <p className="px-4 py-2 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                  <p className="px-4 py-6 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
                  Hardware
                 </p>
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
@@ -187,8 +187,8 @@ export default function IndexPage() {
                   
          
                 </div>
-                <p className="px-4 pb-4 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
-                  Use channels below to reach out to me
+                <p className="px-4 pb-8 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                  Channels you can use to reach out to me
                 </p>
                 <div className="w-full h-full overflow-y-auto">
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
