@@ -92,7 +92,7 @@ export default function Home({ articles }) {
             </div>
             {/* index side bar */}
             <div class="w-full lg:w-4/12 p-4 ">
-            <ISideBar />
+            <ISideBar /> 
             </div>
           
           </div>
