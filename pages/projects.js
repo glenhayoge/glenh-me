@@ -76,6 +76,7 @@ export default function IndexPage() {
                         <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                           The source code of this website. https://glenh.me
                         </p>
+                        <Link href="https://github.com" target="_blank">
                         <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                           <span>Source</span>
 
@@ -94,6 +95,7 @@ export default function IndexPage() {
                             />
                           </svg>
                         </button>
+                        </Link>
                       </div>
                       <div class="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                         <span>
@@ -132,6 +134,7 @@ export default function IndexPage() {
                           A digital solutions business website.
                           https://dzagoo.com
                         </p>
+                        <Link href="https://dzagoo.com" target="_blank">
                         <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                           <span>Live site</span>
 
@@ -150,6 +153,7 @@ export default function IndexPage() {
                             />
                           </svg>
                         </button>
+                        </Link>
                       </div>
                       <div class="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                         <span>
@@ -191,6 +195,7 @@ export default function IndexPage() {
                         <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                           FPDA's official company website. https://fpda.com.pg
                         </p>
+                        <Link href="https://fpda.com.pg" target="_blank">
                         <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                           <span>Live site</span>
 
@@ -209,6 +214,7 @@ export default function IndexPage() {
                             />
                           </svg>
                         </button>
+                        </Link>
                       </div>
                       <div class="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                         <span>
@@ -249,6 +255,7 @@ export default function IndexPage() {
                         <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                           FARMIS agri-advisory mobile application
                         </p>
+                        <Link href="https://farmis.fpda.com.pg" target="_blank">
                         <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                           <span>Live site</span>
                           <svg
@@ -266,6 +273,7 @@ export default function IndexPage() {
                             />
                           </svg>
                         </button>
+                        </Link>
                       </div>
                       <div class="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                         <span>
