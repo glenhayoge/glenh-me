@@ -88,7 +88,7 @@ export default function Home({ articles }) {
              <IProjects />
 
             {/* learning resources links */}
-             <ILearningResources />
+             {/* <ILearningResources /> */}
             </div>
             {/* index side bar */}
             <div class="w-full lg:w-4/12 p-4 ">

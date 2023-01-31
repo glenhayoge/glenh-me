@@ -37,7 +37,7 @@ export default function MobileNav({ open, setOpen }) {
           >
             Projects
           </a>
-          <a
+          {/* <a
             className="text-xl font-medium my-4"
             href="/snippets"
             onClick={() =>
@@ -47,7 +47,7 @@ export default function MobileNav({ open, setOpen }) {
             }
           >
             Snippets
-          </a>
+          </a> */}
           <a
             className="text-xl font-medium my-4"
             href="/about"
