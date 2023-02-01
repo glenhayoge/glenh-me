@@ -157,7 +157,7 @@ export default function ISideBar() {
 
            
             <div className="py-1 px-6 text-xs italic text-gray-500">
-              Updated: <TimeAgo date="January 25, 2023 9:00 am" locale="pg" />
+              Updated: <TimeAgo date="February 1, 2023 1:00 am" locale="pg" />
             </div>
           </div>
           <img
