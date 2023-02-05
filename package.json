@@ -14,7 +14,7 @@
   "dependencies": {
     "@heroicons/react": "v1",
     "@tailwindcss/typography": "^0.5.8",
-    "@types/node": "18.11.9",
+    "@types/node": "^18.11.18",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "axios": "^1.2.3",
@@ -23,6 +23,7 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "firebase-admin": "^11.3.0",
+    "fuse.js": "^6.6.2",
     "next": "13.0.4",
     "next-contentlayer": "^0.2.9",
     "next-seo": "^5.14.1",

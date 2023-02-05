@@ -59,8 +59,9 @@ export default function IndexPage() {
                     as well.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Say hi to me by sending an email to <strong className="text-cyan-600">gghayoge at gmail.com </strong> if
-                    you like what I am doing.
+                  If you spot an error, or have any comments, suggestions or questions about what I've written or if you basically want to say hi to me, send email to <strong className="text-cyan-600"> <Link href="mailto:gghayoge@gmail.com">gghayoge at gmail.com</Link></strong> 
+                 
+                 
                   </p>
                 </div>
                 {/* what im doing */}

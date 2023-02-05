@@ -14,7 +14,7 @@ export default function ArticleList({
   return (
     <>
         <div className="px-6 pt-6 -mt-2 ">
-                    <div className="mb-2">
+                 <div className="mb-2">
                       <a href={`/article/${slug}`}>
                         <h3 className="mb-2 text-lg font-bold text-gray-600 leading-tight dark:text-yellow-400 hover:text-gray-500 dark:hover:text-gray-300">
                           {title}
