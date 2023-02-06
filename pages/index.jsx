@@ -74,9 +74,9 @@ export default function Home({ articles }) {
                   )}
                 </main>
 
-                <div class="ml-4 p-6 flex items-center justify-between ">
+                <div class="ml-4 p-4 flex items-center justify-between ">
                   <a
-                    class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
+                    class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
                     href="/articles"
                   >
                     View All Posts
@@ -88,7 +88,7 @@ export default function Home({ articles }) {
              <IProjects />
 
             {/* learning resources links */}
-             {/* <ILearningResources /> */}
+             <ILearningResources />
             </div>
             {/* index side bar */}
             <div class="w-full lg:w-4/12 p-4 ">

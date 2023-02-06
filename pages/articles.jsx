@@ -63,26 +63,53 @@ export default function IndexPage({ articles }) {
         
             <div class="w-full lg:w-4/12 p-4 ">
               <div class="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
-                <div class="relative pt-10 pb-20 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
+                <div class="relative pt-10 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div class="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
-                      Categories
+                      Major Categories
                     </h5>
-                    <p class="mb-6 text-sm text-gray-500">
-                      Post categories coming soon!
+                    <p className="mb-1 text-sm text-gray-500">
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Blog</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Story</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Thoughts</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Coding</button>
+                    <br/>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Tutorial</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Musing</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Rant</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Personal Dev</button>
+                    <br/>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Learning</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Work</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Critics</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Review</button>
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="mt-8 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
-                <div class="relative pt-10 pb-20 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
-                  <div class="px-6 text-center pt-2">
+              <div className="mt-8 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden shadow-md rounded-lg dark:bg-gray-800/25">
+                <div className="relative pt-10 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
+                  <div className="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
-                      Tags
+                      Popular Tags
                     </h5>
-                    <p class="mb-6 text-sm text-gray-500">
-                    Post tags coming soon!
+                    <p className="mb-1 text-sm text-gray-500">
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Python</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Javascript</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Music</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Photography</button>
+                    <br/>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#UI/UX Design</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Testing</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Code</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#React</button>
+                    <br/>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Angular</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#NextJS</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#NodeJS</button>
+                    <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Databases</button>
                     </p>
+                    
                   </div>
                 </div>
               </div>

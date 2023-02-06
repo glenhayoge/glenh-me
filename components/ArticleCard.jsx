@@ -17,7 +17,7 @@ export default function ArticleCard({
     <>
         <div className="p-10 border-b  border-gray-400 dark:border-gray-600 border-dashed">
                     <div className="flex justify-between items-center mb-4">
-                      <span className="inline-block uppercase py-1 px-2  text-xs text-gray-500 dark:text-gray-400 rounded-full">
+                      <span className="inline-block uppercase py-1 px-1  text-xs text-gray-500 dark:text-gray-400 rounded-full">
                         {category}
                       </span>
                       <a
