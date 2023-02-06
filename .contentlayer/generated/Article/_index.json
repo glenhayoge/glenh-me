@@ -32,7 +32,89 @@
       "words": 1595
     },
     "wordCount": 1597,
-    "slug": "another-article"
+    "slug": "another-article",
+    "headings": [
+      {
+        "level": "one",
+        "text": "This is another Blog",
+        "slug": "this-is-another-blog"
+      },
+      {
+        "level": "one",
+        "text": "Markdown Examples",
+        "slug": "markdown-examples"
+      },
+      {
+        "level": "two",
+        "text": "h2 Heading",
+        "slug": "h2-heading"
+      },
+      {
+        "level": "three",
+        "text": "h3 Heading",
+        "slug": "h3-heading"
+      },
+      {
+        "level": "three",
+        "text": "h4 Heading",
+        "slug": "h4-heading"
+      },
+      {
+        "level": "three",
+        "text": "h5 Heading",
+        "slug": "h5-heading"
+      },
+      {
+        "level": "three",
+        "text": "h6 Heading",
+        "slug": "h6-heading"
+      },
+      {
+        "level": "two",
+        "text": "Emphasis",
+        "slug": "emphasis"
+      },
+      {
+        "level": "two",
+        "text": "Blockquotes",
+        "slug": "blockquotes"
+      },
+      {
+        "level": "two",
+        "text": "Lists",
+        "slug": "lists"
+      },
+      {
+        "level": "two",
+        "text": "Code",
+        "slug": "code"
+      },
+      {
+        "level": "two",
+        "text": "Tables",
+        "slug": "tables"
+      },
+      {
+        "level": "one",
+        "text": "Another post",
+        "slug": "another-post"
+      },
+      {
+        "level": "one",
+        "text": "Another post",
+        "slug": "another-post-1"
+      },
+      {
+        "level": "two",
+        "text": "Links",
+        "slug": "links"
+      },
+      {
+        "level": "three",
+        "text": "Footnotes",
+        "slug": "footnotes"
+      }
+    ]
   },
   {
     "title": "Authentication and DB access with Next, Prisma",
@@ -67,6 +149,18 @@
       "words": 224
     },
     "wordCount": 225,
-    "slug": "test-article"
+    "slug": "test-article",
+    "headings": [
+      {
+        "level": "two",
+        "text": "Vellem tandem",
+        "slug": "vellem-tandem"
+      },
+      {
+        "level": "three",
+        "text": "Code Example",
+        "slug": "code-example"
+      }
+    ]
   }
 ]

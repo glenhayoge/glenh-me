@@ -20,11 +20,13 @@ export type Article = {
   category: string
   author?: Author | undefined
   image: string
+  toc: boolean
   /** MDX file body */
   body: MDX
   readingTime: json
   wordCount: number
   slug: string
+  headings: json
 }  
 
 /** Nested types */

@@ -31,5 +31,17 @@
     "words": 224
   },
   "wordCount": 225,
-  "slug": "test-article"
+  "slug": "test-article",
+  "headings": [
+    {
+      "level": "two",
+      "text": "Vellem tandem",
+      "slug": "vellem-tandem"
+    },
+    {
+      "level": "three",
+      "text": "Code Example",
+      "slug": "code-example"
+    }
+  ]
 }
