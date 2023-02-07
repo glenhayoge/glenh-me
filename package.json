@@ -9,7 +9,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sitemap": "node scripts/sitemap.mjs",
+    "rss": "node scripts/rss.mjs",
+    "postbuild": "yarn sitemap && yarn rss"
   },
   "dependencies": {
     "@heroicons/react": "v1",

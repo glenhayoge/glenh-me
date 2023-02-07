@@ -7,8 +7,8 @@ export default function ILearningResources() {
           </p>
           <p className="text-sm  text-gray-400 mt-3">
             {" "}
-            Checkout selected books, blogs, videos and other learning
-            resources for software and personal development.
+          Selected books, blogs, videos and other learning
+            resources for software development and self-improvement.
           </p>
         </div>
         <div class="flex flex-wrap -m-4 text-center p-4">

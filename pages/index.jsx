@@ -74,7 +74,7 @@ export default function Home({ articles }) {
                   )}
                 </main>
 
-                <div class="ml-4 p-4 flex items-center justify-between ">
+                <div class="ml-3 p-4 flex items-center justify-between ">
                   <a
                     class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
                     href="/articles"

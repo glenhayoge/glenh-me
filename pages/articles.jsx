@@ -63,10 +63,10 @@ export default function IndexPage({ articles }) {
         
             <div class="w-full lg:w-4/12 p-4 ">
               <div class="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
-                <div class="relative pt-10 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
+                <div class="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div class="px-6 text-center pt-2">
-                    <h5 className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
-                      Major Categories
+                    <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
+                     MAJOR CATEGORIES
                     </h5>
                     <p className="mb-1 text-sm text-gray-500">
                     <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">Blog</button>
@@ -88,10 +88,10 @@ export default function IndexPage({ articles }) {
                 </div>
               </div>
               <div className="mt-8 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden shadow-md rounded-lg dark:bg-gray-800/25">
-                <div className="relative pt-10 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
+                <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25 rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">
-                    <h5 className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
-                      Popular Tags
+                    <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
+                      POPULAR TAGS
                     </h5>
                     <p className="mb-1 text-sm text-gray-500">
                     <button className="bg-gray-500/25 rounded-lg p-2 text-xs text-gray-500 m-1">#Python</button>
