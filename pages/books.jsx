@@ -12,11 +12,11 @@ export default function BookPage({ books }) {
   useEffect(() => { }, []);
   return (
     <>
-      <section className="py-24 ">
+      {/* <section className="py-24 ">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto ">
           <div className="flex flex-wrap items-stretch ">
-            <div className="w-full lg:w-9/12 lg:pr-8 -mt-4">
-              <div className=" rounded-lg overflow-hidden ">
+            <div className="w-full lg:w-8/12 lg:pr-8 -mt-4 ">
+              <div className=" p-0 rounded-lg overflow-hidden ">
                 <div className="flex mt-4 justify-left text-left items-center">
                   <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
                     Book Summaries & Notes
@@ -24,7 +24,39 @@ export default function BookPage({ books }) {
                 </div>
 
                 <div className="w-full h-full overflow-y-auto">
-                  <main>
+                 
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section> */}
+
+
+      <div>
+     
+   
+      <section className="py-24 ">
+        <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
+          <div className="flex flex-wrap items-stretch -m-4">
+            <div className="w-full lg:w-8/12 p-4">
+              <div className=" overflow-hidden">
+                <div className="pt-1 pb-1 px-6 ">
+                  <div className="flex mb-4 justify-between items-center">
+                    <div class="pt-2 px-3  text-gray-600">
+                      <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
+                      Book Summaries & Notes
+                      </p>
+                      <p className="text-sm  text-gray-400 mt-3">
+                    {" "}
+                    Read articles, guides,tutorials and lots more.
+                  </p>
+                    </div>
+                  </div>
+                </div>
+          
+                <main>
                     {books.map(
                       ({
                         title,
@@ -50,11 +82,21 @@ export default function BookPage({ books }) {
                       )
                     )}
                   </main>
+
+                <div class="ml-3 p-4 flex items-center justify-between ">
+                  <a
+                    class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
+                    href="/books"
+                  >
+                    View All Posts
+                  </a>
                 </div>
               </div>
-            </div>
 
-            <div class="w-full lg:w-3/12 p-4 ">
+          
+            </div>
+           
+            <div class="w-full lg:w-4/12 p-4 ">
               <div class="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
                 <div class="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div class="px-6 text-center pt-2">
@@ -108,9 +150,11 @@ export default function BookPage({ books }) {
               </div>
               <Subscribe />
             </div>
+          
           </div>
         </div>
       </section>
+    </div>
 
     </>
   );

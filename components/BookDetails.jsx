@@ -39,7 +39,7 @@ export const BookDetails = ({
                   />
                 </svg> 
                 <Link
-                href="/articles"
+                href="/books"
                 className="text-gray-500 dark:text-gray-400"
                 style={{ textDecoration: "none" }}
             
