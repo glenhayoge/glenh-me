@@ -62,7 +62,7 @@ export default function IndexPage({ articles }) {
             </div>
         
             <div class="w-full lg:w-4/12 p-4 ">
-              <div class="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
+              <div class="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   rounded-lg dark:bg-gray-800/25">
                 <div class="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div class="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
@@ -87,7 +87,7 @@ export default function IndexPage({ articles }) {
                   </div>
                 </div>
               </div>
-              <div className="mt-8 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden shadow-md rounded-lg dark:bg-gray-800/25">
+              <div className="mt-8 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden rounded-lg dark:bg-gray-800/25">
                 <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25 rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">

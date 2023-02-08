@@ -12,24 +12,19 @@ export default function BookPage({ books }) {
   useEffect(() => { }, []);
   return (
     <>
-     
-
-
       <div>
-     
-   
-      <section className="py-24 ">
+      <section className="py-20 ">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
             <div className="w-full lg:w-8/12 p-4">
               <div className=" overflow-hidden">
-                <div className="pt-1 pb-1 px-6 ">
+                <div className="pt-1 pb-1  ">
                   <div className="flex mb-4 justify-between items-center">
                     <div class="pt-2 px-3  text-gray-600">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
                       List of Books Read
                       </p>
-                      <p className="text-sm  text-gray-600 mt-3">
+                      <p className="text-sm  text-gray-600 my-6">
                     Below are notes, summaries &amp; personal ranking of books I have read.
                   </p>
                     </div>
@@ -77,8 +72,8 @@ export default function BookPage({ books }) {
             </div>
            
             <div class="w-full lg:w-4/12 p-4 ">
-              <div class="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
-                <div class="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
+              <div class="p-0 dark:text-gray-500 rounded text-center overflow-hidden   rounded-lg dark:bg-gray-800/25">
+                <div class="relative pt-6 pb-10 z-60  rounded overflow-hidden">
                   <div class="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
                       MAJOR CATEGORIES
@@ -102,7 +97,7 @@ export default function BookPage({ books }) {
                   </div>
                 </div>
               </div>
-              <div className="mt-8 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden shadow-md rounded-lg dark:bg-gray-800/25">
+              <div className="mt-8 dark:text-gray-500 rounded text-left overflow-hidden  rounded-lg dark:bg-gray-800/25">
                 <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25 rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">

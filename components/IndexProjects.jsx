@@ -9,7 +9,7 @@ export default function IProjects() {
           <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
             Some Projects
           </p>
-          <p className="text-sm  text-gray-400 mt-3">
+          <p className="text-sm  text-gray-400 my-6">
             {" "}
             Selected open-source and proprietary projects I crafted
           </p>
@@ -200,7 +200,7 @@ export default function IProjects() {
         </div>
         <div class=" p-6 flex items-center justify-between ">
           <a
-            class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
+            class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
             href="/projects"
           >
             View Projects

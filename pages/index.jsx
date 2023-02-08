@@ -40,7 +40,7 @@ export default function Home({ articles }) {
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
                         Recent Posts
                       </p>
-                      <p className="text-sm  text-gray-600 mt-3">
+                      <p className="text-sm  text-gray-600 my-6">
                     {" "}
                     Read articles, guides,tutorials and lots more.
                   </p>
@@ -76,7 +76,7 @@ export default function Home({ articles }) {
 
                 <div class="ml-3 p-4 flex items-center justify-between ">
                   <a
-                    class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
+                    class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
                     href="/articles"
                   >
                     View All Posts
