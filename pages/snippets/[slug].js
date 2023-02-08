@@ -7,11 +7,11 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 
 const SingleSnippet = ({ snippet }) => {
 
-  const MDXContent = useMDXComponent(book.body.code);
+  const MDXContent = useMDXComponent(snippet.body.code);
 
   return (
     <>
-      <NextSeo name={snippet.name} description={snippet.description} />
+      <NextSeo name={snippet.title} description={snippet.description} />
 
       <SnippetDetails
     
@@ -47,7 +47,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const book = allSnippets.find((snippet) => snippet.slug === params.slug);
+  const snippet = allSnippets.find((snippet) => snippet.slug === params.slug);
 
   return { props: { snippet } };
 }

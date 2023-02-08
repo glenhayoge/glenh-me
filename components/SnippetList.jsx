@@ -15,7 +15,7 @@ export default function SnippetList({
 
       <div className="p-4 ">
         <div className=" mb-4 flex flex-col justify-start">
-          <Link href={`/snippet/${slug}`} 
+          <Link href={`/snippets/${slug}`} 
           >
           <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400
             hover:text-teal-600 dark:hover:text-cyan-600
@@ -32,10 +32,10 @@ export default function SnippetList({
           <div className="flex items-center mb-6">
             <button >
               {/* {dateTime} */} <a
-                href={`/snippet/${slug}`} type="button"
+                href={`/snippets/${slug}`} type="button"
                 className='pt-2 hover:text-teal-600 dark:hover:text-cyan-600 rounded-full text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
               >
-                Notes/Summaries
+               View Snippet
                 <svg
                   className='w-4 h-4 ml-2'
                   viewBox='0 0 24 24'

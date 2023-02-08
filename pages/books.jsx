@@ -57,18 +57,7 @@ export default function BookPage({ books }) {
                       )
                     )}
                   </main>
-
-                {/* <div class="ml-3 p-4 flex items-center justify-between ">
-                  <a
-                    class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs "
-                    href="/books"
-                  >
-                    View All Posts
-                  </a>
-                </div> */}
               </div>
-
-          
             </div>
            
             <div class="w-full lg:w-4/12 p-4 ">

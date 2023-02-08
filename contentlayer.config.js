@@ -46,7 +46,6 @@ const Snippet = defineDocumentType(() => ({
     title: { type: 'string', required: true },
     updatedAt: { type: 'string', required: true },
     description: { type: 'string', required: true },
-
     category: { type: 'string', required: true },
   },
   computedFields,
@@ -102,7 +101,7 @@ const computedFields = {
 
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',
-    documentTypes: [Article,Books, Snippet],
+    documentTypes: [Article,Books,Snippet],
     mdx: [mdxOptions],
     
     
