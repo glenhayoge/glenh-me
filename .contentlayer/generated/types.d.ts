@@ -27,6 +27,25 @@ export type Article = {
   wordCount: number
   slug: string
   headings: json
+}
+
+export type Book = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Book'
+  title: string
+  category: string
+  description: string
+  image: string
+  publishedAt: string
+  author: string
+  /** MDX file body */
+  body: MDX
+  readingTime: json
+  wordCount: number
+  slug: string
+  headings: json
 }  
 
 /** Nested types */
@@ -45,8 +64,8 @@ export type Author = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Article
-export type DocumentTypeNames = 'Article'
+export type DocumentTypes = Article | Book
+export type DocumentTypeNames = 'Article' | 'Book'
 
 export type NestedTypes = Author
 export type NestedTypeNames = 'Author'
@@ -68,6 +87,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Article: Article
+  Book: Book
 }
 
 export type NestedTypeMap = {

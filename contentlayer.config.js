@@ -38,6 +38,21 @@ const Article = defineDocumentType(() => ({
   computedFields,
 }));
 
+const Books = defineDocumentType(() => ({
+  name: 'Book',
+  filePathPattern: `books/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    category: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    image: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true },
+    author: { type: 'string', required: true }
+  },
+  computedFields,
+}));
+
 const computedFields = {
     readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
     wordCount: {
@@ -73,8 +88,8 @@ const computedFields = {
 
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',
-    documentTypes: [Article],
-    mdx: {mdxOptions,
+    documentTypes: [Article,Books],
+    mdx: {
     rehypePlugins: [rehypeSlug],
     },
   });
