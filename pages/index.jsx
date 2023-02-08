@@ -30,11 +30,11 @@ export default function Home({ articles }) {
       </Head>
       <Header />
       <section className="py-24 ">
-        <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
+        <div className="container px-4 lg:px-10 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
             <div className="w-full lg:w-8/12 p-4">
               <div className=" overflow-hidden">
-                <div className="pt-1 pb-1 px-6 ">
+                <div className="pt-1 pb-1 ">
                   <div className="flex mb-4 justify-between items-center">
                     <div class="pt-2 px-3  text-gray-600">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
@@ -74,7 +74,7 @@ export default function Home({ articles }) {
                   )}
                 </main>
 
-                <div class="ml-3 p-4 flex items-center justify-between ">
+                <div class=" p-4 flex items-center justify-between ">
                   <a
                     class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
                     href="/articles"

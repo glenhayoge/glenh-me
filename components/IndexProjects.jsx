@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function IProjects() {
     return (
 
-        <div class="container mx-auto mt-2">
-        <div class="pt-8 mb-8 px-4 text-gray-600">
+        <div class="container px-2 mx-auto mt-2">
+        <div class="pt-12 mb-8  text-gray-600">
        
           <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
             Some Projects
@@ -198,7 +198,7 @@ export default function IProjects() {
          
           </div>
         </div>
-        <div class=" p-6 flex items-center justify-between ">
+        <div class="py-8 flex items-center justify-between ">
           <a
             class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
             href="/projects"

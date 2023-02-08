@@ -1,7 +1,7 @@
 export default function ILearningResources() {
     return (
-        <div class="container px-4 mx-auto bg-gray-200 dark:bg-gray-800/25 mt-8 rounded-lg">
-        <div class="pt-8 mb-8 px-4 text-gray-600">
+        <div class="container px-2  mx-auto  mt-8 rounded-lg">
+        <div class=" mb-8  text-gray-600">
           <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500 dark:text-gray-400">
             Learning Resources
           </p>
@@ -11,11 +11,11 @@ export default function ILearningResources() {
             resources for software development and self-improvement.
           </p>
         </div>
-        <div class="flex flex-wrap -m-4 text-center p-4">
+        <div class="flex flex-wrap -m-4 text-center ">
         
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/books">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs ">
                 <span class="inline-block mr-2">
                   <svg
@@ -39,7 +39,7 @@ export default function ILearningResources() {
          
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/blogs">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs ">
                 <span class="inline-block mr-2">
                   <svg
@@ -64,7 +64,7 @@ export default function ILearningResources() {
 
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/courses">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs ">
                 <span class="inline-block mr-2">
                   <svg
@@ -87,7 +87,7 @@ export default function ILearningResources() {
           </div>
           <div class="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/videos">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-gray-600 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span class="text-xs">
                 <span class="inline-block mr-2">
                   <svg
