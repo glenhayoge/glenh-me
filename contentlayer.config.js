@@ -38,6 +38,20 @@ const Article = defineDocumentType(() => ({
   computedFields,
 }));
 
+const Snippet = defineDocumentType(() => ({
+  name: 'Snippet',
+  filePathPattern: `snippets/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    name: { type: 'string', required: true },
+    updatedAt: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+
+    category: { type: 'string', required: true },
+  },
+  computedFields,
+}));
+
 const Books = defineDocumentType(() => ({
   name: 'Book',
   filePathPattern: `books/*.mdx`,
@@ -88,10 +102,10 @@ const computedFields = {
 
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',
-    documentTypes: [Article,Books],
-    mdx: {
-    rehypePlugins: [rehypeSlug],
-    },
+    documentTypes: [Article,Books, Snippet],
+    mdx: [mdxOptions],
+    
+    
   });
 
 
