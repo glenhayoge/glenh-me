@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-
 export default function SnippetList({
   title,
   description,
@@ -16,11 +15,12 @@ export default function SnippetList({
 
       <div className="p-4 ">
         <div className=" mb-4 flex flex-col justify-start">
-          <a href={`/snippet/${slug}`}>
-            <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400
+          <Link href={`/snippet/${slug}`} 
+          >
+          <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400
             hover:text-teal-600 dark:hover:text-cyan-600
-            ">{title}</h3>
-          </a>
+            "  style={{ textDecoration: "none" }}>{title}</h3>
+          </Link>
           <p className="text-gray-600  text-xs mb-4">{category}</p>
           <p className="text-gray-600 text-l mb-4 leading-7 dark:text-gray-400">
             {description}
