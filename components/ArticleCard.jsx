@@ -29,7 +29,7 @@ export default function ArticleCard({
                     </div>
                     <div className="mb-4">
                       <a href={`/article/${slug}`}>
-                        <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400">
+                        <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400  hover:text-cyan-700 dark:hover:text-cyan-700">
                           {title}
                         </h3>
                       </a>
@@ -42,7 +42,7 @@ export default function ArticleCard({
                         <div className="inline-flex items-center justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
                         {/* {dateTime} */} <a
                       href={`/article/${slug}`}
-                      className=' rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
+                      className=' rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0 hover:text-cyan-700 dark:hover:text-cyan-700'
                     >
                       More
                       <svg

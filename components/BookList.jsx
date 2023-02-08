@@ -16,40 +16,19 @@ export default function BookList({
 }) {
   return (
     <>
-      {/* <div className="px-4 pt-6 -mt-2 ">
-
-
-        <div className="flex flex-col md:flex-row md:max-w-xl bg-gray-200/25 rounded-lg dark:bg-gray-800/25 ">
-          <Image
-            className="w-full h-36 md:h-auto object-cover md:w-36 rounded-t-lg md:rounded-none md:rounded-l-lg"
-            src={image}
-            width={120}
-            height={50}
-            alt="blog"
-          />
-          <div className="p-6 flex flex-col justify-start">
-            <a href={`/book/${slug}`}>
-              <h5 class="text-gray-900 dark:text-yellow-400 text-xl font-medium mb-2">{title}</h5>
-            </a>
-            <p className="text-gray-600 dark:text-gray-400  text-xs mb-4">By {author} / {category}</p>
-            <p className="text-cyan-700 text-sm mb-4">
-             {description}
-            </p>
-            <p className="text-gray-600 text-xs">Last updated 3 mins ago</p>
-          </div>
-        </div>
-      </div> */}
-
+  
       <div className="p-10 border-b  border-gray-400 dark:border-gray-600 border-dashed">
                      <div className=" mb-4 flex flex-col justify-start">
             <a href={`/book/${slug}`}>
-            <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400">{title}</h3>
+            <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400
+            hover:text-teal-600 dark:hover:text-cyan-600
+            ">{title}</h3>
             </a>
-            <p className="text-gray-600 dark:text-gray-400  text-xs mb-4">By {author} / {category}</p>
-            <p className="text-cyan-700 text-l mb-4">
+            <p className="text-gray-600  text-xs mb-4">By {author} / {category}</p>
+            <p className="text-gray-600 text-l mb-4 leading-7 dark:text-gray-400">
              {description}
             </p>
-            <p className="text-gray-600 text-xs">Last updated 3 mins ago</p>
+            <p className="text-gray-600  text-xs">Last updated 3 mins ago</p>
           </div>
                     
                     <div className="flex justify-between">
@@ -57,9 +36,9 @@ export default function BookList({
                         <div className="inline-flex items-center justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
                         {/* {dateTime} */} <a
                       href={`/book/${slug}`}
-                      className=' rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
+                      className='pt-2 hover:text-teal-600 dark:hover:text-cyan-600 rounded-full text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
                     >
-                      Review/Notes
+                      Read Notes
                       <svg
                         className='w-4 h-4 ml-2'
                         viewBox='0 0 24 24'

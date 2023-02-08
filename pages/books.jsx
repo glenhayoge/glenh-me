@@ -29,9 +29,8 @@ export default function BookPage({ books }) {
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
                       List of Books Read
                       </p>
-                      <p className="text-sm  text-gray-400 mt-3">
-                    {" "}
-                    Below are book notes, summaries and ranking for the books I read.
+                      <p className="text-sm  text-gray-600 mt-3">
+                    Below are notes, summaries &amp; personal ranking of books I have read.
                   </p>
                     </div>
                   </div>
