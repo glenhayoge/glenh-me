@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import SnippetList from "../components/BookList";
+import SnippetList from "../components/SnippetList";
 import { allSnippets } from "contentlayer/generated";
 import { select } from "../utils/select";
 import { useEffect } from "react";
@@ -25,7 +25,7 @@ export default function SnippetPage({ snippets }) {
                       Snippets.
                       </p>
                       <p className="text-sm  text-gray-600 my-6">
-                    Below are notes, summaries &amp; personal ranking of books I have read.
+                      Short solutions to discrete problems which can be copied and pasted.
                   </p>
                     </div>
                   </div>

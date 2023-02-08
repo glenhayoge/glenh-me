@@ -1,6 +1,6 @@
 import { allSnippets } from 'contentlayer/generated';
 import { NextSeo } from 'next-seo';
-import { SnippetDetails } from '../../components/BookDetails';
+import { SnippetDetails } from '../../components/SnippetDetails';
 
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
