@@ -53,7 +53,7 @@ export type Snippet = {
   _id: string
   _raw: Local.RawDocumentData
   type: 'Snippet'
-  name: string
+  title: string
   updatedAt: string
   description: string
   category: string

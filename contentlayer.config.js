@@ -43,7 +43,7 @@ const Snippet = defineDocumentType(() => ({
   filePathPattern: `snippets/*.mdx`,
   contentType: 'mdx',
   fields: {
-    name: { type: 'string', required: true },
+    title: { type: 'string', required: true },
     updatedAt: { type: 'string', required: true },
     description: { type: 'string', required: true },
 
