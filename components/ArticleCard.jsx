@@ -25,6 +25,7 @@ export default function ArticleCard({
             href="#"
           >
             <span className="">{dateTime}</span>
+            <span className="">{tags}</span>
           </a>
         </div>
         <div className="mb-4">

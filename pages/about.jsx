@@ -35,10 +35,8 @@ export default function IndexPage() {
                 </div>
                 <div className="w-full h-full overflow-y-auto">
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    I am Glen, a software developer from Papua New Guinea. I use
-                    this space on the internet to create and share contents on
-                    software projects, articles, tutorials, guides, issues,
-                    musings, and lots more. I love building things and have a
+                    I am Glen, a software developer from Papua New Guinea. I use this digital commonplace
+                    on the internet to express what I have captured, organised and distilled. I love building things and have a
                     long list of abandoned side projects and some stale piles of
                     code that I hope to keep adding to.
                   </p>
@@ -47,19 +45,19 @@ export default function IndexPage() {
                     and other stuffs on the <Link href="/articles"><strong className="text-cyan-600">blog page</strong></Link> .
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    My site has no ads, no affiliate links, no tracking or
+                    This site has no ads, no affiliate links, no tracking or
                     analytics, no sponsored posts, and no paywall. My only
-                    motivation for this site is to share what I've learned with
+                    motivation for this site is to share and express what I've learnt with
                     the world.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    This is a pint of my contribution to making the internet
+                    This is somewhat a pint of my contribution to making the internet
                     a better place for everyone and I hope others will be
                     inspired to be creative out there
                     as well.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  If you spot an error, or have any comments, suggestions or questions about what I've written or if you basically want to say hi to me, send email to <strong className="text-cyan-600"> <Link href="mailto:gghayoge@gmail.com">gghayoge at gmail.com</Link></strong> 
+                  If you spot an error, or have any comments, suggestions or questions about what I've written or if you basically want to say hi to me, shoot an email to <strong className="text-cyan-600"> <Link href="mailto:gghayoge@gmail.com">gghayoge at gmail.com</Link></strong> 
                  
                  
                   </p>

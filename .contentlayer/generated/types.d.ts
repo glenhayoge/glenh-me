@@ -18,6 +18,7 @@ export type Article = {
   description: string
   seoDescription: string
   category: string
+  tags: string
   author?: Author | undefined
   image: string
   toc: boolean

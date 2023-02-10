@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Blog post 1",
+      "slug": "blog-post-1",
+      "tags": ["test", "example"]
+    },
+    {
+      "title": "Blog post 2",
+      "slug": "blog-post-2",
+      "tags": ["example"]
+    },
+    {
+      "title": "Blog post 3",
+      "slug": "blog-post-3",
+      "tags": ["test"]
+    }
+  ]

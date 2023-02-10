@@ -58,6 +58,7 @@ export default function Home({ articles }) {
                       category,
                       publishedAt,
                       readingTime,
+                      tags
                     }) => (
                       <ArticleCard
                         key={slug}
@@ -69,6 +70,7 @@ export default function Home({ articles }) {
                         dateTime={publishedAt}
                         date={publishedAt}
                         readingTime={readingTime.text}
+                        tags={tags}
                       />
                     )
                   )}
@@ -114,6 +116,7 @@ export function getStaticProps() {
         "author",
         "category",
         "image",
+        "tags"
       ])
     )
     .sort(
