@@ -11,6 +11,7 @@ export default function ArticleList({
   category,
   dateTime,
   readingTime,
+  tags
 }) {
   return (
     <>
@@ -33,6 +34,11 @@ export default function ArticleList({
               className="flex items-center text-xs text-gray-500"
               href="#">
               <span className="mr-2">{dateTime}</span>
+            </div>
+            <div
+              className="flex items-center text-xs text-gray-500"
+              href="#">
+              <span className="mr-2">{tags}</span>
             </div>
             <span className="text-gray-500">/</span>
             <div

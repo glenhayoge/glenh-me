@@ -12,6 +12,7 @@ export default function ArticleCard({
   category,
   dateTime,
   readingTime,
+  tags,
 }) {
   return (
     <>
