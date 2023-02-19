@@ -29,7 +29,7 @@ export default function ISideBar() {
             height={100}
           />
           <div class="px-6 text-center py-6">
-            <h5 style={signature}className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
+            <h5 style={signature} className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
             </h5>
             <p class="mb-6 text-sm text-gray-500">

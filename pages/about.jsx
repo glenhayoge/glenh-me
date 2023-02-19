@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
+
 // import 'boxicons'
 
 import {
