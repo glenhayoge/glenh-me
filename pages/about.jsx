@@ -19,6 +19,11 @@ import { useEffect } from "react";
 import propic from "../assets/profile2.png";
 
 export default function IndexPage() {
+  const signature = { 
+    fontFamily: 'Mrs Saint Delafield, cursive',
+    fontSize: '40px',
+    textAlign: 'center',
+   };
   const { TimeAgo } = useTimeAgo();
   useEffect(() => {}, []);
   return (
@@ -45,16 +50,10 @@ export default function IndexPage() {
                     and other stuffs on the <Link href="/articles"><strong className="text-cyan-600">blog page</strong></Link> .
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    This site has no ads, no affiliate links, no tracking or
-                    analytics, no sponsored posts, and no paywall. My only
-                    motivation for this site is to share and express what I've learnt with
-                    the world.
+                  This website is free from ads, affiliate links, tracking or analytics, sponsored posts, and paywalls. My sole motivation for creating and maintaining this site is to share my knowledge and express my ideas with the world.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    This is somewhat a pint of my contribution to making the internet
-                    a better place for everyone and I hope others will be
-                    inspired to be creative out there
-                    as well.
+                  I see my contribution as a small step towards making the internet a better place for everyone, and I hope to inspire others to unleash their creativity and make their own positive impact.
                   </p>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   If you spot an error, or have any comments, suggestions or questions about what I've written or if you basically want to say hi to me, shoot an email to <strong className="text-cyan-600"> <Link href="mailto:gghayoge@gmail.com">gghayoge at gmail.com</Link></strong> 
@@ -239,7 +238,7 @@ export default function IndexPage() {
                     </div>
                   </div>
                   <div class="px-6 text-center pt-8">
-                    <h5 className="signature text-gray-600 dark:text-yellow-400 text-xl mb-4">
+                    <h5 style={signature}className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
                       GlenGHayoge
                     </h5>
                     <p class="mb-6 text-sm text-gray-500">

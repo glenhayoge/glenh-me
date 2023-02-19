@@ -7,6 +7,11 @@ import GitHubCalendar from 'react-github-calendar';
 
 export default function ISideBar() {
   const { TimeAgo } = useTimeAgo();
+  const signature = { 
+    fontFamily: 'Mrs Saint Delafield, cursive',
+    fontSize: '40px',
+    textAlign: 'center',
+   };
   return (
     <>
       <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
@@ -24,7 +29,7 @@ export default function ISideBar() {
             height={100}
           />
           <div class="px-6 text-center py-6">
-            <h5 className="signature text-gray-600 dark:text-yellow-400 text-xl mb-4">
+            <h5 style={signature}className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
             </h5>
             <p class="mb-6 text-sm text-gray-500">
@@ -154,8 +159,6 @@ export default function ISideBar() {
                 </svg>
               </a>
             </div>
-
-           
             <div className="py-1 px-6 text-xs italic text-gray-500">
               Updated: <TimeAgo date="February 1, 2023 1:00 am" locale="pg" />
             </div>
