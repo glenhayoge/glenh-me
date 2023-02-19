@@ -35,40 +35,12 @@ export default function IndexPage() {
                 </div>
                 <div className="w-full h-full overflow-y-auto">
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    I am Glen, a software developer from Papua New Guinea. I use
-                    this space on the internet to create and share contents on
-                    software projects, articles, tutorials, guides, issues,
-                    musings, and lots more. I love building things and have a
-                    long list of abandoned side projects and some stale piles of
-                    code that I hope to keep adding to.
+                  Here are some courses I've gotten most value from in my continuous learning journey.
                   </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    The projects page has highlights of my work. Read tutorials
-                    and other stuffs on the blog page.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    My site has no ads, no affiliate links, no tracking or
-                    analytics, no sponsored posts, and no paywall. My only
-                    motivation for this site is to share what I've learned with
-                    the world.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Although the tide is against me, I want to make the internet
-                    a better place. Even if it's just right here. I hope I will
-                    inspire others to make their own creative corner on the web
-                    as well.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Say hi to me by sending an email to gghayoge at gmail.com if
-                    you like what I am doing. I appreciate meeting new people.
-                  </p>
+              
                 </div>
-                {/* what im doing */}
-                <div className="flex py-8 justify-left text-left items-center   ">
-                  <h2 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl ">
-                    What I'm doing now
-                  </h2>
-                </div>
+             
+               
                 <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Projects I am currently working on.
                 </p>
@@ -140,78 +112,6 @@ export default function IndexPage() {
                       Lidabase: Leaders performance leatherboard
                     </li>
                   </ul>
-                </div>
-                {/* what im reading */}
-                <div className="flex my-12 justify-left text-left items-center">
-                  <h2 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
-                    Reach out to me 
-                  </h2>
-                </div>
-                <div className="w-full h-full overflow-y-auto">
-                <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
-                    <li className=" flex items-center">
-                    <i className='bx bxl-github text-gray-500 text-xl mr-1.5' ></i>
-                      Github
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bxl-twitter text-gray-500 text-xl mr-1.5' ></i>
-                      Twitter
-                    </li>
-                    <li className="flex items-center">
-                    <i class='text-gray-500 text-xl mr-1.5 bx bxl-linkedin-square' ></i>
-                      LinkedIn
-                    </li>
-                    <li className="flex items-center">
-                    <i className='text-gray-500 text-xl mr-1.5 bx bxl-stack-overflow' ></i>
-                     StackOverFlow
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bx-globe text-gray-500 text-xl mr-1.5' ></i>
-                     Website: You looking at it!
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bx-envelope text-gray-500 text-xl mr-1.5' ></i>
-                     Email: gghayoge at gmail.com
-                    </li>
-      
-                  </ul>
-                </div>
-
-                {/* my dev tools */}
-                <div className="flex my-12 justify-left text-left items-center  ">
-                  <h5 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
-                    What I'm Reading
-                  </h5>
-                </div>
-                <div className="w-full h-full overflow-y-auto">
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    I am Glen, a software developer from Papua New Guinea.I have passion to use technolgy to solve problems & create innovative soultions. I use
-                    this space on the internet to create and share contents on
-                    software projects, articles, tutorials, guides, issues,
-                    musings, and lots more... I love building things and have a
-                    long list of abandoned side projects and some stale piles of
-                    code that I hope to keep adding to.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Check out the projects page to see a highlight of my
-                    open-source work, and the blog for my tutorials and more.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    My site has no ads, no affiliate links, no tracking or
-                    analytics, no sponsored posts, and no paywall. My only
-                    motivation for this site is to share what I've learned with
-                    the world.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    Although the tide is against me, I want to make the internet
-                    a better place. Even if it's just right here. I hope I will
-                    inspire others to make their own creative corner on the web
-                    as well.
-                  </p>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    You can contact me by email at hello at taniarascia.com to
-                    say hi! I always appreciate meeting new people.
-                  </p>
                 </div>
               </div>
             </div>
