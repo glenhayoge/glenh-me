@@ -4,7 +4,7 @@
 
 This website is running on NextJS, React, ContentLayer & MDx. It's hosted on Vercel
 
-**Note**: The source code for this site was not created to be a template or theme, but for my own use. Feel free to take whatever inspiration from it that you want, but this code was not written with the intention of being cloned and deployed. As such, I do not provide support or guidance for doing that. 
+**Note**: The code used for this site was not designed to be used as a template or theme. It was created solely for personal use. While you may find inspiration from it, please note that it was not intended to be copied or replicated. As such, I cannot offer any support or guidance for such purposes.
 
 
 
