@@ -13,9 +13,9 @@ const Header = () => {
           priority
         src={tribalPattern}
   
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill
+          object-fit="cover"
+          object-position="center"
           alt="background hero image"
           className="opacity-10"
           

@@ -1,10 +1,7 @@
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
 import readingTime from 'reading-time';
 import mdxOptions from './config/md';
-import rehypeSlug from "rehype-slug";
 import GithubSlugger from 'github-slugger'
-
-
 
 const Author = defineNestedType(() => ({
   name: 'Author',

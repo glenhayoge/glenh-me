@@ -6,26 +6,20 @@ import Header from "../components/Header";
 import IProjects from "../components/IndexProjects";
 import ILearningResources from "../components/LearningResources";
 import ISideBar from "../components/IndexSidebar"
+import Link from "next/link";
 // import Newsletter from "../components/Newsletter";
 import { useTimeAgo } from "next-time-ago";
 // import Subscribe from "../components/Subscribe";
 
 
 export default function Home({ articles }) {
-  const { TimeAgo } = useTimeAgo();
+  // const { TimeAgo } = useTimeAgo();
 
   return (
     <div>
       <Head>
         <title>Glenh.me | Blog</title>
-        <link rel="icon" href="/favicon.ico" />
-        <style>
-          
-          @import
-          url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
-          @import
-          url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nanum+Pen+Script&display=swap');
-        </style>       
+        <Link rel="icon" href="/favicon.ico">  </Link>   
       </Head>
       <Header />
       <section className="py-24 ">
