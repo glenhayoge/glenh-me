@@ -5,11 +5,10 @@ import { select } from "../utils/select";
 import Header from "../components/Header";
 import IProjects from "../components/IndexProjects";
 import ILearningResources from "../components/LearningResources";
-import ISideBar from "../components/IndexSideBar"
-
-import Newsletter from "../components/newsletter";
+import ISideBar from "../components/IndexSidebar"
+// import Newsletter from "../components/Newsletter";
 import { useTimeAgo } from "next-time-ago";
-import Subscribe from "../components/Subscribe";
+// import Subscribe from "../components/Subscribe";
 
 
 export default function Home({ articles }) {
