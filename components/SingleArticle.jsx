@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ViewCounter from "../components/ViewCounter";
+// import ViewCounter from "../components/ViewCounter";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -173,8 +173,8 @@ export const SingleArticle = ({
                   </svg>
                 </span>
 
-                <span class=" text-center text-sm  tracking-normal "> 
-                <ViewCounter slug article={true}/></span>
+                {/* <span class=" text-center text-sm  tracking-normal "> 
+                <ViewCounter slug article={true}/></span> */}
               </div>
             </div>
             <Image

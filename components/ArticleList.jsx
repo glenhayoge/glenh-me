@@ -1,5 +1,5 @@
 import React from "react";
-import ViewCounter from "../components/ViewCounter";
+// import ViewCounter from "../components/ViewCounter";
 import Link from "next/link";
 
 
@@ -45,9 +45,9 @@ export default function ArticleList({
               className="flex items-center text-xs text-gray-500"
               href="#"
             >
-              <span className="ml-2">
+              {/* <span className="ml-2">
                 <ViewCounter slug={slug} blogPage={true} />
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
