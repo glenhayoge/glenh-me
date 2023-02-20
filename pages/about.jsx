@@ -3,19 +3,6 @@ import Image from "next/image";
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
 
-// import 'boxicons'
-
-import {
-  FacebookShareButton,
-  FacebookIcon,
-  TwitterShareButton,
-  TwitterIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-} from "next-share";
-
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
 
@@ -105,8 +92,7 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-               
-                  
+              
                       Deep Work by Cal Newport
                     </li>
                     <li className="flex items-center">
@@ -213,14 +199,11 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                     <i className='bx bx-envelope text-cyan-600 text-xl mr-1.5' ></i>
-                     Email: &nbsp;<strong className="text-cyan-600">gghayoge at gmail.com</strong>
+                     Email: &nbsp;<strong className="text-cyan-600"><Link href="mailto:gghayoge@gmail.com">gghayoge at gmail.com</Link></strong>
                     </li>
       
                   </ul>
                 </div>
-
-               
-               
               </div>
             </div>
             <div class="w-full lg:w-4/12 p-4 ">
