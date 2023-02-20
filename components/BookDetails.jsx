@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ViewCounter from "./ViewCounter";
+// import ViewCounter from "./ViewCounter";
 
 export const BookDetails = ({
 
