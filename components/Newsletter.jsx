@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default () => {
+const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [state, setState] = useState("IDLE");
   const [errorMessage, setErrorMessage] = useState(null);
@@ -61,3 +61,6 @@ export default () => {
     </> 
   );
 };
+Newsletter.displayName = "Newsletter"; // Adding the display name
+
+export default Newsletter; // Exporting the component after assigning it to a variable

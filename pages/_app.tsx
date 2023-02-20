@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
      <Head> 
      <Link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></Link>
-     <Script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js" async ></Script>
      <Link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"></Link>
      <Link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet"></Link>
     </Head>
@@ -21,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Navbar/>
     <Component className="dark-main" {...pageProps} />
     <Footer/>
+    <Script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js" async ></Script>
   </ThemeProvider>
   </>
   )

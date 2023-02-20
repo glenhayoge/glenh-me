@@ -30,7 +30,9 @@ const SearchBar = () => {
         {query.length >= 3 && searchResults !== [] ? (
           <>
             {searchResults.map((result) => (
+              <li key={result.id}>
               <a href={result.url}>{result.title}</a>
+              </li>
             ))}
           </>
         ) : query.length >= 3 && searchResults == [] ? (
