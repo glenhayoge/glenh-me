@@ -1,7 +1,7 @@
 // import { LightningBoltIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
-export default function Logo() {
+const Logo = () =>{
   return (
     <Link href="/">
       <div className="my-10 flex items-center space-x-1 text-gray-800 dark:text-yellow-400">
@@ -11,3 +11,4 @@ export default function Logo() {
     // className="flex-shrink-0 mr-3 w-24 h-24" fill="currentColor" 
   );
       }
+      export default Logo; 

@@ -5,7 +5,7 @@ import propic from "../assets/glens_1.png";
 import { useTimeAgo } from "next-time-ago";
 import GitHubCalendar from 'react-github-calendar';
 
-export default function ISideBar() {
+const ISideBar = () => {
   const { TimeAgo } = useTimeAgo();
   const signature = { 
     fontFamily: 'Mrs Saint Delafield, cursive',
@@ -174,3 +174,6 @@ export default function ISideBar() {
     </>
   );
 }
+ISideBar.displayName = "Newsletter"; // Adding the display name
+
+export default ISideBar; // Exporting the component after assigning it to a variable

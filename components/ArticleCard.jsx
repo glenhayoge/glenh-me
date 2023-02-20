@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import propic from "../assets/glens_1.png";
-import Newsletter from "../components/newsletter";
+// import Newsletter from "../components/newsletter";
 import ViewCounter from "../components/ViewCounter";
 
 export default function ArticleCard({

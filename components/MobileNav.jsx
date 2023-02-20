@@ -1,4 +1,4 @@
-import Logo from '../components/logo';
+import Logo from '../components/Logo';
 
 export default function MobileNav({ open, setOpen }) {
     return (

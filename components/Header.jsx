@@ -5,7 +5,7 @@ import tribalPattern from '../assets/tribal-pattern.jpg';
 
 const { heroContent, heroWrapper, imageWrapper } = styles;
 
-export default function Header(props) {
+const Header = () => {
   return (
     <div className={heroWrapper}>
       <div className={imageWrapper}>
@@ -78,3 +78,4 @@ export default function Header(props) {
     </div>
   );
 }
+export default Header;

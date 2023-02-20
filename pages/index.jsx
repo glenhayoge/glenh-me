@@ -2,7 +2,7 @@ import Head from "next/head";
 import ArticleCard from "../components/ArticleCard";
 import { allArticles } from "contentlayer/generated";
 import { select } from "../utils/select";
-import Header from "../components/header";
+import Header from "../components/Header";
 import IProjects from "../components/IndexProjects";
 import ILearningResources from "../components/LearningResources";
 import ISideBar from "../components/IndexSideBar"

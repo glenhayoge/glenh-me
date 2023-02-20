@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Logo from "../components/logo";
+import Logo from "../components/Logo";
 import Mobilenav from "../components/MobileNav";
 import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
@@ -80,7 +80,7 @@ export default function Navbar() {
       {" "}
       <Mobilenav open={open} setOpen={setOpen} />
       <div className="w-3/12 flex items-left ">
-        <Logo />
+        <Logo/>
       </div>
       <div className="w-9/12 flex justify-end items-center ">
         <span className="mr-4 md:hidden"> {renderThemeChanger()}</span>

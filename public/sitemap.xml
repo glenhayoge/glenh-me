@@ -9,10 +9,10 @@
   </url>
 
   <url>
-    <loc>localhost:3000data/snippets/test-snippets</loc>
+    <loc>localhost:3000data/books/how-to-eat-an-elephant</loc>
   </url>
 
   <url>
-    <loc>localhost:3000data/books/how-to-eat-an-elephant</loc>
+    <loc>localhost:3000data/snippets/test-snippets</loc>
   </url>
 </urlset>
