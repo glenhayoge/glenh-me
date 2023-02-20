@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Fuse from 'fuse.js';
 import { allDocuments } from 'contentlayer/generated';
-import { pick } from '@contentlayer/utils';
+// import { pick } from '@contentlayer/utils';
 
 // Fuse.js config
 const options = {
@@ -36,7 +36,7 @@ const config = {
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { q } = req.query;
 
-  if (method === 'GET' && q !== undefined) {
+  if (req.method === 'GET' && q !== undefined) {
       return res.status(200).send(fuseInstance.search(q));
   } else {
     return res.status(400).json([]);
