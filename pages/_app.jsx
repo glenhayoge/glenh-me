@@ -4,11 +4,11 @@ import Head from "next/head";
 import "../styles/globals.css";
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
-import type { AppProps } from 'next/app'
+// import type { AppProps } from 'next/app'
 import Script from 'next/script'
 import Link from 'next/link';
 // import { Html, Head, Main, NextScript } from 'next/document'
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }) {
   return (
     <>
      <Head> 
