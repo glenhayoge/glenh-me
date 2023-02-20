@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "sitemap": "node scripts/sitemap.mjs",
-    "postbuild": "yarn sitemap && yarn rss"
+    "postbuild": "yarn sitemap"
   },
   "dependencies": {
     "@heroicons/react": "v1",
