@@ -1,7 +1,7 @@
 import { allArticles } from 'contentlayer/generated';
 import { NextSeo } from 'next-seo';
 import { SingleArticle } from '../../components/SingleArticle';
-import SampleComponent from '../../components/SampleComponent';
+// import SampleComponent from '../../components/SampleComponent';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 

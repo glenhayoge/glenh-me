@@ -1,7 +1,7 @@
 import { allBooks } from 'contentlayer/generated';
 import { NextSeo } from 'next-seo';
 import { BookDetails } from '../../components/BookDetails';
-import SampleComponent from '../../components/SampleComponent';
+// import SampleComponent from '../../components/SampleComponent';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 
