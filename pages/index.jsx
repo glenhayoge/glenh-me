@@ -29,7 +29,7 @@ export default function Home({ articles }) {
               <div className=" overflow-hidden">
                 <div className="pt-1 pb-1 ">
                   <div className="flex mb-4 justify-between items-center">
-                    <div class="pt-2 px-3  text-gray-600">
+                    <div className="pt-2 px-3  text-gray-600">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
                         Recent Posts
                       </p>
@@ -69,9 +69,9 @@ export default function Home({ articles }) {
                   )}
                 </main>
 
-                <div class=" p-4 flex items-center justify-between ">
+                <div className=" p-4 flex items-center justify-between ">
                   <a
-                    class=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
+                    className=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
                     href="/articles"
                   >
                     View All Posts
@@ -86,7 +86,7 @@ export default function Home({ articles }) {
              <ILearningResources />
             </div>
             {/* index side bar */}
-            <div class="w-full lg:w-4/12 p-4 ">
+            <div className="w-full lg:w-4/12 p-4 ">
             <ISideBar /> 
             </div>
           

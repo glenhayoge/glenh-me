@@ -15,8 +15,8 @@ const ISideBar = () => {
    };
   return (
     <>
-      <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
-        <div class="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
+      <div className="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
+        <div className="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
             src={imageUrl}
@@ -31,14 +31,14 @@ const ISideBar = () => {
             width={100}
             height={100}
           />
-          <div class="px-6 text-center py-6">
+          <div className="px-6 text-center py-6">
             <h5 style={signature} className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
             </h5>
-            <p class="mb-6 text-sm text-gray-500">
+            <p className="mb-6 text-sm text-gray-500">
               Software Developer, Designer &amp; Creator
             </p>
-            <div class="flex items-center justify-left mb-6">
+            <div className="flex items-center justify-left mb-6">
               <p className="text-m text-gray-600 dark:text-gray-400">
                 Hi, my name is Glen. I'm a software developer, designer &amp; 
                 creator from Papua New Guinea. I use this space on internet to
@@ -49,7 +49,7 @@ const ISideBar = () => {
             <a href="/about">
               <button
                 type="button"
-                class=" inline-block px-6 py-2.5 outline outline-1 font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                className=" inline-block px-6 py-2.5 outline outline-1 font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
               >
                 More About Me...
               </button>
@@ -97,7 +97,7 @@ const ISideBar = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  class="bi bi-github w-5 h-5"
+                  className="bi bi-github w-5 h-5"
                   viewBox="0 0 16 16"
                 >
                   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -107,7 +107,7 @@ const ISideBar = () => {
                 href="https://www.linkedin.com/in/glen-g-hayoge-089935104/"
                 className="text-gray-400 hover:text-gray-500"
               >
-                <span class="sr-only">LinkedIn</span>
+                <span className="sr-only">LinkedIn</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"

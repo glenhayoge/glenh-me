@@ -61,7 +61,7 @@ export default function IndexPage() {
                   
                       ChicknUp: Poultry marketplace app
                     </li>
-                    <li class="flex items-center">
+                    <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                   
                       Marketini: Farmers & Artisans-marketplace app
@@ -98,20 +98,20 @@ export default function IndexPage() {
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     What I am watching:
                   </p>
-                  <ul class="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
+                  <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                       Wantoea: Small biz management FOSS
                     </li>
-                    <li class="flex items-center">
+                    <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                       ChicknUp: Poultry marketplace app
                     </li>
-                    <li class="flex items-center">
+                    <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                       Marketini: Farmers & Artisans-marketplace app
                     </li>
-                    <li class="flex items-center">
+                    <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                       Lidabase: Leaders performance leatherboard
                     </li>
@@ -119,11 +119,11 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-            <div class="w-full lg:w-4/12 p-4 ">
-              <div class="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
-                <div class="relative pt-10 pb-20 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
-                  <div class="flex justify-center  px-4">
-                    <div class="flex items-center">
+            <div className="w-full lg:w-4/12 p-4 ">
+              <div className="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   shadow-md rounded-lg dark:bg-gray-800/25">
+                <div className="relative pt-10 pb-20 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
+                  <div className="flex justify-center  px-4">
+                    <div className="flex items-center">
                       <Image
                         placeholder="blur"
                         src={propic}
@@ -134,16 +134,16 @@ export default function IndexPage() {
                       />
                     </div>
                   </div>
-                  <div class="px-6 text-center pt-8">
+                  <div className="px-6 text-center pt-8">
                     <h5 className="signature text-gray-600 dark:text-yellow-400 text-xl mb-4">
                       GlenGHayoge
                     </h5>
-                    <p class="mb-6 text-sm text-gray-500">
+                    <p className="mb-6 text-sm text-gray-500">
                       Software Developer, Designer &amp; Creator
                     </p>
                   </div>
 
-                  <div class="px-4 text-center">
+                  <div className="px-4 text-center">
                     <div className="flex justify-center space-x-4 my-8">
                       <a
                         href="https://github.com/glenhayoge"
@@ -153,7 +153,7 @@ export default function IndexPage() {
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="currentColor"
-                          class="bi bi-github w-5 h-5"
+                          className="bi bi-github w-5 h-5"
                           viewBox="0 0 16 16"
                         >
                           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -163,7 +163,7 @@ export default function IndexPage() {
                         href="https://www.linkedin.com/in/glen-g-hayoge-089935104/"
                         className="text-xl xl:grid place-item-center p-1 w-8 h-8 text-gray-500  cursor-pointer hover:bg-gray-800 relative"
                       >
-                        <span class="sr-only">LinkedIn</span>
+                        <span className="sr-only">LinkedIn</span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="currentColor"
@@ -224,33 +224,33 @@ export default function IndexPage() {
                       </a>
                     </div>
 
-                    <div class="mb-2 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
+                    <div className="mb-2 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
                       <a
-                        class="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                        className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
                         href="#"
                       >
                         Front-End
                       </a>
                       <a
-                        class="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                        className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
                         href="#"
                       >
                         Design
                       </a>
                       <a
-                        class="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                        className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
                         href="#"
                       >
                         Software Dev
                       </a>
                     </div>
-                    <div class=" px-6 text-xs italic text-gray-500">
+                    <div className=" px-6 text-xs italic text-gray-500">
                       Updated:{" "}
                       <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
                     </div>
                   </div>
                   <img
-                    class="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
+                    className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                   />
                 </div>

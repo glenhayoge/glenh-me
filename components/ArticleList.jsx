@@ -29,7 +29,7 @@ export default function ArticleList({
           </Link>
         </div>
         <div className="flex justify-between ">
-          <div class="flex ">
+          <div className="flex ">
             <div
               className="flex items-center text-xs text-gray-500"
               href="#">

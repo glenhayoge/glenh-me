@@ -11,13 +11,10 @@ export const SnippetDetails = ({
   return (
     <>
       {/* additional layout */}
-      <div class="w-full pt-10 lg:flex">
-        <div className="w-full h-full overflow-y-auto">
-          {/* <div className="flex items-center justify-center "> */}
+      <div className="w-full pt-10 lg:flex">
+        <div className="w-full h-full overflow-y-auto">Name
           <div className="mx-auto prose prose-xl py-8 max-w-3xl  xl:max-w-5xl rounded-t">
-        
-            <div class="flex justify-between items-center px-16">
-        {/* <span class="inline-block py-1 px-2 bg-blue-50 text-xs text-blue-500 rounded-full">Development</span> */}
+            <div className="flex justify-between items-center px-16">
         <p className="inline-block  text-center text-base uppercase text-sm tracking-wide text-gray-500 dark:text-gray-400">
               <span>{category}</span>
             </p>

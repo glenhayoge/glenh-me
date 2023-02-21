@@ -11,22 +11,17 @@ const Header = () => {
       <div className={imageWrapper}>
         <Image
           priority
-        src={tribalPattern}
-      
-       
-      
+           src={tribalPattern}
           object-position="center"
           alt="background hero"
           className="opacity-10 absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-80 object-cover"
-          
-         
         />
       </div>
 
       <div className={heroContent}>
-      <div class="flex justify-center md:mt-15 space-y-6 my-8 items-center">
-          <a href="#" class="text-gray-400 hover:text-gray-500 ">
-            <span class="sr-only">GlenGH Logo</span>
+      <div className="flex justify-center md:mt-15 space-y-6 my-8 items-center">
+          <a href="#" className="text-gray-400 hover:text-gray-500 ">
+            <span className="sr-only">GlenGH Logo</span>
 
             <svg
               className="w-20 h-20  shadow shadow-2xl shadow-gray-800 dark:shadow-yellow-400 border-2 bg-gray-400 dark:bg-yellow-400 border-gray-500 rounded-full dark:border-yellow-400 hover:bg-gray-900"

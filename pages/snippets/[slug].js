@@ -42,7 +42,7 @@ export async function getStaticPaths() {
     paths: allSnippets.map((snippet) => ({
       params: { slug: snippet.slug },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 

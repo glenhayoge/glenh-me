@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function IProjects() {
     return (
 
-        <div class="container px-2 mx-auto mt-2">
-        <div class="pt-12 mb-8  text-gray-600">
+        <div className="container px-2 mx-auto mt-2">
+        <div className="pt-12 mb-8  text-gray-600">
        
           <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
             Some Projects
@@ -15,28 +15,28 @@ export default function IProjects() {
           </p>
         </div>
         
-        <div class="flex flex-wrap -m-4 text-center">
-        <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+        <div className="flex flex-wrap -m-4 text-center">
+        <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
-              <div class="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
-                <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                  <div class="flex mb-2 justify-between text-left items-left">
-                    <p class=" text-gray-500 text-xs">2022</p>
+              <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+                <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                  <div className="flex mb-2 justify-between text-left items-left">
+                    <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
-                      <p class="block text-right text-xs ">1231 ⭐</p>
+                      <p className="block text-right text-xs ">1231 ⭐</p>
                     </div>
                   </div>
                   <div className="text-center">
                         Glenh.me Website
                         </div>
                 </div>
-                <div class="p-4 items-left flex-left">
-                  <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
+                <div className="p-4 items-left flex-left">
+                  <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     The source code of this website. Glenh.me
                   </p>
                   <Link href="https://github.com" target="_blank">
-                  <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+                  <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Source</span>
 
                     <svg
@@ -56,45 +56,45 @@ export default function IProjects() {
                   </button>
                   </Link>
                 </div>
-                <div class="py-2 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                <div className="py-2 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                   <span>
                     {" "}
-                    <i class="devicon-react-original p-1"></i>
+                    <i className="devicon-react-original p-1"></i>
                   </span>
                   <span>
                     {" "}
-                    <i class="devicon-nextjs-original p-1"></i>
+                    <i className="devicon-nextjs-original p-1"></i>
                   </span>
                   <span>
-                  <i class="devicon-tailwindcss-plain p-1"></i>
+                  <i className="devicon-tailwindcss-plain p-1"></i>
                   </span>
                  
                 </div>
               </div>
            
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
-              <div class="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
-                <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                  <div class="flex mb-2 justify-between text-left items-left">
-                    <p class=" text-gray-500 text-xs">2022</p>
+              <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+                <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                  <div className="flex mb-2 justify-between text-left items-left">
+                    <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
-                      <p class="block text-right text-xs ">1231 ⭐</p>
+                      <p className="block text-right text-xs ">1231 ⭐</p>
                     </div>
                   </div>
                   <div className="text-center">
                         Dzagoo Website
                         </div>
                 </div>
-                <div class="p-4 items-left flex-left">
-                  <p class="text-gray-500 text-center mb-4 text-sm tracking-tight leading-tight ">
+                <div className="p-4 items-left flex-left">
+                  <p className="text-gray-500 text-center mb-4 text-sm tracking-tight leading-tight ">
                     A digital solutions business website. Dzagoo.com
                   
                   </p>
                   <Link href="https://dzagoo.com" target="_blank">
-                  <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+                  <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Live site</span>
 
                     <svg
@@ -114,48 +114,48 @@ export default function IProjects() {
                   </button>
                   </Link>
                 </div>
-                <div class="py-2 text-xl  px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                <div className="py-2 text-xl  px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                   <span>
                     {" "}
-                    <i class="devicon-javascript-plain p-1"></i>
+                    <i className="devicon-javascript-plain p-1"></i>
                   </span>
                   <span>
                     {" "}
-                    <i class="devicon-php-plain p-1"></i>
+                    <i className="devicon-php-plain p-1"></i>
                   </span>
                   <span>
-                  <i class="devicon-css3-plain p-1"></i>
+                  <i className="devicon-css3-plain p-1"></i>
                   </span>
                   <span>
                     {" "}
-                    <i class="devicon-tailwindcss-plain p-1"></i>
+                    <i className="devicon-tailwindcss-plain p-1"></i>
                   </span>
                 
                 </div>
               </div>
            
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+          <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
-              <div class="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
-                <div class="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                  <div class="flex mb-2 justify-between text-left items-left">
-                    <p class=" text-gray-500 text-xs">2022</p>
+              <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+                <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                  <div className="flex mb-2 justify-between text-left items-left">
+                    <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
-                      <p class="block text-right text-xs ">1231 ⭐</p>
+                      <p className="block text-right text-xs ">1231 ⭐</p>
                     </div>
                   </div>
                   <div className="text-center">
                         FPDA Website
                         </div>
                 </div>
-                <div class="p-4 items-left flex-left">
-                  <p class="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
+                <div className="p-4 items-left flex-left">
+                  <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     FPDA's official website. Fpda.com.pg
                   </p>
                   <Link href="htps://fpda.com.pg" target="_blank">
-                  <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+                  <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Live site</span>
 
                     <svg
@@ -175,10 +175,10 @@ export default function IProjects() {
                   </button>
                   </Link>
                 </div>
-                <div class="py-2 text-xl  px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                <div className="py-2 text-xl  px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
                   <span>
                     {" "}
-                    <i class="devicon-bulma-plain p-1"></i>
+                    <i className="devicon-bulma-plain p-1"></i>
                   </span>
                   <span>
                     {" "}
@@ -188,19 +188,19 @@ export default function IProjects() {
                     <i className="devicon-docker-plain p-1"></i>
                   </span>
                   <span>
-                  <i class="devicon-python-plain p-1"></i>
+                  <i className="devicon-python-plain p-1"></i>
                   </span>
                   <span>
-                  <i class="devicon-javascript-plain p-1"></i>
+                  <i className="devicon-javascript-plain p-1"></i>
                   </span>
                 </div>
               </div>
          
           </div>
         </div>
-        <div class="py-8 flex items-center justify-between ">
+        <div className="py-8 flex items-center justify-between ">
           <a
-            class=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
+            className=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
             href="/projects"
           >
             View Projects

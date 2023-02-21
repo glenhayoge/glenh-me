@@ -1,7 +1,7 @@
 export default function ILearningResources() {
     return (
-        <div class="container px-2  mx-auto  mt-8 rounded-lg">
-        <div class=" mb-8  text-gray-600">
+        <div className="container px-2  mx-auto  mt-8 rounded-lg">
+        <div className=" mb-8  text-gray-600">
           <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500 dark:text-gray-400">
             Learning Resources
           </p>
@@ -11,13 +11,13 @@ export default function ILearningResources() {
             resources for software development and self-improvement.
           </p>
         </div>
-        <div class="flex flex-wrap -m-4 text-center ">
+        <div className="flex flex-wrap -m-4 text-center ">
         
-          <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/books">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-              <span class="text-xs ">
-                <span class="inline-block mr-2">
+            <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+              <span className="text-xs ">
+                <span className="inline-block mr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -30,18 +30,18 @@ export default function ILearningResources() {
                   </svg>
                 </span>
               </span>
-              <h2 class="mb-2 text-m uppercase tracking-widest ">
+              <h2 className="mb-2 text-m uppercase tracking-widest ">
                 Books
               </h2>
             </div>
             </a>
           </div>
          
-          <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/blogs">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-              <span class="text-xs ">
-                <span class="inline-block mr-2">
+            <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+              <span className="text-xs ">
+                <span className="inline-block mr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -55,18 +55,18 @@ export default function ILearningResources() {
                   </svg>
                 </span>
               </span>
-              <h2 class="mb-2 text-m uppercase tracking-widest">
+              <h2 className="mb-2 text-m uppercase tracking-widest">
                 Blogs
               </h2>
             </div>
             </a>
           </div>
 
-          <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/courses">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-              <span class="text-xs ">
-                <span class="inline-block mr-2">
+            <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+              <span className="text-xs ">
+                <span className="inline-block mr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -79,17 +79,17 @@ export default function ILearningResources() {
                   </svg>
                 </span>
               </span>
-              <h2 class="mb-2 text-m uppercase tracking-widest">
+              <h2 className="mb-2 text-m uppercase tracking-widest">
                 Courses
               </h2>
             </div>
             </a>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/4 p-4">
+          <div className="w-full md:w-1/2 lg:w-1/4 p-4">
           <a href="/videos">
-            <div class="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
-              <span class="text-xs">
-                <span class="inline-block mr-2">
+            <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+              <span className="text-xs">
+                <span className="inline-block mr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -103,7 +103,7 @@ export default function ILearningResources() {
                   </svg>
                 </span>
               </span>
-              <h2 class="mb-2 text-m uppercase tracking-widest">
+              <h2 className="mb-2 text-m uppercase tracking-widest">
                 Videos
               </h2>
             </div>

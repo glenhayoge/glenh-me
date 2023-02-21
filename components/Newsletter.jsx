@@ -56,7 +56,7 @@ const Newsletter = () => {
       {state === "SUCCESS" && (
         <p className="w-1/2 mt-2 text-green-600">Success!</p>
       )}
-       <div class="mx-auto max-w-screen-sm text-sm mt-4 text-center text-gray-600  dark:text-gray-400 newsletter-form-footer ">We care about the protection of your data. <a href="#" class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Read Privacy Policy</a>.</div>
+       <div className="mx-auto max-w-screen-sm text-sm mt-4 text-center text-gray-600  dark:text-gray-400 newsletter-form-footer ">We care about the protection of your data. <a href="#" className="font-medium text-primary-600 dark:text-primary-500 hover:underline">Read Privacy Policy</a>.</div>
     </div>
     </> 
   );

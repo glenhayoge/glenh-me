@@ -38,7 +38,7 @@ export default function WebApps() {
           The source code of this website. https://glenh.me
         </p>
         <Link href="https://github.com" target="_blank">
-          <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+          <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Source</span>
 
             <svg
@@ -96,7 +96,7 @@ export default function WebApps() {
           https://dzagoo.com
         </p>
         <Link href="https://dzagoo.com" target="_blank">
-          <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+          <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Live site</span>
 
             <svg
@@ -217,7 +217,7 @@ export default function WebApps() {
           FARMIS agri-advisory mobile application
         </p>
         <Link href="https://farmis.fpda.com.pg" target="_blank">
-          <button class="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+          <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Live site</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
