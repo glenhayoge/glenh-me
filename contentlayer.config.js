@@ -36,33 +36,33 @@ const Article = defineDocumentType(() => ({
   computedFields,
 }));
 
-// const Snippet = defineDocumentType(() => ({
-//   name: 'Snippet',
-//   filePathPattern: `snippets/*.mdx`,
-//   contentType: 'mdx',
-//   fields: {
-//     title: { type: 'string', required: true },
-//     updatedAt: { type: 'string', required: true },
-//     description: { type: 'string', required: true },
-//     category: { type: 'string', required: true },
-//   },
-//   computedFields,
-// }));
+const Snippet = defineDocumentType(() => ({
+  name: 'Snippet',
+  filePathPattern: `snippets/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    updatedAt: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    category: { type: 'string', required: true },
+  },
+  computedFields,
+}));
 
-// const Books = defineDocumentType(() => ({
-//   name: 'Book',
-//   filePathPattern: `books/*.mdx`,
-//   contentType: 'mdx',
-//   fields: {
-//     title: { type: 'string', required: true },
-//     category: { type: 'string', required: true },
-//     description: { type: 'string', required: true },
-//     image: { type: 'string', required: true },
-//     publishedAt: { type: 'string', required: true },
-//     author: { type: 'string', required: true }
-//   },
-//   computedFields,
-// }));
+const Books = defineDocumentType(() => ({
+  name: 'Book',
+  filePathPattern: `books/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    category: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    image: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true },
+    author: { type: 'string', required: true }
+  },
+  computedFields,
+}));
 
 const computedFields = {
     readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
@@ -99,7 +99,7 @@ const computedFields = {
 
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',
-    documentTypes: [Article],
+    documentTypes: [Article,Books,Snippet],
     mdx: [mdxOptions],
     
     
