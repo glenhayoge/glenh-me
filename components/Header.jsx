@@ -12,12 +12,12 @@ const Header = () => {
         <Image
           priority
         src={tribalPattern}
-  
-          fill
-          object-fit="cover"
+      
+       
+      
           object-position="center"
-          alt="background hero image"
-          className="opacity-10"
+          alt="background hero"
+          className="opacity-10 absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-80 object-cover"
           
          
         />

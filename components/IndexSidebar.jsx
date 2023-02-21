@@ -7,6 +7,7 @@ import GitHubCalendar from 'react-github-calendar';
 
 const ISideBar = () => {
   const { TimeAgo } = useTimeAgo();
+  const imageUrl="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
   const signature = { 
     fontFamily: 'Mrs Saint Delafield, cursive',
     fontSize: '40px',
@@ -18,7 +19,9 @@ const ISideBar = () => {
         <div class="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
-            src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
+            src={imageUrl}
+            width={500}
+            height={100}
           />
           <Image
             src={propic}
@@ -164,8 +167,9 @@ const ISideBar = () => {
             </div>
           </div>
           <Image
-            className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
-            src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
+          width={300} height={500}
+            className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover" 
+            src={'https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg'}
           />
         </div>
       </div>
