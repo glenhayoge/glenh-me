@@ -23,6 +23,6 @@
   "next-env.d.ts", 
   "**/*.ts", 
   "**/*.tsx",
-  ".contentlayer/generated", "components/ArticleCard.jsx", "pages/index.jsx", "pages/about.jsx","pages/_app.jsx"],
+  ".contentlayer/generated", "components/ArticleCard.jsx", "pages/index.jsx", "pages/about.jsx","pages/_app.jsx", "config/md.jsx"],
   "exclude": ["node_modules"]
 }
