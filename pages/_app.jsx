@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
     <Navbar/>
     <Component className="dark-main" {...pageProps} />
     <Footer/>
-    <Script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js" async ></Script>
+    <Script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js" ></Script>
   </ThemeProvider>
   </>
   )
