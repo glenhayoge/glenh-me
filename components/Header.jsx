@@ -42,24 +42,24 @@ const Header = () => {
                 stroke="currentColor"
                 className="text-black dark:text-yellow-400"
            
-                stroke-miterlimit="10"
-                stroke-width="3"
+                strokeMiterlimit="10"
+                strokeWidth="3"
               />
               <polygon
                 points="90.04 122.38 93.71 210 82.13 200.93 79.62 127.81 32.4 94.96 35.3 150.93 54.16 164.88 52.54 141.06 61.02 146.75 63.3 187.37 27.32 159.2 23.42 78 90.04 122.38"
                 fill="currentColor"
                 stroke="currentColor"
                 className="text-black dark:text-yellow-400"
-                stroke-miterlimit="10"
-                stroke-width="3"
+                strokeMiterlimit="10"
+                strokeWidth="3"
               />
               <polygon
                 points="111.3 121.58 127.32 115.29 129.09 150.6 192.87 126.54 191.66 90.03 205.84 84.46 207.34 172.15 195.43 178.38 194.21 141.87 129.87 167.13 131.69 203.09 115.85 210 111.3 121.58"
                 fill="currentColor"
                 stroke="currentColor"
                 className="text-black dark:text-yellow-400"
-                stroke-miterlimit="10"
-                stroke-width="3"
+                strokeMiterlimit="10"
+                strokeWidth="3"
               />
             </svg>
           </a>

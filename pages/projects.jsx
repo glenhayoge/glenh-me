@@ -40,7 +40,7 @@ export default function IndexPage() {
                     alt="Projects Image"
                     width="350px"
                     height="300px"
-                    layout="responsive"
+                   
                     className="opacity-30"
                   />
                 </div>

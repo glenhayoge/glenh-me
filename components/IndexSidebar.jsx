@@ -16,7 +16,7 @@ const ISideBar = () => {
     <>
       <div class="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
         <div class="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
-          <img
+          <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
             src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
           />
@@ -163,7 +163,7 @@ const ISideBar = () => {
               Updated: <TimeAgo date="February 1, 2023 1:00 am" locale="pg" />
             </div>
           </div>
-          <img
+          <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
             src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
           />

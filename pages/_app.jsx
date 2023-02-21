@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
     <>
      <Head> 
      <Link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></Link>
-     <Link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"></Link>
+     <Link rel="stylesheet"href="https://unpkg.com/browse/boxicons@2.0.9/css/boxicons.min.css"></Link>
      <Link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet"></Link>
     </Head>
     <ThemeProvider enableSystem={true} attribute="class">  

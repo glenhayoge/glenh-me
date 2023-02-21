@@ -8,7 +8,7 @@ import ILearningResources from "../components/LearningResources";
 import ISideBar from "../components/IndexSidebar"
 import Link from "next/link";
 // import Newsletter from "../components/Newsletter";
-import { useTimeAgo } from "next-time-ago";
+// import { useTimeAgo } from "next-time-ago";
 // import Subscribe from "../components/Subscribe";
 
 
