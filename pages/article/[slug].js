@@ -80,7 +80,7 @@ export async function getStaticPaths() {
     paths: allArticles.map((article) => ({
       params: { slug: article.slug },
     })),
-    fallback: 'blocking',
+    fallback: false,
   };
 }
 

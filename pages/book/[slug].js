@@ -54,7 +54,7 @@ export async function getStaticPaths() {
     paths: allBooks.map((book) => ({
       params: { slug: book.slug },
     })),
-    fallback: 'blocking',
+    fallback: false,
   };
 }
 
