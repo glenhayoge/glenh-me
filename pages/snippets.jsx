@@ -53,7 +53,7 @@ export default function SnippetPage({ snippets }) {
                   </main>
               </div>
             </div>
-            <div classNameName="w-full lg:w-4/12 p-4 ">
+            <div className="w-full lg:w-4/12 p-4 ">
               <div className="p-0 dark:text-gray-500 rounded text-center overflow-hidden   rounded-lg dark:bg-gray-800/25">
                 <div className="relative pt-6 pb-10 z-60  rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">

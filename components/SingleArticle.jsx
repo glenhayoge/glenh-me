@@ -24,12 +24,12 @@ export const SingleArticle = ({
   return (
     <>
       {/* additional layout */}
-      <div classNameName="w-full pt-10 lg:flex">
-        <div classNameName="w-full h-full overflow-y-auto">
-          {/* <div classNameName="flex items-center justify-center "> */}
-          <div classNameName="mx-auto prose prose-xl py-8 max-w-3xl  xl:max-w-5xl rounded-t">
-            {/* <div classNameName="inline-flex items-center px-4 justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
-              <span classNameName="text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0">
+      <div className="w-full pt-10 lg:flex">
+        <div className="w-full h-full overflow-y-auto">
+          {/* <div className="flex items-center justify-center "> */}
+          <div className="mx-auto prose prose-xl py-8 max-w-3xl  xl:max-w-5xl rounded-t">
+            {/* <div className="inline-flex items-center px-4 justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
+              <span className="text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -47,7 +47,7 @@ export const SingleArticle = ({
               </span>
               <Link
                 href="/"
-                classNameName="text-gray-500 dark:text-yellow-400"
+                className="text-gray-500 dark:text-yellow-400"
                 style={{ textDecoration: "none" }}
             
               >{" "}
@@ -56,13 +56,13 @@ export const SingleArticle = ({
             </div> */}
             <div className="flex justify-between items-center px-16">
         {/* <span className="inline-block py-1 px-2 bg-blue-50 text-xs text-blue-500 rounded-full">Development</span> */}
-        <p classNameName="inline-block  text-center text-base uppercase text-sm tracking-wide text-gray-500 dark:text-gray-400">
+        <p className="inline-block  text-center text-base uppercase text-sm tracking-wide text-gray-500 dark:text-gray-400">
               <span>{category}</span>
             </p>
-        <button classNameName="focus:outline-none flex justify-center text-sm ">
+        <button className="focus:outline-none flex justify-center text-sm ">
         <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  classNameName="h-5 w-5 text-gray-500 dark:text-gray-400"
+                  className="h-5 w-5 text-gray-500 dark:text-gray-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -76,7 +76,7 @@ export const SingleArticle = ({
                 </svg> 
                 <Link
                 href="/articles"
-                classNameName="text-gray-500 dark:text-gray-400"
+                className="text-gray-500 dark:text-gray-400"
                 style={{ textDecoration: "none" }}
             
               >{" "}
@@ -84,21 +84,21 @@ export const SingleArticle = ({
               </Link>
         </button>
       </div>
-            <h1 classNameName="mt-2 block text-center px-2 leading-10 text-4xl font-black tracking-tight sm:text-4xl  dark:text-yellow-400 text-gray-900 ">
+            <h1 className="mt-2 block text-center px-2 leading-10 text-4xl font-black tracking-tight sm:text-4xl  dark:text-yellow-400 text-gray-900 ">
               {title}
             </h1>
-            <p classNameName="px-4 text-center lg:-mt-4 md:-mt-6 leading-tight italic text-gray-500 dark:text-gray-400">
+            <p className="px-4 text-center lg:-mt-4 md:-mt-6 leading-tight italic text-gray-500 dark:text-gray-400">
               {/* This is a dummy text for inserting a short description of the
               article */}
                {description}
             </p>
-            <div classNameName="justify-center text-center items-center  text-gray-500 dark:text-gray-400">
-              <span classNameName="p-1">
+            <div className="justify-center text-center items-center  text-gray-500 dark:text-gray-400">
+              <span className="p-1">
                 <LinkedinShareButton url={"https://github.com/next-share"}>
                   <LinkedinIcon size={30} round />
                 </LinkedinShareButton>
               </span>
-              <span classNameName="p-1">
+              <span className="p-1">
                 <FacebookShareButton
                   url={"https://github.com/next-share"}
                   quote={
@@ -109,7 +109,7 @@ export const SingleArticle = ({
                   <FacebookIcon size={30} round />
                 </FacebookShareButton>
               </span>
-              <span classNameName="p-1">
+              <span className="p-1">
                 <TwitterShareButton
                   url={"https://github.com/next-share"}
                   title={
@@ -119,7 +119,7 @@ export const SingleArticle = ({
                   <TwitterIcon size={30} round />
                 </TwitterShareButton>
               </span>
-              <span classNameName="p-1">
+              <span className="p-1">
                 <WhatsappShareButton
                   url={"https://github.com/next-share"}
                   title={
@@ -139,11 +139,11 @@ export const SingleArticle = ({
                   height={36}
                   alt="blog"
                   
-                  classNameName="w-16 h-16 p-1 mr-4 rounded-full border border-indigo-50"
+                  className="w-16 h-16 p-1 mr-4 rounded-full border border-indigo-50"
                 />
                 <div>
                   <div className="flex -mb-3 ">
-                    <strong classNameName="text-gray-500 text-base font- dark:text-gray-500 text-center">
+                    <strong className="text-gray-500 text-base font- dark:text-gray-500 text-center">
                       {author.name}
                     </strong>
                   </div>
@@ -160,7 +160,7 @@ export const SingleArticle = ({
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                 <span className="mr-1">
                   <svg
-                    classNameName=" items-center "
+                    className=" items-center "
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -178,7 +178,7 @@ export const SingleArticle = ({
               </div>
             </div>
             <Image
-              classNameName="rounded-t lg:h-96 md:h-48 w-full object-cover -mt-4 object-center px-4"
+              className="rounded-t lg:h-96 md:h-48 w-full object-cover -mt-4 object-center px-4"
               src={image}
               width={720}
               height={400}
@@ -187,7 +187,7 @@ export const SingleArticle = ({
             {/* <hr /> */}
             {/* <br /> */}
 
-            <article classNameName="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-lg max-w-3xl px-4 mx-auto  xl:max-w-5xl ">
+            <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-lg max-w-3xl px-4 mx-auto  xl:max-w-5xl ">
               {children}
             </article>
           </div>
@@ -204,7 +204,7 @@ export const SingleArticle = ({
                       <span className="text-xs ">
                         <span className="mr-2">
                         <svg
-                    classNameName="mr-2 items-center "
+                    className="mr-2 items-center "
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"

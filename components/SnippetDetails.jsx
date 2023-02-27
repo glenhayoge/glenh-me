@@ -12,7 +12,7 @@ export const SnippetDetails = ({
     <>
       {/* additional layout */}
       <div className="w-full pt-10 lg:flex">
-        <div className="w-full h-full overflow-y-auto">Name
+        <div className="w-full h-full overflow-y-auto">
           <div className="mx-auto prose prose-xl py-8 max-w-3xl  xl:max-w-5xl rounded-t">
             <div className="flex justify-between items-center px-16">
         <p className="inline-block  text-center text-base uppercase text-sm tracking-wide text-gray-500 dark:text-gray-400">
