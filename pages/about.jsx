@@ -12,6 +12,9 @@ export default function IndexPage() {
     fontSize: '40px',
     textAlign: 'center',
    };
+
+  const patternUrl='https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg'
+  
   const { TimeAgo } = useTimeAgo();
   useEffect(() => {}, []);
   return (
@@ -337,9 +340,11 @@ export default function IndexPage() {
                     </div>
                   </div>
                   <Image
-                    className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
-                    src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
-                  />
+          width={300} height={500}
+            className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover" 
+            src={patternUrl}
+            alt="tribal-pattern-2"
+          />
                 </div>
               </div>
               <Subscribe />
