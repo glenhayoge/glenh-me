@@ -1,10 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
+
 import BookList from "../components/BookList";
 import { allBooks } from "contentlayer/generated";
 import { select } from "../utils/select";
 import { useEffect } from "react";
-import propic from "../assets/profile2.png";
+
 import Subscribe from "../components/Subscribe";
 
 export default function BookPage({ books }) {

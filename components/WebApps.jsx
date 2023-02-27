@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import projects from "../assets/pattern.png";
 
 export default function WebApps() {
     return (

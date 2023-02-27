@@ -1,19 +1,18 @@
-import Link from "next/link";
 import Image from "next/image";
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
 // import 'boxicons'
 
-import {
-  FacebookShareButton,
-  FacebookIcon,
-  TwitterShareButton,
-  TwitterIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-} from "next-share";
+// import {
+//   FacebookShareButton,
+//   FacebookIcon,
+//   TwitterShareButton,
+//   TwitterIcon,
+//   WhatsappShareButton,
+//   WhatsappIcon,
+//   LinkedinShareButton,
+//   LinkedinIcon,
+// } from "next-share";
 
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";

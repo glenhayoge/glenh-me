@@ -6,8 +6,6 @@ import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
 // import type { AppProps } from 'next/app'
 
-import Script from 'next/script'
-import Link from 'next/link';
 
 export default function App({ Component, pageProps }) {
   return (

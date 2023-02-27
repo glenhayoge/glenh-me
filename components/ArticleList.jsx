@@ -5,12 +5,11 @@ import Link from "next/link";
 
 export default function ArticleList({
   title,
-  description,
+ 
   slug,
-  image,
-  category,
+
   dateTime,
-  readingTime,
+
   tags
 }) {
   return (

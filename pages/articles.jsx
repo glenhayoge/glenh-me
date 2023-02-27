@@ -40,12 +40,11 @@ export default function IndexPage({ articles }) {
                     {articles.map(
                       ({
                         title,
-                        description,
+                        
                         slug,
-                        image,
-                        category,
+                     
                         publishedAt,
-                        readingTime,
+                       
                         tags,
                       }) => (
                         <ArticleList

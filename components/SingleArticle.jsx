@@ -18,7 +18,6 @@ export const SingleArticle = ({
   category,
   title,
   publishedAt,
-  readingTime,
   children,
   description,
 }) => {
