@@ -10,7 +10,7 @@ export default function BookPage({ books }) {
 
   useEffect(() => { }, []);
   return (
-    <>
+   
       <div>
       <section className="py-20 ">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
@@ -119,7 +119,7 @@ export default function BookPage({ books }) {
       </section>
     </div>
 
-    </>
+    
   );
 
 

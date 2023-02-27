@@ -1,4 +1,5 @@
-import Head from "next/head";
+// import Head from "next/head";
+import Head from "next/document";
 import ArticleCard from "../components/ArticleCard";
 import { allArticles } from "contentlayer/generated";
 import { select } from "../utils/select";
@@ -17,11 +18,12 @@ export default function Home({ articles }) {
 
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>Glenh.me | Blog</title>
-        <Link rel="icon" href="/favicon.ico">  </Link>   
-      </Head>
+        <Link rel="icon" href="/favicon.ico"/> 
+      </Head> */}
       <Header />
+      <main>
       <section className="py-24 ">
         <div className="container px-4 lg:px-10 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
@@ -93,6 +95,7 @@ export default function Home({ articles }) {
           </div>
         </div>
       </section>
+      </main>
     </div>
   );
 }

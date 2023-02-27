@@ -22,6 +22,7 @@ const ISideBar = () => {
             src={imageUrl}
             width={500}
             height={100}
+            alt="tribal-pattern"
           />
           <Image
             src={propic}
@@ -30,6 +31,7 @@ const ISideBar = () => {
             className="bg-gray-200 border-2 border-white dark:border-gray-800 relative w-18 h-18 mb-2 -mt-8 mx-auto rounded-full object-cover object-right"
             width={100}
             height={100}
+          
           />
           <div className="px-6 text-center py-6">
             <h5 style={signature} className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
@@ -170,6 +172,7 @@ const ISideBar = () => {
           width={300} height={500}
             className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover" 
             src={'https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg'}
+            alt="tribal-pattern-2"
           />
         </div>
       </div>
