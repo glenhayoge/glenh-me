@@ -43,7 +43,7 @@ export default function Photography() {
         <a href="#!">
           <Image
             src={projects}
-            alt="Projects Image"
+            alt="Projects Image2"
             width="350px"
             height="400px"
         
@@ -65,7 +65,7 @@ export default function Photography() {
         <a href="#!">
           <Image
             src={projects}
-            alt="Projects Image"
+            alt="Projects Image3"
             width="350px"
             height="400px"
         
@@ -87,7 +87,7 @@ export default function Photography() {
         <a href="#!">
           <Image
             src={projects}
-            alt="Projects Image"
+            alt="Projects Image4"
             width="350px"
             height="400px"
         

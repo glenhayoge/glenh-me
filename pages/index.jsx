@@ -1,5 +1,5 @@
 // import Head from "next/head";
-import Head from "next/document";
+// import Head from "next/document";
 import ArticleCard from "../components/ArticleCard";
 import { allArticles } from "contentlayer/generated";
 import { select } from "../utils/select";

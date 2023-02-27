@@ -138,6 +138,7 @@ export const SingleArticle = ({
                   width={36}
                   height={36}
                   alt="blog"
+                  
                   classNameName="w-16 h-16 p-1 mr-4 rounded-full border border-indigo-50"
                 />
                 <div>

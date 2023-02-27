@@ -245,7 +245,7 @@ export default function IndexPage() {
                       <TimeAgo date="November 29, 2022 7:00 am" locale="pg" />
                     </div>
                   </div>
-                  <img
+                  <Image
                     className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
                     src="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
                   />
