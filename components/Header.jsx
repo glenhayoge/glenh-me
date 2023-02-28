@@ -4,7 +4,11 @@ import styles from "../styles/header.module.css"
 import tribalPattern from '../assets/tribal-pattern.jpg';
 
 const { heroContent, heroWrapper, imageWrapper } = styles;
-
+const subTitle = { 
+  fontFamily: 'Nanum Pen Script, cursive',
+  fontSize: '30px',
+  textAlign: 'center',
+ };
 const Header = () => {
   return (
     <div className={heroWrapper}>
@@ -65,7 +69,7 @@ const Header = () => {
         ">
           A Digest of a Perpetual Work in Progress
         </h2>
-        <p className="subtitle text-xl sm:text-md text-center text-gray-500 dark:text-yellow-400 px-8 py-4">
+        <p style={subTitle}className="text-xl sm:text-md text-center text-gray-500 dark:text-yellow-400 px-8 py-4">
         by a developer, designer & creator.
         </p>
         </div>

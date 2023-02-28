@@ -34,7 +34,7 @@ const ISideBar = () => {
           
           />
           <div className="px-6 text-center py-6">
-            <h5 style={signature} className=" text-gray-600 dark:text-yellow-400 text-xl mb-4">
+            <h5 style={signature} className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
             </h5>
             <p className="mb-6 text-sm text-gray-500">

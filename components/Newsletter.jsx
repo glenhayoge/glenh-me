@@ -25,7 +25,7 @@ const Newsletter = () => {
       Interested In Software Development?
       </h2>
       <p className="mt-2 font-light text-gray-600 dark:text-gray-400 text-center leading-relaxed">
-      Sign up & be notified when new articles & stuff are posted here. I won't spam or publish your email addresses. Unsubscribe anytime.
+      Sign up & be notified when stuffs are posted here. I won't spam or publish your email addresses. Unsubscribe anytime.
       </p>
       <form className="flex w-full justify-center mt-5 flex-col lg:flex-row">
         

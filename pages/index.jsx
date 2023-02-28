@@ -1,4 +1,4 @@
-// import Head from "next/head";
+import Head from "next/head";
 // import Head from "next/document";
 import ArticleCard from "../components/ArticleCard";
 import { allArticles } from "contentlayer/generated";
@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import IProjects from "../components/IndexProjects";
 import ILearningResources from "../components/LearningResources";
 import ISideBar from "../components/IndexSidebar"
-// import Link from "next/link";
+import Link from "next/link";
 // import Newsletter from "../components/Newsletter";
 // import { useTimeAgo } from "next-time-ago";
 // import Subscribe from "../components/Subscribe";
@@ -18,10 +18,7 @@ export default function Home({ articles }) {
 
   return (
     <div>
-      {/* <Head>
-        <title>Glenh.me | Blog</title>
-        <Link rel="icon" href="/favicon.ico"/> 
-      </Head> */}
+    
       <Header />
       <main>
       <section className="py-24 ">

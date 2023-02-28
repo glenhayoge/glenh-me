@@ -48,8 +48,8 @@ export default function IndexPage() {
               {/* </div> */}
              {/* web apps */}
              <WebApps />
-             <DataViz />
-             <Photography />
+             {/* <DataViz />
+             <Photography /> */}
           
           
             </div>

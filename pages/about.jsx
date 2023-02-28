@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
+// import Head from 'next/head';
+// import { FaBeer } from 'react-icons/fa';
+
 
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
@@ -19,6 +22,7 @@ export default function IndexPage() {
   useEffect(() => {}, []);
   return (
     <>
+   
       <section className="py-24 ">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto ">
           <div className="flex flex-wrap items-stretch ">
