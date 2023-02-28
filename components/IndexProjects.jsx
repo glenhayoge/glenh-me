@@ -35,7 +35,7 @@ export default function IProjects() {
                   <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     The source code of this website. Glenh.me
                   </p>
-                  <Link href="https://github.com" target="_blank">
+                  <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">
                   <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Source</span>
 
@@ -154,7 +154,7 @@ export default function IProjects() {
                   <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     FPDA's official website. Fpda.com.pg
                   </p>
-                  <Link href="htps://fpda.com.pg" target="_blank">
+                  <Link href="https://fpda.com.pg" target="_blank">
                   <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
                     <span>Live site</span>
 
