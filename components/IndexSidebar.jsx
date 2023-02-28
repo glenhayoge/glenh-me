@@ -38,7 +38,7 @@ const ISideBar = () => {
               GlenGHayoge
             </h5>
             <p className="mb-6 text-sm text-gray-500">
-              Software Developer, Designer &amp; Creator
+              Software Developer, Designer, Creator &amp; a Perpetual Learner
             </p>
             <div className="flex items-center justify-left mb-6">
               <p className="text-m text-gray-600 dark:text-gray-400">

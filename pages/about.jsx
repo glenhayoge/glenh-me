@@ -2,8 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
+import { MdEmail } from "react-icons/md";
+import { BsCodeSquare, BsBook } from "react-icons/bs";
 // import Head from 'next/head';
 // import { FaBeer } from 'react-icons/fa';
+// import { } from 'react-icons/fa';
+import { FaBeer, FaStackOverflow,FaGithub,FaTwitter,FaLinkedin,FaGlobe,FaCog} from 'react-icons/fa';
 
 
 import { useEffect } from "react";
@@ -68,28 +72,24 @@ export default function IndexPage() {
                 <div className="w-full h-full overflow-y-auto">
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Wantoea: Small biz management FOSS
+                    <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                    Wantoea: Small biz management FOSS   📖 
                     </li>
                     <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                      ChicknUp: Poultry advisory &amp; marketplace app
+                    <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                  ChicknUp: Poultry advisory &amp; marketplace app  🐔 
                     </li>
                     <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                      Marketini: Farmers &amp; Artisans marketplace app
+                    <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                   Marketini: Farmers &amp; Artisans marketplace app 📈 
                     </li>
                     <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                      Lidabase: Leaders performance leatherboard
+                    <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                   Lidabase: Leaders performance leatherboard 🫅 
                     </li>
                     <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                      RaitStart: PNGSME Digital Resources Toolkit
+                    <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                  RaitStart: PNGSME Digital Resources Toolkit  ⚒️ 
                     </li>
                   </ul>
 
@@ -98,18 +98,15 @@ export default function IndexPage() {
                   </p>
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-              
-                      Deep Work by Cal Newport
+                    <BsBook className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                    Deep Work by Cal Newport
                     </li>
                     <li className="flex items-center">
-                      <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-                  
-                      A Mind for Numbers by Barbara Oakley
+                    <BsBook className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                  A Mind for Numbers by Barbara Oakley
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
-                  
+                    <BsBook className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
                     Systems Thinking: Managing Chaos and Complexity by Jamshid Gharajedaghi
                     </li>
                 
@@ -120,14 +117,14 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Not seriously watching at the moment
+                    📺 Not seriously watching at the moment
                     </li>
                   </ul>
                 </div>
                  {/* my dev tools */}
                  <div className="flex my-12 justify-left text-left items-center  ">
                   <h5 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl">
-                    My Dev Tools
+                    My Dev Tools 
                   </h5>
                 </div>
                 <p className="px-4 py-6 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
@@ -135,20 +132,20 @@ export default function IndexPage() {
                 </p>
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-05'></i>
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
                       This site - React/NextJS - is hosted on <Link href="https://vercel.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Vercel</strong></Link>.
                     </li>
                     
                     <li className="flex items-center">
-                      <i className='bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
                      Coding: <Link href="https://code.visualstudio.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Visual Studio Code</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx bx-cog  mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
                       Terminal: <Link href="https://iterm2.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">iTerm2</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx bx-cog  mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
                       Notes: <Link href="https://keep.google.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Google Keep</strong></Link>&nbsp;&amp;<Link href="https://obsidian.md/" target='_blank'> &nbsp;<strong className="text-cyan-600">Obsidian</strong></Link>
                     </li>
                 
@@ -158,15 +155,16 @@ export default function IndexPage() {
                 </p>
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
                       Coding Computer: Apple Macbook Pro 13" 2016
                     </li>
                     <li className="flex items-center">
-                      <i className='bx bx-cog mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
+
                       Headphone: Logitec
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx bx-cog  mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
                     Desktop: Apple iMac / Dell AIO
                     </li>
                 
@@ -185,27 +183,32 @@ export default function IndexPage() {
                 <div className="w-full h-full overflow-y-auto">
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className=" flex items-center">
-                    <i className='bx bxl-github text-cyan-600 text-xl mr-1.5' ></i>
+                    {/* <i className='bx bxl-github text-cyan-600 text-xl mr-1.5' ></i> */}
+                    <FaGithub className='text-cyan-600 text-xl mr-1.5'/>
                     <Link href="https://github.com/glenhayoge" target='_blank'> &nbsp;<strong className="text-cyan-600">Github</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bxl-twitter text-cyan-600 text-xl mr-1.5' ></i>
+                    <FaTwitter className='text-cyan-600 text-xl mr-1.5'/>
                     <Link href="https://twitter.com/ghayoge" target='_blank'> &nbsp;<strong className="text-cyan-600">Twitter</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='text-cyan-600 text-xl mr-1.5 bx bxl-linkedin-square' ></i>
+                    <FaLinkedin className='text-cyan-600 text-xl mr-1.5'/>
                     <Link href="https://www.linkedin.com/in/glen-g-hayoge-089935104/" target='_blank'> &nbsp;<strong className="text-cyan-600">LinkedIn</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='text-cyan-600 text-xl mr-1.5 bx bxl-stack-overflow' ></i>
-                    <Link href="https://stackoverflow.com/users/12071488/glenh" target='_blank'> &nbsp;<strong className="text-cyan-600">StackOverFlow</strong></Link>
+                      
+                    {/* <i className="devicon-github-original  mr-1.5 text-cyan-600 text-xl"></i> */}
+                    <FaStackOverflow className='text-cyan-600 text-xl mr-1.5'/>
+                    <Link href="https://stackoverflow.com/users/12071488/glenh" target='_blank'> &nbsp;<strong className="text-cyan-600">
+                   
+                    StackOverFlow</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-globe text-cyan-600 text-xl mr-1.5' ></i>
+                    <FaGlobe className='text-cyan-600 text-xl mr-1.5'/>
                      Website: <Link href="https://glenh.me" > &nbsp;<strong className="text-cyan-600">You are looking at it!</strong></Link>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-envelope text-cyan-600 text-xl mr-1.5' ></i>
+                    <MdEmail className='text-cyan-600 text-xl mr-1.5'/>
                      Email: &nbsp;<strong className="text-cyan-600"><Link href="mailto:gghayoge@gmail.com">gghayoge at gmail.com</Link></strong>
                     </li>
       
