@@ -23,6 +23,7 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "github-slugger": "^2.0.0",
+    "json5": "^2.2.3",
     "next": "13.0.4",
     "next-contentlayer": "^0.2.9",
     "next-seo": "^5.14.1",
