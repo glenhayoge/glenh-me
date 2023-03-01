@@ -1,3 +1,4 @@
+
 // config/md.ts
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
@@ -37,3 +38,4 @@ const mdxOptions = {
 };
 
 export default mdxOptions;
+

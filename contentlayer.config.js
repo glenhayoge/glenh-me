@@ -100,13 +100,10 @@ const computedFields = {
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',
     documentTypes: [Article,Books,Snippet],
-    mdx: [mdxOptions],
+    mdx: mdxOptions,
     
     
   });
-
-
-
 
 
 export default contentLayerConfig;

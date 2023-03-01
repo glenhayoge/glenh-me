@@ -85,7 +85,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                   Lidabase: Leaders performance leatherboard 🫅 
+                   Lidabase: Leaders performance leaderboard 🫅 
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
@@ -133,7 +133,7 @@ export default function IndexPage() {
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
-                      This site - React/NextJS - is hosted on <Link href="https://vercel.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Netlify</strong></Link>.
+                      This site - React/NextJS - is hosted on <Link href="https://netlify.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Netlify</strong></Link>.
                     </li>
                     
                     <li className="flex items-center">
