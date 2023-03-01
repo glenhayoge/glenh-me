@@ -66,8 +66,8 @@ export default function IndexPage() {
                     What I'm doing now
                   </h2>
                 </div>
-                <p className="px-4 py-6 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  Projects I am currently working on.
+                <p className="px-4 pb-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  Current Projects
                 </p>
                 <div className="w-full h-full overflow-y-auto">
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
@@ -77,7 +77,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                  ChicknUp: Poultry advisory &amp; marketplace app  🐔 
+                   ChicknUp: Poultry advisory &amp; marketplace app  🐔 
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
@@ -89,7 +89,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                  RaitStart: PNGSME Digital Resources Toolkit  ⚒️ 
+                   RaitStart: PNGSME Digital Resources Toolkit  ⚒️ 
                     </li>
                   </ul>
 
@@ -127,13 +127,13 @@ export default function IndexPage() {
                     My Dev Tools 
                   </h5>
                 </div>
-                <p className="px-4 py-6 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                <p className="px-4 pb-4  text-base text-left leading-normal text-gray-500 dark:text-gray-400">
                   Software
                 </p>
                 <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
-                      This site - React/NextJS - is hosted on <Link href="https://vercel.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Vercel</strong></Link>.
+                      This site - React/NextJS - is hosted on <Link href="https://vercel.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Netlify</strong></Link>.
                     </li>
                     
                     <li className="flex items-center">
