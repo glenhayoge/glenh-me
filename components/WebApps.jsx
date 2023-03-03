@@ -35,7 +35,7 @@ export default function WebApps() {
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
           The source code of this website. https://glenh.me
         </p>
-        <Link href="https://github.com" target="_blank">
+        <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Source</span>
 
@@ -82,10 +82,7 @@ export default function WebApps() {
           </div>
         </div>
         <div className="text-center">
-
-
           Dzagoo.com Website
-
         </div>
       </div>
       <div className="p-6 items-left flex-left">
@@ -144,10 +141,7 @@ export default function WebApps() {
           </div>
         </div>
         <div className="text-center">
-
-
           FPDA Website
-
         </div>
       </div>
       <div className="p-6 items-left flex-left">
@@ -157,7 +151,6 @@ export default function WebApps() {
         <Link href="https://fpda.com.pg" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Live site</span>
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-4 h-4 ml-1 dark:text-gray-400"
@@ -177,11 +170,9 @@ export default function WebApps() {
       </div>
       <div className="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
         <span>
-          {" "}
           <i className="devicon-bulma-plain p-1"></i>
         </span>
         <span>
-          {" "}
           <i className="devicon-django-plain p-1"></i>
         </span>
         <span>
