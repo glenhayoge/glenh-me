@@ -6,9 +6,9 @@
 ## Description:
 ---
 
-This repository contains the source code of my personal website. The code found herein is open-sourced and is available for free under MIT license. Read disclaimer below for using it.
+This repository contains the source code of my personal website. The codes found herein are open-sourced and are available for free under MIT license. Read disclaimer below for using it.
 
-Link to the live website --> [Glenh.me](https://glenh.me)
+Link to the Live Website --> [Glenh.me](https://glenh.me)
   
 
 ## Tech stack
