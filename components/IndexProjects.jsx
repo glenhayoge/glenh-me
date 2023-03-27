@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiNextdotjs,SiTailwindcss,SiReact, SiNetlify, SiBulma,SiDjango,SiPython,SiDocker,SiJavascript } from "react-icons/si";
 
 export default function IProjects() {
     return (
@@ -24,7 +25,7 @@ export default function IProjects() {
                     <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
-                      <p className="block text-right text-xs ">1231 ⭐</p>
+                      <p className="block text-right text-xs ">⭐</p>
                     </div>
                   </div>
                   <div className="text-center">
@@ -56,19 +57,19 @@ export default function IProjects() {
                   </button>
                   </Link>
                 </div>
-                <div className="py-2 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                <div className=" flex space-x-4 py-2 text-xl justify-center items-center border-t border-gray-300 dark:border-gray-500 text-gray-400">
                   <span>
-                    {" "}
-                    <i className="devicon-react-original p-1"></i>
+                  <SiNextdotjs className=""/>
                   </span>
                   <span>
-                    {" "}
-                    <i className="devicon-nextjs-original p-1"></i>
+                  <SiTailwindcss className=""/>
                   </span>
                   <span>
-                  <i className="devicon-tailwindcss-plain p-1"></i>
+                  <SiReact className=""/>
                   </span>
-                 
+                  <span>
+                  <SiNetlify className="h-4 w-4"/>
+                  </span>
                 </div>
               </div>
            
@@ -81,7 +82,7 @@ export default function IProjects() {
                     <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
-                      <p className="block text-right text-xs ">1231 ⭐</p>
+                      <p className="block text-right text-xs ">⭐</p>
                     </div>
                   </div>
                   <div className="text-center">
@@ -114,23 +115,19 @@ export default function IProjects() {
                   </button>
                   </Link>
                 </div>
-                <div className="py-2 text-xl  px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                <div className=" flex space-x-4 py-2 text-xl justify-center items-center border-t border-gray-300 dark:border-gray-500 text-gray-400">
                   <span>
-                    {" "}
-                    <i className="devicon-javascript-plain p-1"></i>
+                  <SiNextdotjs className=""/>
                   </span>
                   <span>
-                    {" "}
-                    <i className="devicon-php-plain p-1"></i>
+                  <SiTailwindcss className=""/>
                   </span>
                   <span>
-                  <i className="devicon-css3-plain p-1"></i>
+                  <SiReact className=""/>
                   </span>
                   <span>
-                    {" "}
-                    <i className="devicon-tailwindcss-plain p-1"></i>
+                  <SiNetlify className="h-4 w-4"/>
                   </span>
-                
                 </div>
               </div>
            
@@ -143,7 +140,7 @@ export default function IProjects() {
                     <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
-                      <p className="block text-right text-xs ">1231 ⭐</p>
+                      <p className="block text-right text-xs ">⭐</p>
                     </div>
                   </div>
                   <div className="text-center">
@@ -152,7 +149,7 @@ export default function IProjects() {
                 </div>
                 <div className="p-4 items-left flex-left">
                   <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-                    FPDA's official website. Fpda.com.pg
+                    New FPDA's Website. Fpda.com.pg
                   </p>
                   <Link href="https://fpda.com.pg" target="_blank">
                   <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -175,23 +172,21 @@ export default function IProjects() {
                   </button>
                   </Link>
                 </div>
-                <div className="py-2 text-xl  px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+                <div className=" flex space-x-4 py-2 text-xl justify-center items-center border-t border-gray-300 dark:border-gray-500 text-gray-400">
                   <span>
-                    {" "}
-                    <i className="devicon-bulma-plain p-1"></i>
+                  <SiDjango className=""/>
                   </span>
                   <span>
-                    {" "}
-                    <i className="devicon-django-plain p-1"></i>
+                  <SiPython className=""/>
                   </span>
                   <span>
-                    <i className="devicon-docker-plain p-1"></i>
+                  <SiBulma className=""/>
                   </span>
                   <span>
-                  <i className="devicon-python-plain p-1"></i>
+                  <SiDocker className="h-4 w-4"/>
                   </span>
                   <span>
-                  <i className="devicon-javascript-plain p-1"></i>
+                  <SiJavascript className="h-4 w-4"/>
                   </span>
                 </div>
               </div>
