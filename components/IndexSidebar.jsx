@@ -2,11 +2,10 @@ import Subscribe from "./Subscribe";
 import React from "react";
 import Image from "next/image";
 import propic from "../assets/glens_1.png";
-import { useTimeAgo } from "next-time-ago";
 import GitHubCalendar from 'react-github-calendar';
+import TimeAgoComponent from "../components/TimeAgo";
 
 const ISideBar = () => {
-  const { TimeAgo } = useTimeAgo();
   const imageUrl="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
   const signature = { 
     fontFamily: 'Mrs Saint Delafield, cursive',
@@ -164,9 +163,7 @@ const ISideBar = () => {
                 </svg>
               </a>
             </div>
-            <div className="py-1 px-6 text-xs italic text-gray-500">
-              Updated: <TimeAgo date="February 1, 2023 1:00 am" locale="pg" />
-            </div>
+            <TimeAgoComponent />
           </div>
           <Image
           width={300} height={500}
