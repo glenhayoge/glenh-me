@@ -1,10 +1,9 @@
 import Link from "next/link";
 import ProfileBadge from "../components/ProfileBadge";
-import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
 import { MdEmail } from "react-icons/md";
 import { BsCodeSquare, BsBook } from "react-icons/bs";
-import { FaBeer, FaStackOverflow,FaGithub,FaTwitter,FaLinkedin,FaGlobe,FaCog} from 'react-icons/fa';
+import { FaStackOverflow,FaGithub,FaTwitter,FaLinkedin,FaGlobe,FaCog} from 'react-icons/fa';
 import { useEffect } from "react";
 
 export default function IndexPage() {
@@ -140,6 +139,10 @@ export default function IndexPage() {
                     <li className="flex items-center">
                     <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
                       Notes: <Link href="https://keep.google.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Google Keep</strong></Link>&nbsp;&amp;<Link href="https://obsidian.md/" target='_blank'> &nbsp;<strong className="text-cyan-600">Obsidian</strong></Link>
+                    </li>
+                    <li className="flex items-center">
+                    <FaCog  className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'/>
+                      Browser: <Link href="https://keep.google.com/" target='_blank'> &nbsp;<strong className="text-cyan-600">Brave</strong></Link>&nbsp;&amp;<Link href="https://obsidian.md/" target='_blank'> &nbsp;<strong className="text-cyan-600">Google Chrome</strong></Link>
                     </li>
                 
                   </ul>

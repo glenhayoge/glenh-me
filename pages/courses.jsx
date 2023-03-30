@@ -2,19 +2,6 @@
 import Image from "next/image";
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
-// import 'boxicons'
-
-// import {
-//   FacebookShareButton,
-//   FacebookIcon,
-//   TwitterShareButton,
-//   TwitterIcon,
-//   WhatsappShareButton,
-//   WhatsappIcon,
-//   LinkedinShareButton,
-//   LinkedinIcon,
-// } from "next-share";
-
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
 
@@ -37,10 +24,7 @@ export default function IndexPage() {
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Here are some courses I've gotten most value from in my continuous learning journey.
                   </p>
-              
                 </div>
-             
-               
                 <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Projects I am currently working on.
                 </p>
@@ -48,8 +32,6 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                     
                       Wantoea: Small biz management FOSS
                     </li>
                     <li className="flex items-center">
@@ -75,21 +57,16 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-               
-                  
                       Deep Work by Cal Newport
                     </li>
                     <li className="flex items-center">
                       <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-                  
                       A Mind for Numbers by Barbara Oakley
                     </li>
                     <li className="flex items-center">
                     <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
-                  
                     Systems Thinking: Managing Chaos and Complexity by Jamshid Gharajedaghi
                     </li>
-                
                   </ul>
                   <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     What I am watching:

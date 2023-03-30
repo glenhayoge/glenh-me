@@ -1,5 +1,3 @@
-
-
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
 import { useEffect } from "react";
