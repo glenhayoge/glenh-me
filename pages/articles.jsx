@@ -1,10 +1,7 @@
-// import Link from "next/link";
-// import Image from "next/image";
 import ArticleList from "../components/ArticleList";
 import { allArticles } from "contentlayer/generated";
 import { select } from "../utils/select";
 import { useEffect } from "react";
-// import propic from "../assets/profile2.png";
 import Subscribe from "../components/Subscribe";
 
 export default function IndexPage({ articles }) {
@@ -40,11 +37,11 @@ export default function IndexPage({ articles }) {
                     {articles.map(
                       ({
                         title,
-                        
+
                         slug,
-                     
+
                         publishedAt,
-                       
+
                         tags,
                       }) => (
                         <ArticleList
@@ -148,4 +145,3 @@ export function getStaticProps() {
 
   return { props: { articles } };
 }
-

@@ -20,17 +20,22 @@ Router.events.on("routeChangeComplete", nProgress.done);
 export default function App({ Component, pageProps }) {
   return (
     <>
-    <Head>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
-     {/* <link rel="stylesheet"href="https://unpkg.com/browse/boxicons@2.0.9/css/boxicons.min.css"/> */}
-     {/* <Link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/> */}
-     </Head>
-    <ThemeProvider enableSystem={true} attribute="class">  
-    <Navbar/>
-    <Component className="dark-main" {...pageProps} />
-    <Footer/>
-    <Script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" />
-  </ThemeProvider>
-  </>
+      <Head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Navbar />
+        <Component className="dark-main" {...pageProps} />
+        <Footer />
+        <Script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" />
+      </ThemeProvider>
+    </>
   )
 }
