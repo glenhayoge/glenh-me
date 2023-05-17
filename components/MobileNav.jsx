@@ -7,10 +7,7 @@ export default function MobileNav({ open, setOpen }) {
           open ? '-translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out filter  `}
       >
-        {/* <div className="flex pl-3 items-left  justify-left filter shadow-lg shadow-yellow-400/50 bg-gray-200  dark:bg-gray-800/25 h-20">
-         
-          <Logo />
-        </div> */}
+
          <div className="w-3/12 flex items-left flex -mt-12 mb-16 pl-12  justify-left bg-white dark:bg-black h-20">
           <Logo />
         </div>

@@ -65,7 +65,7 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                    Wantoea: Small biz management FOSS   📖 
+                   <Link href="/articles">Wantoea: Small biz management FOSS</Link>  📖 
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
@@ -73,7 +73,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                   Marketini: Farmers &amp; Artisans marketplace app 📈 
+                   Fyntree: Farmers &amp; Artisans marketplace app 📈 
                     </li>
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
@@ -109,7 +109,7 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                    📺 Not seriously watching at the moment
+                    📺 Seriously not watching movies at the moment
                     </li>
                   </ul>
                 </div>

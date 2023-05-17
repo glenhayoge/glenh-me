@@ -198,7 +198,7 @@ export default function IProjects() {
             className=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
             href="/projects"
           >
-            View Projects
+            View More
           </a>
         </div>
       </div>
