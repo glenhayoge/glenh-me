@@ -50,7 +50,7 @@ const ISideBar = () => {
             <a href="/about">
               <button
                 type="button"
-                className=" inline-block px-6 py-2.5 outline outline-1 font-bold hover:outline-2 rounded-full text-xs leading-tight uppercase rounded-lg hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                className=" py-2 px-6  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
               >
                 More About Me...
               </button>
