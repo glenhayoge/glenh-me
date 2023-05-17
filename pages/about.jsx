@@ -65,23 +65,23 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                   <Link href="/articles">Wantoea: Small biz management FOSS</Link>  📖 
+                   <Link href="https://wantoea.com" target="_blank" class="text-cyan-600 ">Wantoea</Link> : Small biz management FOSS  📖 
                     </li>
-                    <li className="flex items-center">
+                    {/* <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
                    ChicknUp: Poultry advisory &amp; marketplace app  🐔 
-                    </li>
+                    </li> */}
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                   Fyntree: Farmers &amp; Artisans marketplace app 📈 
+                    <Link href="https://fyntree.com" target="_blank" class="text-cyan-600 ">Fyntree</Link>: Farmers &amp; Artisans marketplace app📈 
                     </li>
+                    {/* <li className="flex items-center">
+                    <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
+                    <Link href="https://lidabase.com" target="_blank" class="text-cyan-600 ">Lidabase</Link>: Leaders performance leaderboard 🫅 
+                    </li> */}
                     <li className="flex items-center">
                     <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                   Lidabase: Leaders performance leaderboard 🫅 
-                    </li>
-                    <li className="flex items-center">
-                    <BsCodeSquare className='mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' />
-                   RaitStart: PNGSME Digital Resources Toolkit  ⚒️ 
+                    <Link href="https://raitstart.com" target="_blank" class="text-cyan-600 ">RaitStart</Link>: Small Business Resources Webapp  ⚒️ 
                     </li>
                   </ul>
 
@@ -109,7 +109,7 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                    📺 Seriously not watching movies at the moment
+                    📺 Not Seriously watching movies at the moment
                     </li>
                   </ul>
                 </div>
