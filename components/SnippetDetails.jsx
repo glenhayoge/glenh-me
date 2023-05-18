@@ -43,7 +43,7 @@ export const SnippetDetails = ({
               </Link>
         </button>
       </div>
-            <h1 className="mt-2 block text-center px-2 leading-10 text-4xl font-black tracking-tight sm:text-4xl  dark:text-yellow-400 text-gray-900 ">
+            <h1 className="mt-2 block text-left px-2 leading-10 text-4xl font-black tracking-tight sm:text-4xl  dark:text-yellow-400 text-gray-900 ">
               {title}
             </h1>
             <p className="px-4 text-center lg:-mt-4 md:-mt-6 leading-tight italic text-gray-500 dark:text-gray-400">

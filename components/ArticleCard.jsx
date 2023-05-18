@@ -1,9 +1,4 @@
 import React from "react";
-// import Image from "next/image";
-// import propic from "../assets/glens_1.png";
-// import Newsletter from "../components/newsletter";
-// import ViewCounter from "../components/ViewCounter";
-
 export default function ArticleCard({
   title,
   description,
@@ -26,9 +21,7 @@ export default function ArticleCard({
             href="#"
           >
             <span className="mr-2">{dateTime}</span>
-          
           </a>
-          
         </div>
         <div className="mb-4">
           <a href={`/article/${slug}`}>
@@ -43,32 +36,28 @@ export default function ArticleCard({
         <div className="flex justify-between border-b  border-gray-400 dark:border-gray-600 border-dashed ">
           <div className="flex items-center">
             <div className="inline-flex items-center justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
-              {/* {dateTime} */} <a
+              <a
                 href={`/article/${slug}`}
-                className=' rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0 hover:text-cyan-700 dark:hover:text-cyan-700'
+                className=" rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0 hover:text-cyan-700 dark:hover:text-cyan-700"
               >
                 More
                 <svg
-                  className='w-4 h-4 ml-2'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  fill='none'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d='M5 12h14'></path>
-                  <path d='M12 5l7 7-7 7'></path>
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
                 </svg>
               </a>
-
             </div>
           </div>
           <div className="flex py-6">
-            <a
-              className="flex items-center text-xs text-gray-500"
-              href="#"
-            >
+            <a className="flex items-center text-xs text-gray-500" href="#">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -81,10 +70,7 @@ export default function ArticleCard({
               </svg>
               <span className="mr-2">{readingTime}</span>
             </a>
-            <a
-              className="flex items-center text-xs text-gray-500"
-              href="#"
-            >
+            <a className="flex items-center text-xs text-gray-500" href="#">
               <svg
                 className="mr-2 bi bi-eye"
                 xmlns="http://www.w3.org/2000/svg"
