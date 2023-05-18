@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../styles/header.module.css"
 // import faustina from '../assets/patterns.png';
 import tribalPattern from '../assets/tribal-pattern.jpg';
+// import metaImage from '../assets/ggh-meta-image.jpg';
 import Head from "next/head";
 
 const { heroContent, heroWrapper, imageWrapper } = styles;
@@ -12,32 +13,15 @@ const subTitle = {
  };
 const Header = () => {
   return (
-    <>
-    <Head>
-    <title>My digital commonplace on the internet  for logic based art & creativity</title>
-    <meta name="title" content="My digital commonplace on the internet  for logic based art & creativity"/>
-    <meta name="description" content="TL;DR : A digest of a perpetual work in progress"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://www.glenh.me/"/>
-    <meta property="og:title" content="My digital commonplace on the internet  for logic based art & creativity"/>
-    <meta property="og:description" content="TL;DR : A digest of a perpetual work in progress"/>
-    <meta property="og:image" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
-
-    <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:url" content="https://www.glenh.me/"/>
-    <meta property="twitter:title" content="My digital commonplace on the internet  for logic based art & creativity"/>
-    <meta property="twitter:description" content="TL;DR : A digest of a perpetual work in progress"/>
-    <meta property="twitter:image" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
-  </Head>
     <div className={heroWrapper}>
       <div className={imageWrapper}>
-        {/* <Image
+        <Image
           priority
-           src={tribalPattern}
+          src={tribalPattern}
           object-position="center"
           alt="background hero"
           className="opacity-10 absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-80 object-cover"
-        /> */}
+        />
       </div>
 
       <div className={heroContent}>
@@ -93,7 +77,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-    </>
+    
   );
 }
 export default Header;
