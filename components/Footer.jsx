@@ -3,12 +3,12 @@ import Image from "next/image";
 export default function Footer() {
 
   return (
-    <section className="dark:bg-dark ">
+    <section >
       <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
         You've Reached the Bottom of the Page 👋
       </p>
 
-      <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8 border-t dark:border-gray-600 border-gray-200 ">
+      <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4 border-t dark:border-gray-700 border-gray-200 ">
         <div className="flex justify-center mt-8 space-x-6">
           <a href="#" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">GlenGH Logo</span>

@@ -20,7 +20,7 @@ const Header = () => {
           src={tribalPattern}
           object-position="center"
           alt="background hero"
-          className="opacity-10 absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-80 object-cover"
+          className="opacity-10 absolute  bg-blend-color opacity-50 top-0 left-0 w-full lg:px-48 md:px-0 h-80 object-cover"
         />
       </div>
 

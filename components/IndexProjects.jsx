@@ -4,7 +4,7 @@ import { SiNextdotjs,SiTailwindcss,SiReact, SiNetlify, SiBulma,SiDjango,SiPython
 export default function IProjects() {
     return (
 
-        <div className="container px-2 mx-auto mt-2">
+        <div className="container px-2 mx-auto mt-2 ">
         <div className="pt-12 mb-8  text-gray-600">
        
           <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
@@ -193,14 +193,14 @@ export default function IProjects() {
          
           </div>
         </div>
-        <div className="py-8 flex items-center justify-between ">
-          <a
-            className=" py-2 px-3  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
-            href="/projects"
-          >
-            View More
-          </a>
-        </div>
+        <div className=" pt-6 flex items-center justify-between ">
+                  <a
+                    className=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
+                    href="/projects"
+                  >
+                    View All Projects
+                  </a>
+                </div>
       </div>
 
 

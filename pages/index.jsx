@@ -17,12 +17,12 @@ export default function Home({ articles }) {
       <main>
       <section className="py-24 ">
         <div className="container px-4 lg:px-10 sm:px-4 mx-auto">
-          <div className="flex flex-wrap items-stretch -m-4">
-            <div className="w-full lg:w-8/12 p-4">
+          <div className="flex flex-wrap items-stretch -m-6">
+            <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
                 <div className="pt-1 pb-1 ">
                   <div className="flex mb-4 justify-between items-center">
-                    <div className="pt-2 px-3  text-gray-600">
+                    <div className=" px-3  text-gray-600">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
                         Recent Posts
                       </p>
@@ -79,7 +79,7 @@ export default function Home({ articles }) {
              <ILearningResources />
             </div>
             {/* index side bar */}
-            <div className="w-full lg:w-4/12 p-4 ">
+            <div className="w-full lg:w-4/12 lg:pr-20 md:px-8 ">
             <ISideBar /> 
             </div>
           

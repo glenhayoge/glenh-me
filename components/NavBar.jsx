@@ -79,11 +79,11 @@ export default function Navbar() {
     >
       {" "}
       <Mobilenav open={open} setOpen={setOpen} />
-      <div className="w-4/12 lg:pl-44 md:px-8 flex items-left ">
+      <div className="w-4/12 lg:pl-24 md:px-8 flex items-left ">
         <Logo/>
         {/* h-48 md:h-48 w-48 mt-4  */}
       </div>
-      <div className="w-8/12 lg:pr-44 md:px-8 flex justify-end items-center ">
+      <div className="w-8/12 lg:pr-24 md:px-8 flex justify-end items-center ">
         <span className="mr-4 md:hidden"> {renderThemeChanger()}</span>
 
         <div

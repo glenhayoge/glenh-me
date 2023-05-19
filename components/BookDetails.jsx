@@ -12,11 +12,10 @@ export const BookDetails = ({
 }) => {
   return (
     <>
-      {/* additional layout */}
       <div className="w-full pt-10 lg:flex">
         <div className="w-full h-full overflow-y-auto">
           <div className="mx-auto prose prose-xl py-8 max-w-3xl  xl:max-w-5xl rounded-t">
-            <article className="text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-lg max-w-2xl px-4 mx-auto  xl:max-w-4xl ">
+            <article className="text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-lg max-w-3xl px-4 mx-auto  xl:max-w-5xl ">
             <div className="flex justify-between px-4">
         <p className="inline-block  text-base uppercase text-sm tracking-wide text-gray-500 dark:text-gray-400">
               <span>{category}</span>

@@ -1,6 +1,6 @@
 export default function ILearningResources() {
     return (
-        <div className="container px-2  mx-auto  mt-8 rounded-lg">
+        <div className="container px-2  mx-auto  mt-16 rounded-lg">
         <div className=" mb-8  text-gray-600">
           <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-500 dark:text-gray-400">
             Learning Resources

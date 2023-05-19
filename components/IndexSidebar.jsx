@@ -14,7 +14,7 @@ const ISideBar = () => {
    };
   return (
     <>
-      <div className="p-0 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
+      <div className="mr-3 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
         <div className="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
@@ -40,7 +40,7 @@ const ISideBar = () => {
               Software Developer, Designer, Creator &amp; a Perpetual Learner
             </p>
             <div className="flex items-center justify-left mb-6">
-              <p className="text-m text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
                 Hi, my name is Glen. I'm a software developer, designer &amp; 
                 creator from Papua New Guinea. I use this space on internet to
                 document &amp; share snippets of my perpertual learning &amp; self
