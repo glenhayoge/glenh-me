@@ -14,8 +14,8 @@ export default function BookPage({ books }) {
       <div>
       <section className="py-20 ">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
-          <div className="flex flex-wrap items-stretch -m-4">
-            <div className="w-full lg:w-8/12 p-4">
+          <div className="flex flex-wrap items-stretch -m-6">
+            <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
                 <div className="pt-1 pb-1  ">
                   <div className="flex mb-4 justify-between items-center">
@@ -59,7 +59,7 @@ export default function BookPage({ books }) {
               </div>
             </div>
            
-            <div className="w-full lg:w-4/12 p-4 ">
+            <div className="w-full lg:w-4/12  lg:pr-20 md:px-8 ">
               <div className="p-0 dark:text-gray-500 rounded text-center overflow-hidden   rounded-lg dark:bg-gray-800/25">
                 <div className="relative pt-6 pb-10 z-60  rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">

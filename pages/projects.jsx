@@ -14,27 +14,18 @@ export default function IndexPage() {
   return (
     <>
       <section className="py-24 ">
-        <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
-          <div className=" w-full items-stretch">
-            <div className=" rounded-lg overflow-hidden ">
-              {/* <div className="flex mt-4 justify-left text-left items-center">
-                <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
-                  Projects
-                </h1>
-              </div> */}
-              {/* <div class="mb-8 p-8 rounded"> */}
+      <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
+          <div className="flex flex-wrap items-stretch -m-6">
+            <div className="w-full lg:w-max-screen-3xl lg:px-20 md:px-8 ">
+              <div className=" overflow-hidden">
+
               <div className="flex flex-wrap items-center ">
                 <div className="w-full lg:w-2/3 px-4">
                   <h2 className="mb-4 block text-left text-4xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
                     Projects
                   </h2>
-                  {/* <p class="text-dark-500">
-                      We have prepared the most frequently asked questions for
-                      you
-                    </p> */}
                 </div>
                 <div className="w-full lg:w-1/3 px-4 flex items-center">
-                  {/* <img src="artemis-assets/images/office.png" alt=""/> */}
                   <Image
                     src={projects}
                     alt="Projects Image"
@@ -50,8 +41,7 @@ export default function IndexPage() {
              <WebApps />
              {/* <DataViz />
              <Photography /> */}
-          
-          
+          </div>
             </div>
           </div>
         </div>
