@@ -32,7 +32,7 @@ export const SingleArticle = ({
               height={400}
               alt="blog"
             />
-            <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-lg max-w-3xl px-4 mx-auto  xl:max-w-5xl ">
+            <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-md max-w-4xl px-4 mx-auto  xl:max-w-5xl ">
               {children}
               <div className="flex items-center bg-gray-200 px-8 mt-8">
                 <Image
