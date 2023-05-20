@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
         <meta property="twitter:description" content="TL;DR : A digest of a perpetual work in progress"/>
         <meta property="twitter:image" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
       </Head>
-      <ThemeProvider enableSystem={true} attribute="class">
+      <ThemeProvider enableSystem={true} attribute="className">
         <Navbar />
         <Component className="dark-main" {...pageProps} />
         <Footer />

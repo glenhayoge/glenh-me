@@ -98,35 +98,35 @@ export default function IndexPage() {
                         <Link
                           href="https://wantoea.com"
                           target="_blank"
-                          class="text-cyan-600 "
+                          className="text-cyan-600 "
                         >
                           Wantoea
                         </Link>{" "}
                         : Small biz management FOSS
                       </p>
                     </li>
-                    <li class="flex pl-4">
+                    <li className="flex pl-4">
                     <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p >
                    
                         <Link
                           href="https://fyntree.com"
                           target="_blank"
-                          class="text-cyan-600 "
+                          className="text-cyan-600 "
                         >
                           Fyntree
                         </Link>
                         : Farmers &amp; Artisans marketplace
                       </p>
                     </li>
-                    <li class="flex pl-4 ">
+                    <li className="flex pl-4 ">
                     <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 ' />
                       <p>
                        
                         <Link
                           href="https://raitstart.com"
                           target="_blank"
-                          class="text-cyan-600  class"
+                          className="text-cyan-600"
                         >
                           RaitStart
                         </Link>: Small Business Resources
@@ -137,7 +137,7 @@ export default function IndexPage() {
                     What I am Reading:
                   </p>
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
-                    <li class="flex pl-4 ">
+                    <li className="flex pl-4 ">
                       <BsBook className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                       <p>  Deep Work by Cal Newport</p>
                     
@@ -147,7 +147,7 @@ export default function IndexPage() {
                       <p> A Mind for Numbers by Barbara Oakley</p>
                      
                     </li>
-                    <li class="flex pl-4 ">
+                    <li className="flex pl-4 ">
                       <BsBook className="mr-1.5  mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                       <p>Systems Thinking: Managing Chaos and Complexity by Jamshid
                       Gharajedaghi</p>
@@ -182,7 +182,7 @@ export default function IndexPage() {
                     </Link>
                     </p>
                   </li>
-                  <li class="flex pl-4">
+                  <li className="flex pl-4">
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
                     Coding:{" "}
@@ -194,7 +194,7 @@ export default function IndexPage() {
                     </Link>
                     </p>
                   </li>
-                  <li class="flex pl-4">
+                  <li className="flex pl-4">
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
                     Terminal:
@@ -209,7 +209,7 @@ export default function IndexPage() {
                     </Link>
                     </p>
                   </li>
-                  <li class="flex pl-4">
+                  <li className="flex pl-4">
 
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
@@ -226,7 +226,7 @@ export default function IndexPage() {
                     </Link>
                     </p>
                   </li>
-                  <li class="flex pl-4">
+                  <li className="flex pl-4">
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
                     Browser:
