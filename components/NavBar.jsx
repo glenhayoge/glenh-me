@@ -74,7 +74,7 @@ export default function Navbar() {
       className="flex filter lg:px-28 px-9 py-4 h-20 items-center dark:bg-gray-800/25 navbar"
       // style={{
       //   background: `${backgroundTransparacy}`,
-      //   boxShadow: `${boxShadow} 0px 0px 20px 6px`,
+      //   boxShadow: `${boxShadow} 0px 0px 20px 0px`,
       // }}
     >
       {" "}
