@@ -14,7 +14,7 @@ const ISideBar = () => {
    };
   return (
     <>
-      <div className="dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
+      <div className="px-4 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
         <div className="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
@@ -56,27 +56,28 @@ const ISideBar = () => {
               </button>
             </a>
             <div className="mb-2 mt-6 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
-              <p className="pb-3 text-sm ">My Github Contributions</p>
+              <p className="pb-3 text-sm ">My Github Heatmap</p>
             <GitHubCalendar className="text-xs"username="glenhayoge" />
             <div className="pt-4">
-              <a
-                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+            <p
+                className="mb-1 py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-xl border border-gray-200 dark:border-gray-600"
                 href="#"
               >
-                Front-End
-              </a>
-              <a
-                className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                Software Development
+              </p>
+              <p
+                className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-xl border border-gray-200 dark:border-gray-600"
                 href="#"
               >
-                Design
-              </a>
-              <a
-                className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
+                UX/UI Design
+              </p>
+              <p
+                className="mt-1 py-1 px-2  text-xs text-gray-600 dark:text-gray-400 rounded-xl border border-gray-200 dark:border-gray-600"
                 href="#"
               >
-                Software Dev
-              </a>
+                Web/App Design
+              </p>
+             
               </div>
               <div className="mt-8">
                 <p className="mb-6 text-sm text-cyan-700">

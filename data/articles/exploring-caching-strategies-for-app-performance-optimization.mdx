@@ -1,0 +1,49 @@
+---
+title: Exploring Caching Strategies for App Performance Optimization
+publishedAt: 'Mar 3, 2023'
+description: Key caching methods to improve your app performance and enhance the user experience.
+seoDescription: Learn about important caching methods to help improve your app performance and enhance the user experience.
+category: 'App Performance'
+tags: 
+ -app performance
+author:
+   {
+    name: 'Glen Hayoge',
+    image: 'https://i.pravatar.cc/150?img=64',
+  }
+image:'https://images.unsplash.com/photo-1640765890690-7db748c002b2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=480&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4NDU3MzgwOQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=640'
+
+---
+
+
+Using appropriate caching methods helps improve performance for applications and genrally enhances user experience. Implementing effective caching strategies on both the frontend and server sides. Since my blog app app utilizes the Next.js framework and is deployed on Vercel, caching setup is simplified, requiring minimal manual configuration.
+
+Although the caching setup was already streamlined, I wanted to ensure that I had explored all possible caching strategies to identify any areas for improvement. This article serves as a summary of my findings and recommendations.
+
+### Browser Cache
+
+The browser cache acts as a local storage area on a user's computer, storing static assets like images, stylesheets, and JavaScript files. Leveraging the browser's Web Storage API, these assets can be accessed and reused across multiple pages of a website. Furthermore, these files can persist between sessions, allowing assets to be retrieved from local storage instead of being downloaded again when a user revisits the website.
+
+Note: It's important to distinguish between browser's localStorage and sessionStorage. While localStorage has no expiration time, sessionStorage data is cleared when the page session ends. Additionally, IndexedDB can also be utilized for caching purposes.
+
+Note: The HTTP header, Cache-Control, plays a crucial role in specifying browser caching policies for client requests and server responses. Proper configuration of these policies is essential to prevent unnecessary and continuous querying of assets. Examples of cache-control policies include determining whether a resource can be cached and specifying the caching duration before expiration.
+
+### Content Delivery Network (CDN)
+
+A CDN consists of a network of globally distributed servers that deliver static assets to users based on their geographic location. By leveraging the closest CDN server, loading times can be significantly reduced.
+
+Note: CDNs operate on distributed file systems, utilizing caching policies based on geographic location.
+
+### Cache Server
+
+A cache server acts as a proxy server positioned between the client and backend server, managing all transactions between them. Specifically designed to store and serve cached data, cache servers are beneficial for high-traffic websites, reducing the load on the main server.
+
+An example of an in-memory caching server is Memcached, which can be distributed to allow multiple servers to read and write from the same cache. Redis is another popular solution for in-memory distributed caching, offering database capabilities in addition to storing complex data structures. Amazon ElastiCache provides a fully managed service for running Memcached and Redis.
+
+### Database Cache
+
+A database cache stores frequently accessed data within the database itself, eliminating the need to retrieve it from the main server for each request and reducing the number of queries.
+
+Techniques for implementing database caching include utilizing buffer pools, which allocate a memory area for caching query results, and employing materialized views, which pre-compute query results and store them in database tables.
+
+By leveraging these caching strategies, developers can optimize app performance, enhance user experience, and reduce the load on servers. However, the selection and implementation of caching mechanisms should be tailored to the specific needs of the application and its data access patterns.
