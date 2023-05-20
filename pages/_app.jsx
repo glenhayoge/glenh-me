@@ -37,13 +37,13 @@ export default function App({ Component, pageProps }) {
         <meta property="og:url" content="https://www.glenh.me/"/>
         <meta property="og:title" content="My digital commonplace on the internet  for logic based art & creativity"/>
         <meta property="og:description" content="TL;DR : A digest of a perpetual work in progress"/>
-        <meta property="og:image" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
+        <meta property="og:image" type="image/jpeg" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
 
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:url" content="https://www.glenh.me/"/>
         <meta property="twitter:title" content="My digital commonplace on the internet  for logic based art & creativity"/>
         <meta property="twitter:description" content="TL;DR : A digest of a perpetual work in progress"/>
-        <meta property="twitter:image" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
+        <meta property="twitter:image"type="image/jpeg" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
       </Head>
       <ThemeProvider enableSystem={true} attribute="class">
         <Navbar />
