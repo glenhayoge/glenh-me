@@ -4,9 +4,9 @@ export default function Footer() {
 
   return (
     <section >
-      <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
+      {/* <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
         You've Reached the Bottom of the Page 👋
-      </p>
+      </p> */}
 
       <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4 border-t dark:border-gray-700 border-gray-200 ">
         <div className="flex justify-center mt-8 space-x-6">

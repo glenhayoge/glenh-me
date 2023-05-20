@@ -14,7 +14,7 @@ const ISideBar = () => {
    };
   return (
     <>
-      <div className="px-6 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
+      <div className="dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
         <div className="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
@@ -32,7 +32,7 @@ const ISideBar = () => {
             height={100}
           
           />
-          <div className="px-6 text-center py-6">
+          <div className="px-4 text-center py-6">
             <h5 style={signature} className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
             </h5>
@@ -57,7 +57,7 @@ const ISideBar = () => {
             </a>
             <div className="mb-2 mt-6 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
               <p className="pb-3 text-sm ">My Github Contributions</p>
-            <GitHubCalendar username="glenhayoge" />
+            <GitHubCalendar className="text-xs"username="glenhayoge" />
             <div className="pt-4">
               <a
                 className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"

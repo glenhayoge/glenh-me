@@ -1,8 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/header.module.css"
-// import faustina from '../assets/patterns.png';
 import tribalPattern from '../assets/tribal-pattern.jpg';
-// import metaImage from '../assets/ggh-meta-image.jpg';
 import Head from "next/head";
 
 const { heroContent, heroWrapper, imageWrapper } = styles;
@@ -36,7 +34,6 @@ const Header = () => {
               viewBox="0 0 233.08 233.08"
             >
               <circle cx="116.54" cy="116.54" r="116.54" fill="currentColor"className="text-gray-200 dark:text-black bg-gray-400 dark:bg-yellow-400" />
-            
               <polygon
                 points="122.1 27.11 200.36 66.64 186.08 72.49 121.24 38.08 54.66 61.05 104.12 93.08 135.66 81.07 114.2 67.8 128.14 63.09 159.93 82.29 101.63 106.97 29.54 58.97 122.1 27.11"
                 fill="currentColor"

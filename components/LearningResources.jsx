@@ -17,7 +17,7 @@ export default function ILearningResources() {
           <a href="/books">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs ">
-                <span className="inline-block mr-2">
+                <span className="inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -41,7 +41,7 @@ export default function ILearningResources() {
           <a href="/blogs">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs ">
-                <span className="inline-block mr-2">
+                <span className="inline-block ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -66,7 +66,7 @@ export default function ILearningResources() {
           <a href="/courses">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs ">
-                <span className="inline-block mr-2">
+                <span className="inline-block ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -89,7 +89,7 @@ export default function ILearningResources() {
           <a href="/videos">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs">
-                <span className="inline-block mr-2">
+                <span className="inline-block ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
