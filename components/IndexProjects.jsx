@@ -4,7 +4,7 @@ import { SiNextdotjs,SiTailwindcss,SiReact, SiNetlify, SiBulma,SiDjango,SiPython
 export default function IProjects() {
     return (
 
-        <div className="container px-2 mx-auto mt-2 ">
+        <div className="container px-8 mx-auto mt-2 ">
         <div className="pt-12 mb-8  text-gray-600">
        
           <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
@@ -20,19 +20,19 @@ export default function IProjects() {
         <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
               <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
-                <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                  <div className="flex mb-2 justify-between text-left items-left">
+                <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                  {/* <div className="flex mb-2 justify-between text-left items-left">
                     <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
                       <p className="block text-right text-xs ">⭐</p>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="text-center">
                         Glenh.me Website
                         </div>
                 </div>
-                <div className="p-4 items-left flex-left">
+                <div className="p-2 items-left flex-left">
                   <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     The source code of this website. Glenh.me
                   </p>
@@ -77,21 +77,21 @@ export default function IProjects() {
           <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
               <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
-                <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                  <div className="flex mb-2 justify-between text-left items-left">
+                <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                  {/* <div className="flex mb-2 justify-between text-left items-left">
                     <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
                       <p className="block text-right text-xs ">⭐</p>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="text-center">
                         Dzagoo Website
                         </div>
                 </div>
-                <div className="p-4 items-left flex-left">
+                <div className="p-2 items-left flex-left">
                   <p className="text-gray-500 text-center mb-4 text-sm tracking-tight leading-tight ">
-                    A digital solutions business website. Dzagoo.com
+                    A business website. Dzagoo.com
                   
                   </p>
                   <Link href="https://dzagoo.com" target="_blank">
@@ -135,19 +135,19 @@ export default function IProjects() {
           <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
               <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
-                <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                  <div className="flex mb-2 justify-between text-left items-left">
+                <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+                  {/* <div className="flex mb-2 justify-between text-left items-left">
                     <p className=" text-gray-500 text-xs">2022</p>
 
                     <div>
                       <p className="block text-right text-xs ">⭐</p>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="text-center">
                         FPDA Website
                         </div>
                 </div>
-                <div className="p-4 items-left flex-left">
+                <div className="p-2 items-left flex-left">
                   <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
                     New FPDA's Website. Fpda.com.pg
                   </p>

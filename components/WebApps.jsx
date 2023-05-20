@@ -16,13 +16,7 @@ export default function WebApps() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
       <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-        <div className="flex mb-2 justify-between text-left items-left">
-          <p className=" text-gray-500 text-xs">2022</p>
-
-          <div>
-            <p className="block text-right text-xs ">1231 ⭐</p>
-          </div>
-        </div>
+       
         <div className="text-center">
 
 
@@ -74,13 +68,7 @@ export default function WebApps() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
       <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-        <div className="flex mb-2 justify-between text-left items-left">
-          <p className=" text-gray-500 text-xs">2022</p>
-
-          <div>
-            <p className="block text-right text-xs ">1231 ⭐</p>
-          </div>
-        </div>
+      
         <div className="text-center">
           Dzagoo.com Website
         </div>
@@ -133,13 +121,7 @@ export default function WebApps() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
       <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-        <div className="flex mb-2 justify-between text-left items-left">
-          <p className=" text-gray-500 text-xs">2022</p>
-
-          <div>
-            <p className="block text-right text-xs ">1231 ⭐</p>
-          </div>
-        </div>
+       
         <div className="text-center">
           FPDA Website
         </div>
@@ -190,13 +172,7 @@ export default function WebApps() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
       <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-        <div className="flex mb-2 justify-between text-left items-left">
-          <p className=" text-gray-500 text-xs">2022</p>
-
-          <div>
-            <p className="block text-right text-xs ">1231 ⭐</p>
-          </div>
-        </div>
+      
         <div className="text-center">
           FARMIS
         </div>

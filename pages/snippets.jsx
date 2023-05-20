@@ -16,7 +16,7 @@ export default function SnippetPage({ snippets }) {
       <section className="py-20 ">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
-            <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
+            <div className="w-full lg:w-8/12 px-4 lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
                 <div className="pt-1 pb-1  ">
                   <div className="flex mb-4 justify-between items-center">

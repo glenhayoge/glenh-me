@@ -14,12 +14,12 @@ export default function Home({ articles }) {
   return (
     <div>
       <Header />
-      <main>
+     
       <section className="py-24 ">
         <div className="container px-4 lg:px-10 sm:px-4 mx-auto">
-          <div className="flex flex-wrap items-stretch -m-6">
-            <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
-              <div className=" overflow-hidden">
+          <div className="flex flex-wrap items-stretch -m-8">
+            <div className="w-full lg:w-7/12 lg:pl-20 md:px-8">
+              <div className="md:px-2 px-4 overflow-hidden">
                 <div className="pt-1 pb-1 ">
                   <div className="flex mb-4 justify-between items-center">
                     <div className=" px-3  text-gray-600">
@@ -79,14 +79,14 @@ export default function Home({ articles }) {
              <ILearningResources />
             </div>
             {/* index side bar */}
-            <div className="w-full lg:w-4/12 lg:pr-20 md:px-8 ">
+            <div className="w-full lg:w-5/12 lg:pr-20 md:px-8 ">
             <ISideBar /> 
             </div>
           
           </div>
         </div>
       </section>
-      </main>
+     
     </div>
   
   );

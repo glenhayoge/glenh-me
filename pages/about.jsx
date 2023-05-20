@@ -29,7 +29,7 @@ export default function IndexPage() {
       <section className="py-24 ">
       <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-6">
-            <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
+            <div className="w-full lg:w-8/12 px-8 lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
                   <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">

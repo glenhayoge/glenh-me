@@ -11,8 +11,8 @@ export default function IndexPage({ articles }) {
     <>
       <section className="py-24 ">
       <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
-          <div className="flex flex-wrap items-stretch -m-6">
-            <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
+          <div className="flex flex-wrap items-stretch -m-6 ">
+            <div className="w-full lg:w-8/12 px-6 lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
                   <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
@@ -59,8 +59,8 @@ export default function IndexPage({ articles }) {
               </div>
             </div>
 
-            <div className="w-full lg:w-4/12  lg:pr-20 md:px-8 ">
-              <div className="p-0 dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   rounded-lg dark:bg-gray-800/25">
+            <div className="w-full px-6 pt-12 lg:w-4/12  lg:pr-20 md:px-8 ">
+              <div className="dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   rounded-lg dark:bg-gray-800/25">
                 <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
