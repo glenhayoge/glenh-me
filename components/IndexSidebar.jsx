@@ -14,8 +14,8 @@ const ISideBar = () => {
    };
   return (
     <>
-      <div className="px-4 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
-        <div className="relative pt-10 pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
+      <div className="mx-6 dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
+        <div className="relative pt-10  pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
           <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
             src={imageUrl}

@@ -71,11 +71,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className="flex filter lg:px-28 px-9 py-4 h-20 items-center bg-gray-200 dark:bg-gray-800/25 navbar"
-      style={{
-        background: `${backgroundTransparacy}`,
-        boxShadow: `${boxShadow} 0px 0px 20px 6px`,
-      }}
+      className="flex filter lg:px-28 px-9 py-4 h-20 items-center dark:bg-gray-800/25 navbar"
+      // style={{
+      //   background: `${backgroundTransparacy}`,
+      //   boxShadow: `${boxShadow} 0px 0px 20px 6px`,
+      // }}
     >
       {" "}
       <Mobilenav open={open} setOpen={setOpen} />
