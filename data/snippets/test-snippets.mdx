@@ -1,22 +1,36 @@
 ---
-title: How to Configure ContentLayer
-description:  It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-category: 'JavaScript'
-updatedAt: 'Nov 25, 2022'
+title: Git Commands
+description:  Useful Git Commands
+category: Git
+updatedAt: Mar 8, 2023
 ---
 
-One example of a digital tool that has helped reduce the cost of exporting for small businesses run by women is the SheTrades platform. SheTrades is an initiative by the International Trade Centre (ITC) that aims to connect women-owned businesses with international buyers and markets.
+Set up scripts for git workflow
 
-The SheTrades platform provides various digital tools and resources that enable women entrepreneurs to expand their export capabilities and reduce associated costs. Here's how SheTrades helps in cost reduction:
+Create a branch from another branch
 
-Market Access: The platform provides a global network of buyers and sellers, enabling women-owned businesses to access international markets without the need for extensive travel or costly market research. By connecting directly with buyers, small businesses can reduce marketing expenses and tap into new markets.
+```
+git checkout -b myFeature dev
+```
 
-Business Training and Development: SheTrades offers online training and capacity-building programs designed specifically for women entrepreneurs. These programs provide guidance on export readiness, market intelligence, product development, and compliance with international standards. By equipping women-owned businesses with knowledge and skills, the platform helps them optimize their export processes and minimize costly errors.
+Creates the _MyFeature_ branch off _dev_. Do your work and then
 
-Matchmaking and Networking: SheTrades facilitates matchmaking between women entrepreneurs and potential buyers or investors through its online platform. This eliminates the need for expensive trade missions or trade fair participation. By leveraging the networking opportunities offered by the platform, small businesses can establish valuable connections that can lead to cost-effective export partnerships.
+```
+git commit -am "Your message"
+```
 
-Trade Information and Resources: SheTrades provides access to market research, trade statistics, and export-related resources. This enables women entrepreneurs to stay informed about market trends, regulations, and trade opportunities, reducing the costs associated with market research and consultancy services.
+Now merge your changes to _dev_ without a fast-forward
 
-Mentorship and Support: The platform offers mentorship programs where experienced business professionals provide guidance and support to women-owned businesses. This mentorship can help entrepreneurs navigate export challenges, identify cost-saving strategies, and develop sustainable export plans.
+```
+git checkout dev
+git merge --no-ff myFeature
+```
 
-SheTrades has successfully empowered women entrepreneurs by providing them with a digital platform that facilitates export opportunities, access to training, networking, and resources. By leveraging the tools and resources offered by SheTrades, small businesses run by women can reduce the costs associated with expanding into international markets and enhance their export competitiveness.
+Now push the changes to the server
+
+```
+git push origin dev
+git push origin myFeature
+```
+
+And you'll see it how you want it.
