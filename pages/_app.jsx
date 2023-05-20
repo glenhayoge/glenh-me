@@ -31,19 +31,20 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
         <title>My digital commonplace on the internet  for logic based art & creativity</title>
         <meta name="viewport" content="width=device-width,   initial-scale=1"/>
-        <meta name="title" content="My digital commonplace on the internet  for logic based art & creativity"/>
+        <meta name="title" content="A digital commonplace for logic based arts & creativity"/>
         <meta name="description" content="TL;DR : A digest of a perpetual work in progress"/>
         <meta property="og:type" content="website"/>
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="https://www.glenh.me/"/>
-        <meta property="og:title" content="My digital commonplace on the internet  for logic based art & creativity"/>
+        <meta property="og:title" content="A digital commonplace for logic based arts & creativity"/>
         <meta property="og:description" content="TL;DR : A digest of a perpetual work in progress"/>
-        <meta property="og:image" type="image/jpeg" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
+        <meta property="og:image" content="https://www.glenh.me/assets/ggh-meta-image.png"/>
 
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:url" content="https://www.glenh.me/"/>
-        <meta property="twitter:title" content="My digital commonplace on the internet  for logic based art & creativity"/>
+        <meta property="twitter:title" content="My digital commonplace for logic based arts & creativity"/>
         <meta property="twitter:description" content="TL;DR : A digest of a perpetual work in progress"/>
-        <meta property="twitter:image"type="image/jpeg" content="https://glenh.me/assets/ggh-meta-image.jpg"/>
+        <meta property="twitter:image" content="https://www.glenh.me/assets/ggh-meta-image.png"/>
       </Head>
       <ThemeProvider enableSystem={true} attribute="class">
         <Navbar />
