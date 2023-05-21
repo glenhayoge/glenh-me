@@ -102,7 +102,7 @@ export default function IndexPage() {
                         >
                           Wantoea
                         </Link>{" "}
-                        : Small biz management FOSS
+                        : Small business management FOSS
                       </p>
                     </li>
                     <li className="flex pl-4">
@@ -116,11 +116,11 @@ export default function IndexPage() {
                         >
                           Fyntree
                         </Link>
-                        : Farmers &amp; Artisans marketplace
-                      </p>
+                        : Farmers &amp; Artisans Marketplace
+                      </p> 
                     </li>
                     <li className="flex pl-4 ">
-                    <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 ' />
+                    <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p>
                        
                         <Link
@@ -129,7 +129,7 @@ export default function IndexPage() {
                           className="text-cyan-600"
                         >
                           RaitStart
-                        </Link>: Small Business Resources
+                        </Link>: Small Business Resources Tools & Guides for PNG
                       </p>
                     </li>
                   </ul>
@@ -334,7 +334,7 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-4/12  lg:pr-20 md:px-8 ">
+            <div className="w-full lg:w-4/12  lg:pr-20 md:px-4 ">
               <ProfileBadge />
               <Subscribe />
             </div>

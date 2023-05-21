@@ -71,15 +71,13 @@ export default function Home({ articles }) {
                   </a>
                 </div>
               </div>
-
             {/* index projects links */}
              <IProjects />
-
             {/* learning resources links */}
              <ILearningResources />
             </div>
             {/* index side bar */}
-            <div className="w-full lg:w-4/12 lg:pr-20 md:px-8 ">
+            <div className="w-full lg:w-4/12 lg:pr-20 md:px-4 ">
             <ISideBar /> 
             </div>
           

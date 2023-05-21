@@ -34,7 +34,7 @@ export const SingleArticle = ({
             />
             <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-md max-w-4xl px-4 mx-auto  xl:max-w-5xl ">
               {children}
-              <div className="flex items-center bg-gray-200 px-8 mt-8">
+              <div className="flex items-center bg-gray-200 dark:bg-gray-800 rounded-lg px-8 mt-8">
                 <Image
                   src={author.image}
                   width={36}
