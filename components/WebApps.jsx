@@ -181,7 +181,7 @@ export default function WebApps() {
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
           FARMIS agri-advisory mobile application
         </p>
-        <Link href="https://farmis.fpda.com.pg" target="_blank">
+        <Link href="https://farmis.ai" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Live site</span>
             <svg
