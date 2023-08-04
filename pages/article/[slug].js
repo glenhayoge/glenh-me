@@ -21,6 +21,7 @@ const SinglePost = ({ article }) => {
       >
         <MDXContent components={{
           p: props => <p {...props} className="text-gray-600 dark:text-gray-400 " />,
+          strong: props => <strong {...props} className="text-gray-600 dark:text-gray-300 " />,
           h1: props => <h1 {...props} className="text-gray-700 dark:text-yellow-400 " />,
           h2: props => <h2 {...props} className="text-gray-700 dark:text-gray-200 " />,
           h3: props => <h3 {...props} className="text-gray-700 dark:text-gray-200 " />,
@@ -29,7 +30,7 @@ const SinglePost = ({ article }) => {
         />
   
         <div>
-          <h3>On this page</h3>
+          <h3 className="text-gray-600 dark:text-gray-300">On this page</h3>
           <div>
             {article.headings.map(heading => {
               return (
