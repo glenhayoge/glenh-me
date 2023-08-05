@@ -28,8 +28,8 @@ export const SingleArticle = ({
             <Image
               className="rounded-t mt-12 lg:h-96 md:h-48 w-full object-cover -mt-4 object-center "
               src={image}
-              width={720}
-              height={400}
+              width={860}
+              height={480}
               alt="blog"
             />
             <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-md max-w-4xl px-4 mx-auto  xl:max-w-5xl ">
