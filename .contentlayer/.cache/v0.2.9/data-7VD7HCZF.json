@@ -190,6 +190,49 @@
       "documentHash": "1684578367087",
       "hasWarnings": false,
       "documentTypeName": "Snippet"
+    },
+    "articles/a-farmers-bank-card.mdx": {
+      "document": {
+        "title": "A Farmers Bank Card",
+        "publishedAt": "Aug 6, 2023",
+        "description": "He extended his hand for a handshake and I noticed how rough, cracked, and dry it was as he firmly gripped mine. .",
+        "seoDescription": "He extended his hand for a handshake and I noticed how rough, cracked, and dry it was as he firmly gripped mine.",
+        "category": "People",
+        "tags": "-farming -youths -bankcard",
+        "author": {
+          "name": "GlenH",
+          "image": "/assets/profile2.png",
+          "type": "Author",
+          "_raw": {}
+        },
+        "image": "/assets/articles/hand.jpg",
+        "toc": true,
+        "body": {
+          "raw": "\nHe extended his hand for a handshake and I noticed how rough, cracked, and dry it was as he firmly gripped mine. Looking straight at me, he calmly whispered, \"You just touched my bank card. Did you feel how it feels to work the land?\"\n\nHis words struck a chord within me, and the pain in my hand faded away as his message sank in. It was a harsh reality that subsistence farming communities in Papua New Guinea face tremendous struggles every day.\n\nIn this country, nearly 80% of the population depends on agriculture for their income, and farming is extremely labor-intensive. Due to the challenging geography and vast fertile areas, most farmers rely on manual labor, using cheap hand tools and equipment rather than mechanisation and technology.\n\nThe young successful farmer who shook my hand that day taught me an invaluable lesson. Unemployed youths have a choice: they can use their hands to earn a living through productive agri-business enterprises or misuse their potential, leading to self-destruction or harm to others.\n\nIndeed, farming to earn a bank card is not for the faint-hearted. It requires hard work and dedication, as evidenced by the calluses on his hands.\n\nHe showed me that our hands, when used for the right purposes, can be like a bank card, opening doors to success and prosperity. Our land holds the potential to be our biggest employer, providing opportunities for a better future.",
+          "code": "var Component=(()=>{var u=Object.create;var s=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var f=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports),y=(a,e)=>{for(var t in e)s(a,t,{get:e[t],enumerable:!0})},o=(a,e,t,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let r of m(e))!g.call(a,r)&&r!==t&&s(a,r,{get:()=>e[r],enumerable:!(i=l(e,r))||i.enumerable});return a};var w=(a,e,t)=>(t=a!=null?u(p(a)):{},o(e||!a||!a.__esModule?s(t,\"default\",{value:a,enumerable:!0}):t,a)),k=a=>o(s({},\"__esModule\",{value:!0}),a);var h=f((_,d)=>{d.exports=_jsx_runtime});var v={};y(v,{default:()=>j,frontmatter:()=>b});var n=w(h()),b={title:\"A Farmers Bank Card\",publishedAt:\"Aug 6, 2023\",description:\"He extended his hand for a handshake and I noticed how rough, cracked, and dry it was as he firmly gripped mine. .\",seoDescription:\"He extended his hand for a handshake and I noticed how rough, cracked, and dry it was as he firmly gripped mine.\",category:\"People\",tags:\"-farming -youths -bankcard\",author:{name:\"GlenH\",image:\"/assets/profile2.png\"},image:\"/assets/articles/hand.jpg\"};function c(a){let e=Object.assign({p:\"p\"},a.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:'He extended his hand for a handshake and I noticed how rough, cracked, and dry it was as he firmly gripped mine. Looking straight at me, he calmly whispered, \"You just touched my bank card. Did you feel how it feels to work the land?\"'}),`\n`,(0,n.jsx)(e.p,{children:\"His words struck a chord within me, and the pain in my hand faded away as his message sank in. It was a harsh reality that subsistence farming communities in Papua New Guinea face tremendous struggles every day.\"}),`\n`,(0,n.jsx)(e.p,{children:\"In this country, nearly 80% of the population depends on agriculture for their income, and farming is extremely labor-intensive. Due to the challenging geography and vast fertile areas, most farmers rely on manual labor, using cheap hand tools and equipment rather than mechanisation and technology.\"}),`\n`,(0,n.jsx)(e.p,{children:\"The young successful farmer who shook my hand that day taught me an invaluable lesson. Unemployed youths have a choice: they can use their hands to earn a living through productive agri-business enterprises or misuse their potential, leading to self-destruction or harm to others.\"}),`\n`,(0,n.jsx)(e.p,{children:\"Indeed, farming to earn a bank card is not for the faint-hearted. It requires hard work and dedication, as evidenced by the calluses on his hands.\"}),`\n`,(0,n.jsx)(e.p,{children:\"He showed me that our hands, when used for the right purposes, can be like a bank card, opening doors to success and prosperity. Our land holds the potential to be our biggest employer, providing opportunities for a better future.\"})]})}function x(a={}){let{wrapper:e}=a.components||{};return e?(0,n.jsx)(e,Object.assign({},a,{children:(0,n.jsx)(c,a)})):c(a)}var j=x;return k(v);})();\n;return Component;"
+        },
+        "_id": "articles/a-farmers-bank-card.mdx",
+        "_raw": {
+          "sourceFilePath": "articles/a-farmers-bank-card.mdx",
+          "sourceFileName": "a-farmers-bank-card.mdx",
+          "sourceFileDir": "articles",
+          "contentType": "mdx",
+          "flattenedPath": "articles/a-farmers-bank-card"
+        },
+        "type": "Article",
+        "readingTime": {
+          "text": "2 min read",
+          "minutes": 1.19,
+          "time": 71400,
+          "words": 238
+        },
+        "wordCount": 239,
+        "slug": "a-farmers-bank-card",
+        "headings": []
+      },
+      "documentHash": "1691288872340",
+      "hasWarnings": false,
+      "documentTypeName": "Article"
     }
   }
 }
