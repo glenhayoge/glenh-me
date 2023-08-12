@@ -1,7 +1,9 @@
 import { useTimeAgo } from "next-time-ago";
+import Link from "next/link";
 import Subscribe from "../components/Subscribe";
 import { useEffect } from "react";
 import ProfileBadge from "../components/ProfileBadge";
+import { BsCodeSquare, BsBook } from "react-icons/bs";
 export default function IndexPage() {
   useEffect(() => {}, []);
   return (
@@ -25,77 +27,275 @@ export default function IndexPage() {
            
               
                 <p className=" py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  Blogs on Software Development - Python JS
+                 Some Blogs/Sites on Software Development - Python/JS
                 </p>
                 <div className="w-full h-full overflow-y-auto">
                   <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
-                      TestDriven.io
+                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://testdriven.io/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          TestDriven.io
+                        </Link>{" "}
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      SimpleisBetterthancomplex
+                   {/* <Link href="https://simpleisbetterthancomplex.com/" target="_blank">
+                      SimpleIsBetterThanComplex.com
+                      </Link> */}
+                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                        href="https://simpleisbetterthancomplex.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           SimpleIsBetterThanComplex.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                    
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                     href="https://www.joshwcomeau.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           JoshWComeau.com
+                        </Link>
+                      
+                      </p>
+                      
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                   joshwcomeau.com
+                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                   href="https://delba.dev/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               Delba.dev
+                        </Link>
+                      
+                      </p>
+                    </li>
+                  
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                               <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                href="https://www.freecodecamp.org/" 
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               FreeCodeCamp.org
+                        </Link>
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                   https://delba.dev/
-                    </li>
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                   freecodecamp.org
-                    </li>
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                   https://dev.to
+                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://dev.to"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                              Dev.to
+                        </Link>
+                      
+                      </p>
                     </li>
                   </ul>
 
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Blogs on Software Development - Strategic Thinking
                   </p>
-                  <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
+                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-               
+                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
+                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://testdriven.io/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          TestDriven.io
+                        </Link>{" "}
+                      
+                      </p>
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                   {/* <Link href="https://simpleisbetterthancomplex.com/" target="_blank">
+                      SimpleIsBetterThanComplex.com
+                      </Link> */}
+                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                        href="https://simpleisbetterthancomplex.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           SimpleIsBetterThanComplex.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                    
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                     href="https://www.joshwcomeau.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           JoshWComeau.com
+                        </Link>
+                      
+                      </p>
+                      
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                   href="https://delba.dev/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               Delba.dev
+                        </Link>
+                      
+                      </p>
+                    </li>
                   
-                      Deep Work by Cal Newport
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                               <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                href="https://www.freecodecamp.org/" 
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               FreeCodeCamp.org
+                        </Link>
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
-                      <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-                      A Mind for Numbers by Barbara Oakley
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
-                    Systems Thinking: Managing Chaos and Complexity by Jamshid Gharajedaghi
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://dev.to"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                              Dev.to
+                        </Link>
+                      
+                      </p>
                     </li>
                   </ul>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Blogs on Software Development - Business, Entreprenuship
                   </p>
-                  <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
+                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Wantoea: Small biz management FOSS
+                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
+                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://testdriven.io/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          TestDriven.io
+                        </Link>{" "}
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      ChicknUp: Poultry marketplace app
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                   {/* <Link href="https://simpleisbetterthancomplex.com/" target="_blank">
+                      SimpleIsBetterThanComplex.com
+                      </Link> */}
+                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                        href="https://simpleisbetterthancomplex.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           SimpleIsBetterThanComplex.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                    
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                     href="https://www.joshwcomeau.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           JoshWComeau.com
+                        </Link>
+                      
+                      </p>
+                      
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Marketini: Farmers & Artisans-marketplace app
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                   href="https://delba.dev/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               Delba.dev
+                        </Link>
+                      
+                      </p>
+                    </li>
+                  
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                               <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                href="https://www.freecodecamp.org/" 
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               FreeCodeCamp.org
+                        </Link>
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Lidabase: Leaders performance leatherboard
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://dev.to"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                              Dev.to
+                        </Link>
+                      
+                      </p>
                     </li>
                   </ul>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Also checkout related list of Books, Courses and Videos sources I found useful in my learning journey.
                   </p>
                 </div>
