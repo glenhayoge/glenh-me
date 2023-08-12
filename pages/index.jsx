@@ -67,7 +67,7 @@ export default function Home({ articles }) {
                     className=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
                     href="/articles"
                   >
-                    View All Posts
+                    All Posts
                   </a>
                 </div>
               </div>
