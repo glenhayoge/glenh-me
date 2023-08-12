@@ -27,7 +27,7 @@ export default function IndexPage() {
            
               
                 <p className=" py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                 Some Blogs/Sites on Software Development - Python/JS
+                Software Development - Python/JS
                 </p>
                 <div className="w-full h-full overflow-y-auto">
                   <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
@@ -46,9 +46,6 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                   {/* <Link href="https://simpleisbetterthancomplex.com/" target="_blank">
-                      SimpleIsBetterThanComplex.com
-                      </Link> */}
                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                         href="https://simpleisbetterthancomplex.com/"
@@ -115,37 +112,80 @@ export default function IndexPage() {
                       
                       </p>
                     </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://www.geeksforgeeks.org/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                             GeeksforGeeks.org
+                        </Link>
+                      
+                      </p>
+                    </li>
+                  
                   </ul>
 
                   <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  Blogs on Software Development - Strategic Thinking
+                  Strategic Thinking
                   </p>
                   <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                          href="https://testdriven.io/"
+                          href="https://www.strategyskills.com/blog/"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                          TestDriven.io
+                        StrategySkills.com
                         </Link>{" "}
                       
                       </p>
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                   {/* <Link href="https://simpleisbetterthancomplex.com/" target="_blank">
-                      SimpleIsBetterThanComplex.com
-                      </Link> */}
                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                        href="https://simpleisbetterthancomplex.com/"
+                        href="https://www.focusedmomentum.com/blog/topic/strategic-thinking"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                           SimpleIsBetterThanComplex.com
+                          Focusedmomentum.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                  </ul>
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  Business, Entrepreneurship 
+                  </p>
+                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
+                    <li className="flex items-center">
+                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
+                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://www.youngupstarts.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          YoungUpstarts.com
+                        </Link>{" "}
+                      
+                      </p>
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+
+                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                        href="https://thetotalentrepreneurs.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           TheTotalEntrepreneurs.com
                         </Link>
                       
                       </p>
@@ -155,11 +195,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                     href="https://www.joshwcomeau.com/"
+                     href="https://socialtriggers.com/blog/"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                           JoshWComeau.com
+                       SocialTriggers.com
                         </Link>
                       
                       </p>
@@ -169,134 +209,28 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                         <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                   href="https://delba.dev/"
+                   href="https://thedankoe.com/"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                               Delba.dev
+                              TheDanKoe.com
                         </Link>
                       
                       </p>
                     </li>
                   
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                               <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-                href="https://www.freecodecamp.org/" 
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                               FreeCodeCamp.org
-                        </Link>
-                      
-                      </p>
-                    </li>
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-         href="https://dev.to"
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                              Dev.to
-                        </Link>
-                      
-                      </p>
-                    </li>
-                  </ul>
-                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  Blogs on Software Development - Business, Entreprenuship
-                  </p>
-                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
-                    <li className="flex items-center">
-                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
-                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-                          href="https://testdriven.io/"
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                          TestDriven.io
-                        </Link>{" "}
-                      
-                      </p>
-                    </li>
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                   {/* <Link href="https://simpleisbetterthancomplex.com/" target="_blank">
-                      SimpleIsBetterThanComplex.com
-                      </Link> */}
-                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-                        href="https://simpleisbetterthancomplex.com/"
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                           SimpleIsBetterThanComplex.com
-                        </Link>
-                      
-                      </p>
-                    </li>
-                    
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-                     href="https://www.joshwcomeau.com/"
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                           JoshWComeau.com
-                        </Link>
-                      
-                      </p>
-                      
-                    </li>
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-                   href="https://delba.dev/"
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                               Delba.dev
-                        </Link>
-                      
-                      </p>
-                    </li>
                   
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                               <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-                href="https://www.freecodecamp.org/" 
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                               FreeCodeCamp.org
-                        </Link>
-                      
-                      </p>
-                    </li>
-                    <li className="flex items-center">
-                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p ><Link
-         href="https://dev.to"
-                          target="_blank"
-                          className="text-cyan-600 "
-                        >
-                              Dev.to
-                        </Link>
-                      
-                      </p>
-                    </li>
+                   
                   </ul>
                   <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  Also checkout related list of Books, Courses and Videos sources I found useful in my learning journey.
+                  Also checkout related list of 
+                  <Link href="https://www.glenh.me/books" target="_parent" className="text-cyan-600 "
+                        > Books, </Link><Link href="https://www.glenh.me/courses" target="_parent" className="text-cyan-600 "
+                        >
+                          Courses
+                        </Link> and  <Link href="https://www.glenh.me/videos" target="_parent" className="text-cyan-600 "
+                        >
+                          Videos </Link>sources I found useful in my learning journey.
                   </p>
                 </div>
               </div>
