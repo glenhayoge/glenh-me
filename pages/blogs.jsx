@@ -3,7 +3,7 @@ import Link from "next/link";
 import Subscribe from "../components/Subscribe";
 import { useEffect } from "react";
 import ProfileBadge from "../components/ProfileBadge";
-import { BsCodeSquare, BsBook } from "react-icons/bs";
+import { BsReverseLayoutTextSidebarReverse, BsBook } from "react-icons/bs";
 export default function IndexPage() {
   useEffect(() => {}, []);
   return (
@@ -33,7 +33,7 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
-                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                           href="https://testdriven.io/"
                           target="_blank"
@@ -46,7 +46,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                       <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                         href="https://simpleisbetterthancomplex.com/"
                           target="_blank"
@@ -60,7 +60,7 @@ export default function IndexPage() {
                     
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                       <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                      href="https://www.joshwcomeau.com/"
                           target="_blank"
@@ -74,7 +74,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                        <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                    href="https://delba.dev/"
                           target="_blank"
@@ -88,7 +88,7 @@ export default function IndexPage() {
                   
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                               <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                               <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                 href="https://www.freecodecamp.org/" 
                           target="_blank"
@@ -101,7 +101,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                                            <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
          href="https://dev.to"
                           target="_blank"
@@ -114,7 +114,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                                            <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                                            <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
          href="https://www.geeksforgeeks.org/"
                           target="_blank"
@@ -134,7 +134,7 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
-                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                           href="https://www.strategyskills.com/blog/"
                           target="_blank"
@@ -147,7 +147,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                       <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                         href="https://www.focusedmomentum.com/blog/topic/strategic-thinking"
                           target="_blank"
@@ -165,7 +165,7 @@ export default function IndexPage() {
                   <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
-                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                           href="https://www.youngupstarts.com/"
                           target="_blank"
@@ -179,7 +179,7 @@ export default function IndexPage() {
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
 
-                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                       <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                         href="https://thetotalentrepreneurs.com/"
                           target="_blank"
@@ -193,7 +193,7 @@ export default function IndexPage() {
                     
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                       <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                      href="https://socialtriggers.com/blog/"
                           target="_blank"
@@ -207,7 +207,7 @@ export default function IndexPage() {
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                        <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                        <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
                    href="https://thedankoe.com/"
                           target="_blank"

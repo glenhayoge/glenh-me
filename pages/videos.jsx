@@ -1,21 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useTimeAgo } from "next-time-ago";
 import Subscribe from "../components/Subscribe";
-// import 'boxicons'
-
-// import {
-//   FacebookShareButton,
-//   FacebookIcon,
-//   TwitterShareButton,
-//   TwitterIcon,
-//   WhatsappShareButton,
-//   WhatsappIcon,
-//   LinkedinShareButton,
-//   LinkedinIcon,
-// } from "next-share";
-
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
+import { BsFillPlayCircleFill, BsBook } from "react-icons/bs";
 
 export default function IndexPage() {
   const { TimeAgo } = useTimeAgo();
@@ -28,93 +17,222 @@ export default function IndexPage() {
             <div className="w-full lg:w-8/12 lg:pr-8 -mt-4">
               <div className=" rounded-lg overflow-hidden ">
                 <div className="flex mt-4 justify-left text-left items-center">
-                  <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
+                  <h1 className=" mb-4 block text-left text-4xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
                    Videos
                   </h1>
                 </div>
                 <div className="w-full h-full overflow-y-auto">
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  <p className=" py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   A list of my favourite video resources and youtube channels
                   </p>
                 
                 </div>
-                {/* what im doing */}
-                {/* <div className="flex py-8 justify-left text-left items-center   ">
-                  <h2 className=" ml-4 border-l-2 dark:border-gray-300 border-dashed border-gray-500 mb-4 block text-left text-3xl tracking-tight font-bold text-3xl lg:text-3xl px-4  dark:text-gray-300 text-gray-600 sm:text-3xl ">
-                    What I'm doing now
-                  </h2>
-                </div> */}
-                <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  Projects I am currently working on.
+                 <p className=" py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                Software Development - Python/JS
                 </p>
                 <div className="w-full h-full overflow-y-auto">
-                  <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
+                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                     
-                      Wantoea: Small biz management FOSS
+                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
+                      <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://testdriven.io/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          TestDriven.io
+                        </Link>{" "}
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                      ChicknUp: Poultry marketplace app
+                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                        href="https://simpleisbetterthancomplex.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           SimpleIsBetterThanComplex.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                    
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                     href="https://www.joshwcomeau.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           JoshWComeau.com
+                        </Link>
+                      
+                      </p>
+                      
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                        <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                   href="https://delba.dev/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               Delba.dev
+                        </Link>
+                      
+                      </p>
+                    </li>
                   
-                      Marketini: Farmers & Artisans-marketplace app
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                               <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                href="https://www.freecodecamp.org/" 
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                               FreeCodeCamp.org
+                        </Link>
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                  
-                      Lidabase: Leaders performance leatherboard
+                                            <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://dev.to"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                              Dev.to
+                        </Link>
+                      
+                      </p>
                     </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://www.geeksforgeeks.org/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                             GeeksforGeeks.org
+                        </Link>
+                      
+                      </p>
+                    </li>
+                  
                   </ul>
 
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    What I am Reading:
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  Strategic Thinking
                   </p>
-                  <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
+                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
                     <li className="flex items-center">
-                    <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-               
-                  
-                      Deep Work by Cal Newport
+                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
+                      <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://www.strategyskills.com/blog/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                        StrategySkills.com
+                        </Link>{" "}
+                      
+                      </p>
                     </li>
                     <li className="flex items-center">
-                      <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0'></i>
-                  
-                      A Mind for Numbers by Barbara Oakley
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bx-book-open mr-1.5 text-green-500 dark:text-green-400 flex-shrink-02'></i>
-                  
-                    Systems Thinking: Managing Chaos and Complexity by Jamshid Gharajedaghi
-                    </li>
-                
-                  </ul>
-                  <p className="px-4 py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    What I am watching:
-                  </p>
-                  <ul className="space-y-1 max-w-md px-8 list-inside text-gray-500 dark:text-gray-400">
-                    <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Wantoea: Small biz management FOSS
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      ChicknUp: Poultry marketplace app
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Marketini: Farmers & Artisans-marketplace app
-                    </li>
-                    <li className="flex items-center">
-                    <i className='bx bx-play-circle mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
-                      Lidabase: Leaders performance leatherboard
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                        href="https://www.focusedmomentum.com/blog/topic/strategic-thinking"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          Focusedmomentum.com
+                        </Link>
+                      
+                      </p>
                     </li>
                   </ul>
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  Business, Entrepreneurship 
+                  </p>
+                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
+                    <li className="flex items-center">
+                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
+                      <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://www.youngupstarts.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          YoungUpstarts.com
+                        </Link>{" "}
+                      
+                      </p>
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+
+                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                        href="https://thetotalentrepreneurs.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                           TheTotalEntrepreneurs.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                    
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                     href="https://socialtriggers.com/blog/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                       SocialTriggers.com
+                        </Link>
+                      
+                      </p>
+                      
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                        <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                   href="https://thedankoe.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                              TheDanKoe.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                  
+                  
+                   
+                  </ul>
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  Also checkout related list of 
+                  <Link href="https://www.glenh.me/books" target="_parent" className="text-cyan-600 "
+                        > Books, </Link><Link href="https://www.glenh.me/courses" target="_parent" className="text-cyan-600 "
+                        >
+                          Courses
+                        </Link> and  <Link href="https://www.glenh.me/videos" target="_parent" className="text-cyan-600 "
+                        >
+                          Videos </Link>sources I found useful in my learning journey.
+                  </p>
                 </div>
               </div>
             </div>
