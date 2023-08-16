@@ -15,10 +15,13 @@ export const SingleArticle = ({
         <title>
         {title}
         </title>
+        <meta name="description" content={description} key="desc" />
+        <meta property="og:title" content={title} />
         <meta
-          name="description"
+         property="og:description"
+     
           content={description}
-          key="desc"
+        
         />
         <meta
           property="og:image"
