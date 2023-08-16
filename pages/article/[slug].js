@@ -11,7 +11,18 @@ const SinglePost = ({ article }) => {
       <NextSeo title={article.title} description={article.seoDescription} />
 
       <SingleArticle
-        image={article.image}
+        // image={article.image}
+        openGraph={{
+        
+          images: [
+            {
+              url: article.image,
+              width: 800, // You can set default width
+              height: 600, // You can set default height
+              alt: 'Article Image',
+            }
+          ],
+        }}
         title={article.title}
         description={article.description}
         category={article.category}
