@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from 'next/head';
 export const SingleArticle = ({
   author,
   image,
@@ -10,6 +11,20 @@ export const SingleArticle = ({
 }) => {
   return (
     <>
+     <Head>
+        <title>
+        {title}
+        </title>
+        <meta
+          name="description"
+          content={description}
+          key="desc"
+        />
+        <meta
+          property="og:image"
+          content={image}
+        />
+      </Head>
       <div className="w-full pt-10 lg:flex">
         <div className="w-full h-full overflow-y-auto">
           <div className="mx-auto prose prose-xl py-8 max-w-3xl  xl:max-w-5xl rounded-t">
