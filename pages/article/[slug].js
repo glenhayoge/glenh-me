@@ -29,12 +29,12 @@ const SinglePost = ({ article }) => {
         }}
         />
   
-        <div>
+        {/* <div>
           <h3 className="text-gray-600 dark:text-gray-300">On this page</h3>
           <div>
             {article.headings.map(heading => {
               return (
-                <div key={`#${heading.slug}`}>
+                <div key={`#${h1.slug}`}>
                   <a
                     className="data-[level=two]:pl-2 data-[level=three]:pl-4"
                     data-level={heading.level}
@@ -46,7 +46,29 @@ const SinglePost = ({ article }) => {
               )
             })}
           </div>
+        </div> */}
+        <div>
+  <h3 className="text-gray-600 dark:text-yellow-400">On this page</h3>
+  <div >
+    {article.headings.map(heading => {
+      let paddingLeftStyle = '';
+      if (heading.level === 'two') paddingLeftStyle = 'pl-2';
+      if (heading.level === 'three') paddingLeftStyle = 'pl-4';
+
+      return (
+        <div className="text-gray-600 dark:text-teal-600" key={`#${heading.slug}`}>
+          <a
+            className={paddingLeftStyle}
+            href={`#${heading.slug}`}
+          >
+            {heading.text}
+          </a>
         </div>
+      );
+    })}
+  </div>
+</div>
+
 
 
       </SingleArticle>

@@ -50,7 +50,7 @@ export const SingleArticle = ({
               height={480}
               alt="blog"
             />
-            <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-indigo lg:prose-md max-w-4xl px-4 mx-auto  xl:max-w-5xl ">
+            <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-teal lg:prose-md max-w-4xl px-4 mx-auto  xl:max-w-5xl ">
               {children}
               <div className="flex items-center bg-gray-200 dark:bg-gray-800 rounded-lg px-8 mt-8">
                 <Image
@@ -58,11 +58,11 @@ export const SingleArticle = ({
                   width={36}
                   height={36}
                   alt="blog"
-                  className="w-16 h-16 p-1 mr-4 rounded-full border border-gray-600"
+                  className="w-24 h-24 p-2 mr-4 rounded-full"
                 />
                 <div>
                   <div className="flex -mb-2 ">
-                    <strong className="text-gray-500 text-base font- dark:text-gray-500 text-center">
+                    <strong className="text-gray-500 text-base  dark:text-gray-500 text-center">
                      By: {author.name}, {publishedAt}
                     </strong>
                   </div>
