@@ -125,7 +125,20 @@ export default function IndexPage() {
                       
                       </p>
                     </li>
-                  
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href=" https://realpython.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                             RealPython.com
+                        </Link>
+                      
+                      </p>
+                    </li>
+                   
                   </ul>
 
                   <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
