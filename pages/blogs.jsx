@@ -232,7 +232,8 @@ export default function IndexPage() {
                       </p>
                     </li>
                   
-                  
+
+
                    
                   </ul>
                   <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
