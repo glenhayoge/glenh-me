@@ -363,7 +363,7 @@ export default function IndexPage() {
                     </div>
                     <div className=" px-6 text-xs italic text-gray-500">
                       Updated:{" "}
-                      <TimeAgo date="August 17, 2023 8:18 am" locale="pg" />
+                      <TimeAgo date="October 30, 2023 9:39 am" locale="pg" />
                     </div>
                   </div>
                   <Image

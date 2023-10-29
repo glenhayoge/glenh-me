@@ -3411,6 +3411,11 @@ next-time-ago@^0.1.1:
   resolved "https://registry.npmjs.org/next-time-ago/-/next-time-ago-0.1.1.tgz"
   integrity sha512-EezVjbcs0k7PAmWl9CuXnaI3FkEZzGhzKpoKzQIdIYUvBPWPVbg0O4QvW3HN27cyPYF0aJrwqnCYd/5R/DMFxg==
 
+next-timeago@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/next-timeago/-/next-timeago-0.2.0.tgz"
+  integrity sha512-XBvTTlzqHD95WN4bdhEDMEt17vDJmfICNeBOty/e2/cHA9R7vingBdnatYRBWN9AsMkns0B4W+zlUG4Ma3Aw8g==
+
 next@*, "next@^12 || ^13", "next@^8.1.1-canary.54 || >=9.0.0", next@13.0.4:
   version "13.0.4"
   resolved "https://registry.npmjs.org/next/-/next-13.0.4.tgz"
@@ -3878,7 +3883,12 @@ react-share@^4.4.1:
     classnames "^2.3.2"
     jsonp "^0.2.1"
 
-react@*, "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.3.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16.0.0, react@>=17.0.0, react@>=17.0.2, react@18.2.0:
+react-timeago@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/react-timeago/-/react-timeago-7.2.0.tgz"
+  integrity sha512-2KsBEEs+qRhKx/kekUVNSTIpop3Jwd7SRBm0R4Eiq3mPeswRGSsftY9FpKsE/lXLdURyQFiHeHFrIUxLYskG5g==
+
+react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.11.0 || ^17.0.0 || ^18.0.0", "react@^16.3.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16.0.0, react@>=17.0.0, react@>=17.0.2, react@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
