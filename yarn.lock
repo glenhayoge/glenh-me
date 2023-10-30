@@ -3406,11 +3406,6 @@ next-themes@^0.2.1:
   resolved "https://registry.npmjs.org/next-themes/-/next-themes-0.2.1.tgz"
   integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
 
-next-time-ago@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.npmjs.org/next-time-ago/-/next-time-ago-0.1.1.tgz"
-  integrity sha512-EezVjbcs0k7PAmWl9CuXnaI3FkEZzGhzKpoKzQIdIYUvBPWPVbg0O4QvW3HN27cyPYF0aJrwqnCYd/5R/DMFxg==
-
 next-timeago@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/next-timeago/-/next-timeago-0.2.0.tgz"

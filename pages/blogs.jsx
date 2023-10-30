@@ -1,9 +1,13 @@
-import { useTimeAgo } from "next-time-ago";
+// import { useTimeAgo } from "next-time-ago";
+import TimeAgo from 'react-timeago'
+import frenchStrings from 'react-timeago/lib/language-strings/fr'
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import Link from "next/link";
 import Subscribe from "../components/Subscribe";
 import { useEffect } from "react";
 import ProfileBadge from "../components/ProfileBadge";
 import { BsReverseLayoutTextSidebarReverse, BsBook } from "react-icons/bs";
+const formatter = buildFormatter(frenchStrings)
 export default function IndexPage() {
   useEffect(() => {}, []);
   return (
