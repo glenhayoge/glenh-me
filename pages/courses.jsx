@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function IndexPage() {
   // const { TimeAgo } = useTimeAgo();
-  const formatter = buildFormatter(frenchStrings)
+  // const formatter = buildFormatter(frenchStrings)
   useEffect(() => {}, []);
   return (
     <>
