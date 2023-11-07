@@ -18,7 +18,6 @@ export type Article = {
   description: string
   seoDescription: string
   category: string
-  tags: string
   author?: Author | undefined
   image: string
   toc: boolean
@@ -88,6 +87,13 @@ export type DocumentTypeNames = 'Article' | 'Book' | 'Snippet'
 export type NestedTypes = Author
 export type NestedTypeNames = 'Author'
 
+export type DataExports = {
+  allDocuments: DocumentTypes[]
+  allArticles: Article[]
+  allBooks: Book[]
+  allSnippets: Snippet[]
+}
+
 
 export interface ContentlayerGenTypes {
   documentTypes: DocumentTypes
@@ -97,6 +103,7 @@ export interface ContentlayerGenTypes {
   nestedTypeMap: NestedTypeMap
   nestedTypeNames: NestedTypeNames
   allTypeNames: AllTypeNames
+  dataExports: DataExports
 }
 
 declare global {

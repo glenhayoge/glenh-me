@@ -7,7 +7,7 @@ export default function ArticleCard({
   category,
   dateTime,
   readingTime,
-  tags,
+  // tags,
 }) {
   return (
     <>

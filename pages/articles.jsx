@@ -42,13 +42,13 @@ export default function IndexPage({ articles }) {
 
                         publishedAt,
 
-                        tags,
+                        // tags,
                       }) => (
                         <ArticleList
                           key={slug}
                           title={title}
                           slug={slug}
-                          tags={tags}
+                          // tags={tags}
                           dateTime={publishedAt}
 
                         />
@@ -135,7 +135,7 @@ export function getStaticProps() {
         "author",
         "category",
         "image",
-        "tags",
+        // "tags",
       ])
     )
     .sort(
