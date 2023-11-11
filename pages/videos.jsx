@@ -40,11 +40,11 @@ export default function IndexPage() {
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                          href="https://testdriven.io/"
+                          href="https://www.youtube.com/@JoshuaMorony"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                          TestDriven.io
+                          Joshua Morony
                         </Link>{" "}
                       
                       </p>
@@ -53,11 +53,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                        <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                        href="https://simpleisbetterthancomplex.com/"
+                        href="https://www.youtube.com/@freecodecamp"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                           SimpleIsBetterThanComplex.com
+                           FreeCodeCamp.org
                         </Link>
                       
                       </p>
@@ -67,11 +67,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                        <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                     href="https://www.joshwcomeau.com/"
+                     href="https://www.youtube.com/@appbrewery"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                           JoshWComeau.com
+                           Dr Angela Yu
                         </Link>
                       
                       </p>
@@ -81,11 +81,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                         <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                   href="https://delba.dev/"
+                   href="https://www.youtube.com/@CodeWithStein"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                               Delba.dev
+                               Code with Stein
                         </Link>
                       
                       </p>
@@ -95,11 +95,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                                <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                href="https://www.freecodecamp.org/" 
+                href="https://www.youtube.com/@bugbytes3923" 
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                               FreeCodeCamp.org
+                               BugBytes
                         </Link>
                       
                       </p>
@@ -108,11 +108,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                                             <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-         href="https://dev.to"
+         href="https://www.youtube.com/@javascriptmastery"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                              Dev.to
+                             JavaScript Mastery
                         </Link>
                       
                       </p>
@@ -121,15 +121,88 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                                             <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-         href="https://www.geeksforgeeks.org/"
+         href="https://www.youtube.com/@TraversyMedia"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                             GeeksforGeeks.org
+                             Traversy Media
                         </Link>
                       
                       </p>
+                
                     </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href=" https://www.youtube.com/@veryacademy"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                             Very Academy
+                        </Link>
+                      
+                      </p>
+                     
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://www.youtube.com/@TechWithTim"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          Tech with Tim
+                        </Link>
+                      
+                      </p>
+                     
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href=" https://www.youtube.com/@Hyperplexed"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                         Hyperplexed
+                        </Link>
+                      
+                      </p>
+                  
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://www.youtube.com/@KevinPowell"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                         Kevin Powell
+                        </Link>
+                      
+                      </p>
+                    
+                    </li>
+                    <li className="flex items-center">
+                   <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
+                                            <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+         href="https://www.youtube.com/@DennisIvy"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                         Denis Ivy
+                        </Link>
+                      
+                      </p>
+                    
+                    </li>
+              
+                    
                   
                   </ul>
 
@@ -141,11 +214,11 @@ export default function IndexPage() {
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                          href="https://www.strategyskills.com/blog/"
+                          href="https://www.youtube.com/@greatlearning"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                        StrategySkills.com
+                        GreatLearning
                         </Link>{" "}
                       
                       </p>
@@ -154,11 +227,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                        <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                        href="https://www.focusedmomentum.com/blog/topic/strategic-thinking"
+                        href="https://www.youtube.com/@TomBilyeu"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                          Focusedmomentum.com
+                          Tom Bilyeu
                         </Link>
                       
                       </p>
@@ -172,11 +245,11 @@ export default function IndexPage() {
                     <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
                       <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                          href="https://www.youngupstarts.com/"
+                          href="https://www.youtube.com/@ycombinator"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                          YoungUpstarts.com
+                          Y Combinator
                         </Link>{" "}
                       
                       </p>
@@ -186,11 +259,11 @@ export default function IndexPage() {
 
                        <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                        href="https://thetotalentrepreneurs.com/"
+                        href="https://www.youtube.com/@VALUETAINMENT"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                           TheTotalEntrepreneurs.com
+                          Valuetainment
                         </Link>
                       
                       </p>
@@ -200,13 +273,13 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                        <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                     href="https://socialtriggers.com/blog/"
+                     href="https://www.youtube.com/@DanKoeTalks"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                       SocialTriggers.com
+                       Dan Koe Talks
                         </Link>
-                      
+                  
                       </p>
                       
                     </li>
@@ -214,11 +287,11 @@ export default function IndexPage() {
                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>
                         <BsFillPlayCircleFill className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p ><Link
-                   href="https://thedankoe.com/"
+                   href="https://www.youtube.com/@MyronGolden"
                           target="_blank"
                           className="text-cyan-600 "
                         >
-                              TheDanKoe.com
+                              Myron Golden
                         </Link>
                       
                       </p>
