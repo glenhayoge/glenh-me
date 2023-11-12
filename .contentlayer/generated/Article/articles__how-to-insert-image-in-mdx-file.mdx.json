@@ -1,0 +1,37 @@
+{
+  "title": "How to insert an image in an MDX format article",
+  "publishedAt": "Nov 12, 2023",
+  "description": "How to Insert and image in an mdx format article",
+  "seoDescription": "How to Insert and image in an mdx format article",
+  "category": "Coding",
+  "author": {
+    "name": "GlenH",
+    "image": "/assets/profile2.png",
+    "type": "Author",
+    "_raw": {}
+  },
+  "image": "https://images.unsplash.com/photo-1503252947848-7338d3f92f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzM3MzU2NA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  "toc": true,
+  "body": {
+    "raw": "\nTo insert an image in an MDX format article in Next.js using Contentlayer, use the standard Markdown image syntax. \n\n`![Alt text for the image](/path/to/your/image.jpg)`\n\nReplace `/path/to/your/image.jpg` with the actual path to an image file, and adjust the caption text accordingly. This structure provides a semantic way to include an image with its caption in your MDX document.\n\nUse the standard HTML syntax for image captions. Wrap your image and its caption in a `<figure>` element, and use the `<figcaption>` element to provide the caption.\n\nAdjust the dimensions (height and width) of the image in Markdown by using HTML attributes within the `<img>` tag.\n\nExample:\n\n`<figure> <img src=\"/path/to/your/image.jpg\" alt=\"Alt text for the image\" width=\"500\" height=\"300\" /> <figcaption>Caption for your image.</figcaption> </figure>`\n\nAdjust the values to your preferred dimensions. It's important to maintain the aspect ratio of the image to prevent distortion. If you set only one of `width` or `height`, the browser will automatically adjust the other dimension to maintain the aspect ratio.\n\nRemember to replace `/path/to/your/image.jpg` with the actual path to your image file, and customize the caption accordingly.",
+    "code": "var Component=(()=>{var m=Object.create;var o=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var l=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var f=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),x=(i,e)=>{for(var n in e)o(i,n,{get:e[n],enumerable:!0})},c=(i,e,n,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of l(e))!u.call(i,a)&&a!==n&&o(i,a,{get:()=>e[a],enumerable:!(r=p(e,a))||r.enumerable});return i};var y=(i,e,n)=>(n=i!=null?m(g(i)):{},c(e||!i||!i.__esModule?o(n,\"default\",{value:i,enumerable:!0}):n,i)),w=i=>c(o({},\"__esModule\",{value:!0}),i);var d=f((D,s)=>{s.exports=_jsx_runtime});var _={};x(_,{default:()=>b,frontmatter:()=>j});var t=y(d()),j={title:\"How to insert an image in an MDX format article\",publishedAt:\"Nov 12, 2023\",description:\"How to Insert and image in an mdx format article\",seoDescription:\"How to Insert and image in an mdx format article\",category:\"Coding\",author:{name:\"GlenH\",image:\"/assets/profile2.png\"},image:\"https://images.unsplash.com/photo-1503252947848-7338d3f92f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzM3MzU2NA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080\"};function h(i){let e=Object.assign({p:\"p\",code:\"code\"},i.components);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(e.p,{children:\"To insert an image in an MDX format article in Next.js using Contentlayer, use the standard Markdown image syntax.\"}),`\n`,(0,t.jsx)(e.p,{children:(0,t.jsx)(e.code,{children:\"![Alt text for the image](/path/to/your/image.jpg)\"})}),`\n`,(0,t.jsxs)(e.p,{children:[\"Replace \",(0,t.jsx)(e.code,{children:\"/path/to/your/image.jpg\"}),\" with the actual path to an image file, and adjust the caption text accordingly. This structure provides a semantic way to include an image with its caption in your MDX document.\"]}),`\n`,(0,t.jsxs)(e.p,{children:[\"Use the standard HTML syntax for image captions. Wrap your image and its caption in a \",(0,t.jsx)(e.code,{children:\"<figure>\"}),\" element, and use the \",(0,t.jsx)(e.code,{children:\"<figcaption>\"}),\" element to provide the caption.\"]}),`\n`,(0,t.jsxs)(e.p,{children:[\"Adjust the dimensions (height and width) of the image in Markdown by using HTML attributes within the \",(0,t.jsx)(e.code,{children:\"<img>\"}),\" tag.\"]}),`\n`,(0,t.jsx)(e.p,{children:\"Example:\"}),`\n`,(0,t.jsx)(e.p,{children:(0,t.jsx)(e.code,{children:'<figure> <img src=\"/path/to/your/image.jpg\" alt=\"Alt text for the image\" width=\"500\" height=\"300\" /> <figcaption>Caption for your image.</figcaption> </figure>'})}),`\n`,(0,t.jsxs)(e.p,{children:[\"Adjust the values to your preferred dimensions. It's important to maintain the aspect ratio of the image to prevent distortion. If you set only one of \",(0,t.jsx)(e.code,{children:\"width\"}),\" or \",(0,t.jsx)(e.code,{children:\"height\"}),\", the browser will automatically adjust the other dimension to maintain the aspect ratio.\"]}),`\n`,(0,t.jsxs)(e.p,{children:[\"Remember to replace \",(0,t.jsx)(e.code,{children:\"/path/to/your/image.jpg\"}),\" with the actual path to your image file, and customize the caption accordingly.\"]})]})}function M(i={}){let{wrapper:e}=i.components||{};return e?(0,t.jsx)(e,Object.assign({},i,{children:(0,t.jsx)(h,i)})):h(i)}var b=M;return w(_);})();\n;return Component;"
+  },
+  "_id": "articles/how-to-insert-image-in-mdx-file.mdx",
+  "_raw": {
+    "sourceFilePath": "articles/how-to-insert-image-in-mdx-file.mdx",
+    "sourceFileName": "how-to-insert-image-in-mdx-file.mdx",
+    "sourceFileDir": "articles",
+    "contentType": "mdx",
+    "flattenedPath": "articles/how-to-insert-image-in-mdx-file"
+  },
+  "type": "Article",
+  "readingTime": {
+    "text": "1 min read",
+    "minutes": 0.895,
+    "time": 53700,
+    "words": 179
+  },
+  "wordCount": 180,
+  "slug": "how-to-insert-image-in-mdx-file",
+  "headings": []
+}
