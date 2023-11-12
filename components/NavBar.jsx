@@ -3,12 +3,13 @@ import Logo from "../components/Logo";
 import Mobilenav from "../components/MobileNav";
 import { useTheme } from "next-themes";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
+import Link from 'next/link'
 
 function NavLink({ to, children }) {
   return (
-    <a href={to} className={`mx-4`}>
+    <Link href={to} className={`mx-4`}>
       {children}
-    </a>
+      </Link>
   );
 }
 //MobileNav

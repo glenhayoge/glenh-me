@@ -57,7 +57,7 @@ export default function WebApps() {
         <span>
           <i className="devicon-tailwindcss-plain p-1"></i>
         </span>
-        <span><i class="devicon-github-original p-1"></i>
+        <span><i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -111,7 +111,7 @@ export default function WebApps() {
           {" "}
           <i className="devicon-tailwindcss-plain p-1"></i>
         </span>
-        <span><i class="devicon-github-original p-1"></i>
+        <span><i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -164,7 +164,7 @@ export default function WebApps() {
         <span>
           <i className="devicon-javascript-plain p-1"></i>
         </span>
-        <span><i class="devicon-github-original p-1"></i>
+        <span><i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -222,7 +222,7 @@ export default function WebApps() {
         <span>
           <i className="devicon-docker-plain p-1"></i>
         </span>
-        <span><i class="devicon-github-original p-1"></i>
+        <span><i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -275,7 +275,7 @@ export default function WebApps() {
         </span>
         <span>
           {" "}
-          <i class="devicon-github-original"></i>
+          <i className="devicon-github-original"></i>
         </span>
       </div>
     </div>
@@ -329,7 +329,7 @@ export default function WebApps() {
         </span>
         <span>
           {" "}
-          <i class="devicon-github-original p-1"></i>
+          <i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -383,7 +383,7 @@ export default function WebApps() {
         </span>
         <span>
           {" "}
-          <i class="devicon-github-original p-1"></i>
+          <i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -433,9 +433,9 @@ export default function WebApps() {
           <i className="devicon-javascript-plain p-1"></i>
         </span>
          <span>
-         <i class="devicon-bootstrap-plain p-1"></i>
+         <i className="devicon-bootstrap-plain p-1"></i>
         </span>
-        <span><i class="devicon-github-original p-1"></i>
+        <span><i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -487,7 +487,7 @@ export default function WebApps() {
          <span>
          <i className="devicon-tailwindcss-plain p-1"></i>
         </span>
-        <span><i class="devicon-github-original p-1"></i>
+        <span><i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>
@@ -539,7 +539,7 @@ export default function WebApps() {
          <span>
          <i className="devicon-tailwindcss-plain p-1"></i>
         </span>
-        <span><i class="devicon-github-original p-1"></i>
+        <span><i className="devicon-github-original p-1"></i>
         </span>
       </div>
     </div>

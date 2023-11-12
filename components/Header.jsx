@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../styles/header.module.css"
 import tribalPattern from '../assets/tribal-pattern.jpg';
 import Head from "next/head";
+import Link from 'next/link'
 
 const { heroContent, heroWrapper, imageWrapper } = styles;
 const subTitle = { 
@@ -24,7 +25,7 @@ const Header = () => {
 
       <div className={heroContent}>
       <div className="flex justify-center md:mt-15 space-y-6 my-8 items-center">
-          <a href="#" className="text-gray-400 hover:text-gray-500 ">
+      <Link href="#" className="text-gray-400 hover:text-gray-500 ">
             <span className="sr-only">GlenGH Logo</span>
 
             <svg
@@ -60,7 +61,7 @@ const Header = () => {
                 strokeWidth="3"
               />
             </svg>
-          </a>
+            </Link>
         </div>
        <div className="pb-8">
         <h2 className=" text-gray-800 text-center pt-8 px-4 tracking-wide sm:text-xl font-bold dark:text-gray-400 

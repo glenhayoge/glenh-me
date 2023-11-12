@@ -17,11 +17,11 @@ export default function BookList({
 
       <div className="p-4 ">
         <div className=" mb-4 flex flex-col justify-start">
-          <a href={`/book/${slug}`}>
+          <Link href={`/book/${slug}`}>
             <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400
             hover:text-teal-600 dark:hover:text-cyan-600
             ">{title}</h3>
-          </a>
+          </Link>
           <p className="text-gray-600  text-xs mb-4">By {author} / {category}</p>
           <p className="text-gray-600 text-l mb-4 leading-7 dark:text-gray-400">
             {description}
@@ -32,7 +32,7 @@ export default function BookList({
         <div className="flex justify-between border-b  border-gray-400 dark:border-gray-600 border-dashed">
           <div className="flex items-center mb-6">
             <button >
-              {/* {dateTime} */} <a
+              {/* {dateTime} */} <Link
                 href={`/book/${slug}`} type="button"
                 className=' font-bold pt-2 hover:text-teal-600 dark:hover:text-cyan-600 rounded-full text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
               >
@@ -49,14 +49,14 @@ export default function BookList({
                   <path d='M5 12h14'></path>
                   <path d='M12 5l7 7-7 7'></path>
                 </svg>
-              </a>
+              </Link>
 
 
             </button>
           </div>
           <div className="flex">
 
-            <a
+            <Link
               className="flex items-center text-xs text-gray-500"
               href="#"
             >
@@ -67,7 +67,7 @@ export default function BookList({
               <span className="ml-2">
                 star 3/5
               </span>
-            </a>
+            </Link>
           </div>
 
         </div>

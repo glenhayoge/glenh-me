@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function ILearningResources() {
     return (
         <div className="container px-6  mx-auto  mb-12 mt-16 rounded-lg">
@@ -14,7 +16,7 @@ export default function ILearningResources() {
         <div className="flex flex-wrap -m-4 text-center ">
         
           <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-          <a href="/books">
+          <Link href="/books">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs ">
                 <span className="inline-block">
@@ -34,11 +36,11 @@ export default function ILearningResources() {
                 Books
               </h2>
             </div>
-            </a>
+            </Link>
           </div>
          
           <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-          <a href="/blogs">
+          <Link href="/blogs">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs ">
                 <span className="inline-block ">
@@ -59,11 +61,11 @@ export default function ILearningResources() {
                 Blogs
               </h2>
             </div>
-            </a>
+            </Link>
           </div>
 
           <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-          <a href="/courses">
+          <Link href="/courses">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs ">
                 <span className="inline-block ">
@@ -83,10 +85,10 @@ export default function ILearningResources() {
                 Courses
               </h2>
             </div>
-            </a>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/4 p-4">
-          <a href="/videos">
+          <Link href="/videos">
             <div className="p-6 rounded text-gray-200 bg-gray-500 hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs">
                 <span className="inline-block ">
@@ -107,7 +109,7 @@ export default function ILearningResources() {
                 Videos
               </h2>
             </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

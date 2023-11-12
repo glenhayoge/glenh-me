@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import IProjects from "../components/IndexProjects";
 import ILearningResources from "../components/LearningResources";
 import ISideBar from "../components/IndexSidebar"
+import Link from 'next/link'
 
 
 export default function Home({ articles }) {
@@ -63,12 +64,12 @@ export default function Home({ articles }) {
                 </main>
 
                 <div className=" p-4 flex items-center justify-between ">
-                  <a
+                  <Link
                     className=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
                     href="/articles"
                   >
                     All Posts
-                  </a>
+                    </Link>
                 </div>
               </div>
             {/* index projects links */}

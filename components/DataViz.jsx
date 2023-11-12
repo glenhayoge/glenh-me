@@ -19,7 +19,7 @@ export default function DataViz() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
       <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
-        <a href="#!">
+        <Link href="#!">
           <Image
             src={projects}
             alt="Projects Image"
@@ -28,7 +28,7 @@ export default function DataViz() {
             layout="responsive"
             className="opacity-30"
           />
-        </a>
+        </Link>
         <div className=" pt-3 ">
           <h5 className="text-gray-500 text-lg font-medium ">
             Card title
@@ -83,7 +83,7 @@ export default function DataViz() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
       <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
-        <a href="#!">
+        <Link href="#!">
           <Image
             src={projects}
             alt="Projects Image"
@@ -92,7 +92,7 @@ export default function DataViz() {
             layout="responsive"
             className="opacity-30"
           />
-        </a>
+        </Link>
         <div className=" pt-3 ">
           <h5 className="text-gray-500 text-lg font-medium ">
             Card title
@@ -147,7 +147,7 @@ export default function DataViz() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
       <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
-        <a href="#!">
+        <Link href="#!">
         
           <Image
             src={projects}
@@ -157,7 +157,7 @@ export default function DataViz() {
             layout="responsive"
             className="opacity-30"
           />
-        </a>
+        </Link>
         <div className=" pt-3 ">
           <h5 className="text-gray-500 text-lg font-medium ">
             Card title

@@ -2,6 +2,7 @@ import { allArticles } from 'contentlayer/generated';
 import { NextSeo } from 'next-seo';
 import { SingleArticle } from '../../components/SingleArticle';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import Link from 'next/link'
 
 const SinglePost = ({ article }) => {
   const MDXContent = useMDXComponent(article.body.code);
@@ -35,13 +36,13 @@ const SinglePost = ({ article }) => {
             {article.headings.map(heading => {
               return (
                 <div key={`#${h1.slug}`}>
-                  <a
+                  <Link
                     className="data-[level=two]:pl-2 data-[level=three]:pl-4"
                     data-level={heading.level}
                     href={heading.slug}
                   >
                     {heading.text}
-                  </a>
+                  </Link>
                 </div>
               )
             })}
@@ -57,12 +58,12 @@ const SinglePost = ({ article }) => {
 
       return (
         <div key={`#${heading.slug}`}>
-          <a
+          <Link
             className={paddingLeftStyle}
             href={`#${heading.slug}`}
           >
             {heading.text}
-          </a>
+          </Link>
         </div>
       );
     })}

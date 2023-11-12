@@ -1,5 +1,6 @@
 import Image from "next/image";
 import projects from "../assets/pattern.png";
+import Link from 'next/link'
 
 export default function Photography() {
     return (
@@ -17,7 +18,7 @@ export default function Photography() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
     <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
-    <a href="https://images.unsplash.com/photo-1698700654311-8b8b2b05e227?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTUxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" target="_blank" rel="noreferrer">
+     <Link href="https://images.unsplash.com/photo-1698700654311-8b8b2b05e227?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTUxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" target="_blank" rel="noreferrer">
     <Image
           src="https://images.unsplash.com/photo-1698700654311-8b8b2b05e227?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTUxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" // Replace with your actual external image URL
           alt="Projects Image"
@@ -25,7 +26,7 @@ export default function Photography() {
           height="400"
           className="rounded-t-lg"
         />
-        </a>
+        </Link>
         <div className=" p-3 ">
           <h5 className="text-gray-500 text-sm font-medium ">
             A Bulb Onion Plot, WHP
@@ -37,7 +38,7 @@ export default function Photography() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
     <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
-    <a href="https://images.unsplash.com/photo-1698700654109-825adf37f6c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNDUwNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" target="_blank" rel="noreferrer">
+     <Link href="https://images.unsplash.com/photo-1698700654109-825adf37f6c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNDUwNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" target="_blank" rel="noreferrer">
     <Image
           src="https://images.unsplash.com/photo-1698700654109-825adf37f6c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNDUwNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" // Replace with your actual external image URL
           alt="Projects Image2"
@@ -45,7 +46,7 @@ export default function Photography() {
           height="400"
           className="rounded-t-lg"
         />
-        </a>
+        </Link>
         <div className=" p-3 ">
           <h5 className="text-gray-500 text-sm font-medium ">
             An Array of Tomatoes, EHP
@@ -57,7 +58,7 @@ export default function Photography() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
     <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
-        <a href="https://images.unsplash.com/photo-1698700654105-d4e75360dc99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTM3OQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" target="_blank" rel="noreferrer">
+         <Link href="https://images.unsplash.com/photo-1698700654105-d4e75360dc99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTM3OQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" target="_blank" rel="noreferrer">
         <Image
           src="https://images.unsplash.com/photo-1698700654105-d4e75360dc99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTM3OQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" // Replace with your actual external image URL
           alt="Projects Image3"
@@ -65,7 +66,7 @@ export default function Photography() {
           height="400"
           className="rounded-t-lg"
         />
-        </a>
+        </Link>
         <div className=" p-3 ">
           <h5 className="text-gray-500 text-sm font-medium ">
           A Child Walking Home, EHP
@@ -77,7 +78,7 @@ export default function Photography() {
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
     <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600" >
-        <a href="https://images.unsplash.com/photo-1698700654176-c42201d7ba49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTEyMw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"target="_blank" rel="noreferrer">
+         <Link href="https://images.unsplash.com/photo-1698700654176-c42201d7ba49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTEyMw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"target="_blank" rel="noreferrer">
         <Image
           src="https://images.unsplash.com/photo-1698700654176-c42201d7ba49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTEyMw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" // Replace with your actual external image URL
           alt="Projects Image4"
@@ -86,7 +87,7 @@ export default function Photography() {
           className="rounded-t-lg"
         />
 
-        </a>
+        </Link>
         <div className=" p-3 ">
           <h5 className="text-gray-500 text-sm font-medium ">
            A Village Hut, WHP
@@ -96,11 +97,11 @@ export default function Photography() {
     </div>
   </div>
 </div>
-<a href="https://unsplash.com/@glenhayoge">
+ <Link href="https://unsplash.com/@glenhayoge">
 <button className="text-sm button text-gray-400 mx-3 mt-3 p-2 border rounded border-gray-500">
     View More Photos
   </button>
-  </a>
+  </Link>
 </div>
 
 

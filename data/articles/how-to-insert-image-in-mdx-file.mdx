@@ -1,0 +1,29 @@
+---
+title: How to insert an image in an MDX format article
+publishedAt: Nov 12, 2023
+description: How to Insert and image in an mdx format article
+seoDescription: Insert and image in an mdx format article
+category: Coding
+author:
+  name: GlenH
+  image: '/assets/profile2.png'
+image: 'https://images.unsplash.com/photo-1503252947848-7338d3f92f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MzM3MzU2NA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080
+---
+
+To insert an image in an MDX format article in Next.js using Contentlayer, use the standard Markdown image syntax. 
+
+`![Alt text for the image](/path/to/your/image.jpg)`
+
+Replace `/path/to/your/image.jpg` with the actual path to an image file, and adjust the caption text accordingly. This structure provides a semantic way to include an image with its caption in your MDX document.
+
+Use the standard HTML syntax for image captions. Wrap your image and its caption in a `<figure>` element, and use the `<figcaption>` element to provide the caption.
+
+Adjust the dimensions (height and width) of the image in Markdown by using HTML attributes within the `<img>` tag.
+
+Example:
+
+`<figure> <img src="/path/to/your/image.jpg" alt="Alt text for the image" width="500" height="300" /> <figcaption>Caption for your image.</figcaption> </figure>`
+
+Adjust the values to your preferred dimensions. It's important to maintain the aspect ratio of the image to prevent distortion. If you set only one of `width` or `height`, the browser will automatically adjust the other dimension to maintain the aspect ratio.
+
+Remember to replace `/path/to/your/image.jpg` with the actual path to your image file, and customize the caption accordingly.

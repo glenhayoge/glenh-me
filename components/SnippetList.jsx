@@ -31,7 +31,7 @@ export default function SnippetList({
         <div className="flex justify-between border-b  border-gray-400 dark:border-gray-600 border-dashed">
           <div className="flex items-center mb-6">
             <button >
-              {/* {dateTime} */} <a
+              {/* {dateTime} */} <Link
                 href={`/snippets/${slug}`} type="button"
                 className='pt-2 hover:text-teal-600 dark:hover:text-cyan-600 rounded-full text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0'
               >
@@ -48,14 +48,12 @@ export default function SnippetList({
                   <path d='M5 12h14'></path>
                   <path d='M12 5l7 7-7 7'></path>
                 </svg>
-              </a>
-
-
+             </Link>
             </button>
           </div>
           <div className="flex">
 
-            <a
+            <Link
               className="flex items-center text-xs text-gray-500"
               href="#"
             >
@@ -73,7 +71,7 @@ export default function SnippetList({
               <span className="ml-2">
                 {date}
               </span>
-            </a>
+           </Link>
           </div>
 
         </div>
