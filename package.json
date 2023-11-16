@@ -16,6 +16,7 @@
     "@fontsource/mrs-saint-delafield": "^4.5.10",
     "@fontsource/nanum-pen-script": "^4.5.7",
     "@heroicons/react": "v1",
+    "@tabler/icons-react": "^2.40.0",
     "@tailwindcss/typography": "^0.5.8",
     "@types/node": "^18.11.18",
     "@types/react": "18.0.25",

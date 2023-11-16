@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { IconBrandAmazon } from '@tabler/icons-react';
 export default function WebApps() {
     return (
 <div className="container mx-auto w-full mt-8 rounded-lg">
@@ -370,9 +370,6 @@ export default function WebApps() {
           <i className="devicon-django-plain p-1"></i>
         </span>
         <span>
-          <i className="devicon-docker-plain p-1"></i>
-        </span>
-        <span>
           <i className="devicon-python-plain p-1"></i>
         </span>
         <span>
@@ -385,6 +382,12 @@ export default function WebApps() {
           {" "}
           <i className="devicon-github-original p-1"></i>
         </span>
+        <span>
+        <i class="devicon-amazonwebservices-plain-wordmark p-1 h-8"></i>
+        </span>
+        {/* <span>
+        <i><IconBrandAmazon color="yellow" size={32}className="p-0 m-0"/></i>
+        </span> */}
       </div>
     </div>
   </div>
