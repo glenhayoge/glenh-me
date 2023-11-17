@@ -241,6 +241,24 @@ export default function IndexPage() {
                    
                   </ul>
                   <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                  Machine Learning, Deep Learning etc...
+                  </p>
+                  <ul className="space-y-1 max-w-md list-inside text-gray-500 dark:text-gray-400">
+                    <li className="flex items-center">
+                    <i className='bx bx-code-alt mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0' ></i>   
+                      <BsReverseLayoutTextSidebarReverse className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p ><Link
+                          href="https://www.mrdbourke.com/"
+                          target="_blank"
+                          className="text-cyan-600 "
+                        >
+                          Daniel Bourke
+                        </Link>{" "}
+                      
+                      </p>
+                    </li>
+                  </ul>
+                  <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Also checkout related list of 
                   <Link href="https://www.glenh.me/books" target="_parent" className="text-cyan-600 "
                         > Books, </Link><Link href="https://www.glenh.me/courses" target="_parent" className="text-cyan-600 "
