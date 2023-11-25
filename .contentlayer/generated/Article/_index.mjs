@@ -2,9 +2,10 @@
 
 import articles__aFarmersBankCardMdx from './articles__a-farmers-bank-card.mdx.json' assert { type: 'json' }
 import articles__anAfternoonDiscoveryWhiteHouseMdx from './articles__an-afternoon-discovery-white-house.mdx.json' assert { type: 'json' }
+import articles__dataAnalysisForSocialImpactMdx from './articles__data-analysis-for-social-impact.mdx.json' assert { type: 'json' }
 import articles__exploringCachingStrategiesForAppPerformanceOptimizationMdx from './articles__exploring-caching-strategies-for-app-performance-optimization.mdx.json' assert { type: 'json' }
 import articles__fromShallowToDeepLearningMdx from './articles__from-shallow-to-deep-learning.mdx.json' assert { type: 'json' }
 import articles__howToInsertImageInMdxFileMdx from './articles__how-to-insert-image-in-mdx-file.mdx.json' assert { type: 'json' }
 import articles__takeGamblingOrFarmingAsBusinessMdx from './articles__take-gambling-or-farming-as-business.mdx.json' assert { type: 'json' }
 
-export const allArticles = [articles__aFarmersBankCardMdx, articles__anAfternoonDiscoveryWhiteHouseMdx, articles__exploringCachingStrategiesForAppPerformanceOptimizationMdx, articles__fromShallowToDeepLearningMdx, articles__howToInsertImageInMdxFileMdx, articles__takeGamblingOrFarmingAsBusinessMdx]
+export const allArticles = [articles__aFarmersBankCardMdx, articles__anAfternoonDiscoveryWhiteHouseMdx, articles__dataAnalysisForSocialImpactMdx, articles__exploringCachingStrategiesForAppPerformanceOptimizationMdx, articles__fromShallowToDeepLearningMdx, articles__howToInsertImageInMdxFileMdx, articles__takeGamblingOrFarmingAsBusinessMdx]
