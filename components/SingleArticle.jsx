@@ -52,21 +52,20 @@ export const SingleArticle = ({
             />
             <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-teal lg:prose-md max-w-4xl px-4 mx-auto  xl:max-w-5xl ">
               {children}
-              <div className="flex items-center bg-gray-200 dark:bg-gray-800 rounded-lg px-8 mt-8">
+              <div className="flex py-0 my-0 items-center bg-gray-200 dark:bg-gray-800 rounded-xl px-8 mt-8">
                 <Image
                   src={author.image}
                   width={36}
                   height={36}
                   alt="blog"
-                  className="w-24 h-24 p-2 mr-4 rounded-full"
+                  className="w-28 h-28 p-1 mr-4 border border-gray-100 bg-gray-300 rounded-full"
                 />
                 <div>
                   <div className="flex -mb-2 ">
-                    <strong className="text-gray-500 text-base  dark:text-gray-500 text-center">
-                     By: {author.name}, {publishedAt}
-                    </strong>
+                    <span className="text-gray-500 text-sm  dark:text-gray-500 text-center">
+                     By: {author.name}, {publishedAt} | Email: gghayoge at gmail.com
+                    </span> 
                   </div>
-                
                 </div>
               </div>
             </article>
