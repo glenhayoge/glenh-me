@@ -15,7 +15,7 @@ export default function TimeAgoComponent() {
     <>
       <div className=" px-6 text-xs italic text-gray-500">
                       Updated:{" "}
-                      <TimeAgo date="November 26, 2023 9:31 am" locale="pg"  />
+                      <TimeAgo date="November 29, 2023 9:12 am" locale="pg"  />
                     </div>
     </>
   );
