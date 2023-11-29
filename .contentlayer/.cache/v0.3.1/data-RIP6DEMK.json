@@ -464,6 +464,130 @@
       "hasWarnings": false,
       "documentTypeName": "Book"
     },
+    "snippets/django-setup-snippet.mdx": {
+      "document": {
+        "title": "Setting Up Django-Useful steps and commands",
+        "updatedAt": "Mar 29, 2023",
+        "description": "Setting Up Django-Useful steps and commands",
+        "category": "Django",
+        "body": {
+          "raw": "\nSteps to setting up a Django application. All neatly written for easy copying.\n\n## Installation\n\nUse the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.\n\n```\npip install django\n```\n\n\n## Creating Project\n\n```\ndjango-admin startproject projectname\n```\n\n## Create a Django App\n\n```\npython manage.py startapp appname\n```\n\n## Run Development Server\n\n```\npython manage.py runserver\n```\n\n## Create Superuser\n\n```\npython manage.py createsuperuser\n```\n\n## Create Migrations\n\n```\npython manage.py makemigrations\n```\n\n## Apply Migrations\n\n```\npython manage.py migrate\n```\n\n## Django Shell (Interactive Console)\n\n```\npython manage.py shell\n```\n\n## Start Django Project with Virtual Environment\n\n```\npython3 -m venv venv\n```\n#### On Linux/Mac\n\n```\nsource venv/bin/activate\n```\n\n#### On Windows\n\n```\nvenv\\Scripts\\activate\n```\n\n## Django Models\n\n```\nclass MyModel(models.Model):\n    field_name = models.CharField(max_length=255)\n```\n\n## Django Views\n\n```\nfrom django.shortcuts import render\n\ndef my_view(request):\n    return render(request, 'template_name.html')\n```\n\n## Django URLs\n\n```\nfrom django.urls import path\n from . import views\n```\n\n```\nurlpatterns = [\n     path('my-view/', views.my_view, name='my-view'), \n]\n```\n\n## Django Templates\n\n```\n<!DOCTYPE html>\n<html>\n<head>\n    <title>{{ page_title }}</title>\n</head>\n<body>\n    <h1>{{ heading }}</h1>\n</body>\n</html>\n```\n\n## Static Files\n\n```\nSTATIC_URL = '/static/'\n```\n\n## Django Forms\n\n```\n class MyForm(forms.Form):\n     my_field = forms.CharField()\n```\n\n## Django Admin\n\n```\nfrom django.contrib import admin\nfrom .models import MyModel\n\nadmin.site.register(MyModel)\n```",
+          "code": "var Component=(()=>{var t=Object.create;var l=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,N=Object.prototype.hasOwnProperty;var j=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports),f=(a,e)=>{for(var c in e)l(a,c,{get:e[c],enumerable:!0})},r=(a,e,c,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of p(e))!N.call(a,i)&&i!==c&&l(a,i,{get:()=>e[i],enumerable:!(s=m(e,i))||s.enumerable});return a};var u=(a,e,c)=>(c=a!=null?t(g(a)):{},r(e||!a||!a.__esModule?l(c,\"default\",{value:a,enumerable:!0}):c,a)),v=a=>r(l({},\"__esModule\",{value:!0}),a);var d=j((_,o)=>{o.exports=_jsx_runtime});var D={};f(D,{default:()=>w,frontmatter:()=>y});var n=u(d()),y={title:\"Setting Up Django-Useful steps and commands\",description:\"Setting Up Django-Useful steps and commands\",category:\"Django\",updatedAt:\"Mar 29, 2023\"};function h(a){let e=Object.assign({p:\"p\",h2:\"h2\",a:\"a\",span:\"span\",pre:\"pre\",code:\"code\",h4:\"h4\"},a.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:\"Steps to setting up a Django application. All neatly written for easy copying.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"installation\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#installation\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Installation\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"Use the package manager\\xA0\",(0,n.jsx)(e.a,{href:\"https://pip.pypa.io/en/stable/\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"pip\"}),\"\\xA0to install foobar.\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`pip install django\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"creating-project\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#creating-project\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Creating Project\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`django-admin startproject projectname\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"create-a-django-app\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#create-a-django-app\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Create a Django App\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`python manage.py startapp appname\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"run-development-server\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#run-development-server\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Run Development Server\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`python manage.py runserver\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"create-superuser\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#create-superuser\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Create Superuser\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`python manage.py createsuperuser\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"create-migrations\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#create-migrations\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Create Migrations\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`python manage.py makemigrations\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"apply-migrations\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#apply-migrations\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Apply Migrations\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`python manage.py migrate\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"django-shell-interactive-console\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#django-shell-interactive-console\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Django Shell (Interactive Console)\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`python manage.py shell\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"start-django-project-with-virtual-environment\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#start-django-project-with-virtual-environment\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Start Django Project with Virtual Environment\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`python3 -m venv venv\n`})})}),`\n`,(0,n.jsxs)(e.h4,{id:\"on-linuxmac\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#on-linuxmac\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"On Linux/Mac\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`source venv/bin/activate\n`})})}),`\n`,(0,n.jsxs)(e.h4,{id:\"on-windows\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#on-windows\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"On Windows\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`venv\\\\Scripts\\\\activate\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"django-models\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#django-models\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Django Models\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsxs)(e.code,{className:\"code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line\",children:`class MyModel(models.Model):\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`    field_name = models.CharField(max_length=255)\n`})]})}),`\n`,(0,n.jsxs)(e.h2,{id:\"django-views\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#django-views\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Django Views\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsxs)(e.code,{className:\"code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line\",children:`from django.shortcuts import render\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`def my_view(request):\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`    return render(request, 'template_name.html')\n`})]})}),`\n`,(0,n.jsxs)(e.h2,{id:\"django-urls\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#django-urls\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Django URLs\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsxs)(e.code,{className:\"code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line\",children:`from django.urls import path\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:` from . import views\n`})]})}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsxs)(e.code,{className:\"code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line\",children:`urlpatterns = [\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`     path('my-view/', views.my_view, name='my-view'), \n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`]\n`})]})}),`\n`,(0,n.jsxs)(e.h2,{id:\"django-templates\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#django-templates\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Django Templates\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsxs)(e.code,{className:\"code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line\",children:`<!DOCTYPE html>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`<html>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`<head>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`    <title>{{ page_title }}</title>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`</head>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`<body>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`    <h1>{{ heading }}</h1>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`</body>\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`</html>\n`})]})}),`\n`,(0,n.jsxs)(e.h2,{id:\"static-files\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#static-files\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Static Files\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`STATIC_URL = '/static/'\n`})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"django-forms\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#django-forms\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Django Forms\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsxs)(e.code,{className:\"code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line\",children:` class MyForm(forms.Form):\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`     my_field = forms.CharField()\n`})]})}),`\n`,(0,n.jsxs)(e.h2,{id:\"django-admin\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#django-admin\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Django Admin\"]}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsxs)(e.code,{className:\"code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line\",children:`from django.contrib import admin\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`from .models import MyModel\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`\n`}),(0,n.jsx)(e.span,{className:\"code-line\",children:`admin.site.register(MyModel)\n`})]})})]})}function k(a={}){let{wrapper:e}=a.components||{};return e?(0,n.jsx)(e,Object.assign({},a,{children:(0,n.jsx)(h,a)})):h(a)}var w=k;return v(D);})();\n;return Component;"
+        },
+        "_id": "snippets/django-setup-snippet.mdx",
+        "_raw": {
+          "sourceFilePath": "snippets/django-setup-snippet.mdx",
+          "sourceFileName": "django-setup-snippet.mdx",
+          "sourceFileDir": "snippets",
+          "contentType": "mdx",
+          "flattenedPath": "snippets/django-setup-snippet"
+        },
+        "type": "Snippet",
+        "readingTime": {
+          "text": "2 min read",
+          "minutes": 1.055,
+          "time": 63300,
+          "words": 211
+        },
+        "wordCount": 214,
+        "slug": "django-setup-snippet",
+        "headings": [
+          {
+            "level": "two",
+            "text": "Installation",
+            "slug": "installation"
+          },
+          {
+            "level": "two",
+            "text": "Creating Project",
+            "slug": "creating-project"
+          },
+          {
+            "level": "two",
+            "text": "Create a Django App",
+            "slug": "create-a-django-app"
+          },
+          {
+            "level": "two",
+            "text": "Run Development Server",
+            "slug": "run-development-server"
+          },
+          {
+            "level": "two",
+            "text": "Create Superuser",
+            "slug": "create-superuser"
+          },
+          {
+            "level": "two",
+            "text": "Create Migrations",
+            "slug": "create-migrations"
+          },
+          {
+            "level": "two",
+            "text": "Apply Migrations",
+            "slug": "apply-migrations"
+          },
+          {
+            "level": "two",
+            "text": "Django Shell (Interactive Console)",
+            "slug": "django-shell-interactive-console"
+          },
+          {
+            "level": "two",
+            "text": "Start Django Project with Virtual Environment",
+            "slug": "start-django-project-with-virtual-environment"
+          },
+          {
+            "level": "three",
+            "text": "On Linux/Mac",
+            "slug": "on-linuxmac"
+          },
+          {
+            "level": "three",
+            "text": "On Windows",
+            "slug": "on-windows"
+          },
+          {
+            "level": "two",
+            "text": "Django Models",
+            "slug": "django-models"
+          },
+          {
+            "level": "two",
+            "text": "Django Views",
+            "slug": "django-views"
+          },
+          {
+            "level": "two",
+            "text": "Django URLs",
+            "slug": "django-urls"
+          },
+          {
+            "level": "two",
+            "text": "Django Templates",
+            "slug": "django-templates"
+          },
+          {
+            "level": "two",
+            "text": "Static Files",
+            "slug": "static-files"
+          },
+          {
+            "level": "two",
+            "text": "Django Forms",
+            "slug": "django-forms"
+          },
+          {
+            "level": "two",
+            "text": "Django Admin",
+            "slug": "django-admin"
+          }
+        ]
+      },
+      "documentHash": "1701247079728",
+      "hasWarnings": false,
+      "documentTypeName": "Snippet"
+    },
     "snippets/useful-git-commands.mdx": {
       "document": {
         "title": "Git Commands",

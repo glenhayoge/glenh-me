@@ -1,10 +1,9 @@
 ---
-title: Setting Up Django: Useful steps & commands
-description:   Setting Up Django: Useful steps & commands
+title: Setting Up Django-Useful steps and commands
+description: Setting Up Django-Useful steps and commands
 category: Django
 updatedAt: Mar 29, 2023
 ---
-
 
 Steps to setting up a Django application. All neatly written for easy copying.
 
@@ -12,65 +11,102 @@ Steps to setting up a Django application. All neatly written for easy copying.
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
-`pip install django`
+```
+pip install django
+```
+
 
 ## Creating Project
 
-`django-admin startproject projectname`
+```
+django-admin startproject projectname
+```
 
 ## Create a Django App
 
-`python manage.py startapp appname`
+```
+python manage.py startapp appname
+```
 
 ## Run Development Server
 
-`python manage.py runserver`
+```
+python manage.py runserver
+```
 
 ## Create Superuser
 
-`python manage.py createsuperuser`
+```
+python manage.py createsuperuser
+```
 
 ## Create Migrations
 
-`python manage.py makemigrations`
+```
+python manage.py makemigrations
+```
 
 ## Apply Migrations
 
-`python manage.py migrate`
+```
+python manage.py migrate
+```
 
 ## Django Shell (Interactive Console)
 
-`python manage.py shell`
+```
+python manage.py shell
+```
 
 ## Start Django Project with Virtual Environment
 
-`python3 -m venv venv`
-`source venv/bin/activate`  # On Linux/Mac
-`venv\Scripts\activate`  # On Windows
+```
+python3 -m venv venv
+```
+#### On Linux/Mac
+
+```
+source venv/bin/activate
+```
+
+#### On Windows
+
+```
+venv\Scripts\activate
+```
 
 ## Django Models
 
-`class MyModel(models.Model):
-    field_name = models.CharField(max_length=255)`
+```
+class MyModel(models.Model):
+    field_name = models.CharField(max_length=255)
+```
 
 ## Django Views
 
-`from django.shortcuts import render`
+```
+from django.shortcuts import render
 
-`def my_view(request):
-    `return render(request, 'template_name.html')``
+def my_view(request):
+    return render(request, 'template_name.html')
+```
 
 ## Django URLs
 
-`from django.urls import path`
-`from . import views`
+```
+from django.urls import path
+ from . import views
+```
 
-`urlpatterns = [
-    `path('my-view/', views.my_view, name='my-view'),``
-`]`
+```
+urlpatterns = [
+     path('my-view/', views.my_view, name='my-view'), 
+]
+```
 
 ## Django Templates
 
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,19 +116,26 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install fooba
     <h1>{{ heading }}</h1>
 </body>
 </html>
+```
 
 ## Static Files
 
-`STATIC_URL = '/static/'`
+```
+STATIC_URL = '/static/'
+```
 
 ## Django Forms
 
-`class MyForm(forms.Form):
-    `my_field = forms.CharField()``
+```
+ class MyForm(forms.Form):
+     my_field = forms.CharField()
+```
 
 ## Django Admin
 
-`from django.contrib import admin`
-`from .models import MyModel`
+```
+from django.contrib import admin
+from .models import MyModel
 
-`admin.site.register(MyModel)`
+admin.site.register(MyModel)
+```
