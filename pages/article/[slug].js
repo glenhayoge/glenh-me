@@ -49,7 +49,7 @@ const SinglePost = ({ article }) => {
           </div>
         </div> */}
         <div>
-  <h3 className="text-gray-600 dark:text-teal-600">On this page</h3>
+  <h3 className="text-gray-600 dark:text-gray-200">On this page</h3>
   <div>
     {article.headings.map(heading => {
       let paddingLeftStyle = '';
@@ -57,10 +57,10 @@ const SinglePost = ({ article }) => {
       if (heading.level === 'three') paddingLeftStyle = 'pl-4';
 
       return (
-        <div key={`#${heading.slug}`}>
+        <div key={`##${heading.slug}`}>
           <Link
             className={paddingLeftStyle}
-            href={`#${heading.slug}`}
+            href={`##${heading.slug}`}
           >
             {heading.text}
           </Link>
