@@ -11,80 +11,80 @@ Steps to setting up a Django application. All neatly written for easy copying.
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
-```
+```bash
 pip install django
 ```
 
 
 ## Creating Project
 
-```
+```bash
 django-admin startproject projectname
 ```
 
 ## Create a Django App
 
-```
+```bash
 python manage.py startapp appname
 ```
 
 ## Run Development Server
 
-```
+```bash
 python manage.py runserver
 ```
 
 ## Create Superuser
 
-```
+```bash
 python manage.py createsuperuser
 ```
 
 ## Create Migrations
 
-```
+```bash
 python manage.py makemigrations
 ```
 
 ## Apply Migrations
 
-```
+```bash
 python manage.py migrate
 ```
 
 ## Django Shell (Interactive Console)
 
-```
+```bash
 python manage.py shell
 ```
 
 ## Start Django Project with Virtual Environment
 
-```
+```bash
 python3 -m venv venv
 ```
 #### On Linux/Mac
 
-```
+```bash
 source venv/bin/activate
 ```
 
 #### On Windows
 
-```
+```bash
 venv\Scripts\activate
 ```
 
 ## Django Models
 
-```
+```bash
 class MyModel(models.Model):
     field_name = models.CharField(max_length=255)
 ```
 
 ## Django Views
 
-```
+```bash
 from django.shortcuts import render
 
 def my_view(request):
@@ -93,12 +93,12 @@ def my_view(request):
 
 ## Django URLs
 
-```
+```bash
 from django.urls import path
  from . import views
 ```
 
-```
+```python
 urlpatterns = [
      path('my-view/', views.my_view, name='my-view'), 
 ]
@@ -106,7 +106,7 @@ urlpatterns = [
 
 ## Django Templates
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,20 +120,20 @@ urlpatterns = [
 
 ## Static Files
 
-```
+```python
 STATIC_URL = '/static/'
 ```
 
 ## Django Forms
 
-```
+```python
  class MyForm(forms.Form):
      my_field = forms.CharField()
 ```
 
 ## Django Admin
 
-```
+```python
 from django.contrib import admin
 from .models import MyModel
 

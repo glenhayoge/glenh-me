@@ -1,34 +1,181 @@
 ---
-title: Git Commands
-description:  Useful Git Commands
+title: Essential Git & Github Commands
+description: Essential Git commands for efficient version control.
 category: Git
-updatedAt: Mar 8, 2023
+updatedAt: Nov 30, 2023
 ---
+
+### Configure Git
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+### Create a Repository
+```bash
+git init
+```
+### Clone a Repository
+```bash
+git clone <repository-url>
+```
+### Add Changes
+
+```bash
+git add <filename>
+git add .
+```
+### Commit Changes
+
+```bash
+git commit -m "Your commit message"
+```
+
+### Check Status
+
+```bash
+git status
+```
+
+### View Commit History
+
+```bash
+git log
+```
+
+### Create a Branch
+
+```bash
+git branch <branch-name>
+git checkout -b <branch-name>
+```
+### Switch Branches
+
+```bash
+git checkout <branch-name>
+```
+### Merge Branches
+
+```bash
+git merge <branch-name>
+```
+## Resolve Conflicts
+Manually resolve conflicts in files.
+
+```bash
+git add <filename>
+```
+```bash
+git commit -m "Merge conflict resolution"
+```
+### Undo Changes
+
+```bash
+git reset HEAD <filename>
+git checkout -- <filename>
+```
+
+### Remote Repositories
+
+```bash
+git remote add origin <repository-url>
+git remote -v
+```
+
+### Push Changes
+
+```bash
+git push -u origin <branch-name>
+```
+
+### Pull Changes
+
+```bash
+git pull origin <branch-name>
+```
+
+### Tagging
+
+```bash
+git tag -a v1.0 -m "Version 1.0"
+git push origin --tags
+```
+# GitHub
+
+## Create a Repository
+
+Click on the '+' sign in the top right corner.
+Select 'New Repository.'
+
+## Fork a Repository
+
+Click 'Fork' on GitHub.
+
+## Clone a Repository
+
+```bash
+git clone <forked-repository-url>
+```
+## Pull Requests
+
+Create a new branch.
+
+Make changes, commit, and push.
+Go to the original repository on GitHub.
+Click 'New Pull Request.'
+## Issues
+Go to the 'Issues' tab on GitHub.
+Click 'New Issue.'
+
+## GitHub Pages
+
+Go to 'Settings.'
+Scroll down to 'GitHub Pages' section.
+Choose a branch for GitHub Pages.
+
+## Collaborators
+
+Go to 'Settings.'
+Click 'Collaborators & teams.'
+Add collaborators by username.
+
+## Actions (CI/CD)
+
+Create a .github/workflows/workflow.yml file.
+Define workflow steps.
+
+## GitHub CLI (gh)
+
+```bash
+gh repo create
+gh issue create -t "New Issue" -b "Issue description"
+gh pr create --base main --head feature-branch --title "Pull Request"
+```
 
 Set up scripts for git workflow
 
 Create a branch from another branch
 
-```
+```bash
 git checkout -b myFeature dev
 ```
 
 Creates the _MyFeature_ branch off _dev_. Do your work and then
 
-```
+```bash
 git commit -am "Your message"
 ```
 
 Now merge your changes to _dev_ without a fast-forward
 
-```
+```bash
 git checkout dev
 git merge --no-ff myFeature
 ```
 
 Now push the changes to the server
 
-```
+```bash
 git push origin dev
 git push origin myFeature
 ```
