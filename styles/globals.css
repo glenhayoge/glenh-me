@@ -89,15 +89,18 @@ pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-	background: #111827;
+	
+	background: #292524;
 }
 
 :not(pre) > code[class*="language-"] {
 	padding: .1em .3em;
 	border-radius: .3em;
-	color: #db4c69;
-	background: #111827;
-}
+	color: #db4c69; /* This is the color for inline code */
+	background: #111827; /* This is the background color for inline code */
+  }
+  
+  
 /*********************************************************
 * Tokens
 */

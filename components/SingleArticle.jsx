@@ -64,8 +64,8 @@ export const SingleArticle = ({
                   className="w-20 h-20  mx-4 border border-gray-200 bg-gray-200 rounded-full"
                 />
 
-                <div class="items-center md:flex">
-                  <p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
+                <div className="items-center md:flex">
+                  <p className="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
                     {/* <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline">By:</span> */}
                     <span href="" className="inline-flex items-center ml-2 text-sm font-light text-gray-600 md:ml-2 dark:text-gray-400 ">
                       <BsCodeSquare className='mr-3 text-green-500 dark:text-green-400 flex-shrink-0' />{author.name} - {publishedAt}
