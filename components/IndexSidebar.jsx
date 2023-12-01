@@ -60,24 +60,8 @@ const ISideBar = () => {
               <p className="pb-3 text-sm ">My Github Heatmap</p>
             <GitHubCalendar className="text-xs"username="glenhayoge" />
             <div className="pt-4">
-            <p
-                className="mb-1 py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-xl border border-gray-200 dark:border-gray-600"
-                href="#"
-              >
-                Software Development
-              </p>
-              <p
-                className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-xl border border-gray-200 dark:border-gray-600"
-                href="#"
-              >
-                UX/UI Design
-              </p>
-              <p
-                className="mt-1 py-1 px-2  text-xs text-gray-600 dark:text-gray-400 rounded-xl border border-gray-200 dark:border-gray-600"
-                href="#"
-              >
-                Web/App Design
-              </p>
+            <p class="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
+                      <p class="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript, NodeJs, React, Angular, Expo, NextJS, Django, Flask, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
              
               </div>
               <div className="mt-8">

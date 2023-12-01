@@ -34,7 +34,7 @@ export default function ProfileBadge() {
                   </div>
 
                   <div className="px-4 text-center">
-                    <div className="flex justify-center space-x-4 my-8">
+                    <div className="flex justify-center space-x-4 my-6">
                       <Link
                         href="https://github.com/glenhayoge"
                         className="text-xl  xl:grid place-item-center p-1 w-8 h-8 text-gray-500  cursor-pointer hover:bg-gray-800 relative"
@@ -114,24 +114,8 @@ export default function ProfileBadge() {
                       </Link>
                     </div>
                     <div className="mb-2 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
-                      <Link
-                        className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
-                        href="#"
-                      >
-                        Front-End
-                      </Link>
-                      <Link
-                        className="py-1 px-2 mr-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
-                        href="#"
-                      >
-                        Design
-                      </Link>
-                      <Link
-                        className="py-1 px-2 text-xs text-gray-600 dark:text-gray-400 rounded-lg border border-gray-200 dark:border-gray-600"
-                        href="#"
-                      >
-                        Software Dev
-                      </Link>
+                      <p class="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
+                      <p class="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript, NodeJs, React, Angular, Expo, NextJS, Django, Flask, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
                     </div>
                     <TimeAgoComponent/>
                   </div>
