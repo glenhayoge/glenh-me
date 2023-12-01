@@ -14,6 +14,18 @@ export default function Home({ articles }) {
 
   return (
     <div>
+       <Head>
+       <title>Glens commonplace for logic based art & creativity</title>
+
+       <meta name="title" content="Glens digital commonplaces for logic based arts & creativity"/>
+       <meta property="og:type" content="website"/>
+        <meta name="description" content="TL;DR : My digest of a perpetual work in progress"/>
+        <meta property="og:image" content="https://github.com/glenhayoge/glenh-me/blob/main/assets/ggh-meta-image.png"/>
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        {/* Add other meta tags specific to your homepage */}
+      </Head>
       <Header />
      
       <section className="py-24 ">
