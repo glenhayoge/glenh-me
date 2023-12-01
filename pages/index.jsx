@@ -15,10 +15,10 @@ export default function Home({ articles }) {
   return (
     <div>
        <Head>
-       <meta name="title" content="Glens digital commonplaces for logic based arts & creativity"/>
+       <meta name="title" content="Glen G Hayoge"/>
        <meta property="og:type" content="website"/>
-        <meta name="description" content="TL;DR : My digest of a perpetual work in progress"/>
-        <meta property="og:image" content="https://images.unsplash.com/photo-1698700654176-c42201d7ba49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTEyMw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"/>
+        <meta name="description" content="Hi, my name is Glen. I'm a software developer, designer & creator from Papua New Guinea."/>
+        <meta property="og:image" content="/assets/ggh-meta-image.png"/>
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
