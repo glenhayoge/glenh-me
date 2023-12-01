@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width,   initial-scale=1"/>
         <meta name="title" content="Glens digital commonplace for logic based arts & creativity"/>
         <meta name="description" content="TL;DR : A digest of a perpetual work in progress"/>
-        <meta property="og:type" content="website"/>
+        {/* <meta property="og:type" content="website"/>
         <meta property="og:image" content="https://github.com/glenhayoge/glenh-me/blob/main/assets/ggh-meta-image.png"/>
         <meta property="og:image:secure_url" content="https://secure.github.com/glenhayoge/glenh-me/blob/main/assets/ggh-meta-image.png"/>
         <meta property="og:image:type" content="image/png" />
@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }) {
         <meta property="twitter:url" content="https://www.glenh.me/"/>
         <meta property="twitter:title" content="My digital commonplace for logic based arts & creativity"/>
         <meta property="twitter:description" content="TL;DR : A digest of a perpetual work in progress"/>
-        <meta property="twitter:image" content="https://github.com/glenhayoge/glenh-me/blob/main/assets/ggh-meta-image.png"/>
+        <meta property="twitter:image" content="https://github.com/glenhayoge/glenh-me/blob/main/assets/ggh-meta-image.png"/> */}
       </Head>
       <ThemeProvider enableSystem={true} attribute="class">
         <Navbar />

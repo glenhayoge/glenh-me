@@ -20,15 +20,8 @@ export const SingleArticle = ({
         </title>
         <meta name="description" content={description} key="desc" />
         <meta property="og:title" content={title} />
-        <meta
-          property="og:description"
-
-          content={description}
-
-        />
-        <meta
-          property="og:image"
-          content={image}
+        <meta property="og:description"content={description}/>
+        <meta property="og:image"content={image}
         />
       </Head>
       <div className="w-full pt-10 lg:flex">
@@ -63,7 +56,6 @@ export const SingleArticle = ({
                   alt="GlenH Profile Photo"
                   className="w-20 h-20  mx-4 border border-gray-200 bg-gray-200 rounded-full"
                 />
-
                 <div className="items-center md:flex">
                   <p className="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
                     {/* <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline">By:</span> */}
@@ -72,17 +64,10 @@ export const SingleArticle = ({
                     </span>
                     <span href="" className="inline-flex items-center ml-2 text-sm font-light text-gray-600 md:ml-2 dark:text-gray-400 ">
                       <BsCodeSquare className='mr-3 text-green-500 dark:text-green-400 flex-shrink-0' />gghayoge at gmail.com
-                      {/* <svg class="w-3 h-3 ml-1.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-              </svg> */}
                     </span>
                   </p>
                 </div>
-
-
               </div>
-
-
             </article>
           </div>
         </div>
