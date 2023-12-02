@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-export default function ArticleList({ title, slug, dateTime, tags }) {
+export default function ArticleList({ title, slug, dateTime, tags, category }) {
   return (
     <>
       <div className="px-6 pt-6 -mt-2 ">
@@ -18,12 +18,13 @@ export default function ArticleList({ title, slug, dateTime, tags }) {
         <div className="flex justify-between ">
           <div className="flex ">
             <div className="flex items-center text-xs text-gray-500" href="#">
-              <span className="mr-2">{dateTime}</span>
+              <span className="mr-1">{dateTime}</span>/
             </div>
-            <div className="flex items-center text-xs text-gray-500" href="#">
-              <span className="mr-2">{tags}</span>
-            </div>
-            <span className="text-gray-500">/</span>
+            <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t1}</span>
+            <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t2}</span>
+            <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t3}</span>
+            <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t4}</span>
+            <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t5}</span>
             <div
               className="flex items-center text-xs text-gray-500"
               href="#"

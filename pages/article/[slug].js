@@ -17,6 +17,7 @@ const SinglePost = ({ article }) => {
         description={article.description}
         category={article.category}
         author={article.author}
+        tags={article.tags}
         publishedAt={article.publishedAt}
         readingTime={article.readingTime.txt}
       >

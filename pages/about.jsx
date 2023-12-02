@@ -249,7 +249,7 @@ export default function IndexPage() {
                  
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
-                    Coding Computer: Apple Macbook Pro 13" 2016
+                    Coding Computer: Apple Macbook Pro M2 13" 2022
                     </p>
                   </li>
                   <li className="flex pl-4">

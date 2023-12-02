@@ -50,12 +50,14 @@ export default function IndexPage({ articlesData }) {
 {/* Display filtered articles */}
 <div className="w-full h-full overflow-y-auto">
             <main>
-              {articles.map(({ slug, title, publishedAt }) => (
+              {articles.map(({ slug, title, category, tags, publishedAt }) => (
                 <ArticleList
                   key={slug}
                   title={title}
                   slug={slug}
+                  category={category}
                   dateTime={publishedAt}
+                  tags={tags}
                 />
               ))}
             </main>
@@ -140,6 +142,7 @@ export function getStaticProps() {
         "author",
         "category",
         "image",
+        "tags"
         // "tags",
       ])
     )

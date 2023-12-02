@@ -18,6 +18,7 @@ export type Article = {
   description: string
   seoDescription: string
   category: string
+  tags?: Tags | undefined
   author?: Author | undefined
   image: string
   toc: boolean
@@ -74,6 +75,19 @@ export type Author = {
   name: string
   image: string
 
+}
+
+export type Tags = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Tags'
+  t1: string
+  t2: string
+  t3: string
+  t4: string
+  t5: string
+
 }  
 
 /** Helper types */
@@ -84,8 +98,8 @@ export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 export type DocumentTypes = Article | Book | Snippet
 export type DocumentTypeNames = 'Article' | 'Book' | 'Snippet'
 
-export type NestedTypes = Author
-export type NestedTypeNames = 'Author'
+export type NestedTypes = Author | Tags
+export type NestedTypeNames = 'Author' | 'Tags'
 
 export type DataExports = {
   allDocuments: DocumentTypes[]
@@ -118,6 +132,7 @@ export type DocumentTypeMap = {
 
 export type NestedTypeMap = {
   Author: Author
+  Tags: Tags
 }
 
  
