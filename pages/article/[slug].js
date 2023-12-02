@@ -28,27 +28,13 @@ const SinglePost = ({ article }) => {
           h2: props => <h2 {...props} className="text-gray-700 dark:text-gray-200 " />,
           h3: props => <h3 {...props} className="text-gray-700 dark:text-gray-200 " />,
           h4: props => <h4 {...props} className="text-gray-700 dark:text-gray-200 " />,
+          code: (props) => (
+            <code {...props} className="text-gray-500 dark:text-gray-200">
+              {props.children}
+            </code>
+          ),
         }}
         />
-  
-        {/* <div>
-          <h3 className="text-gray-600 dark:text-gray-300">On this page</h3>
-          <div>
-            {article.headings.map(heading => {
-              return (
-                <div key={`#${h1.slug}`}>
-                  <Link
-                    className="data-[level=two]:pl-2 data-[level=three]:pl-4"
-                    data-level={heading.level}
-                    href={heading.slug}
-                  >
-                    {heading.text}
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-        </div> */}
         <div>
   <h3 className="text-gray-600 dark:text-gray-200">On this page</h3>
   <div>

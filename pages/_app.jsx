@@ -40,6 +40,7 @@ export default function App({ Component, pageProps }) {
         <Component className="dark-main" {...pageProps} />
         <Footer />
         <Script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
       </ThemeProvider>
     </>
   )
