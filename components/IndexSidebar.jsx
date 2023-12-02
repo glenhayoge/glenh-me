@@ -60,8 +60,8 @@ const ISideBar = () => {
               <p className="pb-3 text-sm ">My Github Heatmap</p>
             <GitHubCalendar className="text-xs"username="glenhayoge" />
             <div className="pt-4">
-            <p class="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
-                      <p class="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript, NodeJs, React, Angular, Expo, NextJS, Django, Flask, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
+            <p className="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
+                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript, NodeJs, React, Angular, Expo, NextJS, Django, Flask, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
              
               </div>
               <div className="mt-8">

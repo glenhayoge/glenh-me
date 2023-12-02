@@ -383,7 +383,7 @@ export default function WebApps() {
           <i className="devicon-github-original p-1"></i>
         </span>
         <span>
-        <i class="devicon-amazonwebservices-plain-wordmark p-1 h-8"></i>
+        <i className="devicon-amazonwebservices-plain-wordmark p-1 h-8"></i>
         </span>
         {/* <span>
         <i><IconBrandAmazon color="yellow" size={32}className="p-0 m-0"/></i>

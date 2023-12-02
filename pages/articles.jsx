@@ -1,12 +1,21 @@
+import { useState, useEffect } from "react";
 import ArticleList from "../components/ArticleList";
 import { allArticles } from "contentlayer/generated";
 import { select } from "../utils/select";
-import { useEffect } from "react";
 import Subscribe from "../components/Subscribe";
 
-export default function IndexPage({ articles }) {
+export default function IndexPage({ articlesData }) {
+  const [articles, setArticles] = useState(articlesData);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => { }, []);
+  // Filter articles based on search query
+  useEffect(() => {
+    const filteredArticles = articlesData.filter((article) =>
+      article.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setArticles(filteredArticles);
+  }, [searchQuery, articlesData]);
+
   return (
     <>
       <section className="py-24 ">
@@ -19,48 +28,44 @@ export default function IndexPage({ articles }) {
                     All Posts
                   </h1>
                 </div>
+                {/* Search form */}
                 <div className="px-3 py-8">
-                  <form>
-                    <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                      </div>
-                      <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-cyan-500 focus:border-cyan-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-cyan-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Search Blogs & Articles ...." required />
-                      <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">Search</button>
-                    </div>
-                  </form>
-                </div>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+                Search
+              </label>
+              <div className="relative">
+                <input
+                  type="search"
+                  id="default-search"
+                  className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-cyan-500 focus:border-cyan-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-cyan-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
+                  placeholder="Search Blogs & Articles ...."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  required
+                />
+              </div>
+            </form>
+          </div>
+{/* Display filtered articles */}
+<div className="w-full h-full overflow-y-auto">
+            <main>
+              {articles.map(({ slug, title, publishedAt }) => (
+                <ArticleList
+                  key={slug}
+                  title={title}
+                  slug={slug}
+                  dateTime={publishedAt}
+                />
+              ))}
+            </main>
+          </div>
 
-                <div className="w-full h-full overflow-y-auto">
-                  <main>
-                    {articles.map(
-                      ({
-                        title,
-
-                        slug,
-
-                        publishedAt,
-
-                        // tags,
-                      }) => (
-                        <ArticleList
-                          key={slug}
-                          title={title}
-                          slug={slug}
-                          // tags={tags}
-                          dateTime={publishedAt}
-
-                        />
-                      )
-                    )}
-                  </main>
-                </div>
               </div>
             </div>
 
             <div className="w-full px-6 pt-12 lg:w-4/12  lg:pr-20 md:px-8 ">
-              <div className="dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden   rounded-lg dark:bg-gray-800/25">
+              <div className="dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden rounded-lg dark:bg-gray-800/25">
                 <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
@@ -124,7 +129,7 @@ export default function IndexPage({ articles }) {
 }
 
 export function getStaticProps() {
-  const articles = allArticles
+  const articlesData = allArticles
     .map((article) =>
       select(article, [
         "slug",
@@ -143,5 +148,8 @@ export function getStaticProps() {
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
     );
 
-  return { props: { articles } };
+  return { props: { articlesData } };
 }
+
+
+
