@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Head from 'next/head';
 import Link from "next/link";
+import { ArticleTags } from '../components/ArticleTags'
 
 import { BsCodeSquare, BsBook } from "react-icons/bs";
 export const SingleArticle = ({
@@ -11,6 +12,7 @@ export const SingleArticle = ({
   publishedAt,
   children,
   description,
+  tags,
 }) => {
   return (
     <>
@@ -39,6 +41,8 @@ export const SingleArticle = ({
                 <span className="text-sm text-gray-500">{publishedAt}</span>
               </div>
             </div>
+            {/* article tags */}
+            <ArticleTags tags={tags} />
             <Image
               className="rounded-t mt-12 lg:h-96 md:h-48 w-full object-cover -mt-4 object-center "
               src={image}

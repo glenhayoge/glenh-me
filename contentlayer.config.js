@@ -11,17 +11,6 @@ const Author = defineNestedType(() => ({
   },
 }));
 
-const Tags = defineNestedType(() => ({
-  name: 'Tags',
-  fields: {
-    t1: { type: 'string', required: true },
-    t2: { type: 'string', required: true },
-    t3: { type: 'string', required: true },
-    t4: { type: 'string', required: true },
-    t5: { type: 'string', required: true },
-  },
-}));
-
 const Article = defineDocumentType(() => ({
   name: 'Article',
   filePathPattern: `articles/*.mdx`,
@@ -32,10 +21,7 @@ const Article = defineDocumentType(() => ({
     description: { type: 'string', required: true },
     seoDescription: { type: 'string', required: true },
     category: { type: 'string', required: true },
-    tags: {
-      type: 'nested',
-      of: Tags,
-    },
+    tags: { type: 'string', required: true },
     author: {
       type: 'nested',
       of: Author,
