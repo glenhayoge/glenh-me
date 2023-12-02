@@ -1,10 +1,25 @@
 import React from "react";
 import Link from "next/link";
+import { NextSeo } from 'next-seo';
 import { ArticleTags } from '../components/ArticleTags'
 
 export default function ArticleList({ title, slug, dateTime, tags, category }) {
+  const page_title = 'Articles - Glen G Hayoge'
+  const description =
+    'Some of my long-form thoughts on software, articles, guides, tutorials and lots more, collected in chronological order.'
+  const canonical = 'https://glenh.me/articles'
   return (
     <>
+     <NextSeo
+        page_title={page_title}
+        description={description}
+        canonical={canonical}
+        openGraph={{
+          url: canonical,
+          title,
+          description,
+        }}
+      />
       <div className="px-6 pt-4 -mt-2 ">
         <div className="my-3">
           <Link href={`/article/${slug}`}>
@@ -18,8 +33,8 @@ export default function ArticleList({ title, slug, dateTime, tags, category }) {
         </div>
         <div className="flex justify-between py-2">
           <div className="flex ">
-            <div className="flex items-center text-xs text-gray-500" href="#">
-              <span className="mr-1">{dateTime}</span>/
+            <div className="flex items-center text-xs text-gray-200" >
+              <span className="mr-1 ">{dateTime}</span>/
             </div>
             {/* <span >{tags}</span> */}
             <ArticleTags tags={tags} />

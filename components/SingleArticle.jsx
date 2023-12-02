@@ -29,7 +29,11 @@ export const SingleArticle = ({
       <div className="w-full pt-10 lg:flex">
         <div className="w-full h-full overflow-y-auto">
           <div className="mx-auto prose prose-xl py-8 prose-md prose prose-teal lg:prose-md max-w-3xl px-4 mx-auto  xl:max-w-4xl  rounded-t">
-            <div className="flex justify-between items-center px-16"></div>
+           
+            <div className="flex block justify-left items-left text-left px-16">
+              
+            </div>
+            
             <h1 className="mt-2 block px-2 leading-10 text-4xl font-black tracking-tight sm:text-4xl  dark:text-yellow-400 text-gray-900 ">
               {title}
             </h1>
@@ -38,11 +42,12 @@ export const SingleArticle = ({
             </p>
             <div className="flex justify-between mt-8 px-2">
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                <span className="text-sm text-gray-500">{publishedAt}</span>
+                <span className="text-sm text-gray-500">{publishedAt}</span> 
+                  {/* article tags */}
+             <ArticleTags tags={tags} />
               </div>
             </div>
-            {/* article tags */}
-            <ArticleTags tags={tags} />
+           
             <Image
               className="rounded-t mt-12 lg:h-96 md:h-48 w-full object-cover -mt-4 object-center "
               src={image}

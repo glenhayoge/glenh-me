@@ -9,7 +9,9 @@ const SinglePost = ({ article }) => {
 
   return (
     <>
-      <NextSeo title={article.title} description={article.seoDescription} />
+      <NextSeo 
+      title={article.title} 
+      description={article.seoDescription} />
 
       <SingleArticle
         image={article.image}

@@ -10,7 +10,7 @@ export function ArticleTags({ tags }) {
   return tags.map((tag, i) => (
     <span
       key={i}
-      className="ml-2 text-[9px] text-gray-500 border border-gray-600 rounded-lg px-[4px] py-[2px]"
+      className="ml-2 text-[9px] dark:text-gray-300 text-gray-500 border border-gray-600 rounded-lg px-[4px] py-[0px]"
     >
       {tag}
     </span>
