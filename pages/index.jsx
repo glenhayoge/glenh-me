@@ -35,7 +35,7 @@ export default function Home({ articles }) {
                   <div className="flex mb-4 justify-between items-center">
                     <div className=" px-3  text-gray-600">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
-                        Recent Posts
+                        Recent Articles
                       </p>
                       <p className="text-sm  text-gray-600 my-6">
                     {" "}

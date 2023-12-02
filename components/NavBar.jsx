@@ -111,7 +111,7 @@ export default function Navbar() {
           />
         </div>
         <div className="hidden md:flex text-gray-600 items-center dark:text-gray-400">
-          <NavLink to="/articles">Blog</NavLink>
+          <NavLink to="/articles">Articles</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/snippets">Snippets</NavLink>
           <NavLink to="/about">About</NavLink>
