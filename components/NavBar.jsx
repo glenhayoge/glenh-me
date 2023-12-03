@@ -95,18 +95,18 @@ export default function Navbar() {
         >
           {/* hamburger button */}
           <span
-            className={`h-1 w-full bg-gray-800 dark:bg-gray-500 rounded transform transition duration-300 ease-in-out ${
-              open ? "rotate-45 translate-y-2" : ""
+            className={`h-[3px] w-full bg-gray-800 dark:bg-gray-500 rounded transform transition duration-300 ease-in-out ${
+              open ? "rotate-45 translate-y-[8.5px]" : ""
             }`}
           />
           <span
-            className={`h-1 w-full bg-gray-800 dark:bg-gray-500  rounded  transition-all duration-300 ease-in-out ${
+            className={`h-[3px] w-full bg-gray-800 dark:bg-gray-500  rounded  transition-all duration-300 ease-in-out ${
               open ? "w-0" : "w-full"
             }`}
           />
           <span
-            className={`h-1 w-full bg-gray-800 dark:bg-gray-500  rounded  transform transition duration-300 ease-in-out ${
-              open ? "-rotate-45 -translate-y-2" : ""
+            className={`h-[3px] w-full bg-gray-800 dark:bg-gray-500  rounded  transform transition duration-300 ease-in-out ${
+              open ? "-rotate-45 -translate-y-[8.5px]" : ""
             }`}
           />
         </div>
