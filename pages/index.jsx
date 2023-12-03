@@ -67,7 +67,6 @@ export default function Home({ articles }) {
                         dateTime={publishedAt}
                         date={publishedAt}
                         readingTime={readingTime.text}
-                        // tags={tags}
                       />
                     )
                   )}
