@@ -100,7 +100,7 @@ export default function IndexPage({ articlesData }) {
 <div className="w-full h-full overflow-y-auto">
         <main>
           {articles.map(
-            ({ slug, title, category, tags, publishedAt }) => (
+            ({ slug, title, category, tags, publishedAt,  readingTime }) => (
               <ArticleList
                 key={slug}
                 title={title}
@@ -108,6 +108,7 @@ export default function IndexPage({ articlesData }) {
                 category={category}
                 dateTime={publishedAt}
                 tags={<ArticleTags tags={tags} />}
+                readingTime={readingTime.text}
               />
             )
           )}

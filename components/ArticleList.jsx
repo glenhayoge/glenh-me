@@ -3,7 +3,7 @@ import Link from "next/link";
 import { NextSeo } from 'next-seo';
 import { ArticleTags } from '../components/ArticleTags'
 
-export default function ArticleList({ title, slug, dateTime, tags, category }) {
+export default function ArticleList({ title, slug, dateTime, tags,readingTime  }) {
   const page_title = 'Articles - Glen G Hayoge'
   const description =
     'Articles, guides, rants, musings, tutorials on software data analysis and lots more.'
@@ -36,8 +36,9 @@ export default function ArticleList({ title, slug, dateTime, tags, category }) {
             <div className="flex items-center text-xs text-gray-500 dark:text-gray-200" >
               <span className="mr-1 ">{dateTime}</span>/
             </div>
-            {/* <span >{tags}</span> */}
+            <span >{readingTime.text}</span>
             <ArticleTags tags={tags} />
+            
             {/* <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t2}</span>
             <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t3}</span>
             <span className="text-[9px] ml-1 text-gray-500 border border-gray-600 rounded-lg px-[4px]">{tags.t4}</span>
