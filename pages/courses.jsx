@@ -229,11 +229,11 @@ export default function IndexPage() {
                   </ul>
                   <p className="py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Also checkout related list of 
-                  <Link href="https://www.glenh.me/books" target="_parent" className="text-cyan-600 "
-                        > Books, </Link><Link href="https://www.glenh.me/courses" target="_parent" className="text-cyan-600 "
+                  <Link href="/books" target="_parent" className="text-cyan-600 "
+                        > Books, </Link><Link href="/courses" target="_parent" className="text-cyan-600 "
                         >
                           Courses
-                        </Link> and  <Link href="https://www.glenh.me/videos" target="_parent" className="text-cyan-600 "
+                        </Link> and  <Link href="/videos" target="_parent" className="text-cyan-600 "
                         >
                           Videos </Link>sources I found useful in my learning journey.
                   </p>

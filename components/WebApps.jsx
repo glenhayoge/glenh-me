@@ -9,7 +9,7 @@ export default function WebApps() {
   </p>
   <p className="text-sm  text-gray-400 mt-3">
     {" "}
-    Here are selected web and mobile applications I crafted
+    Here are selected web and mobile applications I crafted over the years. From personal projects to open source contributions to professional work.
   </p>
 </div>
 <div className="flex flex-wrap -m-4 text-center p-4">

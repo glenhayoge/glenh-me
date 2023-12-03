@@ -52,13 +52,12 @@ export default function IndexPage() {
                     has highlights of my work. Read tutorials and other stuffs
                     on the{" "}
                     <Link href="/articles">
-                      <strong className="text-cyan-600">blog page</strong>
-                    </Link>{" "}
-                    .
+                      <strong className="text-cyan-600">articles page</strong>
+                    </Link>.
                   </p>
                   <p className="px-4 py-2 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     This website is free from ads, affiliate links, tracking or
-                    analytics, sponsored posts, and paywalls. My sole motivation
+                    analytics, sponsored posts and paywalls. My sole motivation
                     for creating and maintaining this site is to share my
                     knowledge and express my ideas with the world.
                   </p>
@@ -71,9 +70,7 @@ export default function IndexPage() {
                   <p className="px-4 py-2 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     If you spot an error, or have any comments, suggestions or
                     questions about what I've written or if you basically want
-                    to say hi to me, shoot an email to{" "}
-                    <strong className="text-cyan-600">
-                      {" "}
+                    to say hi to me, shoot an email to <strong className="text-cyan-600">
                       <Link href="mailto:gghayoge@gmail.com">
                         gghayoge at gmail.com
                       </Link>
