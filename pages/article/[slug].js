@@ -4,6 +4,7 @@ import { SingleArticle } from '../../components/SingleArticle';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Link from 'next/link'
 
+
 const SinglePost = ({ article }) => {
   const MDXContent = useMDXComponent(article.body.code);
 

@@ -6,7 +6,7 @@ import { ArticleTags } from '../components/ArticleTags'
 export default function ArticleList({ title, slug, dateTime, tags, category }) {
   const page_title = 'Articles - Glen G Hayoge'
   const description =
-    'Some of my long-form thoughts on software, articles, guides, tutorials and lots more, collected in chronological order.'
+    'Articles, guides, rants, musings, tutorials on software data analysis and lots more.'
   const canonical = 'https://glenh.me/articles'
   return (
     <>
@@ -16,7 +16,7 @@ export default function ArticleList({ title, slug, dateTime, tags, category }) {
         canonical={canonical}
         openGraph={{
           url: canonical,
-          title,
+          page_title,
           description,
         }}
       />
@@ -33,7 +33,7 @@ export default function ArticleList({ title, slug, dateTime, tags, category }) {
         </div>
         <div className="flex justify-between py-2">
           <div className="flex ">
-            <div className="flex items-center text-xs text-gray-200" >
+            <div className="flex items-center text-xs text-gray-500 dark:text-gray-200" >
               <span className="mr-1 ">{dateTime}</span>/
             </div>
             {/* <span >{tags}</span> */}
