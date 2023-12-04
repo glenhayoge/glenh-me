@@ -5,6 +5,7 @@ import { select } from "../utils/select";
 import Subscribe from "../components/Subscribe";
 import { ArticleTags } from '../components/ArticleTags'
 import { useRouter } from 'next/router';
+import Pagination from '../components/Pagination'
 
 export default function IndexPage({ articlesData }) {
   const router = useRouter();
@@ -191,6 +192,9 @@ export default function IndexPage({ articlesData }) {
             </div>
           </div>
         </div>
+        {/* {pagination && pagination.totalPages > 1 && !searchValue && (
+        <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
+      )} */}
       </section>
 
     </>

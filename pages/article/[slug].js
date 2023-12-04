@@ -15,6 +15,7 @@ const SinglePost = ({ article }) => {
       description={article.seoDescription} />
 
       <SingleArticle
+      
         image={article.image}
         title={article.title}
         description={article.description}
@@ -24,6 +25,29 @@ const SinglePost = ({ article }) => {
         publishedAt={article.publishedAt}
         readingTime={article.readingTime.txt}
       >
+              <div>
+  <h3 className="text-gray-600 dark:text-gray-200">In this Article</h3>
+  <div>
+    {article.headings.map(heading => {
+      let paddingLeftStyle = '';
+      if (heading.level === 'two') paddingLeftStyle = 'pl-2';
+      if (heading.level === 'three') paddingLeftStyle = 'pl-4';
+
+      return (
+        <ul key={`###${heading.slug}`}>
+          <li>
+          <Link
+            className={paddingLeftStyle}
+            href={`#${heading.slug}`}
+          >
+            {heading.text}
+          </Link>
+          </li>
+        </ul>
+      );
+    })}
+  </div>
+</div>
         <MDXContent components={{
           p: props => <p {...props} className="text-gray-600 dark:text-gray-400 " />,
           strong: props => <strong {...props} className="text-gray-600 dark:text-gray-300 " />,
@@ -38,27 +62,7 @@ const SinglePost = ({ article }) => {
           ),
         }}
         />
-        <div>
-  <h3 className="text-gray-600 dark:text-gray-200">On this page</h3>
-  <div>
-    {article.headings.map(heading => {
-      let paddingLeftStyle = '';
-      if (heading.level === 'two') paddingLeftStyle = 'pl-2';
-      if (heading.level === 'three') paddingLeftStyle = 'pl-4';
-
-      return (
-        <div key={`##${heading.slug}`}>
-          <Link
-            className={paddingLeftStyle}
-            href={`##${heading.slug}`}
-          >
-            {heading.text}
-          </Link>
-        </div>
-      );
-    })}
-  </div>
-</div>
+  
 
 
 
