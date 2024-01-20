@@ -168,7 +168,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="text-center text-xs dark:text-gray-600 text-gray-400  ">
-          &copy; GlenH.me Contents from 2018 - {new Date().getFullYear()}. <Link href="https://github.com/glenhayoge/glenh-me/" target="_blank">Open Source</Link>
+          &copy; GlenH.me Contents from 2018 - {new Date().getFullYear()}. <Link href="https://github.com/glenhayoge/glensea.com/" target="_blank">Open Source</Link>
         </div>
       </div>
     </section>

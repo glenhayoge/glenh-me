@@ -17,14 +17,14 @@ export default function WebApps() {
     <div className="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
       <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
         <div className="text-center">
-          Glenh.me Website
+          glensea.com Website
         </div>
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          The source code of this website - https://glenh.me
+          The source code of this website - https://glensea.com
         </p>
-        <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">
+        <Link href="https://github.com/glenhayoge/glensea.com" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Source</span>
 

@@ -7,7 +7,7 @@ export default function ArticleList({ title, slug, dateTime, tags,readingTime  }
   const page_title = 'Articles - Glen G Hayoge'
   const description =
     'Articles, guides, rants, musings, tutorials on software data analysis and lots more.'
-  const canonical = 'https://glenh.me/articles'
+  const canonical = 'https://glensea.com/articles'
   return (
     <>
      <NextSeo

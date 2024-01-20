@@ -310,7 +310,7 @@ export default function IndexPage() {
                     <li className="flex pl-4">
                       <FaGlobe className="text-cyan-600 mt-1 mr-1.5" />
                       Website:{" "}
-                      <Link href="https://glenh.me">
+                      <Link href="https://glensea.com">
                         {" "}
                         &nbsp;
                         <strong className="text-cyan-600">

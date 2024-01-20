@@ -3,7 +3,7 @@ const headerNavLinks = [
     { href: '/projects', title: 'Projects' },
     { href: '/about', title: 'About' },
     { href: '/tags', title: 'Tags' },
-    { href: 'https://glenh.me', title: 'Home' },
+    { href: 'https://glensea.com', title: 'Home' },
   ]
   
   export default headerNavLinks

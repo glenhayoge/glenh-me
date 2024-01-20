@@ -7,7 +7,7 @@
 
 This repository contains the source code of my personal website. The codes found herein are open-sourced and are available for free under MIT license. Read disclaimer below before you use it.
 
-Link to the Live Website --> [Glenh.me](https://glenh.me)
+Link to the Live Website --> [glensea.com](https://glensea.com)
   
 
 ## Tech stack
