@@ -9,7 +9,7 @@ const subTitle = {
   fontFamily: 'Nanum Pen Script, cursive',
   fontSize: '30px',
   textAlign: 'center',
- };
+ }; 
 const Header = () => {
   return (
     <div className={heroWrapper}>

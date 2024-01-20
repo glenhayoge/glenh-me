@@ -17,7 +17,7 @@ const subTitle = {
         </p>
       </div>
     </Link>
-    // className="flex-shrink-0 mr-3 w-24 h-24" fill="currentColor" 
+ 
   );
       }
       export default Logo; 
