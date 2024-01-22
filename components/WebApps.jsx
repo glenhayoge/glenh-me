@@ -556,7 +556,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          Merlin-MIS - https://merlinmis.org
+          Merlin-Management Information System - https://merlinmis.org
         </p>
         <Link href="https://merlinmis.org/" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
