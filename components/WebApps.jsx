@@ -24,7 +24,7 @@ export default function WebApps() {
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
           The source code of this website - https://glensea.com
         </p>
-        <Link href="https://github.com/glenhayoge/glensea.com" target="_blank">
+        <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
             <span>Source</span>
 
