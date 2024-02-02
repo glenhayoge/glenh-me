@@ -10,8 +10,8 @@ import Link from 'next/link'
 
 
 export default function Home({ articles }) {
-
-
+  // To display only the first 5 articles
+  const displayedArticles = articles.slice(0, 5);
   return (
     <div>
        <Head>
@@ -46,7 +46,7 @@ export default function Home({ articles }) {
                 </div>
           
                 <main>
-                  {articles.map(
+                {displayedArticles.map(
                     ({
                       title,
                       description,
@@ -118,7 +118,8 @@ export function getStaticProps() {
     .sort(
       (a, b) =>
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    );
+    )
+    .slice(0, 5); // Select only the first 5 articles
 
   return { props: { articles } };
 }
