@@ -216,6 +216,7 @@ export function getStaticProps() {
         'category',
         'image',
         'tags',
+        'caption',
       ])
     )
     .sort(

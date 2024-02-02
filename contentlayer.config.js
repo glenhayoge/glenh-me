@@ -22,6 +22,7 @@ const Article = defineDocumentType(() => ({
     seoDescription: { type: 'string', required: true },
     category: { type: 'string', required: true },
     tags: { type: 'string', required: true },
+    caption: { type: 'string', required: true },
     author: {
       type: 'nested',
       of: Author,

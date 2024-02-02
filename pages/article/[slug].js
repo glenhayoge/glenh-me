@@ -17,6 +17,7 @@ const SinglePost = ({ article }) => {
       <SingleArticle
       
         image={article.image}
+        caption={article.caption}
         title={article.title}
         description={article.description}
         category={article.category}

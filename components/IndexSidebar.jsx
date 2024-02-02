@@ -77,7 +77,7 @@ const ISideBar = () => {
             </div>
             <div className="flex justify-center space-x-6 my-6">
               <Link
-                href="https://github.com/glenhayoge"
+                href="https://github.com/glenhayoge"target="_blank" 
                 className="text-gray-400 hover:text-gray-500"
               >
                 <span className="sr-only">GitHub</span>
@@ -91,7 +91,7 @@ const ISideBar = () => {
                 </svg>
               </Link>
               <Link
-                href="https://www.linkedin.com/in/glen-g-hayoge-089935104/"
+                href="https://www.linkedin.com/in/glen-g-hayoge-089935104/"target="_blank" 
                 className="text-gray-400 hover:text-gray-500"
               >
                 <span className="sr-only">LinkedIn</span>
@@ -105,7 +105,7 @@ const ISideBar = () => {
                 </svg>
               </Link>
               <Link
-                href="https://stackoverflow.com/users/12071488/glenh"
+                href="https://stackoverflow.com/users/12071488/glenh"target="_blank" 
                 className="text-gray-400 hover:text-gray-500"
               >
                 <span className="sr-only">StackOverFlow</span>
@@ -119,7 +119,7 @@ const ISideBar = () => {
                   <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z" />
                 </svg>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-gray-500">
+              <Link href="https://twitter.com/ghayoge" target="_blank" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Twitter</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
