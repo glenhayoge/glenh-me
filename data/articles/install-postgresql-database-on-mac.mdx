@@ -1,0 +1,66 @@
+---
+title: How to Create PostgreSQL Database for Django On Mac OS X
+publishedAt: 'Feb 3, 2024'
+description: Learn how to install PostGIS on Mac OS X
+seoDescription: Learn how to install PostGIS on Mac OS X
+category: 'PostGreSQL'
+author:
+   {
+    name: 'GlenH',
+    image: '/assets/profile2.png'
+  }
+image: 'https://images.unsplash.com/photo-1652704437210-792492445cfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcwNjkwNzY2MQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080'
+---
+
+In this tutorial, we will learn how to install PostGIS on Mac OS X. We will use a popular distribution suitable for newbies found at [Postgres.app](https://postgresapp.com/) This distribution includes the latest version of PostgreSQL and PostGIS and its great for development and testing.
+
+There are other installation options  beyond the scope of this tutorial and is usually implemented through Homebrew package (“brew install postgresql”) and the [EnterpriseDB OSX PostgreSQL](https://www.enterprisedb.com/postgres-tutorials/installation-postgresql-mac-os) distributions.
+
+To install PostgresQL, **Download** the **PostgresApp** from [https://postgresapp.com/downloads.html](https://postgresapp.com/downloads.html) PostgresQL version 16 is the latest release used at the time this tutorial was written.
+
+Complete the installation process.
+
+Next, Open a terminal and log in to PostgreSQL with a superuser account (usually "postgres").
+
+To create the PostgreSQL role and database as specified in your Django settings.
+
+Follow these steps:
+
+1. **Launch Postgres.app**: After downloading the PostgresApp from [https://postgresapp.com/downloads.html](https://postgresapp.com/downloads.html), open it. You'll see the elephant icon in your Applications folder. Click to open the app. This action will start the PostgreSQL server.
+    
+2. **Access PostgreSQL through Terminal**: Open Terminal on your Mac. You'll need to access PostgreSQL through the command line.
+    
+3. **Log in as Superuser**: Type the following command to log in as the default PostgreSQL superuser "postgres":
+    
+    bashCopy code
+    
+    `psql -U postgres`
+    
+    It prompts you to enter the superuser password if one has been set during installation.
+    
+4. **Creating PostgreSQL Role and Database**: Once you are logged into the PostgreSQL shell, execute these SQL commands to create a role and a database as specified in your Django settings. Replace 'yourusername' and 'yourpassword' with your desired username and password:
+    
+    sqlCopy code
+    
+    `CREATE USER yourusername WITH PASSWORD 'yourpassword'; ALTER USER yourusername CREATEDB; -- This allows the user to create databases CREATE DATABASE yourdbname WITH OWNER yourusername;`
+    
+    This sequence of commands creates a new user, assigns them a password, grants them the ability to create databases, and then creates a database with that user as its owner. Make sure to replace 'yourusername', 'yourpassword', and 'yourdbname' with the actual values you want to use.
+    
+5. **Granting Privileges** (Optional): If necessary, grant specific privileges to the user on the created database:
+    
+    sqlCopy code
+    
+    `GRANT ALL PRIVILEGES ON DATABASE yourdbname TO yourusername;`
+    
+6. **Exit the PostgreSQL Shell**: Type `\q` and press Enter to exit the PostgreSQL shell.
+    
+7. **Configuration in Django**: Update your Django settings to use the PostgreSQL database by specifying the database engine, name, user, password, host, and port in the `settings.py` file:
+    
+    pythonCopy code
+    
+    `DATABASES = {     'default': {         'ENGINE': 'django.db.backends.postgresql',         'NAME': 'yourdbname',         'USER': 'yourusername',         'PASSWORD': 'yourpassword',         'HOST': 'localhost',         'PORT': '', # If using default PostgreSQL port, keep this empty     } }`
+    
+8. **Test the Configuration**: Run `python manage.py migrate` to apply any pending database migrations and ensure the connection to your PostgreSQL database works.
+    
+
+By following these steps, you should have successfully set up a PostgreSQL database for your Django project on your Mac OS X system using Postgres.app.
