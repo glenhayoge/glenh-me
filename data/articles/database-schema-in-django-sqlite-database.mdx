@@ -1,0 +1,135 @@
+---
+title: Viewing Database and Schema in Django SQLite3 Database
+publishedAt: 'Feb 7, 2024'
+description: In Django, `db.sqlite3` is the default SQLite database file that is created when you initiate a new Django project. SQLite is a lightweight, serverless, self-contained, and transactional SQL database engine.
+seoDescription: In Django, `db.sqlite3` is the default SQLite database file that is created when you initiate a new Django project. SQLite is a lightweight, serverless, self-contained, and transactional SQL database engine.
+category: 'coding'
+tags: database
+  
+author:
+   {
+    name: 'GlenH',
+    image: '/assets/glens_1.png'
+  }
+image: 'https://images.unsplash.com/photo-1667372459510-55b5e2087cd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODI3NzAwNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080'
+caption: 'A group of blue boxes, PC: Growtika via Unsplash'
+---
+
+In Django, `db.sqlite3` is the default SQLite database file that is created when you initiate a new Django project. SQLite is a lightweight, serverless, self-contained, and transactional SQL database engine.
+
+When you start a new Django project, by default, it comes configured to use SQLite as its database backend. SQLite is suitable for development and small-scale applications, as it's lightweight and doesn't require a separate database server process.
+
+A default default `db.sqlite3` databse configuration would look something like this in your Django `settings.py` file.
+
+```
+DATABASES = {
+
+'default': {
+
+'ENGINE': 'django.db.backends.sqlite3',
+
+'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+}
+
+}
+```
+
+`db.sqlite3` is an integral part of Django projects, particularly during development, and it represents the SQLite database that your Django project uses by default.
+
+#### Reasons to view database schemas
+
+Viewing the schema that Django created in the `db.sqlite3` database can be beneficial especially when you want to understand the database structure, debug and troubleshoot, check migration status, manipulate database manually, integrate with external tools and document  your database.
+
+#### Common steps to access and view the database schema
+
+The common approaches  to access and view the database schema are via the command line or by using a GUI database client browser.
+
+##### Using command line or terminal
+
+Navigate to the folder where your database is
+
+And run the command below:
+
+```
+python manage.py dbshell
+```
+
+To access **sqlite3 command-line client** as shown below:
+
+![[Pasted image 20240207055220.png]]
+
+Then, run the command below:
+
+```
+.table
+```
+
+Or run the command below:
+
+```
+.tables
+```
+
+or run
+```
+.schema
+```
+
+depending on what you want. Instead of invoking sqlite3 directly you could do
+
+To show all the tables in **SQLite** as shown below:
+
+![[https://i.stack.imgur.com/Clo3f.png]]
+
+Then, run the command below:
+
+```
+.schema --indent store_product
+```
+
+To show **the schema of "store_product" table** as shown below:
+
+
+![[https://i.stack.imgur.com/Jg3IJ.png]]
+If you are working with a legacy database you can generate Django models for that using the
+
+```undefined
+python manage.py inspectdb
+```
+
+##### Using GUI database client
+
+A much easier way to access the database schema would be through a GUI database client
+
+A popular GUI database browser client  is DB Browser
+
+#### DB Browser
+
+DB Browser for SQLite is a free tool (Open Source) that lets you create, edit, and manage SQLite databases easily. Whether you're a developer or a regular user, it simplifies tasks like creating, searching, and modifying databases. You don't need to know complex SQL statements because it has a user-friendly interface similar to a spreadsheet. You can download it for your operating system from [here](https://sqlitebrowser.org/dl/).
+
+
+![[https://i.stack.imgur.com/q98aF.png]]
+
+Other GUI database browser client, DBeaver, Navicat & SQLyog 
+
+#### DBeaver
+
+DBeaver is a free, multi-platform database tool that supports various database management systems such as MySQL, PostgreSQL, SQLite, Oracle, and many others. It offers a user-friendly interface with features like SQL editor, schema navigation, data browsing, and SQL execution.
+
+#### Navicat
+
+Navicat is a powerful database management tool that supports a wide range of databases including MySQL, PostgreSQL, SQLite, SQL Server, and Oracle. It offers features like data manipulation, data modeling, database design, and data synchronization. Navicat provides a visually appealing interface with a lot of customization options.
+
+#### SQLyog 
+
+SQLyog is a MySQL and MariaDB database management tool that provides a rich set of features for database administrators and developers. It offers features like schema and data synchronization, database backup, query profiling, and SSH tunneling. SQLyog has an intuitive interface with a customizable workspace.
+
+### References & Additional Resources
+
+1. Official Django documentation  [https://docs.djangoproject.com/en/5.0/ref/django-admin/#django-admin-inspectdb](https://docs.djangoproject.com/en/5.0/ref/django-admin/#django-admin-inspectdb) 
+
+2. TechVidVan  [Django Database: How to Connect SQLite Database with Django Project](https://techvidvan.com/tutorials/django-database-connectivity/) 
+
+3. StackOverflow question and answers: [How to view database and schema of django sqlite3 db](https://stackoverflow.com/questions/42227778/how-to-view-database-and-schema-of-django-sqlite3-db) 
+
