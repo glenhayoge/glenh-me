@@ -23,11 +23,11 @@ export default function IndexPage() {
   const patternUrl =
     "https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg";
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   return (
     <>
       <section className="py-24 ">
-      <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
+        <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-6">
             <div className="w-full lg:w-8/12 px-8 lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
@@ -59,7 +59,11 @@ export default function IndexPage() {
                     This website is free from ads, affiliate links, tracking or
                     analytics, sponsored posts and paywalls. My sole motivation
                     for creating and maintaining this site is to share my
-                    knowledge and express my ideas with the world.
+                    knowledge and express my ideas with the world. This website is open sourced on github 👉🏽 <strong className="text-cyan-600">
+                      <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">
+                        Link.
+                      </Link>
+                    </strong>
                   </p>
                   <p className="px-4 py-2 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     I see my contribution as a small step towards making the
@@ -89,9 +93,9 @@ export default function IndexPage() {
                 <div className="w-full h-full overflow-y-auto">
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                     <li className="flex pl-4 ">
-                    <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p >
-                   
+
                         <Link
                           href="https://wantoea.com"
                           target="_blank"
@@ -103,9 +107,8 @@ export default function IndexPage() {
                       </p>
                     </li>
                     <li className="flex pl-4">
-                    <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0' />
-                      <p >
-                   
+                      <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <p>
                         <Link
                           href="https://fyntree.com"
                           target="_blank"
@@ -114,12 +117,11 @@ export default function IndexPage() {
                           Fyntree
                         </Link>
                         : Farmers &amp; Artisans Marketplace
-                      </p> 
+                      </p>
                     </li>
                     <li className="flex pl-4 ">
-                    <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0' />
+                      <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p>
-                       
                         <Link
                           href="https://raitstart.com"
                           target="_blank"
@@ -137,17 +139,17 @@ export default function IndexPage() {
                     <li className="flex pl-4 ">
                       <BsBook className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                       <p>  Deep Work by Cal Newport</p>
-                    
+
                     </li>
                     <li className="flex pl-4">
                       <BsBook className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                       <p> A Mind for Numbers by Barbara Oakley</p>
-                     
+
                     </li>
                     <li className="flex pl-4 ">
                       <BsBook className="mr-1.5  mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                       <p>Systems Thinking: Managing Chaos and Complexity by Jamshid
-                      Gharajedaghi</p>
+                        Gharajedaghi</p>
                     </li>
                   </ul>
                   <p className="px-4 py-6 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
@@ -173,68 +175,68 @@ export default function IndexPage() {
                   <li className="flex pl-4 ">
                     <FaCog className="mr-1.5 mt-1 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
-                    This site - React/NextJS - is hosted on
-                    <Link href="https://netlify.com/" target="_blank">
-                      &nbsp;<strong className="text-cyan-600">Netlify</strong>
-                    </Link>
+                      This site - React/NextJS - is hosted on
+                      <Link href="https://netlify.com/" target="_blank">
+                        &nbsp;<strong className="text-cyan-600">Netlify</strong>
+                      </Link>
                     </p>
                   </li>
                   <li className="flex pl-4">
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
-                    Coding:{" "}
-                    <Link href="https://code.visualstudio.com/" target="_blank">
-                      &nbsp;
-                      <strong className="text-cyan-600">
-                        Visual Studio Code
-                      </strong>
-                    </Link>
+                      Coding:{" "}
+                      <Link href="https://code.visualstudio.com/" target="_blank">
+                        &nbsp;
+                        <strong className="text-cyan-600">
+                          Visual Studio Code
+                        </strong>
+                      </Link>
                     </p>
                   </li>
                   <li className="flex pl-4">
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
-                    Terminal:
-                    <Link href="https://iterm2.com/" target="_blank">
-                    
-                      &nbsp;<strong className="text-cyan-600">iTerm2</strong>
-                    </Link>
-                    &nbsp;&&nbsp;
-                    <Link href="https://hyper.is/" target="_blank">
+                      Terminal:
+                      <Link href="https://iterm2.com/" target="_blank">
 
-                      &nbsp;<strong className="text-cyan-600">Hyper</strong>
-                    </Link>
+                        &nbsp;<strong className="text-cyan-600">iTerm2</strong>
+                      </Link>
+                      &nbsp;&&nbsp;
+                      <Link href="https://hyper.is/" target="_blank">
+
+                        &nbsp;<strong className="text-cyan-600">Hyper</strong>
+                      </Link>
                     </p>
                   </li>
                   <li className="flex pl-4">
 
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
-                    Notes:
-                    <Link href="https://keep.google.com/" target="_blank">
-        
-                      &nbsp;
-                      <strong className="text-cyan-600">Google Keep</strong>
-                    </Link>
-                    &nbsp;&amp;
-                    <Link href="https://obsidian.md/" target="_blank">
-         
-                      &nbsp;<strong className="text-cyan-600">Obsidian</strong>
-                    </Link>
+                      Notes:
+                      <Link href="https://keep.google.com/" target="_blank">
+
+                        &nbsp;
+                        <strong className="text-cyan-600">Google Keep</strong>
+                      </Link>
+                      &nbsp;&amp;
+                      <Link href="https://obsidian.md/" target="_blank">
+
+                        &nbsp;<strong className="text-cyan-600">Obsidian</strong>
+                      </Link>
                     </p>
                   </li>
                   <li className="flex pl-4">
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
-                    Browser:
-                    <Link href="https://keep.google.com/" target="_blank">
-                      &nbsp;<strong className="text-cyan-600">Brave</strong>
-                    </Link>
-                    &nbsp;&amp;
-                    <Link href="https://obsidian.md/" target="_blank">
-                      &nbsp;
-                      <strong className="text-cyan-600">Google Chrome</strong>
-                    </Link>
+                      Browser:
+                      <Link href="https://keep.google.com/" target="_blank">
+                        &nbsp;<strong className="text-cyan-600">Brave</strong>
+                      </Link>
+                      &nbsp;&amp;
+                      <Link href="https://obsidian.md/" target="_blank">
+                        &nbsp;
+                        <strong className="text-cyan-600">Google Chrome</strong>
+                      </Link>
                     </p>
                   </li>
                 </ul>
@@ -243,10 +245,10 @@ export default function IndexPage() {
                 </p>
                 <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                   <li className="flex pl-4">
-                 
+
                     <FaCog className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                     <p>
-                    Coding Computer: Apple Macbook Pro M2 13" 2022
+                      Coding Computer: Apple Macbook Pro M2 13" 2022
                     </p>
                   </li>
                   <li className="flex pl-4">
