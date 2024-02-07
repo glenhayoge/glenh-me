@@ -59,7 +59,7 @@ export default function IndexPage() {
                     This website is free from ads, affiliate links, tracking or
                     analytics, sponsored posts and paywalls. My sole motivation
                     for creating and maintaining this site is to share my
-                    knowledge and express my ideas with the world. This website is open sourced on github 👉🏽 <strong className="text-cyan-600">
+                    knowledge and express my ideas with the world. The open-sourced code for this website is available on github 👉🏽 <strong className="text-cyan-600">
                       <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">
                         Link.
                       </Link>
