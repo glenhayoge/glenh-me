@@ -237,7 +237,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          A commissioned company website - https://penroslogistics.com
+          A commissioned company website
         </p>
         <Link href="https://penroslogistics.com" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -289,7 +289,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          Small Business Essential Accounting Tool - https://wantoea.com
+          Small Business Essential Accounting Tool
         </p>
         <Link href="https://wantoea.com" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -343,7 +343,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          Small Business Guides & Digital Tools - https://raitstart.com
+          Small Business Guides & Digital Tools
         </p>
         <Link href="https://raitstart.com" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -400,7 +400,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          Farmers & Artisans Virtual Marketplace - https://fyntree.com
+          Farmers & Artisans Virtual Marketplace
         </p>
         <Link href="https://fyntree.com" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -452,7 +452,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          Data Management & Visualisation App - https://vifims.org
+          Data Management & Visualisation App
         </p>
         <Link href="https://vifims.org" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -504,7 +504,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          Paglum Adventist Secondary School Website - https://pass.ac.pg
+          Paglum Adventist Secondary School Web
         </p>
         <Link href="https://pass-j20f.onrender.com/" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -556,7 +556,7 @@ export default function WebApps() {
       </div>
       <div className="p-6 items-left flex-left">
         <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-          Merlin-Management Information System - https://merlinmis.org
+          Merlin-Management Information System
         </p>
         <Link href="https://merlinmis.org/" target="_blank">
           <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -599,7 +599,62 @@ export default function WebApps() {
       </div>
     </div>
   </div>
+  <div className="w-full md:w-1/2 lg:w-1/4 p-4">
+    <div className="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+      <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
+        <div className="text-center">
+        Food Bilum App
+        </div>
+      </div>
+      <div className="p-6 items-left flex-left">
+        <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
+          Food Bilum Web Application
+        </p>
+        <Link href="https://foodbilum.netlify.app" target="_blank">
+          <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
+            <span>Live site</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4 ml-1 dark:text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </button>
+        </Link>
+      </div>
+      <div className="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
+      <span>
+      <i class="devicon-astro-plain p-1"></i>
+        </span>
+        <span>
+        <i class="devicon-typescript-plain p-1"></i>
+        </span>
+     
+        <span>
+          <i className="devicon-javascript-plain p-1"></i>
+        </span>
+         <span>
+         <i className="devicon-tailwindcss-plain p-1"></i>
+        </span>
+        <span><i className="devicon-github-original p-1"></i>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>
+<Link href="https://github.com/glenhayoge">
+<button className="text-sm button text-gray-400 mx-3 mt-3 p-2 border rounded border-gray-500">
+    View More Projects
+  </button>
+  </Link>
 </div>
 
   )
