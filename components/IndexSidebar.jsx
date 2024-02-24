@@ -61,7 +61,7 @@ const ISideBar = () => {
             <GitHubCalendar className="text-xs"username="glenhayoge" />
             <div className="pt-4">
             <p className="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
-                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
+                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
              
               </div>
               <div className="mt-8">

@@ -193,15 +193,7 @@ export default function IProjects() {
          
           </div>
         </div>
-        {/* <div className=" pt-6 flex items-center justify-between ">
-                  <Link
-                    className=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
-                    href="/projects"
-                  >
-                    View All Projects
-                  </Link>
-                </div> */}
-                <div className=" pt-6  flex items-center justify-between ">
+                <div className=" pt-6 flex items-center justify-between ">
                 <Link
                     className=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
                     href="/projects"
