@@ -6,6 +6,7 @@ import Subscribe from "../components/Subscribe";
 import { ArticleTags } from '../components/ArticleTags'
 import { useRouter } from 'next/router';
 import Pagination from '../components/Pagination' 
+import Link from 'next/link'; // Import Link from 'next/link' for client-side navigation
 
 export default function IndexPage({ articlesData }) {
   const router = useRouter();
@@ -40,6 +41,13 @@ export default function IndexPage({ articlesData }) {
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
   const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
 
+  const handleTagClick = (tag) => {
+    const tagsArray = tag.split(',').map((t) => t.trim()); // Split the tag string into an array
+    const queryString = tagsArray.map((t) => `tag=${t}`).join('&'); // Generate query string for each tag
+    // Replace 'yourwebsite.com/articles' with your actual route
+    window.location.href = `http://glensea.com/articles?${queryString}`;
+  };
+
   return (
     <>
       <section className="py-24">
@@ -48,9 +56,11 @@ export default function IndexPage({ articlesData }) {
             <div className="w-full lg:w-8/12 px-6 lg:pl-20 md:px-8">
               <div className="overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
+                  <Link href="/articles">
                   <h1 className="mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
                     All Articles
                   </h1>
+                  </Link>
                 </div>
                 {/* Search form */}
                 <div className="px-3 py-8">
@@ -101,6 +111,34 @@ export default function IndexPage({ articlesData }) {
             {/* Sidebar */}
             <div className="w-full px-6 pt-12 lg:w-4/12 lg:pr-20 md:px-8">
               {/* Your sidebar content */}
+              <div className="dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden rounded-lg dark:bg-gray-800/25">
+                <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
+                  <div className="px-6 text-center pt-2">
+                    <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
+                      MAJOR CATEGORIES
+                    </h5>
+                      {/* Display Tags */}
+                      <div>
+        {/* Tags list from articles */}
+        {Array.from(
+          new Set(articlesData.flatMap((article) => article.tags))
+        ).map((tag) => (
+          <button
+            key={tag}
+            onClick={() => handleTagClick(tag)}
+            className={`bg-gray-500/25 rounded-lg p-2 dark:bg-gray-200/25 dark:text-gray-300 text-xs text-gray-700 m-1 ${
+              tag === filteredByTag ? "bg-gray-300" : ""
+            }`}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+                  <div>
+                </div>
+                </div>
+                </div>
+                </div>
               <Subscribe />
             </div>
           </div>
