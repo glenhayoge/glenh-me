@@ -2,6 +2,8 @@ import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/s
 import readingTime from 'reading-time';
 import mdxOptions from './config/md';
 import GithubSlugger from 'github-slugger'
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypePrism from 'rehype-prism-plus'
 
 const Author = defineNestedType(() => ({
   name: 'Author',
@@ -101,7 +103,35 @@ const computedFields = {
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',
     documentTypes: [Article,Books,Snippet],
-    mdx: mdxOptions,
+    mdx: {
+      
+      rehypePlugins: [
+        [rehypePrismPlus, { ignoreMissing: true }],
+        rehypePrism,
+        rehypeSlug,
+        [
+          rehypePrettyCode,
+          {
+            theme: "github-dark",
+            onVisitLine(node) {
+              // Prevent lines from collapsing in `display: grid` mode, and
+              // allow empty lines to be copy/pasted
+              if (node.children.length === 0) {
+                node.children = [{ type: "text", value: " " }];
+              }
+            },
+          },
+        ],
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: "anchor",
+            },
+          },
+        ],
+      ],
+    },
     
     
   });
