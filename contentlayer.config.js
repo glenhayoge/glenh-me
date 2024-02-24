@@ -2,7 +2,7 @@ import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/s
 import readingTime from 'reading-time';
 import mdxOptions from './config/md';
 import GithubSlugger from 'github-slugger'
-import rehypePrettyCode from 'rehype-pretty-code';
+// import rehypePrettyCode from 'rehype-pretty-code';
 import rehypePrism from 'rehype-prism-plus'
 
 const Author = defineNestedType(() => ({
