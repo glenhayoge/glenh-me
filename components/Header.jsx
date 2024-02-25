@@ -3,6 +3,7 @@ import styles from "../styles/header.module.css"
 import tribalPattern from '../assets/tribal-pattern.jpg';
 import Head from "next/head";
 import Link from 'next/link'
+import { motion } from "framer-motion";
 
 const { heroContent, heroWrapper, imageWrapper } = styles;
 const subTitle = { 
@@ -27,7 +28,14 @@ const Header = () => {
       <div className="flex justify-center md:mt-15 space-y-6 my-8 items-center">
       <Link href="#" className="text-gray-400 hover:text-gray-500 ">
             <span className="sr-only">GlenGH Logo</span>
-
+            <motion.div
+  initial={{ scale: 0 }}
+  animate={{ rotate: 360, scale: 1 }}
+  transition={{
+    type: "spring",
+    stiffness: 260,
+    damping: 20
+  }} >
             <svg
               className="w-20 h-20  shadow shadow-2xl shadow-gray-800 dark:shadow-yellow-400 border-2 bg-gray-400 dark:bg-yellow-400 border-gray-500 rounded-full dark:border-yellow-400 hover:bg-gray-900"
               fill="currentColor"
@@ -61,6 +69,7 @@ const Header = () => {
                 strokeWidth="3"
               />
             </svg>
+            </motion.div>
             </Link>
         </div>
        <div className="pb-8">
