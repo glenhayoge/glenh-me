@@ -8,6 +8,7 @@ import Subscribe from "../components/Subscribe";
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
 import { BsFillPlayCircleFill, BsBook } from "react-icons/bs";
+import TimeAgoComponent from "../components/TimeAgo";
 
 export default function IndexPage() {
   // const { TimeAgo } = useTimeAgo();
@@ -438,10 +439,7 @@ export default function IndexPage() {
                         Software Dev
                       </Link>
                     </div>
-                    <div className=" px-6 text-xs italic text-gray-500">
-                      Updated:{" "}
-                      <TimeAgo date="November 30, 2023 9:40 am" locale="pg" />
-                    </div>
+                    <TimeAgoComponent/>
                   </div>
                   <Image
                      width={100}

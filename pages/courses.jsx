@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import propic from "../assets/profile2.png";
 import { BsJournalBookmark, BsBook } from "react-icons/bs";
 import Link from "next/link";
+import TimeAgoComponent from "../components/TimeAgo";
 
 export default function IndexPage() {
   // const { TimeAgo } = useTimeAgo();
@@ -365,10 +366,7 @@ export default function IndexPage() {
                         Software Dev
                       </Link>
                     </div>
-                    <div className=" px-6 text-xs italic text-gray-500">
-                      Updated:{" "}
-                      <TimeAgo date="October 30, 2023 9:39 am" locale="pg" />
-                    </div>
+                    <TimeAgoComponent/>
                   </div>
                   <Image
                     width={100}
