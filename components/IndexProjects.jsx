@@ -132,9 +132,11 @@ export default function IProjects() {
               </div>
            
           </div>
+
           <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
               <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+                
                 <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
                   {/* <div className="flex mb-2 justify-between text-left items-left">
                     <p className=" text-gray-500 text-xs">2022</p>
@@ -193,14 +195,21 @@ export default function IProjects() {
          
           </div>
         </div>
-                <div className=" pt-6 flex items-center justify-between ">
-                <Link
-                    className=" py-2 px-2  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
-                    href="/projects"
+                <div className="pt-6 flex items-center">
+                  
+                <Link className="py-2 px-2 text-gray-500 outline outline-1 font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700" href="/projects"
                   >
                     All Projects
                     </Link>
                 </div>
+                {/* <a href="#"
+	className="group relative inline-block overflow-hidden rounded border border-gray-100 bg-gray-200  px-12 py-3 text-sm font-medium text-slate-800 hover:text-violet-600 focus:outline-none focus:ring active:bg-indigo-600 active:text-white">
+	<span className="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
+	<span className="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
+	<span className="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
+	<span className="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
+	Signup
+</a> */}
       </div>
 
 
