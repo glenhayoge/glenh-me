@@ -34,7 +34,7 @@ export default function IProjects() {
                 </div>
                 <div className="p-2 items-left flex-left">
                   <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-                    The source code of this website. glensea.com
+                    The source code of this website.
                   </p>
                   <Link href="https://github.com/glenhayoge/glensea.com" target="_blank">
                   <button className="bg-gray-500/25 hover:scale-[1.02]  text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
@@ -197,7 +197,7 @@ export default function IProjects() {
         </div>
                 <div className="pt-6 flex items-center">
                   
-                <Link className="py-2 px-2 text-gray-500 outline outline-1 font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700" href="/projects"
+                <Link className="before:ease text-center relative py-1 rounded-full w-40 overflow-hidden border border-gray-400 dark:border-gray-500 text-sm text-gray-500 shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-yellow-500 hover:before:-translate-x-40" href="/projects"
                   >
                     All Projects
                     </Link>
