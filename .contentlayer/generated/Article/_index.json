@@ -511,6 +511,51 @@
     "headings": []
   },
   {
+    "title": "Spartan UI for Angular Developers",
+    "publishedAt": "Mar 8, 2024",
+    "description": "Exploring Spartan UI for Angular Developers",
+    "seoDescription": "Spartan UI for Angular Developers",
+    "category": "Code",
+    "tags": "code",
+    "caption": "Me, standing infront of White House with Kombe basket PC: HG",
+    "author": {
+      "name": "GlenH",
+      "image": "/assets/glens_1.png",
+      "type": "Author",
+      "_raw": {}
+    },
+    "image": "/assets/articles/white-haus-compress.jpeg",
+    "toc": true,
+    "body": {
+      "raw": "\nI stumbled upon [Spartan/ui](https://www.spartan.ng/)  in  [Josh Morony's](https://www.joshmorony.com/)  newsletter (Josh remains my main go-to resource person for everything Angular)recently and have decided to give it a spin to see what it has got to offer to Angular developers. \n\nAccording to the author of Spartan UI - [Robin Goetz](https://ui.shadcn.com/)- Spartan UI is  [Shadcn](https://ui.shadcn.com/) like collection of un-styled and accessible ( [a11y](https://www.a11yproject.com/) ) Angular UI primitives (**The building blocks of your UI**). \n\nThe two major parts of the building blocks of Spartan/ui are the **Brain** and the **Helm**:\n\n1. The **spartan/ui/brain** offers a versatile collection of **un-styled** UI building blocks that can be easily tailored to match your project's distinct visual and functional preferences.\n2. The **spartan/ui/helm** provides pre-designed styles built on **TailwindCSS** and **CSS variables**. Just like with **shadcn**, the styles can be copied to projects with full control code, appearance, and overall experience.\n\n### Setting up\n\n**spartan/ui** comes equipped with [Nx](https://nx.dev/getting-started/**intro) plugin and integrates easily into Nx workspace. A single command can add any of its **30 spartan/ui primitives** to projects.\n\nLet's get our hands dirty and see how spartan/ui looks like.\n\n1. Begin by creating a new Angular project inside Nx workspace by running the command below:\n\n```bash\n```\nnpx create-nx-workspace@latest\n```\n```\n\n",
+      "code": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var m=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),w=(r,e)=>{for(var o in e)a(r,o,{get:e[o],enumerable:!0})},s=(r,e,o,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of g(e))!f.call(r,t)&&t!==o&&a(r,t,{get:()=>e[t],enumerable:!(i=p(e,t))||i.enumerable});return r};var b=(r,e,o)=>(o=r!=null?d(u(r)):{},s(e||!r||!r.__esModule?a(o,\"default\",{value:r,enumerable:!0}):o,r)),y=r=>s(a({},\"__esModule\",{value:!0}),r);var c=m((S,l)=>{l.exports=_jsx_runtime});var v={};w(v,{default:()=>j,frontmatter:()=>k});var n=b(c()),k={title:\"Spartan UI for Angular Developers\",publishedAt:\"Mar 8, 2024\",description:\"Exploring Spartan UI for Angular Developers\",seoDescription:\"Spartan UI for Angular Developers\",category:\"Code\",tags:\"code\",author:{name:\"GlenH\",image:\"/assets/glens_1.png\"},image:\"/assets/articles/white-haus-compress.jpeg\",caption:\"Me, standing infront of White House with Kombe basket PC: HG\"};function h(r){let e=Object.assign({p:\"p\",a:\"a\",strong:\"strong\",ol:\"ol\",li:\"li\",h3:\"h3\",span:\"span\",pre:\"pre\",code:\"code\"},r.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.p,{children:[\"I stumbled upon \",(0,n.jsx)(e.a,{href:\"https://www.spartan.ng/\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"Spartan/ui\"}),\"  in  \",(0,n.jsx)(e.a,{href:\"https://www.joshmorony.com/\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"Josh Morony's\"}),\"  newsletter (Josh remains my main go-to resource person for everything Angular)recently and have decided to give it a spin to see what it has got to offer to Angular developers.\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"According to the author of Spartan UI - \",(0,n.jsx)(e.a,{href:\"https://ui.shadcn.com/\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"Robin Goetz\"}),\"- Spartan UI is  \",(0,n.jsx)(e.a,{href:\"https://ui.shadcn.com/\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"Shadcn\"}),\" like collection of un-styled and accessible ( \",(0,n.jsx)(e.a,{href:\"https://www.a11yproject.com/\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"a11y\"}),\" ) Angular UI primitives (\",(0,n.jsx)(e.strong,{children:\"The building blocks of your UI\"}),\").\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"The two major parts of the building blocks of Spartan/ui are the \",(0,n.jsx)(e.strong,{children:\"Brain\"}),\" and the \",(0,n.jsx)(e.strong,{children:\"Helm\"}),\":\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsxs)(e.li,{children:[\"The \",(0,n.jsx)(e.strong,{children:\"spartan/ui/brain\"}),\" offers a versatile collection of\\xA0\",(0,n.jsx)(e.strong,{children:\"un-styled\"}),\"\\xA0UI building blocks that can be easily tailored to match your project's distinct visual and functional preferences.\"]}),`\n`,(0,n.jsxs)(e.li,{children:[\"The\\xA0\",(0,n.jsx)(e.strong,{children:\"spartan/ui/helm\"}),\" provides pre-designed styles built on\\xA0\",(0,n.jsx)(e.strong,{children:\"TailwindCSS\"}),\"\\xA0and\\xA0\",(0,n.jsx)(e.strong,{children:\"CSS variables\"}),\". Just like with \",(0,n.jsx)(e.strong,{children:\"shadcn\"}),\", the styles can be copied to projects with full control code, appearance, and overall experience.\"]}),`\n`]}),`\n`,(0,n.jsxs)(e.h3,{id:\"setting-up\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#setting-up\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Setting up\"]}),`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"spartan/ui\"}),\"\\xA0comes equipped with \",(0,n.jsx)(e.a,{href:\"https://nx.dev/getting-started/**intro\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"Nx\"}),\" plugin and integrates easily into Nx workspace. A single command can add any of its \",(0,n.jsx)(e.strong,{children:\"30 spartan/ui primitives\"}),\" to projects.\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Let's get our hands dirty and see how spartan/ui looks like.\"}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsx)(e.li,{children:\"Begin by creating a new Angular project inside Nx workspace by running the command below:\"}),`\n`]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"hljs language-bash code-highlight\"})}),`\n`,(0,n.jsx)(e.p,{children:\"npx create-nx-workspace@latest\"}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\"})})]})}function x(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,Object.assign({},r,{children:(0,n.jsx)(h,r)})):h(r)}var j=x;return y(v);})();\n;return Component;"
+    },
+    "_id": "articles/spartan-ui-for-angular.mdx",
+    "_raw": {
+      "sourceFilePath": "articles/spartan-ui-for-angular.mdx",
+      "sourceFileName": "spartan-ui-for-angular.mdx",
+      "sourceFileDir": "articles",
+      "contentType": "mdx",
+      "flattenedPath": "articles/spartan-ui-for-angular"
+    },
+    "type": "Article",
+    "readingTime": {
+      "text": "1 min read",
+      "minutes": 0.98,
+      "time": 58800,
+      "words": 196
+    },
+    "wordCount": 205,
+    "slug": "spartan-ui-for-angular",
+    "headings": [
+      {
+        "level": "three",
+        "text": "Setting up",
+        "slug": "setting-up"
+      }
+    ]
+  },
+  {
     "title": "Take Gambling or Farming as Business",
     "publishedAt": "Aug 17, 2023",
     "description": "With a hood over his head partly covering his face, he entered the hole.",
