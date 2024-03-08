@@ -2,6 +2,7 @@
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/7568afeb-e6f9-4d0b-9bd2-aefae32244ea/deploy-status)](https://app.netlify.com/sites/bejewelled-pudding-74c52f/deploys)
+![Contributors](https://img.shields.io/github/contributors/glenhayoge/glenh-me?color=dark-green) ![Forks](https://img.shields.io/github/forks/glenhayoge/glenh-me?style=social) ![Repository Views](https://komarev.com/ghpvc/?username=glenhayoge&label=Repository+Views&color=brightgreen)
 
 ## Description:
 
