@@ -632,10 +632,10 @@ export default function WebApps() {
       </div>
       <div className="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
       <span>
-      <i class="devicon-astro-plain p-1"></i>
+      <i className="devicon-astro-plain p-1"></i>
         </span>
         <span>
-        <i class="devicon-typescript-plain p-1"></i>
+        <i className="devicon-typescript-plain p-1"></i>
         </span>
      
         <span>

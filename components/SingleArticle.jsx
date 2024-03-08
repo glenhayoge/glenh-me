@@ -56,7 +56,7 @@ export const SingleArticle = ({
               height={480}
               alt="blog"
             />
-             <div class="text-xs -mt-8 text-gray-600 italic font-medium text-right ">{caption}</div>
+             <div className="text-xs -mt-8 text-gray-600 italic font-medium text-right ">{caption}</div>
             <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-teal lg:prose-md max-w-3xl px-4 mx-auto  xl:max-w-4xl ">
               {children}
               <div className="flex p-0 items-center  border-l border-l-gray-500 border-dotted mt-8">

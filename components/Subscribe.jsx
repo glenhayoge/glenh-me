@@ -76,18 +76,18 @@ export default function Subscribe() {
                 className='h-6 px-1 uppercase rounded-full items-right text-right bg-gray-700 dark:bg-yellow-400 text-white dark:text-black'
                 onClick={handleModal}
               >
-               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x w-4 h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+               <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x w-4 h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
               </button>
             </div>
             <h2 className='text-md uppercase font-medium  dark:text-gray-400 text-gray-900 text-center  px-4 '>Subscribe to My Newsletter</h2>
-            <p class="text-xs mb-4 text-gray-500 dark:text-gray-600 text-center">I pinky promise not to spam or publish your email addresses.</p>
+            <p className="text-xs mb-4 text-gray-500 dark:text-gray-600 text-center">I pinky promise not to spam or publish your email addresses.</p>
             <div>
-  <label for="price" class="block text-sm font-medium leading-6 dark:text-gray-400 text-gray-900">Email Address</label>
-  <div class="relative mt-2 rounded-md shadow-sm">
-    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-      <span class="text-gray-500 sm:text-sm">@</span>
+  <label for="price" className="block text-sm font-medium leading-6 dark:text-gray-400 text-gray-900">Email Address</label>
+  <div className="relative mt-2 rounded-md shadow-sm">
+    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+      <span className="text-gray-500 sm:text-sm">@</span>
     </div>
-    <input type="text" name="price" id="price" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Type Your Email Address"/>
+    <input type="text" name="price" id="price" className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Type Your Email Address"/>
   </div>
 </div>
             <div className='flex justify-between items-center pt-4'>
