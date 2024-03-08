@@ -59,6 +59,7 @@ export type Snippet = {
   updatedAt: string
   description: string
   category: string
+  tags: string
   /** MDX file body */
   body: MDX
   readingTime: json

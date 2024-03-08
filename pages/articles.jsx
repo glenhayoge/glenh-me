@@ -5,7 +5,7 @@ import { select } from "../utils/select";
 import Subscribe from "../components/Subscribe";
 import { ArticleTags } from '../components/ArticleTags'
 import { useRouter } from 'next/router';
-import Pagination from '../components/Pagination' 
+import Pagination from '../components/Pagination'
 import Link from 'next/link'; // Import Link from 'next/link' for client-side navigation
 
 export default function IndexPage({ articlesData }) {
@@ -57,9 +57,9 @@ export default function IndexPage({ articlesData }) {
               <div className="overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
                   <Link href="/articles">
-                  <h1 className="mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
-                    All Articles
-                  </h1>
+                    <h1 className="mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
+                      All Articles
+                    </h1>
                   </Link>
                 </div>
                 {/* Search form */}
@@ -117,28 +117,27 @@ export default function IndexPage({ articlesData }) {
                     <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
                       MAJOR CATEGORIES
                     </h5>
-                      {/* Display Tags */}
-                      <div>
-        {/* Tags list from articles */}
-        {Array.from(
-          new Set(articlesData.flatMap((article) => article.tags))
-        ).map((tag) => (
-          <button
-            key={tag}
-            onClick={() => handleTagClick(tag)}
-            className={`bg-gray-500/25 rounded-lg p-2 dark:bg-gray-200/25 dark:text-gray-300 text-xs text-gray-700 m-1 ${
-              tag === filteredByTag ? "bg-gray-300" : ""
-            }`}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
-                  <div>
+                    {/* Display Tags */}
+                    <div>
+                      {/* Tags list from articles */}
+                      {Array.from(
+                        new Set(articlesData.flatMap((article) => article.tags))
+                      ).map((tag) => (
+                        <button
+                          key={tag}
+                          onClick={() => handleTagClick(tag)}
+                          className={`bg-gray-500/25 rounded-lg p-2 dark:bg-gray-200/25 dark:text-gray-300 text-xs text-gray-700 m-1 ${tag === filteredByTag ? "bg-gray-300" : ""
+                            }`}
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                    <div>
+                    </div>
+                  </div>
                 </div>
-                </div>
-                </div>
-                </div>
+              </div>
               <Subscribe />
             </div>
           </div>
