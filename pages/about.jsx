@@ -33,7 +33,7 @@ export default function IndexPage() {
               <div className=" overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
                   <h1 className=" mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
-                    About Me
+                    About Me.
                   </h1>
                 </div>
                 <div className="w-full h-full overflow-y-auto">

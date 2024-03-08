@@ -58,7 +58,7 @@ export default function IndexPage({ articlesData }) {
                 <div className="flex mt-4 justify-left text-left items-center">
                   <Link href="/articles">
                     <h1 className="mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
-                      All Articles
+                      Articles.
                     </h1>
                   </Link>
                 </div>

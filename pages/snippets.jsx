@@ -56,10 +56,13 @@ export default function IndexPage({ snippetsData }) {
             <div className="w-full lg:w-8/12 px-6 lg:pl-20 md:px-8">
               <div className="overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
-                  <Link href="/articles">
+                  <Link href="/snippets">
                     <h1 className="mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
                       Snippets.
                     </h1>
+                    <p className="text-sm pl-4 text-gray-600 my-6">
+                      Short solutions to discrete problems which can be copied and pasted.
+                  </p>
                   </Link>
                 </div>
                 {/* Search form */}
