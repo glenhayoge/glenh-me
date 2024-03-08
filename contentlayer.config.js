@@ -48,6 +48,7 @@ const Snippet = defineDocumentType(() => ({
     updatedAt: { type: 'string', required: true },
     description: { type: 'string', required: true },
     category: { type: 'string', required: true },
+    tags: { type: 'string', required: true },
   },
   computedFields,
 }));
