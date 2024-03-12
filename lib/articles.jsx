@@ -1,7 +1,4 @@
-// ../lib/articles.js
-
 import { getArticleBySlug, allArticles } from 'contentlayer/generated';
-// import { allArticles } from "contentlayer/generated";
 
 export async function getRelatedArticles(category, tags, currentArticleSlug) {
   let relatedArticles = [];
@@ -10,12 +7,12 @@ export async function getRelatedArticles(category, tags, currentArticleSlug) {
   const currentArticle = await getArticleBySlug(currentArticleSlug);
 
   // Query all articles
-  const getAllArticles = await allArticles();
+  const allArticlesData = await allArticles();
 
   // Filter articles by category
   if (category) {
     relatedArticles = relatedArticles.concat(
-        getAllArticles.filter(article => article.category === category)
+      allArticlesData.filter(article => article.category === category)
     );
   }
 
@@ -23,7 +20,7 @@ export async function getRelatedArticles(category, tags, currentArticleSlug) {
   if (tags && tags.length > 0) {
     for (const tag of tags) {
       relatedArticles = relatedArticles.concat(
-        getAllArticles.filter(article => article.tags.includes(tag))
+        allArticlesData.filter(article => article.tags.includes(tag))
       );
     }
   }
@@ -31,7 +28,7 @@ export async function getRelatedArticles(category, tags, currentArticleSlug) {
   // Remove duplicates and the current article from the related articles list
   relatedArticles = relatedArticles
     .filter(article => article.slug !== currentArticleSlug)
-    .filter((v, i, a) => a.findIndex(t => (t.slug === v.slug)) === i);
+    .filter((v, i, a) => a.findIndex(t => t.slug === v.slug) === i);
 
   return relatedArticles;
 }

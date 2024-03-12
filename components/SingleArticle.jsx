@@ -87,7 +87,7 @@ export const SingleArticle = ({
       </div>
       {/* Your existing JSX */}
       <div className="mx-auto prose prose-xl py-8 prose-md prose prose-teal lg:prose-md max-w-3xl px-4 mx-auto  xl:max-w-4xl  rounded-t">
-        <h2>Related Articles</h2>
+        <h2 className="dark:text-gray-300 text-gray-500">Related Articles</h2>
         <ul>
           {relatedArticles.map((relatedArticle) => (
             <li key={relatedArticle.slug}>
