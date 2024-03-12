@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react'; // Import useEffect and useState
 import Image from "next/image";
 import Head from 'next/head';
 import Link from "next/link";
-import { ArticleTags } from '../components/ArticleTags'
+import { ArticleTags } from '../components/ArticleTags';
+import { BsCodeSquare } from "react-icons/bs";
+import { getRelatedArticles } from '../lib/articles'; // Import function to get related articles
 
-import { BsCodeSquare, BsBook } from "react-icons/bs";
 export const SingleArticle = ({
   author,
   image,
@@ -14,27 +16,29 @@ export const SingleArticle = ({
   description,
   tags,
   caption,
+  slug, // Add the slug of the current article
 }) => {
+  const [relatedArticles, setRelatedArticles] = useState([]); // Initialize state for related articles
+
+  useEffect(() => {
+    // Fetch related articles when the component mounts
+    async function fetchRelatedArticles() {
+      try {
+        const articles = await getRelatedArticles(category, tags, slug);
+        setRelatedArticles(articles); // Update state with related articles
+      } catch (error) {
+        console.error('Error fetching related articles:', error);
+      }
+    }
+
+    fetchRelatedArticles(); // Call the function to fetch related articles
+  }, [category, tags, slug]); // Call the effect whenever category, tags, or slug change
+
   return (
     <>
-      <Head>
-        <title>
-          {title}
-        </title>
-        <meta name="description" content={description} key="desc" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description"content={description}/>
-        <meta property="og:image"content={image}
-        />
-      </Head>
-      <div className="w-full pt-10 lg:flex">
+     <div className="w-full pt-10 lg:flex">
         <div className="w-full h-full overflow-y-auto">
           <div className="mx-auto prose prose-xl py-8 prose-md prose prose-teal lg:prose-md max-w-3xl px-4 mx-auto  xl:max-w-4xl  rounded-t">
-           
-            <div className="flex block justify-left items-left text-left px-16">
-              
-            </div>
-            
             <h1 className="mt-2 block px-2 leading-10 text-4xl font-black tracking-tight sm:text-4xl  dark:text-yellow-400 text-gray-900 ">
               {title}
             </h1>
@@ -43,12 +47,11 @@ export const SingleArticle = ({
             </p>
             <div className="flex justify-between mt-8 px-2">
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                <span className="text-sm text-gray-500">{publishedAt}</span> 
-                  {/* article tags */}
-             <ArticleTags tags={tags} />
+                <span className="text-sm text-gray-500">{publishedAt}</span>
+                {/* article tags */}
+                <ArticleTags tags={tags} />
               </div>
             </div>
-           
             <Image
               className="rounded-t mt-12 lg:h-96 md:h-48 w-full object-cover -mt-4 object-center "
               src={image}
@@ -56,7 +59,7 @@ export const SingleArticle = ({
               height={480}
               alt="blog"
             />
-             <div className="text-xs -mt-8 text-gray-600 italic font-medium text-right ">{caption}</div>
+            <div className="text-xs -mt-8 text-gray-600 italic font-medium text-right ">{caption}</div>
             <article className="mx-auto text-gray-500 dark:text-gray-200 prose-md prose prose-teal lg:prose-md max-w-3xl px-4 mx-auto  xl:max-w-4xl ">
               {children}
               <div className="flex p-0 items-center  border-l border-l-gray-500 border-dotted mt-8">
@@ -69,11 +72,10 @@ export const SingleArticle = ({
                 />
                 <div className="items-center md:flex">
                   <p className="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
-                    {/* <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline">By:</span> */}
-                    <span href="" className="inline-flex items-center ml-2 text-sm font-light text-gray-600 md:ml-2 dark:text-gray-400 ">
+                    <span className="inline-flex items-center ml-2 text-sm font-light text-gray-600 md:ml-2 dark:text-gray-400 ">
                       <BsCodeSquare className='mr-3 text-green-500 dark:text-green-400 flex-shrink-0' />{author.name} - {publishedAt}
                     </span>
-                    <span href="" className="inline-flex items-center ml-2 text-sm font-light text-gray-600 md:ml-2 dark:text-gray-400 ">
+                    <span className="inline-flex items-center ml-2 text-sm font-light text-gray-600 md:ml-2 dark:text-gray-400 ">
                       <BsCodeSquare className='mr-3 text-green-500 dark:text-green-400 flex-shrink-0' />gghayoge at gmail.com
                     </span>
                   </p>
@@ -82,6 +84,19 @@ export const SingleArticle = ({
             </article>
           </div>
         </div>
+      </div>
+      {/* Your existing JSX */}
+      <div className="mx-auto prose prose-xl py-8 prose-md prose prose-teal lg:prose-md max-w-3xl px-4 mx-auto  xl:max-w-4xl  rounded-t">
+        <h2>Related Articles</h2>
+        <ul>
+          {relatedArticles.map((relatedArticle) => (
+            <li key={relatedArticle.slug}>
+              <Link href={`/articles/${relatedArticle.slug}`}>
+                <a>{relatedArticle.title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
