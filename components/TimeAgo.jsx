@@ -8,15 +8,13 @@ import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import { useEffect } from "react";
 export default function TimeAgoComponent() {
  
-  // const { TimeAgo } = useTimeAgo();
   const formatter = buildFormatter(frenchStrings)
   useEffect(() => {}, []);
   return (
     <>
       <div className=" px-6 text-xs italic text-gray-500">
-                      Updated:{" "}
-                      <TimeAgo date="March 13, 2024 9:55 pm" locale="pg"  />
-                    </div>
+      Updated:<TimeAgo date="March 13, 2024 9:55 pm" locale="pg"  />
+      </div>
     </>
   );
 }

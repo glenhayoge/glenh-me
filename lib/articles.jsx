@@ -1,10 +1,9 @@
-import { getArticleBySlug, allArticles } from 'contentlayer/generated';
+// ../lib/articles.js
+
+import { allArticles } from 'contentlayer/generated';
 
 export async function getRelatedArticles(category, tags, currentArticleSlug) {
   let relatedArticles = [];
-
-  // Get the current article
-  const currentArticle = await getArticleBySlug(currentArticleSlug);
 
   // Query all articles
   const allArticlesData = await allArticles();

@@ -81,7 +81,6 @@ export default function IndexPage({ articlesData }) {
                     </div>
                   </form>
                 </div>
-
                 {/* Display filtered articles */}
                 <div className="w-full h-full overflow-y-auto">
                   <main>
@@ -98,7 +97,6 @@ export default function IndexPage({ articlesData }) {
                     ))}
                   </main>
                 </div>
-
                 {/* Pagination */}
                 <Pagination
                   currentPage={currentPage}
@@ -107,7 +105,6 @@ export default function IndexPage({ articlesData }) {
                 />
               </div>
             </div>
-
             {/* Sidebar */}
             <div className="w-full px-6 pt-12 lg:w-4/12 lg:pr-20 md:px-8">
               {/* Your sidebar content */}
