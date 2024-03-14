@@ -28,7 +28,7 @@ export default function IndexPage() {
                 </div>
                 <div className="w-full h-full overflow-y-auto">
                   <p className=" py-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                  A list of my favourite video resources and youtube channels
+                  A list of my favourite video resources and YouTube channels
                   </p>
                 
                 </div>
