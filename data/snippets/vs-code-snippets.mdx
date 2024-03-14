@@ -1,0 +1,46 @@
+---
+title: VS Code Snippets-Mac
+description: Setup VS Code on Mac commands
+category: VS Code
+updatedAt: Mar 15, 2024
+tags: VS Code
+---
+
+Install 'code' command in PATH
+
+Ensure VS code is installed properly. Drag into Applications Folder. Sometimes the VSCode application might be in your `downloads` folder, so make sure to move it out of there.
+
+Next, Open Visual Studio Code
+
+1. Open the Visual Studio Code application, and type Command + Shift + P and type the command '**install code**'. Then enter it.
+2. You will see the below message in Visual Studio Application: **shell command ' code' successfully installed in PATH.**
+3. Now, jump to the [iTerm](https://en.wikipedia.org/wiki/ITerm2) or  CLI and type _**code .**_
+
+Then you will be able to redirect to Visual Studio Code for any code change/view.
+
+Use the Uninstall 'code' command in the PATH command before the _"Install 'code' command in PATH"_ command
+
+
+%% After executing the command, restart the terminal for the new $PATH value to take effect. You'll be able to simply type 'code .' in any folder to start editing files in that folder. The "." Simply means "current directory" %%
+
+To add PATH permanently:
+
+Add this to your `~/.bash_profile`, or to `~/.zshrc` if you are running [macOS v10.15](https://en.wikipedia.org/wiki/MacOS_Catalina) (Catalina) or later.
+
+Open the [~/.bashrc](https://en.wikipedia.org/wiki/Bash_(Unix_shell)#Legacy-compatible_Bash_startup_example) file using [vi](https://en.wikipedia.org/wiki/Vi) or [Vim](https://en.wikipedia.org/wiki/Vim_%28text_editor%29):
+
+```
+vi ~/.bashrc
+```
+
+Enter the following by pressing `i` to insert:
+```
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+```
+Save and exit the file using `Esc` + `:wq`
+
+Reflect the settings in ~/.bashrc using the following command:
+
+```
+source ~/.bashrc
+```
