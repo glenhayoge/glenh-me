@@ -29,7 +29,6 @@ const Newsletter = () => {
       Sign up & be notified when stuffs are posted here. I won't spam or publish your email addresses. Unsubscribe anytime.
       </p>
       <form className="flex w-full justify-center mt-5 flex-col lg:flex-row">
-        
         <input
           className=" sm:rounded-none sm:rounded-l-lg appearance-none mb-2 lg:mb-0 w-full lg:w-2/3 border  py-2 px-4 text-gray-400 leading-tight focus:outline-none focus:border-gray-500"
           type="text"
@@ -47,10 +46,7 @@ const Newsletter = () => {
         >
           Sign Up
         </button>
-        
-        
       </form>
-     
       {state === "ERROR" && (
         <p className="w-1/2 mt-2 text-red-600">{errorMessage}</p>
       )}
@@ -63,5 +59,4 @@ const Newsletter = () => {
   );
 };
 Newsletter.displayName = "Newsletter"; // Adding the display name
-
 export default Newsletter; // Exporting the component after assigning it to a variable

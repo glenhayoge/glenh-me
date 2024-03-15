@@ -128,7 +128,6 @@ export default function ProfileBadge() {
                     />
                 </div>
               </div>
-        
     </>
   );
 }

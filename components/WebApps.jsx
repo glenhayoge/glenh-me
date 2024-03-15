@@ -637,7 +637,6 @@ export default function WebApps() {
         <span>
         <i className="devicon-typescript-plain p-1"></i>
         </span>
-     
         <span>
           <i className="devicon-javascript-plain p-1"></i>
         </span>

@@ -27,7 +27,6 @@ export default function SnippetList({
           </p>
           {/* <p className="text-gray-600  text-xs">Last updated 3 mins ago</p> */}
         </div>
-
         <div className="flex justify-between border-b  border-gray-400 dark:border-gray-600 border-dashed">
           <div className="flex items-center mb-6">
             <button >
@@ -52,7 +51,6 @@ export default function SnippetList({
             </button>
           </div>
           <div className="flex">
-
             <Link
               className="flex items-center text-xs text-gray-500"
               href="#"
@@ -74,7 +72,6 @@ export default function SnippetList({
               </span>
            </Link>
           </div>
-
         </div>
       </div>
     </>

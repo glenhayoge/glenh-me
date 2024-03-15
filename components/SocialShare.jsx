@@ -6,16 +6,13 @@ function SocialShare({ title, url }) {
       <FacebookShareButton url={url} quote={title}>
         Facebook
       </FacebookShareButton>
-
       <TwitterShareButton url={url} title={title}>
         Twitter
       </TwitterShareButton>
-
       <LinkedinShareButton url={url}>
         LinkedIn
       </LinkedinShareButton>
     </div>
   );
 }
-
 export default SocialShare;

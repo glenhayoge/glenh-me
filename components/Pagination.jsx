@@ -1,9 +1,7 @@
 import Link from 'next/link'; // Import Link from 'next/link' for client-side navigation
-
 export default function Pagination({ totalPages, currentPage, onPageChange }) {
   const prevPage = currentPage > 1;
   const nextPage = currentPage < totalPages;
-
   return (
     <div className="pt-8 pb-8 space-y-2 md:space-y-5">
       <nav className="flex justify-between">

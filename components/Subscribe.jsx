@@ -6,7 +6,6 @@ export default function Subscribe() {
   }
     return (
           <div>
-            
             <div className="p-6  mt-8 bg-gray-200/25 dark:text-gray-500  shadow rounded text-center overflow-hidden border-amber-400 border-1 shadow-md rounded dark:bg-gray-800/25">
         <h3 className="mb-2 text-xl font-bold dark:text-yellow-400 text-gray-500 sm:text-2xl">Newsletter</h3>
         <p className="mb-6 text-gray-500 text-sm">Subscribe & be notified when new articles & stuff are posted here. I won't spam or publish your email addresses. Unsubscribe anytime.
@@ -17,12 +16,10 @@ export default function Subscribe() {
     className="py-2 px-6 text-gray-500 outline outline-1 font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700">
     Subscribe to Newsletter
   </button>
-</div>
-            
+</div>    
       </div>
       {openModal &&
         <div className='fixed z-100 top-0 left-0 w-full dark:bg-black bg-white h-full flex justify-center items-center'>
-          
           <div className='max-w-[480px] border border-gray-600 bg-gray-100 dark:bg-black px-4 shadow-lg py-4 rounded-md'>
           <div className='flex justify-between items-right'>
               <button
@@ -45,7 +42,6 @@ export default function Subscribe() {
   </div>
 </div>
             <div className='flex justify-between items-center pt-4'>
-             
               <button
                 type='button'
                 className='h-8 px-2 text-xs tracking-wider uppercase rounded-md bg-gray-700 dark:bg-yellow-400 text-white dark:text-black'
