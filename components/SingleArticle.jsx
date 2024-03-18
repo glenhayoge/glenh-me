@@ -19,7 +19,6 @@ export const SingleArticle = ({
   slug, // Add the slug of the current article
 }) => {
   const [relatedArticles, setRelatedArticles] = useState([]); // Initialize state for related articles
-
   useEffect(() => {
     // Fetch related articles when the component mounts
     async function fetchRelatedArticles() {
