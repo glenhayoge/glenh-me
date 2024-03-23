@@ -1,0 +1,155 @@
+---
+title: "How to Create Scroll Links to Navigate to Specific Sections of an SPA in NextJS"
+publishedAt: 'Mar 21, 2024'
+description: "How to Create Scroll Links to Navigate to Specific Sections of an SPA in NextJS"
+seoDescription: "How to Create Scroll Links to Navigate to Specific Sections of an SPA in NextJS"
+category: "Code"
+tags: code
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1643116774075-acc00caa9a7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxMTIzMTkxNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
+caption: 'A computer screen with a program running on it PC: James Wiseman, Unsplash'
+---
+
+### Introduction
+
+In this short tutorial we'll learn how to create links that smoothly scroll to specific sections of a NextJS web page when clicked. At the time of writing I am using Next.js version 14.1.4 but other versions should work as well.
+
+### What to do?
+
+Firstly define a reusable React component. I named it `ScrollLink` in this example. 
+
+`// components/ScrollLink.jsx`
+
+The links in this component will enable the users to scroll smoothly to a specified section of a webpage when clicked. 
+
+### Code for the component
+
+Code for the `ScrollLink` component:
+
+```javascript
+
+// components/ScrollLink.jsx
+
+import { useState, useEffect } from 'react';
+
+import Link from 'next/link';
+
+  
+function ScrollLink({ id, children }) {
+
+const handleClick = (e) => {
+
+e.preventDefault();
+
+const element = document.getElementById(id);
+
+if (element) {
+
+element.scrollIntoView({ behavior: 'smooth' });
+
+}
+
+};
+return (
+
+<Link href={`#${id}`} passHref>
+
+<div onClick={handleClick}>{children}</div>
+
+</Link>
+
+);
+
+}
+
+export default ScrollLink;
+
+```
+### Code breakdown
+
+Here's a breakdown of what each part of the code does:
+
+
+1. **Import Statements**:
+    
+    - `useState` and `useEffect` are imported from the React library. They are React hooks used for managing state and performing side effects in functional components.
+    - `Link` is imported from the `next/link` module. It is used in Next.js for client-side navigation.
+
+2. **Function Definition**:
+    
+    - `ScrollLink` is a functional component that takes two props: `id` and `children`.
+    - `id` is the ID of the element to which the link should scroll.
+    - `children` represents the content of the link.
+
+3. **handleClick Function**:
+    
+    - This function is called when the link is clicked.
+    - It prevents the default behavior of the link (navigating to a new page).
+    - It retrieves the DOM element with the specified `id`.
+    - If the element exists, it scrolls to it smoothly using `scrollIntoView({ behavior: 'smooth' })`.
+
+4. **Return Statement**:
+    
+    - The component returns a `Link` component from Next.js wrapped around a `div`.
+    - The `href` attribute of the `Link` component is set to `#${id}`, which means clicking the link will navigate to the element with the specified `id` within the same page.
+    - `passHref` is used to pass the `href` prop to the underlying `a` tag.
+    - The `onClick` event of the `div` is set to the `handleClick` function.
+    - The content of the link (`children`) is rendered inside the `div`.
+    
+5. **Export Statement**:
+    
+    - The `ScrollLink` component is exported as the default export of the module, making it available for use in other parts of the application.
+
+### Implemenation Example
+
+Make sure your sections/divs i.e the target elements have an **ID** attribute set to them properly
+
+Let say we want to navigate to the `contacts` section:
+
+```xml
+<section id='contacts'>
+ ...
+</section>
+```
+
+1. Import the ScrollLink reusable component at the top of your navigation component:
+
+```javascript
+import ScrollLink from './ScrollLink';
+```
+
+2. Call the ScrollLink component and set your `id` property as `contacts` and the child `text` as `Contacts` in your navigation component:
+
+```javascript
+import ScrollLink from './ScrollLink';
+
+const Navbar = () => {
+return (
+...
+<ul>
+<li>
+<ScrollLink id="contacts">Contacts</ScrollLink>
+</li>
+</ul>
+...
+);
+
+};
+export default Navbar;
+```
+
+Implementing the above code correctly will enhancing the user experience of navigating within a single-page application.
+
+
+### References & Additional Resources
+
+I gained inspiration to write the above from the Stackoverflow question and answers asked from the link provided below:
+
+[NextJs - Link to scroll to a section in same page](https://stackoverflow.com/questions/68589788/nextjs-link-to-scroll-to-a-section-in-same-page)
+
+
+
+
