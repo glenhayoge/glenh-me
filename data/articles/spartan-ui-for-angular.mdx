@@ -34,3 +34,49 @@ Let's get our hands dirty and see how spartan/ui looks like.
 npx create-nx-workspace@latest
 ```
 
+### Using spartan/ui in your project
+
+Once you have a new Nx workspace set up, you can install the spartan/ui package using the following command:
+
+`npm install --save spartan/ui`
+
+This will install the spartan/ui package and its dependencies into your project.
+
+### Importing spartan/ui components
+
+Once the `spartan/ui` package is installed, you can start importing the components you need into your Angular components. For example, to import the Button component, you can use the following code:
+
+```
+import { Button } from 'spartan/ui';
+
+@Component({
+  selector: 'app-my-component',
+  templateUrl: './my-component.component.html',
+  styleUrls: ['./my-component.component.css']
+})
+export class MyComponent {
+  // ...
+}
+```
+
+### Using spartan/ui components in your templates
+
+With the Button component imported, you can now use it in your Angular templates. For example, the following code snippet shows how to use the Button component to create a simple button:
+
+```
+<button spartanButton>Click me</button>
+```
+This code will create a button with the text "Click me".
+
+Spartan/ui is a promising new Angular UI library that offers a collection of un-styled and accessible UI components. The library is easy to use and integrates well with Nx workspaces. With its focus on customization and accessibility, Spartan/ui is a great option for developers who want to create unique and user-friendly Angular applications.
+
+I hope this article has given you a good introduction to Spartan/ui. For more information, please refer to the references below.
+
+
+### References & Additional Resources
+
+1. [Official Spartan/UI Documentation](https://www.spartan.ng/)
+
+2. [Getting Started with Spartan/UI - Shadcn-like UI Components for Angular](https://dev.to/this-is-angular/getting-started-with-spartanui-shadcn-like-ui-components-for-angular-8df) 
+
+
