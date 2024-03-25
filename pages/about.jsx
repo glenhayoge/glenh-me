@@ -138,7 +138,7 @@ export default function IndexPage() {
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                     <li className="flex pl-4 ">
                       <BsBook className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
-                      <p>  Deep Work by Cal Newport</p>
+                      <p>The Girl with No Name-An Incredible Story of a Child Raised by Monkeys by Marina Chapman</p>
 
                     </li>
                     <li className="flex pl-4">
