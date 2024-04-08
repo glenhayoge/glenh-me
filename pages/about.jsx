@@ -49,7 +49,7 @@ export default function IndexPage() {
                     <Link href="/projects">
                       <strong className="text-cyan-600">projects page</strong>
                     </Link>{" "}
-                    has highlights of my work. Read tutorials and other stuffs
+                    highlights samples of my work. Read tutorials and other stuffs
                     on the{" "}
                     <Link href="/articles">
                       <strong className="text-cyan-600">articles page</strong>
