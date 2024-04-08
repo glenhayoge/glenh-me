@@ -1,9 +1,5 @@
 
 import Image from "next/image";
-// import { useTimeAgo } from "next-time-ago";
-import TimeAgo from 'react-timeago'
-import frenchStrings from 'react-timeago/lib/language-strings/fr'
-import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import Subscribe from "../components/Subscribe";
 import { useEffect } from "react";
 import propic from "../assets/profile2.png";
@@ -12,8 +8,6 @@ import Link from "next/link";
 import TimeAgoComponent from "../components/TimeAgo";
 
 export default function IndexPage() {
-  // const { TimeAgo } = useTimeAgo();
-  // const formatter = buildFormatter(frenchStrings)
   useEffect(() => {}, []);
   return (
     <>

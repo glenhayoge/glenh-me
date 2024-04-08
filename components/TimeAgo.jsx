@@ -1,5 +1,3 @@
-
-// import { useTimeAgo } from "next-time-ago";
 import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/fr'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
@@ -12,7 +10,7 @@ export default function TimeAgoComponent() {
   return (
     <>
       <div className=" px-6 text-xs italic text-gray-500">
-      Updated:<TimeAgo date="March 25, 2024 7:37 pm" locale="pg"  />
+      Updated: <TimeAgo date="April 8, 2024 8:37 pm" locale="pg"  />
       </div>
     </>
   );

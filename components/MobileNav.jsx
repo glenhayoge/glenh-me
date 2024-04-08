@@ -33,7 +33,7 @@ export default function MobileNav({ open, setOpen }) {
               }, 100)
             }
           >
-            Projects
+            Work Samples
            </Link>
           <Link 
             className="text-xl font-medium my-4"

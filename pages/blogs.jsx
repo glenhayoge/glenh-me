@@ -1,5 +1,3 @@
-// import { useTimeAgo } from "next-time-ago";
-import TimeAgo from 'react-timeago'
 import frenchStrings from 'react-timeago/lib/language-strings/fr'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import Link from "next/link";
