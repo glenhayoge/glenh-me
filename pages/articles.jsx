@@ -44,7 +44,6 @@ export default function IndexPage({ articlesData }) {
   const handleTagClick = (tag) => {
     const tagsArray = tag.split(',').map((t) => t.trim()); // Split the tag string into an array
     const queryString = tagsArray.map((t) => `tag=${t}`).join('&'); // Generate query string for each tag
-    // Replace 'yourwebsite.com/articles' with your actual route
     window.location.href = `http://glensea.com/articles?${queryString}`;
   };
 
