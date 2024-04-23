@@ -20,6 +20,10 @@ Link to the Live Website --> [glensea.com](https://glensea.com)
 - [giscus](https://github.com/giscus/giscus): comment system
 - [nprogress](https://github.com/rstacruz/nprogress): page transition progress bar
 
+## To Do
+
+- Count articles
+- Count projects
 
 ## Disclaimer:
 

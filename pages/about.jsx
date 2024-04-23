@@ -87,7 +87,7 @@ export default function IndexPage() {
                     What I'm doing now
                   </h2>
                 </div>
-                <p className="px-4 pb-4 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                <p className="px-4 pb-4 font-bold text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                   Current Projects
                 </p>
                 <div className="w-full h-full overflow-y-auto">
@@ -132,8 +132,8 @@ export default function IndexPage() {
                       </p>
                     </li>
                   </ul>
-                  <p className="px-4 py-6 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    What I am Reading:
+                  <p className="px-4 py-6 font-bold text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
+                    Reading:
                   </p>
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                     <li className="flex pl-4 ">
@@ -152,8 +152,17 @@ export default function IndexPage() {
                         Gharajedaghi</p>
                     </li>
                   </ul>
-                  <p className="px-4 py-6 text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
-                    What I am watching:
+                  <p className="px-4 py-6 text-base text-left leading-normal font-bold text-gray-500 dark:text-gray-400">
+                    Learning:
+                  </p>
+                  <ul className="space-y-2 text-gray-500 dark:text-gray-400">
+                    <li className="flex pl-4">
+                      <i className="bx bx-play-circle mr-1.5  text-green-500 dark:text-green-400 flex-shrink-0"></i>
+                       Flutter/Dart
+                    </li>
+                  </ul>
+                  <p className="px-4 py-6 text-base text-left font-bold leading-normal  text-gray-500 dark:text-gray-400">
+                    Watching:
                   </p>
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                     <li className="flex pl-4">
@@ -168,7 +177,7 @@ export default function IndexPage() {
                     My Dev Tools
                   </h5>
                 </div>
-                <p className="px-4 pb-4  text-base leading-normal text-gray-500 dark:text-gray-400">
+                <p className="px-4 pb-4 font-bold text-base leading-normal text-gray-500 dark:text-gray-400">
                   Software
                 </p>
                 <ul className="space-y-2 text-gray-500 dark:text-gray-400">
@@ -240,7 +249,7 @@ export default function IndexPage() {
                     </p>
                   </li>
                 </ul>
-                <p className="px-4 py-6 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
+                <p className="px-4 py-6 font-bold text-base text-left leading-normal text-gray-500 dark:text-gray-400">
                   Hardware
                 </p>
                 <ul className="space-y-2 text-gray-500 dark:text-gray-400">
