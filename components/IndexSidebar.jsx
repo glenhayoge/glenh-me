@@ -42,10 +42,10 @@ const ISideBar = () => {
             </p>
             <div className="flex items-center justify-left mb-6">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Hi, my name is Glen. I'm a software developer, designer &amp; 
-                creator from Papua New Guinea. I use this space on internet to
+                Hi, my name is Glen. I am a software developer, designer &amp; 
+                creator from Papua New Guinea. I work in the nexus of the tech & rural development. This is my tiny space on the internet where I
                 document &amp; share snippets of my perpertual learning &amp; self
-                improvement journeys.
+                improvement journey.
               </p>
             </div>
             <Link href="/about">
@@ -61,7 +61,7 @@ const ISideBar = () => {
             <GitHubCalendar className="text-xs"username="glenhayoge" />
             <div className="pt-4">
             <p className="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
-                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
+                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Flutter, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
              
               </div>
               <div className="mt-8">

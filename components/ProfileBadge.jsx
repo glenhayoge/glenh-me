@@ -115,7 +115,7 @@ export default function ProfileBadge() {
                     </div>
                     <div className="mb-2 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
                       <p className="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
-                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
+                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Flutter, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
                     </div>
                     <TimeAgoComponent/>
                   </div>
