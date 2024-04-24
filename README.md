@@ -22,8 +22,9 @@ Link to the Live Website --> [glensea.com](https://glensea.com)
 
 ## To Do
 
-- Count articles
-- Count projects
+- [ ] Count Articles
+- [ ] Count Work Samples
+- [ ] Paginate Work Samples
 
 ## Disclaimer:
 
