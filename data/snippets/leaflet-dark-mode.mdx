@@ -1,0 +1,32 @@
+---
+title: Leaflet map dark mode css
+description: Leaflet map dark mode css
+category: Leaflet
+updatedAt: Apr 27, 2024
+tags: Leaflet
+---
+
+CSS trick to create a dark mode for Leaflet. The trick uses filter that inverts the image colours and makes some adjustments to the contrast, hue, brightness etc.
+The trick works when system dark mode is enabled.
+
+## Add this css
+
+```bash
+:root {
+    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+    .leaflet-tile {
+        filter: var(--leaflet-tile-filter, none);
+    }
+
+    .leaflet-container {
+        background: #303030;
+    }
+}
+```
+
+Originally found in this GitHub Gist:
+https://gist.github.com/BrendonKoz/b1df234fe3ee388b402cd8e98f7eedbd
+
