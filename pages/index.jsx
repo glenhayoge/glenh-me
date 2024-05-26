@@ -26,7 +26,7 @@ export default function Home({ articles }) {
       </Head>
       <Header />
      
-      <section className="py-24 ">
+      <section className="py-8 ">
         <div className="container px-4 lg:px-10 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-8">
             <div className="w-full lg:w-8/12 lg:pl-20 md:px-8">

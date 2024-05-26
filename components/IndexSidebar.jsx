@@ -15,8 +15,8 @@ const ISideBar = () => {
    };
   return (
     <>
-      <div className=" dark:text-gray-500 relative shadow rounded text-center overflow-auto border-amber-400 border-1 shadow-md rounded-lg ">
-        <div className="relative pt-10  pb-16 bg-gray-200/25 rounded-xl dark:bg-gray-800/25 shadow rounded overflow-hidden">
+      <div className=" dark:text-gray-500 relative shadow text-center overflow-auto border-amber-400 border-1 shadow-md">
+        <div className="relative pt-10 pb-16 bg-gray-200/25 dark:bg-gray-800/25 shadow  overflow-hidden">
           <Image
             className="absolute bg-gray-800 bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
             src={imageUrl}
@@ -33,15 +33,15 @@ const ISideBar = () => {
             height={100}
           
           /> */}
-          <div className="px-4 text-center py-6">
+          <div className="px-4 py-6">
             {/* <h5 style={signature} className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
             </h5> */}
             {/* <p className="mb-6 text-sm text-gray-500">
               Software Developer, Designer, Creator &amp; a Perpetual Learner
             </p> */}
-            <div className="flex items-center justify-left mb-6 mt-2">
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="flex mb-6 mt-4">
+              <p className="text-sm text-gray-600 tracking-wide dark:text-gray-400">
                 Hi, my name is Glen. I am a software developer, designer &amp; 
                 creator from Papua New Guinea. I work in the nexus of the tech & rural development. This is my tiny space on the internet where I
                 document &amp; share snippets of my perpertual learning &amp; self
