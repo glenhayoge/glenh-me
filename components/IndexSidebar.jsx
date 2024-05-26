@@ -24,7 +24,7 @@ const ISideBar = () => {
             height={100}
             alt="tribal-pattern"
           />
-          <Image
+          {/* <Image
             src={propic}
             placeholder="blur"
             alt="Picture of the Glen"
@@ -32,15 +32,15 @@ const ISideBar = () => {
             width={100}
             height={100}
           
-          />
+          /> */}
           <div className="px-4 text-center py-6">
-            <h5 style={signature} className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
+            {/* <h5 style={signature} className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
-            </h5>
-            <p className="mb-6 text-sm text-gray-500">
+            </h5> */}
+            {/* <p className="mb-6 text-sm text-gray-500">
               Software Developer, Designer, Creator &amp; a Perpetual Learner
-            </p>
-            <div className="flex items-center justify-left mb-6">
+            </p> */}
+            <div className="flex items-center justify-left mb-6 mt-2">
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Hi, my name is Glen. I am a software developer, designer &amp; 
                 creator from Papua New Guinea. I work in the nexus of the tech & rural development. This is my tiny space on the internet where I
