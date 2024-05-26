@@ -26,7 +26,7 @@ const Header = () => {
           src={tribalPattern}
           object-position="center"
           alt="background hero"
-          className="opacity-5 z-1 absolute bg-blend-color top-0 left-0 w-full lg:px-12 md:px-0 h-[520px] object-cover"
+          className="opacity-5 z-1 dark:opacity-10 absolute bg-blend-color top-0 left-0 w-full lg:px-12 md:px-0 h-[520px] object-cover"
         />
 
       </div>
@@ -50,10 +50,10 @@ const Header = () => {
                   width={360}
                   height={240}
                   src={propic}
-            className="z-10 cursor-pointer filter grayscale hover:grayscale-0"
+            className="z-10 cursor-pointer pr-3 filter grayscale hover:grayscale-0"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
-            <h5 style={signature} className="-mt-16  z-10 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
+            <h5 style={signature} className="-mt-16 z-10 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
               GlenGHayoge
             </h5>
         </div>                
