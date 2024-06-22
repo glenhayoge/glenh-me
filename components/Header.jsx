@@ -44,7 +44,7 @@ const Header = () => {
                 Know About Me
             </a> 
         </div>
-        <div className="lg:mt-0 lg:col-span-5 lg:flex flex-col items-center">
+        <div className="lg:mt-0 lg:col-span-4 lg:flex text-center flex-col items-center">
 
             <Image 
                   width={360}
@@ -53,7 +53,7 @@ const Header = () => {
             className="z-10 cursor-pointer pr-3 filter grayscale hover:grayscale-0"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
-            <h5 style={signature} className="-mt-16 z-10 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
+            <h5 style={signature} className="lg:-mt-16  -mt-6 z-40 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
               GlenGHayoge
             </h5>
         </div>                
