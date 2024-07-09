@@ -50,10 +50,10 @@ const Header = () => {
                   width={360}
                   height={240}
                   src={propic}
-            className="z-10 cursor-pointer pl-8 filter grayscale hover:grayscale-0"
+            className="z-10 cursor-pointer filter grayscale hover:grayscale-0"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
-            <h5 style={signature} className="lg:-mt-16 pl-12 -mt-6 z-40 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
+            <h5 style={signature} className="lg:-mt-16 lg:pl-12 -mt-6 z-40 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
               GlenGHayoge
             </h5>
         </div>                
