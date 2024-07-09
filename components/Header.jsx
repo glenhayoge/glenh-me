@@ -38,7 +38,7 @@ const Header = () => {
             <p className="max-w-2xl tracking-loose mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">a digest of a perpetual work in progress</p>
             <div className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center dark:text-white text-gray-500 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                 Hire My Service
-                <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
             </div>
             <a href="/about" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                 Know About Me
@@ -50,10 +50,10 @@ const Header = () => {
                   width={360}
                   height={240}
                   src={propic}
-            className="z-10 cursor-pointer pr-3 filter grayscale hover:grayscale-0"
+            className="z-10 cursor-pointer pl-8 filter grayscale hover:grayscale-0"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
-            <h5 style={signature} className="lg:-mt-16  -mt-6 z-40 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
+            <h5 style={signature} className="lg:-mt-16 pl-12 -mt-6 z-40 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
               GlenGHayoge
             </h5>
         </div>                
