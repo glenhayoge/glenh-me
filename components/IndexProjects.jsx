@@ -139,13 +139,6 @@ export default function IProjects() {
               <div className="block rounded outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                 
                 <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                  {/* <div className="flex mb-2 justify-between text-left items-left">
-                    <p className=" text-gray-500 text-xs">2022</p>
-
-                    <div>
-                      <p className="block text-right text-xs ">⭐</p>
-                    </div>
-                  </div> */}
                   <div className="text-center">
                         FPDA Website
                         </div>
@@ -193,13 +186,11 @@ export default function IProjects() {
                   </span>
                 </div>
               </div>
-         
           </div>
         </div>
-                <div className="pt-6 flex items-center">
-                    <Button  href="/projects" label="All Projects"
-                  />
-                </div>
+          <div className="pt-6 flex items-center">
+                    <Button  href="/projects" label="All Projects"/>
+        </div>
       </div>
 
 

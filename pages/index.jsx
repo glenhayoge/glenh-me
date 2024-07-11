@@ -7,6 +7,7 @@ import IProjects from "../components/IndexProjects";
 import ILearningResources from "../components/LearningResources";
 import ISideBar from "../components/IndexSidebar"
 import Link from 'next/link'
+import Button from '../components/Button';
 
 
 export default function Home({ articles }) {
@@ -73,12 +74,7 @@ export default function Home({ articles }) {
                 </main>
 
                 <div className=" p-4 flex items-center justify-between ">
-                  <Link
-                    className="before:ease text-center relative py-1 rounded-full w-40 overflow-hidden border border-gray-400 dark:border-gray-500 text-sm text-gray-500 shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-gray-600 dark:hover:shadow-yellow-500  hover:before:-translate-x-40"
-                    href="/articles"
-                  >
-                    All Posts
-                    </Link>
+                    <Button  href="/articles" label="All Posts"/>
                 </div>
               </div>
             {/* index projects links */}
