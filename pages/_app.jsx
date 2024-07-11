@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image:height" content="628" />
         <meta property="twitter:card" content="summary_large_image"/>
       </Head>
-      <ThemeProvider enableSystem={true} attribute="className">
+      <ThemeProvider enableSystem={true} attribute="class">
         <Navbar />
         <Component className="dark-main" {...pageProps} />
         <Footer />

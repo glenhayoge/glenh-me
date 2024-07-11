@@ -33,7 +33,7 @@ const Header = () => {
    
       <section className="dark:bg-black w-full ">
     <div class="grid px-2 w-full md:px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
-        <div className=" z-20 place-self-center lg:pl-36 lg:col-span-7">
+        <div className=" z-20 place-self-center lg:pl-12 lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight text-gray-600 leading-none md:text-5xl xl:text-6xl dark:text-white"><span class="text-yellow-400">d</span>eveloper &#x2022; <span class="text-yellow-400">d</span>esigner &#x2022; <span class="text-yellow-400">c</span>reator</h1>
             <p className="max-w-2xl tracking-loose mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">a digest of a perpetual work in progress</p>
             <div className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center dark:text-white text-gray-500 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
@@ -50,7 +50,7 @@ const Header = () => {
                   width={360}
                   height={240}
                   src={propic}
-            className="z-10 cursor-pointer filter grayscale hover:grayscale-0"
+            className="z-10 cursor-pointer lg:pl-12 filter grayscale hover:grayscale-0"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
             <h5 style={signature} className="lg:-mt-16 lg:pl-12 -mt-6 z-40 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
