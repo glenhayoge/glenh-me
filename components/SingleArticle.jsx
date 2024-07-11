@@ -91,7 +91,7 @@ export const SingleArticle = ({
           {relatedArticles.map((relatedArticle) => (
             <li key={relatedArticle.slug}>
               <Link href={`/articles/${relatedArticle.slug}`}>
-                <a>{relatedArticle.title}</a>
+                {relatedArticle.title}
               </Link>
             </li>
           ))}

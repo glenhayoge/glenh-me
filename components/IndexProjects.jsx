@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Button from '../components/Button';
 import { SiNextdotjs,SiTailwindcss,SiReact, SiNetlify, SiBulma,SiDjango,SiPython,SiDocker,SiJavascript } from "react-icons/si";
-
+// import Button from "components"
 export default function IProjects() {
     return (
 
@@ -196,20 +197,9 @@ export default function IProjects() {
           </div>
         </div>
                 <div className="pt-6 flex items-center">
-                  
-                <Link className="before:ease text-center relative py-1 rounded-full w-40 overflow-hidden border border-gray-400 dark:border-gray-500 text-sm text-gray-500 shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-gray-600 dark:hover:shadow-yellow-500 hover:before:-translate-x-40" href="/projects"
-                  >
-                    All Projects
-                    </Link>
+                    <Button  href="/projects" label="All Projects"
+                  />
                 </div>
-                {/* <a href="#"
-	className="group relative inline-block overflow-hidden rounded border border-gray-100 bg-gray-200  px-12 py-3 text-sm font-medium text-slate-800 hover:text-violet-600 focus:outline-none focus:ring active:bg-indigo-600 active:text-white">
-	<span className="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
-	<span className="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
-	<span className="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
-	<span className="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
-	Signup
-</a> */}
       </div>
 
 
