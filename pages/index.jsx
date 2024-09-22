@@ -72,7 +72,6 @@ export default function Home({ articles }) {
                     )
                   )}
                 </main>
-
                 <div className=" p-4 flex items-center justify-between ">
                     <Button  href="/articles" label="All Posts"/>
                 </div>
@@ -86,7 +85,6 @@ export default function Home({ articles }) {
             <div className="w-full lg:w-4/12 lg:pr-20 md:px-4 ">
             <ISideBar /> 
             </div>
-          
           </div>
         </div>
       </section>

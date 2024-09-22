@@ -7,7 +7,7 @@ const MyImage = (props) => {
       alt="Picture of the author"
       width="350px"
       height="300px"
-      class="center"
+      className="center"
   />
   )
 }

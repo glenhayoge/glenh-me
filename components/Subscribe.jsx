@@ -27,7 +27,7 @@ export default function Subscribe() {
                 className='h-6 px-1 uppercase rounded-full items-right text-right bg-gray-700 dark:bg-yellow-400 text-white dark:text-black'
                 onClick={handleModal}
               >
-               <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x w-4 h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+               <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x w-4 h-4" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
               </button>
             </div>
             <h2 className='text-md uppercase font-medium  dark:text-gray-400 text-gray-900 text-center  px-4 '>Subscribe to My Newsletter</h2>
