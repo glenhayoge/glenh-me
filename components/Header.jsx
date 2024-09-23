@@ -30,10 +30,10 @@ const Header = () => {
         />
       </div>
       <section className="dark:bg-black w-full ">
-        <div className="grid px-2 w-full md:px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
-          <div className=" z-20 place-self-center lg:col-span-7 mb-8">
-            <h1 className="max-w-xl mb-4 md:my-12 text-4xl lg:pl-6 font-extrabold tracking-tight text-gray-600 leading-none md:text-5xl xl:text-6xl dark:text-white"><span className="text-yellow-400">d</span>eveloper &#x2022; <span className="text-yellow-400">d</span>esigner &#x2022; <span className="text-yellow-400">c</span>reator</h1>
-            <p className="max-w-2xl tracking-loose mb-6 font-light text-gray-500 lg:pl-5 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">a digest of a perpetual work in progress</p>
+        <div className="grid w-full mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
+          <div className="z-20 place-self-center px-4 lg:col-span-7 mb-8 lg:py-24">
+            <h1 className="max-w-2xl mb-4 md:my-12 text-3xl font-extrabold tracking-tight text-gray-600 leading-none md:text-4xl xl:text-5xl dark:text-white"><span className="text-yellow-400"> &#x2022; d</span>eveloper<span className="text-yellow-400"> &#x2022; d</span>esigner <br/><span className="text-yellow-400"> &#x2022; c</span>reator</h1>
+            <p className="max-w-2xl tracking-loose mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Here's a digest of a perpetual work in progress</p>
             <div className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center dark:text-white text-gray-500 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
               Hire My Service
               <svg
@@ -60,7 +60,7 @@ const Header = () => {
               alt="Profile Picture"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
-            <h5 style={signature} className=" relative pl-6 lg:-mt-16 lg:pl-12 -mt-16 z-20 lg:mb-2 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
+            <h5 style={signature} className=" relative lg:-mt-16 -ml-6 lg:pl-12 -mt-16 z-20 lg:mb-2 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
               GlenGHayoge
             </h5>
           </div>
