@@ -28,9 +28,7 @@ const Header = () => {
           alt="background hero"
           className="opacity-5 z-1 dark:opacity-10 absolute bg-blend-color top-0 left-0 w-full lg:px-12 md:px-0 h-[520px] object-cover"
         />
-
       </div>
-
       <section className="dark:bg-black w-full ">
         <div className="grid px-2 w-full md:px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
           <div className=" z-20 place-self-center lg:col-span-7 mb-8">
@@ -58,11 +56,11 @@ const Header = () => {
               width={360}
               height={240}
               src={propic}
-              className="z-10 cursor-pointer lg:pl-2 filter grayscale   hover:grayscale-0"
+              className="z-10 cursor-pointer lg:pl-2 filter grayscale hover:grayscale-0"
               alt="Profile Picture"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
-            <h5 style={signature} className=" relative pl-6 lg:-mt-16 lg:pl-12 -mt-16 z-[100] lg:mb-2 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
+            <h5 style={signature} className=" relative pl-6 lg:-mt-16 lg:pl-12 -mt-16 z-20 lg:mb-2 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
               GlenGHayoge
             </h5>
           </div>

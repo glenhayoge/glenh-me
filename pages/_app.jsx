@@ -1,9 +1,7 @@
-// import 'tailwindcss/tailwind.css'
+
 import { ThemeProvider } from "next-themes";
 import Head from 'next/head';
-import Link from "next/link";
 import Script from "next/script";
-
 import "../styles/globals.css";
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
