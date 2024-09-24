@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 const projects = [
   {
     name: "glensea.com Website",
@@ -93,7 +94,6 @@ const projects = [
       "devicon-amazonwebservices-plain"
     ]
   }
-  // Add more projects as needed
 ];
 
 export default function WebApps() {
