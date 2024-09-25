@@ -1,0 +1,58 @@
+---
+title: Making shadcn/ui Tabs Responsive with Overflow Scrolling
+description: Making shadcn/ui Tabs Responsive with Overflow Scrolling
+category: NextJs
+updatedAt: Sep 25, 2024
+tags: NextJs,Shadcn
+---
+
+When you have many tabs in your shadcn/ui Tabs component, they might not all fit on the screen. Here's a simple workaround to make them responsive with horizontal scrolling.
+
+## Create a scrollable container
+
+Wrap your TabsList in a div that allows horizontal scrolling:
+
+```bash
+<div className="relative rounded-sm overflow-x-scroll h-10 bg-muted">
+  {/* TabsList will go here */}
+</div>
+```
+
+Place the TabsList inside the container and make it absolute:
+
+## Make the TabsList absolute
+
+```bash
+<div className="relative rounded-sm overflow-x-scroll h-10 bg-muted">
+  <TabsList className="absolute flex flex-row justify-stretch w-full">
+    {/* TabsTriggers will go here */}
+  </TabsList>
+</div>
+```
+This allows the TabsList to extend beyond the visible area.
+
+## Add TabsTriggers
+
+Map through your tabs and create TabsTrigger components:
+
+```bash
+<div className="relative rounded-sm overflow-x-scroll h-10 bg-muted">
+  <TabsList className="absolute flex flex-row justify-stretch w-full">
+    {tabs.map((value, index) => (
+      <TabsTrigger
+        className="w-full"
+        key={`tab_trigger_${index}`}
+        value={value}
+      >
+        {value}
+      </TabsTrigger>
+    ))}
+  </TabsList>
+</div>
+```
+
+Each TabsTrigger is set to full width, allowing them to share the space equally.
+
+That's it! You now have responsive tabs that can be scrolled horizontally when they overflow the container.
+
+Reference: https://github.com/shadcn-ui/ui/issues/2270

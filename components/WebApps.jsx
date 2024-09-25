@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const projects = [
   {
-    name: "glensea.com Website",
+    name: "My Portfolio-glensea.com",
     description: "The source code of this website - https://glensea.com",
     link: "https://github.com/glenhayoge/glenh-me",
     linkText: "Source",
@@ -159,5 +159,6 @@ export default function WebApps() {
     </div>
   );
 }
+
 
 
