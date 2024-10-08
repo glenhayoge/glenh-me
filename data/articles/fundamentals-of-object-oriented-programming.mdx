@@ -1,0 +1,134 @@
+---
+title: "Fundamentals of Object Oriented Programming"
+publishedAt: 'Mar 21, 2024'
+description: "A summary of 5 SOLID Principles of Object Oriented Design"
+seoDescription: "A summary of 5 SOLID Principles of Object Oriented Design"
+category: "Code"
+tags: code
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTMyMDUzNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
+caption: 'Two black flat screen computer monitors PC: Fotis Fotopoulos, Unsplash'
+---
+
+### What is Programming?
+
+At its core, programming is about giving instructions to a computer to perform tasks. These tasks are broken down into smaller steps, and the instructions are written in a programming language that the computer can interpret.
+
+### What is a Program Made of?
+
+A program is made up of two key things:
+
+**Data**: Information (e.g., numbers, text, etc.) that the program manipulates.
+**Behavior**: Actions or operations that the program performs on the data.
+
+In traditional programming, you define functions or procedures (blocks of code) to manipulate the data. This is called **procedural programming**.
+
+### The Problem with Procedural Programming
+
+As programs grow larger and more complex, it becomes harder to manage the relationships between functions and data. It’s like having a recipe book with all the steps (functions) and ingredients (data) jumbled together. Changes in one function might affect another in unexpected ways. It becomes hard to maintain and update.
+
+### The Idea of Object-Oriented Programming (OOP)
+
+The key principle behind OOP is: **Organize data and behavior together into objects**.
+
+Objects in the real world are things that have:
+
+- **Attributes (data)**: For example, a "Car" object might have attributes like color, speed, or model.
+- **Behaviors (actions)**: The "Car" object might also have behaviors like "drive" or "stop".
+
+By structuring programs in terms of objects, you can create more modular, reusable, and easier-to-manage systems.
+
+### Breaking Down OOP Concepts
+
+**a. Objects**
+
+An object is a bundle of related data and behavior. Think of an object as a self-contained entity that knows how to do certain things (behaviors) and holds certain information (data).
+
+For example, in a simple game, you might have a "Player" object:
+
+- **Data**: The player’s health, score, position.
+- **Behavior**: Move, jump, attack.
+
+**b. Classes**
+
+A class is like a blueprint for creating objects. It defines what data and behaviors each object of that type should have.
+
+Example:
+
+- You can create a `Car` class that defines that all cars should have attributes like `color` and `speed`, and behaviors like `drive()`.
+- From this class, you can create multiple car objects with different specific values for their data, like a red car or a blue car.
+
+**c. Encapsulation**
+
+One core principle of OOP is encapsulation, which means hiding the details of how something works and only exposing what's necessary. An object only reveals the behaviors (methods) you need to interact with it, without you needing to know how it's implemented internally.
+
+Example: 
+
+- You can drive a car without needing to understand how the engine works. You just need to know how to use the steering wheel and pedals.
+
+**d. Abstraction**
+
+Abstraction involves simplifying complex systems by modeling real-world objects using only the details that matter. You represent objects in a way that’s easy to understand and work with.
+
+Example: 
+
+- Instead of thinking about all the complex parts of a car, you abstract it into simple terms like color, speed, and drive behavior.
+
+**e. Inheritance**
+
+Inheritance allows you to create a new class based on an existing class, inheriting its attributes and behaviors but also adding or modifying them.
+
+Example:
+
+- A `Car` class might define general properties like `color` and `speed`.
+- A `RaceCar` class can inherit from `Car`, adding extra properties like `turboBoost()` while still being able to use the behaviors of a normal car (like drive()).
+
+**f. Polymorphism**
+
+Polymorphism allows objects of different classes to be treated the same way if they share the same interface. It lets you use a single function or method on different types of objects, which behave differently based on their own implementations.
+
+Example: 
+
+- You might have a `Vehicle` class with a `move()` method, and both `Car` and `Bike` inherit from `Vehicle`. When you call `move()` on either a car or bike object, each will execute its version of the move method.
+
+### Putting it All Together: Example
+
+Let’s use a real-world example: A shopping system.
+
+1. **Classes**: You define classes like `Product`, `ShoppingCart`, and `User`.
+
+2. **Objects**:
+
+- Each `Product` object has data like `price`, `name`, and `stock`.
+- The `ShoppingCart` object contains a list of `products` and `methods` to `add` or `remove` items.
+
+3. **Encapsulation**: The user of the shopping cart doesn’t need to know how the `addProduct` method works internally—they just call it to add a product to the cart.
+
+4. **Abstraction**: You abstract complex ideas into simpler ones. Instead of worrying about how payments work behind the scenes, you just call `checkout()` and let the system handle it.
+
+5. **Inheritance**: Maybe you have different types of `users` `(GuestUser, RegisteredUser)`. Both inherit from a base User class but may have different methods for placing orders.
+
+6. **Polymorphism**: If both `GuestUser` and `RegisteredUser` share a method `placeOrder()`, you can call `placeOrder()` on any user object without needing to know if it's a guest or registered user. The right behavior will execute based on the type of user.
+
+### Why OOP?
+
+- **Modularity**: Code is easier to organize into pieces.
+- **Reusability**: You can reuse code by creating new objects from existing classes.
+- **Maintainability**: It's easier to change or extend programs since objects are self-contained.
+- **Abstraction & Encapsulation**: You hide the complex details and only expose what’s necessary for interaction.
+
+Object-oriented programming is a way to model the real world in software by bundling data and related behavior into objects. It promotes modularity, reusability, and clarity. As you break down the problem into objects and relationships, programs become easier to manage, scale, and evolve over time.
+
+### References & Additional Resources
+
+1. [Head First Object-Oriented Analysis and Design](https://www.amazon.com/Head-First-Object-Oriented-Analysis-Design/dp/0596008678/)
+
+2. [Beginners Guide to Object Oriented Programming](https://medium.com/@Adekola_Olawale/beginners-guide-to-object-oriented-programming-a94601ea2fbd) 
+
+3. [The Object-Oriented Thought Process](https://www.amazon.com/Object-Oriented-Thought-Process-Developers-Library/dp/0321861272/?tag=javamysqlanta-20) 
+
+
+
