@@ -14,7 +14,7 @@ const CustomLink = ({ href, ...rest }) => {
   }
 
   if (isAnchorLink) {
-    return <a href={href} {...rest} />
+    return <Link href={href} {...rest} />
   }
 
   return <Link target="_blank" rel="noopener noreferrer" href={href} {...rest} />

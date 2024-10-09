@@ -1,38 +1,31 @@
 import Subscribe from "./Subscribe";
 import React from "react";
 import Image from "next/image";
-import propic from "../assets/glens_1.png";
+import propic from "../assets/glens_color_avatar.png";
 import GitHubCalendar from 'react-github-calendar';
 import TimeAgoComponent from "../components/TimeAgo";
 import Link from 'next/link'
 
 const ISideBar = () => {
-  const imageUrl="https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
-  const signature = { 
+  const imageUrl = "https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg"
+  const signature = {
     fontFamily: 'Mrs Saint Delafield, cursive',
     fontSize: '40px',
     textAlign: 'center',
-   };
+  };
   return (
     <>
-      <div className=" dark:text-gray-500 relative -mt-36 shadow text-center overflow-auto border-amber-400 border-1 shadow-md">
+      <div className=" dark:text-gray-500 relative -mt-12 lg:-mt-64 shadow text-center overflow-auto border-amber-400 border-1 shadow-md">
         <div className="relative pt-10 pb-16 bg-gray-200/25 dark:bg-gray-800/25 shadoww overflow-hidden">
           <Image
-            className="absolute bg-gray-800 rounded-t-full bg-blend-color opacity-50 top-0 left-0 w-full h-16 object-cover"
+            className="absolute bg-gray-800 bg-blend-color top-2 opacity-50 lg:top-0 lg:left-0 w-full h-16 object-cover"
             src={imageUrl}
             width={500}
             height={100}
             alt="tribal-pattern"
           />
-          {/* <Image
-            src={propic}
-            placeholder="blur"
-            alt="Picture of the Glen"
-            className="bg-gray-200 border-2 border-white dark:border-gray-800 relative w-18 h-18 mb-2 -mt-8 mx-auto rounded-full object-cover object-right"
-            width={100}
-            height={100}
-          
-          /> */}
+        
+      
           <div className="px-4 py-6">
             {/* <h5 style={signature} className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
               GlenGHayoge
@@ -42,7 +35,7 @@ const ISideBar = () => {
             </p> */}
             <div className="flex mb-6 mt-4">
               <p className="text-sm text-gray-600 tracking-wide dark:text-gray-400">
-                Hi, my name is Glen. I am a software developer, designer &amp; 
+                Hi, my name is Glen. I am a software developer, designer &amp;
                 creator from Papua New Guinea. I work in the nexus of the tech & rural development. This is my tiny space on the internet where I
                 document &amp; share snippets of my perpertual learning &amp; self
                 improvement journey.
@@ -58,11 +51,11 @@ const ISideBar = () => {
             </Link>
             <div className="mb-2 mt-6 pb-8 border-b dark:border-gray-600 border-dashed border-gray-200 ">
               <p className="pb-3 text-sm ">My Github Heatmap</p>
-            <GitHubCalendar className="text-xs"username="glenhayoge" />
-            <div className="pt-4">
-            <p className="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
-                      <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Flutter, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
-             
+              <GitHubCalendar className="text-xs" username="glenhayoge" />
+              <div className="pt-4">
+                <p className="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
+                <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Flutter, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
+
               </div>
               <div className="mt-8">
                 <p className="mb-6 text-sm text-cyan-700">
@@ -70,14 +63,14 @@ const ISideBar = () => {
                     “Really good software is never finished; it continues to
                     grow. If it doesn’t grow, it decays.”
                   </strong>
-                  <br/>
+                  <br />
                   <span className="text-xs text-gray-500">— Melinda Varian, Software Engineer</span>
                 </p>
               </div>
             </div>
             <div className="flex justify-center space-x-6 my-6">
               <Link
-                href="https://github.com/glenhayoge"target="_blank" 
+                href="https://github.com/glenhayoge" target="_blank"
                 className="text-gray-400 hover:text-gray-500"
               >
                 <span className="sr-only">GitHub</span>
@@ -91,7 +84,7 @@ const ISideBar = () => {
                 </svg>
               </Link>
               <Link
-                href="https://www.linkedin.com/in/glen-g-hayoge-089935104/"target="_blank" 
+                href="https://www.linkedin.com/in/glen-g-hayoge-089935104/" target="_blank"
                 className="text-gray-400 hover:text-gray-500"
               >
                 <span className="sr-only">LinkedIn</span>
@@ -105,7 +98,7 @@ const ISideBar = () => {
                 </svg>
               </Link>
               <Link
-                href="https://stackoverflow.com/users/12071488/glenh"target="_blank" 
+                href="https://stackoverflow.com/users/12071488/glenh" target="_blank"
                 className="text-gray-400 hover:text-gray-500"
               >
                 <span className="sr-only">StackOverFlow</span>
@@ -152,14 +145,14 @@ const ISideBar = () => {
             <TimeAgoComponent />
           </div>
           <Image
-          width={300} height={500}
-            className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover" 
+            width={300} height={500}
+            className="absolute bg-gray-800 bg-blend-color opacity-50 bottom-0 left-0 w-full h-16 object-cover"
             src={'https://previews.123rf.com/images/balabolka/balabolka1404/balabolka140400814/27930119-r%C3%A9sum%C3%A9-vecteur-de-fond-ethnique-tribal-seamless.jpg'}
             alt="tribal-pattern-2"
           />
         </div>
       </div>
-     
+
       <Subscribe />
     </>
   );

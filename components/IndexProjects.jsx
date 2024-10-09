@@ -9,7 +9,7 @@ export default function IProjects() {
         <div className="pt-12 mb-8  text-gray-600">
        
           <p className="text-3xl font-black tracking-tight sm:text-4xl  font-bold text-gray-500 dark:text-gray-400">
-            Some Projects
+            Work Samples
           </p>
           <p className="text-sm  text-gray-400 my-6">
             {" "}
@@ -189,7 +189,7 @@ export default function IProjects() {
           </div>
         </div>
           <div className="pt-6 flex items-center">
-                    <Button  href="/projects" label="All Projects"/>
+                    <Button  href="/projects" label="More Samples"/>
         </div>
       </div>
 

@@ -29,10 +29,10 @@ const Header = () => {
           className="opacity-5 z-1 dark:opacity-10 absolute bg-blend-color top-0 left-0 w-full lg:px-12 md:px-0 h-[520px] object-cover"
         />
       </div>
-      <section className="dark:bg-black w-full ">
+      <section className="dark:bg-black w-full py-24">
         <div className="grid w-full mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
           <div className="z-20 place-self-center px-4 lg:col-span-7 mb-8 lg:py-24">
-            <h1 className="max-w-2xl mb-4 md:my-12 text-3xl font-extrabold tracking-tight text-gray-600 leading-none md:text-4xl xl:text-5xl dark:text-white"><span className="text-yellow-400"> &#x2022; d</span>eveloper<span className="text-yellow-400"> &#x2022; d</span>esigner <br/><span className="text-yellow-400"> &#x2022; c</span>reator</h1>
+            <h1 className="max-w-2xl mb-4 md:my-12 text-3xl font-extrabold tracking-tight text-gray-600 leading-none md:text-5xl xl:text-6xl dark:text-white"><span className="text-yellow-400"> &#x2022; d</span>eveloper<span className="text-yellow-400"> &#x2022; d</span>esigner <br/><span className="text-yellow-400"> &#x2022; c</span>reator</h1>
             <p className="max-w-2xl tracking-loose mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Here's a digest of a perpetual work in progress</p>
             <div className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center dark:text-white text-gray-500 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
               Hire My Service
@@ -46,21 +46,21 @@ const Header = () => {
               </svg>
 
             </div>
-            <a href="/about" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            <Link href="/about" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
               Know About Me
-            </a>
+            </Link>
           </div>
-          <div className="lg:mt-0 lg:col-span-4 lg:flex text-center flex-col items-center">
+          <div className="lg:mt-0 lg:col-span-4 lg:flex text-center ml-24 lg:ml-0 flex-col items-center">
 
             <Image
               width={360}
               height={240}
               src={propic}
-              className="z-10 cursor-pointer lg:pl-2 filter grayscale hover:grayscale-0"
+              className="z-10 cursor-pointer lg:pl-1 -ml-6 filter grayscale hover:grayscale-0"
               alt="Profile Picture"
             />
             {/* <p className="mt-2 text-center">Your caption here</p> */}
-            <h5 style={signature} className=" relative lg:-mt-16 -ml-6 lg:pl-12 -mt-16 z-20 lg:mb-2 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
+            <h5 style={signature} className=" relative lg:-mt-16 -ml-16 lg:-ml-6 lg:pl-8 -mt-16 z-20 lg:mb-2 text-gray-400 dark:text-gray-400 text-center text-md mb-2">
               GlenGHayoge
             </h5>
           </div>
