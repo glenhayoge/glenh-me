@@ -3,8 +3,8 @@ import Image from 'next/image'
 import propic from "../assets/glens_color_avatar.png";
 import styles from "../styles/header.module.css";
 import Head from "next/head";
-import Link from 'next/link';
 import tribalPattern from '../assets/topography.svg';
+import Link from 'next/link';
 
 const subTitle = {
   fontFamily: 'Nanum Pen Script, cursive',
@@ -73,11 +73,13 @@ export default function Header() {
                 </svg>
               </button>
               <Link
-                href="/about"
-                className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-              >
-                Know About Me
-              </Link>
+  href="/about"
+  className="inline-flex pointer-cursor z-10 items-center justify-center px-5 py-3 text-base font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+>
+  Know About Me
+</Link>
+
+
             </div>
           </div>
           <div className="mt-10 lg:mt-0 lg:flex lg:justify-end hidden">

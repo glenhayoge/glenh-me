@@ -24,15 +24,7 @@ const ISideBar = () => {
             height={100}
             alt="tribal-pattern"
           />
-        
-      
           <div className="px-4 py-6">
-            {/* <h5 style={signature} className="text-gray-600 dark:text-yellow-400 text-xl mb-4">
-              GlenGHayoge
-            </h5> */}
-            {/* <p className="mb-6 text-sm text-gray-500">
-              Software Developer, Designer, Creator &amp; a Perpetual Learner
-            </p> */}
             <div className="flex mb-6 mt-4">
               <p className="text-sm text-gray-600 tracking-wide dark:text-gray-400">
                 Hi, my name is Glen. I am a software developer, designer &amp;
