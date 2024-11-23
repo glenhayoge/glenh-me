@@ -39,9 +39,9 @@ export default function Header() {
              
             </h1> */}
             <h1 className="max-w-2xl mb-4 md:my-12 text-3xl font-extrabold tracking-tight text-gray-600 leading-none md:text-5xl xl:text-6xl dark:text-white">
-              <span className="block inline"> <span className='text-yellow-400'>&#x2022;d</span>eveloper</span>
-              <span className="block inline"> <span className='text-yellow-400'>&#x2022;d</span>esigner </span>
-              <span className="block  inline"> <span className='text-yellow-400'>&#x2022;c</span>reator</span>
+              <span className="block inline"> <span className='text-yellow-400 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>&#x2022;d</span>eveloper</span>
+              <span className="block inline"> <span className='text-yellow-400 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>&#x2022;d</span>esigner </span>
+              <span className="block  inline"> <span className='text-yellow-400 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>&#x2022;c</span>reator</span>
             </h1>
             <p className="mt-3 pl-5 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl">
               Bringing ideas to life through code and creativity. Passionate about building beautiful, functional, and user-friendly digital experiences.
