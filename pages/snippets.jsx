@@ -51,7 +51,7 @@ export default function IndexPage({ snippetsData }) {
   return (
     <>
       <section className="py-24">
-        <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
+        <div className="container px-2 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-6">
             <div className="w-full lg:w-8/12 px-6 lg:pl-20 md:px-8">
               <div className="overflow-hidden">

@@ -11,7 +11,7 @@ export default function IndexPage() {
   return (
     <>
       <section className="py-24 ">
-      <div className="container px-4 lg:px-10 sm:px-4 mx-auto">
+      <div className="container px-2 lg:px-10 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-4">
             <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
