@@ -12,6 +12,38 @@ const Author = defineNestedType(() => ({
     image: { type: 'string', required: true },
   },
 }));
+const computedFields = {
+  readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
+  wordCount: {
+    type: 'number',
+    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
+  },
+  slug: {
+    type: 'string',
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+  },
+  headings: {
+    type: "json",
+    resolve: async (doc) => {
+      const regXHeader = /\n(?<flag>#{1,6})\s+(?<data>.+)/g;
+      const slugger = new GithubSlugger()
+      const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+          ({ groups }) => {
+            const flag = groups?.flag;
+            const data = groups?.data;
+            return {
+              level: flag?.length == 1 ? "one"
+              : flag?.length == 2 ? "two"
+              : "three",
+              text: data,
+              slug: data ? slugger.slug(data) : undefined
+            };
+          }
+        );
+        return headings;
+    },
+  },
+};
 
 const Article = defineDocumentType(() => ({
   name: 'Article',
@@ -67,39 +99,6 @@ const Books = defineDocumentType(() => ({
   },
   computedFields,
 }));
-
-const computedFields = {
-    readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
-    wordCount: {
-      type: 'number',
-      resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
-    },
-    slug: {
-      type: 'string',
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
-    },
-    headings: {
-      type: "json",
-      resolve: async (doc) => {
-        const regXHeader = /\n(?<flag>#{1,6})\s+(?<data>.+)/g;
-        const slugger = new GithubSlugger()
-        const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
-            ({ groups }) => {
-              const flag = groups?.flag;
-              const data = groups?.data;
-              return {
-                level: flag?.length == 1 ? "one"
-                : flag?.length == 2 ? "two"
-                : "three",
-                text: data,
-                slug: data ? slugger.slug(data) : undefined
-              };
-            }
-          );
-          return headings;
-      },
-    },
-  };
 
   const contentLayerConfig = makeSource({
     contentDirPath: 'data',

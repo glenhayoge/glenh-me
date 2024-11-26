@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 const projects = [
   {
     name: "My Portfolio-glensea.com",
@@ -159,6 +158,3 @@ export default function WebApps() {
     </div>
   );
 }
-
-
-

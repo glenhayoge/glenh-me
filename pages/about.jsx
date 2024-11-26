@@ -1,6 +1,8 @@
 import Link from "next/link";
 import ProfileBadge from "../components/ProfileBadge";
 import Subscribe from "../components/Subscribe";
+import AnimatedCards from "../components/AnimatedCards";
+
 import { MdEmail } from "react-icons/md";
 import { BsCodeSquare, BsBook } from "react-icons/bs";
 import {
@@ -95,7 +97,6 @@ export default function IndexPage() {
                     <li className="flex pl-4 ">
                       <BsCodeSquare className='mr-1.5 mt-1  text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p >
-
                         <Link
                           href="https://wantoea.com"
                           target="_blank"
@@ -139,12 +140,10 @@ export default function IndexPage() {
                     <li className="flex pl-4 ">
                       <BsBook className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                       <p>The Girl with No Name-An Incredible Story of a Child Raised by Monkeys by Marina Chapman</p>
-
                     </li>
                     <li className="flex pl-4">
                       <BsBook className="mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
                       <p> A Mind for Numbers by Barbara Oakley</p>
-
                     </li>
                     <li className="flex pl-4 ">
                       <BsBook className="mr-1.5  mt-1 text-green-500 dark:text-green-400 flex-shrink-0" />
@@ -278,7 +277,9 @@ export default function IndexPage() {
                 <p className="px-4 pb-8 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
                   Channels you can use to reach out to me
                 </p>
-                <div className="w-full h-full overflow-y-auto">
+     
+                <AnimatedCards/>
+                {/* <div className="w-full h-full overflow-y-auto">
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                     <li className=" flex pl-4 ">
                       <FaGithub className="text-cyan-600 mt-1 mr-1.5" />
@@ -339,7 +340,7 @@ export default function IndexPage() {
                       </strong>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="w-full lg:w-4/12  lg:pr-20 md:px-4 ">

@@ -40,6 +40,26 @@
     top: 0;
     backdrop-filter: saturate(180%) blur(20px);
   }
+  .card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+      500px circle at var(--mouse-x) var(--mouse-y),
+      hsl(var(--color) / 0.35),
+      transparent 40%
+    );
+    border-radius: inherit;
+    opacity: 0;
+    z-index: 2;
+  }
+  #cards:hover > .card::before {
+    opacity: 1;
+  }
+  
   /* .bg-hero { background-image: url('https://www.kindacode.com/wp-content/uploads/2022/06/hero-image-example.jpeg') } */
 
 
