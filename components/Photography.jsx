@@ -17,7 +17,7 @@ export default function Photography() {
 <div className="flex flex-wrap -m-4 text-center p-4">
   <div className="w-full md:w-1/2 lg:w-1/4 p-4">
     <div className="flex justify-center">
-    <div className="rounded max-w-sm bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
+    <div className="rounded max-w-sm mx-4 lg:mx-0 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600">
      <Link href="https://images.unsplash.com/photo-1698700654311-8b8b2b05e227?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTUxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" target="_blank" rel="noreferrer">
     <Image
           src="https://images.unsplash.com/photo-1698700654311-8b8b2b05e227?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5ODcyNTUxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" // Replace with your actual external image URL
@@ -97,7 +97,7 @@ export default function Photography() {
     </div>
   </div>
 </div>
- <Link href="https://unsplash.com/@glenhayoge">
+ <Link href="https://unsplash.com/@glenhayoge" className="mx-4 lg:mx-0">
 <button className="text-sm button text-gray-400 mx-3 mt-3 p-2 border rounded border-gray-500">
     View More Photos
   </button>

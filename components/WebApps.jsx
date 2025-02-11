@@ -110,7 +110,7 @@ export default function WebApps() {
       <div className="flex flex-wrap -m-4 text-center p-4">
         {projects.map((project, index) => (
           <div key={index} className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="block rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+            <div className="block mx-4 lg:mx-0 rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
               <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
                 <div className="text-center">{project.name}</div>
               </div>
@@ -150,7 +150,7 @@ export default function WebApps() {
         ))}
       </div>
 
-      <Link href="https://github.com/glenhayoge">
+      <Link href="https://github.com/glenhayoge" className="mx-4 lg:mx-0">
         <button className="text-sm button text-gray-400 mx-3 mt-3 p-2 border rounded border-gray-500">
           View More Projects
         </button>
