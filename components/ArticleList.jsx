@@ -20,7 +20,7 @@ export default function ArticleList({ title, slug, dateTime, tags,readingTime  }
           description,
         }}
       />
-      <div className="px-6 pt-4 -mt-2 ">
+      <div className="px-2 pt-4 -mt-2 ">
         <div className="my-3">
           <Link href={`/article/${slug}`}>
             <h3 className="mb-2 text-lg font-bold text-gray-600 leading-tight dark:text-yellow-400 hover:text-gray-500 dark:hover:text-gray-300"
