@@ -98,7 +98,7 @@ const projects = [
 export default function WebApps() {
   return (
     <div className="container mx-auto w-full mt-8 rounded-lg">
-      <div className="pt-8 mb-8 px-4 text-gray-600">
+      <div className="pt-8 mb-8 mx-4 lg:mx-0 px-4 text-gray-600">
         <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
           Mobile & Web apps
         </p>

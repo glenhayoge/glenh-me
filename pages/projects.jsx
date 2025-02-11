@@ -12,16 +12,16 @@ export default function IndexPage() {
       <section className="py-24 ">
       <div className="container px-2 lg:px-12 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-6">
-            <div className="w-full lg:w-max-screen-3xl lg:px-20 md:px-8 ">
+            <div className="w-full  lg:w-max-screen-3xl lg:px-20 md:px-8 ">
               <div className=" overflow-hidden">
 
               <div className="flex flex-wrap items-center ">
-                <div className="w-full lg:w-2/3 px-4">
+                <div className="w-full mx-4 lg:mx-0 lg:w-2/3 px-4">
                   <h2 className="mb-4 block text-left text-4xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
                     Work Samples.
                   </h2>
                 </div>
-                <div className="w-full lg:w-1/3 px-4 flex items-center">
+                <div className="w-full mx-4 lg:mx-0 lg:w-1/3 px-4 flex items-center">
                   <Image
                     src={projects}
                     alt="Projects Image"
