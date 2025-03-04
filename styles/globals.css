@@ -59,6 +59,22 @@
   #cards:hover > .card::before {
     opacity: 1;
   }
+
+  .gradient-text {
+    --_color-1-from: yellow;
+    --_color-1-to:   red;
+    
+    --_color-2-from: purple;
+    --_color-2-to:   indigo;
+    
+    @media (prefers-color-scheme: dark) {
+      --_color-1-from: lime;
+      --_color-1-to:   cyan;
+  
+      --_color-2-from: cyan;
+      --_color-2-to:   deeppink;
+    }
+  }
   
   /* .bg-hero { background-image: url('https://www.kindacode.com/wp-content/uploads/2022/06/hero-image-example.jpeg') } */
 
