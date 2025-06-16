@@ -28,17 +28,17 @@ export default function Home({ articles }) {
       <Header />
      
       <section className="py-8 ">
-        <div className="container px-4 lg:px-10 sm:px-4 mx-auto">
+        <div className="container px-4 md:px-10 sm:px-4 mx-auto">
           <div className="flex flex-wrap items-stretch -m-8">
             <div className="w-full lg:w-8/12 lg:pl-20 md:px-8">
               <div className="md:px-2 px-4 overflow-hidden">
                 <div className="pt-1 pb-1 ">
                   <div className="flex mb-4 justify-between items-center">
-                    <div className=" px-3  text-gray-600">
-                      <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
-                        Recent Articles
+                    <div className="px-3">
+                      <p className="text-3xl font-bold tracking-tight sm:text-4xl">
+                        Recent Articless
                       </p>
-                      <p className="text-sm  text-gray-600 my-6">
+                      <p className="text-sm text-primary my-6">
                     {" "}
                     Read articles, guides,tutorials and lots more.
                   </p>

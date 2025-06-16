@@ -14,7 +14,7 @@ export default function ArticleCard({
     <>
       <div className="p-4 ">
         <div className="flex justify-between items-center mb-4 ">
-          <span className="inline-block uppercase py-1 px-1  text-xs text-gray-500 dark:text-gray-400 rounded-full">
+          <span className="inline-block uppercase py-1 px-1 text-primary text-xs rounded-full">
             {category}
           </span>
            <Link
@@ -26,20 +26,20 @@ export default function ArticleCard({
         </div>
         <div className="mb-4">
            <Link href={`/article/${slug}`}>
-            <h3 className="mb-2 text-2xl font-bold text-gray-600 dark:text-yellow-400 hover:text-cyan-700 dark:hover:text-cyan-700">
+            <h3 className="mb-2 text-2xl font-bold hover:text-cyan-700 dark:hover:text-cyan-700">
               {title}
             </h3>
           </Link>
-          <p className="text-l dark:text-gray-400 text-gray-600  ">
+          <p className="text-l ">
             {description}
           </p>
         </div>
         <div className="flex justify-between border-b  border-gray-400 dark:border-gray-600 border-dashed ">
           <div className="flex items-center">
-            <div className="inline-flex items-center justify-center text-sm font-medium text-gray-500 dark:text-yellow-400">
+            <div className="inline-flex items-center justify-center text-sm font-medium">
                <Link
                 href={`/article/${slug}`}
-                className=" rounded-full p-1 text-gray-500 dark:text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0 hover:text-cyan-700 dark:hover:text-cyan-700"
+                className=" rounded-full p-1 inline-flex items-center md:mb-2 lg:mb-0"
               >
                 More
                 <svg
@@ -58,7 +58,7 @@ export default function ArticleCard({
             </div>
           </div>
           <div className="flex py-6">
-             <Link className="flex items-center text-xs text-gray-500" href="#">
+             <Link className="flex items-center text-xs text-secondary" href="#">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
