@@ -72,7 +72,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className="flex filter lg:px-12 px-9 py-4 h-16 items-center dark:bg-gray-800/25 navbar"
+      className="flex filter py-4 h-16 items-center navbar"
       // style={{
       //   background: `${backgroundTransparacy}`,
       //   boxShadow: `${boxShadow} 0px 0px 20px 0px`,
@@ -80,6 +80,7 @@ export default function Navbar() {
     >
       {" "}
       <Mobilenav open={open} setOpen={setOpen} />
+      
       <div className="w-4/12 lg:pl-20 md:px-8 flex items-left ">
         <Logo/>
         {/* h-48 md:h-48 w-48 mt-4  */}
@@ -110,7 +111,7 @@ export default function Navbar() {
             }`}
           />
         </div>
-        <div className="hidden md:flex text-gray-600 items-center dark:text-gray-400">
+        <div className="hidden md:flex items-center">
           <NavLink to="/articles">Articles</NavLink>
           <NavLink to="/projects">Work Samples</NavLink>
           <NavLink to="/snippets">Snippets</NavLink>

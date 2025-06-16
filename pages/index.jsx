@@ -36,7 +36,7 @@ export default function Home({ articles }) {
                   <div className="flex mb-4 justify-between items-center">
                     <div className="px-3">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl">
-                        Recent Articless
+                        Recent Articles
                       </p>
                       <p className="text-sm text-primary my-6">
                     {" "}
