@@ -71,7 +71,7 @@ export default function ArticleCard({
               </svg>
               <span className="mr-2">{readingTime}</span>
             </Link>
-             <Link className="flex items-center text-xs text-gray-500" href="#">
+             <Link className="flex items-center text-xs text-accent" href="#">
               <svg
                 className="mr-2 bi bi-eye"
                 xmlns="http://www.w3.org/2000/svg"
