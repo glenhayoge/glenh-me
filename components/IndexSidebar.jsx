@@ -26,7 +26,7 @@ const ISideBar = () => {
           />
           <div className="px-4 py-6">
             <div className="flex mb-6 mt-4">
-              <p className="text-sm text-gray-600 tracking-wide dark:text-gray-400">
+              <p className="text-sm text-primary tracking-wide">
                 Hi, my name is Glen. I am a software developer, designer &amp;
                 creator from Papua New Guinea. I work in the nexus of the tech & rural development. This is my tiny space on the internet where I
                 document &amp; share snippets of my perpertual learning &amp; self
@@ -36,7 +36,7 @@ const ISideBar = () => {
             <Link href="/about">
               <button
                 type="button"
-                className=" py-2 px-6  text-gray-500 outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
+                className=" py-2 px-6  outline outline-1  font-bold hover:outline-2 rounded-full text-xs hover:text-cyan-700 dark:hover:text-cyan-700"
               >
                 More About Me...
               </button>
@@ -45,8 +45,8 @@ const ISideBar = () => {
               <p className="pb-3 text-sm ">My Github Heatmap</p>
               <GitHubCalendar className="text-xs" username="glenhayoge" />
               <div className="pt-4">
-                <p className="text-sm text-gray-500 pb-4">Tech Skills and Competencies</p>
-                <p className="text-xs text-gray-500 border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Flutter, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
+                <p className="text-sm pb-4">Tech Skills and Competencies</p>
+                <p className="text-xs border tracking-loose border-gray-500 p-3">Python, JavaScript/TypeScript, Flutter, Tailwind, Bulma, Bootstrap, NodeJs, ReactJS, Angular, Expo, NextJS, Astro, Django, MongoDB, Flask, Superbase, Vite, AWS, Serverless Infrastructures, PostGreSQL, SQL, Firebase, Redis, GCP, Git, Github, Github Actions, Docker and everything else in between 🚀</p>
 
               </div>
               <div className="mt-8">
@@ -56,14 +56,14 @@ const ISideBar = () => {
                     grow. If it doesn’t grow, it decays.”
                   </strong>
                   <br />
-                  <span className="text-xs text-gray-500">— Melinda Varian, Software Engineer</span>
+                  <span className="text-xs">— Melinda Varian, Software Engineer</span>
                 </p>
               </div>
             </div>
             <div className="flex justify-center space-x-6 my-6">
               <Link
                 href="https://github.com/glenhayoge" target="_blank"
-                className="text-gray-400 hover:text-gray-500"
+                className="text-gray-400 hover"
               >
                 <span className="sr-only">GitHub</span>
                 <svg
@@ -77,7 +77,7 @@ const ISideBar = () => {
               </Link>
               <Link
                 href="https://www.linkedin.com/in/glen-g-hayoge-089935104/" target="_blank"
-                className="text-gray-400 hover:text-gray-500"
+                className="text-gray-400 hover"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg
@@ -91,7 +91,7 @@ const ISideBar = () => {
               </Link>
               <Link
                 href="https://stackoverflow.com/users/12071488/glenh" target="_blank"
-                className="text-gray-400 hover:text-gray-500"
+                className="text-gray-400 hover"
               >
                 <span className="sr-only">StackOverFlow</span>
                 <svg
@@ -104,7 +104,7 @@ const ISideBar = () => {
                   <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z" />
                 </svg>
               </Link>
-              <Link href="https://twitter.com/ghayoge" target="_blank" className="text-gray-400 hover:text-gray-500">
+              <Link href="https://twitter.com/ghayoge" target="_blank" className="text-gray-400 hover">
                 <span className="sr-only">Twitter</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ const ISideBar = () => {
                 </svg>
               </Link>
 
-              <Link href="#" className="text-gray-400 hover:text-gray-500">
+              <Link href="#" className="text-gray-400 hover">
                 <span className="sr-only">RSS</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -10,7 +10,7 @@ export default function TimeAgoComponent() {
   return (
     <>
       <div className=" px-6 text-xs italic text-gray-500">
-      Updated: <TimeAgo date="March 9, 2025 2:50 pm" locale="pg"  />
+      Updated: <TimeAgo date="June 17, 2025 9:50 am" locale="pg"  />
       </div>
     </>
   );
