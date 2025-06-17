@@ -1,0 +1,60 @@
+{
+  "title": "5 SOLID Principles of Object Oriented Design-A Summary",
+  "publishedAt": "Mar 21, 2024",
+  "description": "A summary of 5 SOLID Principles of Object Oriented Design",
+  "seoDescription": "A summary of 5 SOLID Principles of Object Oriented Design",
+  "category": "Code",
+  "tags": "code",
+  "caption": "Two black flat screen computer monitors PC: Fotis Fotopoulos, Unsplash",
+  "author": {
+    "name": "GlenH",
+    "image": "/assets/glens_1.png",
+    "type": "Author",
+    "_raw": {}
+  },
+  "image": "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTMyMDUzNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  "toc": true,
+  "body": {
+    "raw": "\n### Introduction\n\nThe SOLID design principles is a set of guidelines aimed at helping software developers create robust, maintainable and extensible object-oriented software systems.\n\n### What does SOLID stands for?\n\nThe _SOLID_ acronym stands for:\n\n-\tS - Single-responsiblity Principle\n-\tO - Open closed principle\n-\tL - Liskov Substitution Principle\n-\tI - Interface Segregation Principle\n-\tD - Dependency Inversion Principle\n\nThis article presents the summary of these 5 principles originally introduced by [Robert C. Martin ](http://en.wikipedia.org/wiki/Robert_Cecil_Martin) in 2000.\n\n### Summary of the SOLID Principles\n\nThe SOLID principles include:\n\n1. **Single Responsibility Principle (SRP)**: \n\n\tThis principle states that a class, module, or function should have only one reason to change. It should perform a single task. For instance, a class that displays an animal's name should not also handle the display of its sound or feeding habits.\n\n2. **Open-Closed Principle (OCP)**: \n\n\tAccording to this principle, classes, modules, and functions should be open for extension but closed for modification. This means that you should be able to add new functionality without altering the existing code.\n\n3. **Liskov Substitution Principle (LSP)**: \n\t\n\tThis principle asserts that child classes or subclasses must be interchangeable with their parent classes or superclasses. Essentially, a child class should be able to take the place of its parent class.\n\t\n4. **Interface Segregation Principle (ISP)**: \n\n\tThis principle advises that clients should not be forced to implement interfaces or methods they do not use. It suggests breaking down large interfaces into smaller, more specific ones.\n\n5. **Dependency Inversion Principle (DIP)**: \n\n\tThis principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions. Moreover, abstractions should not depend on details; instead, details should depend on abstractions.\n\nThese principles can apply to any programming language. Adhering to these principles may result in a larger codebase and can help developers make changes to their code without causing significant issues.\n\n### References & Additional Resources\n\n1. [SOLID: The First 5 Principles of Object Oriented Design](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)\n\n2. [SOLID Design Principles in Software Development](https://www.freecodecamp.org/news/solid-design-principles-in-software-development/) \n\n3. [A Solid Guide to SOLID Principles](https://www.baeldung.com/solid-principles) \n\n\n",
+    "code": "var Component=(()=>{var p=Object.create;var l=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var b=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),y=(i,e)=>{for(var s in e)l(i,s,{get:e[s],enumerable:!0})},t=(i,e,s,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let r of u(e))!g.call(i,r)&&r!==s&&l(i,r,{get:()=>e[r],enumerable:!(o=m(e,r))||o.enumerable});return i};var w=(i,e,s)=>(s=i!=null?p(f(i)):{},t(e||!i||!i.__esModule?l(s,\"default\",{value:i,enumerable:!0}):s,i)),D=i=>t(l({},\"__esModule\",{value:!0}),i);var c=b((I,a)=>{a.exports=_jsx_runtime});var O={};y(O,{default:()=>h,frontmatter:()=>S});var n=w(c()),S={title:\"5 SOLID Principles of Object Oriented Design-A Summary\",publishedAt:\"Mar 21, 2024\",description:\"A summary of 5 SOLID Principles of Object Oriented Design\",seoDescription:\"A summary of 5 SOLID Principles of Object Oriented Design\",category:\"Code\",tags:\"code\",author:{name:\"GlenH\",image:\"/assets/glens_1.png\"},image:\"https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY4MTMyMDUzNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080\",caption:\"Two black flat screen computer monitors PC: Fotis Fotopoulos, Unsplash\"};function d(i){let e={a:\"a\",em:\"em\",h3:\"h3\",li:\"li\",ol:\"ol\",p:\"p\",span:\"span\",strong:\"strong\",ul:\"ul\",...i.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h3,{id:\"introduction\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#introduction\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Introduction\"]}),`\n`,(0,n.jsx)(e.p,{children:\"The SOLID design principles is a set of guidelines aimed at helping software developers create robust, maintainable and extensible object-oriented software systems.\"}),`\n`,(0,n.jsxs)(e.h3,{id:\"what-does-solid-stands-for\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#what-does-solid-stands-for\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"What does SOLID stands for?\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"The \",(0,n.jsx)(e.em,{children:\"SOLID\"}),\"\\xA0acronym stands for:\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsx)(e.li,{children:\"S - Single-responsiblity Principle\"}),`\n`,(0,n.jsx)(e.li,{children:\"O - Open closed principle\"}),`\n`,(0,n.jsx)(e.li,{children:\"L - Liskov Substitution Principle\"}),`\n`,(0,n.jsx)(e.li,{children:\"I - Interface Segregation Principle\"}),`\n`,(0,n.jsx)(e.li,{children:\"D - Dependency Inversion Principle\"}),`\n`]}),`\n`,(0,n.jsxs)(e.p,{children:[\"This article presents the summary of these 5 principles originally introduced by \",(0,n.jsx)(e.a,{href:\"http://en.wikipedia.org/wiki/Robert_Cecil_Martin\",target:\"_blank\",rel:\"noopener noreferrer\",children:\"Robert C. Martin \"}),\" in 2000.\"]}),`\n`,(0,n.jsxs)(e.h3,{id:\"summary-of-the-solid-principles\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#summary-of-the-solid-principles\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Summary of the SOLID Principles\"]}),`\n`,(0,n.jsx)(e.p,{children:\"The SOLID principles include:\"}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"Single Responsibility Principle (SRP)\"}),\":\"]}),`\n`,(0,n.jsx)(e.p,{children:\"This principle states that a class, module, or function should have only one reason to change. It should perform a single task. For instance, a class that displays an animal's name should not also handle the display of its sound or feeding habits.\"}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"Open-Closed Principle (OCP)\"}),\":\"]}),`\n`,(0,n.jsx)(e.p,{children:\"According to this principle, classes, modules, and functions should be open for extension but closed for modification. This means that you should be able to add new functionality without altering the existing code.\"}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"Liskov Substitution Principle (LSP)\"}),\":\"]}),`\n`,(0,n.jsx)(e.p,{children:\"This principle asserts that child classes or subclasses must be interchangeable with their parent classes or superclasses. Essentially, a child class should be able to take the place of its parent class.\"}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"Interface Segregation Principle (ISP)\"}),\":\"]}),`\n`,(0,n.jsx)(e.p,{children:\"This principle advises that clients should not be forced to implement interfaces or methods they do not use. It suggests breaking down large interfaces into smaller, more specific ones.\"}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"Dependency Inversion Principle (DIP)\"}),\":\"]}),`\n`,(0,n.jsx)(e.p,{children:\"This principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions. Moreover, abstractions should not depend on details; instead, details should depend on abstractions.\"}),`\n`]}),`\n`]}),`\n`,(0,n.jsx)(e.p,{children:\"These principles can apply to any programming language. Adhering to these principles may result in a larger codebase and can help developers make changes to their code without causing significant issues.\"}),`\n`,(0,n.jsxs)(e.h3,{id:\"references--additional-resources\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#references--additional-resources\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"References & Additional Resources\"]}),`\n`,(0,n.jsxs)(e.ol,{children:[`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsx)(e.p,{children:(0,n.jsx)(e.a,{href:\"https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design\",target:\"_blank\",rel:\"noopener noreferrer\",children:\"SOLID: The First 5 Principles of Object Oriented Design\"})}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.a,{href:\"https://www.freecodecamp.org/news/solid-design-principles-in-software-development/\",target:\"_blank\",rel:\"noopener noreferrer\",children:\"SOLID Design Principles in Software Development\"}),\"\\xA0\"]}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.a,{href:\"https://www.baeldung.com/solid-principles\",target:\"_blank\",rel:\"noopener noreferrer\",children:\"A Solid Guide to SOLID Principles\"}),\"\\xA0\"]}),`\n`]}),`\n`]})]})}function h(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,{...i,children:(0,n.jsx)(d,{...i})}):d(i)}return D(O);})();\n;return Component;"
+  },
+  "_id": "articles/summary-of-5-solid-principles-programming.mdx",
+  "_raw": {
+    "sourceFilePath": "articles/summary-of-5-solid-principles-programming.mdx",
+    "sourceFileName": "summary-of-5-solid-principles-programming.mdx",
+    "sourceFileDir": "articles",
+    "contentType": "mdx",
+    "flattenedPath": "articles/summary-of-5-solid-principles-programming"
+  },
+  "type": "Article",
+  "readingTime": {
+    "text": "2 min read",
+    "minutes": 1.71,
+    "time": 102600,
+    "words": 342
+  },
+  "wordCount": 345,
+  "slug": "summary-of-5-solid-principles-programming",
+  "headings": [
+    {
+      "level": "three",
+      "text": "Introduction",
+      "slug": "introduction"
+    },
+    {
+      "level": "three",
+      "text": "What does SOLID stands for?",
+      "slug": "what-does-solid-stands-for"
+    },
+    {
+      "level": "three",
+      "text": "Summary of the SOLID Principles",
+      "slug": "summary-of-the-solid-principles"
+    },
+    {
+      "level": "three",
+      "text": "References & Additional Resources",
+      "slug": "references--additional-resources"
+    }
+  ]
+}

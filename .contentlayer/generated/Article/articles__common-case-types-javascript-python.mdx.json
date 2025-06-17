@@ -1,0 +1,60 @@
+{
+  "title": "Common Case Types for Programming in Python & JavaScript",
+  "publishedAt": "Nov 29, 2023",
+  "description": "Naming things when working with computers and particularly in programming is inevitable. This article explores the Common Case Types for Programming in Python & JavaScript",
+  "seoDescription": "Common Case Types for Programming in Python & JavaScript",
+  "category": "Coding",
+  "tags": "coding",
+  "caption": "Turned on monitor displaying programming language, PC: Pankaj Patel on Unsplash",
+  "author": {
+    "name": "GlenH",
+    "image": "/assets/glens_1.png",
+    "type": "Author",
+    "_raw": {}
+  },
+  "image": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5MzgxNjk5NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
+  "toc": true,
+  "body": {
+    "raw": "\n### Why learn case types for programming language?\n\nNaming things when working with computers and particularly in programming is inevitable.\n\nIts important to learn the correct specifications of programming languages to avoid applying incorrect naming conventions which may lead to all sorts of weird errors.\n\nTo enable you to easily name things, you must know the case types you want to use so that you can have a consistent naming convention for each of your software project. When learning about or writing software in Python and JavaScript, you will be required to use certain case types.\n\n### Common case types with examples.\n\n-  **Camel case** - PNG example, camelCase (camels back with a mount for each first letter of the next word)\n\nStarts with a lowercase letter and the first letter of every new following word has its first letter capitalized and is connected with the starting word.\n\nAn example of camel case of the variable camel case var is camelCaseVar\n\n- **Snake Case** - PNG example, snake_case (under score to connect the words like the belly of a snake)\n\nA snake_case replaces  all spaces with an underscore character(_) and low casing all the words.\n\nAn example of snake case of the variable snake case var is snake_case_var.\n\n- **Kebab Case** - PNG example, kebab-case (connected like ‘stick’ meat, with a dash)\n\nkebab-case is as simple as replacing all spaces with a \"-\" and lowercasing all the words. It's possible to kebab-case and mix camelCase and PascalCase but that ultimately defeats the purpose.\n\nAn example of kebab case of the variable kebab case var is kebab-case-var.\n\n-  **Pascal Case** - PNG example,  PascalCase ( First letters for each to words compounded together are capitalized)\n\n-  **Upper Case** (with Snake Case) – PNG example,  UPPER_CASE_SNAKE_CASE ( upper case letters with snake case)\n\nReplace all the spaces with an underscore (_) and converting all the letters to uppercase.\n\nAn example of upper case snake case of the variable upper case snake case var is UPPER_CASE_SNAKE_CASE_VAR.\n\n\n### Naming Case types for JavaScript\n\n- Camel case for variables and methods.\n\n- Pascal case for types and classes in JavaScript.\n\n- Upper case snake case for constants.\n\nEach JavaScript framework may further require unique conventions. In React JavaScript framework, Pascal Case is used for naming components and files.\n\n### Naming conventions for Python\n\n- Snake case for method names and instance variables (PEP8).\n\n- Upper case snake case for constants.\n\nThis is an introduction to the most commonly used case types used in programming, and the case types for Python & JavaScript. Hope you learn more to apply the appropriate case types in your favorite programming language.",
+    "code": "var Component=(()=>{var m=Object.create;var i=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var y=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports),w=(a,e)=>{for(var r in e)i(a,r,{get:e[r],enumerable:!0})},o=(a,e,r,t)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let s of g(e))!f.call(a,s)&&s!==r&&i(a,s,{get:()=>e[s],enumerable:!(t=d(e,s))||t.enumerable});return a};var v=(a,e,r)=>(r=a!=null?m(u(a)):{},o(e||!a||!a.__esModule?i(r,\"default\",{value:a,enumerable:!0}):r,a)),b=a=>o(i({},\"__esModule\",{value:!0}),a);var l=y((P,c)=>{c.exports=_jsx_runtime});var x={};w(x,{default:()=>h,frontmatter:()=>k});var n=v(l()),k={title:\"Common Case Types for Programming in Python & JavaScript\",publishedAt:\"Nov 29, 2023\",description:\"Naming things when working with computers and particularly in programming is inevitable. This article explores the Common Case Types for Programming in Python & JavaScript\",seoDescription:\"Common Case Types for Programming in Python & JavaScript\",category:\"Coding\",tags:\"coding\",author:{name:\"GlenH\",image:\"/assets/glens_1.png\"},image:\"https://images.unsplash.com/photo-1518773553398-650c184e0bb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY5MzgxNjk5NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080\",caption:\"Turned on monitor displaying programming language, PC: Pankaj Patel on Unsplash\"};function p(a){let e={a:\"a\",h3:\"h3\",li:\"li\",p:\"p\",span:\"span\",strong:\"strong\",ul:\"ul\",...a.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h3,{id:\"why-learn-case-types-for-programming-language\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#why-learn-case-types-for-programming-language\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Why learn case types for programming language?\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Naming things when working with computers and particularly in programming is inevitable.\"}),`\n`,(0,n.jsx)(e.p,{children:\"Its important to learn the correct specifications of programming languages to avoid applying incorrect naming conventions which may lead to all sorts of weird errors.\"}),`\n`,(0,n.jsx)(e.p,{children:\"To enable you to easily name things, you must know the case types you want to use so that you can have a consistent naming convention for each of your software project. When learning about or writing software in Python and JavaScript, you will be required to use certain case types.\"}),`\n`,(0,n.jsxs)(e.h3,{id:\"common-case-types-with-examples\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#common-case-types-with-examples\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Common case types with examples.\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Camel case\"}),\" - PNG example, camelCase (camels back with a mount for each first letter of the next word)\"]}),`\n`]}),`\n`,(0,n.jsx)(e.p,{children:\"Starts with a lowercase letter and the first letter of every new following word has its first letter capitalized and is connected with the starting word.\"}),`\n`,(0,n.jsx)(e.p,{children:\"An example of camel case of the variable camel case var is camelCaseVar\"}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Snake Case\"}),\" - PNG example, snake_case (under score to connect the words like the belly of a snake)\"]}),`\n`]}),`\n`,(0,n.jsx)(e.p,{children:\"A snake_case replaces\\xA0 all spaces with an underscore character(_) and low casing all the words.\"}),`\n`,(0,n.jsx)(e.p,{children:\"An example of snake case of the variable snake case var is snake_case_var.\"}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Kebab Case\"}),\" - PNG example, kebab-case (connected like \\u2018stick\\u2019 meat, with a dash)\"]}),`\n`]}),`\n`,(0,n.jsx)(e.p,{children:`kebab-case is as simple as replacing all spaces with a \"-\" and lowercasing all the words. It's possible to kebab-case and mix camelCase and PascalCase but that ultimately defeats the purpose.`}),`\n`,(0,n.jsx)(e.p,{children:\"An example of kebab case of the variable kebab case var is kebab-case-var.\"}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"Pascal Case\"}),\" - PNG example, \\xA0PascalCase ( First letters for each to words compounded together are capitalized)\"]}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:\"Upper Case\"}),\" (with Snake Case) \\u2013 PNG example,\\xA0 UPPER_CASE_SNAKE_CASE ( upper case letters with snake case)\"]}),`\n`]}),`\n`]}),`\n`,(0,n.jsx)(e.p,{children:\"Replace all the spaces with an underscore (_) and converting all the letters to uppercase.\"}),`\n`,(0,n.jsx)(e.p,{children:\"An example of upper case snake case of the variable upper case snake case var is UPPER_CASE_SNAKE_CASE_VAR.\"}),`\n`,(0,n.jsxs)(e.h3,{id:\"naming-case-types-for-javascript\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#naming-case-types-for-javascript\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Naming Case types for JavaScript\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsx)(e.p,{children:\"Camel case for variables and methods.\"}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsx)(e.p,{children:\"Pascal case for types and classes in JavaScript.\"}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsx)(e.p,{children:\"Upper case snake case for constants.\"}),`\n`]}),`\n`]}),`\n`,(0,n.jsx)(e.p,{children:\"Each JavaScript framework may further require unique conventions. In React JavaScript framework, Pascal Case is used for naming components and files.\"}),`\n`,(0,n.jsxs)(e.h3,{id:\"naming-conventions-for-python\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#naming-conventions-for-python\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Naming conventions for Python\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsx)(e.p,{children:\"Snake case for method names and instance variables (PEP8).\"}),`\n`]}),`\n`,(0,n.jsxs)(e.li,{children:[`\n`,(0,n.jsx)(e.p,{children:\"Upper case snake case for constants.\"}),`\n`]}),`\n`]}),`\n`,(0,n.jsx)(e.p,{children:\"This is an introduction to the most commonly used case types used in programming, and the case types for Python & JavaScript. Hope you learn more to apply the appropriate case types in your favorite programming language.\"})]})}function h(a={}){let{wrapper:e}=a.components||{};return e?(0,n.jsx)(e,{...a,children:(0,n.jsx)(p,{...a})}):p(a)}return b(x);})();\n;return Component;"
+  },
+  "_id": "articles/common-case-types-javascript-python.mdx",
+  "_raw": {
+    "sourceFilePath": "articles/common-case-types-javascript-python.mdx",
+    "sourceFileName": "common-case-types-javascript-python.mdx",
+    "sourceFileDir": "articles",
+    "contentType": "mdx",
+    "flattenedPath": "articles/common-case-types-javascript-python"
+  },
+  "type": "Article",
+  "readingTime": {
+    "text": "3 min read",
+    "minutes": 2.21,
+    "time": 132600,
+    "words": 442
+  },
+  "wordCount": 443,
+  "slug": "common-case-types-javascript-python",
+  "headings": [
+    {
+      "level": "three",
+      "text": "Why learn case types for programming language?",
+      "slug": "why-learn-case-types-for-programming-language"
+    },
+    {
+      "level": "three",
+      "text": "Common case types with examples.",
+      "slug": "common-case-types-with-examples"
+    },
+    {
+      "level": "three",
+      "text": "Naming Case types for JavaScript",
+      "slug": "naming-case-types-for-javascript"
+    },
+    {
+      "level": "three",
+      "text": "Naming conventions for Python",
+      "slug": "naming-conventions-for-python"
+    }
+  ]
+}

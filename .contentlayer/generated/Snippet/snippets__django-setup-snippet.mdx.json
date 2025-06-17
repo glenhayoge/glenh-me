@@ -1,0 +1,120 @@
+{
+  "title": "Setting Up Django-Useful steps and commands",
+  "updatedAt": "Mar 29, 2023",
+  "description": "Setting Up Django-Useful steps and commands",
+  "category": "Django",
+  "tags": "Django",
+  "body": {
+    "raw": "\nSteps to setting up a Django application. All neatly written for easy copying.\n\n## Installation\n\nUse the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.\n\n```bash\npip install django\n```\n\n\n## Creating Project\n\n```bash\ndjango-admin startproject projectname\n```\n\n## Create a Django App\n\n```bash\npython manage.py startapp appname\n```\n\n## Run Development Server\n\n```bash\npython manage.py runserver\n```\n\n## Create Superuser\n\n```bash\npython manage.py createsuperuser\n```\n\n## Create Migrations\n\n```bash\npython manage.py makemigrations\n```\n\n## Apply Migrations\n\n```bash\npython manage.py migrate\n```\n\n## Django Shell (Interactive Console)\n\n```bash\npython manage.py shell\n```\n\n## Start Django Project with Virtual Environment\n\n```bash\npython3 -m venv venv\n```\n#### On Linux/Mac\n\n```bash\nsource venv/bin/activate\n```\n\n#### On Windows\n\n```bash\nvenv\\Scripts\\activate\n```\n\n## Django Models\n\n```bash\nclass MyModel(models.Model):\n    field_name = models.CharField(max_length=255)\n```\n\n## Django Views\n\n```bash\nfrom django.shortcuts import render\n\ndef my_view(request):\n    return render(request, 'template_name.html')\n```\n\n## Django URLs\n\n```bash\nfrom django.urls import path\n from . import views\n```\n\n```python\nurlpatterns = [\n     path('my-view/', views.my_view, name='my-view'), \n]\n```\n\n## Django Templates\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n    <title>{{ page_title }}</title>\n</head>\n<body>\n    <h1>{{ heading }}</h1>\n</body>\n</html>\n```\n\n## Static Files\n\n```python\nSTATIC_URL = '/static/'\n```\n\n## Django Forms\n\n```python\n class MyForm(forms.Form):\n     my_field = forms.CharField()\n```\n\n## Django Admin\n\n```python\nfrom django.contrib import admin\nfrom .models import MyModel\n\nadmin.site.register(MyModel)\n```",
+    "code": "var Component=(()=>{var m=Object.create;var c=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var N=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var k=(a,n)=>()=>(n||a((n={exports:{}}).exports,n),n.exports),b=(a,n)=>{for(var s in n)c(a,s,{get:n[s],enumerable:!0})},r=(a,n,s,i)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let l of u(n))!g.call(a,l)&&l!==s&&c(a,l,{get:()=>n[l],enumerable:!(i=p(n,l))||i.enumerable});return a};var j=(a,n,s)=>(s=a!=null?m(N(a)):{},r(n||!a||!a.__esModule?c(s,\"default\",{value:a,enumerable:!0}):s,a)),y=a=>r(c({},\"__esModule\",{value:!0}),a);var t=k((D,o)=>{o.exports=_jsx_runtime});var v={};b(v,{default:()=>d,frontmatter:()=>f});var e=j(t()),f={title:\"Setting Up Django-Useful steps and commands\",description:\"Setting Up Django-Useful steps and commands\",category:\"Django\",updatedAt:\"Mar 29, 2023\",tags:\"Django\"};function h(a){let n={a:\"a\",code:\"code\",h2:\"h2\",h4:\"h4\",p:\"p\",pre:\"pre\",span:\"span\",...a.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.p,{children:\"Steps to setting up a Django application. All neatly written for easy copying.\"}),`\n`,(0,e.jsxs)(n.h2,{id:\"installation\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#installation\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Installation\"]}),`\n`,(0,e.jsxs)(n.p,{children:[\"Use the package manager\\xA0\",(0,e.jsx)(n.a,{href:\"https://pip.pypa.io/en/stable/\",target:\"_blank\",rel:\"noopener noreferrer\",children:\"pip\"}),\"\\xA0to install foobar.\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"pip \",(0,e.jsx)(n.span,{className:\"token function\",children:\"install\"}),` django\n`]})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"creating-project\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#creating-project\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Creating Project\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"1\",children:`django-admin startproject projectname\n`})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"create-a-django-app\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#create-a-django-app\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Create a Django App\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"1\",children:`python manage.py startapp appname\n`})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"run-development-server\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#run-development-server\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Run Development Server\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"1\",children:`python manage.py runserver\n`})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"create-superuser\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#create-superuser\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Create Superuser\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"1\",children:`python manage.py createsuperuser\n`})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"create-migrations\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#create-migrations\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Create Migrations\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"1\",children:`python manage.py makemigrations\n`})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"apply-migrations\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#apply-migrations\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Apply Migrations\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"1\",children:`python manage.py migrate\n`})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"django-shell-interactive-console\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#django-shell-interactive-console\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Django Shell (Interactive Console)\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"1\",children:`python manage.py shell\n`})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"start-django-project-with-virtual-environment\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#start-django-project-with-virtual-environment\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Start Django Project with Virtual Environment\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"python3 \",(0,e.jsx)(n.span,{className:\"token parameter variable\",children:\"-m\"}),` venv venv\n`]})})}),`\n`,(0,e.jsxs)(n.h4,{id:\"on-linuxmac\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#on-linuxmac\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"On Linux/Mac\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[(0,e.jsx)(n.span,{className:\"token builtin class-name\",children:\"source\"}),` venv/bin/activate\n`]})})}),`\n`,(0,e.jsxs)(n.h4,{id:\"on-windows\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#on-windows\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"On Windows\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsx)(n.code,{className:\"language-bash code-highlight\",children:(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"venv\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"\\\\\"}),\"Scripts\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"\\\\\"}),`activate\n`]})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"django-models\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#django-models\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Django Models\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsxs)(n.code,{className:\"language-bash code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"class MyModel\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"models.Model\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`:\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"2\",children:[\"    field_name \",(0,e.jsx)(n.span,{className:\"token operator\",children:\"=\"}),\" models.CharField\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"max_length\",(0,e.jsx)(n.span,{className:\"token operator\",children:\"=\"}),(0,e.jsx)(n.span,{className:\"token number\",children:\"255\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]})]})}),`\n`,(0,e.jsxs)(n.h2,{id:\"django-views\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#django-views\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Django Views\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsxs)(n.code,{className:\"language-bash code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"from django.shortcuts \",(0,e.jsx)(n.span,{className:\"token function\",children:\"import\"}),` render\n`]}),(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"2\",children:`\n`}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"3\",children:[\"def my_view\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"request\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`:\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"4\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token builtin class-name\",children:\"return\"}),\" render\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"request, \",(0,e.jsx)(n.span,{className:\"token string\",children:\"'template_name.html'\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]})]})}),`\n`,(0,e.jsxs)(n.h2,{id:\"django-urls\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#django-urls\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Django URLs\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsxs)(n.code,{className:\"language-bash code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"from django.urls \",(0,e.jsx)(n.span,{className:\"token function\",children:\"import\"}),` path\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"2\",children:[\" from \",(0,e.jsx)(n.span,{className:\"token builtin class-name\",children:\".\"}),\" \",(0,e.jsx)(n.span,{className:\"token function\",children:\"import\"}),` views\n`]})]})}),`\n`,(0,e.jsx)(n.pre,{className:\"language-python\",children:(0,e.jsxs)(n.code,{className:\"language-python code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"urlpatterns \",(0,e.jsx)(n.span,{className:\"token operator\",children:\"=\"}),\" \",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"[\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"2\",children:[\"     path\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),(0,e.jsx)(n.span,{className:\"token string\",children:\"'my-view/'\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\",\"}),\" views\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"my_view\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\",\"}),\" name\",(0,e.jsx)(n.span,{className:\"token operator\",children:\"=\"}),(0,e.jsx)(n.span,{className:\"token string\",children:\"'my-view'\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\",\"}),` \n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"3\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"]\"}),`\n`]})]})}),`\n`,(0,e.jsxs)(n.h2,{id:\"django-templates\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#django-templates\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Django Templates\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-html\",children:(0,e.jsxs)(n.code,{className:\"language-html code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[(0,e.jsxs)(n.span,{className:\"token doctype\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"<!\"}),(0,e.jsx)(n.span,{className:\"token doctype-tag\",children:\"DOCTYPE\"}),\" \",(0,e.jsx)(n.span,{className:\"token name\",children:\"html\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"2\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"<\"}),\"html\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"3\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"<\"}),\"head\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"4\",children:[\"    \",(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"<\"}),\"title\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),\"{{ page_title }}\",(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"</\"}),\"title\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"5\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"</\"}),\"head\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"6\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"<\"}),\"body\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"7\",children:[\"    \",(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"<\"}),\"h1\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),\"{{ heading }}\",(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"</\"}),\"h1\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"8\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"</\"}),\"body\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"9\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsxs)(n.span,{className:\"token tag\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"</\"}),\"html\"]}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\">\"})]}),`\n`]})]})}),`\n`,(0,e.jsxs)(n.h2,{id:\"static-files\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#static-files\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Static Files\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-python\",children:(0,e.jsx)(n.code,{className:\"language-python code-highlight\",children:(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\"STATIC_URL \",(0,e.jsx)(n.span,{className:\"token operator\",children:\"=\"}),\" \",(0,e.jsx)(n.span,{className:\"token string\",children:\"'/static/'\"}),`\n`]})})}),`\n`,(0,e.jsxs)(n.h2,{id:\"django-forms\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#django-forms\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Django Forms\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-python\",children:(0,e.jsxs)(n.code,{className:\"language-python code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[\" \",(0,e.jsx)(n.span,{className:\"token keyword\",children:\"class\"}),\" \",(0,e.jsx)(n.span,{className:\"token class-name\",children:\"MyForm\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"forms\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"Form\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\":\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"2\",children:[\"     my_field \",(0,e.jsx)(n.span,{className:\"token operator\",children:\"=\"}),\" forms\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"CharField\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]})]})}),`\n`,(0,e.jsxs)(n.h2,{id:\"django-admin\",children:[(0,e.jsx)(n.a,{className:\"anchor\",href:\"#django-admin\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Django Admin\"]}),`\n`,(0,e.jsx)(n.pre,{className:\"language-python\",children:(0,e.jsxs)(n.code,{className:\"language-python code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"1\",children:[(0,e.jsx)(n.span,{className:\"token keyword\",children:\"from\"}),\" django\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"contrib \",(0,e.jsx)(n.span,{className:\"token keyword\",children:\"import\"}),` admin\n`]}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"2\",children:[(0,e.jsx)(n.span,{className:\"token keyword\",children:\"from\"}),\" \",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"models \",(0,e.jsx)(n.span,{className:\"token keyword\",children:\"import\"}),` MyModel\n`]}),(0,e.jsx)(n.span,{className:\"code-line line-number\",line:\"3\",children:`\n`}),(0,e.jsxs)(n.span,{className:\"code-line line-number\",line:\"4\",children:[\"admin\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"site\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"register\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"MyModel\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]})]})})]})}function d(a={}){let{wrapper:n}=a.components||{};return n?(0,e.jsx)(n,{...a,children:(0,e.jsx)(h,{...a})}):h(a)}return y(v);})();\n;return Component;"
+  },
+  "_id": "snippets/django-setup-snippet.mdx",
+  "_raw": {
+    "sourceFilePath": "snippets/django-setup-snippet.mdx",
+    "sourceFileName": "django-setup-snippet.mdx",
+    "sourceFileDir": "snippets",
+    "contentType": "mdx",
+    "flattenedPath": "snippets/django-setup-snippet"
+  },
+  "type": "Snippet",
+  "readingTime": {
+    "text": "2 min read",
+    "minutes": 1.055,
+    "time": 63300,
+    "words": 211
+  },
+  "wordCount": 214,
+  "slug": "django-setup-snippet",
+  "headings": [
+    {
+      "level": "two",
+      "text": "Installation",
+      "slug": "installation"
+    },
+    {
+      "level": "two",
+      "text": "Creating Project",
+      "slug": "creating-project"
+    },
+    {
+      "level": "two",
+      "text": "Create a Django App",
+      "slug": "create-a-django-app"
+    },
+    {
+      "level": "two",
+      "text": "Run Development Server",
+      "slug": "run-development-server"
+    },
+    {
+      "level": "two",
+      "text": "Create Superuser",
+      "slug": "create-superuser"
+    },
+    {
+      "level": "two",
+      "text": "Create Migrations",
+      "slug": "create-migrations"
+    },
+    {
+      "level": "two",
+      "text": "Apply Migrations",
+      "slug": "apply-migrations"
+    },
+    {
+      "level": "two",
+      "text": "Django Shell (Interactive Console)",
+      "slug": "django-shell-interactive-console"
+    },
+    {
+      "level": "two",
+      "text": "Start Django Project with Virtual Environment",
+      "slug": "start-django-project-with-virtual-environment"
+    },
+    {
+      "level": "three",
+      "text": "On Linux/Mac",
+      "slug": "on-linuxmac"
+    },
+    {
+      "level": "three",
+      "text": "On Windows",
+      "slug": "on-windows"
+    },
+    {
+      "level": "two",
+      "text": "Django Models",
+      "slug": "django-models"
+    },
+    {
+      "level": "two",
+      "text": "Django Views",
+      "slug": "django-views"
+    },
+    {
+      "level": "two",
+      "text": "Django URLs",
+      "slug": "django-urls"
+    },
+    {
+      "level": "two",
+      "text": "Django Templates",
+      "slug": "django-templates"
+    },
+    {
+      "level": "two",
+      "text": "Static Files",
+      "slug": "static-files"
+    },
+    {
+      "level": "two",
+      "text": "Django Forms",
+      "slug": "django-forms"
+    },
+    {
+      "level": "two",
+      "text": "Django Admin",
+      "slug": "django-admin"
+    }
+  ]
+}

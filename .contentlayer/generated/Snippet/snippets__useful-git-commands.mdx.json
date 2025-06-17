@@ -1,0 +1,160 @@
+{
+  "title": "Essential Git & Github Commands",
+  "updatedAt": "Nov 30, 2023",
+  "description": "Essential Git commands for efficient version control.",
+  "category": "Git",
+  "tags": "Git",
+  "body": {
+    "raw": "\n### Configure Git\n\n```bash\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\n```\n### Create a Repository\n```bash\ngit init\n```\n### Clone a Repository\n```bash\ngit clone <repository-url>\n```\n### Add Changes\n\n```bash\ngit add <filename>\ngit add .\n```\n### Commit Changes\n\n```bash\ngit commit -m \"Your commit message\"\n```\n\n### Check Status\n\n```bash\ngit status\n```\n\n### View Commit History\n\n```bash\ngit log\n```\n\n### Create a Branch\n\n```bash\ngit branch <branch-name>\ngit checkout -b <branch-name>\n```\n### Switch Branches\n\n```bash\ngit checkout <branch-name>\n```\n### Merge Branches\n\n```bash\ngit merge <branch-name>\n```\n## Resolve Conflicts\nManually resolve conflicts in files.\n\n```bash\ngit add <filename>\n```\n```bash\ngit commit -m \"Merge conflict resolution\"\n```\n### Undo Changes\n\n```bash\ngit reset HEAD <filename>\ngit checkout -- <filename>\n```\n\n### Remote Repositories\n\n```bash\ngit remote add origin <repository-url>\ngit remote -v\n```\n\n### Push Changes\n\n```bash\ngit push -u origin <branch-name>\n```\n\n### Pull Changes\n\n```bash\ngit pull origin <branch-name>\n```\n\n### Tagging\n\n```bash\ngit tag -a v1.0 -m \"Version 1.0\"\ngit push origin --tags\n```\n# GitHub\n\n## Create a Repository\n\nClick on the '+' sign in the top right corner.\nSelect 'New Repository.'\n\n## Fork a Repository\n\nClick 'Fork' on GitHub.\n\n## Clone a Repository\n\n```bash\ngit clone <forked-repository-url>\n```\n## Pull Requests\n\nCreate a new branch.\n\nMake changes, commit, and push.\nGo to the original repository on GitHub.\nClick 'New Pull Request.'\n## Issues\nGo to the 'Issues' tab on GitHub.\nClick 'New Issue.'\n\n## GitHub Pages\n\nGo to 'Settings.'\nScroll down to 'GitHub Pages' section.\nChoose a branch for GitHub Pages.\n\n## Collaborators\n\nGo to 'Settings.'\nClick 'Collaborators & teams.'\nAdd collaborators by username.\n\n## Actions (CI/CD)\n\nCreate a .github/workflows/workflow.yml file.\nDefine workflow steps.\n\n## GitHub CLI (gh)\n\n```bash\ngh repo create\ngh issue create -t \"New Issue\" -b \"Issue description\"\ngh pr create --base main --head feature-branch --title \"Pull Request\"\n```\n\nSet up scripts for git workflow\n\nCreate a branch from another branch\n\n```bash\ngit checkout -b myFeature dev\n```\n\nCreates the _MyFeature_ branch off _dev_. Do your work and then\n\n```bash\ngit commit -am \"Your message\"\n```\n\nNow merge your changes to _dev_ without a fast-forward\n\n```bash\ngit checkout dev\ngit merge --no-ff myFeature\n```\n\nNow push the changes to the server\n\n```bash\ngit push origin dev\ngit push origin myFeature\n```\n\nAnd you'll see it how you want it.",
+    "code": "var Component=(()=>{var m=Object.create;var l=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var N=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var b=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports),k=(a,e)=>{for(var s in e)l(a,s,{get:e[s],enumerable:!0})},r=(a,e,s,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let c of g(e))!u.call(a,c)&&c!==s&&l(a,c,{get:()=>e[c],enumerable:!(i=p(e,c))||i.enumerable});return a};var f=(a,e,s)=>(s=a!=null?m(N(a)):{},r(e||!a||!a.__esModule?l(s,\"default\",{value:a,enumerable:!0}):s,a)),y=a=>r(l({},\"__esModule\",{value:!0}),a);var h=b((G,o)=>{o.exports=_jsx_runtime});var C={};k(C,{default:()=>d,frontmatter:()=>v});var n=f(h()),v={title:\"Essential Git & Github Commands\",description:\"Essential Git commands for efficient version control.\",category:\"Git\",updatedAt:\"Nov 30, 2023\",tags:\"Git\"};function t(a){let e={a:\"a\",code:\"code\",em:\"em\",h1:\"h1\",h2:\"h2\",h3:\"h3\",p:\"p\",pre:\"pre\",span:\"span\",...a.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h3,{id:\"configure-git\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#configure-git\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Configure Git\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" config \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"--global\"}),\" user.name \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"Your Name\"'}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" config \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"--global\"}),\" user.email \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"your.email@example.com\"'}),`\n`]})]})}),`\n`,(0,n.jsxs)(e.h3,{id:\"create-a-repository\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#create-a-repository\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Create a Repository\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),` init\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"clone-a-repository\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#clone-a-repository\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Clone a Repository\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" clone \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"repository-url\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"add-changes\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#add-changes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Add Changes\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" \",(0,n.jsx)(e.span,{className:\"token function\",children:\"add\"}),\" \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"filename\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" \",(0,n.jsx)(e.span,{className:\"token function\",children:\"add\"}),\" \",(0,n.jsx)(e.span,{className:\"token builtin class-name\",children:\".\"}),`\n`]})]})}),`\n`,(0,n.jsxs)(e.h3,{id:\"commit-changes\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#commit-changes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Commit Changes\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" commit \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-m\"}),\" \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"Your commit message\"'}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"check-status\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#check-status\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Check Status\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),` status\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"view-commit-history\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#view-commit-history\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"View Commit History\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),` log\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"create-a-branch\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#create-a-branch\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Create a Branch\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" branch \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"branch-name\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" checkout \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-b\"}),\" \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"branch-name\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})]})}),`\n`,(0,n.jsxs)(e.h3,{id:\"switch-branches\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#switch-branches\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Switch Branches\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" checkout \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"branch-name\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"merge-branches\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#merge-branches\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Merge Branches\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" merge \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"branch-name\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"resolve-conflicts\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#resolve-conflicts\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Resolve Conflicts\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Manually resolve conflicts in files.\"}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" \",(0,n.jsx)(e.span,{className:\"token function\",children:\"add\"}),\" \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"filename\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})})}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" commit \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-m\"}),\" \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"Merge conflict resolution\"'}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"undo-changes\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#undo-changes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Undo Changes\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" reset HEAD \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"filename\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" checkout -- \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"filename\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})]})}),`\n`,(0,n.jsxs)(e.h3,{id:\"remote-repositories\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#remote-repositories\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Remote Repositories\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" remote \",(0,n.jsx)(e.span,{className:\"token function\",children:\"add\"}),\" origin \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"repository-url\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" remote \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-v\"}),`\n`]})]})}),`\n`,(0,n.jsxs)(e.h3,{id:\"push-changes\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#push-changes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Push Changes\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" push \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-u\"}),\" origin \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"branch-name\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"pull-changes\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#pull-changes\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Pull Changes\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" pull origin \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"branch-name\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h3,{id:\"tagging\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#tagging\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Tagging\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" tag \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-a\"}),\" v1.0 \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-m\"}),\" \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"Version 1.0\"'}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" push origin \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"--tags\"}),`\n`]})]})}),`\n`,(0,n.jsxs)(e.h1,{id:\"github\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#github\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"GitHub\"]}),`\n`,(0,n.jsxs)(e.h2,{id:\"create-a-repository-1\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#create-a-repository-1\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Create a Repository\"]}),`\n`,(0,n.jsx)(e.p,{children:`Click on the '+' sign in the top right corner.\nSelect 'New Repository.'`}),`\n`,(0,n.jsxs)(e.h2,{id:\"fork-a-repository\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#fork-a-repository\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Fork a Repository\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Click 'Fork' on GitHub.\"}),`\n`,(0,n.jsxs)(e.h2,{id:\"clone-a-repository-1\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#clone-a-repository-1\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Clone a Repository\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" clone \",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"forked-repository-url\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),`\n`]})})}),`\n`,(0,n.jsxs)(e.h2,{id:\"pull-requests\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#pull-requests\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Pull Requests\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Create a new branch.\"}),`\n`,(0,n.jsx)(e.p,{children:`Make changes, commit, and push.\nGo to the original repository on GitHub.\nClick 'New Pull Request.'`}),`\n`,(0,n.jsxs)(e.h2,{id:\"issues\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#issues\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Issues\"]}),`\n`,(0,n.jsx)(e.p,{children:`Go to the 'Issues' tab on GitHub.\nClick 'New Issue.'`}),`\n`,(0,n.jsxs)(e.h2,{id:\"github-pages\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#github-pages\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"GitHub Pages\"]}),`\n`,(0,n.jsx)(e.p,{children:`Go to 'Settings.'\nScroll down to 'GitHub Pages' section.\nChoose a branch for GitHub Pages.`}),`\n`,(0,n.jsxs)(e.h2,{id:\"collaborators\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#collaborators\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Collaborators\"]}),`\n`,(0,n.jsx)(e.p,{children:`Go to 'Settings.'\nClick 'Collaborators & teams.'\nAdd collaborators by username.`}),`\n`,(0,n.jsxs)(e.h2,{id:\"actions-cicd\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#actions-cicd\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Actions (CI/CD)\"]}),`\n`,(0,n.jsx)(e.p,{children:`Create a .github/workflows/workflow.yml file.\nDefine workflow steps.`}),`\n`,(0,n.jsxs)(e.h2,{id:\"github-cli-gh\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#github-cli-gh\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"GitHub CLI (gh)\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsx)(e.span,{className:\"code-line line-number\",line:\"1\",children:`gh repo create\n`}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[\"gh issue create \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-t\"}),\" \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"New Issue\"'}),\" \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-b\"}),\" \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"Issue description\"'}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"3\",children:[\"gh \",(0,n.jsx)(e.span,{className:\"token function\",children:\"pr\"}),\" create \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"--base\"}),\" main \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"--head\"}),\" feature-branch \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"--title\"}),\" \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"Pull Request\"'}),`\n`]})]})}),`\n`,(0,n.jsx)(e.p,{children:\"Set up scripts for git workflow\"}),`\n`,(0,n.jsx)(e.p,{children:\"Create a branch from another branch\"}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" checkout \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-b\"}),` myFeature dev\n`]})})}),`\n`,(0,n.jsxs)(e.p,{children:[\"Creates the\\xA0\",(0,n.jsx)(e.em,{children:\"MyFeature\"}),\"\\xA0branch off\\xA0\",(0,n.jsx)(e.em,{children:\"dev\"}),\". Do your work and then\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsx)(e.code,{className:\"language-bash code-highlight\",children:(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),\" commit \",(0,n.jsx)(e.span,{className:\"token parameter variable\",children:\"-am\"}),\" \",(0,n.jsx)(e.span,{className:\"token string\",children:'\"Your message\"'}),`\n`]})})}),`\n`,(0,n.jsxs)(e.p,{children:[\"Now merge your changes to\\xA0\",(0,n.jsx)(e.em,{children:\"dev\"}),\"\\xA0without a fast-forward\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),` checkout dev\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),` merge --no-ff myFeature\n`]})]})}),`\n`,(0,n.jsx)(e.p,{children:\"Now push the changes to the server\"}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"language-bash code-highlight\",children:[(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"1\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),` push origin dev\n`]}),(0,n.jsxs)(e.span,{className:\"code-line line-number\",line:\"2\",children:[(0,n.jsx)(e.span,{className:\"token function\",children:\"git\"}),` push origin myFeature\n`]})]})}),`\n`,(0,n.jsx)(e.p,{children:\"And you'll see it how you want it.\"})]})}function d(a={}){let{wrapper:e}=a.components||{};return e?(0,n.jsx)(e,{...a,children:(0,n.jsx)(t,{...a})}):t(a)}return y(C);})();\n;return Component;"
+  },
+  "_id": "snippets/useful-git-commands.mdx",
+  "_raw": {
+    "sourceFilePath": "snippets/useful-git-commands.mdx",
+    "sourceFileName": "useful-git-commands.mdx",
+    "sourceFileDir": "snippets",
+    "contentType": "mdx",
+    "flattenedPath": "snippets/useful-git-commands"
+  },
+  "type": "Snippet",
+  "readingTime": {
+    "text": "2 min read",
+    "minutes": 1.975,
+    "time": 118500,
+    "words": 395
+  },
+  "wordCount": 401,
+  "slug": "useful-git-commands",
+  "headings": [
+    {
+      "level": "three",
+      "text": "Configure Git",
+      "slug": "configure-git"
+    },
+    {
+      "level": "three",
+      "text": "Create a Repository",
+      "slug": "create-a-repository"
+    },
+    {
+      "level": "three",
+      "text": "Clone a Repository",
+      "slug": "clone-a-repository"
+    },
+    {
+      "level": "three",
+      "text": "Add Changes",
+      "slug": "add-changes"
+    },
+    {
+      "level": "three",
+      "text": "Commit Changes",
+      "slug": "commit-changes"
+    },
+    {
+      "level": "three",
+      "text": "Check Status",
+      "slug": "check-status"
+    },
+    {
+      "level": "three",
+      "text": "View Commit History",
+      "slug": "view-commit-history"
+    },
+    {
+      "level": "three",
+      "text": "Create a Branch",
+      "slug": "create-a-branch"
+    },
+    {
+      "level": "three",
+      "text": "Switch Branches",
+      "slug": "switch-branches"
+    },
+    {
+      "level": "three",
+      "text": "Merge Branches",
+      "slug": "merge-branches"
+    },
+    {
+      "level": "two",
+      "text": "Resolve Conflicts",
+      "slug": "resolve-conflicts"
+    },
+    {
+      "level": "three",
+      "text": "Undo Changes",
+      "slug": "undo-changes"
+    },
+    {
+      "level": "three",
+      "text": "Remote Repositories",
+      "slug": "remote-repositories"
+    },
+    {
+      "level": "three",
+      "text": "Push Changes",
+      "slug": "push-changes"
+    },
+    {
+      "level": "three",
+      "text": "Pull Changes",
+      "slug": "pull-changes"
+    },
+    {
+      "level": "three",
+      "text": "Tagging",
+      "slug": "tagging"
+    },
+    {
+      "level": "one",
+      "text": "GitHub",
+      "slug": "github"
+    },
+    {
+      "level": "two",
+      "text": "Create a Repository",
+      "slug": "create-a-repository-1"
+    },
+    {
+      "level": "two",
+      "text": "Fork a Repository",
+      "slug": "fork-a-repository"
+    },
+    {
+      "level": "two",
+      "text": "Clone a Repository",
+      "slug": "clone-a-repository-1"
+    },
+    {
+      "level": "two",
+      "text": "Pull Requests",
+      "slug": "pull-requests"
+    },
+    {
+      "level": "two",
+      "text": "Issues",
+      "slug": "issues"
+    },
+    {
+      "level": "two",
+      "text": "GitHub Pages",
+      "slug": "github-pages"
+    },
+    {
+      "level": "two",
+      "text": "Collaborators",
+      "slug": "collaborators"
+    },
+    {
+      "level": "two",
+      "text": "Actions (CI/CD)",
+      "slug": "actions-cicd"
+    },
+    {
+      "level": "two",
+      "text": "GitHub CLI (gh)",
+      "slug": "github-cli-gh"
+    }
+  ]
+}
