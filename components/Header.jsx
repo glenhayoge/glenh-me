@@ -27,7 +27,7 @@ export default function Header() {
           src={tribalPattern}
           alt="Abstract tribal pattern background"
           style={{ objectPosition: "center" }}
-          className="opacity-5 z-1 absolute top-0 left-0 w-full h-[520px] object-cover bg-linear-to-t from-sky-500 to-indigo-500"
+          className="opacity-5 z-1 absolute top-0 left-0 w-full h-[520px] object-cover border border-b border-gray-700 dark:border-gray-800"
         />
       </div>
     <section className="pb-8 pt-24 ">
@@ -36,7 +36,7 @@ export default function Header() {
             <div className="w-full lg:w-8/12 lg:pl-20 md:px-8">
               <div className="md:px-2 px-4 overflow-hidden">
             <div className="space-y-8">
-            <div className="space-y-6">
+            <div className="space-y-6 text-center">
               <h1 className="text-4xl px-4 sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                 <span className="text-yellow-500">•</span>developer
                 <br />
@@ -73,7 +73,7 @@ export default function Header() {
                 Know About Me
               </Link>
             </div>
-            <div className="flex px-4 space-x-6 pt-8 mb-6 z-100 relative items-center">
+            <div className="flex px-4 space-x-6 pt-8 mb-6 z-100 relative items-center mx-auto justify-center">
               <Link
                 href="https://github.com/glenhayoge" target="_blank"
                  className="text-gray-100 hover bg-gray-500 p-2 rounded-full"

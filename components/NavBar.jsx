@@ -72,8 +72,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className="flex filter py-4 h-16 items-center navbar px-4"
+      className="flex h-16 navbar mx-auto  justify-between items-center px-36 border-gray-100 border-b dark:border-gray-800"
     >
+       {/* <div className="container mx-auto px-4">
+       <div className="flex justify-between items-center py-4"> */}
       {" "}
       <Mobilenav open={open} setOpen={setOpen} />
       
@@ -115,6 +117,8 @@ export default function Navbar() {
           <span className="ml-4">{renderThemeChanger()} </span>
         </div>
       </div>
+      {/* </div>
+      </div> */}
     </nav>
   );
 }

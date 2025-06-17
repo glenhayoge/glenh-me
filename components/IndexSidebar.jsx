@@ -18,13 +18,13 @@ const ISideBar = () => {
       <div className=" relative shadow text-center overflow-auto shadow-md">
         <div className="relative pt-10 pb-16  shadoww overflow-hidden">
           <Image
-            className="absolute bg-gray-800 bg-blend-color top-2 opacity-50 lg:top-0 lg:left-0 w-full h-16 object-cover"
+            className="absolute bg-gray-800 bg-blend-color top-2 opacity-50 lg:top-0 lg:left-0 w-full h-[84px] object-cover"
             src={imageUrl}
             width={500}
-            height={100}
+            height={200}
             alt="tribal-pattern"
           />
-          <div className="px-4 py-6">
+          <div className="px-4 py-12">
             <div className="flex mb-6 mt-4">
               <p className="text-sm text-primary tracking-wide">
                 Hi, my name is Glen. I am a software developer, designer &amp;
