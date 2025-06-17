@@ -8,9 +8,9 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
-    "module": "nodeNext",
+    "module": "commonjs",
     "esModuleInterop": true,
-    "moduleResolution": "nodeNext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -25,6 +25,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.json",
 
     // 🔧 Ensure Contentlayer's generated types are included
     ".contentlayer/generated"

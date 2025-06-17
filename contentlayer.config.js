@@ -116,5 +116,11 @@ export default makeSource({
   },
   onSuccess: async (importedData) => {
     return importedData;
+  },
+  generateTypes: true,
+  generateTypesOptions: {
+    moduleResolution: 'node',
+    target: 'es2017',
+    module: 'commonjs'
   }
 })

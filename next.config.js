@@ -20,6 +20,22 @@ const nextConfig = {
       }
     });
 
+    // Add this to handle .mjs files
+    config.module.rules.push({
+      test: /\.mjs$/,
+      include: /node_modules/,
+      type: 'javascript/auto',
+    });
+
+    // Add this to handle contentlayer generated files
+    config.module.rules.push({
+      test: /\.contentlayer\/generated\/.*\.mjs$/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false
+      }
+    });
+
     return config;
   },
   images: {
