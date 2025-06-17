@@ -3,8 +3,8 @@
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "20.11.1"
-  NODE_OPTIONS = "--no-deprecation --experimental-json-modules"
+  NODE_VERSION = "18.18.2"
+  NODE_OPTIONS = "--no-deprecation"
   NEXT_DISABLE_ESLINT = "true"
   NEXT_DISABLE_TYPECHECK = "true"
 

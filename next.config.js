@@ -10,14 +10,16 @@ const nextConfig = {
   experimental: {
     typedRoutes: false,
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
+    // Handle JSON imports
     config.module.rules.push({
       test: /\.json$/,
-      type: 'json',
-      parser: {
-        parse: JSON.parse
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false
       }
     });
+
     return config;
   },
   images: {
