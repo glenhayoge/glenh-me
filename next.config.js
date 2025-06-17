@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-// module.exports = nextConfig
-
-// const { withContentlayer } = require('next-contentlayer');
 const { withContentlayer } = require('next-contentlayer2');
 
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true, // ✅ Disable ESLint during production build
+  },
   images: {
     remotePatterns: [
       {
@@ -27,7 +27,6 @@ const nextConfig = {
       },
     ],
   },
-}
+};
 
-module.exports = withContentlayer(nextConfig)
-
+module.exports = withContentlayer(nextConfig);

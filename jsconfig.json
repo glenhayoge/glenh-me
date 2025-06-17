@@ -2,8 +2,8 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": false,
-    "skipLibCheck": true, // ✅ Skips type checking for .d.ts files in node_modules
-    "noEmit": true,       // ✅ Prevents outputting .js files from .ts or .js
+    "skipLibCheck": true, // Important!
+    "noEmit": true,
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
