@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 export default function ILearningResources() {
     return (
-        <div className="container px-6  mx-auto  mb-12 mt-16 rounded-lg">
+      <div className='px-2 my-16 '>
+        <div className="container px-6 rounded-lg">
         <div className=" mb-8  ">
           <p className="text-3xl font-bold tracking-tight sm:text-4xl ">
             Learning Resources
@@ -114,6 +115,7 @@ export default function ILearningResources() {
             </Link>
           </div>
         </div>
+      </div>
       </div>
         
     )

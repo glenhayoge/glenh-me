@@ -32,7 +32,7 @@ export default function Home({ articles }) {
           <div className="flex flex-wrap items-stretch -m-8">
             <div className="w-full lg:w-8/12 lg:pl-20 md:px-8">
               <div className="md:px-2 px-4 overflow-hidden">
-                <div className="pt-1 pb-1 ">
+                <div className="pt-16 pb-1 ">
                   <div className="flex mb-4 justify-between items-center">
                     <div className="px-3">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -82,7 +82,7 @@ export default function Home({ articles }) {
              <ILearningResources />
             </div>
             {/* index side bar */}
-            <div className="w-full lg:w-4/12 lg:pr-20 md:px-4 ">
+            <div className="w-full lg:w-4/12 lg:pr-20 md:px-4 px-4">
             <ISideBar /> 
             </div>
           </div>

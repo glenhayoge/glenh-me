@@ -72,7 +72,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className="flex filter py-4 h-16 items-center navbar"
+      className="flex filter py-4 h-16 items-center navbar px-4"
       // style={{
       //   background: `${backgroundTransparacy}`,
       //   boxShadow: `${boxShadow} 0px 0px 20px 0px`,
