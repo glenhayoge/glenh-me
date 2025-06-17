@@ -73,7 +73,7 @@ export default function Header() {
                 Know About Me
               </Link>
             </div>
-            <div className="flex px-4 space-x-6 pt-8 mb-6 z-100 relative items-center mx-auto justify-center">
+            <div className="flex px-4 space-x-6 pt-8 mb-6 z-100 relative items-center mx-auto md:justify-none">
               <Link
                 href="https://github.com/glenhayoge" target="_blank"
                  className="text-gray-100 hover bg-gray-500 p-2 rounded-full"
