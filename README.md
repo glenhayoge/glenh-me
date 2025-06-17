@@ -26,6 +26,13 @@ Link to the Live Website --> [glensea.com](https://glensea.com)
 - [ ] Count Work Samples
 - [ ] Paginate Work Samples
 
+## Deprecation Notes
+
+-   Contentlayer is effectively unmaintained. The project cannot be used with next.js 14+ due to dependency conflicts so I have currently switched over to using next-contentlayer2 (a fork of contentLayer) instead.
+-   I'm currently using next-themes instead of tailwind-merge.
+-   I'm currently using rehype-prism-plus instead of rehype-prism.
+-   I have updated the code to use NextJS from 13.2.0 to 15.3.3.
+
 ## Disclaimer:
 
 The code used for this site was not designed to be used as a template or theme. It was created solely for personal use. While you may find inspiration from it, please note that it was not intended to be copied or replicated. As such, I cannot offer any support or guidance for such purposes.
