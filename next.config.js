@@ -5,7 +5,7 @@ const { withContentlayer } = require('next-contentlayer2');
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
-    ignoreDuringBuilds: true, // ✅ Disable ESLint during production build
+    ignoreDuringBuilds: true, 
   },
   images: {
     remotePatterns: [
