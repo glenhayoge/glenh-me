@@ -3,7 +3,7 @@
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "23.6.1"
   NODE_OPTIONS = "--no-deprecation"
   NEXT_DISABLE_ESLINT = "true"
   NEXT_DISABLE_TYPECHECK = "true"

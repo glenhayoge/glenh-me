@@ -108,5 +108,6 @@ export default makeSource({
   mdx: mdxOptions,
   exclude: ["**/*.json", "siteMapdata.json"],
   disableImportAliasWarning: true,
-  fileExtensions: ['mdx', 'md']
+  fileExtensions: ['mdx', 'md'],
+  esm: false,
 })
