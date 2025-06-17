@@ -1,15 +1,23 @@
 {
-    "compilerOptions": {
-      "types": [
-    
-        "node"
-      ],
-      "baseUrl": ".",
-      "paths": {
-        "contentlayer2/generated": [".contentlayer2/generated"]
-        // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      }
-    },
-    "include": [".contentlayer2/generated"]
-    //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  }
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true, // ✅ Skips type checking for .d.ts files in node_modules
+    "noEmit": true,       // ✅ Prevents outputting .js files from .ts or .js
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "contentlayer2/generated": [".contentlayer2/generated"]
+    }
+  },
+  "include": [
+    ".contentlayer2/generated",
+    "**/*.js",
+    "**/*.jsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
