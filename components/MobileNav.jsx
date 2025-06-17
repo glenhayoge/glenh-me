@@ -4,11 +4,11 @@ import Link from 'next/link'
 export default function MobileNav({ open, setOpen }) {
     return (
       <div
-        className={`absolute top-0 left-0 h-screen w-screen bg-white dark:bg-black transform ${
+        className={`absolute top-0 left-0 h-screen w-screen bg-background text-foreground transform ${
           open ? '-translate-x-0' : '-translate-x-full'
-        } transition-transform duration-300 ease-in-out filter  `}
+        } transition-transform duration-300 ease-in-out filter`}
       >
-         <div className="w-3/12 flex items-left flex -mt-12 mb-16 pl-12  justify-left bg-white dark:bg-black h-20">
+         <div className="w-3/12 flex items-left flex -mt-12 mb-16 pl-12  justify-left h-20">
           <Logo />
         </div>
         <div className="flex flex-col ml-4 pl-8">
@@ -64,7 +64,7 @@ export default function MobileNav({ open, setOpen }) {
         <div className="flex justify-left mt-10 space-x-6 pl-8">
         <Link 
             href="https://github.com/glenhayoge"
-            className="text-gray-400 hover:text-gray-500"
+            className=""
           >
             <span className="sr-only">GitHub</span>
             <svg
@@ -78,7 +78,7 @@ export default function MobileNav({ open, setOpen }) {
            </Link>
           <Link 
             href="https://www.linkedin.com/in/glen-g-hayoge-089935104/"
-            className="text-gray-400 hover:text-gray-500"
+            className=""
           >
             <span className="sr-only">LinkedIn</span>
             <svg
@@ -92,7 +92,7 @@ export default function MobileNav({ open, setOpen }) {
            </Link>
             <Link 
             href="https://stackoverflow.com/users/12071488/glenh"
-            className="text-gray-400 hover:text-gray-500"
+            className=""
           >
             <span className="sr-only">StackOverFlow</span>
             <svg
@@ -105,7 +105,7 @@ export default function MobileNav({ open, setOpen }) {
               <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z" />
             </svg>
            </Link>
-            <Link  href="#" className="text-gray-400 hover:text-gray-500">
+            <Link  href="#" className="">
             <span className="sr-only">Twitter</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
