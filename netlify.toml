@@ -9,4 +9,4 @@
 [[plugins]]
 package = "@netlify/plugin-nextjs"
   [plugins.inputs]
-  skip = true
+  skip = "true"
