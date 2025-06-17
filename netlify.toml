@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build:content && npm run build"
+  command = "npm run build"
   publish = "out"
 
 [build.environment]
@@ -7,7 +7,25 @@
   NODE_OPTIONS = "--no-deprecation"
   NEXT_DISABLE_ESLINT = "true"
   NEXT_DISABLE_TYPECHECK = "true"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
 

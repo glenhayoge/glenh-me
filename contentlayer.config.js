@@ -110,6 +110,10 @@ export default makeSource({
   disableImportAliasWarning: true,
   fileExtensions: ['mdx', 'md'],
   esm: false,
+  moduleResolution: 'node',
+  experimental: {
+    importJson: false
+  },
   onSuccess: async (importedData) => {
     return importedData;
   }
