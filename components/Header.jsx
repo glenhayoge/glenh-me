@@ -44,9 +44,9 @@ export default function Header() {
               </h1>
 
               <div className="space-y-4 text-muted-foreground">
-              <p className="mt-3 px-4 text-base sm:mx-auto sm:mt-5  sm:text-lg md:mt-5 md:text-xl">
+              <p className="mt-3 px-4 text-accent font-bold sm:mx-auto sm:mt-5 sm:text-lg md:mt-5 md:text-xl">
               Bringing ideas to life through code and creativity. Passionate
-              about building beautiful, functional, and user-friendly digital
+              about building beautiful, functional and user-friendly digital
               experiences.
             </p>
               </div>
@@ -73,10 +73,10 @@ export default function Header() {
                 Know About Me
               </Link>
             </div>
-            <div className="flex px-4 space-x-6 pt-8 mb-6 z-100 relative">
+            <div className="flex px-4 space-x-6 pt-8 mb-6 z-100 relative items-center">
               <Link
                 href="https://github.com/glenhayoge" target="_blank"
-                className="text-gray-400 hover"
+                 className="text-gray-100 hover bg-gray-500 p-2 rounded-full"
               >
                 <span className="sr-only">GitHub</span>
                 <svg
@@ -90,7 +90,7 @@ export default function Header() {
               </Link>
               <Link
                 href="https://www.linkedin.com/in/glen-g-hayoge-089935104/" target="_blank"
-                className="text-gray-400 hover"
+                className="text-gray-100 hover bg-gray-500 p-2 rounded-full"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg
@@ -104,7 +104,7 @@ export default function Header() {
               </Link>
               <Link
                 href="https://stackoverflow.com/users/12071488/glenh" target="_blank"
-                className="text-gray-400 hover"
+                 className="text-gray-100 hover bg-gray-500 p-2 rounded-full"
               >
                 <span className="sr-only">StackOverFlow</span>
                 <svg
@@ -117,7 +117,8 @@ export default function Header() {
                   <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z" />
                 </svg>
               </Link>
-              <Link href="https://twitter.com/ghayoge" target="_blank" className="text-gray-400 hover">
+              <Link href="https://twitter.com/ghayoge" target="_blank"  className="text-gray-100 hover bg-gray-500 p-2 rounded-full"
+              >
                 <span className="sr-only">Twitter</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +130,7 @@ export default function Header() {
                 </svg>
               </Link>
 
-              <Link href="#" className="text-gray-400 hover">
+              <Link href="#"  className="text-gray-100 hover bg-gray-500 p-2 rounded-full">
                 <span className="sr-only">RSS</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

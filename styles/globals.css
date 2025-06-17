@@ -75,19 +75,74 @@
     --sidebar-ring: oklch(0.551 0.027 264.364);
   }
 
+  * {
+    @apply border-border;
+  }
+
   body {
     @apply min-h-screen bg-background text-foreground;
   }
 
   ::selection {
-    @apply text-white bg-indigo-500;
+    @apply bg-primary;
   }
+}
 
-  * {
-    @apply border-border;
+@layer components {
+  .btn {
+    @apply inline-block px-5 py-3 rounded-lg hover:bg-primary/90 transition duration-300 shadow-lg bg-primary text-primary-foreground capitalize tracking-wider font-semibold text-sm sm:text-xl focus:outline-none focus:ring-4 focus:ring-primary/50 whitespace-nowrap;
   }
+}
 
-  .btn{
-    @apply inline-block px-5 py-3 rounded-lg hover:bg-indigo-600 transition duration-300 shadow-lg bg-indigo-500 text-white capitalize tracking-wider font-semibold text-sm sm:text-xl focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 whitespace-nowrap
+.navbar {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    500px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--color) / 0.35),
+    transparent 40%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  z-index: 2;
+}
+#cards:hover > .card::before {
+  opacity: 1;
+}
+
+.gradient-text {
+  --_color-1-from: yellow;
+  --_color-1-to:   red;
+  
+  --_color-2-from: purple;
+  --_color-2-to:   indigo;
+  
+  @media (prefers-color-scheme: dark) {
+    --_color-1-from: lime;
+    --_color-1-to:   cyan;
+
+    --_color-2-from: cyan;
+    --_color-2-to:   deeppink;
   }
+}
+.signature{
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 40px;
+  text-align: center;
+}
+.subtitle{
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 30px;
+  text-align: center;
 }

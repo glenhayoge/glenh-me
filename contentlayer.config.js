@@ -1,9 +1,9 @@
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
-import readingTime from 'reading-time';
-import mdxOptions from './config/md';
+import readingTime from 'reading-time'
+import mdxOptions from './config/md.mjs'
 import GithubSlugger from 'github-slugger'
 // import rehypePrettyCode from 'rehype-pretty-code';
-import rehypePrismPlus from 'rehype-prism-plus';
+import rehypePrismPlus from 'rehype-prism-plus'
 
 const Author = defineNestedType(() => ({
   name: 'Author',
@@ -11,7 +11,8 @@ const Author = defineNestedType(() => ({
     name: { type: 'string', required: true },
     image: { type: 'string', required: true },
   },
-}));
+}))
+
 const computedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
   wordCount: {
@@ -43,7 +44,7 @@ const computedFields = {
         return headings;
     },
   },
-};
+}
 
 const Article = defineDocumentType(() => ({
   name: 'Article',
@@ -69,7 +70,7 @@ const Article = defineDocumentType(() => ({
     },
   },
   computedFields,
-}));
+}))
 
 const Snippet = defineDocumentType(() => ({
   name: 'Snippet',
@@ -83,7 +84,7 @@ const Snippet = defineDocumentType(() => ({
     tags: { type: 'string', required: true },
   },
   computedFields,
-}));
+}))
 
 const Books = defineDocumentType(() => ({
   name: 'Book',
@@ -98,14 +99,10 @@ const Books = defineDocumentType(() => ({
     author: { type: 'string', required: true }
   },
   computedFields,
-}));
+}))
 
-  const contentLayerConfig = makeSource({
-    contentDirPath: 'data',
-    documentTypes: [Article,Books,Snippet],
-    mdx: mdxOptions
-    
-  });
-
-
-export default contentLayerConfig;
+export default makeSource({
+  contentDirPath: 'data',
+  documentTypes: [Article, Books, Snippet],
+  mdx: mdxOptions
+})
