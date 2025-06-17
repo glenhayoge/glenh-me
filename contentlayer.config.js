@@ -109,5 +109,10 @@ export default makeSource({
   exclude: ["**/*.json", "siteMapdata.json"],
   disableImportAliasWarning: true,
   fileExtensions: ['mdx', 'md'],
-  esm: false,
+  experimental: {
+    importJson: true,
+    importJsonOptions: {
+      type: 'json'
+    }
+  }
 })

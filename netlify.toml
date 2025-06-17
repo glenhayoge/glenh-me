@@ -4,7 +4,10 @@
 
 [build.environment]
   NODE_VERSION = "20.11.1"
-  NODE_OPTIONS = "--no-deprecation"
+  NODE_OPTIONS = "--no-deprecation --experimental-json-modules"
   NEXT_DISABLE_ESLINT = "true"
   NEXT_DISABLE_TYPECHECK = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 

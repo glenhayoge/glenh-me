@@ -14,6 +14,9 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.json$/,
       type: 'json',
+      parser: {
+        parse: JSON.parse
+      }
     });
     return config;
   },
