@@ -19,19 +19,15 @@ export const SingleArticle = ({
   slug, // Add the slug of the current article
 }) => {
   const [relatedArticles, setRelatedArticles] = useState([]); // Initialize state for related articles
-  useEffect(() => {
-    // Fetch related articles when the component mounts
-    async function fetchRelatedArticles() {
-      try {
-        const articles = await getRelatedArticles(category, tags, slug);
-        setRelatedArticles(articles); // Update state with related articles
-      } catch (error) {
-        console.error('Error fetching related articles:', error);
-      }
-    }
 
-    fetchRelatedArticles(); // Call the function to fetch related articles
-  }, [category, tags, slug]); // Call the effect whenever category, tags, or slug change
+  useEffect(() => {
+    try {
+      const articles = getRelatedArticles(category, tags, slug);
+      setRelatedArticles(articles);
+    } catch (error) {
+      console.error('Error fetching related articles:', error);
+    }
+  }, [category, tags, slug]);
 
   return (
     <>
@@ -90,7 +86,7 @@ export const SingleArticle = ({
         <ul>
           {relatedArticles.map((relatedArticle) => (
             <li key={relatedArticle.slug}>
-              <Link href={`/articles/${relatedArticle.slug}`}>
+              <Link href={`/article/${relatedArticle.slug}`}>
                 {relatedArticle.title}
               </Link>
             </li>

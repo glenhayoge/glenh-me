@@ -2,16 +2,13 @@
 
 import { allArticles } from 'contentlayer/generated';
 
-export async function getRelatedArticles(category, tags, currentArticleSlug) {
+export function getRelatedArticles(category, tags, currentArticleSlug) {
   let relatedArticles = [];
-
-  // Query all articles
-  const allArticlesData = await allArticles();
 
   // Filter articles by category
   if (category) {
     relatedArticles = relatedArticles.concat(
-      allArticlesData.filter(article => article.category === category)
+      allArticles.filter(article => article.category === category)
     );
   }
 
@@ -19,7 +16,7 @@ export async function getRelatedArticles(category, tags, currentArticleSlug) {
   if (tags && tags.length > 0) {
     for (const tag of tags) {
       relatedArticles = relatedArticles.concat(
-        allArticlesData.filter(article => article.tags.includes(tag))
+        allArticles.filter(article => article.tags.includes(tag))
       );
     }
   }

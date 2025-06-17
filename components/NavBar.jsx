@@ -72,13 +72,14 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className="flex h-16 navbar mx-auto  justify-between items-center px-36 border-gray-100 border-b dark:border-gray-800"
+      className="flex filter lg:px-12 px-9 py-4 h-16 items-center dark:bg-gray-800/25 navbar"
+      // style={{
+      //   background: `${backgroundTransparacy}`,
+      //   boxShadow: `${boxShadow} 0px 0px 20px 0px`,
+      // }}
     >
-       {/* <div className="container mx-auto px-4">
-       <div className="flex justify-between items-center py-4"> */}
       {" "}
       <Mobilenav open={open} setOpen={setOpen} />
-      
       <div className="w-4/12 lg:pl-20 md:px-8 flex items-left ">
         <Logo/>
         {/* h-48 md:h-48 w-48 mt-4  */}
@@ -109,7 +110,7 @@ export default function Navbar() {
             }`}
           />
         </div>
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex text-gray-600 items-center dark:text-gray-400">
           <NavLink to="/articles">Articles</NavLink>
           <NavLink to="/projects">Work Samples</NavLink>
           <NavLink to="/snippets">Snippets</NavLink>
@@ -117,8 +118,6 @@ export default function Navbar() {
           <span className="ml-4">{renderThemeChanger()} </span>
         </div>
       </div>
-      {/* </div>
-      </div> */}
     </nav>
   );
 }

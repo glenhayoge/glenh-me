@@ -36,7 +36,7 @@ export default function Header() {
             <div className="w-full lg:w-8/12 lg:pl-20 md:px-8">
               <div className="md:px-2 px-4 overflow-hidden">
             <div className="space-y-8">
-            <div className="space-y-6 text-center">
+            <div className="space-y-6">
               <h1 className="text-4xl px-4 sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                 <span className="text-yellow-500">•</span>developer
                 <br />
