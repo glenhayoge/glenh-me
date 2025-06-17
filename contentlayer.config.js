@@ -1,7 +1,8 @@
-import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
+// import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
 import readingTime from 'reading-time'
 import mdxOptions from './config/md.mjs'
 import GithubSlugger from 'github-slugger'
+import { defineDocumentType,defineNestedType, makeSource } from 'contentlayer2/source-files';
 // import rehypePrettyCode from 'rehype-pretty-code';
 import rehypePrismPlus from 'rehype-prism-plus'
 

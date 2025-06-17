@@ -33,7 +33,7 @@ export default function Navbar() {
     } else {
       return (
         <MoonIcon
-          className="text-xl  xl:grid place-items-center w-8 h-8 text-gray-500 bg-gray-200 dark:bg-dark-third  rounded-full mx-1 p-2 cursor-pointer hover:bg-gray-300 relative"
+          className="text-xl xl:grid place-items-center w-8 h-8 text-gray-500 bg-gray-200 dark:bg-dark-third rounded-full mx-1 p-2 cursor-pointer hover:bg-gray-300 relative"
           role="button"
           onClick={() => setTheme("dark")}
         />
@@ -72,11 +72,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className="flex filter lg:px-12 px-9 py-4 h-16 items-center dark:bg-gray-800/25 navbar"
-      // style={{
-      //   background: `${backgroundTransparacy}`,
-      //   boxShadow: `${boxShadow} 0px 0px 20px 0px`,
-      // }}
+      className="flex filter lg:px-12 px-9 py-4 h-16 items-center dark:bg-gray-800/25 navbar border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-second"
     >
       {" "}
       <Mobilenav open={open} setOpen={setOpen} />
