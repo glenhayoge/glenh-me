@@ -1,6 +1,6 @@
 
 import BookList from "../components/BookList";
-import { allBooks } from "contentlayer2/generated";
+import { allBooks } from "contentlayer/generated";
 import { select } from "../utils/select";
 import { useEffect } from "react";
 import ProfileBadge from "../components/ProfileBadge";

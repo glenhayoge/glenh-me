@@ -1,4 +1,4 @@
-import { allSnippets } from 'contentlayer2/generated';
+import { allSnippets } from 'contentlayer/generated';
 import { NextSeo } from 'next-seo';
 import { SnippetDetails } from '../../components/SnippetDetails';
 

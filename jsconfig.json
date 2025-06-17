@@ -1,23 +1,18 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": false,
-    "skipLibCheck": true, // Important!
-    "noEmit": true,
-    "types": ["node"],
     "baseUrl": ".",
+    //  ^^^^^^^^^^^
     "paths": {
-      "contentlayer2/generated": [".contentlayer2/generated"]
+      "contentlayer/generated": ["./.contentlayer/generated"]
+      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     }
   },
   "include": [
-    ".contentlayer2/generated",
-    "**/*.js",
-    "**/*.jsx"
-  ],
-  "exclude": [
-    "node_modules",
+    "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".contentlayer/generated"
+    // ^^^^^^^^^^^^^^^^^^^^^^
   ]
 }

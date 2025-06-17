@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SnippetList from "../components/SnippetList";
-import { allSnippets } from "contentlayer2/generated";
+import { allSnippets } from "contentlayer/generated";
 import { select } from "../utils/select";
 import Subscribe from "../components/Subscribe";
 import { ArticleTags } from '../components/ArticleTags'

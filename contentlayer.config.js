@@ -105,5 +105,8 @@ const Books = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'data',
   documentTypes: [Article, Books, Snippet],
-  mdx: mdxOptions
+  mdx: mdxOptions,
+  exclude: ["**/*.json", "siteMapdata.json"],
+  disableImportAliasWarning: true,
+  fileExtensions: ['mdx', 'md']
 })

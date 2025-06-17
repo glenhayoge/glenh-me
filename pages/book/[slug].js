@@ -1,4 +1,4 @@
-import { allBooks } from 'contentlayer2/generated';
+import { allBooks } from 'contentlayer/generated';
 import { NextSeo } from 'next-seo';
 import { BookDetails } from '../../components/BookDetails';
 // import SampleComponent from '../../components/SampleComponent';

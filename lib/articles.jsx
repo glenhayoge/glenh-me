@@ -1,6 +1,6 @@
 // ../lib/articles.js
 
-import { allArticles } from 'contentlayer2/generated';
+import { allArticles } from 'contentlayer/generated';
 
 export function getRelatedArticles(category, tags, currentArticleSlug) {
   let relatedArticles = [];
