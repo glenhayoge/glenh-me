@@ -6,10 +6,10 @@
       ],
       "baseUrl": ".",
       "paths": {
-        "contentlayer/generated": ["./.contentlayer/generated"]
+        "contentlayer2/generated": [".contentlayer2/generated"]
         // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
       }
     },
-    "include": [".contentlayer/generated"]
+    "include": [".contentlayer2/generated"]
     //          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   }

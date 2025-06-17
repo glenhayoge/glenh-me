@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ArticleList from "../components/ArticleList";
-import { allArticles } from "contentlayer/generated";
+import { allArticles } from "contentlayer2/generated";
 import { select } from "../utils/select";
 import Subscribe from "../components/Subscribe";
 import { ArticleTags } from '../components/ArticleTags'

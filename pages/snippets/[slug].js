@@ -1,8 +1,8 @@
-import { allSnippets } from 'contentlayer/generated';
+import { allSnippets } from 'contentlayer2/generated';
 import { NextSeo } from 'next-seo';
 import { SnippetDetails } from '../../components/SnippetDetails';
 
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { useMDXComponent } from 'next-contentlayer2/hooks';
 
 
 const SingleSnippet = ({ snippet }) => {

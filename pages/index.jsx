@@ -1,6 +1,6 @@
 import Head from "next/head";
 import ArticleCard from "../components/ArticleCard";
-import { allArticles } from "contentlayer/generated";
+import { allArticles } from "contentlayer2/generated";
 import { select } from "../utils/select";
 import Header from "../components/Header";
 import IProjects from "../components/IndexProjects";

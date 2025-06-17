@@ -16,13 +16,13 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "contentlayer2/generated": [".contentlayer2/generated"]
     }
   },
   "include": [
   "next-env.d.ts", 
   "**/*.ts", 
   "**/*.tsx",
-  ".contentlayer/generated", "components/ArticleCard.jsx", "pages/_index.jsx", "pages/about.jsx","pages/_app.jsx", "config/md.jsx", "components/Layout.jsx"],
+  ".contentlayer2/generated", "components/ArticleCard.jsx", "pages/_index.jsx", "pages/about.jsx","pages/_app.jsx", "config/md.jsx", "components/Layout.jsx"],
   "exclude": ["node_modules"]
 }

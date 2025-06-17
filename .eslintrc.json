@@ -7,8 +7,8 @@
       2,
       {
         "ignore": [
-          "contentlayer/generated",
-          "next-contentlayer/hooks"
+          "contentlayer2/generated",
+          "next-contentlayer2/hooks"
         ]
       }
     ]
