@@ -10,6 +10,13 @@ const nextConfig = {
   experimental: {
     typedRoutes: false,
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.json$/,
+      type: 'json',
+    });
+    return config;
+  },
   images: {
     remotePatterns: [
       {
