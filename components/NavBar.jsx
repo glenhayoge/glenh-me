@@ -71,23 +71,15 @@ export default function Navbar() {
 
   const [open, setOpen] = useState(false);
   return (
+    <div className="navbar border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-second">
     <nav
-      className="flex filter py-4 h-16 items-center navbar px-4"
-      // style={{
-      //   background: `${backgroundTransparacy}`,
-      //   boxShadow: `${boxShadow} 0px 0px 20px 0px`,
-      // }}
-    >
-      {" "}
+      className="flex filter py-4 h-16 items-center mx-auto px-4 max-w-screen-2xl">
       <Mobilenav open={open} setOpen={setOpen} />
-      
       <div className="w-4/12 lg:pl-20 md:px-8 flex items-left ">
         <Logo/>
-        {/* h-48 md:h-48 w-48 mt-4  */}
       </div>
       <div className="w-8/12 lg:pr-20 md:px-8 flex justify-end items-center ">
         <span className="mr-4 md:hidden"> {renderThemeChanger()}</span>
-
         <div
           className=" z-50 flex relative w-5 h-5 flex-col justify-between items-right md:hidden"
           onClick={() => {
@@ -120,5 +112,6 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    </div>
   );
 }

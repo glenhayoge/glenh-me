@@ -5,13 +5,13 @@ export default function Footer() {
 
   return (
     <section >
-      {/* <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
+      <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
         You've Reached the Bottom of the Page 👋
-      </p> */}
+      </p>
 
-      <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4 border-t dark:border-gray-700 border-gray-200 ">
+      <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4 border-t dark:border-gray-700 border-gray-200 dark:bg-dark-second">
         <div className="flex justify-center mt-8 space-x-6">
-          <Link href="#" className="text-gray-400 hover:text-gray-500">
+          <Link href="#" className="hover:text-gray-500">
             <span className="sr-only">GlenGH Logo</span>
             <svg
               className="w-16 h-16  border-2 bg-gray-400 dark:bg-yellow-400 border-gray-500 rounded-full dark:border-yellow-400 hover:bg-gray-900"
@@ -49,7 +49,7 @@ export default function Footer() {
             </svg>
           </Link>
         </div>
-        <p className="flex flex-wrap text-center dark:text-gray-600 text-gray-400 justify-center text-xs mb-4 mt-10">
+        <p className="flex flex-wrap text-center justify-center text-xs mb-4 mt-10">
           Crafted by GlenH with 🔥 using
           <span> <svg
             viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ export default function Footer() {
           >
             <path d="M18.5 9.51a4.22 4.22 0 01-1.91-1.34A5.77 5.77 0 0012 6a4.72 4.72 0 00-5 4 3.23 3.23 0 013.5-1.49 4.32 4.32 0 011.91 1.35A5.77 5.77 0 0017 12a4.72 4.72 0 005-4 3.2 3.2 0 01-3.5 1.51zm-13 4.98a4.22 4.22 0 011.91 1.34A5.77 5.77 0 0012 18a4.72 4.72 0 005-4 3.23 3.23 0 01-3.5 1.49 4.32 4.32 0 01-1.91-1.35A5.8 5.8 0 007 12a4.72 4.72 0 00-5 4 3.2 3.2 0 013.5-1.51z" />
           </svg> &nbsp;
-          & ContentLayer. 
+          & ContentLayer2. 
           Hosted on Netlify &nbsp;
           <svg
             viewBox="0 0 24 24"
@@ -108,7 +108,7 @@ export default function Footer() {
         <div className="flex justify-center mt-8 space-x-6">
           <Link
             href="https://github.com/glenhayoge"
-            className="text-gray-400 hover:text-gray-500"
+            className=""
           >
             <span className="sr-only">GitHub</span>
             <svg
@@ -122,7 +122,7 @@ export default function Footer() {
           </Link>
           <Link
             href="https://www.linkedin.com/in/glen-g-hayoge-089935104/"
-            className="text-gray-400 hover:text-gray-500"
+            className=""
           >
             <span className="sr-only">LinkedIn</span>
             <svg
@@ -136,7 +136,7 @@ export default function Footer() {
           </Link>
           <Link
             href="https://stackoverflow.com/users/12071488/glenh"
-            className="text-gray-400 hover:text-gray-500"
+            className=""
           >
             <span className="sr-only">StackOverFlow</span>
             <svg
@@ -149,7 +149,7 @@ export default function Footer() {
               <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z" />
             </svg>
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-gray-500">
+          <Link href="#" className="">
             <span className="sr-only">Twitter</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -160,14 +160,14 @@ export default function Footer() {
               <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
             </svg>
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-gray-500">
+          <Link href="#" className="">
             <span className="sr-only">RSS</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-rss-fill w-5 h-5" viewBox="0 0 16 16">
               <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
             </svg>
           </Link>
         </div>
-        <div className="text-center text-xs dark:text-gray-600 text-gray-400  ">
+        <div className="text-center text-xs">
           &copy; GlenH.me Contents from 2018 - {new Date().getFullYear()}. <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">Open Source</Link>
         </div>
       </div>
