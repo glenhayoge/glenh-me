@@ -67,7 +67,7 @@ export default function Home({ articles }) {
                         category={category}
                         dateTime={publishedAt}
                         date={publishedAt}
-                        readingTime={readingTime.text}
+                        readingTime={readingTime?.text || '0 min read'}
                       />
                     )
                   )}
@@ -96,8 +96,8 @@ export default function Home({ articles }) {
 
 export function getStaticProps() {
   const articles = allArticles
-    .map((article) =>
-      select(article, [
+    .map((article) => {
+      const selected = select(article, [
         "slug",
         "title",
         "description",
@@ -106,14 +106,20 @@ export function getStaticProps() {
         "author",
         "category",
         "image",
-        // "tags"
-      ])
-    )
+      ]);
+      
+      // Ensure readingTime is never undefined
+      if (!selected.readingTime) {
+        selected.readingTime = { text: '0 min read' };
+      }
+      
+      return selected;
+    })
     .sort(
       (a, b) =>
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
     )
-    .slice(0, 5); // Select only the first 5 articles
+    .slice(0, 5);
 
   return { props: { articles } };
 }

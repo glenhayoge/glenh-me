@@ -17,13 +17,8 @@
     "flattenedPath": "snippets/how-to-display-first-letter-of-username-as-avatar"
   },
   "type": "Snippet",
-  "readingTime": {
-    "text": "1 min read",
-    "minutes": 0.575,
-    "time": 34500,
-    "words": 115
-  },
-  "wordCount": 118,
   "slug": "how-to-display-first-letter-of-username-as-avatar",
-  "headings": []
+  "readingTime": {
+    "text": "1 min read"
+  }
 }

@@ -18,36 +18,10 @@
       "flattenedPath": "snippets/analogjs-useful-steps-commands"
     },
     "type": "Snippet",
-    "readingTime": {
-      "text": "1 min read",
-      "minutes": 0.785,
-      "time": 47100,
-      "words": 157
-    },
-    "wordCount": 168,
     "slug": "analogjs-useful-steps-commands",
-    "headings": [
-      {
-        "level": "one",
-        "text": "Introduction",
-        "slug": "introduction"
-      },
-      {
-        "level": "two",
-        "text": "Features[​](https://analogjs.org/docs#features \"Direct link to Features\")",
-        "slug": "featureshttpsanalogjsorgdocsfeatures-direct-link-to-features"
-      },
-      {
-        "level": "two",
-        "text": "Creating a New Application[​](https://analogjs.org/docs/getting-started#creating-a-new-application \"Direct link to Creating a New Application\")",
-        "slug": "creating-a-new-applicationhttpsanalogjsorgdocsgetting-startedcreating-a-new-application-direct-link-to-creating-a-new-application"
-      },
-      {
-        "level": "three",
-        "text": "Serving the application[​](https://analogjs.org/docs/getting-started#serving-the-application \"Direct link to Serving the application\")",
-        "slug": "serving-the-applicationhttpsanalogjsorgdocsgetting-startedserving-the-application-direct-link-to-serving-the-application"
-      }
-    ]
+    "readingTime": {
+      "text": "1 min read"
+    }
   },
   {
     "title": "Setting Up Django-Useful steps and commands",
@@ -68,106 +42,10 @@
       "flattenedPath": "snippets/django-setup-snippet"
     },
     "type": "Snippet",
-    "readingTime": {
-      "text": "2 min read",
-      "minutes": 1.055,
-      "time": 63300,
-      "words": 211
-    },
-    "wordCount": 214,
     "slug": "django-setup-snippet",
-    "headings": [
-      {
-        "level": "two",
-        "text": "Installation",
-        "slug": "installation"
-      },
-      {
-        "level": "two",
-        "text": "Creating Project",
-        "slug": "creating-project"
-      },
-      {
-        "level": "two",
-        "text": "Create a Django App",
-        "slug": "create-a-django-app"
-      },
-      {
-        "level": "two",
-        "text": "Run Development Server",
-        "slug": "run-development-server"
-      },
-      {
-        "level": "two",
-        "text": "Create Superuser",
-        "slug": "create-superuser"
-      },
-      {
-        "level": "two",
-        "text": "Create Migrations",
-        "slug": "create-migrations"
-      },
-      {
-        "level": "two",
-        "text": "Apply Migrations",
-        "slug": "apply-migrations"
-      },
-      {
-        "level": "two",
-        "text": "Django Shell (Interactive Console)",
-        "slug": "django-shell-interactive-console"
-      },
-      {
-        "level": "two",
-        "text": "Start Django Project with Virtual Environment",
-        "slug": "start-django-project-with-virtual-environment"
-      },
-      {
-        "level": "three",
-        "text": "On Linux/Mac",
-        "slug": "on-linuxmac"
-      },
-      {
-        "level": "three",
-        "text": "On Windows",
-        "slug": "on-windows"
-      },
-      {
-        "level": "two",
-        "text": "Django Models",
-        "slug": "django-models"
-      },
-      {
-        "level": "two",
-        "text": "Django Views",
-        "slug": "django-views"
-      },
-      {
-        "level": "two",
-        "text": "Django URLs",
-        "slug": "django-urls"
-      },
-      {
-        "level": "two",
-        "text": "Django Templates",
-        "slug": "django-templates"
-      },
-      {
-        "level": "two",
-        "text": "Static Files",
-        "slug": "static-files"
-      },
-      {
-        "level": "two",
-        "text": "Django Forms",
-        "slug": "django-forms"
-      },
-      {
-        "level": "two",
-        "text": "Django Admin",
-        "slug": "django-admin"
-      }
-    ]
+    "readingTime": {
+      "text": "2 min read"
+    }
   },
   {
     "title": "How to display first letter of user's name as avatar",
@@ -188,15 +66,10 @@
       "flattenedPath": "snippets/how-to-display-first-letter-of-username-as-avatar"
     },
     "type": "Snippet",
-    "readingTime": {
-      "text": "1 min read",
-      "minutes": 0.575,
-      "time": 34500,
-      "words": 115
-    },
-    "wordCount": 118,
     "slug": "how-to-display-first-letter-of-username-as-avatar",
-    "headings": []
+    "readingTime": {
+      "text": "1 min read"
+    }
   },
   {
     "title": "Leaflet map dark mode css",
@@ -217,21 +90,10 @@
       "flattenedPath": "snippets/leaflet-dark-mode"
     },
     "type": "Snippet",
-    "readingTime": {
-      "text": "1 min read",
-      "minutes": 0.38,
-      "time": 22800,
-      "words": 76
-    },
-    "wordCount": 78,
     "slug": "leaflet-dark-mode",
-    "headings": [
-      {
-        "level": "two",
-        "text": "Add this css",
-        "slug": "add-this-css"
-      }
-    ]
+    "readingTime": {
+      "text": "1 min read"
+    }
   },
   {
     "title": "Making shadcn/ui Tabs Responsive with Overflow Scrolling",
@@ -252,31 +114,10 @@
       "flattenedPath": "snippets/shadcn-tab-component-mobile-responsive-overflow"
     },
     "type": "Snippet",
-    "readingTime": {
-      "text": "1 min read",
-      "minutes": 0.89,
-      "time": 53400,
-      "words": 178
-    },
-    "wordCount": 179,
     "slug": "shadcn-tab-component-mobile-responsive-overflow",
-    "headings": [
-      {
-        "level": "two",
-        "text": "Create a scrollable container",
-        "slug": "create-a-scrollable-container"
-      },
-      {
-        "level": "two",
-        "text": "Make the TabsList absolute",
-        "slug": "make-the-tabslist-absolute"
-      },
-      {
-        "level": "two",
-        "text": "Add TabsTriggers",
-        "slug": "add-tabstriggers"
-      }
-    ]
+    "readingTime": {
+      "text": "1 min read"
+    }
   },
   {
     "title": "Essential Git & Github Commands",
@@ -297,146 +138,10 @@
       "flattenedPath": "snippets/useful-git-commands"
     },
     "type": "Snippet",
-    "readingTime": {
-      "text": "2 min read",
-      "minutes": 1.975,
-      "time": 118500,
-      "words": 395
-    },
-    "wordCount": 401,
     "slug": "useful-git-commands",
-    "headings": [
-      {
-        "level": "three",
-        "text": "Configure Git",
-        "slug": "configure-git"
-      },
-      {
-        "level": "three",
-        "text": "Create a Repository",
-        "slug": "create-a-repository"
-      },
-      {
-        "level": "three",
-        "text": "Clone a Repository",
-        "slug": "clone-a-repository"
-      },
-      {
-        "level": "three",
-        "text": "Add Changes",
-        "slug": "add-changes"
-      },
-      {
-        "level": "three",
-        "text": "Commit Changes",
-        "slug": "commit-changes"
-      },
-      {
-        "level": "three",
-        "text": "Check Status",
-        "slug": "check-status"
-      },
-      {
-        "level": "three",
-        "text": "View Commit History",
-        "slug": "view-commit-history"
-      },
-      {
-        "level": "three",
-        "text": "Create a Branch",
-        "slug": "create-a-branch"
-      },
-      {
-        "level": "three",
-        "text": "Switch Branches",
-        "slug": "switch-branches"
-      },
-      {
-        "level": "three",
-        "text": "Merge Branches",
-        "slug": "merge-branches"
-      },
-      {
-        "level": "two",
-        "text": "Resolve Conflicts",
-        "slug": "resolve-conflicts"
-      },
-      {
-        "level": "three",
-        "text": "Undo Changes",
-        "slug": "undo-changes"
-      },
-      {
-        "level": "three",
-        "text": "Remote Repositories",
-        "slug": "remote-repositories"
-      },
-      {
-        "level": "three",
-        "text": "Push Changes",
-        "slug": "push-changes"
-      },
-      {
-        "level": "three",
-        "text": "Pull Changes",
-        "slug": "pull-changes"
-      },
-      {
-        "level": "three",
-        "text": "Tagging",
-        "slug": "tagging"
-      },
-      {
-        "level": "one",
-        "text": "GitHub",
-        "slug": "github"
-      },
-      {
-        "level": "two",
-        "text": "Create a Repository",
-        "slug": "create-a-repository-1"
-      },
-      {
-        "level": "two",
-        "text": "Fork a Repository",
-        "slug": "fork-a-repository"
-      },
-      {
-        "level": "two",
-        "text": "Clone a Repository",
-        "slug": "clone-a-repository-1"
-      },
-      {
-        "level": "two",
-        "text": "Pull Requests",
-        "slug": "pull-requests"
-      },
-      {
-        "level": "two",
-        "text": "Issues",
-        "slug": "issues"
-      },
-      {
-        "level": "two",
-        "text": "GitHub Pages",
-        "slug": "github-pages"
-      },
-      {
-        "level": "two",
-        "text": "Collaborators",
-        "slug": "collaborators"
-      },
-      {
-        "level": "two",
-        "text": "Actions (CI/CD)",
-        "slug": "actions-cicd"
-      },
-      {
-        "level": "two",
-        "text": "GitHub CLI (gh)",
-        "slug": "github-cli-gh"
-      }
-    ]
+    "readingTime": {
+      "text": "3 min read"
+    }
   },
   {
     "title": "VS Code Config Snippets for Mac",
@@ -457,14 +162,9 @@
       "flattenedPath": "snippets/vs-code-snippets"
     },
     "type": "Snippet",
-    "readingTime": {
-      "text": "2 min read",
-      "minutes": 1.07,
-      "time": 64200,
-      "words": 214
-    },
-    "wordCount": 244,
     "slug": "vs-code-snippets",
-    "headings": []
+    "readingTime": {
+      "text": "2 min read"
+    }
   }
 ]

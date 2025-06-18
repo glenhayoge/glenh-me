@@ -19,35 +19,31 @@ export type Article = {
   seoDescription: string
   category: string
   tags: string
-  caption: string
-  author?: Author | undefined
+  author: any
   image: string
-  toc: boolean
+  caption: string
   /** MDX file body */
   body: MDX
-  readingTime: json
-  wordCount: number
   slug: string
-  headings: json
+  readingTime: json
 }
 
-export type Book = {
+export type Books = {
   /** File path relative to `contentDirPath` */
   _id: string
   _raw: Local.RawDocumentData
-  type: 'Book'
+  type: 'Books'
   title: string
-  category: string
-  description: string
-  image: string
   publishedAt: string
+  description: string
+  category: string
+  tags: string
   author: string
+  image: string
   /** MDX file body */
   body: MDX
-  readingTime: json
-  wordCount: number
   slug: string
-  headings: json
+  readingTime: json
 }
 
 export type Snippet = {
@@ -62,38 +58,28 @@ export type Snippet = {
   tags: string
   /** MDX file body */
   body: MDX
-  readingTime: json
-  wordCount: number
   slug: string
-  headings: json
+  readingTime: json
 }  
 
 /** Nested types */
-export type Author = {
-  /** File path relative to `contentDirPath` */
-  _id: string
-  _raw: Local.RawDocumentData
-  type: 'Author'
-  name: string
-  image: string
-
-}  
+  
 
 /** Helper types */
 
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Article | Book | Snippet
-export type DocumentTypeNames = 'Article' | 'Book' | 'Snippet'
+export type DocumentTypes = Article | Books | Snippet
+export type DocumentTypeNames = 'Article' | 'Books' | 'Snippet'
 
-export type NestedTypes = Author
-export type NestedTypeNames = 'Author'
+export type NestedTypes = never
+export type NestedTypeNames = never
 
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allArticles: Article[]
-  allBooks: Book[]
+  allBooks: Books[]
   allSnippets: Snippet[]
 }
 
@@ -115,12 +101,12 @@ declare global {
 
 export type DocumentTypeMap = {
   Article: Article
-  Book: Book
+  Books: Books
   Snippet: Snippet
 }
 
 export type NestedTypeMap = {
-  Author: Author
+
 }
 
  

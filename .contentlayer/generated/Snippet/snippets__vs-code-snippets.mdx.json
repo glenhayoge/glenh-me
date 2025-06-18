@@ -17,13 +17,8 @@
     "flattenedPath": "snippets/vs-code-snippets"
   },
   "type": "Snippet",
-  "readingTime": {
-    "text": "2 min read",
-    "minutes": 1.07,
-    "time": 64200,
-    "words": 214
-  },
-  "wordCount": 244,
   "slug": "vs-code-snippets",
-  "headings": []
+  "readingTime": {
+    "text": "2 min read"
+  }
 }

@@ -17,34 +17,8 @@
     "flattenedPath": "snippets/analogjs-useful-steps-commands"
   },
   "type": "Snippet",
-  "readingTime": {
-    "text": "1 min read",
-    "minutes": 0.785,
-    "time": 47100,
-    "words": 157
-  },
-  "wordCount": 168,
   "slug": "analogjs-useful-steps-commands",
-  "headings": [
-    {
-      "level": "one",
-      "text": "Introduction",
-      "slug": "introduction"
-    },
-    {
-      "level": "two",
-      "text": "Features[​](https://analogjs.org/docs#features \"Direct link to Features\")",
-      "slug": "featureshttpsanalogjsorgdocsfeatures-direct-link-to-features"
-    },
-    {
-      "level": "two",
-      "text": "Creating a New Application[​](https://analogjs.org/docs/getting-started#creating-a-new-application \"Direct link to Creating a New Application\")",
-      "slug": "creating-a-new-applicationhttpsanalogjsorgdocsgetting-startedcreating-a-new-application-direct-link-to-creating-a-new-application"
-    },
-    {
-      "level": "three",
-      "text": "Serving the application[​](https://analogjs.org/docs/getting-started#serving-the-application \"Direct link to Serving the application\")",
-      "slug": "serving-the-applicationhttpsanalogjsorgdocsgetting-startedserving-the-application-direct-link-to-serving-the-application"
-    }
-  ]
+  "readingTime": {
+    "text": "1 min read"
+  }
 }

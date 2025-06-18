@@ -7,7 +7,6 @@
   NODE_OPTIONS = "--no-deprecation"
   NEXT_DISABLE_ESLINT = "true"
   NEXT_DISABLE_TYPECHECK = "true"
-  NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

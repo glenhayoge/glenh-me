@@ -6,12 +6,12 @@ import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/
 // import rehypePrettyCode from 'rehype-pretty-code';
 import rehypePrismPlus from 'rehype-prism-plus'
 
-const Author = defineNestedType(() => ({
+const Author = defineDocumentType(() => ({
   name: 'Author',
   fields: {
     name: { type: 'string', required: true },
-    image: { type: 'string', required: true },
-  },
+    image: { type: 'string', required: true }
+  }
 }))
 
 const computedFields = {
@@ -47,59 +47,157 @@ const computedFields = {
   },
 }
 
-const Article = defineDocumentType(() => ({
+export const Article = defineDocumentType(() => ({
   name: 'Article',
-  filePathPattern: `articles/*.mdx`,
+  filePathPattern: `articles/**/*.mdx`,
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-    seoDescription: { type: 'string', required: true },
-    category: { type: 'string', required: true },
-    tags: { type: 'string', required: true },
-    caption: { type: 'string', required: true },
-    author: {
-      type: 'nested',
-      of: Author,
-    },
-    image: { type: 'string', required: true },
-    toc: {
-      type: "boolean",
+    title: {
+      type: 'string',
       required: true,
-      default: true,
+    },
+    publishedAt: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+    seoDescription: {
+      type: 'string',
+      required: true,
+    },
+    category: {
+      type: 'string',
+      required: true,
+    },
+    tags: {
+      type: 'string',
+      required: true,
+    },
+    author: {
+      type: 'json',
+      required: true,
+    },
+    image: {
+      type: 'string',
+      required: true,
+    },
+    caption: {
+      type: 'string',
+      required: true,
+    }
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.flattenedPath.replace('articles/', ''),
+    },
+    readingTime: {
+      type: 'json',
+      resolve: (doc) => {
+        const wordsPerMinute = 200;
+        const words = doc.body.raw.split(/\s+/).length;
+        const minutes = Math.ceil(words / wordsPerMinute);
+        return { text: `${minutes} min read` };
+      },
     },
   },
-  computedFields,
 }))
 
-const Snippet = defineDocumentType(() => ({
+export const Books = defineDocumentType(() => ({
+  name: 'Books',
+  filePathPattern: `books/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    publishedAt: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+    category: {
+      type: 'string',
+      required: true,
+    },
+    tags: {
+      type: 'string',
+      required: true,
+    },
+    author: {
+      type: 'string',
+      required: true,
+    },
+    image: {
+      type: 'string',
+      required: true,
+    }
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.flattenedPath.replace('books/', ''),
+    },
+    readingTime: {
+      type: 'json',
+      resolve: (doc) => {
+        const wordsPerMinute = 200;
+        const words = doc.body.raw.split(/\s+/).length;
+        const minutes = Math.ceil(words / wordsPerMinute);
+        return { text: `${minutes} min read` };
+      },
+    },
+  },
+}))
+
+export const Snippet = defineDocumentType(() => ({
   name: 'Snippet',
-  filePathPattern: `snippets/*.mdx`,
+  filePathPattern: `snippets/**/*.mdx`,
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true },
-    updatedAt: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-    category: { type: 'string', required: true },
-    tags: { type: 'string', required: true },
+    title: {
+      type: 'string',
+      required: true,
+    },
+    updatedAt: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+    category: {
+      type: 'string',
+      required: true,
+    },
+    tags: {
+      type: 'string',
+      required: true,
+    }
   },
-  computedFields,
-}))
-
-const Books = defineDocumentType(() => ({
-  name: 'Book',
-  filePathPattern: `books/*.mdx`,
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    category: { type: 'string', required: true },
-    description: { type: 'string', required: true },
-    image: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
-    author: { type: 'string', required: true }
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.flattenedPath.replace('snippets/', ''),
+    },
+    readingTime: {
+      type: 'json',
+      resolve: (doc) => {
+        const wordsPerMinute = 200;
+        const words = doc.body.raw.split(/\s+/).length;
+        const minutes = Math.ceil(words / wordsPerMinute);
+        return { text: `${minutes} min read` };
+      },
+    },
   },
-  computedFields,
 }))
 
 export default makeSource({
@@ -109,18 +207,5 @@ export default makeSource({
   exclude: ["**/*.json", "siteMapdata.json"],
   disableImportAliasWarning: true,
   fileExtensions: ['mdx', 'md'],
-  esm: false,
-  moduleResolution: 'node',
-  experimental: {
-    importJson: false
-  },
-  onSuccess: async (importedData) => {
-    return importedData;
-  },
-  generateTypes: true,
-  generateTypesOptions: {
-    moduleResolution: 'node',
-    target: 'es2017',
-    module: 'commonjs'
-  }
+  esm: false
 })

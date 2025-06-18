@@ -10,7 +10,7 @@ import Link from 'next/link'; // Import Link from 'next/link' for client-side na
 
 export default function IndexPage({ articlesData }) {
   const router = useRouter();
-  const [articles, setArticles] = useState(articlesData);
+  const [articles, setArticles] = useState(articlesData || []);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredByTag, setFilteredByTag] = useState(null);
   const [currentPage, setCurrentPage] = useState(1); // Current page state
@@ -18,13 +18,15 @@ export default function IndexPage({ articlesData }) {
 
   // Filter articles based on search query and tag
   useEffect(() => {
+    if (!articlesData) return;
+    
     let filteredArticles = articlesData.filter((article) =>
       article.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     if (filteredByTag) {
       filteredArticles = filteredArticles.filter((article) =>
-        article.tags.includes(filteredByTag)
+        article.tags && article.tags.includes(filteredByTag)
       );
     }
 
@@ -42,10 +44,18 @@ export default function IndexPage({ articlesData }) {
   const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
 
   const handleTagClick = (tag) => {
+    if (!tag) return;
     const tagsArray = tag.split(',').map((t) => t.trim()); // Split the tag string into an array
     const queryString = tagsArray.map((t) => `tag=${t}`).join('&'); // Generate query string for each tag
     window.location.href = `http://glensea.com/articles?${queryString}`;
   };
+
+  // Get unique tags from articles
+  const uniqueTags = articlesData ? Array.from(
+    new Set(articlesData.flatMap((article) => 
+      article.tags ? article.tags.split(',').map(tag => tag.trim()) : []
+    ))
+  ) : [];
 
   return (
     <>
@@ -91,7 +101,7 @@ export default function IndexPage({ articlesData }) {
                         category={category}
                         dateTime={publishedAt}
                         tags={<ArticleTags tags={tags} />}
-                        readingTime={readingTime.text}
+                        readingTime={readingTime?.text || '0 min read'}
                       />
                     ))}
                   </main>
@@ -115,15 +125,13 @@ export default function IndexPage({ articlesData }) {
                     </h5>
                     {/* Display Tags */}
                     <div>
-                      {/* Tags list from articles */}
-                      {Array.from(
-                        new Set(articlesData.flatMap((article) => article.tags))
-                      ).map((tag) => (
+                      {uniqueTags.map((tag) => (
                         <button
                           key={tag}
                           onClick={() => handleTagClick(tag)}
-                          className={`bg-gray-500/25 rounded-lg p-2 dark:bg-gray-200/25 dark:text-gray-300 text-xs text-gray-700 m-1 ${tag === filteredByTag ? "bg-gray-300" : ""
-                            }`}
+                          className={`bg-gray-500/25 rounded-lg p-2 dark:bg-gray-200/25 dark:text-gray-300 text-xs text-gray-700 m-1 ${
+                            tag === filteredByTag ? "bg-gray-300" : ""
+                          }`}
                         >
                           {tag}
                         </button>
@@ -145,8 +153,32 @@ export default function IndexPage({ articlesData }) {
 
 export function getStaticProps() {
   const articlesData = allArticles
-    .map((article) => select(article, ['slug', 'title', 'description', 'publishedAt', 'readingTime', 'author', 'category', 'image', 'tags', 'caption']))
+    .map((article) => {
+      const selected = select(article, [
+        'slug',
+        'title',
+        'description',
+        'publishedAt',
+        'readingTime',
+        'author',
+        'category',
+        'image',
+        'tags',
+        'caption'
+      ]);
+      
+      // Ensure readingTime is never undefined
+      if (!selected.readingTime) {
+        selected.readingTime = { text: '0 min read' };
+      }
+      
+      return selected;
+    })
     .sort((a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt)));
 
-  return { props: { articlesData } };
+  return { 
+    props: { 
+      articlesData: articlesData || [] 
+    } 
+  };
 }

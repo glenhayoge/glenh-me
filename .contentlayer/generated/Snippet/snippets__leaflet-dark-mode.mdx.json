@@ -17,19 +17,8 @@
     "flattenedPath": "snippets/leaflet-dark-mode"
   },
   "type": "Snippet",
-  "readingTime": {
-    "text": "1 min read",
-    "minutes": 0.38,
-    "time": 22800,
-    "words": 76
-  },
-  "wordCount": 78,
   "slug": "leaflet-dark-mode",
-  "headings": [
-    {
-      "level": "two",
-      "text": "Add this css",
-      "slug": "add-this-css"
-    }
-  ]
+  "readingTime": {
+    "text": "1 min read"
+  }
 }

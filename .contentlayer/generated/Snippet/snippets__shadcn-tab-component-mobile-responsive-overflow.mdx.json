@@ -17,29 +17,8 @@
     "flattenedPath": "snippets/shadcn-tab-component-mobile-responsive-overflow"
   },
   "type": "Snippet",
-  "readingTime": {
-    "text": "1 min read",
-    "minutes": 0.89,
-    "time": 53400,
-    "words": 178
-  },
-  "wordCount": 179,
   "slug": "shadcn-tab-component-mobile-responsive-overflow",
-  "headings": [
-    {
-      "level": "two",
-      "text": "Create a scrollable container",
-      "slug": "create-a-scrollable-container"
-    },
-    {
-      "level": "two",
-      "text": "Make the TabsList absolute",
-      "slug": "make-the-tabslist-absolute"
-    },
-    {
-      "level": "two",
-      "text": "Add TabsTriggers",
-      "slug": "add-tabstriggers"
-    }
-  ]
+  "readingTime": {
+    "text": "1 min read"
+  }
 }
