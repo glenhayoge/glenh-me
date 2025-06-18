@@ -5,7 +5,7 @@ import GithubSlugger from 'github-slugger'
 // import rehypePrettyCode from 'rehype-pretty-code';
 import rehypePrismPlus from 'rehype-prism-plus'
 
-const Author = defineDocumentType(() => ({
+const Author = defineNestedType(() => ({
   name: 'Author',
   fields: {
     name: { type: 'string', required: true },
@@ -34,12 +34,12 @@ const computedFields = {
         if (line.startsWith('## ')) {
           const text = line.replace('## ', '');
           const slug = slugger.slug(text);
-          headings.push({ text, slug, level: 2 });
+          headings.push({ text, slug, level: 'two' });
         }
         if (line.startsWith('### ')) {
           const text = line.replace('### ', '');
           const slug = slugger.slug(text);
-          headings.push({ text, slug, level: 3 });
+          headings.push({ text, slug, level: 'three' });
         }
       }
       return headings;
@@ -77,8 +77,8 @@ export const Article = defineDocumentType(() => ({
       required: true,
     },
     author: {
-      type: 'json',
-      required: true,
+      type: 'nested',
+      of: Author,
     },
     image: {
       type: 'string',
@@ -87,23 +87,14 @@ export const Article = defineDocumentType(() => ({
     caption: {
       type: 'string',
       required: true,
-    }
-  },
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (doc) => doc._raw.flattenedPath.replace('articles/', ''),
     },
-    readingTime: {
-      type: 'json',
-      resolve: (doc) => {
-        const wordsPerMinute = 200;
-        const words = doc.body.raw.split(/\s+/).length;
-        const minutes = Math.ceil(words / wordsPerMinute);
-        return { text: `${minutes} min read` };
-      },
+    toc: {
+      type: "boolean",
+      required: true,
+      default: true,
     },
   },
+  computedFields,
 }))
 
 export const Books = defineDocumentType(() => ({
@@ -196,8 +187,10 @@ const Book = defineDocumentType(() => ({
     description: { type: 'string', required: true },
     image: { type: 'string', required: true },
     publishedAt: { type: 'string', required: true },
-    author: { type: 'string', required: true }
+    author: { type: 'string', required: true },
+    tags: { type: 'string', required: true }
   },
+  computedFields,
 }))
 
 export default makeSource({
@@ -205,7 +198,9 @@ export default makeSource({
   documentTypes: [Article, Book, Snippet],
   mdx: {
     remarkPlugins: [],
-    rehypePlugins: [],
+    rehypePlugins: [
+      [rehypePrismPlus, { ignoreMissing: true }]
+    ],
     format: 'mdx',
   },
   exclude: ["**/*.json", "siteMapdata.json"],
