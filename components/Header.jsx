@@ -51,7 +51,7 @@ export default function Header() {
             </p>
               </div>
               <div className="inline-flex mt-8 sm:mt-10 gap-4">
-              <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium dark:text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 rounded-lg">
+              <button className="inline-flex items-center justify-center px-5 py-3 text-base font-medium dark:text-white bg-primary-700 hover:bg-yellow-400 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 rounded-lg">
                 Hire My Service
                 <svg
                   className="w-5 h-5 ml-2 -mr-1"
@@ -68,7 +68,7 @@ export default function Header() {
               </button>
               <Link
                 href="/about"
-                className="inline-flex pointer-cursor z-10 items-center justify-center px-5 py-3 text-base font-medium border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                className="inline-flex pointer-cursor z-10 items-center justify-center px-5 py-3 text-base font-medium border border-gray-300 rounded-lg focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-yellow-400 dark:focus:ring-gray-800 dark:hover:text-gray-800"
               >
                 Know About Me
               </Link>

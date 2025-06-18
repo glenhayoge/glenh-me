@@ -35,10 +35,10 @@ export default function Home({ articles }) {
                 <div className="pt-16 pb-1 ">
                   <div className="flex mb-4 justify-between items-center">
                     <div className="px-3">
-                      <p className="text-3xl font-bold tracking-tight sm:text-4xl">
+                      <p className="text-3xl font-bold tracking-tight sm:text-4xl dark:text-yellow-400">
                         Recent Articles
                       </p>
-                      <p className="text-sm text-primary my-6">
+                      <p className="text-lg text-primary my-6">
                     {" "}
                     Read articles, guides,tutorials and lots more.
                   </p>
