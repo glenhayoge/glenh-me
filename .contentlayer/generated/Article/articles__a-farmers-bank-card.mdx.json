@@ -27,13 +27,12 @@
     "flattenedPath": "articles/a-farmers-bank-card"
   },
   "type": "Article",
+  "slug": "a-farmers-bank-card",
   "readingTime": {
     "text": "2 min read",
     "minutes": 1.19,
     "time": 71400,
     "words": 238
   },
-  "wordCount": 239,
-  "slug": "a-farmers-bank-card",
   "headings": []
 }

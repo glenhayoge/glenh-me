@@ -27,13 +27,12 @@
     "flattenedPath": "articles/an-afternoon-discovery-white-house"
   },
   "type": "Article",
+  "slug": "an-afternoon-discovery-white-house",
   "readingTime": {
     "text": "3 min read",
     "minutes": 2.235,
     "time": 134100,
     "words": 447
   },
-  "wordCount": 448,
-  "slug": "an-afternoon-discovery-white-house",
   "headings": []
 }

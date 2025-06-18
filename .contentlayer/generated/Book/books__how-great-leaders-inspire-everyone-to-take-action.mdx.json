@@ -18,13 +18,12 @@
     "flattenedPath": "books/how-great-leaders-inspire-everyone-to-take-action"
   },
   "type": "Book",
+  "slug": "how-great-leaders-inspire-everyone-to-take-action",
   "readingTime": {
     "text": "3 min read",
     "minutes": 2.2,
     "time": 132000,
     "words": 440
   },
-  "wordCount": 441,
-  "slug": "how-great-leaders-inspire-everyone-to-take-action",
   "headings": []
 }

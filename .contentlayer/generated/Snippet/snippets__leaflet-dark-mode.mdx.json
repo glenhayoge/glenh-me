@@ -6,7 +6,7 @@
   "tags": "Leaflet",
   "body": {
     "raw": "\nCSS trick to create a dark mode for Leaflet. The trick uses filter that inverts the image colours and makes some adjustments to the contrast, hue, brightness etc.\nThe trick works when system dark mode is enabled.\n\n## Add this css\n\n```bash\n:root {\n    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);\n}\n\n@media (prefers-color-scheme: dark) {\n    .leaflet-tile {\n        filter: var(--leaflet-tile-filter, none);\n    }\n\n    .leaflet-container {\n        background: #303030;\n    }\n}\n```\n\nOriginally found in this GitHub Gist:\nhttps://gist.github.com/BrendonKoz/b1df234fe3ee388b402cd8e98f7eedbd\n\n",
-    "code": "var Component=(()=>{var h=Object.create;var r=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var u=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var s in e)r(t,s,{get:e[s],enumerable:!0})},c=(t,e,s,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!p.call(t,a)&&a!==s&&r(t,a,{get:()=>e[a],enumerable:!(o=f(e,a))||o.enumerable});return t};var k=(t,e,s)=>(s=t!=null?h(g(t)):{},c(e||!t||!t.__esModule?r(s,\"default\",{value:t,enumerable:!0}):s,t)),j=t=>c(r({},\"__esModule\",{value:!0}),t);var d=u((y,i)=>{i.exports=_jsx_runtime});var N={};b(N,{default:()=>L,frontmatter:()=>x});var n=k(d()),x={title:\"Leaflet map dark mode css\",description:\"Leaflet map dark mode css\",category:\"Leaflet\",updatedAt:\"Apr 27, 2024\",tags:\"Leaflet\"};function l(t){let e=Object.assign({p:\"p\",h2:\"h2\",a:\"a\",span:\"span\",pre:\"pre\",code:\"code\"},t.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:`CSS trick to create a dark mode for Leaflet. The trick uses filter that inverts the image colours and makes some adjustments to the contrast, hue, brightness etc.\nThe trick works when system dark mode is enabled.`}),`\n`,(0,n.jsxs)(e.h2,{id:\"add-this-css\",children:[(0,n.jsx)(e.a,{className:\"anchor\",href:\"#add-this-css\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Add this css\"]}),`\n`,(0,n.jsx)(e.pre,{className:\"language-bash\",children:(0,n.jsxs)(e.code,{className:\"hljs language-bash code-highlight\",children:[`:root {\n    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);\n}\n\n@media (prefers-color-scheme: dark) {\n    .leaflet-tile {\n        filter: var(--leaflet-tile-filter, none);\n    }\n\n    .leaflet-container {\n        background: `,(0,n.jsx)(e.span,{className:\"hljs-comment\",children:\"#303030;\"}),`\n    }\n}\n`]})}),`\n`,(0,n.jsxs)(e.p,{children:[`Originally found in this GitHub Gist:\n`,(0,n.jsx)(e.a,{href:\"https://gist.github.com/BrendonKoz/b1df234fe3ee388b402cd8e98f7eedbd\",target:\"_blank\",rel:\"nofollow noopener noreferrer\",children:\"https://gist.github.com/BrendonKoz/b1df234fe3ee388b402cd8e98f7eedbd\"})]})]})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(l,t)})):l(t)}var L=_;return j(N);})();\n;return Component;"
+    "code": "var Component=(()=>{var h=Object.create;var a=Object.defineProperty;var f=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var p=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var r in e)a(t,r,{get:e[r],enumerable:!0})},i=(t,e,r,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let s of m(e))!g.call(t,s)&&s!==r&&a(t,s,{get:()=>e[s],enumerable:!(o=f(e,s))||o.enumerable});return t};var k=(t,e,r)=>(r=t!=null?h(u(t)):{},i(e||!t||!t.__esModule?a(r,\"default\",{value:t,enumerable:!0}):r,t)),x=t=>i(a({},\"__esModule\",{value:!0}),t);var d=p((w,c)=>{c.exports=_jsx_runtime});var y={};b(y,{default:()=>L,frontmatter:()=>j});var n=k(d()),j={title:\"Leaflet map dark mode css\",description:\"Leaflet map dark mode css\",category:\"Leaflet\",updatedAt:\"Apr 27, 2024\",tags:\"Leaflet\"};function l(t){let e=Object.assign({p:\"p\",h2:\"h2\",pre:\"pre\",code:\"code\"},t.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:`CSS trick to create a dark mode for Leaflet. The trick uses filter that inverts the image colours and makes some adjustments to the contrast, hue, brightness etc.\nThe trick works when system dark mode is enabled.`}),`\n`,(0,n.jsx)(e.h2,{children:\"Add this css\"}),`\n`,(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"language-bash\",children:`:root {\n    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);\n}\n\n@media (prefers-color-scheme: dark) {\n    .leaflet-tile {\n        filter: var(--leaflet-tile-filter, none);\n    }\n\n    .leaflet-container {\n        background: #303030;\n    }\n}\n`})}),`\n`,(0,n.jsx)(e.p,{children:`Originally found in this GitHub Gist:\nhttps://gist.github.com/BrendonKoz/b1df234fe3ee388b402cd8e98f7eedbd`})]})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(l,t)})):l(t)}var L=_;return x(y);})();\n;return Component;"
   },
   "_id": "snippets/leaflet-dark-mode.mdx",
   "_raw": {
@@ -17,19 +17,18 @@
     "flattenedPath": "snippets/leaflet-dark-mode"
   },
   "type": "Snippet",
+  "slug": "leaflet-dark-mode",
   "readingTime": {
     "text": "1 min read",
     "minutes": 0.38,
     "time": 22800,
     "words": 76
   },
-  "wordCount": 78,
-  "slug": "leaflet-dark-mode",
   "headings": [
     {
-      "level": "two",
       "text": "Add this css",
-      "slug": "add-this-css"
+      "slug": "add-this-css",
+      "level": 2
     }
   ]
 }

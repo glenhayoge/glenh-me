@@ -1,6 +1,6 @@
-import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
+// import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
+import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files';
 import readingTime from 'reading-time';
-import mdxOptions from './config/md';
 import GithubSlugger from 'github-slugger'
 // import rehypePrettyCode from 'rehype-pretty-code';
 import rehypePrismPlus from 'rehype-prism-plus';
@@ -12,42 +12,44 @@ const Author = defineNestedType(() => ({
     image: { type: 'string', required: true },
   },
 }));
+
 const computedFields = {
-  readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
-  wordCount: {
-    type: 'number',
-    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
-  },
   slug: {
     type: 'string',
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    resolve: (doc) => doc._raw.flattenedPath.replace(/^(articles|books|snippets)\//, ''),
+  },
+  readingTime: { 
+    type: 'json', 
+    resolve: (doc) => readingTime(doc.body.raw) 
   },
   headings: {
-    type: "json",
-    resolve: async (doc) => {
-      const regXHeader = /\n(?<flag>#{1,6})\s+(?<data>.+)/g;
-      const slugger = new GithubSlugger()
-      const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
-          ({ groups }) => {
-            const flag = groups?.flag;
-            const data = groups?.data;
-            return {
-              level: flag?.length == 1 ? "one"
-              : flag?.length == 2 ? "two"
-              : "three",
-              text: data,
-              slug: data ? slugger.slug(data) : undefined
-            };
-          }
-        );
-        return headings;
+    type: 'json',
+    resolve: (doc) => {
+      const slugger = new GithubSlugger();
+      const headings = [];
+      const lines = doc.body.raw.split('\n');
+      
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (line.startsWith('## ')) {
+          const text = line.replace('## ', '');
+          const slug = slugger.slug(text);
+          headings.push({ text, slug, level: 2 });
+        }
+        if (line.startsWith('### ')) {
+          const text = line.replace('### ', '');
+          const slug = slugger.slug(text);
+          headings.push({ text, slug, level: 3 });
+        }
+      }
+      return headings;
     },
   },
 };
 
 const Article = defineDocumentType(() => ({
   name: 'Article',
-  filePathPattern: `articles/*.mdx`,
+  filePathPattern: `articles/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -73,7 +75,7 @@ const Article = defineDocumentType(() => ({
 
 const Snippet = defineDocumentType(() => ({
   name: 'Snippet',
-  filePathPattern: `snippets/*.mdx`,
+  filePathPattern: `snippets/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -85,9 +87,9 @@ const Snippet = defineDocumentType(() => ({
   computedFields,
 }));
 
-const Books = defineDocumentType(() => ({
+const Book = defineDocumentType(() => ({
   name: 'Book',
-  filePathPattern: `books/*.mdx`,
+  filePathPattern: `books/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -100,12 +102,16 @@ const Books = defineDocumentType(() => ({
   computedFields,
 }));
 
-  const contentLayerConfig = makeSource({
-    contentDirPath: 'data',
-    documentTypes: [Article,Books,Snippet],
-    mdx: mdxOptions
-    
-  });
-
-
-export default contentLayerConfig;
+export default makeSource({
+  contentDirPath: 'data',
+  documentTypes: [Article, Book, Snippet],
+  mdx: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    format: 'mdx',
+  },
+  exclude: ["**/*.json", "siteMapdata.json"],
+  disableImportAliasWarning: true,
+  fileExtensions: ['mdx', 'md'],
+  esm: false
+});
