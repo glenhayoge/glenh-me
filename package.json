@@ -6,7 +6,7 @@
   "name": "glensea.com",
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "build:content": "contentlayer2 build",
     "prebuild": "npm run build:content",
