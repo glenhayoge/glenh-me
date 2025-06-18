@@ -5,12 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Nanum+Pen+Script&display=swap');
 
->>>>>>> working-commit
 @layer base {
   :root {
     --radius: 0.625rem;
@@ -151,8 +148,4 @@
   font-family: 'Nanum Pen Script', cursive;
   font-size: 30px;
   text-align: center;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> working-commit

@@ -15,13 +15,8 @@ const ISideBar = () => {
   };
   return (
     <>
-<<<<<<< HEAD
-      <div className=" relative shadow text-center overflow-auto shadow-md">
-        <div className="relative pt-10 pb-16  shadoww overflow-hidden">
-=======
       <div className=" relative shadow text-center border border-gray-200 dark:border-gray-700 overflow-auto border-amber-400 border-1 shadow-md">
       <div className="relative pt-10 pb-16 shadow overflow-hidden">
->>>>>>> working-commit
           <Image
             className="absolute bg-gray-800 bg-blend-color top-2 opacity-50 lg:top-0 lg:left-0 w-full h-[84px] object-cover"
             src={imageUrl}
@@ -29,11 +24,7 @@ const ISideBar = () => {
             height={200}
             alt="tribal-pattern"
           />
-<<<<<<< HEAD
-          <div className="px-4 py-12">
-=======
             <div className="px-4 py-12">
->>>>>>> working-commit
             <div className="flex mb-6 mt-4">
               <p className="text-sm text-primary tracking-wide">
                 Hi, my name is Glen. I am a software developer, designer &amp;

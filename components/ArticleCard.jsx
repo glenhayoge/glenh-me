@@ -26,11 +26,7 @@ export default function ArticleCard({
         </div>
         <div className="mb-4">
            <Link href={`/article/${slug}`}>
-<<<<<<< HEAD
-            <h3 className="mb-2 text-2xl font-bold hover:text-cyan-700 dark:text-yellow-400 dark:hover:text-cyan-700">
-=======
             <h3 className="mb-2 text-2xl font-bold hover:text-cyan-700 dark:hover:text-cyan-700 dark:text-yellow-400">
->>>>>>> working-commit
               {title}
             </h3>
           </Link>

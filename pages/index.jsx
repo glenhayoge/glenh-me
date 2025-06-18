@@ -32,11 +32,7 @@ export default function Home({ articles }) {
           <div className="flex flex-wrap items-stretch -m-8">
             <div className="w-full lg:w-8/12 lg:pl-20 md:px-8">
               <div className="md:px-2 px-4 overflow-hidden">
-<<<<<<< HEAD
-                <div className="pt-24 pb-1 ">
-=======
                 <div className="pt-24 pb-1">
->>>>>>> working-commit
                   <div className="flex mb-4 justify-between items-center">
                     <div className="px-3">
                       <p className="text-3xl font-bold tracking-tight sm:text-4xl dark:text-yellow-400">

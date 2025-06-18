@@ -1,11 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-<<<<<<< HEAD
-=======
 // module.exports = nextConfig
 
 // const { withContentlayer } = require('next-contentlayer');
->>>>>>> working-commit
 const { withContentlayer } = require('next-contentlayer2');
 
 const nextConfig = {
@@ -67,9 +64,6 @@ const nextConfig = {
       },
     ],
   },
-<<<<<<< HEAD
-};
-=======
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -96,6 +90,5 @@ const nextConfig = {
 }
 
 module.exports = withContentlayer(nextConfig)
->>>>>>> working-commit
 
 module.exports = withContentlayer(nextConfig);

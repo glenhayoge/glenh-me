@@ -1,11 +1,6 @@
 // import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
-<<<<<<< HEAD
-import readingTime from 'reading-time'
-import mdxOptions from './config/md.mjs'
-=======
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files';
 import readingTime from 'reading-time';
->>>>>>> working-commit
 import GithubSlugger from 'github-slugger'
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files';
 // import rehypePrettyCode from 'rehype-pretty-code';
@@ -15,15 +10,9 @@ const Author = defineDocumentType(() => ({
   name: 'Author',
   fields: {
     name: { type: 'string', required: true },
-<<<<<<< HEAD
-    image: { type: 'string', required: true }
-  }
-}))
-=======
     image: { type: 'string', required: true },
   },
 }));
->>>>>>> working-commit
 
 const computedFields = {
   slug: {
@@ -195,22 +184,6 @@ export const Snippet = defineDocumentType(() => ({
       required: true,
     }
   },
-<<<<<<< HEAD
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (doc) => doc._raw.flattenedPath.replace('snippets/', ''),
-    },
-    readingTime: {
-      type: 'json',
-      resolve: (doc) => {
-        const wordsPerMinute = 200;
-        const words = doc.body.raw.split(/\s+/).length;
-        const minutes = Math.ceil(words / wordsPerMinute);
-        return { text: `${minutes} min read` };
-      },
-    },
-=======
   computedFields,
 }));
 
@@ -225,29 +198,19 @@ const Book = defineDocumentType(() => ({
     image: { type: 'string', required: true },
     publishedAt: { type: 'string', required: true },
     author: { type: 'string', required: true }
->>>>>>> working-commit
   },
 }))
 
 export default makeSource({
   contentDirPath: 'data',
-<<<<<<< HEAD
-  documentTypes: [Article, Books, Snippet],
-  mdx: mdxOptions,
-=======
   documentTypes: [Article, Book, Snippet],
   mdx: {
     remarkPlugins: [],
     rehypePlugins: [],
     format: 'mdx',
   },
->>>>>>> working-commit
   exclude: ["**/*.json", "siteMapdata.json"],
   disableImportAliasWarning: true,
   fileExtensions: ['mdx', 'md'],
   esm: false
-<<<<<<< HEAD
-})
-=======
 });
->>>>>>> working-commit

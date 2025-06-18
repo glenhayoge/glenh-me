@@ -73,13 +73,7 @@ export default function Navbar() {
   return (
     <div className="navbar border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-second">
     <nav
-<<<<<<< HEAD
-      className="flex filter lg:px-12 px-9 py-4 h-16 items-center dark:bg-gray-800/25 navbar border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-second"
-    >
-      {" "}
-=======
       className="flex filter py-4 h-16 items-center mx-auto px-4 max-w-screen-2xl">
->>>>>>> working-commit
       <Mobilenav open={open} setOpen={setOpen} />
       <div className="w-4/12 lg:pl-20 md:px-8 flex items-left ">
         <Logo/>
