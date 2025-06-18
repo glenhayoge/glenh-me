@@ -27,7 +27,7 @@ export default function Header() {
           src={tribalPattern}
           alt="Abstract tribal pattern background"
           style={{ objectPosition: "center" }}
-          className="opacity-5 z-1 dark:opacity-10 absolute top-0 left-0 w-full h-[520px] object-cover"
+          className="opacity-5 z-1 dark:opacity-10 absolute top-0 left-0 w-full h-[520px] object-cover border-b-4 border-gray-900 dark:border-gray-600"
         />
       </div>
     <section className="pb-8 pt-24 ">

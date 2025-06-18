@@ -21,7 +21,7 @@ const Newsletter = () => {
 
   return (
     <>
-    <div className=" bg-white dark:bg-gray-900 flex flex-col items-center w-full p-6  ">
+    <div className=" bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-600 flex flex-col items-center w-full p-6  ">
       <h2 className="text-xl font-bold text-center text-gray-600 dark:text-yellow-400">
       Interested In Software Development?
       </h2>
