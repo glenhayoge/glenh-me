@@ -8,9 +8,6 @@
   NEXT_DISABLE_ESLINT = "true"
   NEXT_DISABLE_TYPECHECK = "true"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
 [build.processing]
   skip_processing = false
 
