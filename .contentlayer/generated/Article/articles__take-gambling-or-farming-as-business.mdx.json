@@ -26,6 +26,15 @@
   "type": "Article",
   "slug": "take-gambling-or-farming-as-business",
   "readingTime": {
+<<<<<<< HEAD
     "text": "3 min read"
   }
+=======
+    "text": "3 min read",
+    "minutes": 2.355,
+    "time": 141300,
+    "words": 471
+  },
+  "headings": []
+>>>>>>> working-commit
 }

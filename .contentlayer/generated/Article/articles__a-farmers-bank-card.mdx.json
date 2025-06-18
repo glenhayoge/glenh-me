@@ -26,6 +26,15 @@
   "type": "Article",
   "slug": "a-farmers-bank-card",
   "readingTime": {
+<<<<<<< HEAD
     "text": "2 min read"
   }
+=======
+    "text": "2 min read",
+    "minutes": 1.19,
+    "time": 71400,
+    "words": 238
+  },
+  "headings": []
+>>>>>>> working-commit
 }

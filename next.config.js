@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 
+<<<<<<< HEAD
+=======
+// module.exports = nextConfig
+
+// const { withContentlayer } = require('next-contentlayer');
+>>>>>>> working-commit
 const { withContentlayer } = require('next-contentlayer2');
 
 const nextConfig = {
@@ -61,6 +67,35 @@ const nextConfig = {
       },
     ],
   },
+<<<<<<< HEAD
 };
+=======
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  experimental: {
+    esmExternals: 'loose',
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.mdx?$/,
+      use: [
+        {
+          loader: '@mdx-js/loader',
+          options: {
+            providerImportSource: '@mdx-js/react',
+          },
+        },
+      ],
+    });
+    return config;
+  },
+}
+
+module.exports = withContentlayer(nextConfig)
+>>>>>>> working-commit
 
 module.exports = withContentlayer(nextConfig);

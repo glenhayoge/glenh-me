@@ -26,6 +26,10 @@ export type Article = {
   body: MDX
   slug: string
   readingTime: json
+<<<<<<< HEAD
+=======
+  headings: json
+>>>>>>> working-commit
 }
 
 export type Books = {
@@ -44,6 +48,10 @@ export type Books = {
   body: MDX
   slug: string
   readingTime: json
+<<<<<<< HEAD
+=======
+  headings: json
+>>>>>>> working-commit
 }
 
 export type Snippet = {
@@ -60,6 +68,10 @@ export type Snippet = {
   body: MDX
   slug: string
   readingTime: json
+<<<<<<< HEAD
+=======
+  headings: json
+>>>>>>> working-commit
 }  
 
 /** Nested types */

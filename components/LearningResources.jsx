@@ -66,10 +66,9 @@ export default function ILearningResources() {
             </div>
             </Link>
           </div>
-
           <div className="w-full md:w-1/2 lg:w-1/4 p-4">
           <Link href="/courses">
-            <div className="p-6 rounded  hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
+            <div className="p-6 rounded hover:text-yellow-400 dark:hover:text-yellow-400 border-gray-500 dark:hover:text-yellow-400 dark:border-gray-900 hover:bg-cyan-700 dark:bg-gray-900 hover:scale-[1.01] hover:border-gray-900  dark:hover:border-yellow-400 border dark:hover:bg-gray-800">
               <span className="text-xs ">
                 <span className="inline-block ">
                   <svg

@@ -26,6 +26,15 @@
   "type": "Article",
   "slug": "an-afternoon-discovery-white-house",
   "readingTime": {
+<<<<<<< HEAD
     "text": "3 min read"
   }
+=======
+    "text": "3 min read",
+    "minutes": 2.235,
+    "time": 134100,
+    "words": 447
+  },
+  "headings": []
+>>>>>>> working-commit
 }

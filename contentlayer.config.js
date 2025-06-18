@@ -1,6 +1,11 @@
 // import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
+<<<<<<< HEAD
 import readingTime from 'reading-time'
 import mdxOptions from './config/md.mjs'
+=======
+import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files';
+import readingTime from 'reading-time';
+>>>>>>> working-commit
 import GithubSlugger from 'github-slugger'
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files';
 // import rehypePrettyCode from 'rehype-pretty-code';
@@ -10,39 +15,46 @@ const Author = defineDocumentType(() => ({
   name: 'Author',
   fields: {
     name: { type: 'string', required: true },
+<<<<<<< HEAD
     image: { type: 'string', required: true }
   }
 }))
+=======
+    image: { type: 'string', required: true },
+  },
+}));
+>>>>>>> working-commit
 
 const computedFields = {
-  readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
-  wordCount: {
-    type: 'number',
-    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
-  },
   slug: {
     type: 'string',
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    resolve: (doc) => doc._raw.flattenedPath.replace(/^(articles|books|snippets)\//, ''),
+  },
+  readingTime: { 
+    type: 'json', 
+    resolve: (doc) => readingTime(doc.body.raw) 
   },
   headings: {
-    type: "json",
-    resolve: async (doc) => {
-      const regXHeader = /\n(?<flag>#{1,6})\s+(?<data>.+)/g;
-      const slugger = new GithubSlugger()
-      const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
-          ({ groups }) => {
-            const flag = groups?.flag;
-            const data = groups?.data;
-            return {
-              level: flag?.length == 1 ? "one"
-              : flag?.length == 2 ? "two"
-              : "three",
-              text: data,
-              slug: data ? slugger.slug(data) : undefined
-            };
-          }
-        );
-        return headings;
+    type: 'json',
+    resolve: (doc) => {
+      const slugger = new GithubSlugger();
+      const headings = [];
+      const lines = doc.body.raw.split('\n');
+      
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (line.startsWith('## ')) {
+          const text = line.replace('## ', '');
+          const slug = slugger.slug(text);
+          headings.push({ text, slug, level: 2 });
+        }
+        if (line.startsWith('### ')) {
+          const text = line.replace('### ', '');
+          const slug = slugger.slug(text);
+          headings.push({ text, slug, level: 3 });
+        }
+      }
+      return headings;
     },
   },
 }
@@ -183,6 +195,7 @@ export const Snippet = defineDocumentType(() => ({
       required: true,
     }
   },
+<<<<<<< HEAD
   computedFields: {
     slug: {
       type: 'string',
@@ -197,15 +210,44 @@ export const Snippet = defineDocumentType(() => ({
         return { text: `${minutes} min read` };
       },
     },
+=======
+  computedFields,
+}));
+
+const Book = defineDocumentType(() => ({
+  name: 'Book',
+  filePathPattern: `books/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    category: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    image: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true },
+    author: { type: 'string', required: true }
+>>>>>>> working-commit
   },
 }))
 
 export default makeSource({
   contentDirPath: 'data',
+<<<<<<< HEAD
   documentTypes: [Article, Books, Snippet],
   mdx: mdxOptions,
+=======
+  documentTypes: [Article, Book, Snippet],
+  mdx: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    format: 'mdx',
+  },
+>>>>>>> working-commit
   exclude: ["**/*.json", "siteMapdata.json"],
   disableImportAliasWarning: true,
   fileExtensions: ['mdx', 'md'],
   esm: false
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> working-commit

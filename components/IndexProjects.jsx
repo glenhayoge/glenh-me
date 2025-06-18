@@ -19,7 +19,7 @@ export default function IProjects() {
         <div className="flex flex-wrap -m-4 text-center">
         <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
-              <div className="block rounded outline outline-1 max-w-sm text-center">
+              <div className="block rounded outline outline-1 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                 <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500">
                   <div className="text-center">
                         glensea.com Website
@@ -69,7 +69,7 @@ export default function IProjects() {
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3 p-4">
            
-              <div className="block rounded outline outline-1  outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
+              <div className="block rounded outline outline-1 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                 <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500 ">
                   <div className="text-center">
                         Dzagoo Website
