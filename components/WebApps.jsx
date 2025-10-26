@@ -1,160 +1,153 @@
-import Link from "next/link";
+import { ProjectGrid } from "./project-grid";
+import Link from "next/link"
+
+const TechIcons = {
+  React: <i className="devicon-react-original colored" />,
+  NextJS: <i class="devicon-nextjs-plain colored"></i>,
+  Tailwind: <i className="devicon-tailwindcss-plain colored" />,
+  GitHub: <i className="devicon-github-original" />,
+  JavaScript: <i className="devicon-javascript-plain colored" />,
+  PHP: <i className="devicon-php-plain colored" />,
+  CSS3: <i className="devicon-css3-plain colored" />,
+  Bulma: <i className="devicon-bulma-plain colored" />,
+  Django: <i className="devicon-django-plain colored" />,
+  Docker: <i className="devicon-docker-plain colored" />,
+  Python: <i className="devicon-python-plain colored" />,
+  Angular: <i className="devicon-angularjs-plain colored" />,
+  Ionic: <i className="devicon-ionic-original colored" />,
+  AWS: <i className="devicon-amazonwebservices-plain colored" />,
+  Expo:<i class="devicon-expo-original"></i>,
+  Android: <i class="devicon-android-plain colored"></i>,
+  Apple: <i class="devicon-apple-original colored"></i>,
+  Netlify: <i class="devicon-netlify-plain colored"></i>
+
+
+}
+
 const projects = [
   {
-    name: "My Portfolio-glensea.com",
-    description: "The source code of this website - https://glensea.com",
-    link: "https://github.com/glenhayoge/glenh-me",
-    linkText: "Source",
+    name: "Glensea.com-My Personal Website",
+    description: "The source code for this website - https://glensea.com",
     techStack: [
-      "devicon-react-original",
-      "devicon-nextjs-original",
-      "devicon-tailwindcss-plain",
-      "devicon-github-original",
+      { name: "React", icon: TechIcons.React },
+      { name: "Next.js", icon: TechIcons.NextJS },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "Netlify", icon: TechIcons.Netlify },
+      { name: "GitHub", icon: TechIcons.GitHub },
     ],
+    githubUrl: "https://github.com/glenhayoge/glenh-me",
   },
   {
-    name: "Dzagoo.com Website",
+    name: "Dzagoo Digital Technologies",
     description: "A digital solutions business website - https://dzagoo.com",
-    link: "https://dzagoo.com",
-    linkText: "Live site",
     techStack: [
-      "devicon-javascript-plain",
-      "devicon-php-plain",
-      "devicon-css3-plain",
-      "devicon-tailwindcss-plain",
-      "devicon-github-original",
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "PHP", icon: TechIcons.PHP },
+      { name: "CSS3", icon: TechIcons.CSS3 },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "Netlify", icon: TechIcons.Netlify },
     ],
+    demoUrl: "https://dzagoo.com",
   },
   {
     name: "FPDA Website",
     description: "FPDA's official company website - https://fpda.com.pg",
-    link: "https://fpda.com.pg",
-    linkText: "Live Site",
     techStack: [
-      "devicon-bulma-plain", 
-      "devicon-django-plain", 
-      "devicon-docker-plain", 
-      "devicon-python-plain", 
-      "devicon-javascript-plain", 
-      "devicon-github-original"
-    ]
+      { name: "Bulma", icon: TechIcons.Bulma },
+      { name: "Django", icon: TechIcons.Django },
+      { name: "Docker", icon: TechIcons.Docker },
+      { name: "Python", icon: TechIcons.Python },
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "GitHub", icon: TechIcons.GitHub },
+    ],
+    demoUrl: "https://fpda.com.pg",
   },
   {
     name: "FARMIS App",
     description: "FARMIS agri-advisory mobile application",
-    link: "https://farmis.ai",
-    linkText: "Live Site",
     techStack: [
-      "devicon-angularjs-plain", 
-      "devicon-django-plain", 
-      "devicon-ionic-original", 
-      "devicon-python-plain", 
-      "devicon-docker-plain", 
-      "devicon-github-original"
-    ]
+      { name: "Expo", icon: TechIcons.Expo },
+      { name: "React", icon: TechIcons.React },
+      { name: "Django", icon: TechIcons.Django },
+      { name: "Python", icon: TechIcons.Python },
+      { name: "Android", icon: TechIcons.Android },
+      { name: "Docker", icon: TechIcons.Docker },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "AWS", icon: TechIcons.AWS },
+      
+    ],
+    demoUrl: "https://farmis.ai",
   },
   {
-    name: "Penros Website",
-    description: "A commissioned company website",
-    link: "https://penroslogistics.com",
-    linkText: "Live Site",
+    name: "FPDA MVF MIS/Website",
+    description: "IFAD's funded Market for Village Farmers Project MIS & Website",
     techStack: [
-      "devicon-react-original", 
-      "devicon-nextjs-original", 
-      "devicon-tailwindcss-plain", 
-      "devicon-github-original"
-    ]
+      { name: "Django", icon: TechIcons.Django },
+      { name: "Python", icon: TechIcons.Python },
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "AWS", icon: TechIcons.AWS },
+      { name: "Docker", icon: TechIcons.Docker },
+    ],
+    demoUrl: "https://fpdamvfproject.org",
   },
   {
     name: "Wantoea App",
     description: "Small Business Essential Accounting Tool",
-    link: "https://wantoea.com",
-    linkText: "Live Site",
     techStack: [
-      "devicon-django-plain", 
-      "devicon-docker-plain", 
-      "devicon-python-plain", 
-      "devicon-javascript-plain", 
-      "devicon-tailwindcss-plain", 
-      "devicon-github-original"
-    ]
+      { name: "Django", icon: TechIcons.Django },
+      { name: "Docker", icon: TechIcons.Docker },
+      { name: "Python", icon: TechIcons.Python },
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+    ],
+    demoUrl: "https://wantoea.com",
   },
   {
     name: "RaitStart Web App",
-    description: "Small Business Guides & Digital Tools",
-    link: "https://raitstart.com",
-    linkText: "Live Site",
+    description: "PNG's Small Business Guides, Digital Tools and Resources Portal",
     techStack: [
-      "devicon-django-plain", 
-      "devicon-python-plain", 
-      "devicon-javascript-plain", 
-      "devicon-tailwindcss-plain", 
-      "devicon-github-original", 
-      "devicon-amazonwebservices-plain"
-    ]
-  }
-];
+      { name: "Next.js", icon: TechIcons.NextJS },
+      { name: "React", icon: TechIcons.React },
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "AWS", icon: TechIcons.AWS },
+    ],
+    demoUrl: "https://raitstart.com",
+  },
+]
 
-export default function WebApps() {
+export default function Home() {
   return (
-    <div className="container mx-auto w-full mt-8 rounded-lg">
-      <div className="pt-8 mb-8 mx-4 lg:mx-0 px-4 text-gray-600">
-        <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
-          Mobile & Web apps
-        </p>
-        <p className="text-sm text-gray-400 mt-3">
-          Here are selected web and mobile applications I crafted over the years. From personal projects to open source contributions to professional work.
-        </p>
-      </div>
+    <main className="min-h-screen">
+      <div className="container mx-auto px-4 py-16">
+        <div className="mb-12 space-y-4">
+          <h1 className="text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-neutral-50">
+            Mobile & Web Apps
+          </h1>
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl leading-relaxed">
+            Here are selected web and mobile applications I crafted over the years. From personal projects to open
+            source contributions to professional work.
+          </p>
+        </div>
 
-      <div className="flex flex-wrap -m-4 text-center p-4">
-        {projects.map((project, index) => (
-          <div key={index} className="w-full md:w-1/2 lg:w-1/4 p-4">
-            <div className="block mx-4 lg:mx-0 rounded-lg outline outline-1 bg-gray-300/25 dark:bg-gray-700/25 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
-              <div className="py-3 px-6 font-bold border-b text-left border-gray-300 dark:border-gray-500 text-gray-500">
-                <div className="text-center">{project.name}</div>
-              </div>
-              <div className="p-6 items-left flex-left">
-                <p className="text-gray-500 text-center text-sm tracking-tight leading-tight mb-4">
-                  {project.description}
-                </p>
-                <Link href={project.link} target="_blank">
-                  <button className="bg-gray-500/25 hover:scale-[1.02] text-gray-500 dark:text-gray-400 text-xs py-1 px-2 rounded-xl inline-flex items-center">
-                    <span>{project.linkText}</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-4 h-4 ml-1 dark:text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </button>
-                </Link>
-              </div>
-              <div className="py-3 text-xl px-6 border-t border-gray-300 dark:border-gray-500 text-gray-400">
-                {project.techStack.map((tech, i) => (
-                  <span key={i}>
-                    <i className={`${tech} p-1`}></i>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+        <ProjectGrid projects={projects} />
 
-      <Link href="https://github.com/glenhayoge" className="mx-4 lg:mx-0">
-        <button className="text-sm button text-gray-400 mx-3 mt-3 p-2 border rounded border-gray-500">
-          View More Projects
-        </button>
-      </Link>
-    </div>
-  );
+        <div className="mt-12 flex justify-start">
+          <Link
+            href="https://github.com/glenhayoge"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md border border-neutral-200 bg-transparent px-6 py-3 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-900"
+          >
+            View More Projects
+          </Link>
+        </div>
+      </div>
+    </main>
+  )
 }
