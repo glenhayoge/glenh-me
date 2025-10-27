@@ -1,0 +1,151 @@
+---
+title: "Understanding game theory using first principles thinking"
+publishedAt: 'Oct 27, 2025'
+description: "game theory studies decision-making when multiple people (or entities) interact and their choices affect each other’s outcomes."
+seoDescription: "game theory studies decision-making when multiple people (or entities) interact and their choices affect each other’s outcomes."
+category: "Game Theory"
+tags: maths,strategy
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1730815048565-3ef724ea5ff3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1855"
+caption: 'Photo by GlenH on Unsplash'
+---
+
+# Understanding Game Theory Using First Principles Thinking
+
+You make countless strategic decisions every day. Which route to take to work when traffic is heavy. Whether to cooperate with a difficult colleague or compete. How to price your services when competitors might undercut you. These situations all share a common thread: your best choice depends on what others choose to do.
+
+Game theory provides a mathematical framework for understanding these interactive decisions. But the concept can feel abstract and intimidating. Let's break it down from the ground up, starting with the most basic elements.
+
+## What Is Game Theory, Really?
+
+Strip away the mathematical complexity, and game theory studies one fundamental question: How do rational people make decisions when the outcome depends on what everyone else does?
+
+The word "game" might suggest chess or poker, but economists and strategists use it much more broadly. Any situation where your payoff depends on others' actions qualifies as a game. A price war between companies. A nuclear standoff between countries. Even choosing which line to join at the grocery store.
+
+This interdependence distinguishes game theory from regular decision-making. When you choose what to eat for breakfast, your decision affects only you. When you choose how to bid in an auction, your success depends entirely on what others bid.
+
+## The Essential Building Blocks
+
+Every game theory situation contains three core elements. Think of them as the DNA of strategic interaction.
+
+**Players** are the decision-makers. They can be individuals, companies, countries, or any entity that can choose actions. A simple negotiation has two players. A market might have hundreds.
+
+**Strategies** are the complete plans of action available to each player. In poker, your strategy might specify how to bet with every possible hand in every situation. In business, your strategy might detail how to respond to various competitor moves.
+
+**Payoffs** represent what each player gains or loses for every possible combination of strategies. These payoffs drive the entire analysis. Players want to maximize their payoffs, just like you want to maximize your own well-being in daily decisions.
+
+## The Prisoner's Dilemma: A Perfect Starting Point
+
+The most famous game illustrates these concepts perfectly. Two suspects sit in separate cells, unable to communicate. Police offer each the same deal: confess and testify against your partner, or stay silent.
+
+Here's what happens in each scenario:
+
+- Both stay silent: Each gets a light sentence (say, 1 year)
+- Both confess: Each gets a moderate sentence (say, 3 years)  
+- One confesses, one stays silent: The confessor goes free, the silent one gets a harsh sentence (say, 5 years)
+
+Now put yourself in either prisoner's shoes. If your partner stays silent, confessing gets you freedom instead of 1 year in prison. If your partner confesses, confessing gets you 3 years instead of 5. Confessing wins either way.
+
+Your partner faces the identical logic. Both rational prisoners confess, even though both staying silent would give each a better outcome.
+
+This reveals a crucial insight: individual rationality can lead to collective irrationality. Each person makes the best personal choice, yet both end up worse off than if they had cooperated.
+
+## Real-World Applications of the Prisoner's Dilemma
+
+This pattern appears everywhere once you recognize it.
+
+**Arms races** follow this logic perfectly. Countries spend enormous sums on weapons because others do the same. Each nation stays safer by arming itself regardless of what others do. Yet all nations would be better off with mutual disarmament.
+
+**Price wars** trap companies in similar dynamics. When competitors cut prices, you must cut yours to keep customers. When they keep prices high, cutting yours steals market share. Everyone cuts prices and profits vanish, even though maintaining high prices would benefit all companies.
+
+**Environmental problems** often have this structure. Each factory saves money by polluting rather than installing expensive clean technology. But when all factories pollute, everyone suffers from degraded air and water quality.
+
+The prisoner's dilemma explains why cooperation is often difficult to achieve, even when it would benefit everyone involved.
+
+## Nash Equilibrium: The Central Solution Concept
+
+John Nash asked a simple but profound question: In any game, is there a set of strategies where no player wants to change their choice, given what everyone else is doing?
+
+A Nash equilibrium exists when every player's strategy is the best response to all other players' strategies. No one has an incentive to deviate unilaterally.
+
+In the prisoner's dilemma, both confessing forms a Nash equilibrium. Given that your partner confesses, you do best by confessing too. The same logic applies to your partner.
+
+But Nash equilibria can be surprising. Consider the game of chicken, where two drivers speed toward each other on a collision course. Each can swerve or continue straight. Continuing straight while the other swerves makes you look brave. Both continuing straight means a deadly crash. Both swerving means you both look cowardly.
+
+This game has two Nash equilibria: one driver swerves while the other continues straight. But which driver should swerve? The answer depends on factors outside the basic game structure, like reputation or risk tolerance.
+
+## Zero-Sum vs. Non-Zero-Sum Games
+
+Traditional games like chess have a clear winner and loser. Your gain equals your opponent's loss. Economists call these zero-sum games because the total payoff sums to zero.
+
+But most real strategic situations are non-zero-sum. Both parties can benefit from good choices, or both can suffer from poor ones. Business negotiations often have this character. A good deal creates value for both buyer and seller. A bad negotiation might eliminate the deal entirely, leaving both parties worse off than before.
+
+Non-zero-sum games open possibilities for cooperation that don't exist in pure competition. Finding these win-win solutions becomes a key strategic skill.
+
+## Sequential vs. Simultaneous Games
+
+The timing of decisions shapes strategic thinking dramatically.
+
+In simultaneous games, players choose without knowing others' decisions. The prisoner's dilemma assumes this structure. Both prisoners decide whether to confess without knowing their partner's choice.
+
+Sequential games involve moves made in order, with later players observing earlier decisions. Think of chess, where you see your opponent's move before making yours.
+
+Sequence creates different strategic possibilities. The first mover might gain an advantage by committing to a strategy that influences later players. Or the second mover might benefit from better information.
+
+Consider entry into a market. If you can credibly commit to fighting any new entrant with a price war, potential competitors might choose to stay out. But if they don't believe your threat, they might enter anyway.
+
+## Information and Its Strategic Value
+
+What players know dramatically affects their decisions and outcomes.
+
+Perfect information means everyone knows the complete history of the game. Chess has perfect information because both players can see all previous moves.
+
+Imperfect information means some aspects remain hidden. In poker, you don't know other players' cards. In business, you don't know competitors' true costs or plans.
+
+Information creates both opportunities and challenges. Having private information can provide strategic advantages. But uncertainty about others' information complicates your own decision-making.
+
+Signaling becomes crucial when information is asymmetric. How do you credibly communicate private information to others? How do you interpret the signals others send to you?
+
+## Repeated Games and the Evolution of Cooperation
+
+Single interactions often discourage cooperation, as the prisoner's dilemma shows. But when the same players interact repeatedly, cooperation becomes more feasible.
+
+The prospect of future interaction changes current incentives. Betraying someone today might trigger retaliation tomorrow. Building a reputation for cooperation can pay long-term dividends.
+
+Different strategies emerge for repeated games. "Tit for tat" starts by cooperating, then copies whatever the other player did in the previous round. This simple rule often performs well in computer tournaments and helps explain how cooperation evolves in real settings.
+
+Businesses often interact repeatedly with customers, suppliers, and even competitors. These ongoing relationships create opportunities for cooperative behavior that wouldn't make sense in one-shot interactions.
+
+## Practical Applications in Daily Life
+
+Game theory insights apply far beyond academic exercises. Understanding strategic thinking improves decision-making in many contexts.
+
+**Negotiations** benefit from game-theoretic thinking. Identify each party's alternatives and payoffs. Look for potential gains from trade. Consider how to make credible commitments or threats.
+
+**Career decisions** often involve strategic elements. Which skills to develop depends partly on what others are doing. How to position yourself relative to colleagues involves strategic thinking about their likely moves.
+
+**Investment decisions** require anticipating market behavior. How will other investors react to news? What does everyone else know that might affect prices?
+
+**Parenting** involves strategic elements when children test boundaries. How do you make credible threats about consequences? How do you avoid getting trapped in unproductive cycles of punishment and rebellion?
+
+## The Limits of Game Theory
+
+Game theory provides powerful insights, but it has important limitations. The approach assumes players are rational and focused solely on maximizing their payoffs. Real people often act on emotion, make systematic errors, or care about fairness in ways that standard models don't capture.
+
+The theory also requires specifying the game structure precisely. In reality, players might disagree about the rules, payoffs, or even who the players are. These ambiguities can make formal analysis difficult.
+
+Game theory works best as a thinking tool rather than a prediction machine. It helps identify key strategic considerations and potential outcomes. But human behavior remains complex and sometimes unpredictable.
+
+## Building Strategic Intuition
+
+The most valuable takeaway from game theory is about developing intuition about strategic interaction.
+
+Start by identifying when your outcomes depend on others' choices. Recognize the difference between situations where interests align and where they conflict. Look for opportunities to create mutual benefits rather than just fighting over fixed resources.
+
+Pay attention to the role of information, timing, and reputation in strategic settings. Consider how today's actions affect tomorrow's options. Think about how to make your commitments and threats credible.
+
+Game theory reveals that strategic thinking is both more complex and more important than many people realize. Your success often depends not just on your own choices, but on understanding how others think about their choices. This insight alone can improve your decision-making in countless situations.
+
+The framework provides a systematic way to think about these interactive decisions. Whether you're negotiating a salary, choosing business strategies, or trying to solve collective action problems, game theory offers tools for clearer thinking about complex strategic situations.
