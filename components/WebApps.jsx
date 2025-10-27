@@ -25,31 +25,7 @@ const TechIcons = {
 }
 
 const projects = [
-  {
-    name: "Glensea.com-My Personal Website",
-    description: "The source code for this website - https://glensea.com",
-    techStack: [
-      { name: "React", icon: TechIcons.React },
-      { name: "Next.js", icon: TechIcons.NextJS },
-      { name: "Tailwind", icon: TechIcons.Tailwind },
-      { name: "Netlify", icon: TechIcons.Netlify },
-      { name: "GitHub", icon: TechIcons.GitHub },
-    ],
-    githubUrl: "https://github.com/glenhayoge/glenh-me",
-  },
-  {
-    name: "Dzagoo Digital Technologies",
-    description: "A digital solutions business website - https://dzagoo.com",
-    techStack: [
-      { name: "JavaScript", icon: TechIcons.JavaScript },
-      { name: "PHP", icon: TechIcons.PHP },
-      { name: "CSS3", icon: TechIcons.CSS3 },
-      { name: "Tailwind", icon: TechIcons.Tailwind },
-      { name: "GitHub", icon: TechIcons.GitHub },
-      { name: "Netlify", icon: TechIcons.Netlify },
-    ],
-    demoUrl: "https://dzagoo.com",
-  },
+
   {
     name: "FPDA Website",
     description: "FPDA's official company website - https://fpda.com.pg",
@@ -64,8 +40,8 @@ const projects = [
     demoUrl: "https://fpda.com.pg",
   },
   {
-    name: "FARMIS App",
-    description: "FARMIS agri-advisory mobile application",
+    name: "FARMIS",
+    description: "FARMIS is a digital agriculture ecosystem connectivity platform for Papua New Guinea",
     techStack: [
       { name: "Expo", icon: TechIcons.Expo },
       { name: "React", icon: TechIcons.React },
@@ -80,7 +56,7 @@ const projects = [
     demoUrl: "https://farmis.ai",
   },
   {
-    name: "FPDA MVF MIS/Website",
+    name: "MVF Project MIS",
     description: "IFAD's funded Market for Village Farmers Project MIS & Website",
     techStack: [
       { name: "Django", icon: TechIcons.Django },
@@ -94,8 +70,33 @@ const projects = [
     demoUrl: "https://fpdamvfproject.org",
   },
   {
-    name: "Wantoea App",
-    description: "Small Business Essential Accounting Tool",
+    name: "Glensea.com",
+    description: "The source code for this website - https://glensea.com",
+    techStack: [
+      { name: "React", icon: TechIcons.React },
+      { name: "Next.js", icon: TechIcons.NextJS },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "Netlify", icon: TechIcons.Netlify },
+      { name: "GitHub", icon: TechIcons.GitHub },
+    ],
+    githubUrl: "https://github.com/glenhayoge/glenh-me",
+  },
+  {
+    name: "Dzagoo",
+    description: "A digital solutions business website - https://dzagoo.com",
+    techStack: [
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "PHP", icon: TechIcons.PHP },
+      { name: "CSS3", icon: TechIcons.CSS3 },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "Netlify", icon: TechIcons.Netlify },
+    ],
+    demoUrl: "https://dzagoo.com",
+  },
+  {
+    name: "Wantoea",
+    description: "A Small Business Invoice Management & Essential Accounting App",
     techStack: [
       { name: "Django", icon: TechIcons.Django },
       { name: "Docker", icon: TechIcons.Docker },
@@ -107,7 +108,7 @@ const projects = [
     demoUrl: "https://wantoea.com",
   },
   {
-    name: "RaitStart Web App",
+    name: "RaitStart",
     description: "PNG's Small Business Guides, Digital Tools and Resources Portal",
     techStack: [
       { name: "Next.js", icon: TechIcons.NextJS },
