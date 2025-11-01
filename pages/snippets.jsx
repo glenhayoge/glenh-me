@@ -57,7 +57,7 @@ export default function IndexPage({ snippetsData }) {
               <div className="overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
                   <Link href="/snippets">
-                    <h1 className="mb-4 block text-left text-4xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
+                    <h1 className="mb-4 block text-left text-5xl px-4 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-5xl">
                       Snippets.
                     </h1>
                     <p className="text-sm pl-4 text-gray-600 my-6">

@@ -28,10 +28,10 @@ export default function Photography() {
   return (
     <div className="container mx-auto w-full mt-2 rounded-lg">
       <div className="pt-8 mb-8 px-4 text-gray-600 mx-4 lg:mx-0">
-        <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">
+      <h1 className="text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-neutral-50">
           Designs, Illustrations & Photography
-        </p>
-        <p className="text-sm text-gray-400 mt-3">
+        </h1>
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl leading-relaxed">
           Drawings, designs I created and photographs I took
         </p>
       </div>

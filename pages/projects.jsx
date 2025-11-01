@@ -17,9 +17,12 @@ export default function IndexPage() {
 
               <div className="flex flex-wrap items-center ">
                 <div className="w-full mx-4 lg:mx-0 lg:w-2/3 px-4">
-                  <h2 className="mb-4 block text-left text-4xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
+                  <h2 className="mb-4 block text-left text-5xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-5xl ">
                     Work Samples.
                   </h2>
+                  <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl leading-relaxed">
+          Personal work samples and projects I have created
+        </p>
                 </div>
                 <div className="w-full mx-4 lg:mx-0 lg:w-1/3 px-4 flex items-center">
                   <Image
