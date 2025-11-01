@@ -4,12 +4,10 @@ import { allArticles } from "contentlayer/generated";
 import { select } from "../utils/select";
 import Subscribe from "../components/Subscribe";
 import { ArticleTags } from '../components/ArticleTags'
-import { useRouter } from 'next/router';
 import Pagination from '../components/Pagination'
-import Link from 'next/link'; // Import Link from 'next/link' for client-side navigation
+import Link from 'next/link';
 
-export default function IndexPage({ articlesData }) {
-  const router = useRouter();
+export default function IndexPage({ articlesData, categories }) {
   const [articles, setArticles] = useState(articlesData || []);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredByTag, setFilteredByTag] = useState(null);
@@ -42,20 +40,6 @@ export default function IndexPage({ articlesData }) {
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
   const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
-
-  const handleTagClick = (tag) => {
-    if (!tag) return;
-    const tagsArray = tag.split(',').map((t) => t.trim()); // Split the tag string into an array
-    const queryString = tagsArray.map((t) => `tag=${t}`).join('&'); // Generate query string for each tag
-    window.location.href = `http://glensea.com/articles?${queryString}`;
-  };
-
-  // Get unique tags from articles
-  const uniqueTags = articlesData ? Array.from(
-    new Set(articlesData.flatMap((article) => 
-      article.tags ? article.tags.split(',').map(tag => tag.trim()) : []
-    ))
-  ) : [];
 
   return (
     <>
@@ -120,24 +104,35 @@ export default function IndexPage({ articlesData }) {
               <div className="dark:text-gray-500 bg-gray-200/25 rounded text-center overflow-hidden rounded-lg dark:bg-gray-800/25">
                 <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">
-                    <h5 className=" text-gray-600 dark:text-yellow-400 text-sm mb-4 tracking-wider font-semibold">
-                      MAJOR CATEGORIES
-                    </h5>
-                    {/* Display Tags */}
-                    <div>
-                      {uniqueTags.map((tag) => (
-                        <button
-                          key={tag}
-                          onClick={() => handleTagClick(tag)}
-                          className={`bg-gray-500/25 rounded-lg p-2 dark:bg-gray-200/25 dark:text-gray-300 text-xs text-gray-700 m-1 ${
-                            tag === filteredByTag ? "bg-gray-300" : ""
-                          }`}
-                        >
-                          {tag}
-                        </button>
-                      ))}
+                    <div className="flex items-center justify-between mb-4">
+                      <h5 className="text-gray-600 dark:text-yellow-400 text-sm tracking-wider font-semibold">
+                        MAJOR CATEGORIES
+                      </h5>
+                      <Link
+                        href="/article/categories"
+                        className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 underline"
+                      >
+                        View All
+                      </Link>
                     </div>
-                    <div>
+                    {/* Display Categories */}
+                    <div className="text-left">
+                      {categories.map((category) => (
+                        <Link
+                          key={category.name}
+                          href={`/article/category/${encodeURIComponent(category.name)}`}
+                          className="block mb-2 p-2 bg-gray-500/25 dark:bg-gray-200/25 rounded-lg hover:bg-gray-400/25 dark:hover:bg-gray-300/25 transition-colors"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-gray-700 dark:text-gray-300 font-medium">
+                              {category.name}
+                            </span>
+                            <span className="text-xs text-gray-500 dark:text-gray-400">
+                              {category.count}
+                            </span>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -176,9 +171,31 @@ export function getStaticProps() {
     })
     .sort((a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt)));
 
+  // Get all unique categories with their counts
+  const categoryMap = {};
+  
+  allArticles.forEach((article) => {
+    const category = article.category;
+    if (category) {
+      if (!categoryMap[category]) {
+        categoryMap[category] = 0;
+      }
+      categoryMap[category]++;
+    }
+  });
+
+  // Convert to array and sort alphabetically
+  const categories = Object.keys(categoryMap)
+    .map((categoryName) => ({
+      name: categoryName,
+      count: categoryMap[categoryName],
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   return { 
     props: { 
-      articlesData: articlesData || [] 
+      articlesData: articlesData || [],
+      categories: categories || []
     } 
   };
 }
