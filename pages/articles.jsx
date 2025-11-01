@@ -12,7 +12,7 @@ export default function IndexPage({ articlesData, categories }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredByTag, setFilteredByTag] = useState(null);
   const [currentPage, setCurrentPage] = useState(1); // Current page state
-  const articlesPerPage = 5; // Number of articles per page
+  const articlesPerPage = 10; // Number of articles per page
 
   // Filter articles based on search query and tag
   useEffect(() => {
@@ -53,6 +53,9 @@ export default function IndexPage({ articlesData, categories }) {
                     <h1 className="mb-4 block text-left text-4xl px-2 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
                       Articles.
                     </h1>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 px-2">
+                    Guides, references, stories, posts and tutorials on web/app development and more. <Link href="/article/categories" className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 underline">View All Categories</Link>
+                    </p>
                   </Link>
                 </div>
                 {/* Search form */}
