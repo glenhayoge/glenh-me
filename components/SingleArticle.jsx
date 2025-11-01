@@ -24,12 +24,12 @@ export const SingleArticle = ({
 
   useEffect(() => {
     try {
-      const articles = getRelatedArticles(category, tags, slug);
+      const articles = getRelatedArticles(category);
       setRelatedArticles(articles);
     } catch (error) {
       console.error('Error fetching related articles:', error);
     }
-  }, [category, tags, slug]);
+  }, [category]);
 
   return (
     <>
@@ -113,6 +113,25 @@ export const SingleArticle = ({
                         </div>
                       </div>
                     </div>
+                    {category && (
+                      <div>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm text-neutral-600 dark:text-neutral-400">Category</span>
+                          <Link
+                            href="/article/categories"
+                            className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 underline transition-colors"
+                          >
+                            View All
+                          </Link>
+                        </div>
+                        <Link
+                          href={`/article/category/${encodeURIComponent(category)}`}
+                          className="inline-block text-sm font-medium text-neutral-900 dark:text-neutral-50 hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors"
+                        >
+                          {category}
+                        </Link>
+                      </div>
+                    )}
                     {tags && (
                       <div>
                         <span className="text-sm text-neutral-600 dark:text-neutral-400">Tags</span>
