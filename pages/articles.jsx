@@ -108,8 +108,8 @@ export default function IndexPage({ articlesData, categories }) {
                 <div className="relative pt-6 pb-10 z-60 dark:bg-gray-800/25  rounded overflow-hidden">
                   <div className="px-6 text-center pt-2">
                     <div className="flex items-center justify-between mb-4">
-                      <h5 className="text-gray-600 dark:text-yellow-400 text-sm tracking-wider font-semibold">
-                        MAJOR CATEGORIES
+                      <h5 className="text-gray-600 dark:text-yellow-400 text-sm tracking font-semibold">
+                        Topic Categories
                       </h5>
                       <Link
                         href="/article/categories"
