@@ -5,11 +5,17 @@ export default function Footer() {
 
   return (
     <section >
-      <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
+      {/* <p className="flex flex-wrap dark:text-gray-600 text-gray-400  justify-center mb-4 mt-10">
         You've Reached the Bottom of the Page 👋
-      </p>
+      </p> */}
+     
 
-      <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4 border-t dark:border-gray-700 border-gray-200 dark:bg-dark-second">
+      <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4  dark:bg-dark-second">
+      <div className="flex items-center -mt-10">
+    <hr className="flex-grow dark:text-gray-600 text-gray-400"/>
+    <span className="dark:text-gray-600 text-gray-400 px-2">You've reached the bottom of the page 👋</span>
+    <hr className="flex-grow dark:text-gray-600 text-gray-400"/>
+</div>
         <div className="flex justify-center mt-8 space-x-6">
           <Link href="#" className="hover:text-gray-500">
             <span className="sr-only">GlenGH Logo</span>
@@ -168,7 +174,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="text-center text-xs">
-          &copy; GlenH.me Contents from 2018 - {new Date().getFullYear()}. <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">Open Source</Link>
+          &copy; Glensea.com - Contents from 2018 - {new Date().getFullYear()}. <Link href="https://github.com/glenhayoge/glenh-me" target="_blank">Open Source Code</Link>
         </div>
       </div>
     </section>
