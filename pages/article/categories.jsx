@@ -13,7 +13,7 @@ export default function CategoriesPage({ categories }) {
       
       <section className="py-24">
         <div className="container px-4 lg:px-12 sm:px-4 mx-auto">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h1 className="mb-8 block text-left text-4xl px-2 font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl">
               Article Categories
             </h1>
