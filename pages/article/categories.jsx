@@ -30,14 +30,14 @@ export default function CategoriesPage({ categories }) {
                   <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
                     {letter}
                   </h2>
-                  <div className="grid gap-3">
+                  <div className="grid grid-cols-3 gap-3">
                     {categories[letter].map((category) => (
                       <Link
                         key={category.name}
                         href={`/article/category/${encodeURIComponent(category.name)}`}
                         className="flex items-center justify-between p-4 bg-neutral-50 dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors group"
                       >
-                        <span className="text-lg font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition-colors">
+                        <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition-colors">
                           {category.name}
                         </span>
                         <span className="text-sm text-neutral-500 dark:text-neutral-400 bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded-full">
