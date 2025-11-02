@@ -10,7 +10,7 @@ export default function Footer() {
       </p> */}
      
 
-      <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4  dark:bg-dark-second">
+      <div className=" px-2 py-12 mx-auto space-y-8 overflow-hidden sm:px-2 lg:px-4">
       <div className="flex items-center -mt-10">
     <hr className="flex-grow dark:text-gray-600 text-gray-400"/>
     <span className="dark:text-gray-600 text-gray-400 px-2">You've reached the bottom of the page 👋</span>
