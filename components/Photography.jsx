@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ExternalLink } from "lucide-react"
 
 const photos = [
   {
@@ -57,10 +58,9 @@ export default function Photography() {
           </div>
         ))}
       </div>
-      <Link href="https://unsplash.com/@glenhayoge" className="mx-4 lg:mx-0">
-        <button className="text-sm button text-gray-400 mx-3 mt-3 p-2 border rounded border-gray-500">
-          View More Photos
-        </button>
+      <Link href="https://unsplash.com/@glenhayoge" className="inline-flex items-center gap-1.5 rounded-md bg-neutral-500 px-4 mx-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200">
+          View More Photos 
+          <ExternalLink className="h-4 w-4" />
       </Link>
     </div>
   );

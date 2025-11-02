@@ -21,7 +21,7 @@ export default function BookPage({ books }) {
                 <div className="pt-1 pb-1  ">
                   <div className="flex mb-4 justify-between items-center">
                     <div className="pt-2 px-3  text-gray-600">
-                      <p className="text-3xl font-bold tracking-tight sm:text-4xl text-gray-600 dark:text-gray-400">
+                      <p className="text-5xl font-bold tracking-tight sm:text-5xl text-gray-600 dark:text-gray-400">
                       Book List.
                       </p>
                       <p className="text-sm  text-gray-600 my-6">

@@ -22,7 +22,7 @@ export default function IProjects() {
               <div className="block rounded outline outline-1 outline-gray-200 dark:outline-gray-600 max-w-sm text-center">
                 <div className="py-3 px-2 font-bold border-b text-left border-gray-300 dark:border-gray-500">
                   <div className="text-center">
-                        glensea.com Website
+                        Glensea.com
                         </div>
                 </div>
                 <div className="p-2 items-left flex-left">

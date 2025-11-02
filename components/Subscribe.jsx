@@ -5,11 +5,11 @@ export default function Subscribe() {
     setModal(!openModal);
   };
   return (
-    <div className="px-4 my-12">
-      <div className="p-6 shadow rounded border border-gray-200 dark:border-gray-600 text-center overflow-hidden border shadow-md rounded">
+    <div className="my-10">
+      <div className="p-6 rounded border border-gray-200 dark:border-gray-600 text-center overflow-hidden border rounded">
         <h3 className="mb-2 text-xl font-bold sm:text-2xl">Newsletter</h3>
         <p className="mb-6 text-sm">
-          Subscribe & be notified when new articles & stuff are posted here. I
+          Subscribe and be notified when new articles & stuff are posted here. I
           won't spam or publish your email addresses. Unsubscribe anytime.
         </p>
         <div href="/about" className="mb-10">

@@ -16,8 +16,8 @@ export default function IndexPage() {
             <div className="w-full lg:w-8/12  lg:pl-20 md:px-8 ">
               <div className=" overflow-hidden">
                 <div className="flex mt-4 justify-left text-left items-center">
-                  <h1 className=" mb-4 block text-left text-4xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-4xl ">
-                    Blogs
+                  <h1 className=" mb-4 block text-left text-5xl font-black leading-10 tracking-tight dark:text-yellow-400 text-gray-600 sm:text-5xl ">
+                    Blogs.
                   </h1>
                 </div>
                 <div className="w-full h-full overflow-y-auto">
