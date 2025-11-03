@@ -180,7 +180,7 @@ export const SingleArticle = ({
           <ul>
             {relatedArticles.map((relatedArticle) => (
               <li key={relatedArticle.slug}>
-                <Link href={`/article/${relatedArticle.slug}`}>
+                <Link className='text-lg' href={`/article/${relatedArticle.slug}`}>
                   {relatedArticle.title}
                 </Link>
               </li>

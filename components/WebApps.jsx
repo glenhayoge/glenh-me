@@ -1,5 +1,6 @@
 import { ProjectGrid } from "./project-grid";
 import Link from "next/link"
+import { ExternalLink } from "lucide-react"
 
 const TechIcons = {
   React: <i className="devicon-react-original colored" />,
@@ -138,14 +139,15 @@ export default function Home() {
 
         <ProjectGrid projects={projects} />
 
-        <div className="mt-12 flex justify-start">
+        <div className="mt-12 flex justify-end">
           <Link
             href="https://github.com/glenhayoge"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-md border border-neutral-200 bg-transparent px-6 py-3 text-base font-medium text-neutral-900 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-900"
+            className="inline-flex items-center gap-1.5 rounded-md bg-neutral-500 px-4 mx-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200"
           >
             View More Projects
+            <ExternalLink className="h-4 w-4" />
           </Link>
         </div>
       </div>

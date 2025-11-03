@@ -1,0 +1,501 @@
+---
+title: "Day 1: HTML is Structure-Web Fundamentals 10 Days Sprint"
+publishedAt: 'Nov 4, 2025'
+description: "HTML is Structure-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "HTML is Structure-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1680907298092-228b1d87b1c9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740"
+caption: 'Credits: Kolby Milton, Unsplash'
+---
+
+## Day 1: Overview
+
+HTML (HyperText Markup Language) is the foundation of every web page. It provides the structure and content, much like the skeleton and organs of a body. Today, you'll learn how to properly structure a web page using semantic HTML.
+
+## Learning Objectives
+By the end of this tutorial, you will:
+- Understand the basic structure of an HTML document
+- Know the difference between semantic and non-semantic tags
+- Create forms with various input types
+- Build a complete profile page from scratch
+
+---
+
+## Part 1: Understanding HTML Structure
+
+### The Basic HTML Document
+
+Every HTML document follows this basic structure:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page Title</title>
+</head>
+<body>
+    <!-- Your content goes here -->
+</body>
+</html>
+```
+
+**Breaking it down:**
+- `<!DOCTYPE html>` - Tells the browser this is an HTML5 document
+- `<html>` - The root element that contains everything
+- `<head>` - Contains metadata (information about the page, not visible content)
+- `<meta charset="UTF-8">` - Ensures proper character encoding
+- `<meta name="viewport"...>` - Makes your page responsive on mobile devices
+- `<title>` - The text that appears in the browser tab
+- `<body>` - Contains all the visible content
+
+---
+
+## Part 2: Essential HTML Elements
+
+### Headings and Text
+
+HTML provides six levels of headings, from most important (h1) to least important (h6):
+
+```html
+<h1>Main Page Title</h1>
+<h2>Section Heading</h2>
+<h3>Sub-section Heading</h3>
+<!-- h4, h5, h6 follow the same pattern -->
+
+<p>This is a paragraph of text. Paragraphs create blocks of text with spacing above and below.</p>
+
+<p>You can have <strong>bold text</strong> and <em>italic text</em> within paragraphs.</p>
+```
+
+**Best Practice:** Only use one `<h1>` per page. It represents the main topic of your page.
+
+### Lists
+
+There are three types of lists in HTML:
+
+```html
+<!-- Unordered List (bullets) -->
+<ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ul>
+
+<!-- Ordered List (numbers) -->
+<ol>
+    <li>Step one</li>
+    <li>Step two</li>
+    <li>Step three</li>
+</ol>
+
+<!-- Description List -->
+<dl>
+    <dt>Term</dt>
+    <dd>Definition of the term</dd>
+</dl>
+```
+
+### Links and Images
+
+```html
+<!-- Link -->
+<a href="https://example.com">Click here to visit Example</a>
+
+<!-- Image -->
+<img src="profile-photo.jpg" alt="Profile photo of John Doe">
+```
+
+**Important:** Always include `alt` text for images. It helps with accessibility and SEO.
+
+---
+
+## Part 3: Forms and Inputs
+
+Forms are how users interact with your web pages. They collect information and send it somewhere (to a server, or we can handle it with JavaScript).
+
+### Basic Form Structure
+
+```html
+<form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    
+    <button type="submit">Submit</button>
+</form>
+```
+
+### Common Input Types
+
+```html
+<!-- Text input -->
+<input type="text" id="name" name="name" placeholder="Enter your name">
+
+<!-- Email input (validates email format) -->
+<input type="email" id="email" name="email" placeholder="your@email.com">
+
+<!-- Password input (hides characters) -->
+<input type="password" id="password" name="password">
+
+<!-- Number input -->
+<input type="number" id="age" name="age" min="0" max="120">
+
+<!-- Textarea (multi-line text) -->
+<textarea id="bio" name="bio" rows="4" cols="50"></textarea>
+
+<!-- Checkbox -->
+<input type="checkbox" id="subscribe" name="subscribe">
+<label for="subscribe">Subscribe to newsletter</label>
+
+<!-- Radio buttons (choose one) -->
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+
+<!-- Select dropdown -->
+<select id="country" name="country">
+    <option value="">Choose a country</option>
+    <option value="us">United States</option>
+    <option value="uk">United Kingdom</option>
+    <option value="ca">Canada</option>
+</select>
+```
+
+---
+
+## Part 4: Semantic HTML vs Divs
+
+### The Problem with Divs
+
+```html
+<!-- Non-semantic (bad) -->
+<div class="header">
+    <div class="nav">...</div>
+</div>
+<div class="main-content">...</div>
+<div class="footer">...</div>
+```
+
+Everything is a `<div>`, which tells us nothing about the content's purpose.
+
+### Semantic HTML (good)
+
+```html
+<!-- Semantic (good) -->
+<header>
+    <nav>...</nav>
+</header>
+<main>
+    <article>...</article>
+</main>
+<footer>...</footer>
+```
+
+**Common Semantic Tags:**
+- `<header>` - Introductory content or navigation
+- `<nav>` - Navigation links
+- `<main>` - The main content of the page
+- `<article>` - Self-contained content (blog post, news article)
+- `<section>` - A thematic grouping of content
+- `<aside>` - Sidebar content, tangentially related
+- `<footer>` - Footer of a document or section
+
+**Why use semantic tags?**
+1. **Accessibility** - Screen readers can navigate better
+2. **SEO** - Search engines understand your content structure
+3. **Readability** - Other developers understand your code faster
+4. **Maintainability** - Easier to update and modify
+
+---
+
+## Part 5: Building Your Profile Page
+
+### Step-by-Step Tutorial
+
+Let's build a complete profile page that demonstrates everything we've learned.
+
+#### Step 1: Create the HTML File
+
+Create a new file called `profile.html` and start with the basic structure:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - John Doe</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+#### Step 2: Add the Header Section
+
+Inside the `<body>` tag, add a header with your name and title:
+
+```html
+<header>
+    <h1>John Doe</h1>
+    <p>Web Developer | Designer | Problem Solver</p>
+</header>
+```
+
+#### Step 3: Add an About Section
+
+```html
+<section>
+    <h2>About Me</h2>
+    <p>
+        Hello! I'm John, a passionate web developer based in San Francisco. 
+        I love creating beautiful, functional websites and learning new technologies. 
+        When I'm not coding, you can find me hiking, reading sci-fi novels, or 
+        experimenting with new recipes in the kitchen.
+    </p>
+</section>
+```
+
+#### Step 4: Add a Hobbies Section
+
+```html
+<section>
+    <h2>My Hobbies</h2>
+    <ul>
+        <li>Web Development & Coding</li>
+        <li>Photography</li>
+        <li>Hiking and Outdoor Adventures</li>
+        <li>Playing Guitar</li>
+        <li>Reading Science Fiction</li>
+        <li>Cooking & Baking</li>
+    </ul>
+</section>
+```
+
+#### Step 5: Add a Skills Section
+
+```html
+<section>
+    <h2>Skills</h2>
+    <h3>Technical Skills</h3>
+    <ul>
+        <li>HTML5 & CSS3</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Git & Version Control</li>
+    </ul>
+    
+    <h3>Soft Skills</h3>
+    <ul>
+        <li>Problem Solving</li>
+        <li>Team Collaboration</li>
+        <li>Communication</li>
+        <li>Time Management</li>
+    </ul>
+</section>
+```
+
+#### Step 6: Add a Contact Form
+
+```html
+<section>
+    <h2>Get In Touch</h2>
+    <form>
+        <div>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        
+        <div>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        
+        <div>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+        </div>
+        
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+        </div>
+        
+        <div>
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Subscribe to my newsletter</label>
+        </div>
+        
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+```
+
+#### Step 7: Add a Footer
+
+```html
+<footer>
+    <p>&copy; 2025 John Doe. All rights reserved.</p>
+    <nav>
+        <a href="https://github.com/johndoe">GitHub</a> | 
+        <a href="https://linkedin.com/in/johndoe">LinkedIn</a> | 
+        <a href="https://twitter.com/johndoe">Twitter</a>
+    </nav>
+</footer>
+```
+
+### Complete Code
+
+Here's the complete profile page:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - John Doe</title>
+</head>
+<body>
+    <header>
+        <h1>John Doe</h1>
+        <p>Web Developer | Designer | Problem Solver</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm John, a passionate web developer based in San Francisco. 
+            I love creating beautiful, functional websites and learning new technologies. 
+            When I'm not coding, you can find me hiking, reading sci-fi novels, or 
+            experimenting with new recipes in the kitchen.
+        </p>
+    </section>
+
+    <section>
+        <h2>My Hobbies</h2>
+        <ul>
+            <li>Web Development & Coding</li>
+            <li>Photography</li>
+            <li>Hiking and Outdoor Adventures</li>
+            <li>Playing Guitar</li>
+            <li>Reading Science Fiction</li>
+            <li>Cooking & Baking</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript</li>
+            <li>Responsive Design</li>
+            <li>Git & Version Control</li>
+        </ul>
+        
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Problem Solving</li>
+            <li>Team Collaboration</li>
+            <li>Communication</li>
+            <li>Time Management</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Get In Touch</h2>
+        <form>
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            
+            <div>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            </div>
+            
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to my newsletter</label>
+            </div>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 John Doe. All rights reserved.</p>
+        <nav>
+            <a href="https://github.com/johndoe">GitHub</a> | 
+            <a href="https://linkedin.com/in/johndoe">LinkedIn</a> | 
+            <a href="https://twitter.com/johndoe">Twitter</a>
+        </nav>
+    </footer>
+</body>
+</html>
+```
+
+---
+
+## Testing Your Page
+
+1. Save the file as `profile.html`
+2. Open it in your web browser (double-click the file or drag it into your browser)
+3. You should see your profile page with all sections displaying correctly
+
+---
+
+## Common Mistakes to Avoid
+
+1. **Forgetting closing tags** - Every opening tag needs a closing tag (except self-closing tags like `<img>`)
+2. **Not using semantic HTML** - Use `<header>`, `<nav>`, `<section>` instead of divs everywhere
+3. **Missing alt text on images** - Always include descriptive alt text
+4. **Not associating labels with inputs** - Use the `for` attribute on labels and `id` on inputs
+5. **Using multiple h1 tags** - Only one h1 per page
+
+---
+
+## Challenge Exercises
+
+1. **Add an image** - Add a profile photo at the top of your page
+2. **Create a projects section** - Add a section listing 3-4 projects with descriptions
+3. **Add more form fields** - Include a dropdown for "How did you hear about me?" with options
+4. **Create a navigation menu** - Add a `<nav>` element with links to each section using anchor links (e.g., `<a href="#about">`)
+
+---
+
+## Key Takeaways
+
+- HTML provides structure and meaning to web content
+- Use semantic tags for better accessibility and SEO
+- Forms collect user input with various input types
+- Every HTML element serves a specific purpose
+- Proper structure makes your code maintainable and professional
+
+---
+
+## Next Steps
+
+Tomorrow, we'll learn CSS to make this profile page look beautiful! Right now it's functional but unstyled. CSS will transform it into a visually appealing, professional-looking page.
+
+**Preview of Day 2:** We'll learn selectors, the box model, colors, fonts, and spacing to style our profile page.
