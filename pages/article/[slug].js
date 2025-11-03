@@ -2,7 +2,8 @@ import { allArticles } from 'contentlayer/generated';
 import { NextSeo } from 'next-seo';
 import { SingleArticle } from '../../components/SingleArticle';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
-import Link from 'next/link'
+import Link from 'next/link';
+import { PreWithCopy } from '../../components/PreWithCopy';
 
 const SinglePost = ({ article }) => {
   const MDXContent = useMDXComponent(article.body.code);
@@ -34,11 +35,31 @@ const SinglePost = ({ article }) => {
           h2: props => <h2 {...props} className="text-gray-700 dark:text-gray-200 " />,
           h3: props => <h3 {...props} className="text-gray-700 dark:text-gray-200 " />,
           h4: props => <h4 {...props} className="text-gray-700 dark:text-gray-200 " />,
-          code: (props) => (
-            <code {...props} className="text-gray-500 dark:text-gray-200">
-              {props.children}
-            </code>
-          ),
+          pre: (props) => {
+            // Use PreWithCopy wrapper for code blocks with copy functionality
+            return <PreWithCopy {...props} />;
+          },
+          code: (props) => {
+            // Check if this is inline code or part of a code block
+            const { className, children, ...rest } = props;
+            const isInlineCode = !className || !className.includes('language-');
+            
+            if (isInlineCode) {
+              // Inline code
+              return (
+                <code {...rest} className="text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono">
+                  {children}
+                </code>
+              );
+            }
+            
+            // Code block - preserve className from rehypePrismPlus
+            return (
+              <code {...rest} className={className}>
+                {children}
+              </code>
+            );
+          },
         }} />
       </SingleArticle>
     </>

@@ -1,8 +1,7 @@
-// import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
+
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files';
 import readingTime from 'reading-time';
 import GithubSlugger from 'github-slugger'
-// import rehypePrettyCode from 'rehype-pretty-code';
 import rehypePrismPlus from 'rehype-prism-plus'
 
 const Author = defineNestedType(() => ({
