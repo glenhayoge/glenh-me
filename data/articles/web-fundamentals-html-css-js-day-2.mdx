@@ -1,0 +1,964 @@
+---
+title: "Day 2: CSS is Presentation-Web Fundamentals 10 Days Sprint"
+publishedAt: 'Nov 29, 2025'
+description: "CSS is Presentation-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "CSS is Presentation-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1634634465913-5bb5600942f2?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Credits: fongsoul, Unsplash'
+---
+
+## Day 2: Overview
+
+CSS (Cascading Style Sheets) controls how HTML elements look on the page. While HTML provides structure, CSS provides the visual design. Today, you'll learn how to transform your plain profile page into a visually appealing, professional-looking website.
+
+## Learning Objectives
+
+By the end of this tutorial, you will:
+- Understand how to select and style HTML elements
+- Master the CSS box model
+- Work with colors, fonts, and spacing
+- Create a cohesive, professional design
+- Understand the cascade and specificity
+
+---
+
+## Part 1: Three Ways to Add CSS
+
+### 1. Inline Styles (Avoid This)
+
+```html
+<p style="color: blue; font-size: 16px;">This is inline CSS</p>
+```
+
+**Why avoid it?** Hard to maintain, mixes content with presentation, can't be reused.
+
+### 2. Internal Stylesheet (Good for Learning)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p {
+            color: blue;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p>This paragraph is styled</p>
+</body>
+</html>
+```
+
+### 3. External Stylesheet (Best Practice)
+
+**HTML file:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p>This paragraph is styled</p>
+</body>
+</html>
+```
+
+**styles.css:**
+```css
+p {
+    color: blue;
+    font-size: 16px;
+}
+```
+
+**For today:** We'll use an internal stylesheet for simplicity, but in real projects, use external stylesheets.
+
+---
+
+## Part 2: CSS Selectors
+
+Selectors tell CSS which HTML elements to style.
+
+### Element Selector
+
+```css
+/* Styles ALL paragraphs */
+p {
+    color: navy;
+}
+
+/* Styles ALL h1 headings */
+h1 {
+    font-size: 32px;
+}
+```
+
+### Class Selector
+
+Classes let you style specific groups of elements.
+
+**HTML:**
+```html
+<p class="highlight">This paragraph is highlighted</p>
+<p>This paragraph is not</p>
+<p class="highlight">This one is highlighted too</p>
+```
+
+**CSS:**
+```css
+/* The dot (.) selects classes */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+```
+
+### ID Selector
+
+IDs are unique - only ONE element per page should have a specific ID.
+
+**HTML:**
+```html
+<div id="header">This is the header</div>
+```
+
+**CSS:**
+```css
+/* The hash (#) selects IDs */
+#header {
+    background-color: #333;
+    color: white;
+}
+```
+
+### Combining Selectors
+
+```css
+/* Element with a class */
+p.highlight {
+    color: red;
+}
+
+/* Multiple elements */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+/* Descendant selector (p inside section) */
+section p {
+    line-height: 1.6;
+}
+
+/* Child selector (direct child only) */
+section > p {
+    margin-bottom: 10px;
+}
+```
+
+### Selector Specificity
+
+When multiple rules apply to the same element, specificity determines which wins:
+
+1. **Inline styles** (highest priority) - 1000 points
+2. **IDs** - 100 points
+3. **Classes, attributes, pseudo-classes** - 10 points
+4. **Elements and pseudo-elements** - 1 point
+
+```css
+/* Specificity: 1 */
+p { color: red; }
+
+/* Specificity: 10 */
+.highlight { color: blue; }
+
+/* Specificity: 100 */
+#special { color: green; }
+
+/* Specificity: 11 (1 element + 1 class) */
+p.highlight { color: purple; }
+```
+
+---
+
+## Part 3: The Box Model
+
+Every HTML element is a rectangular box. The box model defines how that box behaves.
+
+```
++---------------------------+
+|         MARGIN            |  (outside space, transparent)
+|   +-------------------+   |
+|   |     BORDER        |   |  (visible edge)
+|   |   +-----------+   |   |
+|   |   |  PADDING  |   |   |  (inside space, has background)
+|   |   |  +-----+  |   |   |
+|   |   |  |CONT-|  |   |   |  (content: text, images)
+|   |   |  |ENT  |  |   |   |
+|   |   |  +-----+  |   |   |
+|   |   +-----------+   |   |
+|   +-------------------+   |
++---------------------------+
+```
+
+### Understanding Each Property
+
+```css
+.box {
+    /* Content size */
+    width: 300px;
+    height: 200px;
+    
+    /* Padding: space inside the border */
+    padding: 20px;           /* All sides */
+    padding: 10px 20px;      /* Top/bottom, Left/right */
+    padding: 10px 20px 15px 25px;  /* Top, Right, Bottom, Left (clockwise) */
+    
+    /* Border */
+    border: 2px solid black;
+    border-width: 2px;
+    border-style: solid;     /* solid, dashed, dotted */
+    border-color: black;
+    border-radius: 8px;      /* Rounded corners */
+    
+    /* Margin: space outside the border */
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+```
+
+### The Total Width Calculation
+
+By default:
+```
+Total Width = width + padding-left + padding-right + border-left + border-right
+```
+
+Example:
+```css
+.box {
+    width: 300px;
+    padding: 20px;    /* 20px on each side */
+    border: 5px solid black;
+}
+/* Total width = 300 + 20 + 20 + 5 + 5 = 350px */
+```
+
+### Box-Sizing Property
+
+```css
+/* Modern best practice: include padding and border in width */
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+}
+/* Total width = 300px (padding and border are included) */
+```
+
+---
+
+## Part 4: Display Types
+
+### Block Elements
+
+Take up the full width available and start on a new line.
+
+```css
+div, p, h1, section, header, footer {
+    display: block;
+}
+```
+
+```html
+<div>Block 1</div>
+<div>Block 2</div>
+<!-- Each div starts on a new line -->
+```
+
+### Inline Elements
+
+Only take up as much width as needed, sit next to each other.
+
+```css
+span, a, strong, em {
+    display: inline;
+}
+```
+
+```html
+<span>Inline 1</span>
+<span>Inline 2</span>
+<!-- Both spans sit on the same line -->
+```
+
+**Note:** Inline elements ignore `width`, `height`, `margin-top`, and `margin-bottom`.
+
+### Inline-Block
+
+Best of both worlds: sits inline but respects width/height.
+
+```css
+.button {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    padding: 10px 20px;
+}
+```
+
+---
+
+## Part 5: Colors and Fonts
+
+### Colors
+
+```css
+/* Named colors */
+color: red;
+color: navy;
+
+/* Hexadecimal */
+color: #FF0000;  /* Red */
+color: #00FF00;  /* Green */
+color: #0000FF;  /* Blue */
+
+/* RGB */
+color: rgb(255, 0, 0);  /* Red */
+
+/* RGBA (with opacity) */
+color: rgba(255, 0, 0, 0.5);  /* Semi-transparent red */
+
+/* HSL (Hue, Saturation, Lightness) */
+color: hsl(0, 100%, 50%);  /* Red */
+```
+
+### Fonts
+
+```css
+p {
+    /* Font family */
+    font-family: Arial, Helvetica, sans-serif;  /* Fallback fonts */
+    
+    /* Font size */
+    font-size: 16px;
+    
+    /* Font weight */
+    font-weight: normal;  /* 400 */
+    font-weight: bold;    /* 700 */
+    font-weight: 600;     /* Numeric value */
+    
+    /* Font style */
+    font-style: normal;
+    font-style: italic;
+    
+    /* Text decoration */
+    text-decoration: none;      /* Remove underline from links */
+    text-decoration: underline;
+    
+    /* Text alignment */
+    text-align: left;
+    text-align: center;
+    text-align: right;
+    
+    /* Line height (spacing between lines) */
+    line-height: 1.6;  /* 1.6 times the font size */
+    
+    /* Letter spacing */
+    letter-spacing: 1px;
+}
+```
+
+### Web-Safe Font Combinations
+
+```css
+/* Elegant and professional */
+font-family: Georgia, 'Times New Roman', serif;
+
+/* Modern and clean */
+font-family: 'Helvetica Neue', Arial, sans-serif;
+
+/* Technical and readable */
+font-family: 'Courier New', Courier, monospace;
+
+/* Friendly and approachable */
+font-family: Verdana, Geneva, sans-serif;
+```
+
+---
+
+## Part 6: Styling Your Profile Page
+
+Now let's apply everything we've learned to style the profile page from Day 1.
+
+### Step 1: Add the CSS to Your HTML
+
+Open your `profile.html` and add this in the `<head>` section:
+
+```html
+<style>
+    /* We'll add our CSS here */
+</style>
+```
+
+### Step 2: Reset and Base Styles
+
+```css
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles for the entire page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+```
+
+### Step 3: Style the Header
+
+```css
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+```
+
+### Step 4: Style Sections
+
+```css
+section {
+    background: white;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: #667eea;
+    font-size: 32px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+}
+
+section h3 {
+    color: #555;
+    font-size: 24px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+}
+```
+
+### Step 5: Style Lists
+
+```css
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 16px;
+    color: #555;
+}
+
+ul li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-size: 20px;
+}
+```
+
+### Step 6: Style the Form
+
+```css
+form {
+    max-width: 600px;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+```
+
+### Step 7: Style the Footer
+
+```css
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+footer p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+footer nav a {
+    color: #667eea;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+```
+
+### Complete Styled Profile Page
+
+Here's the complete HTML with CSS:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - John Doe</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Section styles */
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        section h3 {
+            color: #555;
+            font-size: 24px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* List styles */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+            color: #555;
+        }
+
+        ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 20px;
+        }
+
+        /* Form styles */
+        form {
+            max-width: 600px;
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        footer p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        footer nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer nav a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>John Doe</h1>
+        <p>Web Developer | Designer | Problem Solver</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm John, a passionate web developer based in San Francisco. 
+            I love creating beautiful, functional websites and learning new technologies. 
+            When I'm not coding, you can find me hiking, reading sci-fi novels, or 
+            experimenting with new recipes in the kitchen.
+        </p>
+    </section>
+
+    <section>
+        <h2>My Hobbies</h2>
+        <ul>
+            <li>Web Development & Coding</li>
+            <li>Photography</li>
+            <li>Hiking and Outdoor Adventures</li>
+            <li>Playing Guitar</li>
+            <li>Reading Science Fiction</li>
+            <li>Cooking & Baking</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript</li>
+            <li>Responsive Design</li>
+            <li>Git & Version Control</li>
+        </ul>
+        
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Problem Solving</li>
+            <li>Team Collaboration</li>
+            <li>Communication</li>
+            <li>Time Management</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Get In Touch</h2>
+        <form>
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            
+            <div>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            </div>
+            
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to my newsletter</label>
+            </div>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 John Doe. All rights reserved.</p>
+        <nav>
+            <a href="https://github.com/johndoe">GitHub</a> | 
+            <a href="https://linkedin.com/in/johndoe">LinkedIn</a> | 
+            <a href="https://twitter.com/johndoe">Twitter</a>
+        </nav>
+    </footer>
+</body>
+</html>
+```
+
+---
+
+## Common CSS Mistakes to Avoid
+
+1. **Not using box-sizing: border-box** - This makes width calculations much easier
+2. **Forgetting units** - `width: 300` doesn't work, use `width: 300px`
+3. **Overusing IDs for styling** - Use classes instead; IDs have very high specificity
+4. **Inline styles** - Keep styling in CSS files for maintainability
+5. **Not using shorthand** - `margin: 10px 20px` is better than four separate properties
+6. **Color contrast issues** - Ensure text is readable against backgrounds
+
+---
+
+## CSS Units Reference
+
+```css
+/* Absolute units */
+px  /* Pixels - most common */
+pt  /* Points - mainly for print */
+
+/* Relative units */
+em  /* Relative to parent font-size */
+rem /* Relative to root (html) font-size */
+%   /* Percentage of parent */
+vw  /* Viewport width (1vw = 1% of viewport width) */
+vh  /* Viewport height */
+```
+
+---
+
+## Challenge Exercises
+
+1. **Create a color scheme** - Choose 3-5 colors and use them consistently throughout your page
+2. **Add hover effects** - Make links and buttons more interactive
+3. **Create a card layout** - Style each section to look like a "card" with shadows
+4. **Experiment with gradients** - Try different gradient combinations for backgrounds
+5. **Add smooth transitions** - Use `transition` property on hover effects
+
+---
+
+## Key Takeaways
+
+- CSS separates presentation from content
+- The box model controls spacing and layout
+- Selectors determine which elements to style
+- Classes are preferred over IDs for styling
+- Consistent spacing and typography create professional designs
+- Box-sizing: border-box simplifies width calculations
+
+---
+
+## Next Steps
+
+Tomorrow, we'll learn Flexbox, the modern way to create layouts. You'll learn how to align items, create responsive designs, and build professional navigation bars and layouts without using floats or positioning hacks.
+
+**Preview of Day 3:** Flexbox will allow you to create a sidebar layout, center items vertically and horizontally, and build responsive navigation that actually makes sense!
