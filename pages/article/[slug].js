@@ -35,6 +35,26 @@ const SinglePost = ({ article }) => {
           h2: props => <h2 {...props} className="text-gray-700 dark:text-gray-200 " />,
           h3: props => <h3 {...props} className="text-gray-700 dark:text-gray-200 " />,
           h4: props => <h4 {...props} className="text-gray-700 dark:text-gray-200 " />,
+          table: (props) => (
+            <div className="overflow-x-auto my-6">
+              <table {...props} className="min-w-full border-collapse border border-gray-300 dark:border-gray-700 rounded-lg" />
+            </div>
+          ),
+          thead: (props) => (
+            <thead {...props} className="bg-gray-100 dark:bg-gray-800" />
+          ),
+          tbody: (props) => (
+            <tbody {...props} className="divide-y divide-gray-200 dark:divide-gray-700" />
+          ),
+          tr: (props) => (
+            <tr {...props} className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors" />
+          ),
+          th: (props) => (
+            <th {...props} className="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100 border-r border-gray-300 dark:border-gray-700 last:border-r-0" />
+          ),
+          td: (props) => (
+            <td {...props} className="px-4 py-3 text-sm text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 last:border-r-0" />
+          ),
           pre: (props) => {
             // Use PreWithCopy wrapper for code blocks with copy functionality
             return <PreWithCopy {...props} />;

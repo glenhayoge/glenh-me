@@ -3,6 +3,7 @@ import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/
 import readingTime from 'reading-time';
 import GithubSlugger from 'github-slugger'
 import rehypePrismPlus from 'rehype-prism-plus'
+import remarkGfm from 'remark-gfm'
 
 const Author = defineNestedType(() => ({
   name: 'Author',
@@ -196,7 +197,7 @@ export default makeSource({
   contentDirPath: 'data',
   documentTypes: [Article, Book, Snippet],
   mdx: {
-    remarkPlugins: [],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
       [rehypePrismPlus, { ignoreMissing: true }]
     ],
