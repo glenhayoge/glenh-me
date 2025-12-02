@@ -1,0 +1,941 @@
+---
+title: "Day 4: Responsive Design Basics-Web Fundamentals 10 Days Sprint"
+publishedAt: 'Dec 3, 2025'
+description: "Responsive Design Basics-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "Responsive Design Basics-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1676263813382-bb5ba4b63f91?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Design 3D Render, Credits: Milad Fakurian, Unsplash'
+---
+
+## Day 4: Overview
+
+Responsive design ensures your website looks great and functions well on all devices, from smartphones to large desktop monitors. Today, you'll learn how to use relative units, media queries, and mobile-first design principles to create truly responsive layouts.
+
+## Learning Objectives
+By the end of this tutorial, you will:
+- Understand relative units (%, vh, vw, rem, em)
+- Master media queries for different screen sizes
+- Learn mobile-first vs desktop-first approaches
+- Create responsive typography and spacing
+- Build a collapsible mobile navigation menu
+
+---
+
+## Part 1: Understanding Relative Units
+
+### The Problem with Pixels
+
+Fixed pixels don't adapt to different screen sizes:
+
+```css
+/* Bad: Fixed width on mobile */
+.container {
+    width: 1200px;  /* Breaks on small screens! */
+}
+```
+
+### Percentage (%)
+
+Percentage is relative to the parent element's size.
+
+```css
+.container {
+    width: 90%;  /* 90% of parent width */
+}
+
+.sidebar {
+    width: 25%;  /* 25% of parent (.container) */
+}
+
+.main-content {
+    width: 75%;  /* 75% of parent (.container) */
+}
+```
+
+**Use cases:**
+- Container widths
+- Column layouts
+- Responsive images
+
+```css
+img {
+    width: 100%;     /* Image scales with container */
+    max-width: 500px; /* But never larger than 500px */
+    height: auto;    /* Maintains aspect ratio */
+}
+```
+
+### Viewport Width (vw) and Height (vh)
+
+Relative to the browser viewport (visible area).
+
+```css
+/* 1vw = 1% of viewport width */
+/* 1vh = 1% of viewport height */
+
+.hero {
+    width: 100vw;   /* Full viewport width */
+    height: 100vh;  /* Full viewport height */
+}
+
+.half-screen {
+    height: 50vh;   /* Half the screen height */
+}
+
+/* Responsive font size */
+h1 {
+    font-size: 5vw;  /* Scales with viewport */
+}
+```
+
+**Use cases:**
+- Full-screen sections
+- Hero banners
+- Fluid typography
+
+### rem and em
+
+**em** - Relative to parent element's font size
+**rem** - Relative to root (html) element's font size
+
+```css
+html {
+    font-size: 16px;  /* Base size */
+}
+
+.parent {
+    font-size: 20px;
+}
+
+.em-example {
+    font-size: 2em;   /* 2 × parent (20px) = 40px */
+    padding: 1em;     /* 1 × own font-size (40px) = 40px */
+}
+
+.rem-example {
+    font-size: 2rem;  /* 2 × root (16px) = 32px */
+    padding: 1rem;    /* 1 × root (16px) = 16px */
+}
+```
+
+**Best Practice:** Use `rem` for most sizing to avoid compounding effects.
+
+```css
+/* Recommended sizing system */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;      /* 16px */
+}
+
+h1 {
+    font-size: 2.5rem;    /* 40px */
+}
+
+h2 {
+    font-size: 2rem;      /* 32px */
+}
+
+p {
+    font-size: 1rem;      /* 16px */
+    line-height: 1.6;
+    margin-bottom: 1rem;  /* 16px */
+}
+
+.container {
+    padding: 2rem;        /* 32px */
+    margin-bottom: 3rem;  /* 48px */
+}
+```
+
+### Units Comparison
+
+| Unit | Relative To | Best For |
+|------|-------------|----------|
+| `px` | Fixed | Borders, shadows, small details |
+| `%` | Parent element | Widths, responsive layouts |
+| `em` | Parent font-size | Component-specific spacing |
+| `rem` | Root font-size | Most spacing and fonts |
+| `vw` | Viewport width | Full-width sections, fluid typography |
+| `vh` | Viewport height | Full-height sections, hero banners |
+
+---
+
+## Part 2: Media Queries
+
+Media queries let you apply different styles based on screen size, orientation, and other factors.
+
+### Basic Syntax
+
+```css
+/* Default styles (mobile first) */
+.container {
+    padding: 1rem;
+}
+
+/* Tablet and up (768px and wider) */
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+}
+
+/* Desktop and up (1024px and wider) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 3rem;
+    }
+}
+```
+
+### Common Breakpoints
+
+```css
+/* Standard breakpoints */
+
+/* Extra small devices (phones, less than 576px) */
+/* No media query needed - this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { ... }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }
+```
+
+### Media Query Features
+
+```css
+/* Width-based */
+@media (min-width: 768px) { }    /* At least 768px */
+@media (max-width: 767px) { }    /* Up to 767px */
+@media (min-width: 768px) and (max-width: 1023px) { }  /* Between 768-1023px */
+
+/* Height-based */
+@media (min-height: 600px) { }
+
+/* Orientation */
+@media (orientation: portrait) { }   /* Tall screens */
+@media (orientation: landscape) { }  /* Wide screens */
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Retina display styles */
+}
+
+/* Print styles */
+@media print {
+    /* Styles for printing */
+    .no-print {
+        display: none;
+    }
+}
+```
+
+---
+
+## Part 3: Mobile-First vs Desktop-First
+
+### Mobile-First Approach (Recommended)
+
+Start with mobile styles, then enhance for larger screens.
+
+```css
+/* Base styles (mobile) */
+.container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;  /* Stacked on mobile */
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 2rem;
+    }
+    
+    .nav-menu {
+        flex-direction: row;  /* Horizontal on tablet+ */
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem;
+    }
+}
+```
+
+**Advantages:**
+- Forces you to prioritize content
+- Better performance on mobile
+- Easier to enhance than to strip down
+- Mobile traffic often exceeds desktop
+
+### Desktop-First Approach
+
+Start with desktop styles, then adapt for smaller screens.
+
+```css
+/* Base styles (desktop) */
+.container {
+    max-width: 1200px;
+    padding: 3rem;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Tablet and down */
+@media (max-width: 1023px) {
+    .container {
+        padding: 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+    }
+}
+```
+
+**When to use:**
+- Desktop-focused applications
+- Legacy projects
+- Complex desktop layouts
+
+---
+
+## Part 4: Responsive Typography
+
+### Fluid Typography with clamp()
+
+Modern CSS function for responsive font sizes:
+
+```css
+h1 {
+    /* clamp(minimum, preferred, maximum) */
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    /* Never smaller than 1.5rem (24px)
+       Scales with 5vw
+       Never larger than 3rem (48px) */
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+```
+
+### Responsive Font Scaling
+
+```css
+/* Mobile */
+html {
+    font-size: 14px;
+}
+
+h1 { font-size: 2rem; }    /* 28px */
+h2 { font-size: 1.5rem; }  /* 21px */
+p { font-size: 1rem; }     /* 14px */
+
+/* Tablet */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    /* h1: 32px, h2: 24px, p: 16px */
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+    /* h1: 36px, h2: 27px, p: 18px */
+}
+```
+
+### Line Height and Reading Width
+
+```css
+p {
+    font-size: 1rem;
+    line-height: 1.6;           /* Readable line spacing */
+    max-width: 70ch;            /* Optimal reading width (70 characters) */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adjust line height for headings */
+h1, h2, h3 {
+    line-height: 1.2;  /* Tighter for large text */
+}
+```
+
+---
+
+## Part 5: Responsive Images and Media
+
+### Responsive Images
+
+```css
+/* Basic responsive image */
+img {
+    max-width: 100%;   /* Never wider than container */
+    height: auto;      /* Maintain aspect ratio */
+    display: block;    /* Remove extra space below image */
+}
+
+/* Responsive background image */
+.hero {
+    background-image: url('hero.jpg');
+    background-size: cover;      /* Cover entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+}
+
+/* Different images for different sizes */
+.banner {
+    background-image: url('banner-mobile.jpg');
+}
+
+@media (min-width: 768px) {
+    .banner {
+        background-image: url('banner-tablet.jpg');
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner {
+        background-image: url('banner-desktop.jpg');
+    }
+}
+```
+
+### HTML Picture Element (Better Performance)
+
+```html
+<picture>
+    <source media="(min-width: 1200px)" srcset="large.jpg">
+    <source media="(min-width: 768px)" srcset="medium.jpg">
+    <img src="small.jpg" alt="Responsive image">
+</picture>
+```
+
+---
+
+## Part 6: Building a Responsive Profile Page
+
+Let's make your profile page from Days 1-2 fully responsive!
+
+### Step 1: Add Viewport Meta Tag
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Profile - John Doe</title>
+    <style>
+        /* CSS will go here */
+    </style>
+</head>
+```
+
+### Step 2: Base Styles (Mobile First)
+
+```css
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base typography */
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+/* Sections */
+section {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #667eea;
+}
+
+section p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+ul li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+}
+
+/* Form */
+form div {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: white;
+    margin-top: 1rem;
+}
+
+footer nav a {
+    color: #667eea;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+```
+
+### Step 3: Tablet Styles (768px+)
+
+```css
+/* Tablet and larger */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    
+    .container {
+        padding: 2rem;
+    }
+    
+    header {
+        padding: 3rem 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    header p {
+        font-size: 1.25rem;
+    }
+    
+    section {
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    /* Two-column form layout */
+    form {
+        max-width: 600px;
+    }
+    
+    button {
+        width: auto;
+        padding: 1rem 3rem;
+    }
+    
+    /* Skills in two columns */
+    .skills-container {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .skills-container > div {
+        flex: 1;
+    }
+}
+```
+
+### Step 4: Desktop Styles (1024px+)
+
+```css
+/* Desktop */
+@media (min-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+    
+    header h1 {
+        font-size: 3.5rem;
+    }
+    
+    /* Hover effects (only on devices that support hover) */
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    footer nav a:hover {
+        color: #764ba2;
+    }
+    
+    /* Better spacing */
+    section {
+        padding: 3rem;
+    }
+}
+```
+
+---
+
+## Part 7: Creating a Collapsible Mobile Menu
+
+### HTML Structure
+
+```html
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <h1>MyWebsite</h1>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+```
+
+### CSS for Hamburger Menu
+
+```css
+.navbar {
+    background: #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Hamburger button (mobile only) */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Hide menu on mobile by default */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    list-style: none;
+    transition: right 0.3s ease;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #667eea;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Desktop menu (no hamburger) */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+    
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        gap: 2rem;
+    }
+    
+    .nav-menu li {
+        margin-bottom: 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+    }
+    
+    .nav-menu a:hover {
+        background: #444;
+    }
+}
+```
+
+### JavaScript for Toggle
+
+```html
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+```
+
+---
+
+## Responsive Design Checklist
+
+- [ ] Added viewport meta tag
+- [ ] Used relative units (rem, %, vw, vh)
+- [ ] Implemented media queries for key breakpoints
+- [ ] Made images responsive
+- [ ] Tested on different screen sizes
+- [ ] Created mobile-friendly navigation
+- [ ] Ensured touch targets are at least 44×44px
+- [ ] Readable font sizes on all devices (min 16px)
+- [ ] Adequate spacing and padding
+- [ ] Optimized for performance
+
+---
+
+## Testing Responsive Design
+
+### Browser DevTools
+
+1. Open DevTools (F12 or Right-click → Inspect)
+2. Click the device toolbar icon (or Ctrl+Shift+M)
+3. Select different device presets
+4. Test in both portrait and landscape
+
+### Common Device Sizes to Test
+
+- **Mobile:** 375×667 (iPhone SE), 414×896 (iPhone 11)
+- **Tablet:** 768×1024 (iPad), 810×1080 (iPad Air)
+- **Desktop:** 1366×768, 1920×1080, 2560×1440
+
+---
+
+## Common Responsive Design Mistakes
+
+1. **Forgetting the viewport meta tag** - Page won't scale properly
+2. **Using fixed widths everywhere** - Doesn't adapt to screen size
+3. **Not testing on real devices** - Emulators don't catch everything
+4. **Tiny touch targets on mobile** - Buttons should be at least 44×44px
+5. **Horizontal scrolling on mobile** - Use max-width: 100% and box-sizing
+6. **Too much content on mobile** - Prioritize and hide less important content
+7. **Not considering landscape orientation** - Test both orientations
+
+---
+
+## Key Takeaways
+
+- Use relative units (rem, %, vw, vh) instead of fixed pixels
+- Media queries adapt styles to different screen sizes
+- Mobile-first approach is recommended for modern development
+- Test thoroughly on multiple devices and screen sizes
+- Touch targets should be large enough for fingers
+- Responsive images prevent unnecessary data usage
+
+---
+
+## Next Steps
+
+Tomorrow, we'll start learning JavaScript! You'll learn variables, data types, functions, conditionals, and loops. JavaScript will bring your web pages to life by adding interactivity and dynamic behavior.
+
+**Preview of Day 5:** You'll write functions to manipulate arrays, format strings, and solve programming challenges that will prepare you for DOM manipulation later in the week!
