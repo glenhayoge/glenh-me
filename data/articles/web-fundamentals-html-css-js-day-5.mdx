@@ -1,0 +1,752 @@
+---
+title: "Day 5: JavaScript Basics (Data & Logic)-Web Fundamentals 10 Days Sprint"
+publishedAt: 'Dec 5, 2025'
+description: "JavaScript Basics (Data & Logic)-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "JavaScript Basics (Data & Logic)-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1619410283995-43d9134e7656?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Black flat screen computer, Credits: Juanjo Jaramillo, Unsplash'
+---
+
+## Day 5: Overview
+
+JavaScript is the programming language of the web. While HTML provides structure and CSS provides style, JavaScript adds interactivity and dynamic behavior. Today, you'll learn the fundamental building blocks of programming: variables, data types, conditionals, loops, and functions.
+
+## Learning Objectives
+
+By the end of this tutorial, you will:
+- Declare and use variables with let and const
+- Work with different data types (strings, numbers, booleans, arrays, objects)
+- Write conditional logic with if/else statements
+- Use loops to iterate over data
+- Create and call functions with parameters and return values
+- Solve real-world programming problems
+
+---
+
+## Part 1: Your First JavaScript
+
+### Where to Write JavaScript
+
+**1. In the browser console (for testing)**
+- Open DevTools (F12)
+- Go to Console tab
+- Type JavaScript and press Enter
+
+**2. In HTML `<script>` tags**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <h1>Hello, JavaScript!</h1>
+    
+    <script>
+        // Your JavaScript code here
+        console.log("Hello from JavaScript!");
+    </script>
+</body>
+</html>
+```
+
+**3. External JavaScript file (best practice)**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Hello, JavaScript!</h1>
+</body>
+</html>
+```
+
+### Your First Line of Code
+
+```javascript
+console.log("Hello, World!");
+```
+
+`console.log()` prints output to the browser console. Use it for debugging!
+
+---
+
+## Part 2: Variables and Data Types
+
+### Variables: Storing Data
+
+Variables are containers for storing data. Think of them as labeled boxes.
+
+```javascript
+// let - for values that can change
+let age = 25;
+age = 26;  // Can reassign
+
+// const - for values that shouldn't change
+const name = "John";
+// name = "Jane";  // Error! Can't reassign const
+
+// var - old way, avoid using it
+var oldWay = "don't use this";
+```
+
+**Best Practice:**
+- Use `const` by default
+- Use `let` only when you need to reassign
+- Never use `var`
+
+### Data Types
+
+#### 1. String (Text)
+
+```javascript
+// String: text in quotes
+const firstName = "John";
+const lastName = 'Doe';  // Single or double quotes
+const message = `Hello, ${firstName}!`;  // Template literal (backticks)
+
+console.log(message);  // "Hello, John!"
+
+// String methods
+const text = "JavaScript is awesome";
+console.log(text.length);           // 21
+console.log(text.toUpperCase());    // "JAVASCRIPT IS AWESOME"
+console.log(text.toLowerCase());    // "javascript is awesome"
+console.log(text.includes("Java")); // true
+console.log(text.split(" "));       // ["JavaScript", "is", "awesome"]
+console.log(text.slice(0, 10));     // "JavaScript"
+```
+
+#### 2. Number
+
+```javascript
+// Numbers (integers and decimals)
+const age = 25;
+const price = 19.99;
+const negative = -10;
+
+// Math operations
+console.log(10 + 5);   // 15 (addition)
+console.log(10 - 5);   // 5  (subtraction)
+console.log(10 * 5);   // 50 (multiplication)
+console.log(10 / 5);   // 2  (division)
+console.log(10 % 3);   // 1  (remainder/modulo)
+console.log(2 ** 3);   // 8  (exponentiation)
+
+// Math object
+console.log(Math.round(4.7));    // 5
+console.log(Math.floor(4.7));    // 4
+console.log(Math.ceil(4.3));     // 5
+console.log(Math.random());      // Random number 0-1
+console.log(Math.max(1, 5, 3));  // 5
+console.log(Math.min(1, 5, 3));  // 1
+```
+
+#### 3. Boolean (True/False)
+
+```javascript
+// Boolean: true or false
+const isLoggedIn = true;
+const isAdmin = false;
+
+// Comparison operators
+console.log(5 > 3);    // true
+console.log(5 < 3);    // false
+console.log(5 >= 5);   // true
+console.log(5 <= 4);   // false
+console.log(5 === 5);  // true (equal value and type)
+console.log(5 !== 3);  // true (not equal)
+
+// Logical operators
+console.log(true && true);   // true (AND: both must be true)
+console.log(true && false);  // false
+console.log(true || false);  // true (OR: at least one must be true)
+console.log(!true);          // false (NOT: opposite)
+```
+
+#### 4. Array (List of Values)
+
+```javascript
+// Array: ordered list of values
+const fruits = ["apple", "banana", "orange"];
+const numbers = [1, 2, 3, 4, 5];
+const mixed = [1, "hello", true, [1, 2, 3]];
+
+// Accessing array elements (0-indexed)
+console.log(fruits[0]);  // "apple"
+console.log(fruits[1]);  // "banana"
+console.log(fruits[2]);  // "orange"
+
+// Array properties and methods
+console.log(fruits.length);        // 3
+fruits.push("grape");              // Add to end
+fruits.pop();                      // Remove from end
+fruits.unshift("strawberry");      // Add to beginning
+fruits.shift();                    // Remove from beginning
+
+// Useful array methods
+const numbers = [1, 2, 3, 4, 5];
+console.log(numbers.includes(3));  // true
+console.log(numbers.indexOf(3));   // 2
+console.log(numbers.join(", "));   // "1, 2, 3, 4, 5"
+console.log(numbers.slice(1, 3));  // [2, 3]
+```
+
+#### 5. Object (Key-Value Pairs)
+
+```javascript
+// Object: collection of properties
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    isStudent: false,
+    hobbies: ["reading", "coding", "gaming"]
+};
+
+// Accessing object properties
+console.log(person.firstName);     // "John" (dot notation)
+console.log(person["lastName"]);   // "Doe" (bracket notation)
+console.log(person.age);           // 30
+
+// Modifying objects
+person.age = 31;
+person.email = "john@example.com";  // Add new property
+delete person.isStudent;            // Remove property
+
+// Nested objects
+const user = {
+    name: "Alice",
+    address: {
+        street: "123 Main St",
+        city: "New York",
+        zip: "10001"
+    }
+};
+
+console.log(user.address.city);  // "New York"
+```
+
+#### 6. null and undefined
+
+```javascript
+// undefined: variable declared but not assigned
+let x;
+console.log(x);  // undefined
+
+// null: intentionally empty value
+let y = null;
+console.log(y);  // null
+```
+
+---
+
+## Part 3: Conditionals (Making Decisions)
+
+### If Statement
+
+```javascript
+const age = 18;
+
+if (age >= 18) {
+    console.log("You are an adult");
+}
+```
+
+### If-Else Statement
+
+```javascript
+const temperature = 25;
+
+if (temperature > 30) {
+    console.log("It's hot outside");
+} else {
+    console.log("It's not too hot");
+}
+```
+
+### If-Else-If Chain
+
+```javascript
+const score = 85;
+
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else if (score >= 60) {
+    console.log("Grade: D");
+} else {
+    console.log("Grade: F");
+}
+```
+
+### Ternary Operator (Shorthand)
+
+```javascript
+// condition ? valueIfTrue : valueIfFalse
+const age = 20;
+const status = age >= 18 ? "Adult" : "Minor";
+console.log(status);  // "Adult"
+
+// Longer version would be:
+let status;
+if (age >= 18) {
+    status = "Adult";
+} else {
+    status = "Minor";
+}
+```
+
+### Switch Statement
+
+```javascript
+const day = "Monday";
+
+switch (day) {
+    case "Monday":
+        console.log("Start of the work week");
+        break;
+    case "Friday":
+        console.log("Almost weekend!");
+        break;
+    case "Saturday":
+    case "Sunday":
+        console.log("It's the weekend!");
+        break;
+    default:
+        console.log("It's a regular weekday");
+}
+```
+
+---
+
+## Part 4: Loops (Repetition)
+
+### For Loop
+
+```javascript
+// Basic for loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+// Output: 0, 1, 2, 3, 4
+
+// Loop through array
+const fruits = ["apple", "banana", "orange"];
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+// Output: apple, banana, orange
+```
+
+### While Loop
+
+```javascript
+let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+// Output: 0, 1, 2, 3, 4
+```
+
+### Do-While Loop
+
+```javascript
+let num = 0;
+do {
+    console.log(num);
+    num++;
+} while (num < 5);
+// Output: 0, 1, 2, 3, 4
+// Runs at least once, even if condition is false
+```
+
+### For-Of Loop (Arrays)
+
+```javascript
+const colors = ["red", "green", "blue"];
+
+for (const color of colors) {
+    console.log(color);
+}
+// Output: red, green, blue
+```
+
+### Array Methods with Callbacks
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// forEach: Execute function for each element
+numbers.forEach(function(num) {
+    console.log(num * 2);
+});
+// Output: 2, 4, 6, 8, 10
+
+// Arrow function (shorter syntax)
+numbers.forEach(num => {
+    console.log(num * 2);
+});
+
+// map: Create new array by transforming each element
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);  // [2, 4, 6, 8, 10]
+
+// filter: Create new array with elements that pass test
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens);  // [2, 4]
+
+// find: Find first element that passes test
+const found = numbers.find(num => num > 3);
+console.log(found);  // 4
+
+// reduce: Reduce array to single value
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum);  // 15
+```
+
+---
+
+## Part 5: Functions
+
+### Function Declaration
+
+```javascript
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("Alice");  // "Hello, Alice!"
+greet("Bob");    // "Hello, Bob!"
+```
+
+### Parameters and Arguments
+
+```javascript
+// Parameters: variables in function definition
+function add(a, b) {
+    return a + b;
+}
+
+// Arguments: actual values passed when calling
+const result = add(5, 3);  // 5 and 3 are arguments
+console.log(result);  // 8
+```
+
+### Return Values
+
+```javascript
+function multiply(x, y) {
+    return x * y;  // Return result
+}
+
+const product = multiply(4, 5);
+console.log(product);  // 20
+
+// Without return, function returns undefined
+function sayHi() {
+    console.log("Hi!");
+}
+const result = sayHi();  // undefined
+```
+
+### Default Parameters
+
+```javascript
+function greet(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+
+greet("Alice");  // "Hello, Alice!"
+greet();         // "Hello, Guest!"
+```
+
+### Arrow Functions (Modern Syntax)
+
+```javascript
+// Traditional function
+function square(x) {
+    return x * x;
+}
+
+// Arrow function
+const square = (x) => {
+    return x * x;
+};
+
+// Shorter: implicit return
+const square = x => x * x;
+
+// Multiple parameters
+const add = (a, b) => a + b;
+
+// No parameters
+const sayHello = () => console.log("Hello!");
+```
+
+### Function Expressions
+
+```javascript
+// Anonymous function assigned to variable
+const greet = function(name) {
+    return `Hello, ${name}!`;
+};
+
+console.log(greet("Alice"));  // "Hello, Alice!"
+```
+
+---
+
+## Part 6: Practice Problems
+
+Now let's build the three functions from today's requirements.
+
+### Problem 1: Sum of Array
+
+```javascript
+/**
+ * Calculate the sum of all numbers in an array
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} - Sum of all numbers
+ */
+function sumArray(numbers) {
+    let total = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        total += numbers[i];
+    }
+    return total;
+}
+
+// Alternative with reduce
+const sumArray = numbers => numbers.reduce((sum, num) => sum + num, 0);
+
+// Test
+console.log(sumArray([1, 2, 3, 4, 5]));  // 15
+console.log(sumArray([10, 20, 30]));     // 60
+console.log(sumArray([]));               // 0
+```
+
+### Problem 2: Average of Array
+
+```javascript
+/**
+ * Calculate the average of numbers in an array
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} - Average value
+ */
+function averageArray(numbers) {
+    if (numbers.length === 0) {
+        return 0;
+    }
+    
+    const sum = sumArray(numbers);
+    return sum / numbers.length;
+}
+
+// Test
+console.log(averageArray([1, 2, 3, 4, 5]));  // 3
+console.log(averageArray([10, 20, 30]));     // 20
+console.log(averageArray([5]));              // 5
+console.log(averageArray([]));               // 0
+```
+
+### Problem 3: Format String Greeting
+
+```javascript
+/**
+ * Format a personalized greeting
+ * @param {string} name - Person's name
+ * @returns {string} - Formatted greeting
+ */
+function formatGreeting(name) {
+    // Capitalize first letter
+    const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    return `Hello, ${capitalizedName}!`;
+}
+
+// Test
+console.log(formatGreeting("phil"));   // "Hello, Phil!"
+console.log(formatGreeting("ALICE"));  // "Hello, Alice!"
+console.log(formatGreeting("bOb"));    // "Hello, Bob!"
+```
+
+### Complete Test File
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice - Day 5</title>
+</head>
+<body>
+    <h1>JavaScript Practice Functions</h1>
+    <p>Open the console (F12) to see the results!</p>
+
+    <script>
+        // Function 1: Sum of array
+        function sumArray(numbers) {
+            let total = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                total += numbers[i];
+            }
+            return total;
+        }
+
+        // Function 2: Average of array
+        function averageArray(numbers) {
+            if (numbers.length === 0) return 0;
+            return sumArray(numbers) / numbers.length;
+        }
+
+        // Function 3: Format greeting
+        function formatGreeting(name) {
+            const capitalizedName = name.charAt(0).toUpperCase() + 
+                                  name.slice(1).toLowerCase();
+            return `Hello, ${capitalizedName}!`;
+        }
+
+        // Tests
+        console.log("=== Testing sumArray ===");
+        console.log(sumArray([1, 2, 3, 4, 5]));     // 15
+        console.log(sumArray([10, 20, 30]));        // 60
+        console.log(sumArray([-5, 5, 0]));          // 0
+
+        console.log("\n=== Testing averageArray ===");
+        console.log(averageArray([1, 2, 3, 4, 5])); // 3
+        console.log(averageArray([10, 20, 30]));    // 20
+        console.log(averageArray([7]));             // 7
+
+        console.log("\n=== Testing formatGreeting ===");
+        console.log(formatGreeting("phil"));        // "Hello, Phil!"
+        console.log(formatGreeting("ALICE"));       // "Hello, Alice!"
+        console.log(formatGreeting("bOb"));         // "Hello, Bob!"
+    </script>
+</body>
+</html>
+```
+
+---
+
+## Bonus Challenges
+
+Try solving these additional problems:
+
+### Challenge 1: Find Maximum
+
+```javascript
+function findMax(numbers) {
+    if (numbers.length === 0) return null;
+    
+    let max = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+    return max;
+}
+
+console.log(findMax([3, 7, 2, 9, 1]));  // 9
+```
+
+### Challenge 2: Count Occurrences
+
+```javascript
+function countOccurrences(array, value) {
+    let count = 0;
+    for (const item of array) {
+        if (item === value) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countOccurrences([1, 2, 3, 2, 1, 2], 2));  // 3
+```
+
+### Challenge 3: Reverse Array
+
+```javascript
+function reverseArray(array) {
+    const reversed = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+        reversed.push(array[i]);
+    }
+    return reversed;
+}
+
+console.log(reverseArray([1, 2, 3, 4, 5]));  // [5, 4, 3, 2, 1]
+```
+
+---
+
+## Common JavaScript Mistakes
+
+1. **Forgetting return statement** - Function returns undefined
+2. **Using = instead of ===** - Assignment vs comparison
+3. **Off-by-one errors in loops** - Check your loop conditions
+4. **Not handling edge cases** - Empty arrays, null values
+5. **Modifying array while looping** - Can cause unexpected behavior
+6. **Case sensitivity** - `myVariable` ≠ `myvariable`
+
+---
+
+## Debugging Tips
+
+```javascript
+// Use console.log to check values
+function debugExample(x) {
+    console.log("Input:", x);
+    const result = x * 2;
+    console.log("Result:", result);
+    return result;
+}
+
+// Use console.table for arrays/objects
+const users = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 }
+];
+console.table(users);
+
+// Use debugger keyword to pause execution
+function calculate(x, y) {
+    debugger;  // Execution pauses here
+    return x + y;
+}
+```
+
+---
+
+## Key Takeaways
+
+- Variables store data: use `const` by default, `let` when reassigning
+- JavaScript has 6 main data types: string, number, boolean, array, object, undefined/null
+- Conditionals (if/else) make decisions based on conditions
+- Loops (for, while, forEach) repeat code multiple times
+- Functions are reusable blocks of code with parameters and return values
+- Arrays and objects are essential for managing collections of data
+
+---
+
+## Next Steps
+
+Tomorrow, we'll connect JavaScript to HTML using DOM manipulation. You'll learn how to select elements, change their content and styles, and dynamically create new elements. This is where your JavaScript skills start controlling what users see on the page!
+
+**Preview of Day 6:** You'll use `document.querySelector` to grab HTML elements and modify them with JavaScript, making your pages truly dynamic and interactive!
