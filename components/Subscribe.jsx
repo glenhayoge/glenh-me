@@ -6,7 +6,7 @@ export default function Subscribe() {
   };
   return (
     <div className="my-10">
-      <div className="p-6 rounded border border-gray-200 dark:border-gray-600 text-center overflow-hidden border rounded">
+      <div className="p-6 rounded text-center overflow-hidden">
         <h3 className="mb-2 text-xl font-bold sm:text-2xl">Newsletter</h3>
         <p className="mb-6 text-sm">
           Subscribe and be notified when new articles & stuff are posted here. I
