@@ -45,7 +45,7 @@ export default function Photography() {
           Designs, Illustrations & Photography
         </h1>
         <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl leading-relaxed">
-          Drawings, designs I created and photographs I took
+          Drawings, designs I created and photographs I took. Enabled through the use of Unsplash API.
         </p>
       </div>
       {loading && (
