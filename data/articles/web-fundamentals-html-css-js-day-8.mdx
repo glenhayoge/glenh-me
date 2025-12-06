@@ -1,0 +1,907 @@
+---
+title: "Day 8: State Management in Vanilla JS-Web Fundamentals 10 Days Sprint"
+publishedAt: 'Dec 7, 2025'
+description: "State Management in Vanilla JS-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "State Management in Vanilla JS-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Turned on flat screen monitor, Credits: Caspar Camille Rubin, Unsplash'
+---
+
+## Day 8: Overview
+
+State is the data your application keeps track of. In a to-do app, state is the list of tasks. In a shopping cart, state is the items and quantities. Today, you'll learn how to manage state using arrays of objects, keep your UI in sync with your data, and implement full CRUD operations (Create, Read, Update, Delete).
+
+## Learning Objectives
+
+By the end of this tutorial, you will:
+
+- Understand what "state" means in web development
+- Store data in arrays of objects
+- Render state to the DOM
+- Keep UI synchronized with data
+- Implement Create, Read, Update, and Delete operations
+- Build a fully functional to-do app with editing
+
+---
+
+## Part 1: Understanding State
+
+### What is State?
+
+State is the current condition of your application's data at any given moment.
+
+```javascript
+// This is state:
+const todos = [
+    { id: 1, text: "Buy groceries", completed: false },
+    { id: 2, text: "Walk the dog", completed: true },
+    { id: 3, text: "Write code", completed: false }
+];
+```
+
+### State vs DOM
+
+**Key Concept:** Your data (state) should be the "source of truth", not the DOM.
+
+```javascript
+// ❌ BAD: Treating DOM as source of truth
+function getTodos() {
+    const items = document.querySelectorAll('.todo-item');
+    return Array.from(items).map(item => item.textContent);
+}
+
+// ✅ GOOD: State is source of truth
+let todos = [];  // This is your data
+
+function renderTodos() {
+    // Update DOM to match state
+    const list = document.querySelector('#todoList');
+    list.innerHTML = '';
+    
+    todos.forEach(todo => {
+        // Create DOM elements from state
+        const li = document.createElement('li');
+        li.textContent = todo.text;
+        list.appendChild(li);
+    });
+}
+```
+
+### The Pattern
+
+```
+User Action → Update State → Re-render UI
+     ↓             ↓              ↓
+   Click       Change Array    Update DOM
+```
+
+---
+
+## Part 2: Working with Arrays of Objects
+
+### Creating State Structure
+
+```javascript
+// Single todo object structure
+const todo = {
+    id: 1,                      // Unique identifier
+    text: "Buy groceries",      // Todo description
+    completed: false,           // Status
+    createdAt: Date.now()       // Timestamp (optional)
+};
+
+// Array of todos (this is your state)
+let todos = [
+    { id: 1, text: "Buy groceries", completed: false },
+    { id: 2, text: "Walk the dog", completed: false },
+    { id: 3, text: "Write code", completed: false }
+];
+```
+
+### Generating Unique IDs
+
+```javascript
+// Method 1: Simple counter
+let nextId = 1;
+
+function generateId() {
+    return nextId++;
+}
+
+// Method 2: Timestamp
+function generateId() {
+    return Date.now();
+}
+
+// Method 3: Random (good enough for small apps)
+function generateId() {
+    return Math.random().toString(36).substr(2, 9);
+}
+```
+
+---
+
+## Part 3: CRUD Operations
+
+### CREATE - Adding Items
+
+```javascript
+let todos = [];
+let nextId = 1;
+
+function addTodo(text) {
+    const newTodo = {
+        id: nextId++,
+        text: text,
+        completed: false
+    };
+    
+    todos.push(newTodo);
+    renderTodos();  // Update UI
+}
+
+// Usage
+addTodo("Buy milk");
+addTodo("Read book");
+```
+
+### READ - Getting Items
+
+```javascript
+// Get all todos
+function getAllTodos() {
+    return todos;
+}
+
+// Get single todo by ID
+function getTodoById(id) {
+    return todos.find(todo => todo.id === id);
+}
+
+// Get completed todos
+function getCompletedTodos() {
+    return todos.filter(todo => todo.completed);
+}
+
+// Get active todos
+function getActiveTodos() {
+    return todos.filter(todo => !todo.completed);
+}
+```
+
+### UPDATE - Modifying Items
+
+```javascript
+// Update todo text
+function updateTodoText(id, newText) {
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+        todo.text = newText;
+        renderTodos();
+    }
+}
+
+// Toggle completed status
+function toggleTodo(id) {
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+        todo.completed = !todo.completed;
+        renderTodos();
+    }
+}
+
+// Update entire todo
+function updateTodo(id, updates) {
+    const index = todos.findIndex(t => t.id === id);
+    if (index !== -1) {
+        todos[index] = { ...todos[index], ...updates };
+        renderTodos();
+    }
+}
+```
+
+### DELETE - Removing Items
+
+```javascript
+// Delete by ID
+function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+    renderTodos();
+}
+
+// Delete all completed
+function deleteCompletedTodos() {
+    todos = todos.filter(todo => !todo.completed);
+    renderTodos();
+}
+
+// Delete all todos
+function deleteAllTodos() {
+    todos = [];
+    renderTodos();
+}
+```
+
+---
+
+## Part 4: Rendering State to DOM
+
+### Basic Render Function
+
+```javascript
+function renderTodos() {
+    const todoList = document.querySelector('#todoList');
+    
+    // Clear existing content
+    todoList.innerHTML = '';
+    
+    // Check if empty
+    if (todos.length === 0) {
+        todoList.innerHTML = '<li class="empty">No todos yet!</li>';
+        return;
+    }
+    
+    // Render each todo
+    todos.forEach(todo => {
+        const li = createTodoElement(todo);
+        todoList.appendChild(li);
+    });
+}
+
+function createTodoElement(todo) {
+    const li = document.createElement('li');
+    li.className = 'todo-item';
+    li.dataset.id = todo.id;  // Store ID in element
+    
+    const span = document.createElement('span');
+    span.textContent = todo.text;
+    span.className = todo.completed ? 'completed' : '';
+    
+    li.appendChild(span);
+    
+    return li;
+}
+```
+
+---
+
+## Part 5: Building a Full CRUD To-Do App
+
+Let's build a complete application with all CRUD operations!
+
+### HTML Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .todo-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        #todoInput {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        #todoInput:focus {
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .todo-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .todo-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .todo-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .todo-text {
+            flex: 1;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .todo-text.completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .todo-text.editing {
+            display: none;
+        }
+
+        .edit-input {
+            flex: 1;
+            padding: 8px;
+            border: 2px solid #667eea;
+            border-radius: 4px;
+            font-size: 16px;
+            display: none;
+        }
+
+        .edit-input.active {
+            display: block;
+        }
+
+        .todo-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn-small {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-edit {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background: #45a049;
+        }
+
+        .btn-delete {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #da190b;
+        }
+
+        .btn-save {
+            background: #2196F3;
+            color: white;
+        }
+
+        .btn-cancel {
+            background: #9E9E9E;
+            color: white;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Advanced To-Do List</h1>
+        
+        <form class="todo-form" id="todoForm">
+            <input 
+                type="text" 
+                id="todoInput" 
+                placeholder="What needs to be done?"
+                autocomplete="off"
+            >
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+
+        <ul class="todo-list" id="todoList"></ul>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number" id="totalCount">0</div>
+                <div class="stat-label">Total</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="activeCount">0</div>
+                <div class="stat-label">Active</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="completedCount">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### Complete JavaScript Implementation
+
+```javascript
+// ===== STATE =====
+let todos = [];
+let nextId = 1;
+let editingId = null;
+
+// ===== DOM ELEMENTS =====
+const todoForm = document.querySelector('#todoForm');
+const todoInput = document.querySelector('#todoInput');
+const todoList = document.querySelector('#todoList');
+const totalCount = document.querySelector('#totalCount');
+const activeCount = document.querySelector('#activeCount');
+const completedCount = document.querySelector('#completedCount');
+
+// ===== CRUD FUNCTIONS =====
+
+// CREATE
+function addTodo(text) {
+    const newTodo = {
+        id: nextId++,
+        text: text.trim(),
+        completed: false,
+        createdAt: Date.now()
+    };
+    
+    todos.push(newTodo);
+    render();
+}
+
+// READ
+function getTodoById(id) {
+    return todos.find(todo => todo.id === id);
+}
+
+// UPDATE
+function updateTodo(id, updates) {
+    const todo = getTodoById(id);
+    if (todo) {
+        Object.assign(todo, updates);
+        render();
+    }
+}
+
+function toggleTodo(id) {
+    const todo = getTodoById(id);
+    if (todo) {
+        todo.completed = !todo.completed;
+        render();
+    }
+}
+
+// DELETE
+function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+    render();
+}
+
+// ===== RENDER FUNCTIONS =====
+
+function render() {
+    renderTodos();
+    renderStats();
+}
+
+function renderTodos() {
+    todoList.innerHTML = '';
+    
+    if (todos.length === 0) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'empty-state';
+        emptyDiv.innerHTML = `
+            <p>📝 No tasks yet!</p>
+            <p>Add a task above to get started</p>
+        `;
+        todoList.appendChild(emptyDiv);
+        return;
+    }
+    
+    todos.forEach(todo => {
+        const li = createTodoElement(todo);
+        todoList.appendChild(li);
+    });
+}
+
+function createTodoElement(todo) {
+    const li = document.createElement('li');
+    li.className = 'todo-item';
+    li.dataset.id = todo.id;
+    
+    // Checkbox
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'todo-checkbox';
+    checkbox.checked = todo.completed;
+    checkbox.addEventListener('change', () => toggleTodo(todo.id));
+    
+    // Text span
+    const span = document.createElement('span');
+    span.className = `todo-text ${todo.completed ? 'completed' : ''}`;
+    span.textContent = todo.text;
+    
+    // Edit input (hidden by default)
+    const editInput = document.createElement('input');
+    editInput.type = 'text';
+    editInput.className = 'edit-input';
+    editInput.value = todo.text;
+    
+    if (editingId === todo.id) {
+        span.classList.add('editing');
+        editInput.classList.add('active');
+        setTimeout(() => editInput.focus(), 0);
+    }
+    
+    // Actions container
+    const actions = document.createElement('div');
+    actions.className = 'todo-actions';
+    
+    if (editingId === todo.id) {
+        // Save and Cancel buttons (when editing)
+        const saveBtn = document.createElement('button');
+        saveBtn.className = 'btn-small btn-save';
+        saveBtn.textContent = 'Save';
+        saveBtn.addEventListener('click', () => saveEdit(todo.id, editInput.value));
+        
+        const cancelBtn = document.createElement('button');
+        cancelBtn.className = 'btn-small btn-cancel';
+        cancelBtn.textContent = 'Cancel';
+        cancelBtn.addEventListener('click', cancelEdit);
+        
+        // Save on Enter, cancel on Escape
+        editInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                saveEdit(todo.id, editInput.value);
+            }
+        });
+        
+        editInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                cancelEdit();
+            }
+        });
+        
+        actions.appendChild(saveBtn);
+        actions.appendChild(cancelBtn);
+    } else {
+        // Edit and Delete buttons (normal mode)
+        const editBtn = document.createElement('button');
+        editBtn.className = 'btn-small btn-edit';
+        editBtn.textContent = 'Edit';
+        editBtn.addEventListener('click', () => startEdit(todo.id));
+        
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'btn-small btn-delete';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', () => deleteTodo(todo.id));
+        
+        actions.appendChild(editBtn);
+        actions.appendChild(deleteBtn);
+    }
+    
+    // Assemble
+    li.appendChild(checkbox);
+    li.appendChild(span);
+    li.appendChild(editInput);
+    li.appendChild(actions);
+    
+    return li;
+}
+
+function renderStats() {
+    const total = todos.length;
+    const active = todos.filter(t => !t.completed).length;
+    const completed = todos.filter(t => t.completed).length;
+    
+    totalCount.textContent = total;
+    activeCount.textContent = active;
+    completedCount.textContent = completed;
+}
+
+// ===== EDIT MODE FUNCTIONS =====
+
+function startEdit(id) {
+    editingId = id;
+    render();
+}
+
+function saveEdit(id, newText) {
+    const trimmedText = newText.trim();
+    if (trimmedText === '') {
+        alert('Task cannot be empty!');
+        return;
+    }
+    
+    updateTodo(id, { text: trimmedText });
+    editingId = null;
+}
+
+function cancelEdit() {
+    editingId = null;
+    render();
+}
+
+// ===== EVENT HANDLERS =====
+
+function handleSubmit(e) {
+    e.preventDefault();
+    
+    const text = todoInput.value.trim();
+    
+    if (text === '') {
+        alert('Please enter a task!');
+        return;
+    }
+    
+    addTodo(text);
+    todoInput.value = '';
+    todoInput.focus();
+}
+
+// ===== EVENT LISTENERS =====
+
+todoForm.addEventListener('submit', handleSubmit);
+
+// ===== INITIAL RENDER =====
+
+render();
+
+// ===== SAMPLE DATA (for testing) =====
+
+// Uncomment to add sample todos:
+// addTodo("Buy groceries");
+// addTodo("Walk the dog");
+// addTodo("Finish tutorial");
+```
+
+---
+
+## Part 6: Best Practices
+
+### 1. Separate Concerns
+
+```javascript
+// ✅ GOOD: Separate data manipulation from rendering
+function addTodo(text) {
+    // Update state
+    todos.push({ id: nextId++, text, completed: false });
+    // Then render
+    render();
+}
+
+// ❌ BAD: Mixing state and DOM manipulation
+function addTodo(text) {
+    const li = document.createElement('li');
+    li.textContent = text;
+    todoList.appendChild(li);
+    // State and DOM are now out of sync!
+}
+```
+
+### 2. Single Source of Truth
+
+```javascript
+// ✅ GOOD: State is the source of truth
+let todos = [];  // This is your data
+
+function render() {
+    // UI always reflects state
+    todoList.innerHTML = '';
+    todos.forEach(todo => {
+        // Create elements from state
+    });
+}
+
+// ❌ BAD: Multiple sources of truth
+let todos = [];
+// And also relying on DOM elements as data
+```
+
+### 3. Immutability for Updates
+
+```javascript
+// ✅ GOOD: Create new array
+function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+}
+
+// ⚠️ OK: Mutate existing array
+function deleteTodo(id) {
+    const index = todos.findIndex(t => t.id === id);
+    todos.splice(index, 1);
+}
+```
+
+### 4. Always Re-render After State Changes
+
+```javascript
+// ✅ GOOD: Update state, then render
+function addTodo(text) {
+    todos.push({ id: nextId++, text, completed: false });
+    render();  // Always re-render
+}
+
+// ❌ BAD: Update state without rendering
+function addTodo(text) {
+    todos.push({ id: nextId++, text, completed: false });
+    // UI is now out of sync with state!
+}
+```
+
+---
+
+## Part 7: Advanced Patterns
+
+### Storing State in Data Attributes
+
+```javascript
+function createTodoElement(todo) {
+    const li = document.createElement('li');
+    li.dataset.id = todo.id;  // Store ID in element
+    
+    // Later, get ID from element
+    const id = parseInt(li.dataset.id);
+}
+```
+
+### Filtering and Sorting
+
+```javascript
+// Filter active todos
+function renderActiveTodos() {
+    const active = todos.filter(t => !t.completed);
+    renderTodoList(active);
+}
+
+// Filter completed todos
+function renderCompletedTodos() {
+    const completed = todos.filter(t => t.completed);
+    renderTodoList(completed);
+}
+
+// Sort by creation date
+function renderSortedTodos() {
+    const sorted = [...todos].sort((a, b) => b.createdAt - a.createdAt);
+    renderTodoList(sorted);
+}
+```
+
+---
+
+## Challenge Exercises
+
+1. **Add Categories** - Each todo has a category, filter by category
+2. **Priority Levels** - High/Medium/Low priority, sort by priority
+3. **Due Dates** - Add dates to todos, highlight overdue items
+4. **Search Function** - Filter todos by search term
+5. **Bulk Actions** - Select multiple todos, delete or complete all selected
+
+---
+
+## Key Takeaways
+
+- State is your application's data (the source of truth)
+- Store state in arrays of objects
+- CRUD operations: Create, Read, Update, Delete
+- Always update state first, then re-render UI
+- Keep data and UI synchronized
+- Use unique IDs to identify items
+- Separate state management from DOM manipulation
+
+---
+
+## Next Steps
+
+Tomorrow, we'll learn about the Fetch API and how to communicate with servers. You'll learn how to GET data from APIs and POST data to servers. This is crucial for building real-world applications that persist data!
+
+**Preview of Day 9:** You'll fetch data from a public API, display it on your page, and understand how front-end JavaScript communicates with back-end servers!
