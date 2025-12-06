@@ -1,0 +1,771 @@
+---
+title: "Day 6: DOM Manipulation-Web Fundamentals 10 Days Sprint"
+publishedAt: 'Dec 6, 2025'
+description: "DOM Manipulation-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "DOM Manipulation-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Screen Code Representations, Credits: Growtika, Unsplash '
+---
+
+## Day 6: Overview
+
+The DOM (Document Object Model) is a programming interface that represents your HTML as a tree of objects. JavaScript can interact with this tree to read, modify, add, or remove elements dynamically. Today, you'll learn how to make your web pages come alive by connecting JavaScript to HTML.
+
+## Learning Objectives
+
+By the end of this tutorial, you will:
+- Understand what the DOM is and how it works
+- Select HTML elements using querySelector and querySelectorAll
+- Modify element content, attributes, and styles
+- Create new elements dynamically
+- Remove elements from the page
+- Build an interactive "add item to list" feature
+
+---
+
+## Part 1: Understanding the DOM
+
+### What is the DOM?
+
+When the browser loads your HTML, it creates a tree structure called the DOM:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Hello</h1>
+      <p>World</p>
+    </div>
+  </body>
+</html>
+```
+
+**DOM Tree:**
+```
+document
+  └── html
+      ├── head
+      │   └── title
+      │       └── "My Page"
+      └── body
+          └── div#container
+              ├── h1
+              │   └── "Hello"
+              └── p
+                  └── "World"
+```
+
+### The Document Object
+
+`document` is the entry point to the DOM. Everything starts here.
+
+```javascript
+console.log(document);           // The entire document
+console.log(document.title);     // Page title
+console.log(document.URL);       // Current URL
+console.log(document.body);      // The <body> element
+```
+
+---
+
+## Part 2: Selecting Elements
+
+### querySelector() - Select ONE Element
+
+Returns the **first** element that matches the CSS selector.
+
+```javascript
+// By ID
+const header = document.querySelector('#header');
+
+// By class
+const button = document.querySelector('.btn');
+
+// By tag
+const paragraph = document.querySelector('p');
+
+// Complex selectors
+const firstLink = document.querySelector('nav a');
+const specificDiv = document.querySelector('div.container > p');
+```
+
+**HTML Example:**
+```html
+<div id="header">
+    <h1 class="title">Welcome</h1>
+    <p>This is a paragraph</p>
+</div>
+```
+
+**JavaScript:**
+```javascript
+const header = document.querySelector('#header');
+console.log(header);  // <div id="header">...</div>
+
+const title = document.querySelector('.title');
+console.log(title);  // <h1 class="title">Welcome</h1>
+
+const paragraph = document.querySelector('p');
+console.log(paragraph);  // <p>This is a paragraph</p>
+```
+
+### querySelectorAll() - Select MULTIPLE Elements
+
+Returns a **NodeList** (array-like) of all matching elements.
+
+```javascript
+// Get all paragraphs
+const paragraphs = document.querySelectorAll('p');
+
+// Get all elements with a class
+const buttons = document.querySelectorAll('.btn');
+
+// Get all list items
+const listItems = document.querySelectorAll('li');
+```
+
+**Looping through NodeList:**
+```javascript
+const items = document.querySelectorAll('li');
+
+// Method 1: forEach
+items.forEach(item => {
+    console.log(item.textContent);
+});
+
+// Method 2: for...of loop
+for (const item of items) {
+    console.log(item.textContent);
+}
+
+// Method 3: traditional for loop
+for (let i = 0; i < items.length; i++) {
+    console.log(items[i].textContent);
+}
+```
+
+### Other Selection Methods (Older, but still used)
+
+```javascript
+// By ID
+const element = document.getElementById('myId');
+
+// By class name
+const elements = document.getElementsByClassName('myClass');
+
+// By tag name
+const paragraphs = document.getElementsByTagName('p');
+```
+
+**Best Practice:** Use `querySelector` and `querySelectorAll` for consistency.
+
+---
+
+## Part 3: Reading and Modifying Content
+
+### textContent - Plain Text Only
+
+```javascript
+const heading = document.querySelector('h1');
+
+// Read content
+console.log(heading.textContent);  // Gets the text
+
+// Set content
+heading.textContent = 'New Title';  // Changes the text
+```
+
+**HTML:**
+```html
+<h1>Old Title</h1>
+```
+
+**After JavaScript:**
+```html
+<h1>New Title</h1>
+```
+
+### innerHTML - HTML Content
+
+```javascript
+const div = document.querySelector('.content');
+
+// Read HTML
+console.log(div.innerHTML);
+
+// Set HTML (can include tags)
+div.innerHTML = '<h2>New Heading</h2><p>New paragraph</p>';
+```
+
+**⚠️ Warning:** `innerHTML` can be dangerous if you're inserting user input. It can allow XSS (Cross-Site Scripting) attacks. Use `textContent` when possible.
+
+### value - Form Input Values
+
+```javascript
+const input = document.querySelector('#username');
+
+// Read value
+console.log(input.value);
+
+// Set value
+input.value = 'John Doe';
+
+// Clear value
+input.value = '';
+```
+
+### Attributes
+
+```javascript
+const link = document.querySelector('a');
+
+// Get attribute
+console.log(link.getAttribute('href'));
+
+// Set attribute
+link.setAttribute('href', 'https://example.com');
+
+// Check if attribute exists
+console.log(link.hasAttribute('target'));  // true/false
+
+// Remove attribute
+link.removeAttribute('target');
+
+// Direct property access (for common attributes)
+link.href = 'https://example.com';
+link.id = 'myLink';
+link.className = 'active';
+```
+
+---
+
+## Part 4: Modifying Styles
+
+### style Property
+
+```javascript
+const box = document.querySelector('.box');
+
+// Set individual styles
+box.style.color = 'red';
+box.style.backgroundColor = 'yellow';
+box.style.fontSize = '20px';
+box.style.padding = '10px';
+box.style.border = '2px solid black';
+
+// Note: CSS properties become camelCase
+// background-color → backgroundColor
+// font-size → fontSize
+// border-radius → borderRadius
+```
+
+### classList - Better Way to Manage Styles
+
+Instead of inline styles, use CSS classes:
+
+**CSS:**
+```css
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.large {
+    font-size: 24px;
+}
+
+.hidden {
+    display: none;
+}
+```
+
+**JavaScript:**
+```javascript
+const element = document.querySelector('.box');
+
+// Add class
+element.classList.add('highlight');
+
+// Remove class
+element.classList.remove('highlight');
+
+// Toggle class (add if not present, remove if present)
+element.classList.toggle('hidden');
+
+// Check if class exists
+if (element.classList.contains('active')) {
+    console.log('Element is active');
+}
+
+// Add multiple classes
+element.classList.add('highlight', 'large');
+
+// Remove multiple classes
+element.classList.remove('highlight', 'large');
+```
+
+---
+
+## Part 5: Creating and Removing Elements
+
+### createElement() - Create New Elements
+
+```javascript
+// Create a new paragraph
+const newParagraph = document.createElement('p');
+
+// Add content
+newParagraph.textContent = 'This is a new paragraph';
+
+// Add classes
+newParagraph.classList.add('text');
+
+// Add attributes
+newParagraph.setAttribute('id', 'myPara');
+```
+
+### appendChild() - Add to DOM
+
+```javascript
+// Create element
+const newDiv = document.createElement('div');
+newDiv.textContent = 'New div content';
+
+// Add to parent
+const container = document.querySelector('#container');
+container.appendChild(newDiv);
+```
+
+**HTML Before:**
+```html
+<div id="container">
+    <p>Existing paragraph</p>
+</div>
+```
+
+**HTML After:**
+```html
+<div id="container">
+    <p>Existing paragraph</p>
+    <div>New div content</div>
+</div>
+```
+
+### insertBefore() - Insert at Specific Position
+
+```javascript
+const container = document.querySelector('#container');
+const newElement = document.createElement('p');
+newElement.textContent = 'Inserted paragraph';
+
+// Insert before first child
+container.insertBefore(newElement, container.firstChild);
+```
+
+### remove() - Remove Element
+
+```javascript
+const element = document.querySelector('.unwanted');
+element.remove();
+```
+
+### removeChild() - Remove Child Element
+
+```javascript
+const parent = document.querySelector('#container');
+const child = document.querySelector('.child');
+parent.removeChild(child);
+```
+
+---
+
+## Part 6: Building an Interactive List
+
+Let's build a feature where users can add items to a list by clicking a button.
+
+### Step 1: Create the HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        #itemInput {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #addButton {
+            padding: 12px 24px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #addButton:hover {
+            background: #45a049;
+        }
+
+        #itemList {
+            list-style: none;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .delete-btn {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .delete-btn:hover {
+            background: #da190b;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Shopping List</h1>
+        
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="itemInput" 
+                placeholder="Enter an item..."
+                autocomplete="off"
+            >
+            <button id="addButton">Add Item</button>
+        </div>
+
+        <ul id="itemList">
+            <li class="empty-message">Your list is empty. Add some items!</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### Step 2: Write the JavaScript
+
+```javascript
+// Get elements
+const itemInput = document.querySelector('#itemInput');
+const addButton = document.querySelector('#addButton');
+const itemList = document.querySelector('#itemList');
+
+// Function to add item to list
+function addItem() {
+    // Get input value
+    const itemText = itemInput.value.trim();
+    
+    // Validate input
+    if (itemText === '') {
+        alert('Please enter an item!');
+        return;
+    }
+    
+    // Remove empty message if it exists
+    const emptyMessage = document.querySelector('.empty-message');
+    if (emptyMessage) {
+        emptyMessage.remove();
+    }
+    
+    // Create list item
+    const li = document.createElement('li');
+    li.className = 'list-item';
+    
+    // Create span for text
+    const span = document.createElement('span');
+    span.textContent = itemText;
+    
+    // Create delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.textContent = 'Delete';
+    
+    // Add click event to delete button
+    deleteBtn.addEventListener('click', function() {
+        li.remove();
+        
+        // Show empty message if no items left
+        if (itemList.children.length === 0) {
+            const emptyMsg = document.createElement('li');
+            emptyMsg.className = 'empty-message';
+            emptyMsg.textContent = 'Your list is empty. Add some items!';
+            itemList.appendChild(emptyMsg);
+        }
+    });
+    
+    // Append elements
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    itemList.appendChild(li);
+    
+    // Clear input
+    itemInput.value = '';
+    
+    // Focus back on input
+    itemInput.focus();
+}
+
+// Add event listener to button
+addButton.addEventListener('click', addItem);
+
+// Add event listener for Enter key
+itemInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        addItem();
+    }
+});
+```
+
+---
+
+## Part 7: Practical Examples
+
+### Example 1: Change Text on Button Click
+
+```html
+<p id="demo">Original text</p>
+<button id="changeBtn">Change Text</button>
+
+<script>
+    const paragraph = document.querySelector('#demo');
+    const button = document.querySelector('#changeBtn');
+    
+    button.addEventListener('click', function() {
+        paragraph.textContent = 'Text has been changed!';
+        paragraph.style.color = 'blue';
+    });
+</script>
+```
+
+### Example 2: Toggle Visibility
+
+```html
+<button id="toggleBtn">Toggle Content</button>
+<div id="content" style="display: block;">
+    <p>This content can be hidden!</p>
+</div>
+
+<script>
+    const toggleBtn = document.querySelector('#toggleBtn');
+    const content = document.querySelector('#content');
+    
+    toggleBtn.addEventListener('click', function() {
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            toggleBtn.textContent = 'Hide Content';
+        } else {
+            content.style.display = 'none';
+            toggleBtn.textContent = 'Show Content';
+        }
+    });
+</script>
+```
+
+### Example 3: Counter Application
+
+```html
+<div style="text-align: center; padding: 50px;">
+    <h1 id="counter">0</h1>
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+    <button id="reset">Reset</button>
+</div>
+
+<script>
+    let count = 0;
+    const counterDisplay = document.querySelector('#counter');
+    const incrementBtn = document.querySelector('#increment');
+    const decrementBtn = document.querySelector('#decrement');
+    const resetBtn = document.querySelector('#reset');
+    
+    incrementBtn.addEventListener('click', function() {
+        count++;
+        counterDisplay.textContent = count;
+    });
+    
+    decrementBtn.addEventListener('click', function() {
+        count--;
+        counterDisplay.textContent = count;
+    });
+    
+    resetBtn.addEventListener('click', function() {
+        count = 0;
+        counterDisplay.textContent = count;
+    });
+</script>
+```
+
+---
+
+## Best Practices
+
+### 1. Cache DOM Selections
+
+**Bad:**
+```javascript
+document.querySelector('#myElement').textContent = 'Text 1';
+document.querySelector('#myElement').style.color = 'red';
+document.querySelector('#myElement').classList.add('active');
+```
+
+**Good:**
+```javascript
+const element = document.querySelector('#myElement');
+element.textContent = 'Text 1';
+element.style.color = 'red';
+element.classList.add('active');
+```
+
+### 2. Use textContent Over innerHTML When Possible
+
+```javascript
+// Safe (no HTML parsing)
+element.textContent = userInput;
+
+// Potentially unsafe (can execute scripts)
+element.innerHTML = userInput;  // ⚠️ Be careful!
+```
+
+### 3. Build Elements in Memory Before Adding to DOM
+
+**Bad (causes multiple reflows):**
+```javascript
+const list = document.querySelector('#list');
+for (let i = 0; i < 100; i++) {
+    const li = document.createElement('li');
+    li.textContent = `Item ${i}`;
+    list.appendChild(li);  // Reflow each time
+}
+```
+
+**Good (single reflow):**
+```javascript
+const list = document.querySelector('#list');
+const fragment = document.createDocumentFragment();
+
+for (let i = 0; i < 100; i++) {
+    const li = document.createElement('li');
+    li.textContent = `Item ${i}`;
+    fragment.appendChild(li);
+}
+
+list.appendChild(fragment);  // Single reflow
+```
+
+---
+
+## Common Mistakes
+
+1. **Selecting elements before they exist** - Put scripts at end of body or use DOMContentLoaded
+2. **Not checking if element exists** - Always check before manipulating
+3. **Forgetting to clear input fields** - Set `input.value = ''` after submission
+4. **Using innerHTML with user input** - Security risk (XSS attacks)
+5. **Not removing event listeners** - Can cause memory leaks
+
+---
+
+## Challenge Exercises
+
+1. **Color Picker** - Create buttons that change the background color of the page
+2. **Image Gallery** - Click thumbnails to change a main display image
+3. **Character Counter** - Show remaining characters as user types in textarea
+4. **Quiz Question** - Display question, get user answer, show if correct/incorrect
+5. **Dynamic Table** - Add rows to a table with form input
+
+---
+
+## Key Takeaways
+
+- The DOM is a JavaScript representation of your HTML
+- Use `querySelector` to select single elements
+- Use `querySelectorAll` to select multiple elements
+- `textContent` for text, `innerHTML` for HTML content
+- `classList` is the best way to manage element classes
+- Create elements with `createElement`, add with `appendChild`
+- Remove elements with `remove()` method
+- Always validate user input before using it
+
+---
+
+## Next Steps
+
+Tomorrow, we'll learn about events and user input. You'll discover how to respond to clicks, form submissions, keyboard input, and more. This is crucial for building interactive web applications!
+
+**Preview of Day 7:** You'll learn `addEventListener`, handle form submissions with `preventDefault`, and build a fully functional to-do form that reads user input and displays it on the page!
