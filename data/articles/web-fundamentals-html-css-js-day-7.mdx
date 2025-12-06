@@ -1,0 +1,832 @@
+---
+title: "Day 7: Events + User Input-Web Fundamentals 10 Days Sprint"
+publishedAt: 'Dec 6, 2025'
+description: "Events + User Input-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "Events + User Input-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Screen Code Representations, Credits: Growtika, Unsplash '
+---
+
+## Day 7: Overview
+
+Events are actions that happen in the browser: clicks, key presses, form submissions, mouse movements, and more. JavaScript can "listen" for these events and respond to them, making your web pages truly interactive. Today, you'll master event handling and build a functional to-do form.
+
+## Learning Objectives
+By the end of this tutorial, you will:
+- Understand how events work in JavaScript
+- Use addEventListener to handle different event types
+- Handle form submissions and prevent default behavior
+- Read and validate user input
+- Build a complete to-do form with add functionality
+
+---
+
+## Part 1: Understanding Events
+
+### What is an Event?
+
+An event is something that happens in the browser:
+- User clicks a button → `click` event
+- User types in an input → `keypress`, `keydown`, `input` events
+- Form is submitted → `submit` event
+- Mouse moves → `mousemove` event
+- Page finishes loading → `load` event
+
+### Event Listeners
+
+An event listener is code that "waits" for an event to happen, then runs a function.
+
+```javascript
+element.addEventListener('eventType', function() {
+    // Code to run when event happens
+});
+```
+
+---
+
+## Part 2: The Click Event
+
+### Basic Click Event
+
+```html
+<button id="myButton">Click Me!</button>
+
+<script>
+    const button = document.querySelector('#myButton');
+    
+    button.addEventListener('click', function() {
+        alert('Button was clicked!');
+    });
+</script>
+```
+
+### Click Event with Arrow Function
+
+```javascript
+const button = document.querySelector('#myButton');
+
+button.addEventListener('click', () => {
+    console.log('Button clicked!');
+});
+```
+
+### Multiple Event Listeners
+
+```javascript
+const button = document.querySelector('#myButton');
+
+// First listener
+button.addEventListener('click', () => {
+    console.log('First listener');
+});
+
+// Second listener (both will run)
+button.addEventListener('click', () => {
+    console.log('Second listener');
+});
+```
+
+### Removing Event Listeners
+
+```javascript
+// Define named function
+function handleClick() {
+    console.log('Button clicked');
+}
+
+// Add listener
+button.addEventListener('click', handleClick);
+
+// Remove listener (must use same function reference)
+button.removeEventListener('click', handleClick);
+```
+
+---
+
+## Part 3: Event Object
+
+Every event handler receives an event object with information about the event.
+
+```javascript
+button.addEventListener('click', function(event) {
+    console.log(event);  // The event object
+    console.log(event.type);       // 'click'
+    console.log(event.target);     // The element that was clicked
+    console.log(event.timeStamp);  // When it happened
+});
+```
+
+### Common Event Object Properties
+
+```javascript
+element.addEventListener('click', (e) => {  // 'e' is common shorthand
+    // The element that triggered the event
+    console.log(e.target);
+    
+    // The element the listener is attached to
+    console.log(e.currentTarget);
+    
+    // Type of event
+    console.log(e.type);  // 'click'
+    
+    // Mouse position
+    console.log(e.clientX, e.clientY);
+    
+    // Keyboard key (for keyboard events)
+    console.log(e.key);
+});
+```
+
+---
+
+## Part 4: Common Event Types
+
+### Mouse Events
+
+```javascript
+const box = document.querySelector('.box');
+
+// Click events
+box.addEventListener('click', () => {
+    console.log('Clicked');
+});
+
+box.addEventListener('dblclick', () => {
+    console.log('Double clicked');
+});
+
+// Mouse movement
+box.addEventListener('mouseenter', () => {
+    console.log('Mouse entered');
+});
+
+box.addEventListener('mouseleave', () => {
+    console.log('Mouse left');
+});
+
+box.addEventListener('mousemove', (e) => {
+    console.log(`Mouse at: ${e.clientX}, ${e.clientY}`);
+});
+
+// Mouse buttons
+box.addEventListener('mousedown', () => {
+    console.log('Mouse button pressed');
+});
+
+box.addEventListener('mouseup', () => {
+    console.log('Mouse button released');
+});
+```
+
+### Keyboard Events
+
+```javascript
+const input = document.querySelector('input');
+
+// Key is pressed down
+input.addEventListener('keydown', (e) => {
+    console.log(`Key down: ${e.key}`);
+});
+
+// Key is released
+input.addEventListener('keyup', (e) => {
+    console.log(`Key up: ${e.key}`);
+});
+
+// Key press (deprecated, but still used)
+input.addEventListener('keypress', (e) => {
+    console.log(`Key pressed: ${e.key}`);
+});
+```
+
+### Keyboard Key Detection
+
+```javascript
+document.addEventListener('keydown', (e) => {
+    console.log(`Key: ${e.key}`);
+    console.log(`Code: ${e.code}`);
+    
+    if (e.key === 'Enter') {
+        console.log('Enter key pressed');
+    }
+    
+    if (e.key === 'Escape') {
+        console.log('Escape key pressed');
+    }
+    
+    // Check for modifier keys
+    if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();  // Prevent browser save
+        console.log('Ctrl+S pressed');
+    }
+});
+```
+
+### Input Events
+
+```javascript
+const input = document.querySelector('#username');
+
+// Fires every time input value changes
+input.addEventListener('input', (e) => {
+    console.log('Current value:', e.target.value);
+});
+
+// Fires when input loses focus
+input.addEventListener('blur', () => {
+    console.log('Input lost focus');
+});
+
+// Fires when input gains focus
+input.addEventListener('focus', () => {
+    console.log('Input gained focus');
+});
+
+// Fires when value changes and loses focus
+input.addEventListener('change', (e) => {
+    console.log('Value changed to:', e.target.value);
+});
+```
+
+### Form Events
+
+```javascript
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();  // Prevent page reload
+    console.log('Form submitted');
+});
+```
+
+---
+
+## Part 5: Form Handling and preventDefault
+
+### The Problem with Form Default Behavior
+
+By default, submitting a form reloads the page. We need to prevent this to handle it with JavaScript.
+
+```html
+<form id="myForm">
+    <input type="text" name="username">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const form = document.querySelector('#myForm');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();  // ⚠️ IMPORTANT: Prevents page reload
+        
+        // Now we can handle the form with JavaScript
+        console.log('Form submitted, but page did not reload');
+    });
+</script>
+```
+
+### Reading Form Input Values
+
+```html
+<form id="contactForm">
+    <input type="text" id="name" placeholder="Name">
+    <input type="email" id="email" placeholder="Email">
+    <textarea id="message" placeholder="Message"></textarea>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const form = document.querySelector('#contactForm');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get input values
+        const name = document.querySelector('#name').value;
+        const email = document.querySelector('#email').value;
+        const message = document.querySelector('#message').value;
+        
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Message:', message);
+    });
+</script>
+```
+
+### Form Validation
+
+```javascript
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.querySelector('#name').value.trim();
+    const email = document.querySelector('#email').value.trim();
+    
+    // Validate name
+    if (name === '') {
+        alert('Please enter your name');
+        return;
+    }
+    
+    // Validate email
+    if (email === '') {
+        alert('Please enter your email');
+        return;
+    }
+    
+    if (!email.includes('@')) {
+        alert('Please enter a valid email');
+        return;
+    }
+    
+    // If validation passes
+    console.log('Form is valid!');
+    // Process the form...
+});
+```
+
+---
+
+## Part 6: Building a To-Do Form
+
+Let's build a complete to-do list application from scratch!
+
+### Step 1: Create the HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .todo-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        #todoInput {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #todoInput:focus {
+            border-color: #667eea;
+        }
+
+        #addBtn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        #addBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        #addBtn:active {
+            transform: translateY(0);
+        }
+
+        .todo-list {
+            list-style: none;
+        }
+
+        .todo-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .todo-item:hover {
+            transform: translateX(5px);
+        }
+
+        .todo-text {
+            flex: 1;
+            color: #333;
+        }
+
+        .delete-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .delete-btn:hover {
+            background: #ff3838;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+
+        .empty-state p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .empty-state small {
+            font-size: 14px;
+        }
+
+        .stats {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 My To-Do List</h1>
+        
+        <form class="todo-form" id="todoForm">
+            <input 
+                type="text" 
+                id="todoInput" 
+                placeholder="What do you need to do?"
+                autocomplete="off"
+            >
+            <button type="submit" id="addBtn">Add</button>
+        </form>
+
+        <ul class="todo-list" id="todoList">
+            <div class="empty-state">
+                <p>🎉 No tasks yet!</p>
+                <small>Add a task above to get started</small>
+            </div>
+        </ul>
+
+        <div class="stats" id="stats">
+            Total tasks: <strong>0</strong>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### Step 2: Write the JavaScript
+
+```javascript
+// Get DOM elements
+const todoForm = document.querySelector('#todoForm');
+const todoInput = document.querySelector('#todoInput');
+const todoList = document.querySelector('#todoList');
+const stats = document.querySelector('#stats');
+
+// Track task count
+let taskCount = 0;
+
+// Function to update stats
+function updateStats() {
+    stats.innerHTML = `Total tasks: <strong>${taskCount}</strong>`;
+}
+
+// Function to add a to-do item
+function addTodo(e) {
+    e.preventDefault();  // Prevent form submission
+    
+    // Get and trim input value
+    const todoText = todoInput.value.trim();
+    
+    // Validate input
+    if (todoText === '') {
+        alert('Please enter a task!');
+        return;
+    }
+    
+    // Remove empty state if it exists
+    const emptyState = document.querySelector('.empty-state');
+    if (emptyState) {
+        emptyState.remove();
+    }
+    
+    // Create list item
+    const li = document.createElement('li');
+    li.className = 'todo-item';
+    
+    // Create span for text
+    const span = document.createElement('span');
+    span.className = 'todo-text';
+    span.textContent = todoText;
+    
+    // Create delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.textContent = 'Delete';
+    
+    // Add delete functionality
+    deleteBtn.addEventListener('click', function() {
+        li.remove();
+        taskCount--;
+        updateStats();
+        
+        // Show empty state if no tasks left
+        if (taskCount === 0) {
+            const emptyDiv = document.createElement('div');
+            emptyDiv.className = 'empty-state';
+            emptyDiv.innerHTML = `
+                <p>🎉 No tasks yet!</p>
+                <small>Add a task above to get started</small>
+            `;
+            todoList.appendChild(emptyDiv);
+        }
+    });
+    
+    // Assemble the list item
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
+    
+    // Add to list
+    todoList.appendChild(li);
+    
+    // Update counter
+    taskCount++;
+    updateStats();
+    
+    // Clear input
+    todoInput.value = '';
+    
+    // Focus back on input
+    todoInput.focus();
+}
+
+// Event Listeners
+todoForm.addEventListener('submit', addTodo);
+
+// Alternative: Add task with Enter key on input
+todoInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        addTodo(e);
+    }
+});
+
+// Initialize stats
+updateStats();
+```
+
+---
+
+## Part 7: Advanced Event Concepts
+
+### Event Bubbling
+
+Events "bubble up" from child to parent elements.
+
+```html
+<div id="parent">
+    <button id="child">Click Me</button>
+</div>
+
+<script>
+    document.querySelector('#parent').addEventListener('click', () => {
+        console.log('Parent clicked');
+    });
+    
+    document.querySelector('#child').addEventListener('click', () => {
+        console.log('Child clicked');
+    });
+    
+    // Clicking the button logs both:
+    // "Child clicked"
+    // "Parent clicked"
+</script>
+```
+
+### Stop Event Propagation
+
+```javascript
+document.querySelector('#child').addEventListener('click', (e) => {
+    e.stopPropagation();  // Prevents bubbling to parent
+    console.log('Child clicked');
+});
+```
+
+### Event Delegation
+
+Instead of adding listeners to many elements, add one to the parent.
+
+```html
+<ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<script>
+    // Instead of adding listener to each <li>
+    // Add one listener to <ul>
+    document.querySelector('#list').addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+            console.log('Clicked:', e.target.textContent);
+        }
+    });
+</script>
+```
+
+**Benefits:**
+- Better performance with many elements
+- Works with dynamically added elements
+- Less memory usage
+
+---
+
+## Part 8: Practical Examples
+
+### Example 1: Character Counter
+
+```html
+<textarea id="bio" maxlength="200"></textarea>
+<p id="counter">200 characters remaining</p>
+
+<script>
+    const textarea = document.querySelector('#bio');
+    const counter = document.querySelector('#counter');
+    
+    textarea.addEventListener('input', () => {
+        const remaining = 200 - textarea.value.length;
+        counter.textContent = `${remaining} characters remaining`;
+        
+        if (remaining < 20) {
+            counter.style.color = 'red';
+        } else {
+            counter.style.color = 'black';
+        }
+    });
+</script>
+```
+
+### Example 2: Show/Hide Password
+
+```html
+<input type="password" id="password">
+<button id="togglePassword">Show</button>
+
+<script>
+    const passwordInput = document.querySelector('#password');
+    const toggleBtn = document.querySelector('#togglePassword');
+    
+    toggleBtn.addEventListener('click', () => {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleBtn.textContent = 'Hide';
+        } else {
+            passwordInput.type = 'password';
+            toggleBtn.textContent = 'Show';
+        }
+    });
+</script>
+```
+
+### Example 3: Dropdown Menu
+
+```html
+<button id="menuBtn">Menu ▼</button>
+<ul id="dropdown" style="display: none;">
+    <li>Option 1</li>
+    <li>Option 2</li>
+    <li>Option 3</li>
+</ul>
+
+<script>
+    const menuBtn = document.querySelector('#menuBtn');
+    const dropdown = document.querySelector('#dropdown');
+    
+    menuBtn.addEventListener('click', () => {
+        if (dropdown.style.display === 'none') {
+            dropdown.style.display = 'block';
+        } else {
+            dropdown.style.display = 'none';
+        }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+</script>
+```
+
+---
+
+## Common Mistakes
+
+1. **Not using preventDefault on forms** - Page will reload
+2. **Forgetting to trim() input** - Spaces count as valid input
+3. **Not validating input** - Always check if input is empty/valid
+4. **Adding listeners inside loops** - Can cause memory leaks
+5. **Not clearing input after submission** - User experience issue
+
+---
+
+## Challenge Exercises
+
+1. **Real-time Search Filter** - Filter a list as user types
+2. **Modal Dialog** - Open/close modal with buttons and escape key
+3. **Image Slider** - Next/previous buttons to cycle through images
+4. **Form with Multiple Inputs** - Validate name, email, phone
+5. **Tab Component** - Click tabs to show different content
+
+---
+
+## Key Takeaways
+
+- Events make web pages interactive
+- Use `addEventListener` to handle events
+- Always use `preventDefault()` on form submissions
+- The event object contains useful information
+- Validate and sanitize all user input
+- Clear input fields after successful submission
+- Use `.trim()` to remove extra whitespace
+- Event delegation improves performance
+
+---
+
+## Next Steps
+
+Tomorrow, we'll learn about state management in vanilla JavaScript. You'll learn how to store data in arrays of objects, render that data to the DOM, and implement full CRUD operations (Create, Read, Update, Delete). This is the foundation for understanding how frameworks like React work!
+
+**Preview of Day 8:** You'll build a more sophisticated to-do list that stores tasks in memory, allows editing, and demonstrates how to separate data from the UI!
