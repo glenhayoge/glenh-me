@@ -1,0 +1,789 @@
+---
+title: "Day 9: Fetch + Basic API Calls"
+publishedAt: 'Dec 8, 2025'
+description: "Fetch + Basic API Calls-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+seoDescription: "Fetch + Basic API Calls-Learn the fundamentals of web development with HTML, CSS and Vanilla JavaScript"
+category: "Web Fundamentals"
+tags: programming
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1730815048563-3c121b1e3544?q=80&w=1839&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Canopy of Trees, Credits: Glen Hayoge, Unsplash'
+---
+
+## Day 9: Overview
+
+The Fetch API allows JavaScript to communicate with servers over HTTP. This is how your front-end gets data from back-ends, third-party services, and databases. Today, you'll learn how to make GET and POST requests, handle responses, work with JSON, and understand promises and async/await.
+
+## Learning Objectives
+
+By the end of this tutorial, you will:
+- Understand how HTTP requests work
+- Use the Fetch API to get data from servers
+- Handle promises with .then()/.catch() and async/await
+- Work with JSON data
+- Make GET and POST requests
+- Display API data on your page
+- Handle errors gracefully
+
+---
+
+## Part 1: Understanding HTTP and APIs
+
+### What is an API?
+
+API (Application Programming Interface) = A way for programs to talk to each other.
+
+**Example:** A weather app on your phone talks to a weather API to get current weather data.
+
+```
+Your App  →  HTTP Request  →  Weather API
+Your App  ←  HTTP Response ←  Weather API
+                (JSON data)
+```
+
+### HTTP Request Methods
+
+```
+GET    - Retrieve data (like loading a web page)
+POST   - Send data (like submitting a form)
+PUT    - Update entire resource
+PATCH  - Update part of resource
+DELETE - Remove data
+```
+
+**Today we focus on GET and POST.**
+
+### HTTP Request Structure
+
+```
+GET /api/users HTTP/1.1
+Host: example.com
+Headers:
+  - Content-Type: application/json
+  - Authorization: Bearer token123
+```
+
+### HTTP Response Structure
+
+```
+HTTP/1.1 200 OK
+Headers:
+  - Content-Type: application/json
+  
+Body:
+{
+  "users": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" }
+  ]
+}
+```
+
+---
+
+## Part 2: Introduction to Fetch
+
+### Basic Fetch Syntax
+
+```javascript
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+```
+
+### What Happens Here?
+
+1. `fetch()` makes an HTTP request
+2. Returns a **Promise** (placeholder for future value)
+3. `.then()` runs when request completes
+4. `.response.json()` parses JSON response
+5. Second `.then()` receives the parsed data
+6. `.catch()` handles errors
+
+---
+
+## Part 3: Understanding Promises
+
+### What is a Promise?
+
+A Promise represents a value that may be available now, later, or never.
+
+**States:**
+- **Pending** - Initial state, not fulfilled or rejected
+- **Fulfilled** - Operation completed successfully
+- **Rejected** - Operation failed
+
+```javascript
+// Creating a simple promise (you usually don't do this with fetch)
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Success!');
+    }, 1000);
+});
+
+promise.then(result => {
+    console.log(result);  // "Success!" after 1 second
+});
+```
+
+### Chaining Promises
+
+```javascript
+fetch('https://api.example.com/users')
+    .then(response => response.json())  // Returns a promise
+    .then(data => {
+        console.log('Received:', data);
+        return data.filter(user => user.active);
+    })
+    .then(activeUsers => {
+        console.log('Active users:', activeUsers);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+```
+
+---
+
+## Part 4: Making GET Requests
+
+### Simple GET Request
+
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => {
+        console.log('Status:', response.status);  // 200
+        console.log('OK?:', response.ok);         // true
+        return response.json();
+    })
+    .then(posts => {
+        console.log('Posts:', posts);
+        // Do something with the data
+    })
+    .catch(error => {
+        console.error('Failed to fetch:', error);
+    });
+```
+
+### GET Request with Parameters
+
+```javascript
+// Using URL parameters
+const userId = 1;
+const url = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
+
+fetch(url)
+    .then(response => response.json())
+    .then(posts => {
+        console.log('User posts:', posts);
+    });
+```
+
+### Checking Response Status
+
+```javascript
+fetch('https://api.example.com/data')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
+```
+
+---
+
+## Part 5: Async/Await (Modern Syntax)
+
+### Why Async/Await?
+
+Makes asynchronous code look synchronous and easier to read.
+
+**With Promises:**
+```javascript
+fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+```
+
+**With Async/Await:**
+```javascript
+async function getData() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+getData();
+```
+
+### Async Function Basics
+
+```javascript
+// async keyword makes function return a Promise
+async function fetchUserData() {
+    // await keyword pauses until Promise resolves
+    const response = await fetch('https://api.example.com/user/1');
+    const user = await response.json();
+    return user;
+}
+
+// Call async function
+fetchUserData()
+    .then(user => console.log(user))
+    .catch(error => console.error(error));
+
+// Or call from another async function
+async function displayUser() {
+    const user = await fetchUserData();
+    console.log(user.name);
+}
+```
+
+### Error Handling with Try/Catch
+
+```javascript
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Success:', data);
+        return data;
+    } catch (error) {
+        console.error('Failed to fetch:', error);
+        throw error;  // Re-throw if you want caller to handle it
+    }
+}
+```
+
+---
+
+## Part 6: Making POST Requests
+
+### Basic POST Request
+
+```javascript
+const newPost = {
+    title: 'My New Post',
+    body: 'This is the content',
+    userId: 1
+};
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newPost)
+})
+    .then(response => response.json())
+    .then(data => {
+        console.log('Created:', data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+```
+
+### POST with Async/Await
+
+```javascript
+async function createPost(post) {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(post)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Post created:', data);
+        return data;
+    } catch (error) {
+        console.error('Failed to create post:', error);
+        throw error;
+    }
+}
+
+// Usage
+const myPost = {
+    title: 'Hello World',
+    body: 'My first post',
+    userId: 1
+};
+
+createPost(myPost);
+```
+
+---
+
+## Part 7: Practical Example - Random Quotes App
+
+Let's build a complete application that fetches random quotes!
+
+### HTML Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .quote-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .quote-author {
+            font-size: 18px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .loading {
+            font-size: 18px;
+            color: #999;
+        }
+
+        .error {
+            color: #f44336;
+            font-size: 16px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .api-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💬 Random Quote Generator</h1>
+        
+        <div class="quote-box" id="quoteBox">
+            <p class="loading">Click the button to get a quote!</p>
+        </div>
+
+        <button class="btn" id="newQuoteBtn">Get New Quote</button>
+
+        <div class="api-info">
+            Using the <strong>Quotable API</strong>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### JavaScript Implementation
+
+```javascript
+// DOM Elements
+const quoteBox = document.querySelector('#quoteBox');
+const newQuoteBtn = document.querySelector('#newQuoteBtn');
+
+// API URL
+const API_URL = 'https://api.quotable.io/random';
+
+// Fetch quote using async/await
+async function fetchQuote() {
+    try {
+        // Show loading state
+        quoteBox.innerHTML = '<p class="loading">Loading quote...</p>';
+        newQuoteBtn.disabled = true;
+        
+        // Fetch data
+        const response = await fetch(API_URL);
+        
+        // Check if response is ok
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        // Parse JSON
+        const data = await response.json();
+        
+        // Display quote
+        displayQuote(data);
+        
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching quote:', error);
+        quoteBox.innerHTML = `
+            <p class="error">Failed to load quote. Please try again!</p>
+            <p class="error">${error.message}</p>
+        `;
+    } finally {
+        // Re-enable button
+        newQuoteBtn.disabled = false;
+    }
+}
+
+// Display quote on page
+function displayQuote(quote) {
+    quoteBox.innerHTML = `
+        <p class="quote-text">"${quote.content}"</p>
+        <p class="quote-author">— ${quote.author}</p>
+    `;
+}
+
+// Alternative: Fetch quote using .then()/.catch()
+function fetchQuoteWithPromises() {
+    quoteBox.innerHTML = '<p class="loading">Loading quote...</p>';
+    newQuoteBtn.disabled = true;
+    
+    fetch(API_URL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            displayQuote(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            quoteBox.innerHTML = `
+                <p class="error">Failed to load quote. Please try again!</p>
+            `;
+        })
+        .finally(() => {
+            newQuoteBtn.disabled = false;
+        });
+}
+
+// Event Listener
+newQuoteBtn.addEventListener('click', fetchQuote);
+
+// Load initial quote
+fetchQuote();
+```
+
+---
+
+## Part 8: Working with Different APIs
+
+### Example 1: Random Cat Facts
+
+```javascript
+async function getCatFact() {
+    try {
+        const response = await fetch('https://catfact.ninja/fact');
+        const data = await response.json();
+        console.log('Cat Fact:', data.fact);
+        return data.fact;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getCatFact();
+```
+
+### Example 2: Random Dog Images
+
+```javascript
+async function getDogImage() {
+    try {
+        const response = await fetch('https://dog.ceo/api/breeds/image/random');
+        const data = await response.json();
+        
+        // Create img element
+        const img = document.createElement('img');
+        img.src = data.message;
+        img.alt = 'Random dog';
+        img.style.maxWidth = '100%';
+        
+        document.body.appendChild(img);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getDogImage();
+```
+
+### Example 3: JSONPlaceholder (Fake REST API)
+
+```javascript
+// Get all posts
+async function getPosts() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const posts = await response.json();
+    return posts;
+}
+
+// Get single post
+async function getPost(id) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    const post = await response.json();
+    return post;
+}
+
+// Create new post
+async function createPost(post) {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(post)
+    });
+    const data = await response.json();
+    return data;
+}
+
+// Update post
+async function updatePost(id, updates) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updates)
+    });
+    const data = await response.json();
+    return data;
+}
+
+// Delete post
+async function deletePost(id) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        method: 'DELETE'
+    });
+    return response.ok;
+}
+```
+
+---
+
+## Part 9: Common Patterns and Best Practices
+
+### 1. Loading States
+
+```javascript
+async function fetchData() {
+    const loader = document.querySelector('#loader');
+    const content = document.querySelector('#content');
+    
+    try {
+        // Show loader
+        loader.style.display = 'block';
+        content.style.display = 'none';
+        
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        
+        // Show content
+        loader.style.display = 'none';
+        content.style.display = 'block';
+        content.innerHTML = data.message;
+        
+    } catch (error) {
+        loader.style.display = 'none';
+        content.style.display = 'block';
+        content.innerHTML = 'Error loading data';
+    }
+}
+```
+
+### 2. Retry Logic
+
+```javascript
+async function fetchWithRetry(url, maxRetries = 3) {
+    for (let i = 0; i < maxRetries; i++) {
+        try {
+            const response = await fetch(url);
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (error) {
+            if (i === maxRetries - 1) throw error;
+            console.log(`Retry ${i + 1}/${maxRetries}`);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+    }
+}
+```
+
+### 3. Timeout Handling
+
+```javascript
+async function fetchWithTimeout(url, timeout = 5000) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    
+    try {
+        const response = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        return await response.json();
+    } catch (error) {
+        clearTimeout(timeoutId);
+        if (error.name === 'AbortError') {
+            throw new Error('Request timeout');
+        }
+        throw error;
+    }
+}
+```
+
+---
+
+## Common Mistakes
+
+1. **Forgetting await** - Won't wait for the promise to resolve
+2. **Not checking response.ok** - 404 errors won't trigger catch
+3. **Not handling errors** - App will break if request fails
+4. **Forgetting JSON.stringify** - Can't send objects directly
+5. **CORS errors** - Some APIs don't allow requests from browsers
+
+---
+
+## Free APIs for Practice
+
+- **Quotes:** https://api.quotable.io/random
+- **Cat Facts:** https://catfact.ninja/fact
+- **Dog Images:** https://dog.ceo/api/breeds/image/random
+- **JSONPlaceholder:** https://jsonplaceholder.typicode.com
+- **Random User:** https://randomuser.me/api
+- **Countries:** https://restcountries.com/v3.1/all
+- **Chuck Norris Jokes:** https://api.chucknorris.io/jokes/random
+
+---
+
+## Challenge Exercises
+
+1. **Weather App** - Fetch weather data and display it
+2. **User Directory** - Load list of users and display in cards
+3. **Image Gallery** - Fetch and display images from an API
+4. **Search Feature** - Search API based on user input
+5. **Infinite Scroll** - Load more data as user scrolls
+
+---
+
+## Key Takeaways
+
+- Fetch API is used to communicate with servers
+- GET retrieves data, POST sends data
+- Promises represent future values
+- Async/await makes async code easier to read
+- Always handle errors with try/catch
+- Check response.ok before parsing JSON
+- Use JSON.stringify() to send objects
+- Loading states improve user experience
+
+---
+
+## Next Steps
+
+Tomorrow is the big day! Day 10 is where you build a complete mini CRUD app from scratch. You'll combine everything you've learned: HTML, CSS, JavaScript, DOM manipulation, events, state management, and now fetch. This is your chance to prove you can build a real, functional web application!
+
+**Preview of Day 10:** You'll build a budget tracker, notes app, habit tracker, or to-do list with full CRUD operations and LocalStorage for data persistence. This is the "aha" moment where everything clicks!
