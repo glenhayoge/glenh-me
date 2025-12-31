@@ -20,7 +20,9 @@ const TechIcons = {
   Expo:<i class="devicon-expo-original"></i>,
   Android: <i class="devicon-android-plain colored"></i>,
   Apple: <i class="devicon-apple-original colored"></i>,
-  Netlify: <i class="devicon-netlify-plain colored"></i>
+  Netlify: <i class="devicon-netlify-plain colored"></i>,
+  Vite: <i class="devicon-vitejs-plain"></i>
+
 
 
 }
@@ -99,7 +101,7 @@ const projects = [
     name: "Wantoea",
     description: "A Small Business Invoice Management & Essential Accounting App",
     techStack: [
-      { name: "Django", icon: TechIcons.Django },
+      { name: "NextJS", icon: TechIcons.NextJS },
       { name: "Docker", icon: TechIcons.Docker },
       { name: "Python", icon: TechIcons.Python },
       { name: "JavaScript", icon: TechIcons.JavaScript },
@@ -120,6 +122,18 @@ const projects = [
       { name: "AWS", icon: TechIcons.AWS },
     ],
     demoUrl: "https://raitstart.com",
+  },
+  {
+    name: "NiuIcons",
+    description: "Open source SVG icons. Perfect for modern web applications & digital designs.",
+    techStack: [
+      { name: "React", icon: TechIcons.React },
+      { name: "Vite", icon: TechIcons.Vite },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "Netlify", icon: TechIcons.Netlify },
+    ],
+    demoUrl: "https://niu-icons.netlify.app/",
   },
 ]
 
