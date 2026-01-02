@@ -125,7 +125,7 @@ const projects = [
   },
   {
     name: "NiuIcons",
-    description: "Open source SVG icons. Perfect for modern web applications & digital designs.",
+    description: "Open source SVG icons resource. Perfect for modern web applications & digital designs.",
     techStack: [
       { name: "React", icon: TechIcons.React },
       { name: "Vite", icon: TechIcons.Vite },
@@ -140,8 +140,8 @@ const projects = [
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <div className="container mx-auto px-4 py-16">
-        <div className="mb-12 space-y-4">
+      <div className="container mx-auto px-8 py-16">
+        <div className="mb-12 space-y-4 px-4">
           <h1 className="text-4xl font-bold tracking-tight text-balance text-neutral-900 dark:text-neutral-50">
             Mobile & Web Apps
           </h1>

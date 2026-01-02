@@ -76,7 +76,7 @@ export default function Photography() {
 
       {!loading && photos.length > 0 && (
         <div className="px-4 lg:px-0">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4">
             {photos.map((photo) => (
               <div
                 key={photo.id}
@@ -109,7 +109,7 @@ export default function Photography() {
           </div>
         </div>
       )}
-      <div className="mt-12 flex justify-end">
+      <div className="mt-12 flex justify-end px-4">
       <Link href="https://unsplash.com/@glenhayoge" className="inline-flex items-center gap-1.5 rounded-md bg-neutral-500 px-4 mx-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200">
           View More Photos 
           <ExternalLink className="h-4 w-4" />
