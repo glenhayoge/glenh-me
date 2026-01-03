@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react"
 
 const TechIcons = {
   React: <i className="devicon-react-original colored" />,
-  NextJS: <i class="devicon-nextjs-plain colored"></i>,
+  NextJS: <i className="devicon-nextjs-plain colored"></i>,
   Tailwind: <i className="devicon-tailwindcss-plain colored" />,
   GitHub: <i className="devicon-github-original" />,
   JavaScript: <i className="devicon-javascript-plain colored" />,
@@ -17,11 +17,11 @@ const TechIcons = {
   Angular: <i className="devicon-angularjs-plain colored" />,
   Ionic: <i className="devicon-ionic-original colored" />,
   AWS: <i className="devicon-amazonwebservices-plain colored" />,
-  Expo:<i class="devicon-expo-original"></i>,
-  Android: <i class="devicon-android-plain colored"></i>,
-  Apple: <i class="devicon-apple-original colored"></i>,
-  Netlify: <i class="devicon-netlify-plain colored"></i>,
-  Vite: <i class="devicon-vitejs-plain"></i>
+  Expo:<i className="devicon-expo-original"></i>,
+  Android: <i className="devicon-android-plain colored"></i>,
+  Apple: <i className="devicon-apple-original colored"></i>,
+  Netlify: <i className="devicon-netlify-plain colored"></i>,
+  Vite: <i className="devicon-vitejs-plain"></i>
 
 
 
