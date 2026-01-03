@@ -135,6 +135,17 @@ const projects = [
     ],
     demoUrl: "https://niu-icons.netlify.app/",
   },
+  {
+    name: "Fyntree",
+    description: "Farmers and Artisans Marketplace. Connects you directly with local farmers and artisans.",
+    techStack: [
+      { name: "NextJS", icon: TechIcons.NextJS },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "Netlify", icon: TechIcons.Netlify },
+    ],
+    demoUrl: "https://fyntree.netlify.app/",
+  },
 ]
 
 export default function Home() {
