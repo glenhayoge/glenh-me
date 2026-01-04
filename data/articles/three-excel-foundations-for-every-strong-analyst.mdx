@@ -19,7 +19,6 @@ This article explains how to build strong Excel analysis skills using 3 foundati
 
 Strong analysis starts with order. Excel rewards clear thinking. You perform better when you master three skills. Formulas. Lookups. Pivot tables. This article explains each skill from first principles. One dataset. Clear examples. Direct use.
 
----
 
 ## Example Dataset Exactly as It Appears in Excel
 
@@ -34,11 +33,9 @@ Assume your worksheet looks like this.
 
 Do not analyze yet. First clean and structure.
 
----
 
 ## 1. Formulas. Build Reliable Data
 
----
 
 ## A. Aggregation Formulas
 
@@ -55,7 +52,6 @@ In cell I2 type:
 =F2*G2
 ```
 
-
 Copy down to I4.
 
 Result.
@@ -66,7 +62,6 @@ Result.
 | 3 | 1002    | 5        | 7         | 35         |
 | 4 | 1003    | 8        | 5         | 40         |
 
----
 
 ### Step 2. Calculate Summary Values
 
@@ -90,11 +85,8 @@ Number of orders in I8:
 ```
 
 
----
-
 ## B. Logical Formulas
 
----
 
 ### Step 3. Classify Order Size
 
@@ -122,7 +114,6 @@ Result.
 | 3 | 35         | Normal    |
 | 4 | 40         | Normal    |
 
----
 
 ### Step 4. Apply Multiple Conditions
 
@@ -142,7 +133,6 @@ In K2 type:
 
 Copy down.
 
----
 
 ### Step 5. Protect Against Errors
 
@@ -157,11 +147,9 @@ In L2 type:
 
 This prevents error values.
 
----
 
 ## C. Text Cleaning Formulas
 
----
 
 ### Step 6. Clean Customer Names
 
@@ -188,7 +176,6 @@ Result.
 | 3 | Mary K     | Mary K     |
 | 4 | JOHN DOE   | John Doe   |
 
----
 
 ### Step 7. Clean Product Names
 
@@ -207,7 +194,6 @@ In N2 type:
 
 Copy down.
 
----
 
 ### Step 8. Clean Categories
 
@@ -223,7 +209,6 @@ In O2 type:
 =LOWER(TRIM(D2))
 ```
 
-
 Copy down.
 
 Result.
@@ -236,11 +221,11 @@ Result.
 
 Manually standardize remaining labels.
 
----
+
 
 ## D. Date Formulas
 
----
+
 
 ### Step 9. Standardize Dates
 
@@ -259,7 +244,6 @@ In P2 type:
 
 Copy down.
 
----
 
 ### Step 10. Extract Month and Year
 
@@ -297,11 +281,11 @@ Result.
 | 3 | 01-03-2024 | 01/03/2024 | 3 | 2024 |
 | 4 | 2024/03/02 | 02/03/2024 | 3 | 2024 |
 
----
+
 
 ## 2. Lookups. Connect Data
 
----
+
 
 ## Reference Table on Sheet PriceTable
 
@@ -311,7 +295,7 @@ Result.
 | 2 | Maize   | 5              |
 | 3 | Rice    | 7              |
 
----
+
 
 ### Step 11. Use XLOOKUP
 
@@ -326,7 +310,7 @@ In G2 type:
 
 Copy down.
 
----
+
 
 ### Step 12. Use INDEX and MATCH
 
@@ -337,11 +321,11 @@ Alternative.
 ```
 
 
----
+
 
 ## 3. Pivot Tables. Analyze Clean Data
 
----
+
 
 ### Step 13. Create Pivot Table
 
@@ -349,7 +333,7 @@ Select A1:R4.
 
 Insert Pivot Table.
 
----
+
 
 ### Example. Sales by Product
 
@@ -361,7 +345,7 @@ Values. Sum of TotalSales
 | Maize  | 90                |
 | Rice  | 35                |
 
----
+
 
 ### Example. Sales by Region
 
@@ -373,7 +357,7 @@ Values. Sum of TotalSales
 | North  | 85                |
 | South  | 40                |
 
----
+
 
 ### Example. Monthly Sales
 
@@ -384,7 +368,9 @@ Values. Sum of TotalSales
 |------|-------------------|
 | 3    | 125               |
 
----
+
+
+Attached is the Example Excel data sheet to help with the above examples. [Download Excel Foundations Exercise](/assets/articles/excel_foundations_exercise.xlsx)
 
 ## Practice Rule
 
