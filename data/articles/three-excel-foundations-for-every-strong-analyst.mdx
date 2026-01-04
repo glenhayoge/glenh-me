@@ -1,0 +1,398 @@
+---
+title: "Three Excel Foundations for Every Data Analyst"
+publishedAt: 'Jan 4, 2026'
+description: "Learn the three Excel foundations every analyst needs. Understand formulas, lookups, and pivot tables using first principles, examples, and clear tables."
+seoDescription: "Learn the three Excel foundations every analyst needs. Understand formulas, lookups, and pivot tables using first principles, examples, and clear tables."
+category: "Data Analysis"
+tags: data analysis
+  
+author:
+   {
+    name: 'GlenH',
+    image: '/assets/glens_1.png'
+  }
+image: 'https://images.unsplash.com/photo-1587401511935-a7f87afadf2f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+caption: 'Coronavirus / Covid-19 cases in the United States, PC: KOBU Agency, Unsplash'
+---
+
+This article explains how to build strong Excel analysis skills using 3 foundational skills; formulas, lookups and pivot tables with clear examples and structured practice.
+
+Strong analysis starts with order. Excel rewards clear thinking. You perform better when you master three skills. Formulas. Lookups. Pivot tables. This article explains each skill from first principles. One dataset. Clear examples. Direct use.
+
+---
+
+## Example Dataset Exactly as It Appears in Excel
+
+Assume your worksheet looks like this.
+
+|   | A       | B          | C        | D        | E          | F        | G         | H      |
+|---|---------|------------|----------|----------|------------|----------|-----------|--------|
+| 1 | OrderID | Customer   | Product  | Category | OrderDate  | Quantity | UnitPrice | Region |
+| 2 | 1001    | john doe   | Maize    | grain    | 3/1/24     | 10       | 5         | north  |
+| 3 | 1002    | Mary K     | Rice     | Grain    | 01-03-2024 | 5        | 7         | North  |
+| 4 | 1003    | JOHN DOE   | maize    | Grains   | 2024/03/02 | 8        | 5         | south  |
+
+Do not analyze yet. First clean and structure.
+
+---
+
+## 1. Formulas. Build Reliable Data
+
+---
+
+## A. Aggregation Formulas
+
+### Step 1. Create Total Sales Per Order
+
+Insert a new column I.
+
+|   | I          |
+|---|------------|
+| 1 | TotalSales |
+
+In cell I2 type:
+```
+=F2*G2
+```
+
+
+Copy down to I4.
+
+Result.
+
+|   | A       | F        | G         | I          |
+|---|---------|----------|-----------|------------|
+| 2 | 1001    | 10       | 5         | 50         |
+| 3 | 1002    | 5        | 7         | 35         |
+| 4 | 1003    | 8        | 5         | 40         |
+
+---
+
+### Step 2. Calculate Summary Values
+
+Below the table.
+
+Total sales in I6:
+
+```
+=SUM(I2:I4)
+```
+
+Average order value in I7:
+
+```
+=AVERAGE(I2:I4)
+```
+
+Number of orders in I8:
+```
+=COUNT(I2:I4)
+```
+
+
+---
+
+## B. Logical Formulas
+
+---
+
+### Step 3. Classify Order Size
+
+Insert column J.
+
+|   | J         |
+|---|-----------|
+| 1 | OrderSize |
+
+Rule. Orders above 40 equal Large.
+
+In J2 type:
+
+```
+=IF(I2>40,"Large","Normal")
+```
+
+Copy down.
+
+Result.
+
+|   | I          | J         |
+|---|------------|-----------|
+| 2 | 50         | Large     |
+| 3 | 35         | Normal    |
+| 4 | 40         | Normal    |
+
+---
+
+### Step 4. Apply Multiple Conditions
+
+Insert column K.
+
+|   | K            |
+|---|--------------|
+| 1 | PriorityFlag |
+
+Rule. Large orders in North equal Priority.
+
+In K2 type:
+
+```
+=IF(AND(I2>40,H2="North"),"Priority","Standard")
+```
+
+Copy down.
+
+---
+
+### Step 5. Protect Against Errors
+
+Example calculation.
+
+In L2 type:
+
+```
+=IFERROR(F2/G2,0)
+```
+
+
+This prevents error values.
+
+---
+
+## C. Text Cleaning Formulas
+
+---
+
+### Step 6. Clean Customer Names
+
+Insert column M.
+
+|   | M             |
+|---|---------------|
+| 1 | CleanCustomer |
+
+In M2 type:
+
+```
+=PROPER(TRIM(B2))
+```
+
+
+Copy down.
+
+Result.
+
+|   | B          | M          |
+|---|------------|------------|
+| 2 | john doe   | John Doe   |
+| 3 | Mary K     | Mary K     |
+| 4 | JOHN DOE   | John Doe   |
+
+---
+
+### Step 7. Clean Product Names
+
+Insert column N.
+
+|   | N            |
+|---|--------------|
+| 1 | CleanProduct |
+
+In N2 type:
+
+```
+=PROPER(TRIM(C2))
+```
+
+
+Copy down.
+
+---
+
+### Step 8. Clean Categories
+
+Insert column O.
+
+|   | O             |
+|---|---------------|
+| 1 | CleanCategory |
+
+In O2 type:
+
+```
+=LOWER(TRIM(D2))
+```
+
+
+Copy down.
+
+Result.
+
+|   | D        | O        |
+|---|----------|----------|
+| 2 | grain    | grain    |
+| 3 | Grain    | grain    |
+| 4 | Grains   | grains   |
+
+Manually standardize remaining labels.
+
+---
+
+## D. Date Formulas
+
+---
+
+### Step 9. Standardize Dates
+
+Insert column P.
+
+|   | P         |
+|---|-----------|
+| 1 | CleanDate |
+
+In P2 type:
+
+```
+=DATE(YEAR(E2),MONTH(E2),DAY(E2))
+```
+
+
+Copy down.
+
+---
+
+### Step 10. Extract Month and Year
+
+Insert column Q.
+
+|   | Q     |
+|---|-------|
+| 1 | Month |
+
+In Q2 type:
+
+```
+=MONTH(P2)
+```
+
+
+Insert column R.
+
+|   | R    |
+|---|------|
+| 1 | Year |
+
+In R2 type:
+
+```
+=YEAR(P2)
+```
+
+
+Result.
+
+|   | E          | P          | Q | R    |
+|---|------------|------------|---|------|
+| 2 | 3/1/24     | 01/03/2024 | 3 | 2024 |
+| 3 | 01-03-2024 | 01/03/2024 | 3 | 2024 |
+| 4 | 2024/03/02 | 02/03/2024 | 3 | 2024 |
+
+---
+
+## 2. Lookups. Connect Data
+
+---
+
+## Reference Table on Sheet PriceTable
+
+|   | A       | B              |
+|---|---------|----------------|
+| 1 | Product | StandardPrice  |
+| 2 | Maize   | 5              |
+| 3 | Rice    | 7              |
+
+---
+
+### Step 11. Use XLOOKUP
+
+Back in sales sheet.
+
+In G2 type:
+
+```
+=XLOOKUP(N2,PriceTable!A:A,PriceTable!B:B)
+```
+
+
+Copy down.
+
+---
+
+### Step 12. Use INDEX and MATCH
+
+Alternative.
+
+```
+=INDEX(PriceTable!B:B,MATCH(N2,PriceTable!A:A,0))
+```
+
+
+---
+
+## 3. Pivot Tables. Analyze Clean Data
+
+---
+
+### Step 13. Create Pivot Table
+
+Select A1:R4.
+
+Insert Pivot Table.
+
+---
+
+### Example. Sales by Product
+
+Rows. CleanProduct  
+Values. Sum of TotalSales  
+
+| Product | Sum of TotalSales |
+|--------|-------------------|
+| Maize  | 90                |
+| Rice  | 35                |
+
+---
+
+### Example. Sales by Region
+
+Rows. Region  
+Values. Sum of TotalSales  
+
+| Region | Sum of TotalSales |
+|--------|-------------------|
+| North  | 85                |
+| South  | 40                |
+
+---
+
+### Example. Monthly Sales
+
+Rows. Month  
+Values. Sum of TotalSales  
+
+| Month | Sum of TotalSales |
+|------|-------------------|
+| 3    | 125               |
+
+---
+
+## Practice Rule
+
+Type every formula manually.  
+Reference real cells.  
+Check results row by row.  
+Repeat using new data.
+
+Excel skill grows through structure and repetition.
+
+
