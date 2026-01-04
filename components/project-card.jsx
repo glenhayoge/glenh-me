@@ -12,7 +12,7 @@ export function ProjectCard({ name, description, techStack, demoUrl, githubUrl, 
             </div>
 
             <div className="px-6 pb-4">
-                <div className="flex flex-wrap gap-2 py-6 pt-2">
+                <div className="flex flex-wrap gap-2 py-2 pt-2">
                     {demoUrl && (
                         <Link
                             href={demoUrl}
@@ -52,7 +52,7 @@ export function ProjectCard({ name, description, techStack, demoUrl, githubUrl, 
                         </Link>
                     )}
                 </div>
-                <div className="flex flex-wrap items-center gap-3">
+                {/* <div className="flex flex-wrap items-center gap-3">
                     <div className="w-full">
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
@@ -91,7 +91,7 @@ export function ProjectCard({ name, description, techStack, demoUrl, githubUrl, 
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
