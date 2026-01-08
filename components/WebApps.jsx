@@ -17,7 +17,7 @@ const TechIcons = {
   Angular: <i className="devicon-angularjs-plain colored" />,
   Ionic: <i className="devicon-ionic-original colored" />,
   AWS: <i className="devicon-amazonwebservices-plain colored" />,
-  Expo:<i className="devicon-expo-original"></i>,
+  Expo: <i className="devicon-expo-original"></i>,
   Android: <i className="devicon-android-plain colored"></i>,
   Apple: <i className="devicon-apple-original colored"></i>,
   Netlify: <i className="devicon-netlify-plain colored"></i>,
@@ -54,7 +54,7 @@ const projects = [
       { name: "Docker", icon: TechIcons.Docker },
       { name: "GitHub", icon: TechIcons.GitHub },
       { name: "AWS", icon: TechIcons.AWS },
-      
+
     ],
     demoUrl: "https://farmis.ai",
   },
@@ -110,19 +110,19 @@ const projects = [
     ],
     demoUrl: "https://wantoea.com",
   },
-  {
-    name: "RaitStart",
-    description: "PNG's Small Business Guides, Digital Tools and Resources Portal",
-    techStack: [
-      { name: "Next.js", icon: TechIcons.NextJS },
-      { name: "React", icon: TechIcons.React },
-      { name: "JavaScript", icon: TechIcons.JavaScript },
-      { name: "Tailwind", icon: TechIcons.Tailwind },
-      { name: "GitHub", icon: TechIcons.GitHub },
-      { name: "AWS", icon: TechIcons.AWS },
-    ],
-    demoUrl: "https://raitstart.com",
-  },
+  // {
+  //   name: "RaitStart",
+  //   description: "PNG's Small Business Guides, Digital Tools and Resources Portal",
+  //   techStack: [
+  //     { name: "Next.js", icon: TechIcons.NextJS },
+  //     { name: "React", icon: TechIcons.React },
+  //     { name: "JavaScript", icon: TechIcons.JavaScript },
+  //     { name: "Tailwind", icon: TechIcons.Tailwind },
+  //     { name: "GitHub", icon: TechIcons.GitHub },
+  //     { name: "AWS", icon: TechIcons.AWS },
+  //   ],
+  //   demoUrl: "https://raitstart.com",
+  // },
   {
     name: "NiuIcons",
     description: "Open source SVG icons resource. Perfect for modern web applications & digital designs.",
