@@ -144,7 +144,22 @@ const projects = [
       { name: "GitHub", icon: TechIcons.GitHub },
       { name: "Netlify", icon: TechIcons.Netlify },
     ],
-    demoUrl: "https://fyntree.netlify.app/",
+    demoUrl: "https://fyntree.com",
+  },
+  {
+    name: "FPDA MIS",
+    description: "FPDA management information system",
+    techStack: [
+      { name: "React", icon: TechIcons.React },
+      { name: "Django", icon: TechIcons.Django },
+      { name: "Python", icon: TechIcons.Python },
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "AWS", icon: TechIcons.AWS },
+      { name: "Docker", icon: TechIcons.Docker },
+    ],
+    demoUrl: "https://fpdamis.org",
   },
 ]
 
