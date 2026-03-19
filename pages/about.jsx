@@ -120,7 +120,7 @@ export default function IndexPage() {
                         : Farmers &amp; Artisans Marketplace
                       </p>
                     </li>
-                    <li className="flex pl-4 ">
+                    {/* <li className="flex pl-4 ">
                       <BsCodeSquare className='mr-1.5 mt-1 text-green-500 dark:text-green-400 flex-shrink-0' />
                       <p>
                         <Link
@@ -131,7 +131,7 @@ export default function IndexPage() {
                           RaitStart
                         </Link>: Small Business Resources Tools & Guides for PNG
                       </p>
-                    </li>
+                    </li> */}
                   </ul>
                   <p className="px-4 py-6 font-bold text-base text-left leading-normal  text-gray-500 dark:text-gray-400">
                     Reading:
@@ -157,7 +157,7 @@ export default function IndexPage() {
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                     <li className="flex pl-4">
                       <i className="bx bx-play-circle mr-1.5  text-green-500 dark:text-green-400 flex-shrink-0"></i>
-                       Flutter/Dart
+                      Flutter/Dart
                     </li>
                   </ul>
                   <p className="px-4 py-6 text-base text-left font-bold leading-normal  text-gray-500 dark:text-gray-400">
@@ -277,8 +277,8 @@ export default function IndexPage() {
                 <p className="px-4 pb-8 text-base text-left leading-normal text-gray-500 dark:text-gray-400">
                   Channels you can use to reach out to me
                 </p>
-     
-                <AnimatedCards/>
+
+                <AnimatedCards />
                 {/* <div className="w-full h-full overflow-y-auto">
                   <ul className="space-y-2 text-gray-500 dark:text-gray-400">
                     <li className=" flex pl-4 ">
