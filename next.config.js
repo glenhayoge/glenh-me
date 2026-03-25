@@ -6,6 +6,9 @@
 const { withContentlayer } = require('next-contentlayer2');
 
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_BUILD_TIME: new Date().toISOString(),
+  },
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true, 

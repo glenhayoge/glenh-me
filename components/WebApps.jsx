@@ -110,19 +110,23 @@ const projects = [
     ],
     demoUrl: "https://wantoea.com",
   },
-  // {
-  //   name: "RaitStart",
-  //   description: "PNG's Small Business Guides, Digital Tools and Resources Portal",
-  //   techStack: [
-  //     { name: "Next.js", icon: TechIcons.NextJS },
-  //     { name: "React", icon: TechIcons.React },
-  //     { name: "JavaScript", icon: TechIcons.JavaScript },
-  //     { name: "Tailwind", icon: TechIcons.Tailwind },
-  //     { name: "GitHub", icon: TechIcons.GitHub },
-  //     { name: "AWS", icon: TechIcons.AWS },
-  //   ],
-  //   demoUrl: "https://raitstart.com",
-  // },
+  {
+    name: "MERLIN, FPDA MIS",
+    description: "Collaborative Web-Software for Data & Project Management",
+    techStack: [
+      { name: "React", icon: TechIcons.React },
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "AWS", icon: TechIcons.AWS },
+      { name: "Docker", icon: TechIcons.Docker },
+      { name: "Python", icon: TechIcons.Python },
+      { name: "Django", icon: TechIcons.Django },
+      { name: "PostgreSQL", icon: TechIcons.PostgreSQL },
+
+    ],
+    demoUrl: "https://fpdamis.org",
+  },
   {
     name: "NiuIcons",
     description: "Open source SVG icons resource. Perfect for modern web applications & digital designs.",
@@ -146,21 +150,21 @@ const projects = [
     ],
     demoUrl: "https://fyntree.com",
   },
-  {
-    name: "FPDA MIS",
-    description: "FPDA management information system",
-    techStack: [
-      { name: "React", icon: TechIcons.React },
-      { name: "Django", icon: TechIcons.Django },
-      { name: "Python", icon: TechIcons.Python },
-      { name: "JavaScript", icon: TechIcons.JavaScript },
-      { name: "Tailwind", icon: TechIcons.Tailwind },
-      { name: "GitHub", icon: TechIcons.GitHub },
-      { name: "AWS", icon: TechIcons.AWS },
-      { name: "Docker", icon: TechIcons.Docker },
-    ],
-    demoUrl: "https://fpdamis.org",
-  },
+  // {
+  //   name: "FPDA MIS",
+  //   description: "FPDA management information system",
+  //   techStack: [
+  //     { name: "React", icon: TechIcons.React },
+  //     { name: "Django", icon: TechIcons.Django },
+  //     { name: "Python", icon: TechIcons.Python },
+  //     { name: "JavaScript", icon: TechIcons.JavaScript },
+  //     { name: "Tailwind", icon: TechIcons.Tailwind },
+  //     { name: "GitHub", icon: TechIcons.GitHub },
+  //     { name: "AWS", icon: TechIcons.AWS },
+  //     { name: "Docker", icon: TechIcons.Docker },
+  //   ],
+  //   demoUrl: "https://fpdamis.org",
+  // },
 ]
 
 export default function Home() {
