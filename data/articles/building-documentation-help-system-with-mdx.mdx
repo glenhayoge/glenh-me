@@ -1,0 +1,1500 @@
+---
+title: "Building a Documentation & Help System with MDX and Shiki in React"
+publishedAt: 'April 4, 2026'
+description: "A step-by-step tutorial on how to set up an in-app documentation system using MDX for content authoring, Shiki for syntax highlighting, and React Router for navigation — styled with Tailwind CSS and searchable with Fuse.js."
+seoDescription: "A step-by-step tutorial on how to set up an in-app documentation system using MDX for content authoring, Shiki for syntax highlighting, and React Router for navigation — styled with Tailwind CSS and searchable with Fuse.js."
+category: "Coding"
+tags: code
+  
+author:
+   {
+    name: 'GlenH',
+    image: '/assets/glens_1.png'
+  }
+image: 'https://images.unsplash.com/photo-1600267204091-5c1ab8b10c02?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+caption: 'Screen with bunch of information on it. Credit: Compagnons Sigmund, Unsplash'
+---
+
+A step-by-step tutorial on how to set up an in-app documentation system using MDX for content authoring, Shiki for syntax highlighting, and React Router for navigation — styled with Tailwind CSS and searchable with Fuse.js.
+
+---
+
+## Table of Contents
+
+1. [Overview](#1-overview)
+2. [Prerequisites](#2-prerequisites)
+3. [Install Dependencies](#3-install-dependencies)
+4. [Configure Vite for MDX](#4-configure-vite-for-mdx)
+5. [Add TypeScript Declaration for MDX](#5-add-typescript-declaration-for-mdx)
+6. [Create the Content Registry](#6-create-the-content-registry)
+7. [Build the MDX Component Map](#7-build-the-mdx-component-map)
+8. [Build the Code Block with Shiki](#8-build-the-code-block-with-shiki)
+9. [Build the Layout Shell](#9-build-the-layout-shell)
+10. [Build the Sidebar Navigation](#10-build-the-sidebar-navigation)
+11. [Build the Search Bar](#11-build-the-search-bar)
+12. [Build the Table of Contents](#12-build-the-table-of-contents)
+13. [Build the Index Page](#13-build-the-index-page)
+14. [Build the Article Page](#14-build-the-article-page)
+15. [Register Routes](#15-register-routes)
+16. [Write Your First MDX Article](#16-write-your-first-mdx-article)
+17. [Adding a Second Documentation Section](#17-adding-a-second-documentation-section)
+18. [Common Pitfalls](#18-common-pitfalls)
+19. [Final Directory Structure](#19-final-directory-structure)
+
+---
+
+## 1. Overview
+
+This tutorial walks you through building a documentation system like the one used in the [Chauka](https://github.com/glenhayoge/chauka) project. The system supports:
+
+- **MDX content** — write docs in Markdown with JSX support
+- **Shiki syntax highlighting** — beautiful, accurate code blocks with theme support
+- **Fuzzy search** — instant client-side search powered by Fuse.js
+- **Auto-generated table of contents** — based on headings in the current page
+- **Sidebar navigation** — organised by sections with active-state highlighting
+- **Prev/Next navigation** — sequential article browsing within sections
+- **Lazy loading** — each MDX file is code-split automatically
+- **GFM support** — tables, strikethrough, task lists, and autolinks
+- **Auto-linked headings** — every heading gets an `id` and becomes a clickable anchor
+
+### Architecture at a glance
+
+```
+src/
+  docs/                  # MDX content files
+    tutorials/
+      getting-started.mdx
+    how-to/
+      add-api-endpoint.mdx
+  docs-ui/               # UI components for the docs system
+    registry.ts          # Article metadata + lazy loaders
+    mdx-components.tsx   # Custom styled MDX element map
+    CodeBlock.tsx         # Shiki-powered syntax highlighting
+    DocsLayout.tsx        # Shell with sidebar + TOC
+    Sidebar.tsx           # Left navigation
+    SearchBar.tsx         # Fuse.js fuzzy search
+    TableOfContents.tsx   # Right-side heading navigation
+    DocsIndex.tsx         # Landing page with section cards
+    DocPage.tsx           # Individual article renderer
+```
+
+---
+
+## 2. Prerequisites
+
+This tutorial assumes you have:
+
+- A **React 18+** project bootstrapped with **Vite**
+- **React Router v6** for routing
+- **Tailwind CSS v4** for styling (any version works with minor class adjustments)
+- **TypeScript** configured
+
+If you're starting fresh:
+
+```bash
+npm create vite@latest my-docs -- --template react-ts
+cd my-docs
+npm install
+```
+
+---
+
+## 3. Install Dependencies
+
+Install the MDX toolchain, Shiki for syntax highlighting, and Fuse.js for search:
+
+```bash
+npm install @mdx-js/rollup @mdx-js/react remark-gfm remark-frontmatter \
+  rehype-slug rehype-autolink-headings shiki fuse.js clsx
+```
+
+Here's what each package does:
+
+| Package | Purpose |
+|---|---|
+| `@mdx-js/rollup` | Vite plugin that compiles `.mdx` files into React components |
+| `@mdx-js/react` | Provides `MDXProvider` for injecting custom components into MDX |
+| `remark-gfm` | Adds GitHub Flavored Markdown (tables, strikethrough, task lists) |
+| `remark-frontmatter` | Strips YAML frontmatter so it doesn't render as content |
+| `rehype-slug` | Adds `id` attributes to headings (used for anchor links and TOC) |
+| `rehype-autolink-headings` | Wraps heading text in `<a>` tags for clickable anchors |
+| `shiki` | Syntax highlighter that produces accurate, themed HTML |
+| `fuse.js` | Lightweight fuzzy-search library for client-side search |
+| `clsx` | Utility for conditional CSS class joining |
+
+---
+
+## 4. Configure Vite for MDX
+
+Update your `vite.config.ts` to add the MDX plugin. The **plugin order matters** — MDX must come before React so that `.mdx` files are compiled before React processes JSX.
+
+```typescript
+// vite.config.ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import mdx from '@mdx-js/rollup'
+import remarkGfm from 'remark-gfm'
+import remarkFrontmatter from 'remark-frontmatter'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+
+export default defineConfig({
+  plugins: [
+    mdx({
+      providerImportSource: '@mdx-js/react',
+      remarkPlugins: [remarkGfm, remarkFrontmatter],
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+      ],
+    }),
+    react(),
+    tailwindcss(),
+  ],
+})
+```
+
+### Critical: `providerImportSource`
+
+The `providerImportSource: '@mdx-js/react'` option is **required** for the `MDXProvider` component to work. Without it, any custom components you pass via `MDXProvider` will be silently ignored, and your MDX content will render as unstyled HTML elements.
+
+This is the single most common pitfall when setting up MDX with Vite.
+
+### Plugin configuration explained
+
+| Option | What it does |
+|---|---|
+| `providerImportSource` | Tells MDX to read custom components from `MDXProvider` context |
+| `remarkGfm` | Enables tables, strikethrough, task lists in Markdown |
+| `remarkFrontmatter` | Strips `---` frontmatter blocks from rendered output |
+| `rehypeSlug` | Generates `id="heading-text"` on `h1`-`h6` elements |
+| `rehypeAutolinkHeadings` | Wraps heading content in `<a href="#id">` for linking |
+
+---
+
+## 5. Add TypeScript Declaration for MDX
+
+TypeScript doesn't know how to handle `.mdx` imports by default. Create a declaration file:
+
+```typescript
+// src/mdx.d.ts
+declare module '*.mdx' {
+  import type { ComponentType } from 'react'
+  const component: ComponentType
+  export default component
+}
+```
+
+This tells TypeScript that every `.mdx` file exports a React component as its default export.
+
+---
+
+## 6. Create the Content Registry
+
+The registry is the central manifest of all documentation articles. It defines metadata (title, section, order) and provides lazy-loaded components using Vite's `import.meta.glob`.
+
+```typescript
+// src/docs-ui/registry.ts
+import { lazy, type ComponentType } from 'react'
+
+export interface DocEntry {
+  slug: string
+  title: string
+  section: 'tutorials' | 'how-to' | 'explanations' | 'references'
+  order: number
+}
+
+export const docs: DocEntry[] = [
+  // Tutorials
+  {
+    slug: 'tutorials/getting-started',
+    title: 'Getting Started',
+    section: 'tutorials',
+    order: 0,
+  },
+  {
+    slug: 'tutorials/project-setup',
+    title: 'Project Setup',
+    section: 'tutorials',
+    order: 1,
+  },
+
+  // How-to Guides
+  {
+    slug: 'how-to/add-api-endpoint',
+    title: 'Add a New API Endpoint',
+    section: 'how-to',
+    order: 0,
+  },
+
+  // Explanations
+  {
+    slug: 'explanations/architecture-overview',
+    title: 'Architecture Overview',
+    section: 'explanations',
+    order: 0,
+  },
+
+  // References
+  {
+    slug: 'references/api-reference',
+    title: 'API Endpoints',
+    section: 'references',
+    order: 0,
+  },
+]
+
+// Vite glob import — discovers all .mdx files at build time
+const modules = import.meta.glob('../docs/**/*.mdx') as Record<
+  string,
+  () => Promise<{ default: ComponentType }>
+>
+
+const componentCache: Record<
+  string,
+  React.LazyExoticComponent<ComponentType>
+> = {}
+
+export function getDocComponent(
+  slug: string
+): React.LazyExoticComponent<ComponentType> | null {
+  if (componentCache[slug]) return componentCache[slug]
+  const path = `../docs/${slug}.mdx`
+  const loader = modules[path]
+  if (!loader) return null
+  const component = lazy(loader)
+  componentCache[slug] = component
+  return component
+}
+
+export const sections = [
+  {
+    key: 'tutorials' as const,
+    label: 'Tutorials',
+    description: 'Learn step by step',
+  },
+  {
+    key: 'how-to' as const,
+    label: 'How-To Guides',
+    description: 'Solve specific tasks',
+  },
+  {
+    key: 'explanations' as const,
+    label: 'Explanations',
+    description: 'Understand the design',
+  },
+  {
+    key: 'references' as const,
+    label: 'References',
+    description: 'Look up technical details',
+  },
+]
+
+export function getDocsForSection(
+  section: DocEntry['section']
+): DocEntry[] {
+  return docs
+    .filter((d) => d.section === section)
+    .sort((a, b) => a.order - b.order)
+}
+```
+
+### How `import.meta.glob` works
+
+`import.meta.glob('../docs/**/*.mdx')` returns an object where:
+- **Keys** are relative file paths (e.g., `../docs/tutorials/getting-started.mdx`)
+- **Values** are functions that return dynamic `import()` promises
+
+When wrapped with `React.lazy()`, each MDX file becomes a code-split chunk that only loads when the user navigates to that article. This keeps your initial bundle small regardless of how many articles you have.
+
+### How `getDocComponent` works
+
+1. Takes a slug like `tutorials/getting-started`
+2. Constructs the glob path: `../docs/tutorials/getting-started.mdx`
+3. Looks it up in the glob map
+4. Wraps it with `React.lazy()` and caches the result
+5. Returns the lazy component (or `null` if the file doesn't exist)
+
+---
+
+## 7. Build the MDX Component Map
+
+The component map defines how every HTML element produced by MDX is rendered. This is where you apply your Tailwind styles.
+
+```tsx
+// src/docs-ui/mdx-components.tsx
+import type { ComponentPropsWithoutRef } from 'react'
+import CodeBlock from './CodeBlock'
+
+function heading(Tag: 'h1' | 'h2' | 'h3' | 'h4') {
+  const styles: Record<string, string> = {
+    h1: 'text-2xl font-bold mt-0 mb-4',
+    h2: 'text-xl font-semibold mt-10 mb-3 pb-2 border-b border-border',
+    h3: 'text-lg font-semibold mt-8 mb-2',
+    h4: 'text-base font-semibold mt-6 mb-2',
+  }
+  return function H(props: ComponentPropsWithoutRef<'h1'>) {
+    return <Tag className={styles[Tag]} {...props} />
+  }
+}
+
+export const mdxComponents = {
+  h1: heading('h1'),
+  h2: heading('h2'),
+  h3: heading('h3'),
+  h4: heading('h4'),
+  p: (props: ComponentPropsWithoutRef<'p'>) => (
+    <p
+      className="text-sm leading-relaxed text-foreground/80 mb-4"
+      {...props}
+    />
+  ),
+  a: (props: ComponentPropsWithoutRef<'a'>) => (
+    <a
+      className="text-primary underline underline-offset-2 hover:text-primary/80"
+      {...props}
+    />
+  ),
+  ul: (props: ComponentPropsWithoutRef<'ul'>) => (
+    <ul
+      className="list-disc pl-5 space-y-1 mb-4 text-sm text-foreground/80"
+      {...props}
+    />
+  ),
+  ol: (props: ComponentPropsWithoutRef<'ol'>) => (
+    <ol
+      className="list-decimal pl-5 space-y-1 mb-4 text-sm text-foreground/80"
+      {...props}
+    />
+  ),
+  li: (props: ComponentPropsWithoutRef<'li'>) => (
+    <li className="leading-relaxed" {...props} />
+  ),
+  blockquote: (props: ComponentPropsWithoutRef<'blockquote'>) => (
+    <blockquote
+      className="border-l-4 border-primary/30 pl-4 italic text-sm text-muted-foreground my-4"
+      {...props}
+    />
+  ),
+  table: (props: ComponentPropsWithoutRef<'table'>) => (
+    <div className="overflow-x-auto mb-4">
+      <table className="w-full text-sm border-collapse" {...props} />
+    </div>
+  ),
+  th: (props: ComponentPropsWithoutRef<'th'>) => (
+    <th
+      className="text-left font-semibold text-xs uppercase tracking-wider text-muted-foreground px-3 py-2 border-b-2 border-border bg-muted"
+      {...props}
+    />
+  ),
+  td: (props: ComponentPropsWithoutRef<'td'>) => (
+    <td className="px-3 py-2 border-b border-border" {...props} />
+  ),
+  hr: () => <hr className="border-border my-8" />,
+  code: (props: ComponentPropsWithoutRef<'code'>) => {
+    const { className, children, ...rest } = props
+    // Fenced code blocks get className="language-*" from MDX
+    if (className) {
+      return <CodeBlock className={className}>{children}</CodeBlock>
+    }
+    // Inline code
+    return (
+      <code
+        className="bg-muted text-sm px-1.5 py-0.5 rounded font-mono"
+        {...rest}
+      >
+        {children}
+      </code>
+    )
+  },
+  pre: (props: ComponentPropsWithoutRef<'pre'>) => {
+    // MDX wraps fenced code blocks in <pre><code>.
+    // We handle highlighting in the code component,
+    // so just pass children through.
+    return <>{props.children}</>
+  },
+}
+```
+
+### Key design decisions
+
+**The `code` component does double duty.** MDX produces two kinds of code:
+- **Inline code** (`` `like this` ``) — gets no `className`, rendered with a simple background
+- **Fenced code blocks** (triple backtick) — gets `className="language-typescript"` etc., passed to the `CodeBlock` component for Shiki highlighting
+
+**The `pre` component is a passthrough.** MDX wraps fenced code blocks in `<pre><code>`. Since we handle everything in the `code` component via `CodeBlock`, the `pre` just renders its children directly to avoid double-wrapping.
+
+---
+
+## 8. Build the Code Block with Shiki
+
+Shiki provides VS Code-quality syntax highlighting using TextMate grammars. We load it lazily to avoid blocking the initial page load.
+
+```tsx
+// src/docs-ui/CodeBlock.tsx
+import { useEffect, useState, type ReactNode } from 'react'
+
+interface Props {
+  children?: ReactNode
+  className?: string
+}
+
+// Singleton: one Shiki highlighter instance shared across all code blocks
+let shikiHighlighter: Awaited<
+  ReturnType<typeof import('shiki')['createHighlighter']>
+> | null = null
+let shikiLoading: Promise<void> | null = null
+
+function loadShiki() {
+  if (shikiHighlighter) return Promise.resolve()
+  if (shikiLoading) return shikiLoading
+  shikiLoading = import('shiki').then(async ({ createHighlighter }) => {
+    shikiHighlighter = await createHighlighter({
+      themes: ['github-light', 'github-dark'],
+      langs: [
+        'typescript',
+        'tsx',
+        'python',
+        'bash',
+        'json',
+        'yaml',
+        'sql',
+        'html',
+        'css',
+        'markdown',
+        'toml',
+      ],
+    })
+  })
+  return shikiLoading
+}
+
+export default function CodeBlock({ children, className }: Props) {
+  const [html, setHtml] = useState('')
+  const lang =
+    className?.replace('language-', '') || 'text'
+  const code =
+    typeof children === 'string'
+      ? children.trim()
+      : String(children ?? '').trim()
+
+  useEffect(() => {
+    loadShiki().then(() => {
+      if (!shikiHighlighter) return
+      const result = shikiHighlighter.codeToHtml(code, {
+        lang: shikiHighlighter
+          .getLoadedLanguages()
+          .includes(lang)
+          ? lang
+          : 'text',
+        themes: {
+          light: 'github-light',
+          dark: 'github-dark',
+        },
+      })
+      setHtml(result)
+    })
+  }, [code, lang])
+
+  // Fallback while Shiki loads
+  if (!html) {
+    return (
+      <pre className="bg-muted rounded-md p-4 overflow-x-auto text-sm">
+        <code>{code}</code>
+      </pre>
+    )
+  }
+
+  return (
+    <div
+      className="rounded-md overflow-x-auto text-sm [&_pre]:p-4 [&_pre]:overflow-x-auto [&_.shiki]:bg-muted!"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  )
+}
+```
+
+### How Shiki loading works
+
+1. **First code block** on the page triggers `loadShiki()`
+2. Shiki is dynamically imported (not in the main bundle)
+3. A highlighter instance is created with your chosen themes and languages
+4. The instance is **cached as a module-level singleton** — subsequent code blocks reuse it instantly
+5. While loading, a plain `<pre><code>` fallback is shown
+
+### Dual-theme support
+
+The `themes: { light: 'github-light', dark: 'github-dark' }` configuration generates HTML with CSS variables that automatically adapt to light/dark mode. No JavaScript theme switching needed.
+
+### Adding more languages
+
+To support additional languages, add them to the `langs` array. Each language adds to the Shiki bundle size, so only include what your docs actually use. Common additions:
+
+```typescript
+langs: [
+  'typescript', 'tsx', 'javascript', 'jsx',
+  'python', 'bash', 'json', 'yaml', 'sql',
+  'html', 'css', 'markdown', 'toml',
+  'go', 'rust', 'java', 'ruby', 'php',   // add as needed
+]
+```
+
+---
+
+## 9. Build the Layout Shell
+
+The layout provides the three-column structure: sidebar, main content, and table of contents.
+
+```tsx
+// src/docs-ui/DocsLayout.tsx
+import { Suspense, useState } from 'react'
+import { Outlet, Link } from 'react-router-dom'
+import Sidebar from './Sidebar'
+import SearchBar from './SearchBar'
+import TableOfContents from './TableOfContents'
+
+export default function DocsLayout() {
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      {/* Top bar */}
+      <header className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
+        <div className="max-w-[90rem] mx-auto flex items-center gap-4 px-4 py-3">
+          <Link
+            to="/docs"
+            className="text-sm font-semibold text-foreground whitespace-nowrap"
+          >
+            Chauka Docs
+          </Link>
+          <SearchBar />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden ml-auto p-2 text-muted-foreground hover:text-foreground"
+            aria-label="Toggle sidebar"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {mobileOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div className="max-w-[90rem] mx-auto flex flex-1 w-full">
+        {/* Left sidebar */}
+        <aside
+          className={`
+            ${mobileOpen ? 'block' : 'hidden'} lg:block
+            w-64 shrink-0 border-r border-border overflow-y-auto
+            fixed lg:sticky top-[57px] bottom-0 left-0 z-20
+            bg-background lg:bg-transparent p-4
+            lg:h-[calc(100vh-57px)]
+          `}
+        >
+          <Sidebar onNavigate={() => setMobileOpen(false)} />
+        </aside>
+
+        {/* Mobile overlay */}
+        {mobileOpen && (
+          <div
+            className="fixed inset-0 bg-black/20 z-10 lg:hidden"
+            onClick={() => setMobileOpen(false)}
+          />
+        )}
+
+        {/* Main content */}
+        <main
+          className="flex-1 min-w-0 px-6 py-8 lg:px-10"
+          data-docs-content
+        >
+          <div className="max-w-3xl">
+            <Suspense
+              fallback={
+                <div className="text-sm text-muted-foreground py-8">
+                  Loading...
+                </div>
+              }
+            >
+              <Outlet />
+            </Suspense>
+          </div>
+        </main>
+
+        {/* Right TOC */}
+        <aside className="hidden xl:block w-56 shrink-0 py-8 pr-4">
+          <div className="sticky top-[80px]">
+            <TableOfContents />
+          </div>
+        </aside>
+      </div>
+    </div>
+  )
+}
+```
+
+### Key patterns
+
+- **`data-docs-content`** on `<main>` — the `TableOfContents` component queries this attribute to find headings
+- **`<Outlet />`** — React Router renders the child route (either `DocsIndex` or `DocPage`) here
+- **`<Suspense>`** wraps the outlet because MDX components are lazy-loaded
+- **Responsive sidebar** — hidden on mobile, toggled via hamburger menu, with an overlay backdrop
+
+---
+
+## 10. Build the Sidebar Navigation
+
+```tsx
+// src/docs-ui/Sidebar.tsx
+import { Link, useLocation } from 'react-router-dom'
+import { sections, getDocsForSection } from './registry'
+import clsx from 'clsx'
+
+export default function Sidebar({
+  onNavigate,
+}: {
+  onNavigate?: () => void
+}) {
+  const { pathname } = useLocation()
+
+  return (
+    <nav className="space-y-6">
+      {sections.map((section) => (
+        <div key={section.key}>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+            {section.label}
+          </p>
+          <ul className="space-y-0.5">
+            {getDocsForSection(section.key).map((doc) => {
+              const to = `/docs/${doc.slug}`
+              const active = pathname === to
+              return (
+                <li key={doc.slug}>
+                  <Link
+                    to={to}
+                    onClick={onNavigate}
+                    className={clsx(
+                      'block text-sm px-2 py-1.5 rounded-md transition-colors',
+                      active
+                        ? 'bg-primary/10 text-primary font-medium'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    )}
+                  >
+                    {doc.title}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  )
+}
+```
+
+The sidebar reads from the registry and highlights the active article by comparing `pathname` against each article's route.
+
+---
+
+## 11. Build the Search Bar
+
+Client-side fuzzy search using Fuse.js with keyboard shortcut support (`Ctrl+K` / `Cmd+K`).
+
+```tsx
+// src/docs-ui/SearchBar.tsx
+import { useState, useRef, useEffect, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Fuse from 'fuse.js'
+import { docs } from './registry'
+
+export default function SearchBar() {
+  const [query, setQuery] = useState('')
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const navigate = useNavigate()
+
+  const fuse = useMemo(
+    () =>
+      new Fuse(docs, {
+        keys: [
+          { name: 'title', weight: 0.7 },
+          { name: 'section', weight: 0.2 },
+          { name: 'slug', weight: 0.1 },
+        ],
+        threshold: 0.4,
+      }),
+    []
+  )
+
+  const results =
+    query.length > 0 ? fuse.search(query, { limit: 8 }) : []
+
+  // Close on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (
+        ref.current &&
+        !ref.current.contains(e.target as Node)
+      )
+        setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () =>
+      document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault()
+        setOpen(true)
+        ref.current?.querySelector('input')?.focus()
+      }
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('keydown', handleKey)
+    return () =>
+      document.removeEventListener('keydown', handleKey)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative w-full max-w-md">
+      <div className="relative">
+        <svg
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+        <input
+          type="text"
+          placeholder="Search docs... (Ctrl+K)"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value)
+            setOpen(true)
+          }}
+          onFocus={() => setOpen(true)}
+          className="w-full pl-9 pr-3 py-2 text-sm bg-muted border border-border rounded-md placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+        />
+      </div>
+      {open && results.length > 0 && (
+        <ul className="absolute z-50 top-full mt-1 w-full bg-card border border-border rounded-md shadow-lg overflow-hidden">
+          {results.map(({ item }) => (
+            <li key={item.slug}>
+              <button
+                onClick={() => {
+                  navigate(`/docs/${item.slug}`)
+                  setQuery('')
+                  setOpen(false)
+                }}
+                className="w-full text-left px-3 py-2.5 text-sm hover:bg-muted transition-colors flex items-center gap-3"
+              >
+                <span className="text-xs uppercase tracking-wider text-muted-foreground w-20 shrink-0">
+                  {item.section}
+                </span>
+                <span className="text-foreground">
+                  {item.title}
+                </span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      {open && query.length > 0 && results.length === 0 && (
+        <div className="absolute z-50 top-full mt-1 w-full bg-card border border-border rounded-md shadow-lg px-3 py-4 text-sm text-muted-foreground text-center">
+          No results for &ldquo;{query}&rdquo;
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+### How Fuse.js search works
+
+Fuse.js searches the `docs` array from the registry using weighted keys:
+- **title** (weight 0.7) — most important for matching
+- **section** (weight 0.2) — allows searching by category
+- **slug** (weight 0.1) — catches path-based queries
+
+The `threshold: 0.4` controls fuzziness — lower values require closer matches. Results are limited to 8 to keep the dropdown manageable.
+
+---
+
+## 12. Build the Table of Contents
+
+The TOC automatically extracts `h2` and `h3` headings from the rendered MDX content and highlights the currently visible section using `IntersectionObserver`.
+
+```tsx
+// src/docs-ui/TableOfContents.tsx
+import { useState, useEffect } from 'react'
+import clsx from 'clsx'
+
+interface Heading {
+  id: string
+  text: string
+  level: number
+}
+
+export default function TableOfContents() {
+  const [headings, setHeadings] = useState<Heading[]>([])
+  const [activeId, setActiveId] = useState('')
+
+  // Extract headings after MDX renders
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const article = document.querySelector(
+        '[data-docs-content]'
+      )
+      if (!article) return
+      const els = article.querySelectorAll('h2, h3')
+      const items: Heading[] = Array.from(els)
+        .filter((el) => el.id)
+        .map((el) => ({
+          id: el.id,
+          text: el.textContent || '',
+          level: parseInt(el.tagName[1]),
+        }))
+      setHeadings(items)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Track active heading with IntersectionObserver
+  useEffect(() => {
+    if (headings.length === 0) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id)
+            break
+          }
+        }
+      },
+      { rootMargin: '-80px 0px -60% 0px', threshold: 0.1 }
+    )
+    for (const h of headings) {
+      const el = document.getElementById(h.id)
+      if (el) observer.observe(el)
+    }
+    return () => observer.disconnect()
+  }, [headings])
+
+  if (headings.length === 0) return null
+
+  return (
+    <nav className="space-y-1">
+      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+        On this page
+      </p>
+      {headings.map((h) => (
+        <a
+          key={h.id}
+          href={`#${h.id}`}
+          className={clsx(
+            'block text-sm py-0.5 transition-colors border-l-2',
+            h.level === 2 ? 'pl-3' : 'pl-5',
+            activeId === h.id
+              ? 'border-primary text-primary font-medium'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
+          )}
+        >
+          {h.text}
+        </a>
+      ))}
+    </nav>
+  )
+}
+```
+
+### Why the 100ms delay?
+
+MDX content is lazy-loaded. The `setTimeout` gives the component time to render before we query the DOM for headings. Without it, `querySelectorAll` would find nothing.
+
+### How IntersectionObserver tracking works
+
+The observer watches each heading element. When a heading enters the viewport (accounting for the sticky header via `rootMargin`), it becomes the active item in the TOC. The `h2` vs `h3` indentation creates a visual hierarchy.
+
+---
+
+## 13. Build the Index Page
+
+The landing page shows all sections with their articles in a card grid.
+
+```tsx
+// src/docs-ui/DocsIndex.tsx
+import { Link } from 'react-router-dom'
+import { sections, getDocsForSection } from './registry'
+
+export default function DocsIndex() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold mb-2">
+        Documentation
+      </h1>
+      <p className="text-sm text-muted-foreground mb-8 max-w-xl">
+        Content is organised by purpose so you can find what
+        you need quickly.
+      </p>
+
+      <div className="grid gap-6 sm:grid-cols-2">
+        {sections.map((section) => {
+          const items = getDocsForSection(section.key)
+          const first = items[0]
+          return (
+            <div
+              key={section.key}
+              className="border border-border rounded-lg p-5"
+            >
+              <Link
+                to={
+                  first
+                    ? `/docs/${first.slug}`
+                    : '/docs'
+                }
+                className="text-base font-semibold text-foreground hover:text-primary transition-colors"
+              >
+                {section.label}
+              </Link>
+              <p className="text-xs text-muted-foreground mt-1 mb-3">
+                {section.description}
+              </p>
+              <ul className="space-y-1">
+                {items.slice(0, 4).map((doc) => (
+                  <li key={doc.slug}>
+                    <Link
+                      to={`/docs/${doc.slug}`}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {doc.title}
+                    </Link>
+                  </li>
+                ))}
+                {items.length > 4 && (
+                  <li className="text-xs text-muted-foreground">
+                    + {items.length - 4} more
+                  </li>
+                )}
+              </ul>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+```
+
+---
+
+## 14. Build the Article Page
+
+The article page renders the MDX content with custom components and provides prev/next navigation.
+
+```tsx
+// src/docs-ui/DocPage.tsx
+import { useParams, Link } from 'react-router-dom'
+import { MDXProvider } from '@mdx-js/react'
+import {
+  getDocComponent,
+  docs,
+  getDocsForSection,
+} from './registry'
+import { mdxComponents } from './mdx-components'
+
+export default function DocPage() {
+  const { '*': slug } = useParams()
+  if (!slug) return <NotFound />
+
+  const entry = docs.find((d) => d.slug === slug)
+  if (!entry) return <NotFound />
+
+  const Component = getDocComponent(slug)
+  if (!Component) return <NotFound />
+
+  // Prev/Next within the same section
+  const sectionDocs = getDocsForSection(entry.section)
+  const idx = sectionDocs.findIndex((d) => d.slug === slug)
+  const prev = idx > 0 ? sectionDocs[idx - 1] : null
+  const next =
+    idx < sectionDocs.length - 1
+      ? sectionDocs[idx + 1]
+      : null
+
+  return (
+    <MDXProvider components={mdxComponents}>
+      <Component />
+      <div className="flex items-center justify-between mt-12 pt-6 border-t border-border">
+        {prev ? (
+          <Link
+            to={`/docs/${prev.slug}`}
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            &larr; {prev.title}
+          </Link>
+        ) : (
+          <span />
+        )}
+        {next ? (
+          <Link
+            to={`/docs/${next.slug}`}
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            {next.title} &rarr;
+          </Link>
+        ) : (
+          <span />
+        )}
+      </div>
+    </MDXProvider>
+  )
+}
+
+function NotFound() {
+  return (
+    <div className="py-12 text-center">
+      <p className="text-lg font-semibold text-foreground mb-2">
+        Page not found
+      </p>
+      <p className="text-sm text-muted-foreground mb-4">
+        The documentation page you're looking for doesn't
+        exist.
+      </p>
+      <Link
+        to="/docs"
+        className="text-sm text-primary hover:underline"
+      >
+        Back to docs
+      </Link>
+    </div>
+  )
+}
+```
+
+### How `MDXProvider` works
+
+`MDXProvider` passes the `mdxComponents` map into React context. When MDX renders a `<h2>`, it looks up `mdxComponents.h2` and uses that component instead of a plain `<h2>`. This is how all styling is applied.
+
+**Remember:** This only works because we set `providerImportSource: '@mdx-js/react'` in the Vite config (Step 4).
+
+---
+
+## 15. Register Routes
+
+Add the documentation routes to your React Router configuration.
+
+```tsx
+// src/App.tsx
+import { lazy, Suspense } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+const DocsLayout = lazy(() => import('./docs-ui/DocsLayout'))
+const DocsIndex = lazy(() => import('./docs-ui/DocsIndex'))
+const DocPage = lazy(() => import('./docs-ui/DocPage'))
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<p className="p-6">Loading...</p>}>
+        <Routes>
+          {/* ...other routes... */}
+
+          <Route path="/docs" element={<DocsLayout />}>
+            <Route index element={<DocsIndex />} />
+            <Route path="*" element={<DocPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  )
+}
+```
+
+### How the routing works
+
+| URL | What renders |
+|---|---|
+| `/docs` | `DocsLayout` > `DocsIndex` (landing page with section cards) |
+| `/docs/tutorials/getting-started` | `DocsLayout` > `DocPage` (which loads the MDX component) |
+| `/docs/anything/invalid` | `DocsLayout` > `DocPage` > `NotFound` fallback |
+
+The `path="*"` catch-all route passes everything after `/docs/` as the `slug` parameter, which `DocPage` uses to look up the correct MDX component from the registry.
+
+---
+
+## 16. Write Your First MDX Article
+
+Create a directory for your content and write an article:
+
+```bash
+mkdir -p src/docs/tutorials
+```
+
+```mdx
+{/* src/docs/tutorials/getting-started.mdx */}
+
+# Getting Started
+
+Welcome to the documentation. This guide will help you set up
+the project from scratch.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- **Node.js 18+** installed
+- **npm** or **pnpm** as your package manager
+- A code editor (VS Code recommended)
+
+## Installation
+
+Clone the repository and install dependencies:
+
+\`\`\`bash
+git clone https://github.com/your-org/your-project.git
+cd your-project
+npm install
+\`\`\`
+
+## Running the dev server
+
+Start the development server:
+
+\`\`\`bash
+npm run dev
+\`\`\`
+
+The app will be available at `http://localhost:5173`.
+
+## Project structure
+
+| Directory | Purpose |
+|---|---|
+| `src/pages/` | Page components |
+| `src/components/` | Shared UI components |
+| `src/api/` | API client functions |
+| `src/store/` | Zustand state stores |
+
+> **Tip:** Start by exploring the `src/pages/` directory to
+> understand the main application flow.
+
+## Next steps
+
+- [Project Setup](/docs/tutorials/project-setup)
+- [Architecture Overview](/docs/explanations/architecture-overview)
+```
+
+Make sure the slug in your registry matches the file path:
+
+```typescript
+// In registry.ts
+{
+  slug: 'tutorials/getting-started',  // → src/docs/tutorials/getting-started.mdx
+  title: 'Getting Started',
+  section: 'tutorials',
+  order: 0,
+}
+```
+
+---
+
+## 17. Adding a Second Documentation Section
+
+The system is designed to be duplicated for parallel documentation sections (e.g., user-facing help alongside developer docs). Here's how:
+
+### 1. Create a new content directory and UI directory
+
+```bash
+mkdir -p src/help/getting-started src/help/features src/help/concepts
+mkdir -p src/help-ui
+```
+
+### 2. Create a new registry
+
+```typescript
+// src/help-ui/registry.ts
+import { lazy, type ComponentType } from 'react'
+
+export interface HelpEntry {
+  slug: string
+  title: string
+  section: 'getting-started' | 'features' | 'concepts'
+  order: number
+}
+
+export const helpArticles: HelpEntry[] = [
+  {
+    slug: 'getting-started/welcome',
+    title: 'Welcome',
+    section: 'getting-started',
+    order: 0,
+  },
+  // ...more articles
+]
+
+// Note the different glob path — ../help/ instead of ../docs/
+const modules = import.meta.glob('../help/**/*.mdx') as Record<
+  string,
+  () => Promise<{ default: ComponentType }>
+>
+
+const componentCache: Record<
+  string,
+  React.LazyExoticComponent<ComponentType>
+> = {}
+
+export function getHelpComponent(
+  slug: string
+): React.LazyExoticComponent<ComponentType> | null {
+  if (componentCache[slug]) return componentCache[slug]
+  const path = `../help/${slug}.mdx`
+  const loader = modules[path]
+  if (!loader) return null
+  const component = lazy(loader)
+  componentCache[slug] = component
+  return component
+}
+
+export const helpSections = [
+  {
+    key: 'getting-started' as const,
+    label: 'Getting Started',
+    description: 'Set up and get running',
+  },
+  {
+    key: 'features' as const,
+    label: 'Feature Walkthroughs',
+    description: 'Learn how each feature works',
+  },
+  {
+    key: 'concepts' as const,
+    label: 'Concepts',
+    description: 'Understand the fundamentals',
+  },
+]
+
+export function getHelpForSection(
+  section: HelpEntry['section']
+): HelpEntry[] {
+  return helpArticles
+    .filter((d) => d.section === section)
+    .sort((a, b) => a.order - b.order)
+}
+```
+
+### 3. Create UI components that reuse shared pieces
+
+The new `HelpPage.tsx` and `HelpLayout.tsx` can import shared components from `docs-ui/`:
+
+```tsx
+// src/help-ui/HelpPage.tsx
+import { MDXProvider } from '@mdx-js/react'
+import { mdxComponents } from '../docs-ui/mdx-components' // ← reuse!
+// ...rest follows the same pattern as DocPage.tsx
+```
+
+```tsx
+// src/help-ui/HelpLayout.tsx
+import TableOfContents from '../docs-ui/TableOfContents' // ← reuse!
+// ...rest follows the same pattern as DocsLayout.tsx
+```
+
+Components that are **specific to section content** (registry, sidebar, search, index) need their own copies. Components that are **generic** (mdx-components, TableOfContents, CodeBlock) can be shared.
+
+### 4. Register the new route
+
+```tsx
+// In App.tsx
+const HelpLayout = lazy(() => import('./help-ui/HelpLayout'))
+const HelpIndex = lazy(() => import('./help-ui/HelpIndex'))
+const HelpPage = lazy(() => import('./help-ui/HelpPage'))
+
+// In <Routes>:
+<Route path="/help" element={<HelpLayout />}>
+  <Route index element={<HelpIndex />} />
+  <Route path="*" element={<HelpPage />} />
+</Route>
+```
+
+---
+
+## 18. Common Pitfalls
+
+### MDX content renders as unstyled HTML
+
+**Cause:** Missing `providerImportSource: '@mdx-js/react'` in the Vite MDX plugin config.
+
+**Fix:** Add it to `vite.config.ts`:
+
+```typescript
+mdx({
+  providerImportSource: '@mdx-js/react', // ← required!
+  // ...
+})
+```
+
+### MDX plugin order matters
+
+**Cause:** The MDX plugin must come before the React plugin in the Vite `plugins` array.
+
+**Fix:** Ensure this order:
+
+```typescript
+plugins: [
+  mdx({ ... }),  // 1. MDX first
+  react(),       // 2. React second
+  tailwindcss(), // 3. CSS last
+]
+```
+
+### Tables don't render / strikethrough doesn't work
+
+**Cause:** Missing `remark-gfm` plugin.
+
+**Fix:** Add it to the MDX remark plugins:
+
+```typescript
+mdx({
+  remarkPlugins: [remarkGfm],
+})
+```
+
+### Headings don't have IDs / TOC is empty
+
+**Cause:** Missing `rehype-slug` plugin.
+
+**Fix:** Add it to rehype plugins:
+
+```typescript
+mdx({
+  rehypePlugins: [rehypeSlug],
+})
+```
+
+### Shiki highlights nothing / shows fallback
+
+**Cause:** The language used in a code fence isn't in the `langs` array.
+
+**Fix:** Add the language to the Shiki highlighter:
+
+```typescript
+shikiHighlighter = await createHighlighter({
+  themes: ['github-light', 'github-dark'],
+  langs: ['typescript', 'python', 'bash', /* add more */],
+})
+```
+
+### New MDX file doesn't appear
+
+**Cause:** You added the `.mdx` file but forgot to add the corresponding entry in `registry.ts`.
+
+**Fix:** Add an entry to the `docs` array with the matching slug, then restart the dev server (Vite's glob imports are resolved at build time).
+
+---
+
+## 19. Final Directory Structure
+
+```
+src/
+├── docs/                           # Developer documentation content
+│   ├── tutorials/
+│   │   ├── getting-started.mdx
+│   │   └── project-setup.mdx
+│   ├── how-to/
+│   │   └── add-api-endpoint.mdx
+│   ├── explanations/
+│   │   └── architecture-overview.mdx
+│   └── references/
+│       └── api-reference.mdx
+│
+├── docs-ui/                        # Developer docs UI components
+│   ├── registry.ts                 # Article manifest + lazy loaders
+│   ├── mdx-components.tsx          # Styled element map (shared)
+│   ├── CodeBlock.tsx               # Shiki syntax highlighter (shared)
+│   ├── DocsLayout.tsx              # Three-column layout shell
+│   ├── DocsIndex.tsx               # Landing page with section cards
+│   ├── DocPage.tsx                 # Article renderer + prev/next nav
+│   ├── Sidebar.tsx                 # Left navigation
+│   ├── SearchBar.tsx               # Fuse.js fuzzy search
+│   └── TableOfContents.tsx         # Right-side heading nav (shared)
+│
+├── help/                           # User help content
+│   ├── getting-started/
+│   │   └── welcome.mdx
+│   ├── features/
+│   │   └── result-chains.mdx
+│   └── concepts/
+│       └── what-is-me.mdx
+│
+├── help-ui/                        # User help UI components
+│   ├── registry.ts                 # Help article manifest
+│   ├── HelpLayout.tsx              # Layout (reuses TableOfContents)
+│   ├── HelpIndex.tsx               # Help landing page
+│   ├── HelpPage.tsx                # Article renderer (reuses mdx-components)
+│   ├── HelpSidebar.tsx             # Help sidebar
+│   └── HelpSearchBar.tsx           # Help search
+│
+├── mdx.d.ts                        # TypeScript declaration for .mdx files
+└── App.tsx                         # Route registration
+```
+
+### What's shared vs duplicated
+
+| Component | Shared? | Why |
+|---|---|---|
+| `mdx-components.tsx` | Shared | Same styling for all MDX content |
+| `CodeBlock.tsx` | Shared | Same syntax highlighting everywhere |
+| `TableOfContents.tsx` | Shared | Generic — reads headings from any `[data-docs-content]` |
+| `registry.ts` | Duplicated | Each section has its own articles and glob paths |
+| `Sidebar.tsx` | Duplicated | Each section has its own navigation structure |
+| `SearchBar.tsx` | Duplicated | Each section searches its own article set |
+| `Layout.tsx` | Duplicated | Each section has its own header branding and links |
+| `Index.tsx` | Duplicated | Each section has its own landing page content |
+| `Page.tsx` | Duplicated | Each section routes to its own registry |
+
+---
+
+## Summary
+
+The key pieces that make this system work:
+
+1. **`@mdx-js/rollup`** compiles `.mdx` files into React components at build time
+2. **`providerImportSource`** connects `MDXProvider` so custom components are applied
+3. **`import.meta.glob`** discovers all MDX files and enables automatic code splitting
+4. **`MDXProvider` + component map** applies consistent Tailwind styling to all content
+5. **Shiki** provides accurate, theme-aware syntax highlighting loaded on demand
+6. **Fuse.js** enables instant client-side fuzzy search across article metadata
+7. **`IntersectionObserver`** powers the auto-tracking table of contents
+8. **React Router catch-all** (`path="*"`) maps any URL under `/docs/` to the right MDX file
+
+The system scales well — adding a new article is just creating an `.mdx` file and adding one line to the registry. Adding an entirely new documentation section means duplicating the section-specific components and creating a new registry that points to a different content directory.
