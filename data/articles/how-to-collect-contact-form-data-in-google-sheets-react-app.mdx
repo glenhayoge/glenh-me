@@ -15,7 +15,6 @@ caption: 'Credits: PiggyBank, Unsplash'
 
 A practical guide to connecting a React contact form to Google Sheets using Google Apps Script as a free, serverless backend — with honeypot spam protection.
 
----
 
 ## Overview
 
@@ -34,7 +33,6 @@ This guide walks you through setting up a zero-cost pipeline to collect contact 
 - A React project using Vite (adaptable to Next.js, CRA, etc.)
 - Basic familiarity with JavaScript and React
 
----
 
 ## Part 1: Set Up the Google Sheet
 
@@ -51,7 +49,6 @@ This guide walks you through setting up a zero-cost pipeline to collect contact 
 
 You can add more columns later — just update the Apps Script to match.
 
----
 
 ## Part 2: Create the Apps Script Handler
 
@@ -95,7 +92,6 @@ function doPost(e) {
 - Returns a JSON response indicating success or failure
 - Falls back to `new Date().toISOString()` if no timestamp is provided
 
----
 
 ## Part 3: Deploy as a Web App
 
@@ -114,7 +110,6 @@ function doPost(e) {
 
 > **Important:** Each time you edit the script, you need to create a **new deployment** (or update the existing one) for changes to take effect.
 
----
 
 ## Part 4: Build the React Contact Form
 
@@ -236,8 +231,6 @@ function ContactForm() {
 }
 ```
 
----
-
 ## Part 5: Understanding the Anti-Spam Protection
 
 The form uses three layers of bot protection without requiring CAPTCHAs or external services:
@@ -261,7 +254,6 @@ The form uses JavaScript `fetch` for submission with no `action` attribute in th
 
 > **Why fake success instead of showing an error?** Showing a "spam detected" error tells bots their submission failed, encouraging them to retry with different strategies. A fake success makes the bot think it succeeded, and it moves on.
 
----
 
 ## Part 6: How It All Works Together
 
@@ -289,7 +281,6 @@ The request uses `mode: 'no-cors'` because Google Apps Script doesn't return pro
 
 This is why the form always shows "sent" on a successful `fetch` — we can't distinguish between a 200 and an error from the opaque response. In practice, Apps Script is reliable enough that this works well.
 
----
 
 ## Part 7: Testing
 
@@ -299,7 +290,6 @@ This is why the form always shows "sent" on a successful `fetch` — we can't di
 4. Open your Google Sheet — a new row should appear within a few seconds
 5. Test the honeypot: use browser DevTools to fill the hidden `website` field, submit, and confirm nothing appears in the sheet
 
----
 
 ## Extending This Setup
 
@@ -353,8 +343,6 @@ vercel env add VITE_CONTACT_FORM_URL
 # Netlify
 netlify env:set VITE_CONTACT_FORM_URL https://script.google.com/macros/s/.../exec
 ```
-
----
 
 ## Troubleshooting
 
