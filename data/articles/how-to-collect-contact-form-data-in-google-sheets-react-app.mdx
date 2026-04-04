@@ -1,0 +1,367 @@
+---
+title: "How to Collect Contact Form Data in Google Sheets from a React App"
+publishedAt: 'Nov 4, 2025'
+description: "A practical guide to connecting a React contact form to Google Sheets using Google Apps Script as a free, serverless backend — with honeypot spam protection."
+seoDescription: "How to Collect Contact Form Data in Google Sheets from a React App"
+category: "Web Fundamentals"
+tags: react, google-sheets, google-apps-script, contact-form, spam-protection
+
+author:
+  name: "GlenH"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1642052503083-9b9f61e75710?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: 'Credits: PiggyBank, Unsplash'
+---
+
+A practical guide to connecting a React contact form to Google Sheets using Google Apps Script as a free, serverless backend — with honeypot spam protection.
+
+---
+
+## Overview
+
+This guide walks you through setting up a zero-cost pipeline to collect contact form submissions from a React frontend directly into a Google Sheet. No backend server, database, or third-party form service required.
+
+**What you'll build:**
+
+- A Google Sheet that stores form submissions with timestamps
+- A Google Apps Script web app that receives POST requests and appends rows
+- A React contact form that submits data via `fetch`
+- Honeypot-based spam protection to filter out bots
+
+**Prerequisites:**
+
+- A Google account
+- A React project using Vite (adaptable to Next.js, CRA, etc.)
+- Basic familiarity with JavaScript and React
+
+---
+
+## Part 1: Set Up the Google Sheet
+
+1. Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet
+2. Give it a descriptive name (e.g., "Contact Form Submissions")
+3. In **Row 1**, add column headers:
+
+| Column | Header |
+|--------|--------|
+| A | `timestamp` |
+| B | `name` |
+| C | `email` |
+| D | `message` |
+
+You can add more columns later — just update the Apps Script to match.
+
+---
+
+## Part 2: Create the Apps Script Handler
+
+Google Apps Script acts as a lightweight serverless function that receives form data and writes it to your sheet.
+
+1. In your Google Sheet, go to **Extensions > Apps Script**
+2. Delete the default code and paste the following:
+
+```javascript
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  var data;
+  try {
+    data = JSON.parse(e.postData.contents);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: 'error', error: 'Invalid JSON' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  sheet.appendRow([
+    data.timestamp || new Date().toISOString(),
+    data.name || '',
+    data.email || '',
+    data.message || '',
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ result: 'success' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+```
+
+3. Click **Save** and name the project (e.g., "Contact Form Handler")
+
+### What this script does
+
+- Parses incoming JSON from the POST request body
+- Appends a new row to the active sheet with the form fields
+- Returns a JSON response indicating success or failure
+- Falls back to `new Date().toISOString()` if no timestamp is provided
+
+---
+
+## Part 3: Deploy as a Web App
+
+1. In the Apps Script editor, click **Deploy > New deployment**
+2. Click the gear icon next to "Select type" and choose **Web app**
+3. Configure the deployment:
+   - **Description**: Contact form handler
+   - **Execute as**: Me (your Google account)
+   - **Who has access**: Anyone
+4. Click **Deploy**
+5. Review and authorise the permissions when prompted
+6. Copy the **Web app URL** — it will look like:
+   ```
+   https://script.google.com/macros/s/AKfycbz.../exec
+   ```
+
+> **Important:** Each time you edit the script, you need to create a **new deployment** (or update the existing one) for changes to take effect.
+
+---
+
+## Part 4: Build the React Contact Form
+
+### Environment variable
+
+Store the Apps Script URL in an environment variable. For Vite projects, create or update `.env.local`:
+
+```
+VITE_CONTACT_FORM_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+```
+
+For other frameworks:
+- **Next.js**: use `NEXT_PUBLIC_CONTACT_FORM_URL`
+- **CRA**: use `REACT_APP_CONTACT_FORM_URL`
+
+### The form component
+
+```tsx
+import { useState, useRef } from 'react'
+
+const FORM_URL = import.meta.env.VITE_CONTACT_FORM_URL || ''
+
+function ContactForm() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+
+  // --- Honeypot anti-spam ---
+  const [website, setWebsite] = useState('')
+  const [phone, setPhone] = useState('')
+  const loadTime = useRef(Date.now())
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+
+    // Honeypot check: if hidden fields are filled, fake success
+    if (website || phone) {
+      setStatus('sent')
+      return
+    }
+
+    // Timing check: reject if submitted too quickly (< 3 seconds)
+    if (Date.now() - loadTime.current < 3000) {
+      setStatus('sent')
+      return
+    }
+
+    if (!FORM_URL) {
+      console.warn('Contact form URL not configured')
+      setStatus('sent')
+      return
+    }
+
+    setStatus('sending')
+
+    try {
+      await fetch(FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          timestamp: new Date().toISOString(),
+        }),
+      })
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'sent') {
+    return <p>Thanks for reaching out. We'll get back to you.</p>
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Name</label>
+        <input id="name" type="text" value={name}
+          onChange={(e) => setName(e.target.value)} required />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input id="email" type="email" value={email}
+          onChange={(e) => setEmail(e.target.value)} required />
+      </div>
+      <div>
+        <label htmlFor="message">Message</label>
+        <textarea id="message" value={message}
+          onChange={(e) => setMessage(e.target.value)} rows={4} required />
+      </div>
+
+      {/* Honeypot fields — invisible to humans */}
+      <div aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+        <label htmlFor="website">Website</label>
+        <input id="website" type="text" value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1} autoComplete="off" />
+        <label htmlFor="phone">Phone</label>
+        <input id="phone" type="text" value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          tabIndex={-1} autoComplete="off" />
+      </div>
+
+      {status === 'error' && (
+        <p>Something went wrong. Please try again.</p>
+      )}
+
+      <button type="submit" disabled={status === 'sending'}>
+        {status === 'sending' ? 'Sending...' : 'Send message'}
+      </button>
+    </form>
+  )
+}
+```
+
+---
+
+## Part 5: Understanding the Anti-Spam Protection
+
+The form uses three layers of bot protection without requiring CAPTCHAs or external services:
+
+### 1. Honeypot fields
+
+Two hidden input fields (`website` and `phone`) are positioned off-screen. They are:
+- Invisible to human users (off-screen positioning, `aria-hidden`, `tabIndex={-1}`)
+- Visible to bots that parse the DOM and auto-fill all fields
+- Named with enticing labels that bots are likely to fill
+
+If either field has a value when the form is submitted, the form fakes a success response without sending any data.
+
+### 2. Timing check
+
+A `useRef` records `Date.now()` when the component mounts. If the form is submitted within 3 seconds of rendering, it's almost certainly a bot — no human can read and fill out three fields that fast. The form fakes success silently.
+
+### 3. No HTML action attribute
+
+The form uses JavaScript `fetch` for submission with no `action` attribute in the markup. Scrapers that look for form action URLs to spam won't find an endpoint.
+
+> **Why fake success instead of showing an error?** Showing a "spam detected" error tells bots their submission failed, encouraging them to retry with different strategies. A fake success makes the bot think it succeeded, and it moves on.
+
+---
+
+## Part 6: How It All Works Together
+
+```
+User fills form  ──>  React validates + honeypot check
+                          │
+                     (passes checks)
+                          │
+                          v
+                  fetch(POST, JSON) ──> Google Apps Script
+                                             │
+                                        parses JSON body
+                                             │
+                                             v
+                                    sheet.appendRow([...])
+                                             │
+                                             v
+                                      Google Sheet updated
+```
+
+The request uses `mode: 'no-cors'` because Google Apps Script doesn't return proper CORS headers for custom domains. This means:
+- The browser sends the request successfully
+- The response is **opaque** (you can't read it)
+- The data still reaches the spreadsheet
+
+This is why the form always shows "sent" on a successful `fetch` — we can't distinguish between a 200 and an error from the opaque response. In practice, Apps Script is reliable enough that this works well.
+
+---
+
+## Part 7: Testing
+
+1. Start your dev server (e.g., `npm run dev`)
+2. Open the page with your contact form
+3. Fill in all three fields and submit
+4. Open your Google Sheet — a new row should appear within a few seconds
+5. Test the honeypot: use browser DevTools to fill the hidden `website` field, submit, and confirm nothing appears in the sheet
+
+---
+
+## Extending This Setup
+
+### Adding more fields
+
+1. Add the field to your React form
+2. Include it in the `JSON.stringify` body
+3. Add a matching column header in the Google Sheet
+4. Update the `sheet.appendRow([...])` line in the Apps Script
+5. Redeploy the Apps Script
+
+### Email notifications
+
+Add this to the end of the `doPost` function in Apps Script to get email alerts:
+
+```javascript
+MailApp.sendEmail({
+  to: 'you@example.com',
+  subject: 'New contact form submission',
+  body: 'From: ' + data.name + ' (' + data.email + ')\n\n' + data.message,
+});
+```
+
+### Rate limiting
+
+For additional spam protection, you can add a simple rate limit in the Apps Script:
+
+```javascript
+var cache = CacheService.getScriptCache();
+var key = 'rate_' + data.email;
+if (cache.get(key)) {
+  return ContentService
+    .createTextOutput(JSON.stringify({ result: 'rate_limited' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+cache.put(key, 'true', 60); // 1 submission per 60 seconds per email
+```
+
+### Production deployment
+
+For Vite-based projects, the `VITE_` env variable is embedded at build time. Set it before building:
+
+```bash
+# Fly.io
+fly secrets set VITE_CONTACT_FORM_URL=https://script.google.com/macros/s/.../exec
+fly deploy
+
+# Vercel
+vercel env add VITE_CONTACT_FORM_URL
+
+# Netlify
+netlify env:set VITE_CONTACT_FORM_URL https://script.google.com/macros/s/.../exec
+```
+
+---
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---------|-------|-----|
+| Form says "sent" but no row in sheet | `VITE_CONTACT_FORM_URL` not set or wrong URL | Check `.env.local`, restart dev server |
+| Apps Script authorisation error | Permissions not granted | Re-deploy and authorise again |
+| Changes to script not working | Old deployment still active | Create a new deployment version |
+| Data appears in wrong columns | Column order mismatch | Match `appendRow` order to sheet headers |
+| Form works locally but not in production | Env var not set at build time | Set the variable and rebuild |
