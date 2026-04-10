@@ -1,0 +1,330 @@
+---
+title: "Building Resilient Apps: Stability Patterns That Matter"
+publishedAt: 'April 11, 2026'
+description: "Practical patterns for building apps that survive production: graceful degradation, circuit breakers and smart retries."
+seoDescription: "Practical patterns for building resilient apps that survive production: graceful degradation, circuit breakers and smart retries."
+category: "Coding"
+tags: coding, architecture, reliability, python, fastapi, react
+author:
+  name: "Glen Hayoge"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1730319653501-b0067cf2d0f8?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: "A flowering coleus plant. Credit: Glen Hayoge, Unsplash"
+---
+
+> How to turn a working app into one that survives contact with real users, flaky networks, and the unexpected.
+
+A working app and a production app are different things. A working app does what it's supposed to do on the happy path. A production app also handles failure gracefully, recovers from partial outages, and never shows a user a white screen.
+
+This article captures nine stability patterns from the week after security hardening — the week where the app stopped being something that *worked in the developer's terminal* and started being something that *wouldn't embarrass itself in front of a customer*.
+
+
+## 1. Error Boundaries: Catching Render Crashes
+
+React's default behavior when a component throws during render is to unmount the entire tree. The user sees a blank white page with no explanation. This is the worst possible failure mode — it looks like the app is broken, but the developer sees no error, no toast, no anything.
+
+An Error Boundary is a class component (no hooks equivalent) that catches exceptions from its children:
+
+```tsx
+import { Component, type ErrorInfo, type ReactNode } from 'react'
+
+interface Props { children: ReactNode }
+interface State { hasError: boolean }
+
+export default class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError(): State {
+    return { hasError: true }
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('Uncaught error:', error, errorInfo)
+    // Send to Sentry here
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h1>Something went wrong</h1>
+            <button onClick={() => window.location.reload()}>Reload</button>
+          </div>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
+```
+
+Wrap the whole app inside the query client but outside the router:
+
+```tsx
+<QueryClientProvider client={queryClient}>
+  <ErrorBoundary>
+    <App />
+  </ErrorBoundary>
+</QueryClientProvider>
+```
+
+**Learning:** Error boundaries are cheap insurance. Every app should have at least one at the root. Larger apps benefit from nested boundaries at the route level — so an error in one page doesn't take down the whole shell.
+
+
+## 2. Confirmation Dialogs: Protecting Destructive Actions
+
+The app had a `ConfirmDialog` component. Some delete buttons used it, others went straight to the API. The inconsistency was predictable: the features that were built first had the dialog, the ones bolted on later didn't.
+
+**The rule:** every destructive action needs a confirmation dialog. Delete, remove, revoke, reset — none of them should happen on a single click.
+
+The pattern is always the same:
+
+```tsx
+const [confirmDelete, setConfirmDelete] = useState(false)
+
+async function handleDelete() {
+  await apiClient.delete(`/resources/${id}`)
+  queryClient.invalidateQueries({ queryKey: ['resources'] })
+  setConfirmDelete(false)
+}
+
+return (
+  <>
+    <DeleteButton onClick={() => setConfirmDelete(true)} />
+    <ConfirmDialog
+      open={confirmDelete}
+      title="Delete resource"
+      description="This cannot be undone."
+      confirmText="Delete"
+      destructive
+      onConfirm={handleDelete}
+      onCancel={() => setConfirmDelete(false)}
+    />
+  </>
+)
+```
+
+For lists where you're deleting one of many rows, track the ID instead of a boolean:
+
+```tsx
+const [deleteId, setDeleteId] = useState<number | null>(null)
+
+<ConfirmDialog
+  open={deleteId !== null}
+  onConfirm={() => { if (deleteId !== null) { deleteItem(deleteId); setDeleteId(null) } }}
+  onCancel={() => setDeleteId(null)}
+/>
+```
+
+**Learning:** Confirmation dialogs aren't about preventing malicious actions — they're about preventing accidental ones. A user who clicks "Delete" by mistake should have a chance to cancel. The dialog is cheap; the lost data is not.
+
+
+## 3. Database Indexes: The Invisible Tax
+
+Every foreign key column should have an index. Without one, every JOIN and every `WHERE fk = ?` query does a full table scan. For small tables this is invisible; for large tables it is catastrophic. And you can't easily see the problem in logs — slow queries just look like "the app is getting slow."
+
+The audit found ~50 FK columns without indexes. Fixing them is one Alembic migration:
+
+```python
+_INDEXES = [
+    ("ix_result_logframe_id", "logframe_result", "logframe_id"),
+    ("ix_result_parent_id", "logframe_result", "parent_id"),
+    ("ix_indicator_result_id", "logframe_indicator", "result_id"),
+    # ... 50 more
+]
+
+def upgrade() -> None:
+    for name, table, column in _INDEXES:
+        op.create_index(name, table, [column])
+
+def downgrade() -> None:
+    for name, table, _column in _INDEXES:
+        op.drop_index(name, table_name=table)
+```
+
+**Learning:** SQLAlchemy does not automatically index foreign key columns (unlike Django's ORM, which does for `ForeignKey` fields by default). Every `ForeignKey(...)` in your models should also have `index=True` — or a migration that adds the index.
+
+A related learning: in PostgreSQL, creating indexes on large tables without `CREATE INDEX CONCURRENTLY` locks the table. Alembic can't use `CONCURRENTLY` inside a transaction, so for very large production tables, you may need to run the index creation outside Alembic with a separate maintenance script. For most apps (tables under a few million rows), a regular migration during a low-traffic window is fine.
+
+
+## 4. The 404 Route: Handling Unknown URLs
+
+A missing catch-all route in React Router is an invisible bug. Unknown URLs don't throw an error — they just render nothing. The user sees a blank page and has no idea where they are.
+
+```tsx
+<Routes>
+  {/* ... all the real routes ... */}
+  <Route path="*" element={<NotFoundPage />} />
+</Routes>
+```
+
+The `NotFoundPage` component is trivial:
+
+```tsx
+export default function NotFoundPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <p className="text-5xl font-bold opacity-20">404</p>
+        <h1>Page not found</h1>
+        <Link to="/app">Go to dashboard</Link>
+      </div>
+    </div>
+  )
+}
+```
+
+**Learning:** Test unknown URLs in staging before every major release. A typo in a navigation link, a deleted route, or a copy-paste error in an email link will all send users to a 404. Make sure they land somewhere useful instead of a white screen.
+
+
+## 5. Health Checks Should Verify Dependencies
+
+The original `/health` endpoint returned `{"status": "ok"}` unconditionally. That's not a health check — that's a liveness check, and a weak one. If the database was down, Fly.io's health check still passed because the endpoint still returned 200. Users got connection errors; the infrastructure had no idea anything was wrong.
+
+```python
+@app.get("/health")
+async def health():
+    try:
+        async with engine.connect() as conn:
+            await conn.execute(text("SELECT 1"))
+        return {"status": "ok"}
+    except Exception:
+        return JSONResponse(
+            status_code=503,
+            content={"status": "unhealthy", "detail": "database unreachable"},
+        )
+```
+
+**Learning:** A health check should verify everything the app needs to serve requests — the database, critical caches, required external services. If any of them are down, the health check should fail with 503. Your orchestrator (Fly, Kubernetes, etc.) will then route traffic away from unhealthy instances automatically.
+
+A related learning: don't make the health check expensive. `SELECT 1` is fine. Don't count rows, don't run complex queries — it will be called every 30 seconds forever.
+
+
+## 6. Cold Starts Are a User-Hostile Default
+
+The deployment config had `min_machines_running = 0`. This saves money: the app sleeps when idle. It also means the first request after an idle period takes 5-10 seconds to wake up the machine, load Python, connect to the database, and respond. The first user of the morning has a bad experience every single day.
+
+```toml
+[http_service]
+  min_machines_running = 1  # never sleep
+```
+
+**Learning:** For any app with a human user interface, `min_machines_running = 1` is the right default. The cost difference is a few dollars a month; the UX difference is enormous. Cold starts are acceptable for background workers and cron jobs, not for user-facing services.
+
+While you're in the file, also increase `grace_period` for health checks. The default 10 seconds is too short for Python apps with 40+ routers and SQLAlchemy model registration — they can take 15-20 seconds to become healthy on a cold start. A 30-second grace period prevents the orchestrator from restart-looping during deploys.
+
+
+## 7. Gzip and Caching: Free Performance
+
+The nginx config served static assets with no compression and no cache headers. Every page load re-downloaded every JS and CSS file uncompressed. Users on slow connections paid the cost in latency; users on metered connections paid in bandwidth.
+
+```nginx
+gzip on;
+gzip_vary on;
+gzip_min_length 256;
+gzip_types
+    text/plain text/css text/javascript
+    application/javascript application/json
+    application/xml image/svg+xml;
+
+# Hashed assets — immutable cache
+location /assets/ {
+    expires 1y;
+    add_header Cache-Control "public, immutable";
+}
+
+# index.html — never cache
+location = /index.html {
+    add_header Cache-Control "no-cache";
+}
+```
+
+The two cache headers work together: Vite emits assets with content hashes in filenames, so they're safe to cache forever. But `index.html` must never be cached, or users will keep loading old bundles after a deploy.
+
+For the FastAPI-served case (single-image deploy), add `GZipMiddleware`:
+
+```python
+from starlette.middleware.gzip import GZipMiddleware
+app.add_middleware(GZipMiddleware, minimum_size=500)
+```
+
+**Learning:** Gzip and caching are table stakes. They cost you nothing and save users 60-80% of bandwidth. If your app ships without them, you're giving users a worse experience for no reason.
+
+
+## 8. Error States Across All Pages
+
+A common pattern: the first few pages built have proper loading, error, and empty states. The pages built later have `if (!data) return null` and nothing else. When the API fails, those pages show a blank screen.
+
+The fix is to establish a reusable pattern and apply it everywhere:
+
+```tsx
+export default function SomePage() {
+  const { isLoading, error } = useBootstrap(publicId ?? "")
+  const data = useLogframeStore((s) => s.data)
+
+  if (isLoading) return <p className="text-sm text-muted">Loading...</p>
+  if (error) return <p className="text-sm text-destructive">Failed to load data.</p>
+  if (!data) return null
+  if (data.items.length === 0) return <EmptyState title="No items yet" />
+
+  return <DataView data={data} />
+}
+```
+
+Four explicit states: loading, error, missing, empty. Every data-backed page should handle all four.
+
+**Learning:** The difference between "loading" and "empty" matters to users. Loading means "wait, it's coming." Empty means "there's nothing here, but you can add something." Conflating them — or showing a blank screen for either — is confusing.
+
+
+## 9. Mobile Tables Need Horizontal Scroll
+
+A grid with 12 columns does not fit on a phone. Without a scroll wrapper, the table breaks out of its container and breaks the whole layout. The fix is a one-line wrapper around every table:
+
+```tsx
+<div className="overflow-x-auto">
+  <table>...</table>
+</div>
+```
+
+For grids that are heavily vertical, consider switching to a card layout on small screens:
+
+```tsx
+<div className="hidden md:block">
+  <DataTable />
+</div>
+<div className="md:hidden space-y-2">
+  {items.map(item => <DataCard key={item.id} item={item} />)}
+</div>
+```
+
+**Learning:** Test every page at 375px width (iPhone SE) before shipping. It takes 30 seconds in DevTools and catches every responsive layout bug.
+
+
+## Pre-ship Stability Checklist
+
+- [ ] Error Boundary wraps the app root
+- [ ] Every destructive action has a confirmation dialog
+- [ ] Every foreign key column has an index (migration exists)
+- [ ] Catch-all 404 route exists in the router
+- [ ] `/health` endpoint verifies database connectivity
+- [ ] `min_machines_running >= 1` in production
+- [ ] Gzip and cache headers are configured on static assets
+- [ ] Every page handles loading, error, and empty states
+- [ ] Wide tables have `overflow-x-auto` wrappers
+- [ ] Test every page at 375px viewport width
+
+## Key Learnings
+
+1. **Blank screens are the worst UX.** Whether from a render crash, a 404, or an unhandled error state — users can't distinguish "it's broken" from "there's nothing here." Always show *something*.
+2. **Consistency beats cleverness.** The ConfirmDialog pattern, the loading/error/empty states, the table scroll wrapper — none of these are technically interesting. But applying them *everywhere* is what makes an app feel solid.
+3. **Defaults kill you.** `min_machines_running = 0`, no FK indexes, no catch-all route, `/health` returning 200 unconditionally — these are all accepted defaults that need to be changed for production. Audit defaults aggressively.
+4. **Stability work is cheap per fix and expensive in aggregate.** No single one of these fixes is hard. But together they are the difference between an app that survives its first day of traffic and one that embarrasses its team.
+5. **Test the failure paths.** Unplug the database and check `/health`. Visit a URL that doesn't exist. Click delete buttons by accident. The failure modes only work if you actually encounter them.
+
+
+> [!NOTE]
+> **About this article** — The experiences and lessons shared here were drawn from developing **Chauka**, a Monitoring, Evaluation & Learning (MEL) information system for development organisations. Visit [chauka.org](https://chauka.org) to see how it works.
