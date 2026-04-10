@@ -1,0 +1,313 @@
+---
+title: "Security Blockers: What to Fix Before You Ship"
+publishedAt: 'April 10, 2026'
+description: "This article captures the ten security fixes that most apps need before shipping to real users"
+seoDescription: "Ten security fixes that most apps need before shipping to real users. Lessons from developing a React/FASTAPI app"
+category: "Coding"
+tags: coding, security, testing
+author:
+  name: "Glen Hayoge"
+  image: "/assets/glens_1.png"
+image: "https://images.unsplash.com/photo-1730815045503-f03212c300d3?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+caption: "A feeding drone bee. Credit: Glen Hayoge"
+---
+
+> Hard-won lessons from hardening a FastAPI + React app against the OWASP top 10 before going to MVP.
+
+Security work is the easiest thing to put off and the hardest thing to retrofit. This article captures the ten security fixes that most apps need before shipping to real users — not as a compliance checklist, but as a set of failure modes I've seen first-hand.
+
+The theme running through all of them: **silent failures are worse than loud ones.** Most of the issues below were "fixed" in the codebase before I touched it — there were helper functions, dependencies, and middleware ready to do the right thing. But nothing was wired up. The app shipped with the appearance of security and none of the substance.
+
+
+## 1. Authorization: The Silent Failure Mode
+
+The single most critical bug I found was also the most subtle: `require_logframe_editor` was wired into all the right endpoints, but it **never ran the permission check**.
+
+```python
+# Original dependency — looked correct
+async def require_logframe_editor(
+    request: Request,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> User:
+    logframe_id = request.path_params.get("logframe_id")  # BUG
+    if logframe_id is not None:
+        if await can_edit_logframe(current_user, int(logframe_id), db):
+            return current_user
+        raise HTTPException(status_code=403, ...)
+
+    # Fallback: any staff user passes
+    if current_user.is_superuser or current_user.is_staff:
+        return current_user
+    raise HTTPException(status_code=403, ...)
+```
+
+All the routes used `logframe_public_id` (a UUID) in their path, not `logframe_id` (an integer). So `path_params.get("logframe_id")` always returned `None`, the real permission check was skipped, and the code fell through to the "is_staff" fallback. Non-staff users with legitimate project roles were denied access. Meanwhile the endpoints *looked* protected in code review.
+
+**Learning:** When you refactor a path parameter, the type system won't catch mismatches in runtime lookups. Write tests that prove "a legitimate editor can edit" AND "a non-editor cannot edit" — both assertions. If only one is tested, the silent failure hides.
+
+The fix normalizes both naming conventions:
+
+```python
+async def _resolve_logframe_id(request: Request, db: AsyncSession) -> int | None:
+    logframe_public_id = request.path_params.get("logframe_public_id")
+    if logframe_public_id is not None:
+        logframe = await resolve_logframe(UUID(str(logframe_public_id)), db)
+        return logframe.id
+    logframe_id = request.path_params.get("logframe_id")
+    if logframe_id is not None:
+        return int(logframe_id)
+    return None
+```
+
+## 2. IDOR: Unused Helpers Are Worse Than No Helpers
+
+The codebase had `verify_result_ownership()`, `verify_indicator_ownership()`, and `verify_activity_ownership()` defined in `app/security/ownership.py`. They were never called from any router.
+
+An authenticated user with access to Logframe A could substitute a result ID from Logframe B in the URL, and the nested router would happily return (or mutate) the wrong resource. The ownership chain check existed as code but not as behavior.
+
+**Practical pattern for IDOR-safe nested routers:**
+
+```python
+@router.post("/", response_model=IndicatorRead, status_code=201)
+async def create_indicator(
+    logframe_public_id: UUID,
+    result_id: int,
+    body: IndicatorCreate,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(require_logframe_editor),
+):
+    logframe_id = (await resolve_logframe(logframe_public_id, db)).id
+    await verify_result_ownership(result_id, logframe_id, db)  # THE KEY LINE
+    # ...now safe to create the indicator
+```
+
+For deeply nested resources, chain the checks:
+
+```python
+await verify_result_ownership(result_id, logframe_id, db)
+await verify_indicator_ownership(indicator_id, result_id, db)
+```
+
+For resources where the parent isn't in the path (e.g., an expense referenced by body), use a JOIN-based check:
+
+```python
+async def verify_expense_belongs_to_logframe(expense_id, logframe_id, db):
+    stmt = (
+        select(Expense.id)
+        .join(BudgetLine, Expense.budget_line_id == BudgetLine.id)
+        .join(Activity, BudgetLine.activity_id == Activity.id)
+        .join(Result, Activity.result_id == Result.id)
+        .where(Expense.id == expense_id, Result.logframe_id == logframe_id)
+    )
+    if (await db.execute(stmt)).scalar_one_or_none() is None:
+        raise HTTPException(404, "Expense not found in this logframe")
+```
+
+**Learning:** Security helpers should come with tests that deliberately try to violate them. If you ship a `verify_X_ownership()` function without a test that proves it raises 404 on cross-tenant access, it's dead code — and the worst kind, because it lends false confidence during review.
+
+
+## 3. XSS: Sanitize at the Boundary, With a Real Parser
+
+The app had a regex-based HTML sanitizer with a comment that said:
+
+```python
+# For production, replace with the `nh3` library:
+#     import nh3
+#     return nh3.clean(html, tags=ALLOWED_TAGS)
+```
+
+That comment had been there for a while. Regex-based HTML sanitization is one of the most classically broken approaches in security — HTML is not a regular language and there are dozens of bypass techniques.
+
+**The fix:** switch to `nh3` (Rust-based, maintained, battle-tested):
+
+```python
+import nh3
+
+_ALLOWED_TAGS = {
+    "p", "br", "strong", "em", "b", "i", "u", "s",
+    "ul", "ol", "li", "a", "h1", "h2", "h3", "h4", "h5", "h6",
+    "blockquote", "pre", "code", "table", "thead", "tbody",
+    "tr", "th", "td", "span", "div",
+}
+_ALLOWED_ATTRIBUTES = {
+    "a": {"href", "title", "target"},
+    "td": {"colspan", "rowspan"},
+    "th": {"colspan", "rowspan"},
+}
+
+def sanitize_html(html: str) -> str:
+    if not html:
+        return html
+    return nh3.clean(
+        html,
+        tags=_ALLOWED_TAGS,
+        attributes=_ALLOWED_ATTRIBUTES,
+        link_rel=None,
+        url_schemes={"http", "https", "mailto"},
+    )
+```
+
+**Wire it into Pydantic validators** so sanitization happens at the API boundary, not scattered through business logic:
+
+```python
+class ResultCreate(BaseModel):
+    name: str
+    description: str = ""
+
+    @field_validator("description", mode="before")
+    @classmethod
+    def _sanitize(cls, v: str) -> str:
+        return sanitize_html(v) if v else v
+```
+
+**Learning:** XSS protection is a gate, not a filter. Sanitize once at the write boundary (the Pydantic validator) and trust the data everywhere else. Don't sanitize in templates — by then the data has already been through too many hands. Also: grep for every text field in every schema. The fields you forget are the ones that will get exploited.
+
+A subtle gotcha with `nh3`: if you include `rel` in allowed attributes while `link_rel` is also set, nh3 raises an error because they conflict. Pass `link_rel=None` if you want to manage `rel` yourself.
+
+
+## 4. Rate Limiting: Wire It Up, Everywhere It Matters
+
+The app had `check_auth_rate_limit()` wired to `/register` and `/forgot-password` but not to `/login`. The login endpoint — the most obvious brute-force target — was unprotected.
+
+```python
+@router.post("/token", response_model=Token)
+async def login(
+    request: Request,
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    db: AsyncSession = Depends(get_db),
+):
+    check_auth_rate_limit(request)  # ADD THIS
+    # ...
+```
+
+**Learning:** Rate limiting is another "unused helper" pattern. When you add it to one endpoint, document in a comment or commit message every endpoint that *should* have it. Then audit the list monthly. For production, move from per-instance in-memory rate limiting to a shared backend (Redis, slowapi) — otherwise multi-instance deployments give attackers N times the budget.
+
+
+## 5. Secrets: Fail-Fast in Production
+
+The default `secret_key` in config was `"dev-secret-key-change-in-production"`. A commented-out instruction told future-me to override it. But nothing enforced it. If someone forgot to set `CHAUKA_SECRET_KEY` in production, the app would start up with a predictable, publicly-known JWT signing key.
+
+**The fix** — startup validation that crashes the app:
+
+```python
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    if (
+        settings.environment == "production"
+        and settings.secret_key == "dev-secret-key-change-in-production"
+    ):
+        raise RuntimeError(
+            "FATAL: default secret_key detected in production. "
+            "Set CHAUKA_SECRET_KEY to a secure random value."
+        )
+    # ...continue startup
+```
+
+**Learning:** If there's a setting that MUST be configured in production, make the app refuse to start without it. Warnings in logs get ignored; crash loops get investigated within minutes.
+
+## 6. JWT Expiry: Short-Lived Tokens Are Free Insurance
+
+The default `access_token_expire_minutes` was 480 — eight hours. A stolen token gave an attacker a workday of access. Reducing this to 60 minutes is a one-line change that dramatically shrinks the impact of token theft.
+
+The tradeoff is user friction: with short tokens and no refresh mechanism, users get logged out more often. The correct answer is to implement refresh tokens — but even without them, 60 minutes beats 8 hours.
+
+**Learning:** JWT expiry is a dial you can turn freely. Start at 60 minutes. If users complain, add refresh tokens. Don't start at 8 hours and try to reduce it later.
+
+
+## 7. Password Reset: Never Store Tokens in Plaintext
+
+The app generated reset tokens with `secrets.token_urlsafe(48)` (good) and stored them raw in the database (bad). If the database was ever leaked, every outstanding reset token would be usable — letting attackers take over accounts without knowing passwords.
+
+```python
+import hashlib
+
+def _hash_token(token: str) -> str:
+    return hashlib.sha256(token.encode()).hexdigest()
+
+# When generating:
+user.password_reset_token = _hash_token(token)  # Store the hash
+# Return the raw `token` to the user in the reset link.
+
+# When verifying:
+hashed = _hash_token(incoming_token)
+result = await db.execute(
+    select(User).where(User.password_reset_token == hashed)
+)
+```
+
+The same principle applies to API keys, invitation tokens, magic links, and any other one-time credential. **The database should store the hash; the user holds the pre-image.**
+
+**Learning:** Treat password reset tokens like passwords. They are credentials. A `token_urlsafe(48)` value has plenty of entropy for the hash to be pre-image resistant, so SHA-256 without a salt is acceptable here (unlike user passwords, where bcrypt is mandatory).
+
+
+## 8. Security Headers: CSP and HSTS
+
+The app had `X-Frame-Options`, `X-Content-Type-Options`, and `Referrer-Policy`, but was missing:
+
+- **Content-Security-Policy** — the single most effective defense against XSS
+- **Strict-Transport-Security** — prevents HTTPS downgrade attacks
+
+```python
+response.headers["Content-Security-Policy"] = (
+    "default-src 'self'; "
+    "script-src 'self'; "
+    "style-src 'self' 'unsafe-inline'; "
+    "img-src 'self' data: https:; "
+    "font-src 'self'; "
+    "connect-src 'self'; "
+    "frame-ancestors 'none'"
+)
+response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains"
+```
+
+**Learning:** A strict CSP will break things on first deploy — count on it. Deploy to staging first, open the browser console, and watch for violation reports. Adjust the policy iteratively. `'unsafe-inline'` for styles is often needed because UI frameworks inject styles dynamically; it's a compromise worth making if it gets you the rest of the policy.
+
+
+## 9. Docker: Don't Run as Root
+
+Every Dockerfile was running the app as root. If an attacker compromised the container (via a package vulnerability, a misconfigured mount, or a bug in the app), they had full control of the container's filesystem.
+
+```dockerfile
+RUN adduser --disabled-password --no-create-home --gecos "" appuser && \
+    chown -R appuser:appuser /app
+USER appuser
+```
+
+Three lines. Should have been there from day one.
+
+**Learning:** Container security is mostly about reducing the blast radius of a compromise. Non-root users, read-only filesystems, dropped capabilities, and distroless base images all compound. Start with non-root — it has the best return on effort.
+
+
+## 10. Dependency CVEs: Audit and Update
+
+`axios < 1.15.0` had a critical NO_PROXY hostname normalization bypass (CVE, SSRF). A single `npm install axios@latest` fixed it. The fix took 30 seconds; identifying that the vulnerability existed took running `npm audit`.
+
+**Learning:** Run `npm audit` and `pip-audit` (or `safety`) on a schedule. Add them to CI so every PR catches new advisories. Critical vulnerabilities in popular libraries are published every week — you will ship a CVE eventually, the question is whether you discover it or a pentester does.
+
+
+## Pre-ship Security Checklist
+
+Before any production deployment, verify:
+
+- [ ] Every write endpoint uses a permission-checking dependency, not just authentication
+- [ ] IDOR verification is called on every nested route with parent IDs in the path
+- [ ] Rich text fields are sanitized at the API boundary via Pydantic validators
+- [ ] Login, register, and password reset endpoints are rate-limited
+- [ ] Production startup fails if `SECRET_KEY` equals the dev default
+- [ ] JWT expiry is under 60 minutes (with refresh tokens if needed)
+- [ ] Password reset tokens are hashed before storage
+- [ ] CSP and HSTS headers are set on all responses
+- [ ] Dockerfiles use a non-root USER
+- [ ] `npm audit` and `pip-audit` show no critical issues
+- [ ] Security tests exist for auth, IDOR, and sanitization
+
+## Key Learnings
+
+1. **Silent failures are worse than loud ones.** An unused security helper looks like security in code review but provides none in production. Wire it or delete it.
+2. **Test both sides of the fence.** Test that authorized users succeed AND unauthorized users fail. A test suite that only asserts happy paths cannot detect a disabled check.
+3. **Sanitize at the boundary.** Pydantic validators are the right layer — sanitization happens once, before data enters the system.
+4. **Fail-fast on misconfiguration.** Crash the app if production settings are missing. Warnings in logs are invisible.
+5. **Hash anything you store.** Passwords, reset tokens, API keys, invitation tokens — treat them all as credentials.
+6. **Run the audit tools.** CVEs in your dependencies are the easiest security issue to fix if you know about them.
+7. **Security is a gate, not a sprinkler.** A single leaky endpoint invalidates every other protection. Audit everything, not just the obvious attack surface.
