@@ -111,7 +111,7 @@ const projects = [
     demoUrl: "https://wantoea.com",
   },
   {
-    name: "MERLIN, FPDA MIS",
+    name: "MERLIN,FPDA MIS",
     description: "Collaborative Web-Software for Data & Project Management",
     techStack: [
       { name: "React", icon: TechIcons.React },
@@ -150,21 +150,21 @@ const projects = [
     ],
     demoUrl: "https://fyntree.com",
   },
-  // {
-  //   name: "FPDA MIS",
-  //   description: "FPDA management information system",
-  //   techStack: [
-  //     { name: "React", icon: TechIcons.React },
-  //     { name: "Django", icon: TechIcons.Django },
-  //     { name: "Python", icon: TechIcons.Python },
-  //     { name: "JavaScript", icon: TechIcons.JavaScript },
-  //     { name: "Tailwind", icon: TechIcons.Tailwind },
-  //     { name: "GitHub", icon: TechIcons.GitHub },
-  //     { name: "AWS", icon: TechIcons.AWS },
-  //     { name: "Docker", icon: TechIcons.Docker },
-  //   ],
-  //   demoUrl: "https://fpdamis.org",
-  // },
+  {
+    name: "CHAUKA-MEL",
+    description: "Monitoring, Evaluation & Learning (MEL) information system built for development organisations",
+    techStack: [
+      { name: "React", icon: TechIcons.React },
+      { name: "FastAPI", icon: TechIcons.FastAPI },
+      { name: "Python", icon: TechIcons.Python },
+      { name: "JavaScript", icon: TechIcons.JavaScript },
+      { name: "Tailwind", icon: TechIcons.Tailwind },
+      { name: "GitHub", icon: TechIcons.GitHub },
+      { name: "AWS", icon: TechIcons.AWS },
+      { name: "Docker", icon: TechIcons.Docker },
+    ],
+    demoUrl: "https://chauka.org",
+  },
 ]
 
 export default function Home() {
