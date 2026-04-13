@@ -1,0 +1,442 @@
+---
+title: "From Zero to Confidence: Testing & CI for Web Apps"
+publishedAt: 'April 14, 2026'
+description: "How to bootstrap a test suite when there isn't one, and the minimum viable observability for production."
+seoDescription: "How to bootstrap a test suite when there isn't one, and the minimum viable observability for production."
+category: "Coding"
+tags: coding, testing, ci, python, fastapi, react
+author:
+   {
+    name: 'GlenH',
+    image: '/assets/glens_1.png'
+  }
+image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+caption: 'Texts on screen. Credit: Compagnons Sigmund, Unsplash'
+---
+
+> Why test coverage compounds, how to bootstrap a test suite when there isn't one, and the minimum viable observability for production.
+
+The third week of production hardening was about feedback loops. Security fixes and stability patches are valuable, but without tests they immediately start decaying — the next developer to touch the code has no way to verify their change didn't break something. Without CI, every deploy is a hope.
+
+This article covers the seven changes that took the app from "15% test coverage, no CI, no observability" to "the minimum viable production readiness." The goal isn't comprehensive testing — that's a years-long journey. The goal is *confidence*: knowing that the next change won't silently break something critical.
+
+
+## 1. The conftest.py Pattern: Shared Test Infrastructure
+
+The existing tests each defined their own `db_session` fixture inline. Copy-pasted. Slightly different each time. This is the worst possible state for a test suite — every new test file is a decision about whether to copy an outdated fixture or write yet another variant.
+
+A `conftest.py` at the test root defines fixtures that every test file can use for free:
+
+```python
+# backend/tests/conftest.py
+import pytest
+from httpx import ASGITransport, AsyncClient
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+
+from app.auth.utils import create_access_token
+from app.database import Base, get_db
+from app.main import app
+from app.models.contacts import User
+from app.models.logframe import Logframe, Result
+from app.models.org import (
+    Organisation, OrganisationMembership, OrgRole,
+    Program, Project, ProjectRole, ProjectRoleType,
+)
+
+
+@pytest.fixture
+async def db_session():
+    """Fresh in-memory SQLite database for each test."""
+    engine = create_async_engine("sqlite+aiosqlite:///:memory:")
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    session_factory = async_sessionmaker(engine, expire_on_commit=False)
+    async with session_factory() as session:
+        yield session
+    await engine.dispose()
+
+
+@pytest.fixture
+async def client(db_session: AsyncSession):
+    """AsyncClient with get_db overridden to use the test session."""
+    async def _override_get_db():
+        yield db_session
+
+    app.dependency_overrides[get_db] = _override_get_db
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as ac:
+        yield ac
+    app.dependency_overrides.clear()
+
+
+def auth_headers(user: User) -> dict[str, str]:
+    token = create_access_token({"sub": user.username})
+    return {"Authorization": f"Bearer {token}"}
+```
+
+The critical piece is `app.dependency_overrides[get_db]`. This is FastAPI's mechanism for injecting test doubles. When the test client makes a request, the router calls `get_db` via `Depends`, but FastAPI intercepts it and runs the test fixture instead. Every request in the test sees the same in-memory SQLite session.
+
+**The seed fixture** is where you build up a realistic object graph:
+
+```python
+@pytest.fixture
+async def seed_logframe(db_session: AsyncSession):
+    """Creates org → program → project → logframe + editor/viewer/outsider users."""
+    editor = User(id=1, username="editor", ...)
+    viewer = User(id=2, username="viewer", ...)
+    outsider = User(id=3, username="outsider", ...)
+    db_session.add_all([editor, viewer, outsider])
+    await db_session.flush()
+
+    org = Organisation(id=1, name="Test Org", slug="test-org", owner_id=editor.id)
+    db_session.add(org)
+    await db_session.flush()
+
+    db_session.add_all([
+        OrganisationMembership(user_id=editor.id, organisation_id=org.id, role=OrgRole.admin),
+        OrganisationMembership(user_id=viewer.id, organisation_id=org.id, role=OrgRole.member),
+    ])
+
+    program = Program(id=1, name="Test Program", organisation_id=org.id)
+    db_session.add(program); await db_session.flush()
+
+    project = Project(id=1, name="Test Project", program_id=program.id, organisation_id=org.id)
+    db_session.add(project); await db_session.flush()
+
+    db_session.add_all([
+        ProjectRole(user_id=editor.id, project_id=project.id, role=ProjectRoleType.lead),
+        ProjectRole(user_id=viewer.id, project_id=project.id, role=ProjectRoleType.viewer),
+    ])
+
+    logframe = Logframe(id=1, name="Test Logframe", project_id=project.id)
+    db_session.add(logframe); await db_session.flush()
+
+    result = Result(id=1, name="Test Impact", logframe_id=logframe.id, order=0, level=1)
+    db_session.add(result); await db_session.commit()
+    await db_session.refresh(logframe)
+
+    return {
+        "editor": editor, "viewer": viewer, "outsider": outsider,
+        "org": org, "program": program, "project": project,
+        "logframe": logframe, "result": result,
+    }
+```
+
+With this fixture, every test that needs a "realistic starting state" writes one line: `async def test_something(client, seed_logframe): ...`. The cost of writing the next test drops to minutes.
+
+**Learning:** The fixture investment is front-loaded. Writing the first conftest.py takes half a day. After that, every test file is cheap. If you're writing CRUD tests for six resources, the second one takes a tenth the time of the first.
+
+
+## 2. CRUD + Permission Tests: The Minimum Viable Test Suite
+
+For each core resource, the minimum test coverage is:
+
+1. **List** — authenticated user can fetch the collection
+2. **Create as editor** — write permission is enforced positively
+3. **Create as viewer** — write permission is enforced negatively (expect 403)
+4. **Create as outsider** — non-members cannot access at all
+5. **Get single** — read works
+6. **Get nonexistent** — 404 is returned (not 500, not empty response)
+7. **Update as editor** — writes work
+8. **Update as viewer** — writes are blocked (403)
+9. **Delete as editor** — deletes work
+10. **Delete as viewer** — deletes are blocked
+11. **Unauthenticated** — missing token gives 401
+
+That's 11 tests per resource. It sounds like a lot; it's about 100 lines of code because each test is 4-5 lines with the shared fixtures:
+
+```python
+async def test_create_result_as_viewer_forbidden(client: AsyncClient, seed_logframe):
+    s = seed_logframe
+    url = f"/api/logframes/{s['logframe'].public_id}/results/"
+    resp = await client.post(
+        url,
+        json={"name": "Should Fail"},
+        headers=auth_headers(s["viewer"]),
+    )
+    assert resp.status_code == 403
+```
+
+**Why test both sides of every permission?** Because a broken permission check can fail in either direction. If you only test the positive case, you won't notice that the check was silently disabled (see the authorization bug in the Security Blockers article). If you only test the negative case, you won't notice that legitimate users are being locked out.
+
+**Learning:** The asymmetry in testing effort is counterintuitive. Writing tests for 30 endpoints takes longer than writing the endpoints did. But the tests catch 90% of regressions and unlock the ability to refactor without fear.
+
+
+## 3. IDOR Prevention Tests: Verifying the Ownership Chain
+
+Ownership verification bugs are invisible to unit tests that test each function in isolation. They only show up when you compose resources across tenant boundaries. The pattern: create two independent resource trees and verify that crossing the streams returns 404.
+
+```python
+@pytest.fixture
+async def two_logframes(db_session: AsyncSession, seed_logframe):
+    s = seed_logframe
+    project_b = Project(id=2, name="Project B", program_id=s["program"].id, organisation_id=s["org"].id)
+    db_session.add(project_b); await db_session.flush()
+    db_session.add(ProjectRole(user_id=s["editor"].id, project_id=project_b.id, role=ProjectRoleType.lead))
+
+    logframe_b = Logframe(id=2, name="Logframe B", project_id=project_b.id)
+    db_session.add(logframe_b); await db_session.flush()
+    result_b = Result(id=100, name="Impact B", logframe_id=logframe_b.id, order=0, level=1)
+    db_session.add(result_b)
+    indicator_a = Indicator(id=1, name="Indicator A", result_id=s["result"].id, order=0)
+    db_session.add(indicator_a)
+    await db_session.commit()
+    await db_session.refresh(logframe_b)
+
+    return {**s, "logframe_b": logframe_b, "result_b": result_b, "indicator_a": indicator_a}
+
+
+async def test_result_from_a_via_b_returns_404(client, two_logframes):
+    t = two_logframes
+    url = f"/api/logframes/{t['logframe_b'].public_id}/results/{t['result'].id}"
+    resp = await client.get(url, headers=auth_headers(t["editor"]))
+    assert resp.status_code == 404
+```
+
+Note that the same user (editor) has access to both logframes — the test isn't checking "can this user access anything at all," it's checking "can they substitute IDs across logframes." That's the exact IDOR threat model.
+
+**Learning:** Every security helper deserves a test that deliberately tries to defeat it. If `verify_result_ownership` exists, write a test that creates results in two places and tries to access one via the other. If the test passes (returns 404), you've proven the helper works. If it fails (returns 200), you've found a bug that no code review would catch.
+
+
+## 4. Observability: Sentry and Structured Logging
+
+An app without observability is flying blind. When a user reports "something broke," you have nothing: no error, no stack trace, no request context. The two minimum-viable additions:
+
+**Structured JSON logging** in production, human-readable in development:
+
+```python
+def _setup_logging() -> None:
+    root = logging.getLogger()
+    root.setLevel(logging.INFO)
+    handler = logging.StreamHandler(sys.stdout)
+    if settings.environment == "production":
+        from pythonjsonlogger.json import JsonFormatter
+        formatter = JsonFormatter(
+            fmt="%(asctime)s %(levelname)s %(name)s %(message)s",
+            rename_fields={"asctime": "timestamp", "levelname": "level"},
+        )
+    else:
+        formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s | %(message)s")
+    handler.setFormatter(formatter)
+    root.addHandler(handler)
+
+_setup_logging()
+```
+
+The value of JSON logs is that log aggregators (Datadog, CloudWatch, Loki) can index them. You can query "all error logs where user_id=123 in the last hour" instead of grepping text.
+
+**Sentry** for error tracking:
+
+```python
+if settings.sentry_dsn:
+    import sentry_sdk
+    sentry_sdk.init(
+        dsn=settings.sentry_dsn,
+        environment=settings.environment,
+        traces_sample_rate=0.1,
+        send_default_pii=False,
+    )
+```
+
+Make it **optional** — when `CHAUKA_SENTRY_DSN` is empty, it's a no-op. This lets development and testing environments skip Sentry entirely without any conditional logic in the app.
+
+On the frontend:
+
+```typescript
+import * as Sentry from '@sentry/react'
+
+const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN
+if (SENTRY_DSN) {
+  Sentry.init({
+    dsn: SENTRY_DSN,
+    environment: import.meta.env.MODE,
+    tracesSampleRate: 0.1,
+  })
+}
+```
+
+**Learning:** Observability is not optional for production. Without it, bugs that affect real users are invisible to you — the only signal is when they complain. With it, you see errors before users do, and you can reproduce them with real stack traces and request context. The cost of Sentry's free tier is zero; the cost of flying blind is incalculable.
+
+
+## 5. Pagination: Bounded Queries Aren't Optional
+
+List endpoints that return all rows are a time bomb. They work fine with 10 rows, 100 rows, even 1000 rows. Then one day a user creates a tenant with 50,000 rows and the endpoint returns 50MB of JSON, times out, and takes down the worker.
+
+The fix is pagination on every list endpoint:
+
+```python
+from app.schemas.pagination import PaginatedResponse
+
+@router.get("/", response_model=PaginatedResponse[OrganisationRead])
+async def list_organisations(
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=25, ge=1, le=100),
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    total_result = await db.execute(select(func.count()).select_from(Organisation).where(...))
+    total = total_result.scalar_one()
+
+    result = await db.execute(
+        select(Organisation)
+        .where(...)
+        .order_by(Organisation.name)
+        .offset((page - 1) * page_size)
+        .limit(page_size)
+    )
+    return {
+        "items": result.scalars().all(),
+        "total": total,
+        "page": page,
+        "page_size": page_size,
+    }
+```
+
+The reusable response schema:
+
+```python
+# backend/app/schemas/pagination.py
+from typing import Generic, TypeVar
+from pydantic import BaseModel
+
+T = TypeVar("T")
+
+class PaginatedResponse(BaseModel, Generic[T]):
+    items: list[T]
+    total: int
+    page: int
+    page_size: int
+```
+
+The `le=100` constraint on `page_size` is a hard cap. Without it, a malicious or buggy client can request `page_size=1000000` and overwhelm the server. The cap is as important as the pagination itself.
+
+**Updating frontend consumers** without breaking every caller:
+
+```typescript
+// Before:
+export async function getOrganisations(): Promise<Organisation[]> {
+  const { data } = await apiClient.get<Organisation[]>('/organisations/')
+  return data
+}
+
+// After (same return type, consumers don't change):
+export async function getOrganisations(): Promise<Organisation[]> {
+  const { data } = await apiClient.get<{ items: Organisation[] }>(
+    '/organisations/',
+    { params: { page_size: 100 } }
+  )
+  return data.items
+}
+```
+
+The wrapper function is the right place to adapt between API shape and app shape. The 50+ components that call `getOrganisations()` don't need to change.
+
+**Learning:** Never return an unbounded list from an API. Always paginate, always enforce a maximum page size, always include the total count so clients can build pagination UI. The cost of pagination is a few extra lines per endpoint. The cost of an unbounded query is "one day the site goes down and you don't know why."
+
+
+## 6. Backup and Restore Documentation
+
+This one feels like cheating — it's documentation, not code — but it's the difference between "an incident" and "a disaster." When the database breaks at 2am, nobody wants to be figuring out the backup command for the first time.
+
+The minimum documentation:
+
+1. **How backups are made** (automatic? manual? what frequency?)
+2. **The exact command to create an on-demand backup** (with placeholder values)
+3. **The exact command to restore from a backup** (with placeholder values)
+4. **RTO and RPO targets** — how long can you be down, how much data can you afford to lose?
+5. **A test procedure** — restore to a scratch environment quarterly to verify the backups actually work
+
+Include it in the repo as `BACKUP.md` at the project root. Not in a wiki, not in a Notion page — in the repo, so it's versioned alongside the code.
+
+**Learning:** Untested backups are worse than no backups. They give you false confidence. Schedule a quarterly restore drill on the calendar. The first time you try, something will be broken. Better to find out in a drill than in an incident.
+
+
+## 7. CI: Automate What You Test
+
+A test suite that developers have to remember to run is a test suite that gets stale in a week. CI makes the tests mandatory.
+
+```yaml
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend:
+    name: Backend (Python)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: python -c "from app.main import app; print('OK')"  # Import check
+      - run: pytest -v --cov=app --cov-report=term-missing
+
+  frontend:
+    name: Frontend (Node)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run type-check
+      - run: npm run build
+```
+
+Three things to note:
+
+1. **Import check as a test.** Running `python -c "from app.main import app"` catches import-time errors before pytest even loads. This is the cheapest smoke test in existence.
+2. **Lint, type-check, AND build on the frontend.** Each catches different classes of error. Lint catches style and common mistakes; type-check catches type errors; build catches anything the first two missed (like circular imports).
+3. **Cache dependencies.** `cache: pip` and `cache: npm` mean CI runs in 60 seconds instead of 5 minutes. Nobody waits 5 minutes for CI.
+
+**Learning:** The goal of CI isn't to be exhaustive — it's to be fast enough that developers trust it. A fast CI that catches the common mistakes is better than a slow CI that catches everything but developers merge around.
+
+
+## Pre-ship Testing & CI Checklist
+
+- [ ] `conftest.py` defines shared fixtures (db_session, client, auth_headers, seed_logframe)
+- [ ] Every core endpoint has CRUD + permission tests (positive and negative)
+- [ ] IDOR tests exist for every nested resource
+- [ ] Sentry is integrated in backend and frontend (optional via env var)
+- [ ] Structured JSON logging is enabled in production
+- [ ] Every list endpoint is paginated with a hard max page size
+- [ ] `BACKUP.md` exists with restore commands and RTO/RPO targets
+- [ ] CI runs lint, type-check, tests, and build on every PR
+- [ ] CI is under 2 minutes per job
+- [ ] A quarterly restore drill is scheduled
+
+## Key Learnings
+
+1. **Fixture investment is front-loaded.** The first test file is expensive; every test file after that is cheap. Invest in conftest.py early.
+2. **Test both sides of every assertion.** "Editor can write" AND "viewer cannot write." A test suite that only checks happy paths cannot detect a disabled check.
+3. **Cross-tenant tests catch IDOR.** Unit tests can't find ownership bugs. You need integration tests that create two tenants and try to cross the boundary.
+4. **Observability is not optional.** Sentry and structured logging are the minimum. Without them, production bugs are invisible until users complain.
+5. **Every list endpoint needs pagination and a max page size.** Unbounded queries are a time bomb that goes off when a tenant grows too large.
+6. **Documented backups aren't tested backups.** Schedule restore drills. The command that works in theory often fails in practice.
+7. **CI is about trust, not exhaustiveness.** Fast CI that catches 90% of mistakes beats slow CI that catches 100%. Developers have to actually wait for it.
+8. **Testing enables refactoring.** The real value of the test suite isn't catching bugs in the code you wrote today. It's letting you change that code six months from now without fear.
+
+
+> [!NOTE]
+> **About this article** — The experiences and lessons shared here were drawn from developing **Chauka**, a Monitoring, Evaluation & Learning (MEL) information system for development organisations. Visit [chauka.org](https://chauka.org) to see how it works.
+
+
